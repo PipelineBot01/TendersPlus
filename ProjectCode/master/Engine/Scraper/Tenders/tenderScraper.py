@@ -1,10 +1,11 @@
 import json
-import os
 import time
-
+from datetime import date
 import pandas as pd
 import requests
 from lxml import etree
+from mongoDB import mongo
+import cfg
 
 class tenderScraper():
     def __init__(self, url, interval, saveInfo=['results/tendersInfo', '.csv'], config=None):
@@ -62,6 +63,7 @@ class tenderScraper():
 
 
         tenders = {}
+        # for i in range(1):
         for i in range(len(pages)):
             link = pages[i]
             response = requests.get(link)
@@ -72,30 +74,32 @@ class tenderScraper():
 
         try:
             jsObj = json.dumps(tenders)
-            fileObject = open('results/tendersLink.json', 'a')
+            fileObject = open('./results/tendersLink.json', 'w')
             fileObject.write(jsObj)
+            print('save Link finished')
             fileObject.close()
             self.links.clear()
         except Exception as e:
             print(e)
         time.sleep(self.interval)
-    
-    
-    def run(self):
-        # print('Loading config file')
-        # self.loadConfig()
-        # print('Loading succeed')
+
+    def run(self, save_mongo = False):
+        print('Loading config file')
+        self.loadConfig()
+        print('Loading succeed')
         
-        # print('Asking url')
+        print('Asking url')
         
-        # response = requests.get(url=self.url, headers=self.headers)
-        # html = etree.HTML(response.text)
+        response = requests.get(url=self.url, headers=self.headers)
+        html = etree.HTML(response.text)
         
-        # self.getLinks(html)
+        self.getLinks(html)
         # self.cleanFormat()
         print("Parsing links")
         data = open("results/tendersLink.json", 'rb')
         linkDic = json.load(data)
+
+        
 
         # if os.path.exists(''.join(i for i in self.saveInfo)):
         #     review = pd.read_csv(''.join(i for i in self.saveInfo))
@@ -118,16 +122,15 @@ class tenderScraper():
             time.sleep(self.interval)
             #print('Saving tender info')
         df = pd.DataFrame(self.tenders)
-        
-        re = self.saveStuffInfo(df)
+        if save_mongo:
+            self.save2Mongo()
+        re = self.saveTenderInfo(df)
         if not re:
             print('Save failed')
-            print('-----> failed to scrap', id)
-            errorStuff.update({id: link})
         print('Saving complete')
         try:
             jsObj = json.dumps(errorStuff)
-            fileObject = open('results/errorTenders.json', 'w')
+            fileObject = open('results/tendersLink.json', 'w')
             fileObject.write(jsObj)
             fileObject.close()
             self.links.clear()
@@ -135,8 +138,6 @@ class tenderScraper():
         except Exception as e:
             print(e)
             print('Saving errorStuff failed')
-
-
     
     def scrape_tender(self, id, url):
         config = {
@@ -161,6 +162,8 @@ class tenderScraper():
         details = tree.xpath(config.get('Details'))
         idx = 0
         attributes={}
+        attributes['Name'] = name
+        attributes['URL'] = url
         for i in range(len(labels)):
             label = labels[i]
             info = ''
@@ -179,17 +182,18 @@ class tenderScraper():
                     idx += 1
 
             attributes[label] = info
-        tender["Name"] = name
-        tender["ID"] = id
+
+
+        tender = attributes
+        tender
         # for i in range(0, len(contacts),2):
         #     tender[contacts[i]] = contacts[i+1]
-        tender["attributes"] = attributes
         self.tenders.append(tender)
         return tender
 
         # attributes
 
-    def saveStuffInfo(self, df):
+    def saveTenderInfo(self, df):
         '''
         :return: True if successfully saved, otherwise False
         '''
@@ -201,3 +205,30 @@ class tenderScraper():
                 print(e)
                 return False
         return True
+
+    def save2Mongo(self):
+        '''
+        :return: True if successfully saved, otherwise False
+        '''
+        host = cfg.mongo_host
+        port = cfg.mongo_port
+        db = cfg.database_name
+        user= cfg.username
+        pwd = cfg.passwd
+        today = date.today()
+        t = today.strftime("%m_%d_%Y")
+        collection = cfg.collection_name + '_'+ t
+        mongodb = mongo(host, port,user, pwd, db, collection)
+        print(mongodb)  # baseinfo
+
+        result = mongodb.insert(self.tenders)
+        print(result.inserted_ids)  
+        print(len(mongodb)) 
+        print(mongodb.find_all())  
+
+
+
+url="https://www.tenders.gov.au/Atm/"
+interval=3
+scraper=tenderScraper(url, interval)
+scraper.run(save_mongo=True)
