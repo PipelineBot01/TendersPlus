@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html{
+  min-width: 1440px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+html,body{
+  padding: 0;
+  margin: 0;
+  background: rgb(244, 248, 248);
+  box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+
+/* ant Patch*/
+button[ant-click-animating-without-extra-node]:after {
+  border: 0 none;
+  opacity: 0;
+  animation:none 0 ease 0 1 normal;
+}

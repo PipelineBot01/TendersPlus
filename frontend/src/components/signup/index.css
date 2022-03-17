@@ -1,0 +1,70 @@
+.gallery{
+    position: relative;
+    height: 100vh;
+    min-height: 100%;
+    
+    background-color: #4DD09E;
+}
+.signup-page{
+    padding: 1rem 4rem;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: start;
+
+}
+.signup-form{
+    margin: 0rem 1rem !important;
+}
+.btn-to-home{
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #4E4B4B;
+    width: 5rem;
+}
+.btn-to-home:hover{
+    cursor: pointer;
+}
+
+.signup-form .ant-col.ant-form-item-label label{
+    font-weight: 600 !important;
+    font-size: 0.9rem;
+
+}
+.signup-form .ant-col.ant-form-item-label{
+        padding-bottom: 0.2rem !important;
+
+}
+
+.signup-form .ant-input{
+    border-radius: 6px !important;
+}
+
+.signup-form .ant-row.ant-form-item{
+    /* margin-bottom: 0.8rem !important; */
+}
+.signup-form .btn-submit{
+    
+    width:100%;
+    background-color: #4E4B4B !important;
+    color:white;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    animation:none !important;
+}
+.signup-form .btn-submit:hover,
+.signup-form .btn-submit:focus{
+     color:white !important;
+      background-color: #777777 !important;
+      border: none;
+}
+.signup-form span.ant-select-selection-item{
+    font-size: 0.7rem !important;
+    background: #e96b44;
+    font-weight: 600;
+    color: white;
+    text-overflow: ellipsis;
+}
+.signup-form span.anticon.anticon-close{
+     color: white;
+       font-weight: 600;
+}

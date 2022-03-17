@@ -1,0 +1,81 @@
+header{
+    width: auto;
+    height: 4.4rem;
+    max-height:4.4rem;
+    filter: drop-shadow(0px 4px 4px rgba(54, 54, 54, 0.151));
+    user-select: none;
+    background: rgb(255, 255, 255);
+}
+nav{
+    height: 100%; 
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.btn-login{
+    width: 6rem;
+    text-align: center;
+    border-radius: 2rem;
+    border: 2px solid #4E4B4B;
+    padding: 0.4rem 1.2rem;
+    margin-right: 1rem;
+    font-weight: 700;
+}
+.btn-signup{
+    width: 7.5rem;
+    text-align: center;
+    padding: 0.5rem 1.2rem;
+    color: white;
+    background: #34ab7d;
+    border-radius: 1.5rem;
+}
+.btn-login:hover{
+      cursor:pointer;
+      background: #4E4B4B;
+      color: white;
+}
+
+/* .btn-notice,
+.btn-settings{
+    font-size: 1rem;
+    margin-right: 1rem;
+    background: white;
+    border-radius: 50%;
+    border: none;
+    height: 2.2rem;
+    width: 2.5rem;
+    filter: drop-shadow(0px 4px 4px rgba(54, 54, 54, 0.151));
+} */
+
+.username{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.btn-dropdown{
+    background: none;
+    border: none;
+    padding: 0rem 1rem;
+    font-size: 1.1rem;
+}
+
+.brand{
+    font-size: 1.5rem;
+    color: #34ab7d;
+    font-weight: 700;
+}
+
+
+.brand:hover{
+    cursor: pointer;
+}
+.btn-dropdown:hover{
+    transform: scaleX(1.2);
+}

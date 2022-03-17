@@ -1,0 +1,96 @@
+{
+  "name": "tendersplus",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.7.2",
+    "@types/js-cookie": "^3.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9",
+    "axios": "^0.26.0",
+    "js-cookie": "^3.0.1",
+    "react": "^17.0.2",
+    "react-app-rewire-alias": "^1.1.7",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "6",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": "latest",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "extends": [
+      "react-app/jest",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "semi": [
+        2,
+        "never"
+      ],
+      "indent": [
+        2,
+        "tab"
+      ],
+      "space-infix-ops": [
+        2,
+        {
+          "int32Hint": false
+        }
+      ],
+      "space-in-parens": [
+        2,
+        "never"
+      ],
+      "comma-spacing": [
+        2,
+        {
+          "after": true
+        }
+      ],
+      "eqeqeq": [
+        2,
+        "always"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@types/react-redux": "^7.1.22",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "antd": "^4.18.7",
+    "customize-cra": "^1.0.0-alpha.0",
+    "eslint": "7.11.0",
+    "eslint-config-react-app": "^7.0.0",
+    "less": "^4.1.1",
+    "less-loader": "7.1.0",
+    "react-app-rewired": "2.1.8"
+  }
+}

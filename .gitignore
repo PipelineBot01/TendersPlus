@@ -1,0 +1,10 @@
+__pycache__
+.vscode
+.idea
+backend/log/*
+backend/supervisord.conf
+backend/app/.env
+backend/__pycache__
+*/__pycache__
+frontend/node_modules
+./frontend/node_modules
