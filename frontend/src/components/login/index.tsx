@@ -4,20 +4,37 @@ import {LeftOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 
 import { useAppDispatch } from '../../store'
+import { setUserInfo, type UserState } from '../../store/features/user'
 
 import './index.css'
+import Cookies from 'js-cookie'
 
 
 export default function Header():JSX.Element{
 	const navigate = useNavigate()
+	const dispatch = useAppDispatch()
 	const [form] = Form.useForm()
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
-	const handleSubmitForm = (values:typeof form.getFieldsValue)=>{
+	const handleSubmitForm = (values:any)=>{
 		console.log('handleSubmitForm', values)
 		setTimeout(()=>{
 			setIsSubmitting(false)
+			const user:UserState = {
+				firstName:'Guest',
+				lastName:'Anonymous',
+				tags:[],
+				researchFileds:[],
+				rememberme:values?.rememberme,
+				avatar:'',
+				access_token:'test',
+				university:'Australian National University'
+			}
+			dispatch(setUserInfo(user))
+			user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : null
+			navigate('/')
 		}, 1000)
+	
 	}
 	const handleTriggerSubmitForm = ()=>{
 		setIsSubmitting(true)

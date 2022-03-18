@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route, Routes, Outlet } from "react-router-dom"
+import {Spin} from 'antd'
 
 import Header from './components/header'
 import Footer from './components/footer'
@@ -22,18 +23,18 @@ export default function App() :JSX.Element{
 						</>
 					}/>
 					<Route path='profile' element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<React.Suspense fallback={<div><Spin></Spin></div>}>
 							<Profile/>
 						</React.Suspense>
 					}/>
 				</Route>
 				<Route path='/login' element={
-					<React.Suspense fallback={<div>Loading...</div>}>
+					<React.Suspense fallback={<div><Spin></Spin></div>}>
 						<Login/>
 					</React.Suspense>
 				}/>
 				<Route path='/signup' element={
-					<React.Suspense fallback={<div>Loading...</div>}>
+					<React.Suspense fallback={<div><Spin></Spin></div>}>
 						<Signup/>
 					</React.Suspense>
 				}/>

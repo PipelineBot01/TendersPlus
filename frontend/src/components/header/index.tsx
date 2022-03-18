@@ -11,7 +11,7 @@ import { getUserInfoAPI } from '../../api'
 import './index.css'
 export default function Header():JSX.Element{
 	const navigate = useNavigate()
-	const [hasLogined, setHasLogined] = useState(true)
+	const [hasLogined, setHasLogined] = useState(false)
 	const dispatch  = useAppDispatch()
 	const userInfo = useAppSelector((state)=>state.user)
 	const tokenFromStore = userInfo.access_token
@@ -20,20 +20,23 @@ export default function Header():JSX.Element{
 	// fetch data
 	useEffect(()=>{ 
 		const tokenFromCookie  = Cookie.get('access_token')
+		console.log(123123123, tokenFromCookie)
+		
 		if (tokenFromCookie && (!tokenFromStore || tokenFromCookie !== tokenFromStore)){
 			// fetch latest user info
-			getUserInfoAPI().then((response)=>{
-				if(response.code === '200'){
-					const userInfo = response.data as UserState
-					userInfo.access_token = tokenFromCookie 
-					userInfo.rememberme = true
-					dispatch(setUserInfo(userInfo))
-					setHasLogined(true)
-				}
-			}).catch(()=>{
-				Cookie.remove('access_token')
-			})
-		}else if (!tokenFromCookie && tokenFromStore){
+			// getUserInfoAPI().then((response)=>{
+			// 	if(response.code === '200'){
+			// 		const userInfo = response.data as UserState
+			// 		userInfo.access_token = tokenFromCookie 
+			// 		userInfo.rememberme = true
+			// 		dispatch(setUserInfo(userInfo))
+			// 		setHasLogined(true)
+			// 	}
+			// }).catch(()=>{
+			// 	Cookie.remove('access_token')
+			// })
+			setHasLogined(true)
+		}else if (tokenFromStore){
 			// currently user logined without rememberme
 			setHasLogined(true)
 		
@@ -72,7 +75,7 @@ export default function Header():JSX.Element{
 		if (hasLogined){
 			return <>
 				<div className='username'>
-					Hi, {userInfo.firstName}
+					{userInfo.firstName + ' ' + userInfo.lastName}
 				</div>
 				<Dropdown 
 					className='btn-dropdown' 

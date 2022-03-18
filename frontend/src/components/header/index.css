@@ -29,6 +29,16 @@ nav{
     margin-right: 1rem;
     font-weight: 700;
 }
+.btn-login:hover{
+      cursor:pointer;
+      background: #4E4B4B;
+      color: white;
+}
+
+
+.btn-signup:hover{
+    cursor: pointer;
+}
 .btn-signup{
     width: 7.5rem;
     text-align: center;
@@ -36,11 +46,6 @@ nav{
     color: white;
     background: #34ab7d;
     border-radius: 1.5rem;
-}
-.btn-login:hover{
-      cursor:pointer;
-      background: #4E4B4B;
-      color: white;
 }
 
 /* .btn-notice,

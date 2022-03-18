@@ -176,7 +176,7 @@ export default function Header():JSX.Element{
 								<Form.Item label='Univeristy'  name='university'
 									rules={[
 										 {required:true, 
-											message:'Please select your reasearch fields'
+											message:'Please select your university'
 										}
 									]}
 								>

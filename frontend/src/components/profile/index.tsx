@@ -6,7 +6,7 @@ import type {ReactElement} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-import { Form, Input, Select, Button, Spin, } from 'antd'
+import { Form, Input, Select, Button, Spin, Row, Col } from 'antd'
 import {LoadingOutlined} from '@ant-design/icons'
 
 
@@ -38,9 +38,8 @@ export default function Profile():JSX.Element{
 		}
 	})
 
+	// update sub research fields when selected reseach fields changed 
 	useEffect(()=>{
-		console.log(1111)
-		
 		const oldSubResearchFields = form.getFieldValue('subResearchFields')
 		let newSubResearchFields:Array<string> = []
 		console.log(oldSubResearchFields, selectedResearchFields)
@@ -49,24 +48,23 @@ export default function Profile():JSX.Element{
 				newSubResearchFields = newSubResearchFields.concat(oldSubResearchFields.filter((e:string)=>{
 					return researchFields[k].subField.includes(e)}))
 			}
-		
 		}
-		
-		//remove some
-	
 		form.setFieldsValue({'researchFields':selectedResearchFields, 'subResearchFields':newSubResearchFields})
-		// form.resetFields('')
 	}, [selectedResearchFields])
 
+
+	const handleTriggerSubmitForm = ()=>{
+		console.log(form.getFieldValue('subResearchFields'))
+		
+		form.submit()
+	}
 	const handleSubmitForm = ()=>{
 		console.log('handleSubmitForm')
 	}
 	const handleSubmitFormFailed = ()=>{
 		console.log('handleSubmitFormFailed')
 	}
-	const handleTriggerSubmitForm = ()=>{
-		form.submit()
-	}
+
 	const handleResearchFieldsChange = ()=>{
 		setSelectedResearchFields(form.getFieldValue('researchFields').slice(0, 3))
 	}
@@ -128,18 +126,18 @@ export default function Profile():JSX.Element{
 					
 					<Form.Item label='Last Name'  name='lastName' 
 						rules={[
-										 {required:true, 
+							{required:true, 
 								message:'Please enter your last name',
 								whitespace:true,
 							},
 							({ getFieldValue }) => ({
 								validator(_, value) {	
-								
 										
-									if (/^[a-zA-Z]{1,20}$/g.test(value)) {
-										return Promise.resolve()
+									if (!/^[a-zA-Z]{1,20}$/g.test(value)) {
+										return Promise.reject(new Error('Name only formed by no more than 20 letters'))
 									}
-									return Promise.reject(new Error('Name only formed by no more than 20 letters'))
+								
+									return Promise.resolve()
 								},
 							})
 						]}>
@@ -151,7 +149,7 @@ export default function Profile():JSX.Element{
 					<Form.Item label='Univeristy'  name='university'
 						rules={[
 							{required:true, 
-								message:'Please select your reasearch fields'
+								message:'Please select your university'
 							}
 						]}
 					>
@@ -181,8 +179,25 @@ export default function Profile():JSX.Element{
 							{renderResearchFieldsOptions()}	
 						</Select>
 					</Form.Item>
-					<Form.Item label='Subfields' name='subResearchFields' shouldUpdate extra='More specific researching fields can help us to find more suitable opportunities for you!' validateTrigger='onChange'>
+					<Form.Item label='Subfields' name='subResearchFields' shouldUpdate extra='More specific researching fields can help us to find more suitable opportunities for you!' >
 						<Select mode='multiple' showArrow >
+							{
+								selectedResearchFields.map((e:string)=>{						 
+									return (<OptGroup key={e} label={researchFields[e].field}>{
+										researchFields[e].subField.map((c:string, i:number)=>{
+											return (<Option key={c + i} value={c}>
+												{c}
+											</Option>)	
+										})
+									}
+									</OptGroup>)
+									
+								})
+							}
+						</Select>			
+					</Form.Item>
+					<Form.Item label='Tags' name='tags' shouldUpdate extra='You can use tags to indicate what area of ​​research you are good at!'>
+						<Select mode='tags' open={false} tokenSeparators={[',', ';']}>
 							{
 								selectedResearchFields.map((e:string)=>{						 
 									return (<OptGroup key={e} label={researchFields[e].field}>{
@@ -202,12 +217,17 @@ export default function Profile():JSX.Element{
 				
 						
 
-				
-					<Button  className='btn-submit' disabled={isSubmitting} onClick={handleTriggerSubmitForm}>
-						{ 
-							isSubmitting ? <Spin  indicator={<LoadingOutlined style={{color:'white'}}/>} /> : 'Save'
-						}
-					</Button>
+					<Row justify='center' >
+						<Col span={6}>
+							<Button  className='btn-submit' disabled={isSubmitting} onClick={handleTriggerSubmitForm}>
+								{ 
+									isSubmitting ? <Spin  indicator={<LoadingOutlined style={{color:'white'}}/>} /> : 'Save'
+								}
+							</Button>
+						</Col>
+						
+					</Row>
+					
 					
 				</Form>
 			</div>

@@ -1,6 +1,6 @@
 .profile-page{
     display: flex;
-    width: 100rem;
+    width: 100%;
     justify-content: center;
     background-color: #4DD09E;
     min-height: 100vh;
@@ -39,4 +39,15 @@
 }
 .profile-form .ant-form-item-no-colon{
     font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.profile-form .btn-submit{
+    margin: 2rem 0;
+    width:100%;
+    background-color: #f1670b !important;
+    color:white;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    animation:none !important;
 }

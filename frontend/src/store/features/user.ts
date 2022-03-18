@@ -6,14 +6,14 @@ export  interface UserState extends UserInfo {
 }
 
 const initialState:UserState = {
-	firstName:'Guest',
+	firstName:'',
 	lastName:'',
 	avatar:'',
 	researchFileds:[],
 	tags:[],
 	university:'',
 	rememberme:false,
-	access_token:'123123'
+	access_token:''
 }
 
 const userSlice = createSlice({
