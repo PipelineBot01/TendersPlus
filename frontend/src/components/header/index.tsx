@@ -20,8 +20,6 @@ export default function Header():JSX.Element{
 	// fetch data
 	useEffect(()=>{ 
 		const tokenFromCookie  = Cookie.get('access_token')
-		console.log(123123123, tokenFromCookie)
-		
 		if (tokenFromCookie && (!tokenFromStore || tokenFromCookie !== tokenFromStore)){
 			// fetch latest user info
 			// getUserInfoAPI().then((response)=>{

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Row, Col, Form, Input, Button, Spin, Checkbox } from 'antd'
+import {Row, Col, Form, Input, Button, Spin, Checkbox, message } from 'antd'
 import {LeftOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,7 +18,9 @@ export default function Header():JSX.Element{
 
 	const handleSubmitForm = (values:any)=>{
 		console.log('handleSubmitForm', values)
+		message.loading({content:'Landing...', key:'login', duration:0})
 		setTimeout(()=>{
+			message.destroy('login')
 			setIsSubmitting(false)
 			const user:UserState = {
 				firstName:'Guest',
@@ -31,8 +33,10 @@ export default function Header():JSX.Element{
 				university:'Australian National University'
 			}
 			dispatch(setUserInfo(user))
-			user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : null
+			user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
 			navigate('/')
+			
+			message.success('Welcome back, ' + user.firstName, 1.5)
 		}, 1000)
 	
 	}
