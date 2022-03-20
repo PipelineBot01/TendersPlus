@@ -16,6 +16,12 @@ class Settings(BaseSettings):
     MONGO_USERNAME: str
     MONGO_PASSWORD: str
 
+    # mysql server
+    MYSQL_USERNAME:str
+    MYSQL_PASSWORD:str
+    MYSQL_URL:str
+    MYSQL_DATABASE:str
+
     # use to filter out tenders
     EXPIRING_WEEK_THRESHOLD: int = 1
     LATEST_WEEK_THRESHOLD: int = 8
