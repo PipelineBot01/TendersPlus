@@ -17,10 +17,10 @@ class Settings(BaseSettings):
     MONGO_PASSWORD: str
 
     # mysql server
-    MYSQL_USERNAME:str
-    MYSQL_PASSWORD:str
-    MYSQL_URL:str
-    MYSQL_DATABASE:str
+    MYSQL_USERNAME: str
+    MYSQL_PASSWORD: str
+    MYSQL_URL: str
+    MYSQL_DATABASE: str
 
     # use to filter out tenders
     EXPIRING_WEEK_THRESHOLD: int = 1
@@ -33,7 +33,11 @@ class Settings(BaseSettings):
     DATETIME_FORMAT = '%d-%b-%Y'
 
     LATEST_TENDERS: dict = None
-    HOT_TENDERS:dict =None
+    HOT_TENDERS: dict = None
+
+    OAUTH_SECRET_KEY: str
+    UNIVERSITIES: []
+    RESEARCH_FIELDS: []
 
 
 settings = Settings(_env_file=env_path)

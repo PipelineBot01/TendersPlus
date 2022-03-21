@@ -5,8 +5,8 @@ from fastapi.exceptions import RequestValidationError, HTTPException
 from errors import validation_exception_handler
 from errors import http_exception_handler
 
-from router import tenders_router
-from router import subscribe_router
+from routers import tenders_router
+from routers import subscribe_router
 
 from config import settings
 from scheduler import async_scheduler
@@ -28,7 +28,7 @@ server.add_middleware(
 server.add_exception_handler(RequestValidationError, validation_exception_handler)
 server.add_exception_handler(HTTPException, http_exception_handler)
 
-# setup router
+# setup routers
 server.include_router(tenders_router, prefix='/tenders', tags='Tenders')
 server.include_router(subscribe_router, prefix='/subscribe', tags='Subscribe')
 
