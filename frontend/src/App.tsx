@@ -7,8 +7,8 @@ import Footer from './components/footer'
 import Search from './components/search'
 import Discovery from './components/discovery'
 
-const Login = React.lazy(()=>import('./components/login'))
-const Signup = React.lazy(()=>import('./components/signup'))
+const Login = React.lazy(()=>import('./pages/login'))
+const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
 
 export default function App() :JSX.Element{

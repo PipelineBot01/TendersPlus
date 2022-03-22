@@ -24,7 +24,7 @@ export default {
 		}
 	},
 	reponse:{
-		handleResponse(response:AxiosResponse<CustomAPIResponse>){
+		handleResponse(response:AxiosResponse<CustomAPIResponse<any>>){
 			console.log('intercept response:', response)
 			if(response.data){
 				return response.data

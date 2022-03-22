@@ -7,7 +7,7 @@ import type { ResearchFields } from "../types"
 export  const researchFields:ResearchFields = {
 	d_01:{
 		field:'MATHEMATICAL',
-		subField:['Pure Mathematics', 
+		sub_fields:['Pure Mathematics', 
 			'Applied Mathematics', 
 			'Numerical and Computational Mathematics', 
 			'Statistics',
@@ -16,7 +16,7 @@ export  const researchFields:ResearchFields = {
 	},
 	d_02:{
 		field:'PHYSICAL',
-		subField:['Astronomical and Space Sciences',
+		sub_fields:['Astronomical and Space Sciences',
 			'Atomic, Molecular, Nuclear, Particle and Plasma Physics', 
 			'Classical Physics',
 			'Condensed Matter Physics',
@@ -26,82 +26,82 @@ export  const researchFields:ResearchFields = {
 	},
 	d_03:{
 		field:'CHEMICAL',
-		subField:[]
+		sub_fields:[]
 	},
 	d_04:{
 		field:'EARTH',
-		subField:[]
+		sub_fields:[]
 	},
 	d_05:{
 		field:'ENVIRONMENTAL',
-		subField:[]
+		sub_fields:[]
 	},
 	d_06:{
 		field:'BIOLOGICAL',
-		subField:[]
+		sub_fields:[]
 	},
 	d_07:{
 		field:'AGRICULTURAL AND VETERINARY',
-		subField:[]
+		sub_fields:[]
 	},
 	d_08:{
 		field:'INFORMATION AND COMPUTINGs',
-		subField:[]
+		sub_fields:[]
 	},
 	d_09:{
 		field:'ENGINEERING',
-		subField:[]
+		sub_fields:[]
 	},
 	d_10:{
 		field:'TECHNOLOGY',
-		subField:[]
+		sub_fields:[]
 	},
 	d_11:{
 		field:'MEDICAL AND HEALTH',
-		subField:[]
+		sub_fields:[]
 	},
     	d_12:{
 		field:'BUILT ENVIRONMENT AND DESIGN',
-		subField:[]
+		sub_fields:[]
 	},
     	d_13:{
 		field:'EDUCATION',
-		subField:[]
+		sub_fields:[]
 	},
     	d_14:{
 		field:'ECONOMICS',
-		subField:[]
+		sub_fields:[]
 	},
     	d_15:{
 		field:'COMMERCE, MANAGEMENT, TOURISM AND SERVICES',
-		subField:[]
+		sub_fields:[]
 	},
     	d_16:{
 		field:'STUDIES IN HUMAN SOCIETY',
-		subField:[]
+		sub_fields:[]
 	},
     	d_17:{
 		field:'PSYCHOLOGY AND COGNITIVE SCIENCES',
-		subField:[]
+		sub_fields:[]
 	},
     	d_18:{
 		field:'LAW AND LEGAL STUDIES',
-		subField:[]
+		sub_fields:[]
 	},
     	d_19:{
 		field:'STUDIES IN CREATIVE ARTS AND WRITING',
-		subField:[]
+		sub_fields:[]
 	},
     	d_20:{
 		field:'LANGUAGE, COMMUNICATION AND CULTURE',
-		subField:[]
+		sub_fields:[]
 	},
     	d_21:{
 		field:'HISTORY AND ARCHAEOLOGY',
-		subField:[]
+		sub_fields:[]
 	},
     	d_22:{
 		field:'PHILOSOPHY AND RELIGIOUS STUDIES',
-		subField:[]
+		sub_fields:[]
 	}
 }

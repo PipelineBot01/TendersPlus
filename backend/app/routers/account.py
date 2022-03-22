@@ -48,3 +48,4 @@ def login(data: SignupModel, db: Session = Depends(get_db)):
     except Exception as e:
         print(e)
         db.rollback()
+        raise HTTPException(500, str(e))
