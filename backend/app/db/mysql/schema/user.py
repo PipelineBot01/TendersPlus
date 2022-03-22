@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, DATETIME, INT, ForeignKey, BIGINT
+from sqlalchemy import Column, String, DATETIME, INT, ForeignKey
 from ..engine import base
 
 
@@ -11,6 +11,6 @@ class SQLUser(base):
     password = Column(String(200), nullable=False)
     first_name = Column(String(32), nullable=False)
     last_name = Column(String(32), nullable=False)
-    university = Column(String(128), ForeignKey('university.name'), nullable=True)
+    university = Column(String(128), nullable=False)
     create_date = Column(DATETIME, nullable=False)
     status = Column(INT, nullable=False)

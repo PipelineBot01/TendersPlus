@@ -8,7 +8,7 @@ from typing import Union
 from utils import auth
 
 from ..schema.user import SQLUser
-from ..schema.user_research_field import SQLUserResearchField
+# from ..schema.user_research_field import SQLUserResearchField
 
 
 def sql_get_user(email: str, session: Session) -> Union[SQLUser, None]:
