@@ -12,7 +12,7 @@ from scheduler import async_scheduler
 from db import init_db
 
 # init app
-server = FastAPI(root_path='/api')
+server = FastAPI(root_path='/api',openapi_url='/api/openapi.json')
 
 # setup middleware
 server.add_middleware(
