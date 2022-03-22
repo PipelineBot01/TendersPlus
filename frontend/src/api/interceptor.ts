@@ -32,9 +32,9 @@ export default {
 				return Promise.reject(response.status)
 			}
 		},
-		handleError(error:AxiosError){
+		handleError(error:AxiosError<CustomAPIResponse<any>>){
 			console.log('response error:', error)
-			return Promise.reject(error)
+			return Promise.reject(error.response?.data)
 		}
 	}
 }

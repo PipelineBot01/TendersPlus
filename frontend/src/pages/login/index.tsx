@@ -21,12 +21,10 @@ export default function Header():JSX.Element{
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
 	const handleSubmitForm = (values:Login)=>{
-		message.loading({content:'Landing...', key:'login', duration:0})
+		message.loading({content:'Logging in', key:'login', duration:2})
 		loginAPI(values).then((response)=>{
-			console.log(response.data)
 			message.destroy('login')
-			setIsSubmitting(false)
-			if(response.code === 200 && response.data){
+			if(response.data){
 				const data = response.data
 				const user : UserState = {
 					rememberme:values.rememberme || false,
@@ -45,8 +43,26 @@ export default function Header():JSX.Element{
 				
 				// redirect to dashboard
 				navigate('/dashboard')
+
 				message.success('Welcome back, ' + user.first_name, 1.5)
 			}
+		}).catch((error)=>{
+			message.destroy('login')
+			switch (error.code){
+			case 400:
+				console.log(error.msg)
+				if((error.msg as string).indexOf('email') !== -1){
+					message.error({content:'Invalid email', key:'login', duration:1})		
+				}
+				break
+			case 500:
+				message.error({content:'Internal server error', key:'login', duration:1})
+				break
+			case 404:
+				message.error({content:'User not found', key:'login', duration:1})
+			}
+		}).finally(()=>{
+			setIsSubmitting(false)
 		})
 		// setTimeout(()=>{
 		
@@ -103,7 +119,7 @@ export default function Header():JSX.Element{
 						</Row>
 						<Row gutter={12} justify='center'>
 							<Col span={20}>
-								<Form.Item label='Passowrd' required  name='passowrd' rules={[{required:true, message:'Please enter your password'}]}>
+								<Form.Item label='Passowrd' required  name='password' rules={[{required:true, message:'Please enter your password'}]}>
 									<Input.Password autoComplete='new-password'  allowClear={true} />
 								</Form.Item>
 							</Col>
