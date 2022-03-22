@@ -9,7 +9,7 @@ from routers import account_router
 
 from config import settings
 from scheduler import async_scheduler
-from db import init_db
+from db.mysql import init_db as init_mysql
 
 # init app
 server = FastAPI(root_path='/tendersplus')
@@ -33,7 +33,7 @@ server.include_router(account_router, prefix='/api/account', tags=['Account'])
 # setup startup event
 @server.on_event('startup')
 async def startup():
-    init_db()
+    init_mysql()
     # ====== init scheduler ======
     # run jobs
     for j in async_scheduler.jobs:
