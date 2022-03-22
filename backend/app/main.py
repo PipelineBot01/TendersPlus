@@ -12,7 +12,7 @@ from scheduler import async_scheduler
 from db import init_db
 
 # init app
-server = FastAPI(root_path='/api',openapi_url='/openapi.json')
+server = FastAPI(root_path='/tendersplus')
 
 # setup middleware
 server.add_middleware(
@@ -28,8 +28,11 @@ server.add_exception_handler(RequestValidationError, validation_exception_handle
 server.add_exception_handler(HTTPException, http_exception_handler)
 
 # setup routers
-server.include_router(account_router, prefix='/account', tags='Account')
+server.include_router(account_router, prefix='/api/account', tags=['Account'])
 
+@server.get('/app')
+def get_app():
+    return {'123123'}
 
 # setup startup event
 @server.on_event('startup')
@@ -54,4 +57,4 @@ if __name__ == '__main__':
     import uvicorn
 
     # launch app
-    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST)
+    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST,root_path='/tendersplus')
