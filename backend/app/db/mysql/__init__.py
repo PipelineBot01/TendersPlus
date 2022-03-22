@@ -18,7 +18,7 @@ def init_db():
 
     # init tables
     print(base.metadata.__dict__)
-    # base.metadata.drop_all(bind=engine)
+    base.metadata.drop_all(bind=engine)
     base.metadata.create_all(bind=engine)
 
     with session() as db:
@@ -30,5 +30,5 @@ def init_db():
         # init division
         for i in settings.RESEARCH_FIELDS:
             sql_add_research_field(name=i, parent_name='none', level=1,session=db)
-            
+
         db.commit()
