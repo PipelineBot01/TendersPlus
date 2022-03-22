@@ -7,4 +7,4 @@ PyJWT==2.3.0
 requests==2.26.0
 SQLAlchemy==1.4.22
 SQLAlchemy_Utils==0.37.9
-uvicorn==0.17.5
+uvicorn==0.15.0
