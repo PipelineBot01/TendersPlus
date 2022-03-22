@@ -3,7 +3,7 @@ from config import settings
 from typing import Union
 import pandas as pd
 
-from motor import MotorCollection
+from motor.motor_asyncio import AsyncIOMotorCollection
 from .engine import mongo
 
 
@@ -42,7 +42,7 @@ def db_get_expiring_tenders(n: Union[int, None] = None) -> dict:
     # setattr(settings, 'HOT_TENDERS', tenders)
 
 
-async def do_find(collection: MotorCollection, condition: dict, skip: Union[int, None] = None,
+async def do_find(collection: AsyncIOMotorCollection, condition: dict, skip: Union[int, None] = None,
                   limit: Union[int, None] = None,
                   sort: Union[dict, None] = None):
     tmp = []
