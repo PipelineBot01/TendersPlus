@@ -30,9 +30,6 @@ server.add_exception_handler(HTTPException, http_exception_handler)
 # setup routers
 server.include_router(account_router, prefix='/account', tags=['Account'])
 
-@server.get('/app')
-def appx():
-    return {123}
 
 # setup startup event
 @server.on_event('startup')
