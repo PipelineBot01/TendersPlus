@@ -30,18 +30,18 @@ def login(data: SignupModel, db: Session = Depends(get_db)):
             raise HTTPException(400, 'TWO PASSWORDS ARE NOT THE SAME')
         if data.university not in settings.UNIVERSITIES:
             raise HTTPException(400, 'INVALID UNIVERSITY')
-        for i in data.research_field:
+        for i in data.research_fields:
             if i not in settings.RESEARCH_FIELDS:
                 raise HTTPException(400, f'INVALID RESEARCH FIELD {i}')
 
         user = sql_add_user(email=data.email, password=data.password, first_name=data.first_name,
                             last_name=data.last_name,
-                            university=data.university, research_field=data.research_field, session=db)
+                            university=data.university, research_field=data.research_fields, session=db)
         db.commit()
         access_token = generate_token(
             {'email': data.email, 'expire_date': (datetime.now() + timedelta(days=7)).timestamp()})
         return {'code': 200, 'data': {'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
-                                      'university': user.university, 'research_field': data.research_field,
+                                      'university': user.university, 'research_field': data.research_fields,
                                       'access_token': access_token}}
     except HTTPException as e:
         raise e

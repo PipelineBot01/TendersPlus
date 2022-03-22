@@ -14,4 +14,4 @@ class SignupModel(BaseModel):
     university: str
     password: str
     confirmed_password: str
-    research_field: List[str]
+    research_fields: List[str]
