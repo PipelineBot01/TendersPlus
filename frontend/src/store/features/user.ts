@@ -6,10 +6,9 @@ export  interface UserState extends UserInfo {
 }
 
 const initialState:UserState = {
-	firstName:'',
-	lastName:'',
-	avatar:'',
-	researchFileds:[],
+	first_name:'',
+	last_name:'',
+	research_fields:[],
 	tags:[],
 	university:'',
 	rememberme:false,
@@ -22,10 +21,10 @@ const userSlice = createSlice({
 	reducers:{
 		//
 		setFirstName(state, action:PayloadAction<string>){
-			state.firstName = action.payload
+			state.first_name = action.payload
 		},
 		setLastName(state, action:PayloadAction<string>){
-			state.lastName = action.payload
+			state.last_name = action.payload
 		},
 		setUniversity(state, action:PayloadAction<string>){
 			state.university = action.payload
@@ -34,7 +33,7 @@ const userSlice = createSlice({
 			state.tags = action.payload
 		},
 		setResearchFields(state, action:PayloadAction<Array<ResearchFieldsItem>>){
-			state.researchFileds = action.payload
+			state.research_fields = action.payload
 		},
 		setUserInfo(state, action:PayloadAction<UserState>){
 			Object.assign(state, action.payload)

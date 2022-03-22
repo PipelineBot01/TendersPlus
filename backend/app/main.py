@@ -30,10 +30,6 @@ server.add_exception_handler(HTTPException, http_exception_handler)
 # setup routers
 server.include_router(account_router, prefix='/api/account', tags=['Account'])
 
-@server.get('/app')
-def get_app():
-    return {'123123'}
-
 # setup startup event
 @server.on_event('startup')
 async def startup():
@@ -44,7 +40,7 @@ async def startup():
         if j['delay'] is False:
             await j['func']()
 
-    async_scheduler.start()
+    # async_scheduler.start()
 
 
 # setup shutdown event

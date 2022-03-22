@@ -73,7 +73,7 @@ export default function Header():JSX.Element{
 		if (hasLogined){
 			return <>
 				<div className='username'>
-					{userInfo.firstName + ' ' + userInfo.lastName}
+					{userInfo.first_name}
 				</div>
 				<Dropdown 
 					className='btn-dropdown' 

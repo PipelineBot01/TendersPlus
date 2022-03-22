@@ -1,36 +1,40 @@
 import {AxiosPromise, AxiosResponse} from 'axios'
-type ResearchFieldLevel = 'division'|'group'|2|1
+type ResearchFieldLevel = 'division'|'group'|2|1|'DIVISION'|'GROUP'
+
+export interface Login{
+    email:string
+    password:string
+    rememberme?:boolean
+}
+
 export interface ResearchField{
     name:string
     level:ResearchFieldLevel
-    subFields:Array<ResearchField>|undefined|null
+    sub_fields:Array<ResearchField>|undefined|null
 
 }
+
 export interface UserInfo{
-    firstName:string
-    lastName:string
-    avatar:string
+    first_name:string
+    last_name:string
     university:string
-    researchFileds:Array<ResearchFieldsItem>
+    research_fields:Array<ResearchFieldsItem>
     tags:Array<string>
+    access_token:string
 }
 
 export interface ResearchFieldsItem{
     field:string
-    subField:Array<string>
+    sub_fields:Array<string>
 }
 export interface ResearchFields{
     [key:string]:ResearchFieldsItem
 }
 
-export interface CustomAPIResponse{
+export interface CustomAPIResponse<T>{
     code:string|number,
-    data?:JSON|object
-    msg:string
+    data?:T
+    msg?:string
 }
 
-export interface CustomAPIResponse32{
-    code:string|number,
-    data?:JSON|object
-    msg:string
-}
+

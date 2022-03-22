@@ -31,10 +31,10 @@ export default function Profile():JSX.Element{
 			navigate('/')
 		}else{
 			form.setFieldsValue({
-				'firstName':userInfo.firstName || '', 
-				'lastName':userInfo.lastName || '',
+				'first_name':userInfo.first_name || '', 
+				'last_name':userInfo.last_name || '',
 				'university':userInfo.university || '',
-				'researchFields':userInfo.researchFileds.map(e=>{return e.field}) || []})
+				'research_fields':userInfo.research_fields.map(e=>{return e.field}) || []})
 		}
 	})
 
@@ -46,7 +46,7 @@ export default function Profile():JSX.Element{
 		if(selectedResearchFields?.length !== 0 && oldSubResearchFields?.length !== 0){
 			for(const k of selectedResearchFields){	
 				newSubResearchFields = newSubResearchFields.concat(oldSubResearchFields.filter((e:string)=>{
-					return researchFields[k].subField.includes(e)}))
+					return researchFields[k].sub_fields.includes(e)}))
 			}
 		}
 		form.setFieldsValue({'researchFields':selectedResearchFields, 'subResearchFields':newSubResearchFields})
@@ -184,7 +184,7 @@ export default function Profile():JSX.Element{
 							{
 								selectedResearchFields.map((e:string)=>{						 
 									return (<OptGroup key={e} label={researchFields[e].field}>{
-										researchFields[e].subField.map((c:string, i:number)=>{
+										researchFields[e].sub_fields.map((c:string, i:number)=>{
 											return (<Option key={c + i} value={c}>
 												{c}
 											</Option>)	
@@ -201,7 +201,7 @@ export default function Profile():JSX.Element{
 							{
 								selectedResearchFields.map((e:string)=>{						 
 									return (<OptGroup key={e} label={researchFields[e].field}>{
-										researchFields[e].subField.map((c:string, i:number)=>{
+										researchFields[e].sub_fields.map((c:string, i:number)=>{
 											return (<Option key={c + i} value={c}>
 												{c}
 											</Option>)	

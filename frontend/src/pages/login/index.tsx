@@ -2,12 +2,16 @@ import React, {useState} from 'react'
 import {Row, Col, Form, Input, Button, Spin, Checkbox, message } from 'antd'
 import {LeftOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+
 
 import { useAppDispatch } from '../../store'
 import { setUserInfo, type UserState } from '../../store/features/user'
-
+import { loginAPI } from '../../api'
+import type { Login } from '../../utils/types'
 import './index.css'
-import Cookies from 'js-cookie'
+import { researchFields } from '../../utils/data/researchFields'
+
 
 
 export default function Header():JSX.Element{
@@ -16,28 +20,53 @@ export default function Header():JSX.Element{
 	const [form] = Form.useForm()
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
-	const handleSubmitForm = (values:any)=>{
-		console.log('handleSubmitForm', values)
+	const handleSubmitForm = (values:Login)=>{
 		message.loading({content:'Landing...', key:'login', duration:0})
-		setTimeout(()=>{
+		loginAPI(values).then((response)=>{
+			console.log(response.data)
 			message.destroy('login')
 			setIsSubmitting(false)
-			const user:UserState = {
-				firstName:'Guest',
-				lastName:'Anonymous',
-				tags:[],
-				researchFileds:[],
-				rememberme:values?.rememberme,
-				avatar:'',
-				access_token:'test',
-				university:'Australian National University'
+			if(response.code === 200 && response.data){
+				const data = response.data
+				const user : UserState = {
+					rememberme:values.rememberme || false,
+					first_name:data.first_name,
+					last_name:data.last_name,
+					university:data.university,
+					tags:data.tags,
+					research_fields:data.research_fields,
+					access_token:data.access_token
+				}
+				// update cookie
+				user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
+				
+				// update store
+				dispatch(setUserInfo(user))
+				
+				// redirect to dashboard
+				navigate('/dashboard')
+				message.success('Welcome back, ' + user.first_name, 1.5)
 			}
-			dispatch(setUserInfo(user))
-			user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
-			navigate('/')
+		})
+		// setTimeout(()=>{
+		
+		// 	setIsSubmitting(false)
+		// 	const user:UserState = {
+		// 		first_name:'Guest',
+		// 		last_name:'Anonymous',
+		// 		tags:[],
+		// 		research_fields:[],
+		// 		rememberme:values?.rememberme || false,
+		// 		avatar:'',
+		// 		access_token:'test',
+		// 		university:'Australian National University'
+		// 	}
+	
+		
+
 			
-			message.success('Welcome back, ' + user.firstName, 1.5)
-		}, 1000)
+
+		// }, 1000)
 	
 	}
 	const handleTriggerSubmitForm = ()=>{
