@@ -30,7 +30,7 @@ def db_get_hot_tenders(n: Union[int, None] = None) -> dict:
     """
     tenders = None
     # TODO: fetch n hot tenders, the rank
-    setattr(settings, 'HOT_TENDERS', tenders)
+    # setattr(settings, 'HOT_TENDERS', tenders)
 
 
 def db_get_expiring_tenders(n: Union[int, None] = None) -> dict:
@@ -39,7 +39,7 @@ def db_get_expiring_tenders(n: Union[int, None] = None) -> dict:
     """
     tenders = None
     # TODO: fetch n expiring tenders, the rank
-    setattr(settings, 'HOT_TENDERS', tenders)
+    # setattr(settings, 'HOT_TENDERS', tenders)
 
 
 async def do_find(collection: MotorCollection, condition: dict, skip: Union[int, None] = None,

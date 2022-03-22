@@ -25,9 +25,8 @@ async def get_tenders():
 
 @job(id='update_latest_tenders', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'))
 async def update_latest_tenders():
-    settings.__setattr__('LATEST_TENDERS', await crud.db_get_latest_tenders())
-    print('scheduled job: update_latest_tenders Done!')
-
+    # print('scheduled job: update_latest_tenders Done!')
+    pass
 
 @job(id='update_expiring_tenders', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
 async def update_expiring_tenders():

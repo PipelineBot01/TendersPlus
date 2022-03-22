@@ -5,8 +5,7 @@ from fastapi.exceptions import RequestValidationError, HTTPException
 from errors import validation_exception_handler
 from errors import http_exception_handler
 
-from routers import tenders_router
-from routers import subscribe_router
+from routers import account_router
 
 from config import settings
 from scheduler import async_scheduler
@@ -29,12 +28,10 @@ server.add_exception_handler(RequestValidationError, validation_exception_handle
 server.add_exception_handler(HTTPException, http_exception_handler)
 
 # setup routers
-server.include_router(tenders_router, prefix='/tenders', tags='Tenders')
-server.include_router(subscribe_router, prefix='/subscribe', tags='Subscribe')
+server.include_router(account_router, prefix='/api/account', tags='Account')
 
 
 # setup startup event
-
 @server.on_event('startup')
 async def startup():
     init_db()
@@ -57,9 +54,4 @@ if __name__ == '__main__':
     import uvicorn
 
     # launch app
-    if type(settings.APP_PORT) == 'str':
-        port = int(settings.APP_PORT)
-    else:
-        port = settings.APP_PORT
-
-    uvicorn.run(app=server, port=port, host=settings.APP_HOST)
+    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST)
