@@ -29,7 +29,7 @@ class Settings(BaseSettings):
 
     # app server
     APP_HOST: str = 'localhost'
-    APP_PORT: int = 202202
+    APP_PORT: int = 202200
     DATETIME_FORMAT = '%d-%b-%Y'
 
     LATEST_OPPORTUNITIES: dict = None
