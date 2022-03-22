@@ -46,7 +46,7 @@ class Settings(BaseSettings):
                     'University of Southern Queensland', 'University of the Sunshine Coast',
                     'Carnegie Mellon University', 'Flinders University', 'Torrens University Australia',
                     'University of Adelaide', 'University of South Australia', 'University of Tasmania',
-                    'Deakin University', 'Federation University of Australia', 'La Trobe University',
+                    'Deakin University',  'La Trobe University',
                     'Monash University', 'RMIT University', 'Swinburne University of Technology',
                     'University of Divinity', 'University of Melbourne', 'Victoria University',
                     'Curtin University', 'Edith Cowan University', 'Murdoch University',
