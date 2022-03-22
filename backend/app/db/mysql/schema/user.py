@@ -6,7 +6,7 @@ class SQLUser(base):
     """
     status=1: inactive, status =0 active
     """
-    __tablename__ = 'player'
+    __tablename__ = 'user'
     email = Column(String(128), primary_key=True)
     password = Column(String(200), nullable=False)
     first_name = Column(String(32), nullable=False)
