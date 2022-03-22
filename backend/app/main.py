@@ -12,7 +12,7 @@ from scheduler import async_scheduler
 from db import init_db
 
 # init app
-server = FastAPI()
+server = FastAPI(root_path='/api')
 
 # setup middleware
 server.add_middleware(
@@ -28,7 +28,7 @@ server.add_exception_handler(RequestValidationError, validation_exception_handle
 server.add_exception_handler(HTTPException, http_exception_handler)
 
 # setup routers
-server.include_router(account_router, prefix='/api/account', tags='Account')
+server.include_router(account_router, prefix='/account', tags='Account')
 
 
 # setup startup event
