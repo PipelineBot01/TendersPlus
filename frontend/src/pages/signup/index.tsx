@@ -2,7 +2,7 @@ import React, {ReactElement, useEffect, useState} from 'react'
 import {Row, Col, Form, Input, Button, Spin, Select, message, Result} from 'antd'
 import {LeftOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
-import './index.css'
+import Cookies from 'js-cookie'
 
 import { useAppDispatch } from '../../store'
 import { type UserState, setUserInfo } from '../../store/features/user'
@@ -10,6 +10,7 @@ import type { Signup } from '../../utils/types'
 import {researchFields} from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
 import { signupAPI } from '../../api'
+import './index.css'
 const { Option, OptGroup } = Select
 
 export default function Header():JSX.Element{
@@ -19,11 +20,11 @@ export default function Header():JSX.Element{
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [isSucceeded, setIsSucceeded ] = useState(false)
 	const handleSubmitForm = (values:Signup)=>{
-		message.loading({content:'Requesting...', key:'signup', duration:2})
-		
+		message.loading({content:'Requesting...', key:'signup', duration:1.5})
 		values.research_fields = values.research_fields.map(e=>researchFields[e].field)
 		console.log('handleSubmitForm', values)
 		signupAPI(values).then((response)=>{
+			message.destroy('signup')
 			if(response.data){
 				console.log(response.data)
 				const user:UserState = {
@@ -37,8 +38,8 @@ export default function Header():JSX.Element{
 					access_token:response.data.access_token
 				}
 				dispatch(setUserInfo(user))
+				Cookies.set('access_token', user.access_token)
 				setIsSucceeded(true)
-				
 			}
 		}).catch((response)=>{
 			message.destroy('signup')

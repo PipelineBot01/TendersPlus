@@ -1,0 +1,106 @@
+.dashboard-header{
+    background: white !important;
+    box-shadow: none;
+    filter: none !important;
+    border-bottom: 2px solid #e9e9e9 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+.dashboard-header .btn-logout:hover{
+    cursor: pointer;
+    animation: movement 0.3s ease-in-out;
+}
+
+.dashboard-header .btn-home{
+ 
+    font-size: 1.5rem;
+    color: #34ab7d;
+    font-weight: 700;
+}
+
+.dashboard-header .btn-home:hover{
+    cursor: pointer;
+}
+
+
+.dashboard-sider:not(.ant-layout-sider-collapsed)  {
+    border-right: 2px solid #e9e9e9 !important;
+    height: 100vh;
+}
+.dashboard-sider .ant-layout-sider-trigger {
+    position: relative;
+    width: 100% !important;
+    color: rgb(179, 179, 179);
+}
+
+
+
+.dashboard-sider .user-info{
+    margin: 1rem 1.5rem 1rem 1.5rem;
+    height: 3rem;
+    display: flex;
+    /* justify-content: ; */
+    width: 13rem;
+    align-items: center;
+}
+.dashboard-sider .user-info .avatar{
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: white;
+    background: #42ad84;
+    border-radius: 50%;
+    animation: showup 300ms ease-in forwards;
+}
+.dashboard-sider .user-info .user-name{
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    animation: showup 800ms ease-in ;
+}
+@keyframes showup {
+    0%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1; 
+    }
+}
+
+.dashboard-sider .sider-menu{
+    font-weight: 600;
+}
+.dashboard-sider .sider-menu .ant-menu-item{
+    width: 101%;
+    padding-left: 2rem !important;
+}
+
+
+.dashboard-sider .sider-menu .ant-menu-item::after{
+   border-right: 2.5px solid #42ad84 !important;
+}
+.dashboard-sider .sider-menu .ant-menu-item-active{
+   /* color: #34b684 !important ; */
+      color: #167953 !important ;
+   background: #42ad8431;
+}
+.dashboard-sider .sider-menu .ant-menu-item-selected{
+   color: #167953 !important ;
+   background: #42ad8431;
+}
+
+
+@keyframes movement {
+    50%{
+ transform: translateX(4px);
+    }
+    100%{
+         transform: translateX(0px);
+    }
+}
+.dashboard-content{}

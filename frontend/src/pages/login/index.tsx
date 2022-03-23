@@ -43,9 +43,9 @@ export default function Header():JSX.Element{
 				dispatch(setUserInfo(user))
 				
 				// redirect to dashboard
-				navigate('/dashboard')
+				navigate('/')
 
-				message.success('Welcome back, ' + user.first_name, 1.5)
+				message.success('Welcome back, ' + user.first_name, 5)
 			}
 		}).catch((error)=>{
 			message.destroy('login')

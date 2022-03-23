@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Routes, Outlet } from "react-router-dom"
-import {Spin} from 'antd'
+import {Layout, Spin} from 'antd'
 
 import Header from './components/header'
 import Footer from './components/footer'
@@ -10,12 +10,13 @@ import Discovery from './components/discovery'
 const Login = React.lazy(()=>import('./pages/login'))
 const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
+const Dashboard = React.lazy(()=>import('./pages/dashboard'))
 
 export default function App() :JSX.Element{
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<BasicLayout/>}>
+				<Route path='/' element={<HomeLayout/>}>
 					<Route index element={
 						<>
 							<Search/>
@@ -38,13 +39,27 @@ export default function App() :JSX.Element{
 						<Signup/>
 					</React.Suspense>
 				}/>
+				<Route path='/dashboard'element={
+					<React.Suspense fallback={<div><Spin></Spin></div>}>
+						<Dashboard/>
+					</React.Suspense>
+					
+				} >
+					<Route  path='research' element={
+						<>
+							<Search/>
+						</>
+					}/>
+				</Route>
+
+	
 			</Routes>
 		
 		</>
 	)
 }
 
-function BasicLayout ():JSX.Element{
+function HomeLayout ():JSX.Element{
 	// we fetch user in header component
 	return <>
 		<Header/>
