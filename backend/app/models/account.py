@@ -33,25 +33,20 @@ class SignupModel(BaseModel):
         return value
 
     @validator('password')
-    def validate_email(cls, value):
+    def validate_password(cls, value):
         if not value:
             raise ValueError('EMPTY PASSWORD')
         return value
 
     @validator('first_name')
-    def validate_email(cls, value):
-        if not value:
-            raise ValueError('EMPTY FIRST NAME')
-        return value
-
-    @validator('first_name')
-    def validate_email(cls, value):
+    def validate_first_name(cls, value):
         if not value:
             raise ValueError('EMPTY FIRST NAME')
         return value
 
     @validator('last_name')
-    def validate_email(cls, value):
+    def validate_last_name(cls, value):
         if not value:
             raise ValueError('EMPTY LAST NAME')
         return value
+
