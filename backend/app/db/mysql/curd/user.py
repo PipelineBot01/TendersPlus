@@ -23,6 +23,6 @@ def sql_add_user(email: str, password: str, first_name: str, last_name: str, uni
                           university=university, create_date=datetime.now(), status=1)
     session.add(user_record)
     for i in research_field:
-        session.add(SQLUserResearchField(email=email, field_name=i, level=1, parent_name='none'))
+        session.add(SQLUserResearchField(email=email, field_name=i, level=1, parent_field_name='none'))
 
     return user_record
