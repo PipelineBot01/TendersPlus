@@ -18,7 +18,9 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
         if user.password == encode_password(data.password):
             access_token = generate_token(
                 {'email': data.email, 'expire_date': (datetime.now() + timedelta(days=7)).timestamp()})
-            return {'code': 200, data: {'access_token': access_token}}
+            return {'code': 200, 'data': {'access_token': access_token,
+                                          'first_name':user.first_name,
+                                          'last_name':user.last_name}}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')
 
