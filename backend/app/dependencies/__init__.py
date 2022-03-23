@@ -13,8 +13,8 @@ def get_db() -> Session:
         db.close()
 
 
-async def check_access_token(X_H5_TOKEN: str = Header(None)) -> str:
-    payload = parse_token(X_H5_TOKEN)
+async def check_access_token(X_TOKEN: str = Header(None)) -> str:
+    payload = parse_token(X_TOKEN)
     if payload and 'email' in payload:
         return payload['email']
     raise HTTPException(403, 'INVALID TOKEN')

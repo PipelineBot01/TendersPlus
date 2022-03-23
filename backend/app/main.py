@@ -5,7 +5,7 @@ from fastapi.exceptions import RequestValidationError, HTTPException
 from errors import validation_exception_handler
 from errors import http_exception_handler
 
-from routers import account_router
+from routers import account_router,user_router
 
 from config import settings
 from scheduler import async_scheduler
@@ -29,7 +29,7 @@ server.add_exception_handler(HTTPException, http_exception_handler)
 
 # setup routers
 server.include_router(account_router, prefix='/account', tags=['Account'])
-
+server.include_router(user_router, prefix='/user', tags=['User'])
 
 # setup startup event
 @server.on_event('startup')
