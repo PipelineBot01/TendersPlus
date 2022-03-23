@@ -14,6 +14,7 @@ def get_db() -> Session:
 
 
 async def check_access_token(X_TOKEN: str = Header(None)) -> str:
+    print(X_TOKEN)
     payload = parse_token(X_TOKEN)
     if payload and 'email' in payload:
         return payload['email']

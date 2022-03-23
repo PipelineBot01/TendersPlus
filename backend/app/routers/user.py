@@ -16,15 +16,19 @@ def get_usr(email: str = Depends(check_access_token), db: Session = Depends(get_
         if user:
             data = user.__dict__
             user_research_field = sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)
+
             tmp_research_field = {}
             for i in user_research_field:
+                print(i)
                 if i.parent_field_name == 'none':
                     tmp_research_field[i.field_name] = []
                 elif i.parent_field_name not in tmp_research_field:
                     tmp_research_field[i.parent_field_name] = [i.field_name]
                 else:
                     tmp_research_field[i.parent_field_name].append(i.field_name)
+            print(tmp_research_field)
             research_fields = []
+
             for k, v in tmp_research_field.items():
                 tmp = {'field': k, 'sub_fields': v}
                 research_fields.append(tmp)

@@ -20,7 +20,7 @@ def init_db():
         create_database(engine.url)
 
     # init tables
-    print(base.metadata.__dict__)
+
     base.metadata.drop_all(bind=engine)
     base.metadata.create_all(bind=engine)
 
