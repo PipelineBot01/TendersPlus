@@ -27,6 +27,7 @@ export default function Header():JSX.Element{
 			if(response.data){
 				const data = response.data
 				const user : UserState = {
+					email:data.email,
 					rememberme:values.rememberme || false,
 					first_name:data.first_name,
 					last_name:data.last_name,
@@ -64,26 +65,6 @@ export default function Header():JSX.Element{
 		}).finally(()=>{
 			setIsSubmitting(false)
 		})
-		// setTimeout(()=>{
-		
-		// 	setIsSubmitting(false)
-		// 	const user:UserState = {
-		// 		first_name:'Guest',
-		// 		last_name:'Anonymous',
-		// 		tags:[],
-		// 		research_fields:[],
-		// 		rememberme:values?.rememberme || false,
-		// 		avatar:'',
-		// 		access_token:'test',
-		// 		university:'Australian National University'
-		// 	}
-	
-		
-
-			
-
-		// }, 1000)
-	
 	}
 	const handleTriggerSubmitForm = ()=>{
 		setIsSubmitting(true)

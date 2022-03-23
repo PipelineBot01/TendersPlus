@@ -6,6 +6,7 @@ export  interface UserState extends UserInfo {
 }
 
 const initialState:UserState = {
+	email:'',
 	first_name:'',
 	last_name:'',
 	research_fields:[],

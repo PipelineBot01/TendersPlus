@@ -1,5 +1,5 @@
 import {request} from './request'
-import type { UserInfo, CustomAPIResponse, Login } from '../utils/types'
+import type { UserInfo, CustomAPIResponse, Login, Signup } from '../utils/types'
 
 // export const getGrantOpportunitiesAPI = ():Promise<CustomAPIResponse>=>{
 // 	return request.get('/api/tenders/open')
@@ -15,4 +15,8 @@ export const setUserInfoAPI = (data:UserInfo):Promise<CustomAPIResponse<string>>
 
 export const loginAPI = (data:Login):Promise<CustomAPIResponse<UserInfo>>=>{
 	return request.post('/api/account/login', data)
+}
+
+export const signupAPI = (data:Signup):Promise<CustomAPIResponse<UserInfo>>=>{
+	return request.post('/api/account/signup', data)
 }
