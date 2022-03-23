@@ -14,3 +14,5 @@ class SQLUser(base):
     university = Column(String(128), nullable=False)
     create_date = Column(DATETIME, nullable=False)
     status = Column(INT, nullable=False)
+    n_research_field = Column(INT, nullable=False, default=0)
+    n_tag = Column(INT, nullable=False, default=0)

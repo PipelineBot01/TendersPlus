@@ -5,7 +5,6 @@ import React, {useEffect, useState, useMemo} from 'react'
 import type {ReactElement} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
 import { Form, Input, Select, Button, Spin, Row, Col } from 'antd'
 import {LoadingOutlined} from '@ant-design/icons'
 

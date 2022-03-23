@@ -73,7 +73,7 @@ export default function Header():JSX.Element{
 
 	return <>
 		<Row justify='center' align='middle' >
-			<Col className='gallery' span={14}>
+			<Col className='login-gallery' span={14}>
                 
 			</Col>
 			<Col className='login-page' span={10}>
