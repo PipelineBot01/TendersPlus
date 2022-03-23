@@ -4,6 +4,7 @@ import nltk
 import numpy as np, pandas as pd
 from keybert._model import KeyBERT
 from utils.match_utils import filter_words, PROJECT_STOP_WORDS
+from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH
 
 RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
 RE_UPPER = '[A-Z]{2,}'
@@ -184,8 +185,8 @@ class KeyExtractor:
         return input_df
 
 if __name__ == '__main__':
-    input_df = pd.read_csv('../assets/tenders_info.csv')
+    input_df = pd.read_csv(TENDERS_INFO_PATH)
     input_df['text'] = input_df['Description'] + '.' + input_df['Title']
     ke = KeyExtractor()
     re_df = ke.get_tags(input_df, '_id', 'text')
-    re_df.to_csv('remove_num_tenders.csv', index=0, encoding='utf-8_sig')
+    re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')

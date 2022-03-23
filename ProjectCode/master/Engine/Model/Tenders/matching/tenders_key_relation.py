@@ -5,8 +5,7 @@ from typing import List, Dict
 import numpy as np
 import pandas as pd
 
-TENDERS_TAG_PATH = '../assets/tenders_tag.csv'
-TENDERS_TAG_MAP_PATH = '../assets/tenders_tag_map.csv'
+TENDERS_TAG_PATH = '../assets/tenders_keyword.csv'
 
 id_reg_rule = r'\'(.*?)\''
 
@@ -29,38 +28,7 @@ class TendersRelation:
 
         # TODO: Add delta data checking method and complete mapping table function later - 2022.3.37 Ray
 
-    def __generate_mapping_file(self, map_path: str):
-        '''
 
-        Parameters
-        ----------
-        map_path: str: path for saving keyword-tenders mapping dataframe.
-
-        This function will generate a keyword-tenders mapping dataframe, in the format of
-        [tag, _ids], with keyword as pk. Corresponding tenders will be saved as a list.
-        One thing to note, since this mapping df will be saved to local, all the elements
-        will be reformatted into type str.
-
-        Returns
-        -------
-        None
-        '''
-
-        print('Generating mapping file.')
-        assert os.path.exists(TENDERS_TAG_PATH), 'Fatal: Missing tenders tag file.'
-        tenders_df = pd.read_csv(TENDERS_TAG_PATH)
-
-        # remain_set = set(cols) & set(tenders_df.columns.tolist())
-        # assert remain_set == cols, f'Lost columns {cols - remain_set} in tenders tag file'
-
-        tag_df = tenders_df[self.__key_cols]
-        tag_df = tag_df.melt(id_vars='_id')
-        map_df = tag_df.groupby('value')['_id'].apply(
-            lambda x: list(set(x))).reset_index().rename(columns={'value': 'tag',
-                                                                  '_id': '_ids'})
-        del tag_df
-        map_df.to_csv(map_path, index=0)
-        print('Generating done.')
 
     def direct_similarity(self, tenders_id: str, tags: List[str]) -> Dict[int, str]:
         '''
@@ -148,7 +116,7 @@ class TendersRelation:
 
 
 if __name__ == '__main__':
-    tenders_tag_df = pd.read_csv('../assets/tenders_key_map.csv')
+    tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
     tr = TendersRelation(tenders_tag_df)
     test_list = []
     for i in range(300):

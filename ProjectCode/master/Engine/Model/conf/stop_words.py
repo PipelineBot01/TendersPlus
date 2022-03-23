@@ -1,5 +1,4 @@
-{
-  "PROJECT_STOP_WORDS": [
+PROJECT_STOP_WORDS = [
     "-",
     "-",
     "/",
@@ -50,4 +49,3 @@
     "’",
     "•"
   ]
-}

@@ -1,10 +1,6 @@
-import json
 from nltk.corpus import stopwords
+from conf.stop_words import PROJECT_STOP_WORDS
 STOP_WORDS = stopwords.words('english')
-
-with open("../../conf/stop_words.json", "r", encoding='utf-8') as f:
-    data = json.loads(f.read())
-    PROJECT_STOP_WORDS = data['PROJECT_STOP_WORDS']
 
 
 def normalize(input_df, target_col, method='proportion'):

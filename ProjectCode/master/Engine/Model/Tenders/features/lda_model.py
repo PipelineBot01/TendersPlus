@@ -4,9 +4,8 @@ import numpy as np
 import pandas as pd
 from gensim.test.utils import datapath
 from utils.match_utils import filter_words
+from conf.file_path import TENDERS_INFO_PATH, MODEL_FILE, TENDERS_TOPIC_PATH
 
-LOCAL_PATH = './assets'
-MODEL_FILE = "LdaModel.model"
 
 NUM_TOPICS = 22  # total topics that are set in lda model
 NUM_SHOW_TERM = 20  # the number of words in the topic that want to be showed
@@ -165,11 +164,12 @@ class LDAModel:
 
 
 if __name__ == '__main__':
-    input_df = pd.read_csv('../assets/tenders_info.csv')
+    input_df = pd.read_csv(TENDERS_INFO_PATH)
     input_df['Text'] = input_df['Title'] + ' / ' + input_df['Description']
     lda = LDAModel(input_df)
     lda.build_lda_model()
-    lda.make_result_to_file(filepath='../assets/matching_result_by_lda.csv')
-    # just print for demo, will save to file when the model is well enough
 
-    lda.save_topics_to_file(num_words=20, filepath='../assets/matching_topics_by_lda.csv')
+    # just print for demo, will save to file when the model is well enough
+    lda.make_result_to_file(filepath='../assets/matching_result_by_lda.csv')
+
+    lda.save_topics_to_file(num_words=20, filepath=TENDERS_TOPIC_PATH)
