@@ -19,8 +19,8 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
             access_token = generate_token(
                 {'email': data.email, 'expire_date': (datetime.now() + timedelta(days=7)).timestamp()})
             return {'code': 200, 'data': {'access_token': access_token,
-                                          'first_name':user.first_name,
-                                          'last_name':user.last_name}}
+                                          'first_name': user.first_name,
+                                          'last_name': user.last_name}}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')
 
@@ -35,11 +35,12 @@ def login(data: SignupModel, db: Session = Depends(get_db)):
         for i in data.research_fields:
             if i not in settings.RESEARCH_FIELDS:
                 raise HTTPException(400, f'INVALID RESEARCH FIELD {i}')
-        user = sql_get_user(email=data.email,session=db)
+        user = sql_get_user(email=data.email, session=db)
         if user:
-            raise HTTPException(403,'EMAIL EXISTED')
+            raise HTTPException(403, 'EMAIL EXISTED')
         user = sql_add_user(email=data.email, password=data.password, first_name=data.first_name,
                             last_name=data.last_name,
+                            n_research_field=len(data.research_fields),
                             university=data.university, research_field=data.research_fields, session=db)
         db.commit()
         access_token = generate_token(
