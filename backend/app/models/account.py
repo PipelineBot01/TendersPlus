@@ -10,11 +10,13 @@ class LoginModel(BaseModel):
     def validate_email(cls, value):
         if not value:
             raise ValueError('EMPTY EMAIL')
+        return value
 
     @validator('password')
-    def validate_email(cls, value):
+    def validate_password(cls, value):
         if not value:
             raise ValueError('EMPTY PASSWORD')
+        return value
 
 
 class SignupModel(BaseModel):
