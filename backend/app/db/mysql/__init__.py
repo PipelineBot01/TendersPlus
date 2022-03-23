@@ -31,4 +31,6 @@ def init_db():
         for i in settings.RESEARCH_FIELDS:
             sql_add_research_field(name=i, parent_name='none', level=1,session=db)
 
+        # special case
+        sql_add_research_field(name='none',parent_name='none',level=0,session=db)
         db.commit()
