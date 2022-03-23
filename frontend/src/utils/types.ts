@@ -7,6 +7,16 @@ export interface Login{
     rememberme?:boolean
 }
 
+export interface Signup{
+    first_name:string
+    last_name:string
+    email:string
+    password:string
+    confirmed_password:string
+    university:string
+    research_fields:Array<string>
+}
+
 export interface ResearchField{
     name:string
     level:ResearchFieldLevel
@@ -15,6 +25,7 @@ export interface ResearchField{
 }
 
 export interface UserInfo{
+    email:string
     first_name:string
     last_name:string
     university:string

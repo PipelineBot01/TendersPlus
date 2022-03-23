@@ -4,20 +4,27 @@ import {LeftOutlined, LoadingOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import './index.css'
 import { useStore } from 'react-redux'
+import type { Signup } from '../../utils/types'
 import {researchFields} from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
+import { signupAPI } from '../../api'
 const { Option, OptGroup } = Select
 
 export default function Header():JSX.Element{
 	const navigate = useNavigate()
 	const [form] = Form.useForm()
 	const [isSubmitting, setIsSubmitting] = useState(false)
-	
-
-	const handleSubmitForm = ()=>{console.log('handleSubmitForm')
-		setTimeout(()=>{
+	const handleSubmitForm = (values:Signup)=>{
+		
+		values.research_fields = values.research_fields.map(e=>researchFields[e].field)
+		console.log('handleSubmitForm', values)
+		signupAPI(values).then((response)=>{
+			if(response.data){
+				console.log(response.data)
+			}
+		}).finally(()=>{
 			setIsSubmitting(false)
-		}, 500)
+		})
 	}
 	const handleTriggerSubmitForm = ()=>{
 		setIsSubmitting(true)
@@ -53,7 +60,7 @@ export default function Header():JSX.Element{
 
 	
 	return <>
-		<Row justify='center' align='top' >
+		<Row justify='center' align='top'  style={{height:'124vh'}}>
 			<Col className='gallery' span={14}>
                  
 			</Col>
@@ -75,7 +82,7 @@ export default function Header():JSX.Element{
 						onFinishFailed={handleSubmitFormFailed}>
 						<Row gutter={12} justify='center' align='middle'>
 							<Col span={10} >
-								<Form.Item  label='First Name' name='firstname'
+								<Form.Item  label='First Name' name='first_name'
 									 rules={[
 										 {required:true, 
 											message:'Please enter your first name',
@@ -94,7 +101,7 @@ export default function Header():JSX.Element{
 								</Form.Item>
 							</Col>
 							<Col span={10}>
-								<Form.Item label='Last Name'  name='lastname' 
+								<Form.Item label='Last Name'  name='last_name' 
 									rules={[
 										 {required:true, 
 											message:'Please enter your last name',
@@ -129,7 +136,7 @@ export default function Header():JSX.Element{
 						</Row>
 						<Row gutter={12} justify='center'>
 							<Col span={20}>
-								<Form.Item label='Password'  name='password' extra='At least 8 length'
+								<Form.Item label='Password'  name='password' extra='At least 6 length'
 									rules={[
 										 {required:true, 
 											message:'Please enter your password',
@@ -137,7 +144,7 @@ export default function Header():JSX.Element{
 										},
 										({ getFieldValue }) => ({
 											validator(_, value) {		
-												if (/^\S{8,}$/g.test(value)) {
+												if (/^\S{6,}$/g.test(value)) {
 													return Promise.resolve()
 												}
 												return Promise.reject(new Error('Invaild password'))
@@ -151,7 +158,7 @@ export default function Header():JSX.Element{
 						</Row>
 						<Row gutter={12} justify='center'>
 							<Col span={20}>
-								<Form.Item label='Confirmed Password'  name='confirmPassword' 
+								<Form.Item label='Confirmed Password'  name='confirmed_password' 
 									rules={[
 										 {required:true, 
 											message:'Please confirm your password',
@@ -180,7 +187,7 @@ export default function Header():JSX.Element{
 										}
 									]}
 								>
-									 <Select mode='multiple' showArrow showSearch>
+									 <Select showArrow showSearch>
 										{renderUniversitiesOptions()}	
 									</Select>
 								</Form.Item>
@@ -189,7 +196,7 @@ export default function Header():JSX.Element{
 
 						<Row gutter={12} justify='center'>
 							<Col span={20}>
-								<Form.Item label='Research Fields'  name='researchFields' extra='At most three fields' validateTrigger='onChange'
+								<Form.Item label='Research Fields'  name='research_fields' extra='At most three fields' validateTrigger='onChange'
 									rules={[
 										 {required:true, 
 											message:'Please select your reasearch fields'
@@ -206,7 +213,7 @@ export default function Header():JSX.Element{
 										})
 									]}
 								>
-									 <Select mode='multiple' showArrow >
+									 <Select mode='multiple' className='research-fields' showArrow >
 										{renderResearchFieldsOptions()}	
 									</Select>
 								</Form.Item>

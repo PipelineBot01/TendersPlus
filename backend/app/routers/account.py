@@ -27,13 +27,15 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
 def login(data: SignupModel, db: Session = Depends(get_db)):
     try:
         if data.password != data.confirmed_password:
-            raise HTTPException(400, 'TWO PASSWORDS ARE NOT THE SAME')
+            raise HTTPException(400, 'PASSWORDS MISMATCHING')
         if data.university not in settings.UNIVERSITIES:
             raise HTTPException(400, 'INVALID UNIVERSITY')
         for i in data.research_fields:
             if i not in settings.RESEARCH_FIELDS:
                 raise HTTPException(400, f'INVALID RESEARCH FIELD {i}')
-
+        user = sql_get_user(email=data.email,session=db)
+        if user:
+            raise HTTPException(403,'EMAIL EXISTED')
         user = sql_add_user(email=data.email, password=data.password, first_name=data.first_name,
                             last_name=data.last_name,
                             university=data.university, research_field=data.research_fields, session=db)
