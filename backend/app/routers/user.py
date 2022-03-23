@@ -3,34 +3,26 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from dependencies import check_access_token, get_db
 from db.mysql.curd.user import sql_get_user
-from db.mysql.curd.user_research_field import sql_get_user_research_field
-from db.mysql.curd.user_tag import sql_get_user_tag
+from db.mysql.curd.user_research_field import sql_get_user_research_field, sql_add_user_research_field
+from db.mysql.curd.user_tag import sql_get_user_tag, sql_add_user_tag
+
+from models.user import ProfileModel
 
 router = APIRouter()
 
 
 @router.get('')
-def get_usr(email: str = Depends(check_access_token), db: Session = Depends(get_db)):
+def get_user(email: str = Depends(check_access_token), db: Session = Depends(get_db)):
     try:
         user = sql_get_user(email, session=db)
         if user:
             data = user.__dict__
             user_research_field = sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)
-
-            tmp_research_field = {}
-            for i in user_research_field:
-                print(i)
-                if i.parent_field_name == 'none':
-                    tmp_research_field[i.field_name] = []
-                elif i.parent_field_name not in tmp_research_field:
-                    tmp_research_field[i.parent_field_name] = [i.field_name]
-                else:
-                    tmp_research_field[i.parent_field_name].append(i.field_name)
-            print(tmp_research_field)
+            print(user_research_field,1231231231)
             research_fields = []
 
-            for k, v in tmp_research_field.items():
-                tmp = {'field': k, 'sub_fields': v}
+            for i in user_research_field:
+                tmp = {'field': i.field_id, 'sub_fields': []}
                 research_fields.append(tmp)
 
             data['research_fields'] = research_fields
@@ -38,6 +30,46 @@ def get_usr(email: str = Depends(check_access_token), db: Session = Depends(get_
             user_tags = sql_get_user_tag(email=user.email, n=user.n_tag, session=db)
             data['tags'] = [i[0] for i in user_tags]
             return {'code': 0, 'data': data}
+        raise HTTPException(404, 'USER NOT FOUND')
+    except Exception as e:
+        print(str(e))
+        raise HTTPException(500, 'INTERNAL SERVER ERROR')
+
+
+@router.post('')
+def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db: Session = Depends(get_db)):
+    try:
+        user = sql_get_user(email, db)
+        if user:
+            # update research fields
+            research_fields = sql_get_user_research_field(email=email, n=user.n_research_field, session=db)
+            user.n_research_field = len(payload.research_fields)
+            for i in research_fields:
+                if i.field_id not in payload.research_fields:
+                    db.delete(i)
+                else:
+                    payload.research_fields.remove(i.field_id)
+            for i in payload.research_fields:
+                sql_add_user_research_field(email=email, field_id=i, session=db)
+
+            # update tags
+            tags = sql_get_user_tag(email=email, n=user.n_tag, session=db)
+            user.n_tag = len(payload.tags)
+            for i in tags:
+                if i.name not in payload.tags:
+                    db.delete(i)
+                else:
+                    payload.tags.remove(i.name)
+            for i in payload.tags:
+                sql_add_user_tag(email=email, name=i, session=db)
+
+            # update basic info
+            user.first_name = payload.first_name
+            user.last_name = payload.last_name
+            user.university = payload.university
+            db.commit()
+            return {'code': 200, 'data': ''}
+
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
         print(str(e))

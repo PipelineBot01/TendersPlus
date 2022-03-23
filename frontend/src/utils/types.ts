@@ -1,5 +1,3 @@
-import {AxiosPromise, AxiosResponse} from 'axios'
-type ResearchFieldLevel = 'division'|'group'|2|1|'DIVISION'|'GROUP'
 
 export interface Login{
     email:string
@@ -16,12 +14,12 @@ export interface Signup{
     university:string
     research_fields:Array<string>
 }
-
-export interface ResearchField{
-    name:string
-    level:ResearchFieldLevel
-    sub_fields:Array<ResearchField>|undefined|null
-
+export interface ProfileForm{
+    first_name:string
+    last_name:string
+    university:string
+    research_fields:Array<string>
+    tag:Array<string>
 }
 
 export interface UserInfo{
@@ -29,7 +27,7 @@ export interface UserInfo{
     first_name:string
     last_name:string
     university:string
-    research_fields:Array<ResearchFieldsItem>
+    research_fields:Array<ResearchFieldsItem>|Array<string>
     tags:Array<string>
     access_token:string
 }

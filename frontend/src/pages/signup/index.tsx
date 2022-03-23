@@ -19,9 +19,12 @@ export default function Header():JSX.Element{
 	const [form] = Form.useForm()
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [isSucceeded, setIsSucceeded ] = useState(false)
+
 	const handleSubmitForm = (values:Signup)=>{
+		console.log(values)
+		
 		message.loading({content:'Requesting...', key:'signup', duration:1.5})
-		values.research_fields = values.research_fields.map(e=>researchFields[e].field)
+		
 		console.log('handleSubmitForm', values)
 		signupAPI(values).then((response)=>{
 			message.destroy('signup')
@@ -49,7 +52,7 @@ export default function Header():JSX.Element{
 		})
 	}
 	const handleTriggerSubmitForm = ()=>{
-		
+	
 		setIsSubmitting(true)
 		form.submit()
 	}
@@ -61,7 +64,7 @@ export default function Header():JSX.Element{
 	const renderResearchFieldsOptions = ()=>{
 		const arr = new Array<ReactElement>()
 		for(const key of Object.keys(researchFields)){
-			arr.push(<Option key={key} value={key}>{researchFields[key].field}</Option>
+			arr.push(<Option key={key} value={key} >{researchFields[key].field}</Option>
 			)
 		}
 		return arr
@@ -218,6 +221,8 @@ export default function Header():JSX.Element{
 									},
 									({ getFieldValue }) => ({
 										validator(_, value) {		
+											console.log(value)
+											
 											if(value.length === 0){
 												return Promise.reject()
 											}else if(value.length > 3){

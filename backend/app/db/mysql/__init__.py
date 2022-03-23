@@ -21,7 +21,7 @@ def init_db():
 
     # init tables
 
-    base.metadata.drop_all(bind=engine)
+    # base.metadata.drop_all(bind=engine)
     base.metadata.create_all(bind=engine)
 
     with session() as db:
@@ -31,9 +31,12 @@ def init_db():
             sql_add_university(name=i, session=db)
 
         # init division
-        for i in settings.RESEARCH_FIELDS:
-            sql_add_research_field(name=i, parent_name='none', level=1,session=db)
+        for k, v in settings.RESEARCH_FIELDS.items():
+            sql_add_research_field(id=k, name=v['field'], parent_name='none', level=1, session=db)
+            for j in range(len(v['sub_fields'])):
+                sql_add_research_field(id=f'{k}_{j}', name=v['sub_fields'][j], parent_name=v['field'], level=2,
+                                       session=db)
 
         # special case
-        sql_add_research_field(name='none',parent_name='none',level=0,session=db)
+        sql_add_research_field(id='d_00', name='none', parent_name='none', level=0, session=db)
         db.commit()
