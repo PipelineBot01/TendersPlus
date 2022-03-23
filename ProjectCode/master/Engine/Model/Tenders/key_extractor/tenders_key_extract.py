@@ -18,6 +18,9 @@ class KeyExtractor:
     def __preprocess(self, text: str) -> str:
         text = re.sub(RE_SYMBOL, ' ', text)
         text = re.sub(RE_UPPER, '', text)
+
+        # Remove pure numbers, e.g., 2014, 20,000
+        text = re.sub(RE_SYMBOL, ' ', text)
         return text.lower()
 
     def __split_words(self, x: pd.DataFrame) -> pd.DataFrame:
@@ -68,13 +71,14 @@ class KeyExtractor:
         text = filter_words(pos_tagged, lemmatizer)
         return ' '.join(text)
 
-    def __agg_tags(self, input_df: pd.DataFrame, target_col: str) -> pd.DataFrame:
+    def __agg_tags(self, input_df: pd.DataFrame, target_col: str, pk: str) -> pd.DataFrame:
         '''
 
         Parameters
         ----------
         input_df: pd.DataFrame, input dataframe
-        target_col: str, KeyBert result column for aggregation,
+        target_col: str, KeyBert result column for aggregation
+        pk: str, name of the primary key for the input_df
 
         This function will count the total weight for each single word from
         tenders, according to the result by KeyBert. Weight from same word
@@ -92,29 +96,27 @@ class KeyExtractor:
         input_df[target_col] = input_df[target_col].astype(str)
 
         # Extract and reformat term-weight set
-        tmp_df = input_df[target_col].str.extractall(RE_WEIGHT_RULE).reset_index().reset_index()
-        split_result = tmp_df[0].str.split(',', expand=True).rename(columns={0: 'key',
-                                                                             1: 'value'}).reset_index()
+        tmp_df = input_df[target_col].str.extractall(RE_WEIGHT_RULE).reset_index().set_index(pk)
 
-        merge_df = tmp_df.merge(split_result, on='index').drop('index', axis=1).rename(columns={'level_0': 'items'})
-        del tmp_df, split_result
+        split_df = tmp_df[0].str.split(',', expand=True).rename(columns={0: 'key',
+                                                                         1: 'value'})
+
+        merge_df = tmp_df.merge(split_df, on=pk).drop(['match', 0], axis=1)
+        del tmp_df, split_df
 
         merge_df['key'] = merge_df['key'].map(self.__split_words)
-        mapping_df = merge_df.explode('key')[['items', 'key', 'value']]
+        mapping_df = merge_df.explode('key').reset_index()
 
         # Compute weight according to each word and ordering
         mapping_df['value'] = mapping_df['value'].astype(float)
-        sum_df = mapping_df.groupby(['items', 'key'])['value'].sum().reset_index().sort_values(
-            ['items', 'value'], ascending=False)
+        sum_df = mapping_df.groupby([pk, 'key'])['value'].sum().reset_index().sort_values('value', ascending=False)
 
         # Sampling top key
         removed_df = sum_df[~sum_df['key'].isin(PROJECT_STOP_WORDS)]
         removed_df = sum_df if sum_df.empty else removed_df
 
-        key_df = removed_df.groupby(['items']).head(1)[['items', 'key']]
-        merge_df = sum_df.merge(key_df, on=['items', 'key'])
-
-        return merge_df
+        key_df = removed_df.groupby(pk).head(1)[[pk, 'key']]
+        return key_df
 
     def extract_label(self, input_df, pk: str, iteration_time: int) -> pd.DataFrame:
         '''
@@ -134,18 +136,19 @@ class KeyExtractor:
         input_df['raw_result'] = input_df.apply(self.__get_tags, axis=1)
 
         # Aggregate keywords
-        merge_df = self.__agg_tags(input_df, 'raw_result')
-        first_df = input_df[['index', 'text']].merge(merge_df, left_on='index', right_on='items', how='left')
+        keyword_df = self.__agg_tags(input_df, 'raw_result', pk)
+
+        first_df = input_df.reset_index()[[pk, 'text']].merge(keyword_df, how='left')
 
         # Generating new text
-        df = input_df.drop('text', axis=1)
+        input_df = input_df.drop('text', axis=1)
         first_df = first_df[first_df['key'].notna()].apply(self.__remove_keywords, axis=1).rename(
-            columns={'key': f'key_{iteration_time}'}).drop('items', axis=1)
-        df = df.merge(first_df, on='index', how='left')
+            columns={'key': f'key_{iteration_time}'})
+        input_df = input_df.merge(first_df, on=pk, how='left')
 
-        return df[[pk, f'key_{iteration_time}', 'text']]
+        return input_df[[pk, f'key_{iteration_time}', 'text']]
 
-    def get_tags(self, input_df: pd.DataFrame, pk: str, text_col: str, iterations=10) -> pd.DataFrame:
+    def get_tags(self, input_df: pd.DataFrame, pk: str, text_col: str, iterations=16) -> pd.DataFrame:
         '''
 
         Parameters
@@ -168,25 +171,21 @@ class KeyExtractor:
         tmp_df = input_df[input_df[text_col].notna()].copy()
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__preprocess(x))
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__convert_word_type(x))
-
-        # Remove pure numbers, e.g., 2014, 20,000
-        tmp_df[text_col] = tmp_df[text_col].map(lambda x: re.sub(r'\s*(\.:,|\d+)\s*', '', x))
-        tmp_df = tmp_df.reset_index(drop=True).reset_index()
-        tmp_df = tmp_df[[pk, text_col, 'index']]
+        tmp_df = tmp_df.set_index(pk)[[text_col]]
 
         for i in range(iterations):
             tmp_df = self.extract_label(tmp_df, pk, i)
-            input_df['text'] = tmp_df['text'].copy()
-            input_df = input_df.merge(tmp_df[['_id', f'key_{i}']], on=pk, how='left')
-            tmp_df = tmp_df[(tmp_df[f'key_{i}'] != '[none_tag]') & (tmp_df['text'].notna())].reindex().reset_index()
+            input_df = input_df.drop('text', axis=1)
+            input_df = input_df.merge(tmp_df[['_id', f'key_{i}', 'text']], on=pk, how='left')
+            tmp_df = tmp_df[(tmp_df[f'key_{i}'] != '[none_tag]'
+                             ) & (tmp_df['text'].notna())].drop(f'key_{i}', axis=1).set_index(pk)
 
         input_df = input_df.replace('[none_tag]', np.nan)
         return input_df
-
 
 if __name__ == '__main__':
     input_df = pd.read_csv('../assets/tenders_info.csv')
     input_df['text'] = input_df['Description'] + '.' + input_df['Title']
     ke = KeyExtractor()
-    re_df = ke.get_tags(input_df[:10], '_id', 'text')
+    re_df = ke.get_tags(input_df, '_id', 'text')
     re_df.to_csv('remove_num_tenders.csv', index=0, encoding='utf-8_sig')
