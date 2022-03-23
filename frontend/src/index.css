@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 html{
   min-width: 1440px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   font-weight: 400;
 }
 html,body{
@@ -9,9 +9,12 @@ html,body{
   margin: 0;
   background: rgb(244, 248, 248);
   box-sizing: border-box;
+  min-height: 100%;
+
 }
 body{
     width: 100%;
+    height: 100vh;
 }
 
 /* ant Patch*/

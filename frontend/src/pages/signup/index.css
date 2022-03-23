@@ -1,7 +1,6 @@
-.gallery{
-    position: relative;
-    height: 100%;
-    min-height: 100%;
+.signup-gallery{
+
+    height: auto;
     background-color: #4DD09E;
 }
 .signup-page{
@@ -9,6 +8,7 @@
     display: flex !important;
     flex-direction: column;
     justify-content: start;
+  
 
 }
 .signup-form{
@@ -66,4 +66,20 @@
 .signup-form span.anticon.anticon-close{
      color: white;
        font-weight: 600;
+}
+
+.signup-page .ant-result-title{
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+}
+.signup-page .ant-result-extra .btn-back{
+    width:30%;
+    background-color: #4E4B4B !important;
+    color:white;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    border: none;
+}
+.signup-page .ant-result-extra .btn-back:hover{
+    cursor: pointer;
 }
