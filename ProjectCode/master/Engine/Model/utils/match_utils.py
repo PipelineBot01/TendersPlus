@@ -1,7 +1,8 @@
+import pandas as pd
 from nltk.corpus import stopwords
 from conf.stop_words import PROJECT_STOP_WORDS
-STOP_WORDS = stopwords.words('english')
 
+STOP_WORDS = stopwords.words('english')
 
 def normalize(input_df, target_col, method='proportion'):
     '''
@@ -55,3 +56,22 @@ def filter_words(pos_tagged, lemmatizer):
         if word not in PROJECT_STOP_WORDS:
             words.append(word)
     return words
+
+def weighted_avg(merge_df: pd.DataFrame, pk, count_col) -> pd.DataFrame:
+    '''
+
+    Parameters
+    ----------
+    merge_df
+    pk
+    count_col
+
+    Returns
+    -------
+
+    '''
+    cnt_df = merge_df.groupby(pk)[count_col].count().reset_index().rename(columns={count_col: 'cnt'})
+    merge_df = merge_df.groupby(pk)['weight'].sum().reset_index()
+    merge_df = merge_df.merge(cnt_df, on=pk)
+    merge_df['weight'] = merge_df['weight'] / merge_df['cnt']
+    return merge_df

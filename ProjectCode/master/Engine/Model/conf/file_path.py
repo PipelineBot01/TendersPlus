@@ -12,5 +12,5 @@ RESEARCHER_TAG_MAP_PATH = '../assets/researcher_tag.csv'
 RESEARCHER_DIVISION_MAP_PATH = '../assets/researcher_division.csv'
 RESEARCHER_TAG_CATE_MAP_PATH = '../assets/tag_category_map.csv'
 
-TENDERS_MATCHING_OUTPUT = '../assets/tenders_match_result.csv'
+TENDERS_MATCHING_OUTPUT = '../output/tenders_match_result.csv'
 RESEARCHER_MATCHING_OUTPUT = '../output/researcher_match_result.csv'
