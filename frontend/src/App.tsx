@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Routes, Outlet } from "react-router-dom"
-import {Layout, Spin} from 'antd'
+import {Spin, Skeleton} from 'antd'
 
 import Header from './components/header'
 import Footer from './components/footer'
@@ -12,21 +12,21 @@ const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
 const Dashboard = React.lazy(()=>import('./pages/dashboard'))
 
+
 export default function App() :JSX.Element{
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<HomeLayout/>}>
+				<Route path='/' element={<>
+					<Header/>
+					<Outlet/>
+					<Footer/>
+				</>}>
 					<Route index element={
 						<>
 							<Search/>
 							<Discovery/>
 						</>
-					}/>
-					<Route path='profile' element={
-						<React.Suspense fallback={<div><Spin></Spin></div>}>
-							<Profile/>
-						</React.Suspense>
 					}/>
 				</Route>
 				<Route path='/login' element={
@@ -45,9 +45,32 @@ export default function App() :JSX.Element{
 					</React.Suspense>
 					
 				} >
-					<Route  path='research' element={
+					<Route  path='search' element={
 						<>
-							<Search/>
+							<Skeleton loading={true} />
+						</>
+					}/>
+					<Route  path='profile' element={
+						<>
+							<React.Suspense fallback={<div><Spin></Spin></div>}>
+								<Profile/>
+							</React.Suspense>
+					
+						</>
+					}/>
+					<Route  path='favorites' element={
+						<>
+							<Skeleton loading={true} />
+						</>
+					}/>
+					<Route  path='analysis' element={
+						<>
+							<Skeleton loading={true} />
+						</>
+					}/>
+					<Route  path='chat' element={
+						<>
+							<Skeleton loading={true}/>
 						</>
 					}/>
 				</Route>
@@ -58,14 +81,4 @@ export default function App() :JSX.Element{
 		</>
 	)
 }
-
-function HomeLayout ():JSX.Element{
-	// we fetch user in header component
-	return <>
-		<Header/>
-		<Outlet/>
-		<Footer/>
-	</>
-}
-
 

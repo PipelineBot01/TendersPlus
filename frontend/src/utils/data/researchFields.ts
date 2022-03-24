@@ -12,7 +12,7 @@ export  const researchFields:ResearchFields = {
 			'Numerical and Computational Mathematics', 
 			'Statistics',
 			'Mathematical Physics',
-			'Other']
+			'Other Mathematical']
 	},
 	d_02:{
 		field:'PHYSICAL',
@@ -22,7 +22,7 @@ export  const researchFields:ResearchFields = {
 			'Condensed Matter Physics',
 			'Optical Physics', 
 			'Quantum Physics', 
-			'Other']
+			'Other Physics']
 	},
 	d_03:{
 		field:'CHEMICAL',

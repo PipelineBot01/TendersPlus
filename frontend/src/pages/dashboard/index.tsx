@@ -34,8 +34,10 @@ export default function Dashboard():JSX.Element{
 				Cookies.remove('access_token')
 				navigate('/')
 			})
+		}else if (!tokenFromCookie){
+			navigate('/')
 		}
-	}, [tokenFromStore])
+	}, [])
 
 
 	const [isCollapsed, setIscollapsed] = useState(false)
@@ -51,8 +53,14 @@ export default function Dashboard():JSX.Element{
 		navigate('/')
 	}
 	return <>
-		<Layout style={{minHeight:'100vh', position:'relative'}} >
+		<Layout hasSider style={{minHeight:'100vh', position:'relative'}} >
 			<Sider theme='light' 
+			 style={{
+					position:'fixed',
+					left: 0,
+					top: 0,
+					bottom: 0,
+				}}
 				width='16rem'
 				collapsible
 				collapsed={isCollapsed}
@@ -65,34 +73,33 @@ export default function Dashboard():JSX.Element{
 				</div>
 
 				<Menu  className='sider-menu' theme='light' mode='inline'>
-					<Menu.Item key="search" icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}>
+					<Menu.Item onClick={()=>navigate('/dashboard/search')} key="search" icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}>
 						Search
 					</Menu.Item>
-					<Menu.Item key="favorites" icon={<FontAwesomeIcon icon={faStar} />}>
+					<Menu.Item onClick={()=>navigate('/dashboard/favorites')} key="favorites" icon={<FontAwesomeIcon icon={faStar} />}>
 						Favorites
 					</Menu.Item>
-					<Menu.Item key="user" icon={<FontAwesomeIcon icon={faUserTag} />}>
+					<Menu.Item key="user" onClick={()=>navigate('/dashboard/profile')} icon={<FontAwesomeIcon icon={faUserTag} />}>
 						Profile
 					</Menu.Item>
 					<Divider type='horizontal' style={{margin:'1rem 0'}}/>
-					<Menu.Item key="analyze" icon={<FontAwesomeIcon icon={faCircleNodes} />}>
+					<Menu.Item key="analysis" onClick={()=>navigate('/dashboard/analysis')} icon={<FontAwesomeIcon icon={faCircleNodes} />}>
 						AI analysis
 					</Menu.Item>
-					<Menu.Item key="chat" icon={<FontAwesomeIcon icon={faComment} />}>
+					<Menu.Item key="chat" onClick={()=>navigate('/dashboard/chat')} icon={<FontAwesomeIcon icon={faComment} />}>
 						Chatty
 					</Menu.Item>
-					
 				</Menu>
 			</Sider>
-			<Layout>
-				<Header className='dashboard-header' >
+			<Layout style={{marginLeft:'16rem'}}>
+				<Header className='dashboard-header'>
 					<div></div>
 					<div className='btn-home' onClick={()=>{navigate('/')}}>
 						Tenders+
 					</div>
 					<div className='btn-logout' onClick={handleLogout}><span style={{marginRight:'0.4rem', fontWeight:600}}></span><FontAwesomeIcon icon={faArrowRightFromBracket} /></div>
 				</Header>
-				<Content className='dashboard-content'><Outlet></Outlet></Content>
+				<Content style={{overflowY:'auto'}} className='dashboard-content'><Outlet></Outlet></Content>
 			</Layout>
 		</Layout>
 	</>
