@@ -47,7 +47,7 @@ export default function App() :JSX.Element{
 				} >
 					<Route  path='search' element={
 						<>
-							<Skeleton loading={true} />
+							<Skeleton style={{margin:'2rem'}} loading={true} />
 						</>
 					}/>
 					<Route  path='profile' element={
@@ -60,17 +60,17 @@ export default function App() :JSX.Element{
 					}/>
 					<Route  path='favorites' element={
 						<>
-							<Skeleton loading={true} />
+							<Skeleton style={{margin:'2rem'}} loading={true} />
 						</>
 					}/>
 					<Route  path='analysis' element={
 						<>
-							<Skeleton loading={true} />
+							<Skeleton  style={{margin:'2rem'}} loading={true} />
 						</>
 					}/>
-					<Route  path='chat' element={
+					<Route  path='chatty' element={
 						<>
-							<Skeleton loading={true}/>
+							<Skeleton  style={{margin:'2rem'}} loading={true}/>
 						</>
 					}/>
 				</Route>

@@ -86,7 +86,7 @@ export default function Dashboard():JSX.Element{
 					<Menu.Item key="analysis" onClick={()=>navigate('/dashboard/analysis')} icon={<FontAwesomeIcon icon={faCircleNodes} />}>
 						AI analysis
 					</Menu.Item>
-					<Menu.Item key="chat" onClick={()=>navigate('/dashboard/chat')} icon={<FontAwesomeIcon icon={faComment} />}>
+					<Menu.Item key="chat" onClick={()=>navigate('/dashboard/chatty')} icon={<FontAwesomeIcon icon={faComment} />}>
 						Chatty
 					</Menu.Item>
 				</Menu>

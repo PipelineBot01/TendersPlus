@@ -36,7 +36,7 @@ const userSlice = createSlice({
 		setResearchFields(state, action:PayloadAction<Array<ResearchFieldsItem>>){
 			state.research_fields = action.payload
 		},
-		setUserInfo(state, action:PayloadAction<UserState>){
+		setUserInfo(state, action:PayloadAction<UserState|any>){
 			Object.assign(state, action.payload)
 		},
 		setRememberme(state, action:PayloadAction<boolean>){
