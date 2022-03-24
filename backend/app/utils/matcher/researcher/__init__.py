@@ -6,10 +6,10 @@ import pandas as pd
 from ..config.division import RESEARCH_FIELDS
 from ..utils.match import normalize, weighted_avg
 
-MAP_DF = pd.read_pickle('./utils/matcher/researcher/assets/tag_category_map_pickle')
-INFO_DF = pd.read_pickle('./utils/matcher/researcher/assets/researcher_info_pickle')
-RESEARCHER_DIVISION_DF = pd.read_pickle('./utils/matcher/researcher/assets/researcher_division_pickle')
-RESEARCHER_TAG_DF = pd.read_pickle('./utils/matcher/researcher/assets/researcher_tag_pickle')
+MAP_DF = pd.read_pickle('utils/matcher/researcher/assets/tag_category_map_pickle.pkl')
+INFO_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_info_pickle.pkl')
+RESEARCHER_DIVISION_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_division_pickle.pkl')
+RESEARCHER_TAG_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_tag_pickle.pkl')
 
 
 class ResearcherMatcher():

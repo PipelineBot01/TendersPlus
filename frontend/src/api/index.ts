@@ -1,6 +1,6 @@
 import {request} from './request'
-import type { UserInfo, CustomAPIResponse, Login, Signup, ProfileForm } from '../utils/types'
-import Cookies from 'js-cookie'
+import type { UserInfo, CustomAPIResponse, Login, Signup, ProfileForm, MatchResearcher } from '../utils/types'
+
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
 	return request.get('/user')
@@ -17,3 +17,7 @@ export const loginAPI = (data:Login):Promise<CustomAPIResponse<UserInfo>>=>{
 export const signupAPI = (data:Signup):Promise<CustomAPIResponse<UserInfo>>=>{
 	return request.post('/account/signup', data)
 }
+
+export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIResponse<any>> =>{
+	return request.post('/matcher/researchers', data)
+} 

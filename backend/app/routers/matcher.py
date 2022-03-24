@@ -6,7 +6,7 @@ from utils.matcher.researcher import researcher_matcher
 router = APIRouter()
 
 
-@router.get('/researchers')
+@router.post('/researchers')
 def match_researchers(data: ResearcherMatcherModel):
     try:
         output = None

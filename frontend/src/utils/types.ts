@@ -47,3 +47,7 @@ export interface CustomAPIResponse<T>{
 }
 
 
+export interface MatchResearcher{
+    research_fields:Array<string>
+    tags:Array<string>
+}
