@@ -28,7 +28,7 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
             data['research_fields'] = research_fields
 
             user_tags = sql_get_user_tag(email=user.email, n=user.n_tag, session=db)
-            data['tags'] = [i[0] for i in user_tags]
+            data['tags'] = [i.name for i in user_tags]
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
