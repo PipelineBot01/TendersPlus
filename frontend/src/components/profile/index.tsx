@@ -1,15 +1,16 @@
 /**
  * User profile settings
  */
-import React, {useEffect, useState, useMemo} from 'react'
+import React, {useEffect, useState} from 'react'
 import type {ReactElement} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Form, Input, Select, Button, Spin, Row, Col, message } from 'antd'
 import {LoadingOutlined} from '@ant-design/icons'
 
+import { setUserInfo, UserState } from '../../store/features/user'
 import { setUserInfoAPI } from '../../api'
-import { useAppSelector } from '../../store'
+import { useAppDispatch, useAppSelector } from '../../store'
 import { researchFields } from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
 import type { ProfileForm, ResearchFieldsItem } from '../../utils/types'
@@ -19,12 +20,18 @@ import './index.css'
 const { Option, OptGroup } = Select
 export default function Profile():JSX.Element{
 	const userInfo = useAppSelector((state)=>state.user)
+	const dispatch = useAppDispatch()
 	const [form] = Form.useForm()
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	
 
 	useEffect(()=>{
-		const research_fields_data = (userInfo.research_fields as Array<ResearchFieldsItem>)?.map(e=>e.field) || []
+		const research_fields_data = userInfo.research_fields.map(e=>{ 
+			if(typeof e === 'object'){
+				return e.field
+			}else{
+				return e
+			}})
 		form.setFieldsValue({
 			'first_name':userInfo.first_name, 
 			'last_name':userInfo.last_name,
@@ -55,6 +62,8 @@ export default function Profile():JSX.Element{
 		console.log('handleSubmitForm', values)
 		setUserInfoAPI(values).then((response)=>{
 			message.success('Updated!', 3)
+		
+			dispatch(setUserInfo(values))
 		}).catch((error)=>{
 			message.error(error.msg, 3)
 		}).finally(()=>{
@@ -64,6 +73,7 @@ export default function Profile():JSX.Element{
 	}
 	const handleSubmitFormFailed = ()=>{
 		console.log('handleSubmitFormFailed')
+		setIsSubmitting(false)
 	}
 	const renderResearchFieldsOptions = ()=>{
 		const arr = new Array<ReactElement>()

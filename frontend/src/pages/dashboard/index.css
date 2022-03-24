@@ -43,11 +43,14 @@
     display: flex;
     /* justify-content: ; */
     width: 13rem;
+    overflow: hidden;
     align-items: center;
 }
 .dashboard-sider .user-info .avatar{
-    width: 2.4rem;
-    height: 2.4rem;
+
+    min-width: 2.4rem !important;
+    height: 2.4rem !important;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,6 +61,7 @@
     animation: showup 300ms ease-in forwards;
 }
 .dashboard-sider .user-info .user-name{
+
     font-weight: 600;
     font-size: 1.2rem;
     margin-left: 1rem;
