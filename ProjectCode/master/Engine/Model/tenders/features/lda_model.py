@@ -2,12 +2,11 @@ import gensim
 import nltk
 import pandas as pd, numpy as np
 from gensim.test.utils import datapath
-from utils.match_utils import filter_words
+from utils.features_utils import filter_words
 from conf.file_path import TENDERS_INFO_PATH, MODEL_FILE, TENDERS_TOPIC_PATH
+from conf.features import NUM_TOPICS, NUM_SHOW_TERM
 
 
-NUM_TOPICS = 22  # total topics that are set in lda model
-NUM_SHOW_TERM = 20  # the number of words in the topic that want to be showed
 
 
 class LDAModel:
@@ -162,13 +161,12 @@ class LDAModel:
             df.to_csv(filepath)
 
 
-if __name__ == '__main__':
-    input_df = pd.read_csv(TENDERS_INFO_PATH)
-    input_df['Text'] = input_df['Title'] + ' / ' + input_df['Description']
-    lda = LDAModel(input_df)
-    lda.build_lda_model()
+# if __name__ == '__main__':
+    # input_df = pd.read_csv(TENDERS_INFO_PATH)
+    # input_df['Text'] = input_df['Title'] + ' / ' + input_df['Description']
+    # lda = LDAModel(input_df)
+    # lda.build_lda_model()
 
     # just print for demo, will save to file when the model is well enough
-    lda.make_result_to_file(filepath='../assets/matching_result_by_lda.csv')
-
-    lda.save_topics_to_file(num_words=20, filepath=TENDERS_TOPIC_PATH)
+    # lda.make_result_to_file(filepath='../assets/matching_result_by_lda.csv')
+    # lda.save_topics_to_file(num_words=20, filepath=TENDERS_TOPIC_PATH)

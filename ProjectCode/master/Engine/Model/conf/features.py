@@ -1,3 +1,5 @@
+NUM_TOPICS = 22  # total topics that are set in lda model
+NUM_SHOW_TERM = 20  # the number of words in the topic that want to be showed
 PROJECT_STOP_WORDS = [
     "-",
     "-",

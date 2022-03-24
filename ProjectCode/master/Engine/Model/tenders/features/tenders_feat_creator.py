@@ -76,7 +76,7 @@ class TendersFeatCreator:
         tenders_topic_df.to_csv(TENDERS_TOPIC_MAP_PATH, index=0)
 
 
-if __name__ == '__main__':
-    ttg = TendersFeatCreator()
+# if __name__ == '__main__':
+    # ttg = TendersFeatCreator()
     # ttg.create_tag_mapping('_id')
-    ttg.create_topic_mapping('_id')
+    # ttg.create_topic_mapping('_id')

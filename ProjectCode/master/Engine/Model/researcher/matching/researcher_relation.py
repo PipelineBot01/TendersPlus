@@ -1,4 +1,4 @@
-from typing import List, Dict, Optional
+from typing import List
 
 import numpy as np
 import pandas as pd
@@ -255,29 +255,29 @@ class ResearcherMatcher(Relation):
         return sim_df
 
 # if __name__ == '__main__':
-
-# matching by divisions/tags
-# rm = ResearcherMatcher()
-# division_list = ['d_11', 'd_13']
-# tag_list = ['health behavior', 'health services', 'Health Promotion']
-# temp_df = rm.match_by_profile(division_list)
-# print(temp_df)
-
-# matching by id
-# researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
-# id_list = researcher_division_df['Staff ID'].unique().tolist()
-# rm = ResearcherMatcher()
-# save = []
-# for i in range(21, 40):
-#     sample_id = id_list[i]
-#     print(sample_id)
-#     temp_df = rm.match(sample_id)
-#     temp_df['origin_staff'] = sample_id
-#     save.append(temp_df)
 #
-# stuff_info_df = pd.read_csv(RESEARCHER_INFO_PATH)[['Staff ID', 'Colleges', 'Profile']]
-# merge_df = pd.concat(save).merge(stuff_info_df, on='Staff ID').merge(stuff_info_df,
-#                                                                      right_on='Staff ID',
-#                                                                      left_on='origin_staff',
-#                                                                      suffixes=('_match', '_orig'))
-# merge_df.to_csv(RESEARCHER_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')
+#     # matching by divisions/tags
+#     rm = ResearcherMatcher()
+#     division_list = ['d_11', 'd_13']
+#     tag_list = ['health behavior', 'health services', 'Health Promotion']
+#     temp_df = rm.match_by_profile(division_list)
+#     print(temp_df)
+
+    # matching by id
+    # researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
+    # id_list = researcher_division_df['Staff ID'].unique().tolist()
+    # rm = ResearcherMatcher()
+    # save = []
+    # for i in range(21, 40):
+    #     sample_id = id_list[i]
+    #     print(sample_id)
+    #     temp_df = rm.match(sample_id)
+    #     temp_df['origin_staff'] = sample_id
+    #     save.append(temp_df)
+    #
+    # stuff_info_df = pd.read_csv(RESEARCHER_INFO_PATH)[['Staff ID', 'Colleges', 'Profile']]
+    # merge_df = pd.concat(save).merge(stuff_info_df, on='Staff ID').merge(stuff_info_df,
+    #                                                                      right_on='Staff ID',
+    #                                                                      left_on='origin_staff',
+    #                                                                      suffixes=('_match', '_orig'))
+    # merge_df.to_csv(RESEARCHER_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')

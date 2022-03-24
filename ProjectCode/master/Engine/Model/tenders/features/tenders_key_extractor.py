@@ -7,7 +7,7 @@ import pandas as pd
 from keybert._model import KeyBERT
 
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH
-from utils.match_utils import filter_words, PROJECT_STOP_WORDS
+from utils.features_utils import filter_words, PROJECT_STOP_WORDS
 
 RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
 RE_UPPER = '[A-Z]{2,}'
@@ -189,9 +189,9 @@ class KeyExtractor:
         return input_df
 
 
-if __name__ == '__main__':
-    input_df = pd.read_csv(TENDERS_INFO_PATH)
-    input_df['text'] = input_df['Description'] + '.' + input_df['Title']
-    ke = KeyExtractor()
-    re_df = ke.get_tags(input_df, '_id', 'text')
-    re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')
+# if __name__ == '__main__':
+    # input_df = pd.read_csv(TENDERS_INFO_PATH)
+    # input_df['text'] = input_df['Description'] + '.' + input_df['Title']
+    # ke = KeyExtractor()
+    # re_df = ke.get_tags(input_df, '_id', 'text')
+    # re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')
