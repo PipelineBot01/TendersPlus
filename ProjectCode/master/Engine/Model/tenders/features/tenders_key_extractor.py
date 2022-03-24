@@ -1,16 +1,20 @@
 import re
 from typing import List, Tuple
+
 import nltk
-import numpy as np, pandas as pd
+import numpy as np
+import pandas as pd
 from keybert._model import KeyBERT
-from utils.match_utils import filter_words, PROJECT_STOP_WORDS
+
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH
+from utils.match_utils import filter_words, PROJECT_STOP_WORDS
 
 RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
 RE_UPPER = '[A-Z]{2,}'
 RE_WEIGHT_RULE = r'\((.*?)\)'
 
 KW_MODEL = KeyBERT()
+
 
 class KeyExtractor:
     def __init__(self):
@@ -183,6 +187,7 @@ class KeyExtractor:
 
         input_df = input_df.replace('[none_tag]', np.nan)
         return input_df
+
 
 if __name__ == '__main__':
     input_df = pd.read_csv(TENDERS_INFO_PATH)

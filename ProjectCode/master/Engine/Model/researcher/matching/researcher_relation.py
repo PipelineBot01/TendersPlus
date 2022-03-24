@@ -1,23 +1,27 @@
-from typing import List
-import pandas as pd, numpy as np
+from typing import List, Dict, Optional
+
+import numpy as np
+import pandas as pd
+
+from conf.division import RESEARCH_FIELDS
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
-    RESEARCHER_TAG_CATE_MAP_PATH, RESEARCHER_MATCHING_OUTPUT, RESEARCHER_INFO_PATH
+    RESEARCHER_TAG_CATE_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
 from utils.match_utils import normalize, weighted_avg
 
-MAP_DF = pd.read_csv(RESEARCHER_TAG_CATE_MAP_PATH)
+MAP_DF = pd.read_pickle(RESEARCHER_TAG_CATE_MAP_PATH)
+INFO_DF = pd.read_pickle(RESEARCHER_INFO_PATH)
 
 
 class ResearcherMatcher(Relation):
-    def __init__(self, re_div_df: pd.DataFrame, re_tag_df: pd.DataFrame, pk='Staff ID'):
-
-        assert not re_div_df.empty, 'Cannot generate matcher due to empty file!'
-        assert not (re_div_df.duplicated(pk).empty and re_tag_df.duplicated(pk).empty), \
-            f'{pk} cannot be set as primary key!'
-
-        self.re_div_df = re_div_df
-        self.re_tag_df = re_tag_df
+    def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH, re_tag_path=RESEARCHER_TAG_MAP_PATH, pk='Staff ID'):
+        self.re_div_df = pd.read_pickle(re_div_path)
+        self.re_tag_df = pd.read_pickle(re_tag_path)
         self.pk = pk
+
+        assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
+        assert not (self.re_div_df.duplicated(pk).empty and self.re_tag_df.duplicated(pk).empty), \
+            f'{pk} cannot be set as primary key!'
 
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
@@ -41,8 +45,8 @@ class ResearcherMatcher(Relation):
         pd.DataFrame, the matching result dataframe ordered by weight.
         '''
 
-        tar_df = tar_df[tar_df['value'] != 'DIVISION 24 OTHERS(IRRELEVANT)']
-        ref_df = ref_df[ref_df['value'] != 'DIVISION 24 OTHERS(IRRELEVANT)']
+        tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)']
+        ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)']
 
         norm_tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         norm_ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
@@ -76,8 +80,8 @@ class ResearcherMatcher(Relation):
         pd.DataFrame, the matching result dataframe ordered by weight.
         '''
 
-        tar_df = tar_df[tar_df['value'] != 'DIVISION 24 OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
-        ref_df = ref_df[ref_df['value'] != 'DIVISION 24 OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
+        tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
+        ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
 
         tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
@@ -95,7 +99,7 @@ class ResearcherMatcher(Relation):
         Parameters
         ----------
         div_list: List[pd.DataFrame], list of division dataframe
-        tar_list: List[pd.DataFrame], list of tar dataframe
+        tag_list: List[pd.DataFrame], list of tag dataframe
 
         Returns
         -------
@@ -112,7 +116,7 @@ class ResearcherMatcher(Relation):
             tmp_df1['weight'] = tmp_df1['weight_x'] - 2 * tmp_df1['weight_y']
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
-    def prepare_dataset(self, researcher_id: str, tags=None) -> tuple[list, list]:
+    def prepare_dataset(self, researcher_id: str) -> tuple[list, list]:
 
         '''
 
@@ -143,52 +147,138 @@ class ResearcherMatcher(Relation):
             tar_tag_df = merged_tag_df[merged_tag_df[self.pk] == researcher_id]
             ref_tag_df = merged_tag_df[merged_tag_df[self.pk] != researcher_id]
 
-        if tags:
-            tmp_df = pd.DataFrame({self.pk: [researcher_id], 'Tag': [tags]}).explode('Tag')
-            tar_tag_df = tmp_df.merge(MAP_DF, on='Tag')
-            ref_tag_df = merged_tag_df[merged_tag_df[self.pk] != researcher_id]
-
         return [tar_div_df, ref_div_df], [tar_tag_df, ref_tag_df]
 
-    def match(self, researcher_id: str, match_num=10, tags=None, measure_func=__combined_measure) -> pd.DataFrame:
+    # TODO: temp code
+    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> tuple[list, list]:
+        '''
+
+        Parameters
+        ----------
+        divs: List[str], list of divisions selected by user
+        tags: List[str], list of tags selected by user
+
+        Returns
+        -------
+        tuple[list, list],
+        '''
+
+        division_dict = {}
+        for idx, div in enumerate(divs):
+            division_dict[RESEARCH_FIELDS[div]['field']] = len(divs) - idx
+        tar_div_df = pd.DataFrame({'Staff ID': 'current_tmp',
+                                   'value': list(division_dict.keys()),
+                                   'weight': list(division_dict.values())})
+
+        tar_tag_df, ref_tag_df = pd.DataFrame(), pd.DataFrame()
+        if tags and len(tags) != 0:
+            tag_dict = {}
+            for idx, tag in enumerate(tags):
+                tag_dict[tag] = len(tags) - idx
+            tar_tag_df = pd.DataFrame({'Name': 'current_tmp',
+                                       'Staff ID': 'current_id',
+                                       'Tag': list(tag_dict.keys()),
+                                       'weight': list(tag_dict.values())})
+            ref_tag_df = self.re_tag_df
+            tar_tag_df = tar_tag_df.merge(MAP_DF, on='Tag')
+            ref_tag_df = ref_tag_df.merge(MAP_DF, on='Tag')
+        return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
+
+    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str]) -> pd.DataFrame:
+        '''
+
+        Parameters
+        ----------
+        sim_df: pd.DataFrame, similar researcher dataframe
+        tar_col: List[str], target info columns to extract
+
+        This function will appending the similar researchers' info with his/her divisions and tags.
+
+        Returns
+        -------
+        pd.DataFrame, similar researchers' info dataframe
+        '''
+
+        assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
+
+        info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
+        agg_tag_df = self.re_tag_df.groupby(self.pk)['Tag'].apply(lambda x: list(set(x))).reset_index()
+
+        # filter other divisions out
+        tmp_re_div = self.re_div_df[~self.re_div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
+        agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(lambda x: list(set(x))).reset_index()
+        del tmp_re_div
+
+        return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
+
+    def match_by_profile(self, divs: List[str], tags: List[str] = None,
+                         match_num=10, measure_func=__combined_measure) -> List[Dict[str:Optional[str, List[str]]]]:
+        '''
+
+        Parameters
+        ----------
+        divs: List[str], list of divisions selected by user, cannot be empty
+        tags: List[str], list of tags selected by user, default as None
+        match_num: int, defined how many matched researcher will be returned.
+        measure_func: func, the measurement function for calculating similarity
+
+        Returns
+        -------
+        List[Dict[str:Optional[str, List[str]]]], info of similar researchers
+        '''
+
+        assert len(divs) != 0, 'At least the division should not be empty.'
+        div_list, tag_list = self.prepare_dataset_by_profile(divs, tags)
+        candidate_df = measure_func(self, div_list, tag_list)
+
+        sim_df = candidate_df[:min(len(candidate_df), match_num)]
+        sim_df = self.__reformat_output(sim_df, ['Name', 'Email', 'Colleges'])
+
+        return sim_df.to_dict(orient='records')
+
+    def match_by_id(self, researcher_id: str, match_num=10, measure_func=__combined_measure) -> pd.DataFrame:
         '''
 
         Parameters
         ----------
         researcher_id: str, input researcher id for matching.
-        match_num: int, how many matched researcher will be returned.
-        tags: List[str], list of tags if the researcher has, default as None
-        measure_func: relation measuring function
+        match_num: int, defined how many matched researcher will be returned.
+        measure_func: func, the measurement function for calculating similarity
 
         Returns
         -------
-
+        pd.DataFrame, dataframe of similar researchers
         '''
 
-        div_list, tag_list = self.prepare_dataset(researcher_id, tags)
+        div_list, tag_list = self.prepare_dataset(researcher_id)
         candidate_df = measure_func(self, div_list, tag_list)
         sim_df = candidate_df[:match_num]
         return sim_df
 
+# if __name__ == '__main__':
 
-if __name__ == '__main__':
+# matching by divisions/tags
+# rm = ResearcherMatcher()
+# division_list = ['d_11', 'd_13']
+# tag_list = ['health behavior', 'health services', 'Health Promotion']
+# temp_df = rm.match_by_profile(division_list)
+# print(temp_df)
 
-    researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
-    researcher_tag_df = pd.read_csv(RESEARCHER_TAG_MAP_PATH)
-
-    id_list = researcher_division_df['Staff ID'].unique().tolist()
-    rm = ResearcherMatcher(researcher_division_df, researcher_tag_df)
-    save = []
-    for i in range(21, 40):
-        sample_id = id_list[i]
-        print(sample_id)
-        temp_df = rm.match(sample_id)
-        temp_df['origin_staff'] = sample_id
-        save.append(temp_df)
-
-    stuff_info_df = pd.read_csv(RESEARCHER_INFO_PATH)[['Staff ID', 'Colleges', 'Profile']]
-    merge_df = pd.concat(save).merge(stuff_info_df, on='Staff ID').merge(stuff_info_df,
-                                                                         right_on='Staff ID',
-                                                                         left_on='origin_staff',
-                                                                         suffixes=('_match', '_orig'))
-    merge_df.to_csv(RESEARCHER_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')
+# matching by id
+# researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
+# id_list = researcher_division_df['Staff ID'].unique().tolist()
+# rm = ResearcherMatcher()
+# save = []
+# for i in range(21, 40):
+#     sample_id = id_list[i]
+#     print(sample_id)
+#     temp_df = rm.match(sample_id)
+#     temp_df['origin_staff'] = sample_id
+#     save.append(temp_df)
+#
+# stuff_info_df = pd.read_csv(RESEARCHER_INFO_PATH)[['Staff ID', 'Colleges', 'Profile']]
+# merge_df = pd.concat(save).merge(stuff_info_df, on='Staff ID').merge(stuff_info_df,
+#                                                                      right_on='Staff ID',
+#                                                                      left_on='origin_staff',
+#                                                                      suffixes=('_match', '_orig'))
+# merge_df.to_csv(RESEARCHER_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')

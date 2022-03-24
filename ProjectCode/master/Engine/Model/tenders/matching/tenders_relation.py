@@ -1,11 +1,13 @@
 import os
 from typing import List, Dict
+
 import numpy as np
 import pandas as pd
-from tenders.features.tenders_feat_creator import TendersFeatCreator
+
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
     TENDERS_TOPIC_PATH, TENDERS_TAG_MAP_PATH, TENDERS_TOPIC_MAP_PATH, TENDERS_MATCHING_OUTPUT
 from relation_interface.Relation import Relation
+from tenders.features.tenders_feat_creator import TendersFeatCreator
 from utils.match_utils import normalize, weighted_avg
 
 
