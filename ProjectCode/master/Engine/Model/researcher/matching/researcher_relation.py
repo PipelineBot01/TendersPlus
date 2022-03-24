@@ -183,13 +183,14 @@ class ResearcherMatcher(Relation):
             ref_tag_df = ref_tag_df.merge(MAP_DF, on='Tag')
         return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
 
-    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str]) -> pd.DataFrame:
+    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], num=10) -> pd.DataFrame:
         '''
 
         Parameters
         ----------
         sim_df: pd.DataFrame, similar researcher dataframe
         tar_col: List[str], target info columns to extract
+        num: int, number of returned tags
 
         This function will appending the similar researchers' info with his/her divisions and tags.
 
@@ -202,8 +203,10 @@ class ResearcherMatcher(Relation):
 
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
         info_df = info_df.fillna('')
-        agg_tag_df = self.re_tag_df.groupby(self.pk)['Tag'].apply(lambda x: list(set(x))).reset_index()
-
+        self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
+        agg_tag_df = self.re_tag_df.groupby(self.pk).head(num).groupby(self.pk)['Tag'].apply(
+            lambda x: list(set(x))).reset_index()
+        print(agg_tag_df)
         # filter other divisions out
         tmp_re_div = self.re_div_df[~self.re_div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
         agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(lambda x: list(set(x))).reset_index()
@@ -254,13 +257,13 @@ class ResearcherMatcher(Relation):
         sim_df = candidate_df[:match_num]
         return sim_df
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # matching by divisions/tags
     rm = ResearcherMatcher()
     division_list = ['d_11', 'd_13']
     tag_list = ['health behavior', 'health services', 'Health Promotion']
-    temp_df = rm.match_by_profile(division_list,tag_list)
+    temp_df = rm.match_by_profile(division_list, tag_list)
     print(temp_df)
 
     # matching by id
