@@ -211,8 +211,7 @@ class ResearcherMatcher(Relation):
 
         return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
 
-    def match_by_profile(self, divs: List[str], tags: List[str] = None,
-                         match_num=10, measure_func=__combined_measure) -> List[Dict[str:Optional[str, List[str]]]]:
+    def match_by_profile(self, divs: List[str], tags: List[str] = None, match_num=10, measure_func=__combined_measure) :
         '''
 
         Parameters
