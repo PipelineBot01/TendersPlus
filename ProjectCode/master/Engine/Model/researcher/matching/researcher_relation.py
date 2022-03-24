@@ -32,8 +32,7 @@ class ResearcherMatcher(Relation):
         ref_df: pd.DataFrame, rest division dataframe
 
         This function will use the sum of abs weight differences divided by the num of matched
-        divisions to calculate the similarity between
-        researchers.
+        divisions to calculate the similarity between researchers.
         For instance, researcher A with division {a: 0.7, b: 0.3},
                       researcher B with division {a: 0.5, b: 0.2, c: 0.3},
                       researcher C with division {b: 0.9, d: 0.1},
@@ -202,6 +201,7 @@ class ResearcherMatcher(Relation):
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
 
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
+        info_df = info_df.fillna('')
         agg_tag_df = self.re_tag_df.groupby(self.pk)['Tag'].apply(lambda x: list(set(x))).reset_index()
 
         # filter other divisions out
@@ -254,14 +254,14 @@ class ResearcherMatcher(Relation):
         sim_df = candidate_df[:match_num]
         return sim_df
 
-# if __name__ == '__main__':
-#
-#     # matching by divisions/tags
-#     rm = ResearcherMatcher()
-#     division_list = ['d_11', 'd_13']
-#     tag_list = ['health behavior', 'health services', 'Health Promotion']
-#     temp_df = rm.match_by_profile(division_list)
-#     print(temp_df)
+if __name__ == '__main__':
+
+    # matching by divisions/tags
+    rm = ResearcherMatcher()
+    division_list = ['d_11', 'd_13']
+    tag_list = ['health behavior', 'health services', 'Health Promotion']
+    temp_df = rm.match_by_profile(division_list,tag_list)
+    print(temp_df)
 
     # matching by id
     # researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
