@@ -11,6 +11,7 @@ cd /home/TendersPlus/fronend
 yarn
 
 echo "install dependency package"
+
 yarn build
 
 # launch app
