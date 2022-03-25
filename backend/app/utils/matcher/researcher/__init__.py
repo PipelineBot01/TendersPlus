@@ -6,10 +6,10 @@ import pandas as pd
 from ..config.division import RESEARCH_FIELDS
 from ..utils.match import normalize, weighted_avg
 
-MAP_DF = pd.read_pickle('utils/matcher/researcher/assets/tag_category_map_pickle.pkl')
-INFO_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_info_pickle.pkl')
-RESEARCHER_DIVISION_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_division_pickle.pkl')
-RESEARCHER_TAG_DF = pd.read_pickle('utils/matcher/researcher/assets/researcher_tag_pickle.pkl')
+MAP_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_division.csv')
+INFO_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_info.csv')
+RESEARCHER_DIVISION_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_division.csv')
+RESEARCHER_TAG_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_tag.csv')
 
 
 class ResearcherMatcher():
@@ -24,21 +24,17 @@ class ResearcherMatcher():
 
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
-
         Parameters
         ----------
         tar_df: pd.DataFrame, researcher division dataframe for matching
         ref_df: pd.DataFrame, rest division dataframe
-
         This function will use the sum of abs weight differences divided by the num of matched
-        divisions to calculate the similarity between
-        researchers.
+        divisions to calculate the similarity between researchers.
         For instance, researcher A with division {a: 0.7, b: 0.3},
                       researcher B with division {a: 0.5, b: 0.2, c: 0.3},
                       researcher C with division {b: 0.9, d: 0.1},
         the matching result for A will be {B: (0.2+0.1)/2, C: 0.6/1}.
         One thing to note, the OTHERS(IRRELEVANT) division will be dropped.
-
         Returns
         -------
         pd.DataFrame, the matching result dataframe ordered by weight.
@@ -61,19 +57,16 @@ class ResearcherMatcher():
 
     def __weighted_tag_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
-
         Parameters
         ----------
         tar_df: pd.DataFrame, researcher tag dataframe for matching
         ref_df: pd.DataFrame, rest tag dataframe
-
         This function will use the weighted sum of tags to calculate the similarity between researchers.
         For instance, researcher A with tag {a: 0.7, b: 0.3},
                       researcher B with tag {a: 0.5, b: 0.2, c: 0.3},
                       researcher C with tag {b: 0.9, d: 0.1},
         the matching result for A will be {B: 0.35+0.06, C: 0.27}.
         One thing to note, the OTHERS(IRRELEVANT) division will be dropped.
-
         Returns
         -------
         pd.DataFrame, the matching result dataframe ordered by weight.
@@ -94,15 +87,12 @@ class ResearcherMatcher():
 
     def __combined_measure(self, div_list: List[pd.DataFrame], tag_list: List[pd.DataFrame]) -> pd.DataFrame:
         '''
-
         Parameters
         ----------
         div_list: List[pd.DataFrame], list of division dataframe
         tag_list: List[pd.DataFrame], list of tag dataframe
-
         Returns
         -------
-
         '''
 
         tmp_df1 = self.__weighted_div_sim(*div_list)
@@ -118,16 +108,13 @@ class ResearcherMatcher():
     def prepare_dataset(self, researcher_id: str) -> tuple[list, list]:
 
         '''
-
         Parameters
         ----------
         researcher_id: str, input researcher id for matching
         tags: List[str], list of tags if the researcher has, default as None
-
         This function will generate the dataset for later matching work. If input tag variable is
         not None, the new tag record will replace the old one for the input researcher(or create a new
         record if input researcher not exist). Otherwise the original dataset will be returned.
-
         Returns
         -------
         tuple[list, list],
@@ -148,15 +135,14 @@ class ResearcherMatcher():
 
         return [tar_div_df, ref_div_df], [tar_tag_df, ref_tag_df]
 
-    # TODO: temp code
+        # TODO: temp code
+
     def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> tuple[list, list]:
         '''
-
         Parameters
         ----------
         divs: List[str], list of divisions selected by user
         tags: List[str], list of tags selected by user
-
         Returns
         -------
         tuple[list, list],
@@ -183,16 +169,14 @@ class ResearcherMatcher():
             ref_tag_df = ref_tag_df.merge(MAP_DF, on='Tag')
         return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
 
-    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str]) -> pd.DataFrame:
+    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], div_num=3, tag_num=10) -> pd.DataFrame:
         '''
-
         Parameters
         ----------
         sim_df: pd.DataFrame, similar researcher dataframe
         tar_col: List[str], target info columns to extract
-
+        num: int, number of returned tags
         This function will appending the similar researchers' info with his/her divisions and tags.
-
         Returns
         -------
         pd.DataFrame, similar researchers' info dataframe
@@ -202,25 +186,29 @@ class ResearcherMatcher():
 
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
         info_df = info_df.fillna('')
-        agg_tag_df = self.re_tag_df.groupby(self.pk)['Tag'].apply(lambda x: list(set(x))).reset_index()
+
+        self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
+        agg_tag_df = self.re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['Tag'].apply(
+            lambda x: list(set(x))).reset_index()
 
         # filter other divisions out
-        tmp_re_div = self.re_div_df[~self.re_div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
-        agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(lambda x: list(set(x))).reset_index()
+        tmp_re_div = self.re_div_df[
+            ~self.re_div_df['value'].isin(['OTHERS(RELEVANT)',
+                                           'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
+        agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
+            lambda x: list(set(x))).reset_index()
         del tmp_re_div
 
         return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
 
     def match_by_profile(self, divs: List[str], tags: List[str] = None, match_num=10, measure_func=__combined_measure):
         '''
-
         Parameters
         ----------
         divs: List[str], list of divisions selected by user, cannot be empty
         tags: List[str], list of tags selected by user, default as None
         match_num: int, defined how many matched researcher will be returned.
         measure_func: func, the measurement function for calculating similarity
-
         Returns
         -------
         List, info of similar researchers
@@ -237,13 +225,11 @@ class ResearcherMatcher():
 
     def match_by_id(self, researcher_id: str, match_num=10, measure_func=__combined_measure) -> pd.DataFrame:
         '''
-
         Parameters
         ----------
         researcher_id: str, input researcher id for matching.
         match_num: int, defined how many matched researcher will be returned.
         measure_func: func, the measurement function for calculating similarity
-
         Returns
         -------
         pd.DataFrame, dataframe of similar researchers
