@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { Layout, Divider, Menu  } from 'antd'
 
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
@@ -59,6 +59,9 @@ export default function Dashboard():JSX.Element{
 	const [isCollapsed, setIscollapsed] = useState(false)
 	const handleCollapse = ()=>{
 		setIscollapsed(!isCollapsed)
+	
+		
+		
 	}
 	
 	
@@ -79,6 +82,7 @@ export default function Dashboard():JSX.Element{
 					top: 0,
 					bottom: 0,
 				}}
+				collapsedWidth='5.5rem'
 				width='16rem'
 				collapsible
 				collapsed={isCollapsed}
@@ -109,7 +113,7 @@ export default function Dashboard():JSX.Element{
 					</Menu.Item>
 				</Menu>
 			</Sider>
-			<Layout style={{marginLeft:'16rem'}}>
+			<Layout  className={`dashboard-container ${isCollapsed}`} >
 				<Header className='dashboard-header'>
 					<div></div>
 					<div className='btn-home' onClick={()=>{navigate('/')}}>
