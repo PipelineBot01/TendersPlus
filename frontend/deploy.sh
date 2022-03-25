@@ -5,7 +5,7 @@ git pull
 
 echo "git pulling"
 
-cd /home/TendersPlus/fronend
+cd /home/TendersPlus/frontend
 
 # install the dependency package
 yarn
