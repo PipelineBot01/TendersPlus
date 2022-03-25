@@ -106,13 +106,14 @@ class ResearcherMatcher(Relation):
         '''
 
         tmp_df1 = self.__weighted_div_sim(*div_list)
+        print(tmp_df1.sort_values('weight'))
         if not tag_list[0].empty:
             tmp_df2 = self.__weighted_tag_sim(*tag_list)
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.pk, how='outer')
             tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
             tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
             del tmp_df2
-            tmp_df1['weight'] = tmp_df1['weight_x'] - 2 * tmp_df1['weight_y']
+            tmp_df1['weight'] = tmp_df1['weight_x'] - 1.5 * tmp_df1['weight_y']
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
     def prepare_dataset(self, researcher_id: str) -> tuple[list, list]:
@@ -271,7 +272,8 @@ if __name__ == '__main__':
     division_list = ['d_06', 'd_05', 'd_04']
     # tag_list = ['health behavior', 'health services', 'Health Promotion']
     temp_df = rm.match_by_profile(division_list)
-    print(temp_df)
+    for i in temp_df:
+        print(i)
 
     # matching by id
     # researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
