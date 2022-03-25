@@ -23,6 +23,31 @@ class ResearcherMatcher(Relation):
         assert not (self.re_div_df.duplicated(pk).empty and self.re_tag_df.duplicated(pk).empty), \
             f'{pk} cannot be set as primary key!'
 
+    def __add_penalty_term(self, div_df: pd.DataFrame) -> pd.DataFrame:
+        '''
+
+        Parameters
+        ----------
+        div_df: pd.DataFrame, input division dataframe
+
+        This func will add penalty term to each researcher.
+        For instance, a researcher with division and weight [div_a: 0.4, div_b: 0.3, div_c: 0.3]
+        will be appended with penalty terms [div_a_pt: 1-tanh(0), div_b: 1-tanh(1/10), div_c: 1-tanh(1/10)]
+        Returns
+        -------
+        pd.DataFrame, dataframe with cols of Staff ID, value, penalty
+        '''
+        div_df['penalty'] = 0
+        div_df = div_df.sort_values('weight', ascending=False)
+        div_df['weight_next'] = div_df.groupby(self.pk)['weight'].shift(1)
+
+        cond = div_df['weight_next'].notna()
+        div_df.loc[cond & (div_df['weight_next'] > div_df['weight']), 'penalty'] = 1
+        div_df['penalty'] = div_df.groupby(self.pk)['penalty'].cumsum()
+        div_df = div_df[['Staff ID', 'value', 'penalty']]
+        div_df['penalty'] = 1 - np.tanh(div_df['penalty'] / 10)
+        return div_df
+
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
 
@@ -47,11 +72,18 @@ class ResearcherMatcher(Relation):
         tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)']
         ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)']
 
+        penalty_df = self.__add_penalty_term(ref_df.copy())
+        ref_df = ref_df.merge(penalty_df)
+        del penalty_df
+        ref_df['weight'] = ref_df['weight'] * ref_df['penalty']
+
         norm_tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         norm_ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
-
+        del tar_df, ref_df
 
         merge_df = norm_ref_df.merge(norm_tar_df[['value', 'weight']], on='value')
+        del norm_ref_df, norm_tar_df
+
         merge_df['weight'] = abs(merge_df['weight_x'] - merge_df['weight_y'])
         merge_df = weighted_avg(merge_df, self.pk, 'value')
 
@@ -106,7 +138,6 @@ class ResearcherMatcher(Relation):
         '''
 
         tmp_df1 = self.__weighted_div_sim(*div_list)
-        print(tmp_df1.sort_values('weight'))
         if not tag_list[0].empty:
             tmp_df2 = self.__weighted_tag_sim(*tag_list)
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.pk, how='outer')
@@ -220,7 +251,6 @@ class ResearcherMatcher(Relation):
         return info_df.merge(agg_tag_df, on=self.pk
                              ).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1
                                                                   ).sort_values('weight').drop('weight', axis=1)
-
 
     def match_by_profile(self, divs: List[str], tags: List[str] = None, match_num=10, measure_func=__combined_measure):
         '''

@@ -13,6 +13,3 @@ def get_research_strength(div_path: str = DIVISION_PATH, pk='Staff ID'):
     div_df = div_df[~div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
     div_df = normalize(div_df, 'Total_weight', method='rank')
     return div_df
-
-
-print(get_research_strength())
