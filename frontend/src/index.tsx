@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter  } from "react-router-dom"
 import { Provider } from 'react-redux'
 import App from './App'
 
@@ -16,7 +16,7 @@ window.addEventListener('pageshow', setRem)
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<BrowserRouter>
+			<BrowserRouter basename='tendersplus'>
 				<App />
 			</BrowserRouter>
 		</Provider>
