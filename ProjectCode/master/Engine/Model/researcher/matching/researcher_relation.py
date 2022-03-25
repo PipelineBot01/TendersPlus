@@ -183,7 +183,7 @@ class ResearcherMatcher(Relation):
             ref_tag_df = ref_tag_df.merge(MAP_DF, on='Tag')
         return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
 
-    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], num=10) -> pd.DataFrame:
+    def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], div_num=3, tag_num=10) -> pd.DataFrame:
         '''
 
         Parameters
@@ -203,13 +203,17 @@ class ResearcherMatcher(Relation):
 
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
         info_df = info_df.fillna('')
+
         self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
-        agg_tag_df = self.re_tag_df.groupby(self.pk).head(num).groupby(self.pk)['Tag'].apply(
+        agg_tag_df = self.re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['Tag'].apply(
             lambda x: list(set(x))).reset_index()
-        print(agg_tag_df)
+
         # filter other divisions out
-        tmp_re_div = self.re_div_df[~self.re_div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
-        agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(lambda x: list(set(x))).reset_index()
+        tmp_re_div = self.re_div_df[
+            ~self.re_div_df['value'].isin(['OTHERS(RELEVANT)',
+                                           'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
+        agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
+            lambda x: list(set(x))).reset_index()
         del tmp_re_div
 
         return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
