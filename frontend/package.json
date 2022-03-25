@@ -97,6 +97,5 @@
     "less": "^4.1.1",
     "less-loader": "7.1.0",
     "react-app-rewired": "2.1.8"
-  },
-  "homepage": "/tendersplus/"
+  }
 }
