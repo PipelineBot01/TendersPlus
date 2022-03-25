@@ -9,7 +9,7 @@ engine = create_engine(
 )
 
 # 2. build session
-session = sessionmaker(bind=engine, expire_on_commit=False, autoflush=True, autocommit=False)
+session = sessionmaker(bind=engine, expire_on_commit=False, autoflush=False, autocommit=False)
 
 # 3. create orm entry
 base = declarative_base()

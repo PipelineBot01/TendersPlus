@@ -201,6 +201,7 @@ class ResearcherMatcher():
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
 
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
+        info_df = info_df.fillna('')
         agg_tag_df = self.re_tag_df.groupby(self.pk)['Tag'].apply(lambda x: list(set(x))).reset_index()
 
         # filter other divisions out

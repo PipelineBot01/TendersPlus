@@ -1,7 +1,7 @@
 from fastapi import Header, HTTPException
 from sqlalchemy.orm import Session
 
-from db.mysql.engine import session
+from db.mysql import session
 from utils.auth import parse_token
 
 

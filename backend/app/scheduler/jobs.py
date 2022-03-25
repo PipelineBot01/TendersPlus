@@ -1,7 +1,5 @@
 from apscheduler.triggers.base import BaseTrigger
 from apscheduler.triggers.interval import IntervalTrigger
-from db import crud
-from config import settings
 
 jobs = []
 
