@@ -1,5 +1,5 @@
-from typing import List
-import os
+from typing import List,Tuple
+
 import numpy as np
 import pandas as pd
 
@@ -105,7 +105,7 @@ class ResearcherMatcher():
             tmp_df1['weight'] = tmp_df1['weight_x'] - 2 * tmp_df1['weight_y']
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
-    def prepare_dataset(self, researcher_id: str) -> tuple[list, list]:
+    def prepare_dataset(self, researcher_id: str) -> Tuple[list, list]:
 
         '''
         Parameters
@@ -137,7 +137,7 @@ class ResearcherMatcher():
 
         # TODO: temp code
 
-    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> tuple[list, list]:
+    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> Tuple[list, list]:
         '''
         Parameters
         ----------
