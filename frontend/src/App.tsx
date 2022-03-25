@@ -66,7 +66,8 @@ export default function App() :JSX.Element{
 					}/>
 					<Route  path='analysis' element={
 						<>
-							<Skeleton  style={{margin:'2rem'}} loading={true} />
+							<Spin style={{width:'100%'}} size="large"></Spin>
+							{/* <Skeleton  style={{margin:'2rem'}} loading={true} /> */}
 						</>
 					}/>
 					<Route  path='chatty' element={

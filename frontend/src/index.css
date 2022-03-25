@@ -27,3 +27,6 @@ button[ant-click-animating-without-extra-node]:after {
   height: 100%;
    color: rgb(50, 55, 61) !important;
 }
+.ant-spin-dot-item{
+  background-color: #42ad84 !important;
+}

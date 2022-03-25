@@ -139,3 +139,9 @@
          transform: translateX(0px);
     }
 }
+
+.dashboard-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
