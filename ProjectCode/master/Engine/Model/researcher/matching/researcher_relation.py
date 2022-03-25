@@ -200,8 +200,8 @@ class ResearcherMatcher(Relation):
         '''
 
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
-        print(sim_df)
-        info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
+
+        info_df = INFO_DF.merge(sim_df, on=self.pk)[[self.pk, 'weight'] + tar_col]
         info_df = info_df.fillna('')
 
         self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
@@ -212,13 +212,14 @@ class ResearcherMatcher(Relation):
         tmp_re_div = self.re_div_df[
             ~self.re_div_df['value'].isin(['OTHERS(RELEVANT)',
                                            'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
-        # agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
-        #     lambda x: list(set(x))).reset_index()
-        # del tmp_re_div
-        agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(
+        agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
             lambda x: list(set(x))).reset_index()
+        del tmp_re_div
 
-        return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
+        return info_df.merge(agg_tag_df, on=self.pk
+                             ).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1
+                                                                  ).sort_values('weight').drop('weight', axis=1)
+
 
     def match_by_profile(self, divs: List[str], tags: List[str] = None, match_num=10, measure_func=__combined_measure):
         '''
