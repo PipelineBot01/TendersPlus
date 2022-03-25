@@ -1,6 +1,7 @@
 from pydantic import BaseModel
+from typing import List
 
 
 class ResearcherMatcherModel(BaseModel):
-    research_fields:list[str]
-    tags:list[str]
+    research_fields:List[str]
+    tags:List[str]
