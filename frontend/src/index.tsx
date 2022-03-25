@@ -16,7 +16,7 @@ window.addEventListener('pageshow', setRem)
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<BrowserRouter basename='tendersplus' >
+			<BrowserRouter  >
 				<App />
 			</BrowserRouter>
 		</Provider>
