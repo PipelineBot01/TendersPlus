@@ -9,14 +9,14 @@ from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH
 from relation_interface.Relation import Relation
 from utils.match_utils import normalize, weighted_avg
 
-MAP_DF = pd.read_pickle(RESEARCHER_TAG_CATE_MAP_PATH)
-INFO_DF = pd.read_pickle(RESEARCHER_INFO_PATH)
+MAP_DF = pd.read_csv(RESEARCHER_TAG_CATE_MAP_PATH)
+INFO_DF = pd.read_csv(RESEARCHER_INFO_PATH)
 
 
 class ResearcherMatcher(Relation):
     def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH, re_tag_path=RESEARCHER_TAG_MAP_PATH, pk='Staff ID'):
-        self.re_div_df = pd.read_pickle(re_div_path)
-        self.re_tag_df = pd.read_pickle(re_tag_path)
+        self.re_div_df = pd.read_csv(re_div_path)
+        self.re_tag_df = pd.read_csv(re_tag_path)
         self.pk = pk
 
         assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
@@ -50,9 +50,9 @@ class ResearcherMatcher(Relation):
         norm_tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         norm_ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
 
+
         merge_df = norm_ref_df.merge(norm_tar_df[['value', 'weight']], on='value')
         merge_df['weight'] = abs(merge_df['weight_x'] - merge_df['weight_y'])
-
         merge_df = weighted_avg(merge_df, self.pk, 'value')
 
         if merge_df.empty:
@@ -200,7 +200,7 @@ class ResearcherMatcher(Relation):
         '''
 
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
-
+        print(sim_df)
         info_df = INFO_DF[INFO_DF[self.pk].isin(sim_df[self.pk])][[self.pk] + tar_col]
         info_df = info_df.fillna('')
 
@@ -212,9 +212,11 @@ class ResearcherMatcher(Relation):
         tmp_re_div = self.re_div_df[
             ~self.re_div_df['value'].isin(['OTHERS(RELEVANT)',
                                            'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
-        agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
+        # agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
+        #     lambda x: list(set(x))).reset_index()
+        # del tmp_re_div
+        agg_div_df = tmp_re_div.groupby(self.pk)['value'].apply(
             lambda x: list(set(x))).reset_index()
-        del tmp_re_div
 
         return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).drop(self.pk, axis=1)
 
@@ -265,9 +267,9 @@ class ResearcherMatcher(Relation):
 if __name__ == '__main__':
     # matching by divisions/tags
     rm = ResearcherMatcher()
-    division_list = ['d_11', 'd_13']
-    tag_list = ['health behavior', 'health services', 'Health Promotion']
-    temp_df = rm.match_by_profile(division_list, tag_list)
+    division_list = ['d_06', 'd_05', 'd_04']
+    # tag_list = ['health behavior', 'health services', 'Health Promotion']
+    temp_df = rm.match_by_profile(division_list)
     print(temp_df)
 
     # matching by id
