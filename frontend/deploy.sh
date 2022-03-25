@@ -10,6 +10,6 @@ cd /home/TendersPlus/fronend
 # install the dependency package
 yarn
 
-echo "install requirements"
+echo "install dependency package"
 
-yarn start
+serve -s build -l 20221
