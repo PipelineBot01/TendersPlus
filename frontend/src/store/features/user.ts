@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import Cookies from "js-cookie"
 import type {UserInfo, ResearchFieldsItem} from '../../utils/types'
 export  interface UserState extends UserInfo {
     rememberme:boolean
@@ -6,13 +7,13 @@ export  interface UserState extends UserInfo {
 }
 
 const initialState:UserState = {
-	email:'',
-	first_name:'',
-	last_name:'',
-	research_fields:[],
-	tags:[],
-	university:'',
-	rememberme:false,
+	email:localStorage.getItem('email') || '',
+	first_name:localStorage.getItem('first_name') || '',
+	last_name:localStorage.getItem('last_name') || '',
+	research_fields:localStorage.getItem('research_fields')?.split('/').slice(1) || [],
+	tags:localStorage.getItem('tags')?.split('/').slice(1) || [],
+	university:localStorage.getItem('university') || '',
+	rememberme: localStorage.getItem('rememberme') === 'true',
 	access_token:''
 }
 
@@ -37,6 +38,13 @@ const userSlice = createSlice({
 			state.research_fields = action.payload
 		},
 		setUserInfo(state, action:PayloadAction<UserState|any>){
+			localStorage.setItem('first_name', action.payload.first_name)
+			localStorage.setItem('last_name', action.payload.last_name)
+			localStorage.setItem('email', action.payload.email)
+			localStorage.setItem('university', action.payload.university)
+			localStorage.setItem('rememberme', action.payload.rememberme)
+			localStorage.setItem('tags', action.payload?.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
+			localStorage.setItem('research_fields', action.payload?.research_fields.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
 			Object.assign(state, action.payload)
 		},
 		setRememberme(state, action:PayloadAction<boolean>){

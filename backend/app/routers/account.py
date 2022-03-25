@@ -22,7 +22,7 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
                 {'email': data.email, 'expire_date': (datetime.now() + timedelta(days=7)).timestamp()})
 
             tags = [i.name for i in sql_get_user_tag(email=user.email, n=user.n_tag, session=db)]
-            research_fields = [{'field':i.field_id,'sub_field':[]} for i in
+            research_fields = [{'field': i.field_id, 'sub_field': []} for i in
                                sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)]
             return {'code': 200, 'data': {'access_token': access_token,
                                           'first_name': user.first_name,
@@ -65,3 +65,5 @@ def signup(data: SignupModel, db: Session = Depends(get_db)):
         print(e)
         db.rollback()
         raise HTTPException(500, str(e))
+
+

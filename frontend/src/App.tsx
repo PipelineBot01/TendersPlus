@@ -11,6 +11,7 @@ const Login = React.lazy(()=>import('./pages/login'))
 const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
 const Dashboard = React.lazy(()=>import('./pages/dashboard'))
+const Chatty = React.lazy(()=>import('./components/chatty'))
 
 
 export default function App() :JSX.Element{
@@ -70,7 +71,10 @@ export default function App() :JSX.Element{
 					}/>
 					<Route  path='chatty' element={
 						<>
-							<Skeleton  style={{margin:'2rem'}} loading={true}/>
+							<React.Suspense fallback={<div><Spin></Spin></div>}>
+								<Chatty/>
+							</React.Suspense>
+							
 						</>
 					}/>
 				</Route>

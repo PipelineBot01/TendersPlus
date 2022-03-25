@@ -18,7 +18,6 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
         if user:
             data = user.__dict__
             user_research_field = sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)
-            print(user_research_field,1231231231)
             research_fields = []
 
             for i in user_research_field:
@@ -44,6 +43,7 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
             # update research fields
             research_fields = sql_get_user_research_field(email=email, n=user.n_research_field, session=db)
             user.n_research_field = len(payload.research_fields)
+
             for i in research_fields:
                 if i.field_id not in payload.research_fields:
                     db.delete(i)
