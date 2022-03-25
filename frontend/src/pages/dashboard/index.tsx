@@ -61,7 +61,8 @@ export default function Dashboard():JSX.Element{
 		setIscollapsed(!isCollapsed)
 	}
 	
-
+	
+	
 	const handleLogout  = ()=>{
 		console.log('logout!')
 		Cookies.remove('access_token')
@@ -89,7 +90,7 @@ export default function Dashboard():JSX.Element{
 					{ isCollapsed ? null : <span className='user-name' >{userInfo.first_name + ' ' + userInfo.last_name}</span>}
 				</div>
 
-				<Menu  className='sider-menu' theme='light' mode='inline' defaultSelectedKeys={[location.pathname.split('/').pop() || '']}>
+				<Menu  className='sider-menu' theme='light' mode='inline' defaultSelectedKeys={[location.hash.split('/').pop() || '']}>
 					<Menu.Item onClick={()=>navigate('/dashboard/search')} key="search" icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}>
 						Search
 					</Menu.Item>
