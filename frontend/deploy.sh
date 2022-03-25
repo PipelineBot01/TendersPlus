@@ -5,11 +5,13 @@ git pull
 
 echo "git pulling"
 
-cd /home/TendersPlus/fronend
+cd /home/TendersPlus/frontend
 
 # install the dependency package
 yarn
 
-echo "install dependency package"
+yarn build
 
-serve -s build -l 20221
+serve -s buld -l 20221 -C
+
+
