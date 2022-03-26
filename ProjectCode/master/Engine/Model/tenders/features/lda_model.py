@@ -2,7 +2,7 @@ import gensim
 import nltk
 import pandas as pd, numpy as np
 from gensim.test.utils import datapath
-from utils.features_utils import filter_words
+from utils.feature_utils import filter_words
 from conf.file_path import TENDERS_INFO_PATH, MODEL_FILE, TENDERS_TOPIC_PATH
 from conf.features import NUM_TOPICS, NUM_SHOW_TERM
 

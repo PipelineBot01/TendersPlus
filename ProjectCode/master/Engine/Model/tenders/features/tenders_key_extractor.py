@@ -7,7 +7,7 @@ import pandas as pd
 from keybert._model import KeyBERT
 
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH
-from utils.features_utils import filter_words, PROJECT_STOP_WORDS
+from utils.feature_utils import filter_words, PROJECT_STOP_WORDS
 
 RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
 RE_UPPER = '[A-Z]{2,}'

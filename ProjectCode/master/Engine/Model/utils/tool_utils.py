@@ -26,4 +26,4 @@ def get_research_strength(div_path: str = DIVISION_PATH, pk='Staff ID') -> pd.Da
         columns={pk: 'count', 'weight': 'Total_weight'})
     div_df = div_df[~div_df['value'].isin(['OTHERS(RELEVANT)', 'OTHERS(IRRELEVANT)'])]
     div_df = normalize(div_df, 'Total_weight', method='rank')
-    return div_df
+    return div_df.to_dict(orient='records')

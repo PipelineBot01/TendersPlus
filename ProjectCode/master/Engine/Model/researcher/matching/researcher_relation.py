@@ -7,7 +7,7 @@ from conf.division import RESEARCH_FIELDS
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_CATE_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
-from utils.match_utils import normalize, weighted_avg
+from utils.match_utils import *
 
 MAP_DF = pd.read_csv(RESEARCHER_TAG_CATE_MAP_PATH)
 INFO_DF = pd.read_csv(RESEARCHER_INFO_PATH)
@@ -22,31 +22,6 @@ class ResearcherMatcher(Relation):
         assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
         assert not (self.re_div_df.duplicated(pk).empty and self.re_tag_df.duplicated(pk).empty), \
             f'{pk} cannot be set as primary key!'
-
-    def __add_penalty_term(self, div_df: pd.DataFrame) -> pd.DataFrame:
-        '''
-
-        Parameters
-        ----------
-        div_df: pd.DataFrame, input division dataframe
-
-        This func will add penalty term to each researcher.
-        For instance, a researcher with division and weight [div_a: 0.4, div_b: 0.3, div_c: 0.3]
-        will be appended with penalty terms [div_a_pt: 1-tanh(0), div_b: 1-tanh(1/10), div_c: 1-tanh(1/10)]
-        Returns
-        -------
-        pd.DataFrame, dataframe with cols of Staff ID, value, penalty
-        '''
-        div_df['penalty'] = 0
-        div_df = div_df.sort_values('weight', ascending=False)
-        div_df['weight_next'] = div_df.groupby(self.pk)['weight'].shift(1)
-
-        cond = div_df['weight_next'].notna()
-        div_df.loc[cond & (div_df['weight_next'] > div_df['weight']), 'penalty'] = 1
-        div_df['penalty'] = div_df.groupby(self.pk)['penalty'].cumsum()
-        div_df = div_df[['Staff ID', 'value', 'penalty']]
-        div_df['penalty'] = 1 - np.tanh(div_df['penalty'] / 10)
-        return div_df
 
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
@@ -72,7 +47,7 @@ class ResearcherMatcher(Relation):
         tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)']
         ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)']
 
-        penalty_df = self.__add_penalty_term(ref_df.copy())
+        penalty_df = add_penalty_term(ref_df.copy(), self.pk)
         ref_df = ref_df.merge(penalty_df)
         del penalty_df
         ref_df['weight'] = ref_df['weight'] * ref_df['penalty']
@@ -299,9 +274,9 @@ class ResearcherMatcher(Relation):
 if __name__ == '__main__':
     # matching by divisions/tags
     rm = ResearcherMatcher()
-    division_list = ['d_06', 'd_05', 'd_04']
-    # tag_list = ['health behavior', 'health services', 'Health Promotion']
-    temp_df = rm.match_by_profile(division_list)
+    division_list = ["d_10", "d_08"]
+    tag_list = ['machine learning']
+    temp_df = rm.match_by_profile(division_list, tag_list)
     for i in temp_df:
         print(i)
 
