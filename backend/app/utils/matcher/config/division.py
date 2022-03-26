@@ -39,7 +39,7 @@ RESEARCH_FIELDS = {
             'sub_fields': []
         },
         'd_08': {
-            'field': 'INFORMATION AND COMPUTINGs',
+            'field': 'INFORMATION AND COMPUTING',
             'sub_fields': []
         },
         'd_09': {
