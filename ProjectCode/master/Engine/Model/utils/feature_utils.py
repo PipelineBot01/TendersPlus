@@ -1,6 +1,9 @@
 from nltk.corpus import stopwords
+
 from conf.features import PROJECT_STOP_WORDS
+
 STOP_WORDS = stopwords.words('english')
+
 
 def filter_words(pos_tagged, lemmatizer):
     '''
