@@ -39,7 +39,7 @@ export default function StrengthOverview():JSX.Element{
 				padding:32,
 				meta: {
 					score: {
-						alias: 'score',
+						alias: 'weight',
 						min: 0,
 						max: 10,
 					},
