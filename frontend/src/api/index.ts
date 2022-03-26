@@ -1,5 +1,12 @@
 import {request} from './request'
-import type { UserInfo, CustomAPIResponse, Login, Signup, ProfileForm, MatchResearcher } from '../utils/types'
+import type { 
+	UserInfo, 
+	CustomAPIResponse, 
+	Login, 
+	Signup, 
+	ProfileForm,
+	MatchResearcher, 
+	UniversityStrength } from '../utils/types'
 
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
@@ -18,6 +25,10 @@ export const signupAPI = (data:Signup):Promise<CustomAPIResponse<UserInfo>>=>{
 	return request.post('/account/signup', data)
 }
 
+export const strengthOverviewAPI = (university:string):Promise<CustomAPIResponse<Array<UniversityStrength>>>=>{
+	return request.get('/strength_overview', {params:{university}})
+}
+
 export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIResponse<any>> =>{
 	return request.post('/matcher/researchers', data)
-} 
+}

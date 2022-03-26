@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 
 import {store} from './store'
+import "@ant-design/flowchart/dist/index.css"
 import 'antd/dist/antd.css'
 import './index.css'
 import setRem from './utils/setRem'

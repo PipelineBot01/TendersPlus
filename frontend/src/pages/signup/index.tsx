@@ -10,6 +10,7 @@ import type { Signup } from '../../utils/types'
 import {researchFields} from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
 import { signupAPI } from '../../api'
+import capitalize from '../../utils/capitalize'
 import './index.css'
 const { Option, OptGroup } = Select
 
@@ -29,7 +30,6 @@ export default function Header():JSX.Element{
 		signupAPI(values).then((response)=>{
 			message.destroy('signup')
 			if(response.data){
-				console.log(response.data)
 				const user:UserState = {
 					first_name:response.data.first_name,
 					last_name:response.data.last_name,
@@ -61,14 +61,6 @@ export default function Header():JSX.Element{
 			setIsSubmitting(false)
 		}, 1000)
 	}
-	const renderResearchFieldsOptions = ()=>{
-		const arr = new Array<ReactElement>()
-		for(const key of Object.keys(researchFields)){
-			arr.push(<Option key={key} value={key} >{researchFields[key].field}</Option>
-			)
-		}
-		return arr
-	}
 	const renderUniversitiesOptions = ()=>{
 		const arr = new Array<ReactElement>()
 		for(const key of Object.keys(universities)){
@@ -81,6 +73,15 @@ export default function Header():JSX.Element{
 		}
 		return arr
 	}
+	const renderResearchFieldsOptions = ()=>{
+		const arr = new Array<ReactElement>()
+		for(const key of Object.keys(researchFields)){
+			arr.push(<Option key={key} value={key} >{capitalize(researchFields[key].field)}</Option>
+			)
+		}
+		return arr
+	}
+
 	const renderSignupForm = ()=>{
 		return <>
 			<div className='btn-to-home' onClick={()=>{navigate('/')}}>

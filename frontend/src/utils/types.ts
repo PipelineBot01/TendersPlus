@@ -46,8 +46,13 @@ export interface CustomAPIResponse<T>{
     msg?:string
 }
 
+export interface UniversityStrength{
+    field:string
+    score:number
+}
 
 export interface MatchResearcher{
     research_fields:Array<string>
     tags:Array<string>
 }
+

@@ -41,11 +41,13 @@ export default function Header():JSX.Element{
 				
 				// update store
 				dispatch(setUserInfo(user))
+
+				message.success('Welcome back, ' + user.first_name, 3)
 				
 				// redirect to dashboard
 				navigate('/')
 
-				message.success('Welcome back, ' + user.first_name, 5)
+
 			}
 		}).catch((error)=>{
 			message.destroy('login')

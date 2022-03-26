@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 .login-container{
-    margin-bottom: 12rem;
+    margin-bottom: 8rem;
 }
 
 .login-form{
@@ -43,9 +43,7 @@
     border-radius: 6px !important;
 }
 
-.login-form .ant-row.ant-form-item{
-    margin-bottom: 0.8rem !important;
-}
+
 .login-form .btn-submit{
     margin-top: 1rem;
     width:100%;
