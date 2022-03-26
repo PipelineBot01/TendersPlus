@@ -1,11 +1,11 @@
 import React from 'react'
-import {Route, Routes, Outlet } from "react-router-dom"
+import {Route, Routes } from "react-router-dom"
 import {Spin, Skeleton} from 'antd'
 
-import Header from './components/header'
-import Footer from './components/footer'
+import Home from './pages/home'
 import Search from './components/search'
 import Discovery from './components/discovery'
+import StrengthOverview from './components/strengthOverview'
 
 const Login = React.lazy(()=>import('./pages/login'))
 const Signup = React.lazy(()=>import('./pages/signup'))
@@ -18,15 +18,12 @@ export default function App() :JSX.Element{
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<>
-					<Header/>
-					<Outlet/>
-					<Footer/>
-				</>}>
+				<Route path='/' element={<Home/>}>
 					<Route index element={
 						<>
 							<Search/>
 							<Discovery/>
+							<StrengthOverview/>
 						</>
 					}/>
 				</Route>
