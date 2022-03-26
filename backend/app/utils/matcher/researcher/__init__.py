@@ -1,10 +1,9 @@
-from typing import List,Tuple
+from typing import List, Tuple
 
 import numpy as np
 import pandas as pd
 
-from ..config.division import RESEARCH_FIELDS
-from ..utils.match import normalize, weighted_avg
+from ..utils.match import normalize, weighted_avg, add_penalty_term, get_div_rank_dict
 
 MAP_DF = pd.read_csv('utils/matcher/researcher/assets/tag_category_map.csv')
 INFO_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_info.csv')
@@ -21,31 +20,6 @@ class ResearcherMatcher():
         assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
         assert not (self.re_div_df.duplicated(pk).empty and self.re_tag_df.duplicated(pk).empty), \
             f'{pk} cannot be set as primary key!'
-
-    def __add_penalty_term(self, div_df: pd.DataFrame) -> pd.DataFrame:
-        '''
-
-        Parameters
-        ----------
-        div_df: pd.DataFrame, input division dataframe
-
-        This func will add penalty term to each researcher.
-        For instance, a researcher with division and weight [div_a: 0.4, div_b: 0.3, div_c: 0.3]
-        will be appended with penalty terms [div_a_pt: 1-tanh(0), div_b: 1-tanh(1/10), div_c: 1-tanh(1/10)]
-        Returns
-        -------
-        pd.DataFrame, dataframe with cols of Staff ID, value, penalty
-        '''
-        div_df['penalty'] = 0
-        div_df = div_df.sort_values('weight', ascending=False)
-        div_df['weight_next'] = div_df.groupby(self.pk)['weight'].shift(1)
-
-        cond = div_df['weight_next'].notna()
-        div_df.loc[cond & (div_df['weight_next'] > div_df['weight']), 'penalty'] = 1
-        div_df['penalty'] = div_df.groupby(self.pk)['penalty'].cumsum()
-        div_df = div_df[['Staff ID', 'value', 'penalty']]
-        div_df['penalty'] = 1 - np.tanh(div_df['penalty'] / 10)
-        return div_df
 
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
         '''
@@ -71,7 +45,7 @@ class ResearcherMatcher():
         tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)']
         ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)']
 
-        penalty_df = self.__add_penalty_term(ref_df.copy())
+        penalty_df = add_penalty_term(ref_df.copy(), self.pk)
         ref_df = ref_df.merge(penalty_df)
         del penalty_df
         ref_df['weight'] = ref_df['weight'] * ref_df['penalty']
@@ -193,9 +167,7 @@ class ResearcherMatcher():
         tuple[list, list],
         '''
 
-        division_dict = {}
-        for idx, div in enumerate(divs):
-            division_dict[RESEARCH_FIELDS[div]['field']] = len(divs) - idx
+        division_dict = get_div_rank_dict(divs)
         tar_div_df = pd.DataFrame({'Staff ID': 'current_tmp',
                                    'value': list(division_dict.keys()),
                                    'weight': list(division_dict.values())})
