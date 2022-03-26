@@ -1,9 +1,6 @@
 from typing import List
-
 import numpy as np
 import pandas as pd
-
-from conf.division import RESEARCH_FIELDS
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_CATE_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
@@ -169,9 +166,7 @@ class ResearcherMatcher(Relation):
         tuple[list, list],
         '''
 
-        division_dict = {}
-        for idx, div in enumerate(divs):
-            division_dict[RESEARCH_FIELDS[div]['field']] = len(divs) - idx
+        division_dict = get_div_rank_dict(divs)
         tar_div_df = pd.DataFrame({'Staff ID': 'current_tmp',
                                    'value': list(division_dict.keys()),
                                    'weight': list(division_dict.values())})
@@ -271,14 +266,14 @@ class ResearcherMatcher(Relation):
         return sim_df
 
 
-if __name__ == '__main__':
-    # matching by divisions/tags
-    rm = ResearcherMatcher()
-    division_list = ["d_10", "d_08"]
-    tag_list = ['machine learning']
-    temp_df = rm.match_by_profile(division_list, tag_list)
-    for i in temp_df:
-        print(i)
+# if __name__ == '__main__':
+#     # matching by divisions/tags
+#     rm = ResearcherMatcher()
+#     division_list = ["d_10", "d_08"]
+#     tag_list = ['machine learning']
+#     temp_df = rm.match_by_profile(division_list, tag_list)
+#     for i in temp_df:
+#         print(i)
 
     # matching by id
     # researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)

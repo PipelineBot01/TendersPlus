@@ -1,8 +1,26 @@
+from typing import List
+
 import numpy as np
 import pandas as pd
 
+from conf.division import RESEARCH_FIELDS
 
-def normalize(input_df, target_col, method='proportion'):
+
+def get_div_rank_dict(div_list: List[str], is_weighted=False):
+    division_dict = {}
+    for idx, div in enumerate(div_list):
+        division_dict[RESEARCH_FIELDS[div]['field']] = len(div_list) - idx if is_weighted else 1
+    return division_dict
+
+
+def get_div_id_dict():
+    div_id_dict = {}
+    for _id in RESEARCH_FIELDS.keys():
+        div_id_dict[RESEARCH_FIELDS[_id]['field']] = _id
+    return div_id_dict
+
+
+def normalize(input_df, target_col, method='proportion', bounds=[0, 10]):
     '''
 
     Parameters
@@ -10,6 +28,7 @@ def normalize(input_df, target_col, method='proportion'):
     input_df
     target_col
     method
+    bounds
 
     Returns
     -------
@@ -22,11 +41,14 @@ def normalize(input_df, target_col, method='proportion'):
         input_df[target_col] = (input_df[target_col] - input_df[target_col].min()
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
     elif method == 'rank':
-        input_df[target_col] = 1 + 9 / (input_df[target_col].max() - input_df[target_col].min()) * (
-                input_df[target_col] - input_df[target_col].min())
+        input_df[target_col] = (bounds[0]+1) + \
+                               (bounds[1]-1) / (input_df[target_col].max() -
+                                                input_df[target_col].min()) * \
+                               (input_df[target_col] - input_df[target_col].min())
+
         input_df[target_col] = input_df[target_col].astype(int) * 2
-        input_df.loc[input_df[target_col] < 3, target_col] = 3
-        input_df.loc[input_df[target_col] > 10, target_col] = 10
+        input_df.loc[input_df[target_col] < 0.3*(bounds[0] + bounds[1]), target_col] = 0.3*(bounds[0] + bounds[1])
+        input_df.loc[input_df[target_col] > bounds[1], target_col] = bounds[1]
     return input_df
 
 
