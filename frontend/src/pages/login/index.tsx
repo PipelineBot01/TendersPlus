@@ -84,7 +84,7 @@ export default function Header():JSX.Element{
 				</div>
 				<div className='login-container'>
 					<div style={{fontSize:'1.8rem', textAlign:'center', marginTop:'1rem', fontWeight:'700'}}>Log in</div>
-					<div style={{fontSize:'0.8rem', textAlign:'center', marginBottom:'1rem', fontWeight:'600'}}>xxxx xxx </div>
+					<div style={{fontSize:'0.8rem', textAlign:'center', marginBottom:'1rem', color:'grey'}}>Hi, welcome back ~ </div>
 					<Form  
 						requiredMark={false}
 					 	size='large' 
