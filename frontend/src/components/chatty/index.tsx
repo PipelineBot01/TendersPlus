@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Row, Col, Card, Avatar, Tag, Divider } from 'antd'
+import {Row, Col, Card, Avatar, Tag, Divider, Spin } from 'antd'
 import { matchResearcherAPI } from '../../api'
 import { useAppSelector } from '../../store'
 import type { MatchResearcher } from '../../utils/types'
@@ -27,7 +27,7 @@ export default function Chatty():JSX.Element{
 	return <>
 		<Row className='chatty-researcher' justify='center' align='top' gutter={12}>
 			{
-				researchers.map((e, index)=>{
+				researchers.length > 0 ? researchers.map((e, index)=>{
 
 					return <Col span={12} key={index}>
 						<Card style={{height:'15rem', marginBottom:'0.5rem'}} >
@@ -48,7 +48,7 @@ export default function Chatty():JSX.Element{
 							/>
 						</Card>
 					</Col>
-				})
+				}) :	<Spin style={{width:'100%'}} size="large"></Spin>
 			}
 		</Row>
 	</>

@@ -46,6 +46,7 @@ export default function App() :JSX.Element{
 					<Route  path='search' element={
 						<>
 							<Spin style={{width:'100%'}} size="large"></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
 						</>
 					}/>
 					<Route  path='profile' element={
@@ -59,11 +60,13 @@ export default function App() :JSX.Element{
 					<Route  path='favorites' element={
 						<>
 							<Spin style={{width:'100%'}} size="large"></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
 						</>
 					}/>
 					<Route  path='analysis' element={
 						<> 
 							<Spin style={{width:'100%'}} size="large"></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
 						</>
 					}/>
 					<Route  path='chatty' element={
