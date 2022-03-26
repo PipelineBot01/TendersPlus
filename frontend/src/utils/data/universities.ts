@@ -15,3 +15,7 @@ export const universities:University = {
 	'Victoria':['Deakin University', 'Federation University of Australia', 'La Trobe University', 'Monash University', 'RMIT University', 'Swinburne University of Technology', 'University of Divinity', 'University of Melbourne', 'Victoria University'],
 	'Western Australia':['Curtin University', 'Edith Cowan University', 'Murdoch University', 'University of Notre Dame Australia', 'University of Western Australia']
 }
+
+export const universitiesMap:{[key:string]:any} = {
+	u_01:'University of Canberra'
+}

@@ -25,8 +25,8 @@ export const signupAPI = (data:Signup):Promise<CustomAPIResponse<UserInfo>>=>{
 	return request.post('/account/signup', data)
 }
 
-export const strengthOverviewAPI = (university:string):Promise<CustomAPIResponse<Array<UniversityStrength>>>=>{
-	return request.get('/strength_overview', {params:{university}})
+export const strengthOverviewAPI = ():Promise<CustomAPIResponse<any>>=>{
+	return request.get('/strength_overview')
 }
 
 export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIResponse<any>> =>{

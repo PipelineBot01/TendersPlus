@@ -10,3 +10,22 @@
     margin:5rem 5rem 2rem 5rem;
 
 }
+
+.strength-overview .strength-card{
+    margin: 2rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
+}
+.strength-overview .strength-card  .ant-card-body{
+    width: 100% !important;
+}
+
+.strength-overview .strength-card .name{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:#546d69;
+}
+

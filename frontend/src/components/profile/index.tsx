@@ -14,6 +14,7 @@ import { useAppDispatch, useAppSelector } from '../../store'
 import { researchFields } from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
 import type { ProfileForm, ResearchFieldsItem } from '../../utils/types'
+import capitalize from '../../utils/capitalize'
 
 import './index.css'
 
@@ -78,7 +79,7 @@ export default function Profile():JSX.Element{
 	const renderResearchFieldsOptions = ()=>{
 		const arr = new Array<ReactElement>()
 		for(const key of Object.keys(researchFields)){
-			arr.push(<Option key={key} value={key}>{researchFields[key].field}</Option>)
+			arr.push(<Option key={key} value={key}>{capitalize(researchFields[key].field)}</Option>)
 		}
 		return arr
 	}

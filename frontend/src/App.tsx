@@ -62,7 +62,7 @@ export default function App() :JSX.Element{
 						</>
 					}/>
 					<Route  path='analysis' element={
-						<>
+						<> 
 							<Spin style={{width:'100%'}} size="large"></Spin>
 						</>
 					}/>
