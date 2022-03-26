@@ -45,7 +45,7 @@ export default function App() :JSX.Element{
 				} >
 					<Route  path='search' element={
 						<>
-							<Skeleton style={{margin:'2rem'}} loading={true} />
+							<Spin style={{width:'100%'}} size="large"></Spin>
 						</>
 					}/>
 					<Route  path='profile' element={
@@ -58,21 +58,21 @@ export default function App() :JSX.Element{
 					}/>
 					<Route  path='favorites' element={
 						<>
-							<Skeleton style={{margin:'2rem'}} loading={true} />
+							<Spin style={{width:'100%'}} size="large"></Spin>
 						</>
 					}/>
 					<Route  path='analysis' element={
 						<>
 							<Spin style={{width:'100%'}} size="large"></Spin>
-							{/* <Skeleton  style={{margin:'2rem'}} loading={true} /> */}
 						</>
 					}/>
 					<Route  path='chatty' element={
 						<>
-							<React.Suspense fallback={<div><Spin></Spin></div>}>
+							<React.Suspense fallback={<>
+								<Spin style={{width:'100%'}} size="large"></Spin>
+							</>}>
 								<Chatty/>
 							</React.Suspense>
-							
 						</>
 					}/>
 				</Route>

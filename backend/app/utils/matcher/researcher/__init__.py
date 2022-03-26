@@ -6,7 +6,7 @@ import pandas as pd
 from ..config.division import RESEARCH_FIELDS
 from ..utils.match import normalize, weighted_avg
 
-MAP_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_division.csv')
+MAP_DF = pd.read_csv('utils/matcher/researcher/assets/tag_category_map.csv')
 INFO_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_info.csv')
 RESEARCHER_DIVISION_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_division.csv')
 RESEARCHER_TAG_DF = pd.read_csv('utils/matcher/researcher/assets/researcher_tag.csv')
