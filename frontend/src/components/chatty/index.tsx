@@ -26,12 +26,11 @@ export default function Chatty():JSX.Element{
 		})
 	}, [])
 	return <>
-		<Row className='chatty-researcher' justify='center' align='top' gutter={12}>
+		<Row className='chatty-researcher'  justify='center' align='top' gutter={12}>
 			{
 				researchers.length > 0 ? researchers.map((e, index)=>{
-
 					return <Col span={12} key={index}>
-						<Card style={{height:'15rem', marginBottom:'0.5rem'}} >
+						<Card style={{height:'16rem', marginBottom:'0.5rem'}} >
 							<Card.Meta
 								avatar={
 									<Avatar>{e?.Name?.slice(0, 1)}</Avatar>}
