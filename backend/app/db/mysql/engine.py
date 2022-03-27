@@ -5,7 +5,8 @@ from config import settings
 
 # 1. create engine
 engine = create_engine(
-    f'mysql+pymysql://{settings.MYSQL_USERNAME}:{settings.MYSQL_PASSWORD}@{settings.MYSQL_URL}/{settings.MYSQL_DATABASE}'
+    f'mysql+pymysql://{settings.MYSQL_USERNAME}:{settings.MYSQL_PASSWORD}@{settings.MYSQL_URL}/{settings.MYSQL_DATABASE}',
+pool_recycle=3600
 )
 
 # 2. build session
