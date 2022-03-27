@@ -3,6 +3,7 @@ import {Row, Col, Card, Avatar, Tag, Divider, Spin } from 'antd'
 import { matchResearcherAPI } from '../../api'
 import { useAppSelector } from '../../store'
 import type { MatchResearcher } from '../../utils/types'
+import capitalize from '../../utils/capitalize'
 import './index.css'
 export default function Chatty():JSX.Element{
 	const userInfo = useAppSelector(state=>state.user)
@@ -15,7 +16,7 @@ export default function Chatty():JSX.Element{
 				if(typeof e === 'object'){
 					return e.field
 				}else{
-					return e
+					return  e
 				}}),
 			tags:userInfo.tags
 		}
@@ -25,12 +26,11 @@ export default function Chatty():JSX.Element{
 		})
 	}, [])
 	return <>
-		<Row className='chatty-researcher' justify='center' align='top' gutter={12}>
+		<Row className='chatty-researcher'  justify='center' align='top' gutter={12}>
 			{
 				researchers.length > 0 ? researchers.map((e, index)=>{
-
 					return <Col span={12} key={index}>
-						<Card style={{height:'15rem', marginBottom:'0.5rem'}} >
+						<Card style={{height:'16rem', marginBottom:'0.5rem'}} >
 							<Card.Meta
 								avatar={
 									<Avatar>{e?.Name?.slice(0, 1)}</Avatar>}
@@ -41,7 +41,12 @@ export default function Chatty():JSX.Element{
 									<Divider style={{margin:'0.8rem 0'}}/>
 									<div className='research_fields'>
 										{e?.value?.slice(0, 3).map((e2:any, index2:any)=>{
-											return <Tag style={{margin:'0.2rem'}} color='volcano' key={index2}>{e2}</Tag>
+											return <Tag style={{margin:'0.2rem'}} color='volcano' key={index2}>{ capitalize(e2)}</Tag>
+										})}
+									</div>
+									<div className='tags' style={{marginTop:'0.5rem'}}>
+										{e?.Tag?.slice(0, 6).map((e2:any, index2:any)=>{
+											return <Tag style={{margin:'0.2rem', borderRadius:'2rem'}} key={index2}>{ capitalize(e2)}</Tag>
 										})}
 									</div>
 								</>}
