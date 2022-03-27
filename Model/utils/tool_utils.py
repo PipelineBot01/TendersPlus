@@ -34,3 +34,5 @@ def get_research_strength(div_path: str = DIVISION_PATH, pk='Staff ID') -> dict[
 
     # TODO: hard code for university id  -2022/3/26 ray
     return {'u_01': div_df.to_dict(orient='records')}
+
+print(get_research_strength())

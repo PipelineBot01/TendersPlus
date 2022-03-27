@@ -20,7 +20,7 @@ def get_div_id_dict():
     return div_id_dict
 
 
-def normalize(input_df, target_col, method='proportion', bounds=[0, 10]):
+def normalize(input_df, target_col, method='proportion', bounds=[0, 1]):
     '''
 
     Parameters
