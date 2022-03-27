@@ -30,7 +30,7 @@ export default function Chatty():JSX.Element{
 			{
 				researchers.length > 0 ? researchers.map((e, index)=>{
 					return <Col span={12} key={index}>
-						<Card style={{height:'16rem', marginBottom:'0.5rem'}} >
+						<Card style={{height:'18rem', marginBottom:'0.5rem'}} >
 							<Card.Meta
 								avatar={
 									<Avatar>{e?.Name?.slice(0, 1)}</Avatar>}
