@@ -17,9 +17,9 @@ class TendersRelation(Relation):
 
         tfc = TendersFeatCreator()
         if not os.path.exists(TENDERS_TAG_MAP_PATH):
-            tfc.create_tag_mapping()
+            tfc.create_tag_mapping(pk)
         if not os.path.exists(TENDERS_TOPIC_PATH):
-            tfc.create_topic_mapping()
+            tfc.create_topic_mapping(pk)
 
         self.pk = pk
         self.__info_df = pd.read_csv(TENDERS_INFO_PATH)

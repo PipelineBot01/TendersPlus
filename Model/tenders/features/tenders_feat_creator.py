@@ -23,13 +23,12 @@ class TendersFeatCreator:
         row['weight'] = result[1]
         return row
 
-    @staticmethod
     def create_tag_mapping(self, pk: str) -> None:
         '''
 
         Parameters
         ----------
-        pk
+        pk:
 
         Returns
         -------
