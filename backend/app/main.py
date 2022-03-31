@@ -5,11 +5,12 @@ from fastapi.exceptions import RequestValidationError, HTTPException
 from errors import validation_exception_handler
 from errors import http_exception_handler
 
-from routers import account_router, user_router, matcher_router,strength_router
+from routers import account_router, user_router, matcher_router, strength_router, search_router
 
 from config import settings
 from scheduler import async_scheduler
 from db.mysql import init_db as init_mysql
+from db.mongo import init_db as init_mongo
 
 # init app
 server = FastAPI(root_path='/tendersplus/api')
@@ -32,12 +33,14 @@ server.include_router(account_router, prefix='/account', tags=['Account'])
 server.include_router(user_router, prefix='/user', tags=['User'])
 server.include_router(matcher_router, prefix='/matcher', tags=['Matcher'])
 server.include_router(strength_router, prefix='/strength_overview', tags=['StrengthOverview'])
+server.include_router(search_router, prefix='/search', tags=['Search'])
 
 
 # setup startup event
 @server.on_event('startup')
 async def startup():
     init_mysql()
+    await init_mongo()
     # ====== init scheduler ======
     # run jobs
     for j in async_scheduler.jobs:

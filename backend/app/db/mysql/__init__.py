@@ -1,6 +1,3 @@
-from sqlalchemy_utils.functions import database_exists, create_database
-
-from config import settings
 
 from .engine import engine, session, base
 
@@ -12,6 +9,10 @@ from .schema.user_research_field import SQLUserResearchField
 
 from .curd.university import sql_add_university
 from .curd.research_field import sql_add_research_field
+
+from sqlalchemy_utils.functions import database_exists, create_database
+
+from config import settings
 
 
 def init_db():
