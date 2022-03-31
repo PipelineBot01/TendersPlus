@@ -16,6 +16,6 @@ export const universities:University = {
 	'Western Australia':['Curtin University', 'Edith Cowan University', 'Murdoch University', 'University of Notre Dame Australia', 'University of Western Australia']
 }
 
-export const universitiesMap:{[key:string]:any} = {
+export const universitiesMap:{[key:string]:string} = {
 	u_01:'University of Canberra'
 }

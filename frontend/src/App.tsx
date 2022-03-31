@@ -1,12 +1,13 @@
 import React from 'react'
 import {Route, Routes } from "react-router-dom"
-import {Spin, Skeleton} from 'antd'
+import {Spin} from 'antd'
 
+import BasicLayout from './layout/basicLayout'
 import Home from './pages/home'
-import Search from './components/search'
-import Discovery from './components/discovery'
-import StrengthOverview from './components/strengthOverview'
 
+
+
+const SearchResult = React.lazy(()=>import('./components/search/components/searchResult'))
 const Login = React.lazy(()=>import('./pages/login'))
 const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
@@ -18,13 +19,12 @@ export default function App() :JSX.Element{
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<Home/>}>
-					<Route index element={
-						<>
-							<Search/>
-							<Discovery/>
-							<StrengthOverview/>
-						</>
+				<Route path='/' element={<BasicLayout/>}>
+					<Route index element={<Home/>}></Route>
+					<Route path='search' element={
+						<React.Suspense fallback={<div><Spin></Spin></div>}>
+							<SearchResult/>
+						</React.Suspense>
 					}/>
 				</Route>
 				<Route path='/login' element={
@@ -32,16 +32,17 @@ export default function App() :JSX.Element{
 						<Login/>
 					</React.Suspense>
 				}/>
+
 				<Route path='/signup' element={
 					<React.Suspense fallback={<div><Spin></Spin></div>}>
 						<Signup/>
 					</React.Suspense>
 				}/>
+
 				<Route path='/dashboard'element={
 					<React.Suspense fallback={<div><Spin></Spin></div>}>
 						<Dashboard/>
 					</React.Suspense>
-					
 				} >
 					<Route  path='search' element={
 						<>

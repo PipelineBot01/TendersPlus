@@ -32,7 +32,8 @@ class Settings(BaseSettings):
 
     APP_PORT: int = 20220
 
-    DATETIME_FORMAT = '%d-%b-%Y'
+    DATETIME_FORMAT = '%Y-%m-%d'
+
 
     LATEST_OPPORTUNITIES: dict = None
     HOT_OPPORTUNITIES: dict = None

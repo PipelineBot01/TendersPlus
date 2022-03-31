@@ -51,9 +51,27 @@ export interface UniversityStrength{
     research_field:string
     score:number
 }
+export interface UniversityStrengthMap{
+    [key:string]:Array<UniversityStrength>
+}
 
 export interface MatchResearcher{
     research_fields:Array<string>
     tags:Array<string>
 }
 
+
+export interface WeightItem{
+    weight:number
+    name:string
+}
+
+export interface QueryTender{
+    url:string
+    title:string
+    close_date:string
+    open_date:string
+    tags:string
+    division?:string
+    id:string
+}

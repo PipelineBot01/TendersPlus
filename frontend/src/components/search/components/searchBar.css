@@ -1,0 +1,30 @@
+
+.search-bar{
+    min-width:30%;
+    max-width: 50%;
+    margin-top: 0.8rem;
+    display: flex;
+}
+
+
+.search-bar input:hover,
+.search-bar  input:active,
+.search-bar  input,
+.search-bar  input:focus
+{
+    height: 32px !important;
+    border: none !important ;
+    text-shadow: none;
+    box-shadow: none;
+    color: rgb(63, 63, 63);
+  
+}
+
+
+
+.search-bar .ant-btn,
+.search-bar .ant-btn:hover{
+    
+    background: rgb(255, 137, 2);
+    border: none !important;
+}

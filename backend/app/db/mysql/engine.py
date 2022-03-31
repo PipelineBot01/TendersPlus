@@ -1,6 +1,7 @@
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+
 from config import settings
 
 # 1. create engine
@@ -14,3 +15,4 @@ session = sessionmaker(bind=engine, expire_on_commit=False, autoflush=False, aut
 
 # 3. create orm entry
 base = declarative_base()
+
