@@ -100,10 +100,10 @@ div.search-result-content .ant-list-item-meta-title{
     margin-bottom: 0;
 }
 div.search-result-content  .url{
-    color: #c22c27 !important;
+    color: #ff835d !important;
     font-weight: 600;
     font-size: 0.85rem;
-    padding-left: 1rem;
+    padding-right: 5rem;
 }
 
 

@@ -6,7 +6,7 @@ import { List, Tag, Row, Col} from 'antd'
 import SearchBar from './searchBar'
 import './searchResult.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight, faLink} from '@fortawesome/free-solid-svg-icons'
+import { faAnglesRight, faLink} from '@fortawesome/free-solid-svg-icons'
 import {DonutChart} from '../../../components/charts'
 import {queryTendersAPI} from '../../../api'
 import type { QueryTender } from '../../../utils/types'
@@ -90,11 +90,11 @@ export default function SearchResult():JSX.Element{
 
 										</Row>
 
-										<Row style={{marginTop:'1rem'}} justify='start' gutter={6}>
+										<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
 											<a  className='url' 
 											    href={item.url}>
-													Full detail 
-												<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faLink}/>
+													Read more
+												<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
 											</a>
 										</Row>
 									</>
