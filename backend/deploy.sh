@@ -1,7 +1,7 @@
 cd /home/TendersPlus
 
 # fetch the latest files
-git pull
+git pull -X theirs
 
 echo "git pulling"
 
