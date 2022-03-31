@@ -103,8 +103,8 @@ export default function SearchResult():JSX.Element{
 
 													<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
 														<a  className='url' 
-											    href={item.url}>
-													Read more
+															href={item.url}>
+															Read more
 															<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
 														</a>
 													</Row>

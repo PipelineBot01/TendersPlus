@@ -99,7 +99,7 @@ div.search-result-content .ant-list-item-meta-title{
     color:rgb(84, 86, 88);
     margin-bottom: 0;
 }
-div.search-result-content  .url{
+div.search-result-content a.url{
     color: #ff835d !important;
     font-weight: 600;
     font-size: 0.85rem;
