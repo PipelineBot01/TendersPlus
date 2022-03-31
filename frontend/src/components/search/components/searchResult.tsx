@@ -2,15 +2,15 @@ import React, {useEffect, useState} from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { List, Tag, Row, Col} from 'antd'
 
-import type { WeightItem } from '../../../utils/types'
+
 import SearchBar from './searchBar'
 import './searchResult.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight} from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight, faLink} from '@fortawesome/free-solid-svg-icons'
 import {DonutChart} from '../../../components/charts'
 import {queryTendersAPI} from '../../../api'
 import type { QueryTender } from '../../../utils/types'
-//  Read More  <FontAwesomeIcon icon={faAngleRight} /> 
+
 export default function SearchResult():JSX.Element{
 	const [searchParams, setSearchParams] = useSearchParams()
 	const [totalResult, setTotalResult] = useState(10) 
@@ -88,6 +88,14 @@ export default function SearchResult():JSX.Element{
 											</Col>
 											
 
+										</Row>
+
+										<Row style={{marginTop:'1rem'}} justify='start' gutter={6}>
+											<a  className='url' 
+											    href={item.url}>
+													Full detail 
+												<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faLink}/>
+											</a>
 										</Row>
 									</>
 									
