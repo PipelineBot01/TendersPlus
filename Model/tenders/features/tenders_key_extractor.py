@@ -185,6 +185,7 @@ class KeyExtractor:
                              ) & (tmp_df['text'].notna())].drop(f'key_{i}', axis=1).set_index(pk)
 
         input_df = input_df.replace('[none_tag]', np.nan)
+        # TODO: leaving only id and keys
         return input_df
 
 

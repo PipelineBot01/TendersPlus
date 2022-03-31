@@ -1,10 +1,8 @@
 import re
 import time
-
 import numpy as np
 import pandas as pd
 
-from conf.file_path import TENDERS_INFO_PATH
 
 
 def extract_award(item: str) -> str:
@@ -57,6 +55,18 @@ def data_clean(input_df: pd.DataFrame) -> pd.DataFrame:
     return input_df
 
 
-def update_opened_data():
-    all_df = pd.read_csv(TENDERS_INFO_PATH)['id', 'title', 'open_date', 'close_date', 'url', 'tags', 'divisions']
-    return all_df
+def update_opened_data(path):
+    input_df = pd.read_csv(path)['id', 'title', 'open_date', 'close_date', 'url', 'tags', 'divisions']
+    input_df = input_df[input_df['is_on'] == 1]
+    save = []
+    for i in input_df.columns:
+        if 'key' in i:
+            save.append(i)
+
+    def reformat_key(row):
+        row = row[save].dropna()
+        return ' '.join(row[i] for i in row.index)
+
+    input_df['tags'] = input_df.apply(lambda x: reformat_key(x), axis=1)
+    input_df['division'] = 'test'
+    return input_df

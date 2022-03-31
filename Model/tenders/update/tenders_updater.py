@@ -3,7 +3,7 @@ import pandas as pd
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
     TENDERS_TOPIC_PATH
 from db.mongodb import MongoConx
-from tenders.clean import data_clean
+from tenders.clean.data_clean import data_clean, update_opened_data
 from tenders.features.lda_model import LDAModel
 from tenders.features.tenders_feat_creator import TendersFeatCreator
 from tenders.features.tenders_key_extractor import KeyExtractor
@@ -17,6 +17,11 @@ class Updater:
     def update_file(self, new_df, orig_path):
         orig_df = pd.read_csv(orig_path)
         orig_df.append(new_df).to_csv(orig_path)
+
+    def update_is_open(self, opened_id):
+        all_df = pd.read_csv(TENDERS_TAG_PATH)
+        all_df[~all_df['id'].isin(opened_id), 'is_on'] = 0
+        all_df[all_df['id'].isin(opened_id), 'is_on'] = 1
 
     def update(self):
         raw_data_df = self.monx.read_df('raw_grants_opened')
@@ -35,6 +40,7 @@ class Updater:
             ke = KeyExtractor()
             new_key_df = ke.get_tags(new_info_df, 'id', 'text')
             self.update_file(new_key_df, TENDERS_TAG_PATH)
+            self.update_is_open(raw_data_df['id'])
             del ke, new_key_df
 
             # update topic file
@@ -48,3 +54,7 @@ class Updater:
             tfc = TendersFeatCreator()
             tfc.create_tag_mapping('id')
             tfc.create_topic_mapping('id')
+
+            # update opened data
+            new_open_info = update_opened_data(TENDERS_TAG_PATH)
+            self.monx.write_df(new_open_info, True)
