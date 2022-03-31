@@ -3,7 +3,7 @@ from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
 
-from db.mongo import crud
+from db.mongo import crud, mongo
 from config import settings
 
 router = APIRouter()
@@ -34,3 +34,8 @@ async def get_open_opportunities(query: str = None):
     except Exception as e:
         print(str(e))
         raise HTTPException(500)
+
+
+@router.get('/total')
+async def get_open_opportunities_count():
+    return {'code': 200, 'data': mongo['tenders_client_docs_count']['clean_grants_opened']}
