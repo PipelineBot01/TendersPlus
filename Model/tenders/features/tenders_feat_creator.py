@@ -40,7 +40,7 @@ class TendersFeatCreator:
         for i in tenders_tag_df.columns:
             if 'key_' in i:
                 remain_list.append(i)
-
+        # TODO: adding weights -2022/4/1 Ray
         tenders_tag_df = tenders_tag_df[remain_list].melt(id_vars=pk)[[pk, 'value']].rename(
             columns={'value': 'Tag'})
         tenders_tag_df = tenders_tag_df[tenders_tag_df['Tag'].notna()]
