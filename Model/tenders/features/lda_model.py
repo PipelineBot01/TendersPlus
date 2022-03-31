@@ -3,7 +3,7 @@ import nltk
 import pandas as pd, numpy as np
 from gensim.test.utils import datapath
 from utils.feature_utils import filter_words
-from conf.file_path import TENDERS_INFO_PATH, MODEL_FILE, TENDERS_TOPIC_PATH
+from conf.file_path import MODEL_FILE, TENDERS_TOPIC_PATH
 from conf.features import NUM_TOPICS, NUM_SHOW_TERM
 
 
@@ -133,7 +133,7 @@ class LDAModel:
         self.relevant_tenders['keywords'] = self.relevant_tenders.apply(self.extract_keyword, axis=1)
         self.relevant_tenders['topics'] = self.relevant_tenders.apply(self.get_doc_topic, axis=1)
 
-    def make_result_to_file(self, filepath=None):
+    def make_result_to_file(self, filepath=TENDERS_TOPIC_PATH):
         if filepath is None:
             print("Do not find this file!")
             return False
@@ -141,24 +141,19 @@ class LDAModel:
             self.add_lda_result_to_data()
             self.relevant_tenders.to_csv(filepath, encoding='utf-8_sig')
 
-    def save_topics_to_file(self, num_words, filepath=None):
-        if filepath is None:
-            print("Do not find this file!")
-            return False
-        else:
-            topics = self.lda.show_topics(num_topics=NUM_TOPICS, num_words=num_words)
-            topic_dic = dict()
-            for topic in topics:
-                temp = []
-                topic_id = topic[0]
-                topic_words = topic[1].split(' + ')
-                for topic_word in topic_words:
-                    word = tuple(topic_word.replace('"', '').split('*'))
-                    temp.append(word)
-                topic_dic[topic_id] = temp
-            df = pd.DataFrame.from_dict(topic_dic, orient='index',
-                                        columns=['keyword' + str(i) for i in range(num_words)])
-            df.to_csv(filepath)
+    def get_topic(self, num_words):
+        topics = self.lda.show_topics(num_topics=NUM_TOPICS, num_words=num_words)
+        topic_dic = dict()
+        for topic in topics:
+            temp = []
+            topic_id = topic[0]
+            topic_words = topic[1].split(' + ')
+            for topic_word in topic_words:
+                word = tuple(topic_word.replace('"', '').split('*'))
+                temp.append(word)
+            topic_dic[topic_id] = temp
+        df = pd.DataFrame.from_dict(topic_dic, orient='index', columns=['keyword' + str(i) for i in range(num_words)])
+        return df
 
 
 # if __name__ == '__main__':

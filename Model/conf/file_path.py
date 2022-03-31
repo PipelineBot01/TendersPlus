@@ -1,8 +1,9 @@
-TENDERS_INFO_PATH = '../assets/tenders_info.csv'
+TENDERS_INFO_PATH = '../assets/clean_trains_info.csv'
 TENDERS_TAG_MAP_PATH = '../assets/tenders_tag.csv'
 TENDERS_TOPIC_MAP_PATH = '../assets/tenders_topic.csv'
 TENDERS_TAG_PATH = '../assets/tenders_keyword.csv'
 TENDERS_TOPIC_PATH = '../assets/matching_result_by_lda.csv'
+TENDERS_RELEVANT_PATH = '../assets/clean_relevant_tenders.csv'
 
 LOCAL_PATH = './assets'
 MODEL_FILE = 'LdaModel.model'

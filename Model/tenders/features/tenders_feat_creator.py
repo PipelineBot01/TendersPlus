@@ -76,6 +76,6 @@ class TendersFeatCreator:
 
 
 # if __name__ == '__main__':
-    # ttg = TendersFeatCreator()
-    # ttg.create_tag_mapping('_id')
-    # ttg.create_topic_mapping('_id')
+#     ttg = TendersFeatCreator()
+#     ttg.create_tag_mapping('id')
+#     ttg.create_topic_mapping('id')

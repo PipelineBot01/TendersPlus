@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 from keybert._model import KeyBERT
 
-from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH
 from utils.feature_utils import filter_words, PROJECT_STOP_WORDS
 
 RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
@@ -181,7 +180,7 @@ class KeyExtractor:
         for i in range(iterations):
             tmp_df = self.extract_label(tmp_df, pk, i)
             input_df = input_df.drop('text', axis=1)
-            input_df = input_df.merge(tmp_df[['_id', f'key_{i}', 'text']], on=pk, how='left')
+            input_df = input_df.merge(tmp_df[[pk, f'key_{i}', 'text']], on=pk, how='left')
             tmp_df = tmp_df[(tmp_df[f'key_{i}'] != '[none_tag]'
                              ) & (tmp_df['text'].notna())].drop(f'key_{i}', axis=1).set_index(pk)
 
@@ -190,8 +189,7 @@ class KeyExtractor:
 
 
 # if __name__ == '__main__':
-    # input_df = pd.read_csv(TENDERS_INFO_PATH)
-    # input_df['text'] = input_df['Description'] + '.' + input_df['Title']
-    # ke = KeyExtractor()
-    # re_df = ke.get_tags(input_df, '_id', 'text')
-    # re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')
+#     input_df = pd.read_csv(TENDERS_INFO_PATH)
+#     ke = KeyExtractor()
+#     re_df = ke.get_tags(input_df, 'id', 'text')
+#     re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')
