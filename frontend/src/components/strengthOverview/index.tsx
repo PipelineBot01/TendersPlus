@@ -13,8 +13,6 @@ export default function StrengthOverview():JSX.Element{
 	useEffect(()=>{	
 		strengthOverviewAPI().then((response)=>{
 			if(response.data){
-				console.log(response.data)
-				
 				setStrengthData(response.data)
 			}
 		})

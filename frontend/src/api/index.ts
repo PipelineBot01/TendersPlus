@@ -6,7 +6,8 @@ import type {
 	Signup, 
 	ProfileForm,
 	MatchResearcher, 
-	UniversityStrength } from '../utils/types'
+	UniversityStrengthMap,
+	QueryTender } from '../utils/types'
 
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
@@ -25,10 +26,14 @@ export const signupAPI = (data:Signup):Promise<CustomAPIResponse<UserInfo>>=>{
 	return request.post('/account/signup', data)
 }
 
-export const strengthOverviewAPI = ():Promise<CustomAPIResponse<any>>=>{
+export const strengthOverviewAPI = ():Promise<CustomAPIResponse<UniversityStrengthMap>>=>{
 	return request.get('/strength_overview')
 }
 
 export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIResponse<any>> =>{
 	return request.post('/matcher/researchers', data)
+}
+
+export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+	return request.get('/search', {params:{query}})
 }

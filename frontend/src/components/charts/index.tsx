@@ -1,11 +1,42 @@
 import React from "react"
-export function RingChart():JSX.Element{
-	return <>
-		<svg width="100%" height="100%" viewBox="0 0 42 42" className="donut">
-			<circle className="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
-			<circle className="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+import './index.css'
 
-			<circle className="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="85 15" stroke-dashoffset="0"></circle>
+interface DonutChartProp{
+	width:number
+	height:number
+	strokeWidth:number
+	backgroundColor:string
+	chartColor:string
+	percentage:number
+}
+export function DonutChart(prop:DonutChartProp):JSX.Element{
+	const  radius = Math.min(prop.width, prop.height) / 2 * 0.8
+	const  circumference = Math.PI * 2 * radius
+
+	
+	return <span style={{display:'inline-flex', 'alignItems':'center', margin:'0 0.1rem'}}>
+	
+		<svg width={prop.width} height={prop.height} viewBox={`0 0 ${prop.width} ${prop.height}`} className="donut-chart">
+			<circle 
+				className="donut-chart-background" 
+				cx={prop.width / 2} 
+				cy={prop.height / 2} 
+				r={radius} 
+				fill="transparent" 
+				stroke={prop.backgroundColor} 
+				stroke-width={prop.strokeWidth}
+			/>
+			<circle
+				
+				className="donut-chart-content"
+				cx={prop.width / 2} 
+				cy={prop.height / 2} 
+			  	r={radius} 
+			   	fill="transparent" 
+			   	stroke={prop.chartColor} 
+				stroke-width={prop.strokeWidth}
+				stroke-dasharray={`${prop.percentage * circumference} ${circumference}`} 
+				stroke-dashoffset="0"></circle>
 		</svg>
-	</>
+	</span>
 }
