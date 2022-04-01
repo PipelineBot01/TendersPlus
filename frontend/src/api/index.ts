@@ -37,3 +37,16 @@ export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIRespon
 export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
 	return request.get('/search', {params:{query}})
 }
+
+export const queryLatestTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+
+	return query ? request.get('/search/latest', {params:{
+		n:query
+	}}) : request.get('/search/latest')
+}
+export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+
+	return query ? request.get('/search/expiring', {params:{
+		n:query
+	}}) : request.get('/search/expiring')
+}
