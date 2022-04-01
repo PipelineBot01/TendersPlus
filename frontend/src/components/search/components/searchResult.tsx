@@ -13,7 +13,7 @@ import type { QueryTender } from '../../../utils/types'
 
 export default function SearchResult():JSX.Element{
 	const [searchParams, setSearchParams] = useSearchParams()
-	const [totalResult, setTotalResult] = useState(0) 
+	const [totalResult, setTotalResult] = useState(-1) 
 	const [data, setData] = useState(new Array<QueryTender>())
 
 	useEffect(()=>{
@@ -30,7 +30,7 @@ export default function SearchResult():JSX.Element{
 			<SearchBar placeholder='Enter your keywords'/>
 			
 			{
-				data.length === 0 ? 
+				totalResult === -1 ? 
 					<>
 						<div style={{padding:'15rem 0', textAlign:'center', height:'80vh'}}>
 							<Spin size='large' />

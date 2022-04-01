@@ -1,5 +1,6 @@
+from datetime import timedelta
 from pydantic import BaseSettings
-from typing import List
+
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -23,9 +24,8 @@ class Settings(BaseSettings):
     MYSQL_DATABASE: str
 
     # use to filter out tenders
-    EXPIRING_WEEK_THRESHOLD: int = 1
-    LATEST_WEEK_THRESHOLD: int = 8
-    HOT_THRESHOLD: str = ''
+    EXPIRING_DATE_THRESHOLD = timedelta(weeks=10)
+    LATEST_DATE_THRESHOLD = timedelta(weeks=8)
 
     # app server
     APP_HOST: str = 'localhost'
