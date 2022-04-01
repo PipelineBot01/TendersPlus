@@ -12,7 +12,7 @@ from tenders.features.tenders_key_extractor import KeyExtractor
 class Updater:
     def __init__(self, pk: str):
         self.pk = pk
-        self.monx = MongoConx('tenders')
+        self.mongx = MongoConx('tenders')
 
     def update_file(self, new_df, orig_path):
         orig_df = pd.read_csv(orig_path)
@@ -24,8 +24,8 @@ class Updater:
         all_df[all_df['id'].isin(opened_id), 'is_on'] = 1
 
     def update(self):
-        raw_data_df = self.monx.read_df('raw_grants_opened')
-        info_df = self.monx.read_df('clean_train_info')[self.pk]
+        raw_data_df = self.mongx.read_df('raw_grants_opened')
+        info_df = self.mongx.read_df('clean_train_info')[self.pk]
 
         raw_data_df[self.pk] = 'Grants' + raw_data_df['_id']
         raw_data_df = raw_data_df[~raw_data_df[self.pk].isin(info_df)]
@@ -57,4 +57,4 @@ class Updater:
 
             # update opened data
             new_open_info = update_opened_data(TENDERS_TAG_PATH)
-            self.monx.write_df(new_open_info, True)
+            self.mongx.write_df(new_open_info, True)
