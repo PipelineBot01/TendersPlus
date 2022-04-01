@@ -1,4 +1,5 @@
 import base64
+import datetime
 
 from fastapi import APIRouter, HTTPException
 
@@ -18,16 +19,11 @@ async def get_open_opportunities(query: str = None):
         print('keywords:', keywords)
         docs = await crud.db_get_opportunities(keywords)
         for doc in docs:
-            print(doc)
-            if 'close_date' in doc:
+            if isinstance(doc['close_date'], datetime.date):
                 doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-            else:
-                doc['close_date'] = 'On going'
 
-            if 'open_date' in doc:
+            if isinstance(doc['open_date'], datetime.date):
                 doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
-            else:
-                doc['open_date'] = ''
 
         return {'code': 200, 'data': docs}
     except Exception as e:
@@ -42,33 +38,26 @@ async def get_open_opportunities_count():
 
 @router.get('/latest')
 async def get_latest_opportunities(n: int = 3):
+
     docs = await crud.db_get_latest_tenders(n)
     for doc in docs:
-        if 'close_date' in doc:
+        if isinstance(doc['close_date'], datetime.date):
             doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-        else:
-            doc['close_date'] = 'On going'
 
-        if 'open_date' in doc:
+        if isinstance(doc['open_date'], datetime.date):
             doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
-        else:
-            doc['open_date'] = ''
-
+    print(docs)
     return {'code': 200, 'data': docs}
 
 
 @router.get('/expiring')
-async def get_latest_opportunities(n: int = 3):
+async def get_expiring_opportunities(n: int = 3):
     docs = await crud.db_get_expiring_tenders(n)
     for doc in docs:
-        if 'close_date' in doc:
+        if isinstance(doc['close_date'], datetime.date):
             doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-        else:
-            doc['close_date'] = 'On going'
 
-        if 'open_date' in doc:
+        if isinstance(doc['open_date'], datetime.date):
             doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
-        else:
-            doc['open_date'] = ''
 
     return {'code': 200, 'data': docs}

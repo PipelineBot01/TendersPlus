@@ -1,8 +1,6 @@
 from datetime import datetime, timedelta
 from config import settings
 from typing import Union
-import pandas as pd
-import asyncio
 
 from .engine import mongo
 
@@ -18,7 +16,7 @@ async def db_get_latest_tenders(n: int) -> list:
 
     collection = db['clean_grants_opened']
     date_range = datetime.now() - settings.LATEST_DATE_THRESHOLD
-    cursor = collection.find({"open_date": {"$gt": date_range}}, {'_id': 0})
+    cursor = collection.find({"open_date": {"$gt": date_range}}, {'_id': 0, 'desc': 0, 'irf_id': 0})
     if n != 0:
         cursor.limit(n)
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
@@ -33,18 +31,16 @@ def db_get_hot_tenders(n: Union[int, None] = None) -> dict:
     # setattr(settings, 'HOT_TENDERS', tenders)
 
 
-def db_get_expiring_tenders(n: Union[int, None] = None) -> dict:
+async def db_get_expiring_tenders(n: int) -> list:
     """
      if n =None, get all related tenders
     """
-    tenders = None
-    # TODO: fetch n expiring tenders, the rank
+
     client = mongo['tenders_client']
     db = client.get_default_database()
-
     collection = db['clean_grants_opened']
     date_range = datetime.now() + settings.LATEST_DATE_THRESHOLD
-    cursor = collection.find({"close_date": {"$lt": date_range}}, {'_id': 0})
+    cursor = collection.find({"close_date": {"$lt": date_range}}, {'_id': 0, 'desc': 0, 'irf_id': 0})
     if n != 0:
         cursor.limit(n)
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
@@ -66,10 +62,10 @@ async def db_get_opportunities(keywords: str = None) -> list:
 
     if keywords:
         cursor = collection.find({"$text": {"$search": keywords}},
-                                 {'_id': 0, 'id': 0, "score": {"$meta": "textScore"}}).sort(
+                                 {'_id': 0, 'id': 0, 'desc': 0, 'irf_id': 0, "score": {"$meta": "textScore"}}).sort(
             [("score", {"$meta": "textScore"})])
     else:
-        cursor = collection.find({}, {'_id': 0, 'id': 0})
+        cursor = collection.find({}, {'_id': 0, 'id': 0, 'desc': 0,'irf_id': 0})
 
     docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
 

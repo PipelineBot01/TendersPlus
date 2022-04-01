@@ -4,12 +4,13 @@ import { Card, Row, Col } from 'antd'
 import {Link} from 'react-router-dom'
 import {DoubleRightOutlined} from '@ant-design/icons'
 import { useState } from 'react'
+import {DonutChart} from '../charts'
 export default function Discovery():JSX.Element{
 	const [totalNumberTenders, setTotalNumberTenders] = useState(153)
 
 	const renderLatestOpportunities = ()=>{
 		return <>
-		  <Card 
+		  <Card
 		  type='inner' 
 		  style={{margin:'1rem 0'}} title={<>
 		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
