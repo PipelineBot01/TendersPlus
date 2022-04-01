@@ -262,6 +262,11 @@ class ResearcherMatcher(Relation):
 
         div_list, tag_list = self.prepare_dataset(researcher_id)
         candidate_df = measure_func(self, div_list, tag_list)
+
+        # handle no enough matching result
+        if len(candidate_df) < match_num:
+            tmp_info_df = INFO_DF[INFO_DF[self.pk] == researcher_id]
+            candidate_df = candidate_df.append(INFO_DF[INFO_DF['Colleges'] == tmp_info_df['Colleges']])
         sim_df = candidate_df[:match_num]
         return sim_df
 

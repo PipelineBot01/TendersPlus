@@ -5,6 +5,7 @@ from database import SETTINGS
 import logging
 import datetime
 
+
 class MongoConx:
     def __init__(self, database, conf=SETTINGS, auth=True):
         self.uri = f'mongodb://{conf["user"]}:{parse.quote(conf["pwd"])}@{conf["host"]}:{conf["port"]}/{database}'
@@ -25,15 +26,8 @@ class MongoConx:
             self.database[df_name].drop()
         try:
             self.database[df_name].insert_many(df.to_dict(orient='records'))
-            # for col in df.columns:
-            #     if 'date' in col:
-            #         rows = self.database[df_name].find({col: {'$type': 2}})
-            #         for row in rows:
-            #             self.database[df_name].delete_one({col: row[col]})
-            #             row[col] = datetime.datetime.strptime(row[col], "%Y-%m-%d")
-            #             rows = self.database[df_name].save(row)
         except:
-            logging.info(msg='Error happened during updating data')
-            tmp_save.to_csv(f'backup/{datetime.datetime.now().date()}.csv')
+            print('Error happened during updating data')
+            tmp_save.to_csv(f'{datetime.datetime.now().date()}.csv')
             self.database[df_name].insert_many(tmp_save.to_dict(orient='records'))
         self.temp_save[df_name] = df

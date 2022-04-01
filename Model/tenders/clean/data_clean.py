@@ -30,6 +30,7 @@ def convert_dtype(input_df:pd.DataFrame):
 
 
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
+    input_df['_id'] = input_df['_id'].astype(str)
     input_df['id'] = 'Grants' + input_df['_id']
     input_df = input_df[['id',
                          'Agency',
@@ -85,9 +86,13 @@ def update_opened_data(info_path=TENDERS_INFO_PATH, tag_path=TENDERS_TAG_PATH):
         return ' '.join(row[i] for i in row.index[1:])
 
     tag_df['tags'] = tag_df.apply(lambda x: reformat_key(x), axis=1)
-    info_df = info_df.merge(tag_df[['id', 'tags']], on= 'id')
+    info_df = info_df.merge(tag_df[['id', 'tags']], on='id')
     info_df['division'] = 'test'
+
+    info_df.fillna('', inplace=True)
     info_df = convert_dtype(info_df)
+
+
     return info_df
 
 if __name__ =='__main__':

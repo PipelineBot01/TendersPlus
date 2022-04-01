@@ -6,4 +6,5 @@ class Filter:
     def __init__(self):
         self.rm = ResearcherMatcher()
         self.tm = TendersMatcher()
-    
+
+

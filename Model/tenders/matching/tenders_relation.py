@@ -121,10 +121,11 @@ class TendersMatcher(Relation):
         '''
         topic_list, tag_list = self.prepare_dataset(tenders_id)
         candidate_df = measure_func(self, topic_list, tag_list)
+
+        # handle no enough matching result
         if len(candidate_df) < match_num:
-            # TODO: when lacking candidates, use category in future. -2022/03/24 Ray
-            print('???')
-            match_num = len(candidate_df)
+            tmp_info_df = self.__info_df[self.__info_df[self.pk] == tenders_id]
+            candidate_df = candidate_df.append(self.__info_df[self.__info_df['category'] == tmp_info_df['category']])
         return candidate_df[:match_num]
 
 
