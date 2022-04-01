@@ -61,7 +61,7 @@ class TendersFeatCreator:
         -------
 
         '''
-        tenders_topic_df = pd.read_csv(TENDERS_TOPIC_PATH)[[pk, 'topics']]
+        tenders_topic_df = pd.read_csv(TENDERS_TOPIC_PATH)
         tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1)
         tenders_topic_df = tenders_topic_df.set_index(pk)
         tenders_topic_df = tenders_topic_df[['values']].explode('values')
@@ -75,7 +75,7 @@ class TendersFeatCreator:
         tenders_topic_df.to_csv(TENDERS_TOPIC_MAP_PATH, index=0)
 
 
-# if __name__ == '__main__':
-#     ttg = TendersFeatCreator()
-#     ttg.create_tag_mapping('id')
-#     ttg.create_topic_mapping('id')
+if __name__ == '__main__':
+    ttg = TendersFeatCreator()
+    ttg.create_tag_mapping('id')
+    ttg.create_topic_mapping('id')

@@ -177,15 +177,16 @@ class KeyExtractor:
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__convert_word_type(x))
         tmp_df = tmp_df.set_index(pk)[[text_col]]
 
+        keys_col = []
         for i in range(iterations):
             tmp_df = self.extract_label(tmp_df, pk, i)
             input_df = input_df.drop('text', axis=1)
             input_df = input_df.merge(tmp_df[[pk, f'key_{i}', 'text']], on=pk, how='left')
             tmp_df = tmp_df[(tmp_df[f'key_{i}'] != '[none_tag]'
                              ) & (tmp_df['text'].notna())].drop(f'key_{i}', axis=1).set_index(pk)
+            keys_col.append(f'key_{i}')
 
-        input_df = input_df.replace('[none_tag]', np.nan)
-        # TODO: leaving only id and keys
+        input_df = input_df.replace('[none_tag]', np.nan)[[pk]+keys_col]
         return input_df
 
 

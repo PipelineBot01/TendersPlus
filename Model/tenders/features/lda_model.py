@@ -76,7 +76,7 @@ class LDAModel:
         -------
         List[Tuple[str, float]], list of words that only is noun and adjective.
         '''
-        text = relevant_tenders['Text']
+        text = relevant_tenders['text']
         token = nltk.word_tokenize(str(text).lower())
         lemmatizer = nltk.stem.WordNetLemmatizer()
         pos_tagged = nltk.pos_tag(token)
@@ -133,15 +133,11 @@ class LDAModel:
         self.relevant_tenders['keywords'] = self.relevant_tenders.apply(self.extract_keyword, axis=1)
         self.relevant_tenders['topics'] = self.relevant_tenders.apply(self.get_doc_topic, axis=1)
 
-    def make_result_to_file(self, filepath=TENDERS_TOPIC_PATH):
-        if filepath is None:
-            print("Do not find this file!")
-            return False
-        else:
-            self.add_lda_result_to_data()
-            self.relevant_tenders.to_csv(filepath, encoding='utf-8_sig')
+    def get_tenders_topic(self):
+        self.add_lda_result_to_data()
+        return self.relevant_tenders[['id', 'topics']]
 
-    def get_topic(self, num_words):
+    def get_key_topic(self, num_words):
         topics = self.lda.show_topics(num_topics=NUM_TOPICS, num_words=num_words)
         topic_dic = dict()
         for topic in topics:
@@ -155,12 +151,12 @@ class LDAModel:
         df = pd.DataFrame.from_dict(topic_dic, orient='index', columns=['keyword' + str(i) for i in range(num_words)])
         return df
 
-# if __name__ == '__main__':
-# input_df = pd.read_csv(TENDERS_INFO_PATH)
-# input_df['Text'] = input_df['Title'] + ' / ' + input_df['Description']
-# lda = LDAModel(input_df)
-# lda.build_lda_model()
+if __name__ == '__main__':
+    input_df = pd.read_csv('../assets/clean_trains_info.csv')
+    lda = LDAModel(input_df)
+    lda.build_lda_model()
 
-# just print for demo, will save to file when the model is well enough
-# lda.make_result_to_file(filepath='../assets/matching_result_by_lda.csv')
-# lda.save_topics_to_file(num_words=20, filepath=TENDERS_TOPIC_PATH)
+    # just print for demo, will save to file when the model is well enough
+    lda.get_tenders_topic().to_csv(TENDERS_TOPIC_PATH, index=0)
+    # result = lda.get_topic(num_words=20)
+    # result.to_csv(TENDERS_TOPIC_PATH)

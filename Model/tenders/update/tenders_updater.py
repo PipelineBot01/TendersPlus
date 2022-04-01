@@ -1,5 +1,5 @@
 import pandas as pd
-
+import logging
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
     TENDERS_TOPIC_PATH
 from db.mongodb import MongoConx
@@ -25,13 +25,14 @@ class Updater:
 
     def update(self):
         raw_data_df = self.mongx.read_df('raw_grants_opened')
-        info_df = self.mongx.read_df('clean_train_info')[self.pk]
+        info_df = pd.read_csv(TENDERS_INFO_PATH)[self.pk]
 
         raw_data_df[self.pk] = 'Grants' + raw_data_df['_id']
         raw_data_df = raw_data_df[~raw_data_df[self.pk].isin(info_df)]
         del info_df
 
         if not raw_data_df.empty:
+            print(f'new Grants open {raw_data_df["id"].unique()}')
             # update info file
             new_info_df = data_clean(raw_data_df)
             self.update_file(new_info_df, TENDERS_INFO_PATH)
@@ -46,7 +47,7 @@ class Updater:
             # update topic file
             lda = LDAModel(pd.read_csv(TENDERS_INFO_PATH))
             lda.build_lda_model()
-            new_topic_df = lda.get_topic(num_words=20)
+            new_topic_df = lda.get_tenders_topic()
             self.update_file(new_topic_df, TENDERS_TOPIC_PATH)
             del lda, new_topic_df, new_info_df
 
@@ -56,5 +57,5 @@ class Updater:
             tfc.create_topic_mapping('id')
 
             # update opened data
-            new_open_info = update_opened_data(TENDERS_TAG_PATH)
-            self.mongx.write_df(new_open_info, True)
+            new_open_info = update_opened_data(TENDERS_INFO_PATH)
+            self.mongx.write_df(new_open_info, 'clean_grants_opened', True)

@@ -11,7 +11,7 @@ from tenders.features.tenders_feat_creator import TendersFeatCreator
 from utils.match_utils import normalize, weighted_avg
 
 
-class TendersRelation(Relation):
+class TendersMatcher(Relation):
     def __init__(self, pk: str):
         #  Generating required file if no file under this directory.
 
@@ -130,7 +130,7 @@ class TendersRelation(Relation):
 
 if __name__ == '__main__':
     tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
-    tr = TendersRelation('_id')
+    tr = TendersMatcher('_id')
     test_list = []
     # print('start')
     # result_df = tr.match('6162aa1fe1b7f5c73e6fe6bf')

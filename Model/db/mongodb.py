@@ -2,7 +2,8 @@ from urllib import parse
 import pandas as pd
 from pymongo import MongoClient
 from database import SETTINGS
-
+import logging
+import datetime
 
 class MongoConx:
     def __init__(self, database, conf=SETTINGS, auth=True):
@@ -18,9 +19,21 @@ class MongoConx:
         self.temp_save[df_name] = data
         return data
 
-    def write_df(self, df, df_name, overwrite=False):
+    def write_df(self, df: pd.DataFrame, df_name: str, overwrite=False):
+        tmp_save = self.read_df(df_name)
         if overwrite:
             self.database[df_name].drop()
-        self.database[df_name].insert_many(df.to_dict(orient='records'))
+        try:
+            self.database[df_name].insert_many(df.to_dict(orient='records'))
+            # for col in df.columns:
+            #     if 'date' in col:
+            #         rows = self.database[df_name].find({col: {'$type': 2}})
+            #         for row in rows:
+            #             self.database[df_name].delete_one({col: row[col]})
+            #             row[col] = datetime.datetime.strptime(row[col], "%Y-%m-%d")
+            #             rows = self.database[df_name].save(row)
+        except:
+            logging.info(msg='Error happened during updating data')
+            tmp_save.to_csv(f'backup/{datetime.datetime.now().date()}.csv')
+            self.database[df_name].insert_many(tmp_save.to_dict(orient='records'))
         self.temp_save[df_name] = df
-
