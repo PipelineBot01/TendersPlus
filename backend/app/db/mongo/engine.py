@@ -23,7 +23,7 @@ async def init_db() -> None:
             index_or_name='clean_grants_opened_text_index')
 
     await mongo['tenders_client'].get_default_database().get_collection('clean_grants_opened').create_index(
-        [('Title', 'text'), ('desc', 'text'), ('GO ID', 'text')],
+        [('Title', 'text'), ('desc', 'text'), ('Primary Category', 'text'), ('GO ID', 'text')],
         name='clean_grants_opened_text_index',
         weights={'Title': 3, 'desc': 2, 'GO ID': 1})
 

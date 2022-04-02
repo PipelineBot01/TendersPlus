@@ -61,7 +61,7 @@ async def db_get_opportunities(keywords: str = None) -> list:
     collection = db['clean_grants_opened']
 
     if keywords:
-        cursor = collection.find({"$text": {"$search": keywords}},
+        cursor = collection.find({"$text": {"$search": {"query": keywords, "fuzzy": {'prefixLength': 2}}}},
                                  {'_id': 0, 'id': 0, 'desc': 0, 'irf_id': 0, "score": {"$meta": "textScore"}}).sort(
             [("score", {"$meta": "textScore"})])
     else:
