@@ -18,12 +18,7 @@ async def get_open_opportunities(query: str = None):
             keywords = base64.b64decode(query).decode('utf-8')
         print('keywords:', keywords)
         docs = await crud.db_get_opportunities(keywords)
-        for doc in docs:
-            if isinstance(doc['close_date'], datetime.date):
-                doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-
-            if isinstance(doc['open_date'], datetime.date):
-                doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
+        print(docs)
 
         return {'code': 200, 'data': docs}
     except Exception as e:

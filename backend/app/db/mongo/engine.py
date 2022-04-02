@@ -17,11 +17,15 @@ async def init_db() -> None:
     mongo['staff_client'] = AsyncIOMotorClient(mongo['base_url'] + '/staffs')
 
     # build searching index
-    if 'clean_grants_opened_text_index' not in await mongo['tenders_client'].get_default_database().get_collection(
+    if 'clean_grants_opened_text_index' in await mongo['tenders_client'].get_default_database().get_collection(
             'clean_grants_opened').index_information():
-        await mongo['tenders_client'].get_default_database().get_collection('clean_grants_opened').create_index(
-            [('title', 'text'), ('tags', 'text'), ('desc', 'text')], name='clean_grants_opened_text_index',
-            weights={'title': 3, 'tags': 2, 'desc': 1})
+        await mongo['tenders_client'].get_default_database().get_collection('clean_grants_opened').drop_index(
+            index_or_name='clean_grants_opened_text_index')
+
+    await mongo['tenders_client'].get_default_database().get_collection('clean_grants_opened').create_index(
+        [('Title', 'text'), ('desc', 'text'), ('GO ID', 'text')],
+        name='clean_grants_opened_text_index',
+        weights={'Title': 3, 'desc': 2, 'GO ID': 1})
 
     # count the records
     mongo['tenders_client_docs_count'] = {}

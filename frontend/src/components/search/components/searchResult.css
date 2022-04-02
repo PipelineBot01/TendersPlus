@@ -52,7 +52,9 @@ div.search-result-content .ant-list-pagination{
 
 
 div.search-result-content .ant-list-item-meta-description .close-date,
-div.search-result-content .ant-list-item-meta-description .open-date{
+div.search-result-content .ant-list-item-meta-description .open-date,
+div.search-result-content .ant-list-item-meta-description .location,
+div.search-result-content .ant-list-item-meta-description .agency{
     font-size: 0.85rem;
     font-weight: 600;
 }
@@ -95,7 +97,6 @@ div.search-result-content .ant-list-item-meta-title{
     font-weight: 700;
     text-align: right;
     width: 100%;
-    margin-left: 0.3rem;
     color:rgb(84, 86, 88);
     margin-bottom: 0;
 }

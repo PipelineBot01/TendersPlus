@@ -57,33 +57,33 @@ export default function SearchResult():JSX.Element{
 								renderItem={item=>{
 
 									const tags:Array<string> = item.tags?.split(' ')
-									return <List.Item key={item.id}>
+									return <List.Item key={item['GO ID']}>
 										<List.Item.Meta 
 											title={
-												<a href={item.url} className='link' >{item.title}   </a>
+												<a href={item['URL']} className='link' >{item['GO ID'] + ' - ' + item['Title']}   </a>
         
 											} 
 											description={
 												<>
-													<Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-														<Col style={{textAlign:'center'}} span={3}>Open Date:</Col>
-									
-														<Col span={14}>{item.open_date}</Col>
-													</Row>
-
 													<Row className='close-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-														<Col style={{textAlign:'center'}} span={3}>Close Date:</Col>
-											
-														<Col span={14}>{item.close_date}</Col>
+														<Col style={{textAlign:'right'}} span={5}>Close Date & Time:</Col>
+														<Col span={15}>{item['Close Date & Time']}</Col>
 													</Row>
-										
-
-											
+													<Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
+														<Col style={{textAlign:'right'}} span={5}>Publish Date:</Col>
+														<Col span={15}>{item['Publish Date']}</Col>
+													</Row>
+													<Row className='agency' style={{marginTop:'0.5rem'}}  gutter={6}>
+														<Col style={{textAlign:'right'}} span={5}>Agency:</Col>
+														<Col span={15}>{item['Agency']}</Col>
+													</Row>
+													<Row className='location' style={{marginTop:'0.5rem'}}  gutter={6}>
+														<Col style={{textAlign:'right'}} span={5}>Location:</Col>
+														<Col span={15}>{item['Location']}</Col>
+													</Row>
 													<Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
-										
-														<Col style={{textAlign:'center'}} span={3}>Keywords: </Col>
-												
-														<Col span={20}>
+														<Col style={{textAlign:'right'}} span={5}>Keywords: </Col>
+														<Col span={15}>
 															{tags.map((e, i)=>(<span key={i} className='item'>
 																<DonutChart 
 																	width={12} 
@@ -103,7 +103,7 @@ export default function SearchResult():JSX.Element{
 
 													<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
 														<a  className='url' 
-															href={item.url}>
+															href={item['URL']}>
 															Read more
 															<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
 														</a>
