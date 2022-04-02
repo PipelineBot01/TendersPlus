@@ -67,11 +67,13 @@ export interface WeightItem{
 }
 
 export interface QueryTender{
-    url:string
-    title:string
-    close_date:string
-    open_date:string
-    tags:string
-    division?:string
-    id:string
+    'URL':string
+    'Title':string
+    'Publish Date':string
+    'GO ID':string
+    'tags':string
+    'division'?:string
+    'Close Date & Time':string
+    'Location':string
+    'Agency':string
 }
