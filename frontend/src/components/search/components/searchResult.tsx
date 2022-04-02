@@ -21,6 +21,8 @@ export default function SearchResult():JSX.Element{
 		queryTendersAPI(query).then((response)=>{
 			setTotalResult(response.data?.length || 0)
 			setData(response.data as Array<QueryTender>)
+		}).catch(()=>{
+			setTotalResult(0)
 		})
 	}, [searchParams.get('query')])
 
