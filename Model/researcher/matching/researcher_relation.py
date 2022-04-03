@@ -6,14 +6,16 @@ from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH
 from relation_interface.Relation import Relation
 from utils.match_utils import *
 
-MAP_DF = pd.read_csv(RESEARCHER_TAG_CATE_MAP_PATH)
-INFO_DF = pd.read_csv(RESEARCHER_INFO_PATH)
-
 
 class ResearcherMatcher(Relation):
-    def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH, re_tag_path=RESEARCHER_TAG_MAP_PATH, pk='Staff ID'):
+    def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH,
+                 re_tag_path=RESEARCHER_TAG_MAP_PATH,
+                 tag_div_path=RESEARCHER_TAG_CATE_MAP_PATH,
+                 re_info_path=RESEARCHER_INFO_PATH, pk='Staff ID'):
         self.re_div_df = pd.read_csv(re_div_path)
         self.re_tag_df = pd.read_csv(re_tag_path)
+        self.MAP_DF = pd.read_csv(tag_div_path)
+        self.INFO_DF = pd.read_csv(re_info_path)
         self.pk = pk
 
         assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
@@ -144,7 +146,7 @@ class ResearcherMatcher(Relation):
         ref_div_df = self.re_div_df[self.re_div_df[self.pk] != researcher_id]
 
         tar_tag_df, ref_tag_df = pd.DataFrame(), pd.DataFrame()
-        merged_tag_df = self.re_tag_df.merge(MAP_DF, on='Tag')
+        merged_tag_df = self.re_tag_df.merge(self.MAP_DF, on='Tag')
 
         if researcher_id in merged_tag_df[self.pk].unique():
             tar_tag_df = merged_tag_df[merged_tag_df[self.pk] == researcher_id]
@@ -181,8 +183,8 @@ class ResearcherMatcher(Relation):
                                        'Tag': list(tag_dict.keys()),
                                        'weight': list(tag_dict.values())})
             ref_tag_df = self.re_tag_df
-            tar_tag_df = tar_tag_df.merge(MAP_DF, on='Tag')
-            ref_tag_df = ref_tag_df.merge(MAP_DF, on='Tag')
+            tar_tag_df = tar_tag_df.merge(self.MAP_DF, on='Tag')
+            ref_tag_df = ref_tag_df.merge(self.MAP_DF, on='Tag')
         return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
 
     def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], div_num=3, tag_num=10) -> pd.DataFrame:
@@ -203,7 +205,7 @@ class ResearcherMatcher(Relation):
 
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
 
-        info_df = INFO_DF.merge(sim_df, on=self.pk)[[self.pk, 'weight'] + tar_col]
+        info_df = self.INFO_DF.merge(sim_df, on=self.pk)[[self.pk, 'weight'] + tar_col]
         info_df = info_df.fillna('')
 
         self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
@@ -265,15 +267,17 @@ class ResearcherMatcher(Relation):
 
         # handle no enough matching result
         if len(candidate_df) < match_num:
-            tmp_info_df = INFO_DF[INFO_DF[self.pk] == researcher_id]
-            candidate_df = candidate_df.append(INFO_DF[INFO_DF['Colleges'] == tmp_info_df['Colleges']])
+            tmp_info_df = self.INFO_DF[self.INFO_DF[self.pk] == researcher_id]
+            candidate_df = candidate_df.append(self.INFO_DF[self.INFO_DF['Colleges'] ==
+                                                            tmp_info_df['Colleges']].sample(frac=1))
         sim_df = candidate_df[:match_num]
         return sim_df
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 #     # matching by divisions/tags
-#     rm = ResearcherMatcher()
+    rm = ResearcherMatcher()
+    print(rm.match_by_id('Canberra61585cffd7b0c43ebd755201'))
 #     division_list = ["d_10", "d_08"]
 #     tag_list = ['machine learning']
 #     temp_df = rm.match_by_profile(division_list, tag_list)

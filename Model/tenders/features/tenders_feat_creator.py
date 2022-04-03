@@ -74,8 +74,10 @@ class TendersFeatCreator:
             f'This data set contains duplicated tags in tenders {duplicated_df[pk].unique()}'
         tenders_topic_df.to_csv(TENDERS_TOPIC_MAP_PATH, index=0)
 
+    def create_all(self, pk: str):
+        self.create_tag_mapping(pk)
+        self.create_topic_mapping(pk)
 
 if __name__ == '__main__':
     ttg = TendersFeatCreator()
-    ttg.create_tag_mapping('id')
-    ttg.create_topic_mapping('id')
+    ttg.create_all('id')

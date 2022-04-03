@@ -1,5 +1,9 @@
 import gensim
-import nltk
+
+from nltk.stem import WordNetLemmatizer
+from nltk import word_tokenize
+from nltk import pos_tag
+
 import numpy as np
 import pandas as pd
 from gensim.test.utils import datapath
@@ -77,9 +81,9 @@ class LDAModel:
         List[Tuple[str, float]], list of words that only is noun and adjective.
         '''
         text = relevant_tenders['text']
-        token = nltk.word_tokenize(str(text).lower())
-        lemmatizer = nltk.stem.WordNetLemmatizer()
-        pos_tagged = nltk.pos_tag(token)
+        token = word_tokenize(str(text).lower())
+        lemmatizer = WordNetLemmatizer()
+        pos_tagged = pos_tag(token)
 
         words = filter_words(pos_tagged, lemmatizer)
 
@@ -90,9 +94,9 @@ class LDAModel:
     def extract_keyword(self, data):
         doc_word_dict = []  # value: words
         templist2 = []
-        token = nltk.word_tokenize(str(data).lower())
-        lemmatizer = nltk.stem.WordNetLemmatizer()
-        pos_tagged = nltk.pos_tag(token)
+        token = word_tokenize(str(data).lower())
+        lemmatizer = WordNetLemmatizer()
+        pos_tagged = pos_tag(token)
         words = filter_words(pos_tagged, lemmatizer)
 
         doc_topics = self.get_doc_topic(data)
@@ -108,9 +112,9 @@ class LDAModel:
         return set(keyword)
 
     def get_doc_topic(self, data):
-        token = nltk.word_tokenize(str(data).lower())
-        lemmatizer = nltk.stem.WordNetLemmatizer()
-        pos_tagged = nltk.pos_tag(token)
+        token = word_tokenize(str(data).lower())
+        lemmatizer = WordNetLemmatizer()
+        pos_tagged = pos_tag(token)
 
         words = filter_words(pos_tagged, lemmatizer)
 

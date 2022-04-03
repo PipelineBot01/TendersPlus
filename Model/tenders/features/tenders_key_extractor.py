@@ -1,7 +1,11 @@
 import re
 from typing import List, Tuple
 
-import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
+from nltk import word_tokenize
+from nltk import pos_tag
+
 import numpy as np
 import pandas as pd
 from keybert._model import KeyBERT
@@ -13,11 +17,17 @@ RE_UPPER = '[A-Z]{2,}'
 RE_WEIGHT_RULE = r'\((.*?)\)'
 
 KW_MODEL = KeyBERT()
-
+STOP = stopwords.words('english')
 
 class KeyExtractor:
     def __init__(self):
         self.kw_model = KW_MODEL
+
+    @staticmethod
+    def remove_stopword(raw_df, col):
+        raw_df[col] = raw_df[col].str.lower()
+        raw_df[col] = raw_df[col].apply(lambda x: ' '.join(i for i in [item for item in x.split() if item not in STOP]))
+        return raw_df
 
     def __preprocess(self, text: str) -> str:
         text = re.sub(RE_SYMBOL, ' ', text)
@@ -69,9 +79,9 @@ class KeyExtractor:
 
     def __convert_word_type(self, text: str) -> str:
         text = self.__preprocess(text)
-        token = nltk.word_tokenize(text)
-        lemmatizer = nltk.stem.WordNetLemmatizer()
-        pos_tagged = nltk.pos_tag(token)
+        token = word_tokenize(text)
+        lemmatizer = WordNetLemmatizer()
+        pos_tagged = pos_tag(token)
         text = filter_words(pos_tagged, lemmatizer)
         return ' '.join(text)
 

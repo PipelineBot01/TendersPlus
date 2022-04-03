@@ -4,27 +4,28 @@ from typing import List, Dict
 import numpy as np
 import pandas as pd
 
-from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
-    TENDERS_TOPIC_PATH, TENDERS_TAG_MAP_PATH, TENDERS_TOPIC_MAP_PATH, TENDERS_MATCHING_OUTPUT
+from conf.file_path import TENDERS_INFO_PATH, TENDERS_TOPIC_MAP_PATH, TENDERS_TAG_MAP_PATH
 from relation_interface.Relation import Relation
 from tenders.features.tenders_feat_creator import TendersFeatCreator
 from utils.match_utils import normalize, weighted_avg
 
 
 class TendersMatcher(Relation):
-    def __init__(self, pk: str):
+    def __init__(self, tag_map_path=TENDERS_TAG_MAP_PATH,
+                 topic_path=TENDERS_TOPIC_MAP_PATH,
+                 info_path=TENDERS_INFO_PATH, pk='id'):
         #  Generating required file if no file under this directory.
 
         tfc = TendersFeatCreator()
-        if not os.path.exists(TENDERS_TAG_MAP_PATH):
+        if not os.path.exists(tag_map_path):
             tfc.create_tag_mapping(pk)
-        if not os.path.exists(TENDERS_TOPIC_PATH):
+        if not os.path.exists(topic_path):
             tfc.create_topic_mapping(pk)
 
         self.pk = pk
-        self.__info_df = pd.read_csv(TENDERS_INFO_PATH)
-        self.__tag_df = pd.read_csv(TENDERS_TAG_MAP_PATH)
-        self.__topic_df = pd.read_csv(TENDERS_TOPIC_MAP_PATH)
+        self.__info_df = pd.read_csv(info_path)
+        self.__tag_df = pd.read_csv(tag_map_path)
+        self.__topic_df = pd.read_csv(topic_path)
 
     def prepare_dataset(self, tenders_id: str) -> tuple[list, list]:
         '''
@@ -61,7 +62,7 @@ class TendersMatcher(Relation):
         candidate_df = ref_df[ref_df['Tag'].isin(tar_df['Tag'])]
         candidate_df = candidate_df.groupby(self.pk)['Tag'].count().reset_index().rename(
             columns={'Tag': 'weight'}).sort_values('weight', ascending=False)
-        candidate_df = normalize(candidate_df, 'weight', 'max-min')
+        candidate_df = normalize(candidate_df, 'weight', 'max_min')
         return candidate_df
 
     def __weight_topic_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
@@ -125,21 +126,22 @@ class TendersMatcher(Relation):
         # handle no enough matching result
         if len(candidate_df) < match_num:
             tmp_info_df = self.__info_df[self.__info_df[self.pk] == tenders_id]
-            candidate_df = candidate_df.append(self.__info_df[self.__info_df['category'] == tmp_info_df['category']])
+            candidate_df = candidate_df.append(self.__info_df[self.__info_df['category']
+                                                              == tmp_info_df['category']].sample(frac=1))
         return candidate_df[:match_num]
 
 
 if __name__ == '__main__':
-    tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
-    tr = TendersMatcher('_id')
-    test_list = []
+    # tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
+    tr = TendersMatcher()
+    # test_list = []
     # print('start')
-    # result_df = tr.match('6162aa1fe1b7f5c73e6fe6bf')
-    # print(result_df)
-    for i in range(20):
-        test_df = tenders_tag_df.sample(1)
-        print(test_df['_id'])
-        result_df = tr.match(test_df['_id'].values[0])
-        result_df.loc[:, 'orig_id'] = test_df['_id'].values[0]
-        test_list.append(result_df)
-    pd.concat(test_list, ignore_index=True).to_csv(TENDERS_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')
+    result_df = tr.match('Grants623afc0fb34a6bd48ae4bd6c')
+    print(result_df)
+    # for i in range(20):
+    #     test_df = tenders_tag_df.sample(1)
+    #     print(test_df['_id'])
+    #     result_df = tr.match(test_df['_id'].values[0])
+    #     result_df.loc[:, 'orig_id'] = test_df['_id'].values[0]
+    #     test_list.append(result_df)
+    # pd.concat(test_list, ignore_index=True).to_csv(TENDERS_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')
