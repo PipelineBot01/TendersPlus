@@ -59,6 +59,12 @@ async def shutdown():
 
 if __name__ == '__main__':
     import uvicorn
+    from uvicorn.config import LOGGING_CONFIG
+
+    # modify log
+    log_config = LOGGING_CONFIG.copy()
+    log_config['formatters']['default']['fmt'] = '%(asctime)s    ' + log_config['formatters']['default']['fmt']
+    log_config['formatters']['access']['fmt'] = '%(asctime)s    ' + log_config['formatters']['access']['fmt']
 
     # launch app
-    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST, root_path='/tendersplus/api')
+    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST, log_config=log_config,root_path='/tendersplus/api')

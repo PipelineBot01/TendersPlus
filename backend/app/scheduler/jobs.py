@@ -1,6 +1,12 @@
 from apscheduler.triggers.base import BaseTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 
+from datetime import datetime
+from config import settings
+from db.mysql import session
+from db.mysql.curd.user import sql_get_all_users
+from db.mysql.curd.user_action import sql_get_all_user_action
+
 jobs = []
 
 
@@ -12,27 +18,15 @@ def job(id: str, trigger: BaseTrigger, delay: bool = False):
     return decorator
 
 
-@job(id='crawl_data', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=True)
-async def get_tenders():
-    pass
-    # url="https://www.tenders.gov.au/Atm/"
-    # interval=3
-    # scraper=tenderScraper(url, interval)
-    # scraper.run(save_mongo=True)
+@job(id='get_all_user_info', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
+async def get_all_user_info():
+    if datetime.now().hour < 3:
+        with session() as db:
+            settings.USER_INFO = sql_get_all_users(db)
 
 
-@job(id='update_latest_tenders', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'))
-async def update_latest_tenders():
-    # print('scheduled job: update_latest_tenders Done!')
-    pass
-
-@job(id='update_expiring_tenders', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
-async def update_expiring_tenders():
-    # TODO: filter out tenders that expiring within one month, and save to the mongodb
-    pass
-
-
-@job(id='update_hot_tenders', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
-async def update_hot_tenders():
-    # TODO: rearrange tenders rank based on user interactions.
-    pass
+@job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
+async def get_all_user_action():
+    if datetime.now().hour < 3:
+        with session() as db:
+            settings.USER_ACTION = sql_get_all_user_action(db)
