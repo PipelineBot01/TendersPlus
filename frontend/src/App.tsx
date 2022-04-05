@@ -45,36 +45,33 @@ export default function App() :JSX.Element{
 					</React.Suspense>
 				} >
 					<Route  path='search' element={
-						<>
-							<Spin style={{width:'100%'}} size="large"></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
-						</>
+						<React.Suspense fallback={<Spin style={{width:'100%'}} ></Spin>}>
+							<SearchResult/>
+						</React.Suspense>
 					}/>
 					<Route  path='profile' element={
-						<>
-							<React.Suspense fallback={<div><Spin></Spin></div>}>
-								<Profile/>
-							</React.Suspense>
-					
-						</>
+		
+						<React.Suspense fallback={<Spin style={{width:'100%'}} ></Spin>}>
+							<Profile/>
+						</React.Suspense>
 					}/>
 					<Route  path='favorites' element={
 						<>
-							<Spin style={{width:'100%'}} size="large"></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
+							<Spin style={{width:'100%'}} ></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>Coming Soon ...</div>
 						</>
 					}/>
 					<Route  path='analysis' element={
 						<> 
-							<Spin style={{width:'100%'}} size="large"></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.5rem'}}>Coming soon</div>
+							<Spin style={{width:'100%'}} ></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>Coming Soon ...</div>
 						</>
 					}/>
 					<Route  path='chatty' element={
 						<>
-							<React.Suspense fallback={<>
-								<Spin style={{width:'100%'}} size="large"></Spin>
-							</>}>
+							<React.Suspense fallback={
+								<Spin style={{width:'100%'}} ></Spin>
+							}>
 								<Chatty/>
 							</React.Suspense>
 						</>

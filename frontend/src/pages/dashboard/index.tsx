@@ -64,8 +64,6 @@ export default function Dashboard():JSX.Element{
 		
 	}
 	
-	
-	
 	const handleLogout  = ()=>{
 		console.log('logout!')
 		Cookies.remove('access_token')
