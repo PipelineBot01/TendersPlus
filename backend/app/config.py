@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     # RECORD ALL USER
     USER_INFO = []
     USER_ACTION = []
-    ADMIN_USER_TOKEN:str
+    ADMIN_USER_TOKEN: str
 
     UNIVERSITIES = ['Australian National University', 'University of Canberra', 'Australian Catholic University',
                     'Charles Sturt University', 'Macquarie University', 'Southern Cross University',
