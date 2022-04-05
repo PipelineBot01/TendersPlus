@@ -34,7 +34,7 @@ server.include_router(user_router, prefix='/user', tags=['User'])
 server.include_router(matcher_router, prefix='/matcher', tags=['Matcher'])
 server.include_router(strength_router, prefix='/strength_overview', tags=['StrengthOverview'])
 server.include_router(search_router, prefix='/search', tags=['Search'])
-server.include_router(search_router, prefix='/action', tags=['UserAction'])
+server.include_router(action_router, prefix='/action', tags=['UserAction'])
 
 
 # setup startup event
