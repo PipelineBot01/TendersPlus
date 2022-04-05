@@ -34,18 +34,28 @@ export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIRespon
 	return request.post('/matcher/researchers', data)
 }
 
-export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<QueryTender[]>>=>{
 	return request.get('/search', {params:{query}})
 }
 
-export const queryLatestTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+export const queryLatestTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
 	return query ? request.get('/search/latest', {params:{
 		n:query
 	}}) : request.get('/search/latest')
 }
 
-export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
+export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
 	return query ? request.get('/search/expiring', {params:{
 		n:query
 	}}) : request.get('/search/expiring')
+}
+
+export const queryHotTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
+	return query ? request.get('/search/hot', {params:{
+		n:query
+	}}) : request.get('/search/hot')
+}
+
+export const queryTendersCountAPI = ():Promise<CustomAPIResponse<number>>=>{
+	return request.get('/search/count')
 }
