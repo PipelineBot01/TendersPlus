@@ -8,3 +8,8 @@ class ProfileModel(BaseModel):
     university: str
     research_fields: List[str]
     tags: List[str]
+
+
+class ActionModel(BaseModel):
+    type: str
+    payload: str
