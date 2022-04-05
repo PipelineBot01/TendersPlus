@@ -26,7 +26,7 @@ async def get_open_opportunities(query: str = None):
         raise HTTPException(500)
 
 
-@router.get('/total')
+@router.get('/count')
 async def get_open_opportunities_count():
     return {'code': 200, 'data': mongo['tenders_client_docs_count']['clean_grants_opened']}
 

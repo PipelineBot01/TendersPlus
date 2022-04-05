@@ -3,11 +3,13 @@ import './index.css'
 import { Card, Row, Col } from 'antd'
 import {Link} from 'react-router-dom'
 import {DoubleRightOutlined} from '@ant-design/icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {DonutChart} from '../charts'
 export default function Discovery():JSX.Element{
-	const [totalNumberTenders, setTotalNumberTenders] = useState(153)
-
+	const [totalNumberTenders, setTotalNumberTenders] = useState(0)
+	useEffect(()=>{
+		
+	}, [])
 	const renderLatestOpportunities = ()=>{
 		return <>
 		  <Card
