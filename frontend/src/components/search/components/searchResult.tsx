@@ -15,12 +15,12 @@ export default function SearchResult():JSX.Element{
 	const [searchParams, setSearchParams] = useSearchParams()
 	const [totalResult, setTotalResult] = useState(-1) 
 	const [data, setData] = useState(new Array<QueryTender>())
-	const [queryKeywords, setQueryKeywords] = useState('Enter your keywords')
+	const [queryKeywords, setQueryKeywords] = useState('All')
 	useEffect(()=>{
 		let encodeQuery = searchParams.get('query') || ''
 		const decodeQuery = window.atob(encodeQuery)
 
-		setQueryKeywords(decodeQuery || 'Enter your keywords')
+		setQueryKeywords(decodeQuery || 'All')
 
 		let type:QueryType = 'none'
 		switch (decodeQuery){
@@ -47,13 +47,12 @@ export default function SearchResult():JSX.Element{
 				totalResult === -1 ? 
 					<>
 						<div style={{padding:'15rem 0', textAlign:'center', height:'80vh'}}>
-							<Spin size='large' />
-							<div style={{color:'gray', marginTop:'0.3rem'}}>Searching...</div>
+							<Spin size='default' />
+							<div style={{color:'gray', fontSize:'0.8rem', fontWeight:600, marginTop:'0.3rem'}}>Searching...</div>
 						</div>
-
 					</> : 
 					<>
-						<div className='search-result-info'>About <span>{totalResult}</span> results</div>
+						<div className='search-result-info'>Found: <span>{totalResult}</span> results</div>
 						<div className='search-result-content'>
 							<List
 								itemLayout='vertical'
