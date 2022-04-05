@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 
 from sqlalchemy.orm import Session
-from dependencies import check_access_token, get_db
+from dependencies import check_access_token, get_db, check_admin_token
 from db.mysql.curd.user import sql_get_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field, sql_add_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag, sql_add_user_tag
 
 from models.user import ProfileModel
+from config import settings
 
 router = APIRouter()
 
@@ -74,3 +75,9 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
     except Exception as e:
         print(str(e))
         raise HTTPException(500, 'INTERNAL SERVER ERROR')
+
+
+# ====== admin api ======
+@router.get('/all')
+async def get_all_user_info(flag: bool = Depends(check_admin_token)):
+    return {'code': 200, 'data': settings.USER_INFO}

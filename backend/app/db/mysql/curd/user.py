@@ -1,9 +1,8 @@
-import hashlib
-import base64
+
 from datetime import datetime
 from sqlalchemy.orm import Session
 
-from typing import Union
+from typing import Union,List
 
 from utils import auth
 
@@ -29,3 +28,7 @@ def sql_add_user(email: str, password: str, first_name: str, last_name: str, uni
         session.add(SQLUserResearchField(email=email, field_id=i))
 
     return user_record
+
+
+def sql_get_all_users(session:Session)->List[SQLUser]:
+    return session.query(SQLUser).all()

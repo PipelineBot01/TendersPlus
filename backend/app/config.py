@@ -39,6 +39,12 @@ class Settings(BaseSettings):
     HOT_OPPORTUNITIES: dict = None
 
     OAUTH_SECRET_KEY: str
+
+    # RECORD ALL USER
+    USER_INFO = []
+    USER_ACTION = []
+    ADMIN_USER_TOKEN:str
+
     UNIVERSITIES = ['Australian National University', 'University of Canberra', 'Australian Catholic University',
                     'Charles Sturt University', 'Macquarie University', 'Southern Cross University',
                     'University of New England', 'University of New South Wales', 'University of Newcastle',
