@@ -33,26 +33,11 @@ async def get_open_opportunities_count():
 
 @router.get('/latest')
 async def get_latest_opportunities(n: int = 3):
-
     docs = await crud.db_get_latest_tenders(n)
-    for doc in docs:
-        if isinstance(doc['close_date'], datetime.date):
-            doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-
-        if isinstance(doc['open_date'], datetime.date):
-            doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
-    print(docs)
     return {'code': 200, 'data': docs}
 
 
 @router.get('/expiring')
 async def get_expiring_opportunities(n: int = 3):
     docs = await crud.db_get_expiring_tenders(n)
-    for doc in docs:
-        if isinstance(doc['close_date'], datetime.date):
-            doc['close_date'] = doc['close_date'].strftime(settings.DATETIME_FORMAT)
-
-        if isinstance(doc['open_date'], datetime.date):
-            doc['open_date'] = doc['open_date'].strftime(settings.DATETIME_FORMAT)
-
     return {'code': 200, 'data': docs}

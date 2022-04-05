@@ -16,7 +16,9 @@ async def db_get_latest_tenders(n: int) -> list:
 
     collection = db['clean_grants_opened']
     date_range = datetime.now() - settings.LATEST_DATE_THRESHOLD
-    cursor = collection.find({"open_date": {"$gt": date_range}}, {'_id': 0, 'desc': 0, 'Selection Process': 0})
+    cursor = collection.find({"open_date": {"$gt": date_range}},
+                             {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+                              'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
     if n != 0:
         cursor.limit(n)
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
@@ -40,7 +42,9 @@ async def db_get_expiring_tenders(n: int) -> list:
     db = client.get_default_database()
     collection = db['clean_grants_opened']
     date_range = datetime.now() + settings.LATEST_DATE_THRESHOLD
-    cursor = collection.find({"close_date": {"$lt": date_range}}, {'_id': 0, 'desc': 0, 'irf_id': 0})
+    cursor = collection.find({"close_date": {"$lt": date_range}},
+                             {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+                              'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
     if n != 0:
         cursor.limit(n)
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
@@ -61,11 +65,13 @@ async def db_get_opportunities(keywords: str = None) -> list:
     collection = db['clean_grants_opened']
 
     if keywords:
-        cursor = collection.find({"$text": {"$search": keywords, "$caseSensitive":False,"$diacriticSensitive":False}},
-                                 {'_id': 0, 'id': 0, 'desc': 0, 'irf_id': 0, "score": {"$meta": "textScore"}}).sort(
+        cursor = collection.find(
+            {"$text": {"$search": keywords, "$caseSensitive": False, "$diacriticSensitive": False}},
+            {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+             'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1, "score": {"$meta": "textScore"}}).sort(
             [("score", {"$meta": "textScore"})])
     else:
-        cursor = collection.find({}, {'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+        cursor = collection.find({}, {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                                       'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
     docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])

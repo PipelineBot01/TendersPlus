@@ -54,8 +54,10 @@ export default function Header():JSX.Element{
 			switch (error.code){
 			case 400:
 				console.log(error.msg)
-				if((error.msg as string).indexOf('email') !== -1){
+				if((error.msg as string).indexOf('EMAIL') !== -1){
 					message.error({content:'Invalid email', key:'login', duration:1})		
+				}else if ((error.msg as string).indexOf('PASSWORD') !== -1){
+					message.error({content:'Invalid password', key:'login', duration:1})		
 				}
 				break
 			case 500:

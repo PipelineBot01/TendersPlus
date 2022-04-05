@@ -1,4 +1,5 @@
 import {request} from './request'
+
 import type { 
 	UserInfo, 
 	CustomAPIResponse, 
@@ -8,7 +9,6 @@ import type {
 	MatchResearcher, 
 	UniversityStrengthMap,
 	QueryTender } from '../utils/types'
-
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
 	return request.get('/user')
@@ -39,13 +39,12 @@ export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<Array<Qu
 }
 
 export const queryLatestTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
-
 	return query ? request.get('/search/latest', {params:{
 		n:query
 	}}) : request.get('/search/latest')
 }
-export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
 
+export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<Array<QueryTender>>>=>{
 	return query ? request.get('/search/expiring', {params:{
 		n:query
 	}}) : request.get('/search/expiring')
