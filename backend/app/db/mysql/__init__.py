@@ -1,4 +1,3 @@
-
 from .engine import engine, session, base
 
 from .schema.university import SQLUniversity
@@ -19,7 +18,7 @@ def init_db():
     # init database, check if database is existed or not
     if not database_exists(engine.url):
         create_database(engine.url)
-
+        
     # init tables
 
     # base.metadata.drop_all(bind=engine)

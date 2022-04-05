@@ -9,7 +9,6 @@ router = APIRouter()
 def get_strength_overview():
     try:
         data = get_research_strength()
-        print(data,11111)
         return {'code': 200, 'data': data}
     except Exception as e:
         print(e)
