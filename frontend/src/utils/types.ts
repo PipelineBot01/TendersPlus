@@ -77,3 +77,4 @@ export interface QueryTender{
     'Location':string
     'Agency':string
 }
+export type QueryType = 'latest' | 'expiring' | 'hot' | 'none'

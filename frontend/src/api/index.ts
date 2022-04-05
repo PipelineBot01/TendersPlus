@@ -8,7 +8,8 @@ import type {
 	ProfileForm,
 	MatchResearcher, 
 	UniversityStrengthMap,
-	QueryTender } from '../utils/types'
+	QueryTender,
+	QueryType } from '../utils/types'
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
 	return request.get('/user')
@@ -34,26 +35,24 @@ export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIRespon
 	return request.post('/matcher/researchers', data)
 }
 
-export const queryTendersAPI = (query:string):Promise<CustomAPIResponse<QueryTender[]>>=>{
-	return request.get('/search', {params:{query}})
-}
+export const queryTendersAPI = (type:QueryType, query:string|number):Promise<CustomAPIResponse<QueryTender[]>>=>{
+	switch (type){
+	case 'latest':
+		return query ? request.get('/search/latest', {params:{
+			n:query
+		}}) : request.get('/search/latest')
+	case 'expiring':
+		return query ? request.get('/search/expiring', {params:{
+			n:query
+		}}) : request.get('/search/expiring')
+	case 'hot':
+		return query ? request.get('/search/hot', {params:{
+			n:query
+		}}) : request.get('/search/hot')
+	default:
+		return request.get('/search', {params:{query}})
+	}
 
-export const queryLatestTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
-	return query ? request.get('/search/latest', {params:{
-		n:query
-	}}) : request.get('/search/latest')
-}
-
-export const queryExpiringTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
-	return query ? request.get('/search/expiring', {params:{
-		n:query
-	}}) : request.get('/search/expiring')
-}
-
-export const queryHotTendersAPI = (query?:number):Promise<CustomAPIResponse<QueryTender[]>>=>{
-	return query ? request.get('/search/hot', {params:{
-		n:query
-	}}) : request.get('/search/hot')
 }
 
 export const queryTendersCountAPI = ():Promise<CustomAPIResponse<number>>=>{

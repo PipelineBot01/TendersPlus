@@ -1,13 +1,17 @@
 
 import './index.css'
 import { Card, Row, Col } from 'antd'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {DoubleRightOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react'
 import {DonutChart} from '../charts'
-import { queryLatestTendersAPI, queryTendersCountAPI, queryExpiringTendersAPI, queryHotTendersAPI } from '../../api'
+import {  queryTendersCountAPI, queryTendersAPI } from '../../api'
 import type {QueryTender} from '../../utils/types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
+
 export default function Discovery():JSX.Element{
+	const navigate = useNavigate()
 	const [totalNumberTenders, setTotalNumberTenders] = useState(0)
 	const [latestTenders, setLatestTenders] = useState(new Array<QueryTender>())
 	const [expiringTenders, setExpiringTenders] = useState(new Array<QueryTender>())
@@ -18,233 +22,77 @@ export default function Discovery():JSX.Element{
 				setTotalNumberTenders(response.data)
 			}
 		})
-		queryLatestTendersAPI(3).then((response)=>{
+		queryTendersAPI('latest', 3).then((response)=>{
 			if(response.data){
 				setLatestTenders(response.data)
 			}
 		})
-		queryExpiringTendersAPI(3).then((response)=>{
+		queryTendersAPI('expiring', 3).then((response)=>{
 			if(response.data){
-				setLatestTenders(response.data)
+				setExpiringTenders(response.data)
 			}
 		})
-		queryHotTendersAPI(3).then((response)=>{
+		queryTendersAPI('hot', 3).then((response)=>{
 			if(response.data){
-				setLatestTenders(response.data)
+				setHotTenders(response.data)
 			}
 		})
 	}, [])
-	const renderLatestOpportunities = ()=>{
-		return <>
-		  <Card
-		  type='inner' 
-		  style={{margin:'1rem 0'}} title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
+	const renderTenders = (tenders:QueryTender[])=>{
+		return tenders.map(item=>{
+			const tags:Array<string> = item.tags?.split(' ')
+			return (
+				<Card
+					type='inner' 
+					style={{margin:'1rem 0'}} title={<>
+						<span style={{color:'#4b4b4b'}}>{`${item['GO ID']} - ${item['Title']}`}</span>
+		  		</>}>
+					<Row className='close-date' style={{marginTop:'0.5rem'}}  gutter={6}>
+						<Col style={{textAlign:'right'}} span={10}>Close Date & Time:</Col>
+						<Col span={14}>{item['Close Date & Time']}</Col>
+					</Row>
+					<Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
+						<Col style={{textAlign:'right'}} span={10}>Publish Date:</Col>
+						<Col span={14}>{item['Publish Date']}</Col>
+					</Row>
+					<Row className='agency' style={{marginTop:'0.5rem'}}  gutter={6}>
+						<Col style={{textAlign:'right'}} span={10}>Agency:</Col>
+						<Col span={14}>{item['Agency']}</Col>
+					</Row>
+					<Row className='location' style={{marginTop:'0.5rem'}}  gutter={6}>
+						<Col style={{textAlign:'right'}} span={10}>Location:</Col>
+						<Col span={14}>{item['Location']}</Col>
+					</Row>
+					<Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
+						<Col style={{textAlign:'right'}} span={10}>Keywords: </Col>
+						<Col span={14}>
+							{tags.map((e, i)=>(<span key={i} className='item'>
+								<DonutChart 
+									width={12} 
+									height={12}
+									backgroundColor='#EDEEEE' 
+									chartColor='#FFC736'
+									percentage={(18 - i) / 15}
+									strokeWidth={2}
+								/>
+								{e}
+							</span>))}	
+						</Col>
+					</Row>
 
-			</Card>
-			 <Card type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-			 <Card type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-		</>
-
-		
+					<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
+						<a  className='url' 
+							href={item['URL']}>
+															Read more
+							<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
+						</a>
+					</Row>
+				</Card>
+			)
+		})
 	}
-	const renderHotOpportunities = ()=>{
-		return <>
-		  <Card type='inner' 
-		  style={{margin:'1rem 0'}} title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
 
-			</Card>
-			 <Card  type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-			 <Card type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-		</>
-	}
-	const renderExpiringOpportunities = ()=>{
-		return <>
-		  <Card type='inner' style={{margin:'1rem 0'}} title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-			 <Card  type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-			 <Card type='inner' 
-			 style={{margin:'1rem 0'}}
-			 title={<>
-		  <span style={{color:'#4b4b4b'}}>GO5382 - Every Doctor, Every Setting Framework</span>
-		  </>}>
-			  <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Agency :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Close Date&Time :</Col>
-					<Col span={17}>18-Mar-2022 2:00 pm (ACT Local Time)</Col>
-			  </Row>
-			   <Row>
-					<Col span={7} style={{fontWeight:'600', textAlign:'right', paddingRight:'0.2rem'}}>Category :</Col>
-					<Col span={17}>Department of Health</Col>
-			  </Row>
-			  <Row justify='end' style={{marginTop:'1.5rem'}}>
-					<Col ><a  style={{fontWeight:'600', color:'#e96b44'}} href='https://www.grants.gov.au/Go/Show?GoUuid=aa34c76b-34a7-4b43-ac15-dcf82abd0bb4'>Full Details <DoubleRightOutlined /></a></Col>
-			  </Row>
-
-			</Card>
-		</>
-	}
 	
-
 	return(<>
 		<div className="discovery">
 			<Row justify='space-between' align="bottom" >
@@ -254,7 +102,7 @@ export default function Discovery():JSX.Element{
 					</div>
 				</Col>
 				<Col>
-					<div className='subtitle'>
+					<div className='subtitle' onClick={()=>{navigate('/search')}}>
 					All <span>{totalNumberTenders}</span> Opened
 					</div>
 				</Col>
@@ -271,7 +119,7 @@ export default function Discovery():JSX.Element{
 								color:'#585959'
 							}}
 							extra={<Link 
-								to='/result/latest'
+								to='/search?query=bGF0ZXN0'
 								style={{
 									fontWeight:700,
 									color:'#228e64',
@@ -281,20 +129,19 @@ export default function Discovery():JSX.Element{
 							>READ MORE</Link>}
                         
 						>
-							{renderLatestOpportunities()}
+							{renderTenders(latestTenders)}
 						</Card>
 					</Col>
                     
 					<Col span={8}>
-						<Card 	className='tenders-card'  title='Hot'
+						<Card className='tenders-card'  title='Hot'
                         
-
 							headStyle={{
 								fontSize:'1.2rem',
 								color:'#585959'
 							}}
 							extra={<Link 
-								to='/result/hot'
+								to='/search?query=aG90'
 								style={{
 									fontWeight:700,
 									color:'#228e64',
@@ -303,7 +150,7 @@ export default function Discovery():JSX.Element{
 								}}
 							>READ MORE</Link>}
 						>
-							{renderHotOpportunities()}
+							{renderTenders(hotTenders)}
 						</Card>
 					</Col>
                     
@@ -314,14 +161,14 @@ export default function Discovery():JSX.Element{
 								color:'#585959'
 							}}
 							extra={<Link 
-								to='/result/expiring_soon'
+								to='/search?query=ZXhwaXJpbmc='
 								style={{
 									fontWeight:700,
 									color:'#228e64',
 									fontSize:'0.8rem',
 								}}
 							>READ MORE</Link>}>
-							{renderExpiringOpportunities()}
+							{renderTenders(expiringTenders)}
 						</Card>
 					</Col>
 

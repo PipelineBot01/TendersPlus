@@ -9,16 +9,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight, faLink} from '@fortawesome/free-solid-svg-icons'
 import {DonutChart} from '../../../components/charts'
 import {queryTendersAPI} from '../../../api'
-import type { QueryTender } from '../../../utils/types'
+import type { QueryTender, QueryType } from '../../../utils/types'
 
 export default function SearchResult():JSX.Element{
 	const [searchParams, setSearchParams] = useSearchParams()
 	const [totalResult, setTotalResult] = useState(-1) 
 	const [data, setData] = useState(new Array<QueryTender>())
-
+	const [queryKeywords, setQueryKeywords] = useState('Enter your keywords')
 	useEffect(()=>{
-		const query = searchParams.get('query') || ''
-		queryTendersAPI(query).then((response)=>{
+		let encodeQuery = searchParams.get('query') || ''
+		const decodeQuery = window.atob(encodeQuery)
+
+		setQueryKeywords(decodeQuery || 'Enter your keywords')
+
+		let type:QueryType = 'none'
+		switch (decodeQuery){
+		case 'latest':
+		case 'hot':
+		case 'expiring':
+			type = decodeQuery
+			encodeQuery = ''
+			break
+		}
+
+		queryTendersAPI(type, encodeQuery).then((response)=>{
 			setTotalResult(response.data?.length || 0)
 			setData(response.data as Array<QueryTender>)
 		}).catch(()=>{
@@ -28,9 +42,7 @@ export default function SearchResult():JSX.Element{
 
 	return <>
 		<div className='search-result'>
-
-			<SearchBar placeholder='Enter your keywords'/>
-			
+			<SearchBar placeholder={`Searched: ${queryKeywords}`}/>
 			{
 				totalResult === -1 ? 
 					<>
@@ -57,7 +69,6 @@ export default function SearchResult():JSX.Element{
 									{emptyText:' '}
 								}
 								renderItem={item=>{
-
 									const tags:Array<string> = item.tags?.split(' ')
 									return <List.Item key={item['GO ID']}>
 										<List.Item.Meta 
@@ -114,8 +125,6 @@ export default function SearchResult():JSX.Element{
 									
 											}
 										/>
-					
-						
 									</List.Item>
 								}
 								}
