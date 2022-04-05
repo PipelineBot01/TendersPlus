@@ -43,11 +43,14 @@
     box-shadow: 0px 2px 4px rgba(59, 103, 103, 0.034);
 }
 
-div.tenders-card .ant-list-item-meta-description .tags{
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0.5rem 0;
-    display: flex;
+div.tenders-card .ant-card-body .close-date,
+div.tenders-card .ant-card-body .open-date,
+div.tenders-card .ant-card-body .agency,
+div.tenders-card .ant-card-body .location,
+div.tenders-card .ant-card-body .tags
+{
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 div.tenders-card .tags .item{
     font-size: 0.7rem;
@@ -57,22 +60,16 @@ div.tenders-card .tags .item{
     padding: 0.1rem 0.5rem;
     border-radius: 2px;
     box-shadow: 0px 1px 2px rgba(209, 209, 209, 0.295);
-
 }
 
 
- .link{
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: right;
-    width: 100%;
-    color:rgb(84, 86, 88);
-    margin-bottom: 0;
-}
+
 div.tenders-card a.url{
     color: #ff835d !important;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    padding-right: 1rem;
+
  
 }
 div.tenders-card .ant-card-type-inner .ant-card-head {

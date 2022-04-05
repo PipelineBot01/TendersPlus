@@ -49,24 +49,24 @@ export default function Discovery():JSX.Element{
 						<span style={{color:'#4b4b4b'}}>{`${item['GO ID']} - ${item['Title']}`}</span>
 		  		</>}>
 					<Row className='close-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-						<Col style={{textAlign:'right'}} span={10}>Close Date & Time:</Col>
-						<Col span={14}>{item['Close Date & Time']}</Col>
+						<Col style={{textAlign:'right'}} span={8}>Close Date & Time:</Col>
+						<Col span={16}>{item['Close Date & Time']}</Col>
 					</Row>
 					<Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-						<Col style={{textAlign:'right'}} span={10}>Publish Date:</Col>
-						<Col span={14}>{item['Publish Date']}</Col>
+						<Col style={{textAlign:'right'}} span={8}>Publish Date:</Col>
+						<Col span={16}>{item['Publish Date']}</Col>
 					</Row>
 					<Row className='agency' style={{marginTop:'0.5rem'}}  gutter={6}>
-						<Col style={{textAlign:'right'}} span={10}>Agency:</Col>
-						<Col span={14}>{item['Agency']}</Col>
+						<Col style={{textAlign:'right'}} span={8}>Agency:</Col>
+						<Col span={16}>{item['Agency']}</Col>
 					</Row>
 					<Row className='location' style={{marginTop:'0.5rem'}}  gutter={6}>
-						<Col style={{textAlign:'right'}} span={10}>Location:</Col>
-						<Col span={14}>{item['Location']}</Col>
+						<Col style={{textAlign:'right'}} span={8}>Location:</Col>
+						<Col span={16}>{item['Location']}</Col>
 					</Row>
 					<Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
-						<Col style={{textAlign:'right'}} span={10}>Keywords: </Col>
-						<Col span={14}>
+						<Col style={{textAlign:'right'}} span={8}>Keywords: </Col>
+						<Col span={16}>
 							{tags.map((e, i)=>(<span key={i} className='item'>
 								<DonutChart 
 									width={12} 
