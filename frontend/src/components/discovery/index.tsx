@@ -5,10 +5,34 @@ import {Link} from 'react-router-dom'
 import {DoubleRightOutlined} from '@ant-design/icons'
 import { useEffect, useState } from 'react'
 import {DonutChart} from '../charts'
+import { queryLatestTendersAPI, queryTendersCountAPI, queryExpiringTendersAPI, queryHotTendersAPI } from '../../api'
+import type {QueryTender} from '../../utils/types'
 export default function Discovery():JSX.Element{
 	const [totalNumberTenders, setTotalNumberTenders] = useState(0)
+	const [latestTenders, setLatestTenders] = useState(new Array<QueryTender>())
+	const [expiringTenders, setExpiringTenders] = useState(new Array<QueryTender>())
+	const [hotTenders, setHotTenders] = useState(new Array<QueryTender>())
 	useEffect(()=>{
-		
+		queryTendersCountAPI().then((response)=>{
+			if(response.data){
+				setTotalNumberTenders(response.data)
+			}
+		})
+		queryLatestTendersAPI(3).then((response)=>{
+			if(response.data){
+				setLatestTenders(response.data)
+			}
+		})
+		queryExpiringTendersAPI(3).then((response)=>{
+			if(response.data){
+				setLatestTenders(response.data)
+			}
+		})
+		queryHotTendersAPI(3).then((response)=>{
+			if(response.data){
+				setLatestTenders(response.data)
+			}
+		})
 	}, [])
 	const renderLatestOpportunities = ()=>{
 		return <>
