@@ -9,7 +9,7 @@ import pandas as pd
 from gensim.test.utils import datapath
 
 from conf.features import NUM_TOPICS
-from conf.file_path import MODEL_FILE, TENDERS_TOPIC_PATH
+from conf.file_path import MODEL_FILE
 from utils.feature_utils import filter_words
 
 
@@ -51,14 +51,10 @@ class LDAModel:
         self.lda = gensim.models.ldamodel.LdaModel(corpus=self.corpus, id2word=self.dictionary, num_topics=NUM_TOPICS,
                                                    iterations=500)
 
-        # for topic in self.lda.print_topics(num_words=NUM_SHOW_TERM):
-        #     print(topic)
         for topic_id in range(NUM_TOPICS):
             templist = []
             term_distribute_all = self.lda.get_topic_terms(topicid=topic_id, topn=20)
             term_distribute = term_distribute_all[:]
-            nums = len(term_distribute)
-            # print("topic: " + str(topic_id) + ' has ' + str(nums) + 'words')
             term_distribute = np.array(term_distribute)
             term_id = term_distribute[:, 0].astype(np.int)
             for t in term_id:
@@ -84,15 +80,12 @@ class LDAModel:
         token = word_tokenize(str(text).lower())
         lemmatizer = WordNetLemmatizer()
         pos_tagged = pos_tag(token)
-
         words = filter_words(pos_tagged, lemmatizer)
 
-        # relevant_tenders['ProcessedText'] = " ".join(words)
         self.word_list.append(words)
         return words
 
     def extract_keyword(self, data):
-        doc_word_dict = []  # value: words
         templist2 = []
         token = word_tokenize(str(data).lower())
         lemmatizer = WordNetLemmatizer()
@@ -161,6 +154,6 @@ if __name__ == '__main__':
     lda.build_lda_model()
 
     # just print for demo, will save to file when the model is well enough
-    lda.get_tenders_topic().to_csv(TENDERS_TOPIC_PATH, index=0)
+    lda.get_tenders_topic().to_csv('../assets/matching_result_by_lda.csv', index=0)
     # result = lda.get_topic(num_words=20)
     # result.to_csv(TENDERS_TOPIC_PATH)

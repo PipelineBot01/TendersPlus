@@ -1,15 +1,20 @@
 import re
 import pandas as pd
-from conf.file_path import TENDERS_TAG_PATH, TENDERS_TOPIC_PATH, TENDERS_TAG_MAP_PATH, TENDERS_TOPIC_MAP_PATH
+from conf.file_path import TENDERS_TAG_PATH, TENDERS_TAG_MAP_PATH, TENDERS_TOPIC_PATH, TENDERS_TOPIC_MAP_PATH
 
 
 class TendersFeatCreator:
 
-    def __init__(self, tag_path=TENDERS_TAG_PATH, topic_path=TENDERS_TOPIC_PATH):
-        # TODO: add incremental data set checking
+    def __init__(self,
+                 tag_path=TENDERS_TAG_PATH,
+                 tag_map_path=TENDERS_TAG_MAP_PATH,
+                 topic_path=TENDERS_TOPIC_PATH,
+                 topic_map_path=TENDERS_TOPIC_MAP_PATH):
+
         self.tag_path = tag_path
+        self.tag_map_path = tag_map_path
         self.topic_path = topic_path
-        self.tag_map_path = TENDERS_TAG_MAP_PATH
+        self.topic_map_path = topic_map_path
 
     def __get_topic(self, row):
         re_rule = r'\((.*?)\)'
@@ -48,7 +53,7 @@ class TendersFeatCreator:
         duplicated_df = tenders_tag_df.duplicated()
         assert not duplicated_df.empty, \
             f'This data set contains duplicated tags in tenders {duplicated_df[pk].unique()}'
-        tenders_tag_df.to_csv(TENDERS_TAG_MAP_PATH, index=0)
+        tenders_tag_df.to_csv(self.tag_map_path, index=0)
 
     def create_topic_mapping(self, pk) -> None:
         '''
@@ -61,7 +66,7 @@ class TendersFeatCreator:
         -------
 
         '''
-        tenders_topic_df = pd.read_csv(TENDERS_TOPIC_PATH)
+        tenders_topic_df = pd.read_csv(self.topic_path)
         tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1)
         tenders_topic_df = tenders_topic_df.set_index(pk)
         tenders_topic_df = tenders_topic_df[['values']].explode('values')
@@ -72,12 +77,15 @@ class TendersFeatCreator:
 
         assert not duplicated_df.empty, \
             f'This data set contains duplicated tags in tenders {duplicated_df[pk].unique()}'
-        tenders_topic_df.to_csv(TENDERS_TOPIC_MAP_PATH, index=0)
+        tenders_topic_df.to_csv(self.topic_map_path, index=0)
 
     def create_all(self, pk: str):
         self.create_tag_mapping(pk)
         self.create_topic_mapping(pk)
 
 if __name__ == '__main__':
-    ttg = TendersFeatCreator()
+    ttg = TendersFeatCreator('../assets/tenders_keyword.csv',
+                             '../assets/tenders_tag.csv',
+                             '../assets/matching_result_by_lda.csv',
+                             '../assets/tenders_topic.csv')
     ttg.create_all('id')

@@ -6,7 +6,7 @@ TENDERS_TOPIC_PATH = '../tenders/assets/matching_result_by_lda.csv'
 TENDERS_RELEVANT_PATH = '../tenders/assets/clean_relevant_tenders.csv'
 
 LOCAL_PATH = './assets'
-MODEL_FILE = 'LdaModel.model'
+MODEL_FILE = '../tenders/assets/LdaModel.model'
 
 RESEARCHER_INFO_PATH = '../researcher/assets/researcher_info.csv'
 RESEARCHER_TAG_MAP_PATH = '../researcher/assets/researcher_tag.csv'

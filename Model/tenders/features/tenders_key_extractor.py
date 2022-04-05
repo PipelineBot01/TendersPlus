@@ -42,7 +42,8 @@ class KeyExtractor:
         return x.split()
 
     def __remove_keywords(self, row: pd.DataFrame) -> pd.DataFrame:
-        row['text'] = row['text'].replace(row['key'], '')
+        reg_rule = r'\b(' + row["key"] + ')\\b'
+        row['text'] = re.sub(reg_rule, ' ', row['text'])
         return row
 
     def __get_tags(self, df: pd.DataFrame) -> List[Tuple[str, float]]:
@@ -200,8 +201,9 @@ class KeyExtractor:
         return input_df
 
 
-# if __name__ == '__main__':
-#     input_df = pd.read_csv(TENDERS_INFO_PATH)
-#     ke = KeyExtractor()
-#     re_df = ke.get_tags(input_df, 'id', 'text')
-#     re_df.to_csv(TENDERS_TAG_PATH, index=0, encoding='utf-8_sig')
+if __name__ == '__main__':
+    input_df = pd.read_csv('../assets/clean_trains_info.csv')
+    ke = KeyExtractor()
+    re_df = ke.get_tags(input_df, 'id', 'text')
+    re_df.to_csv('../assets/tenders_keyword.csv', index=0, encoding='utf-8_sig')
+    print(re_df)
