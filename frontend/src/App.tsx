@@ -45,13 +45,19 @@ export default function App() :JSX.Element{
 					</React.Suspense>
 				} >
 					<Route  path='search' element={
-						<React.Suspense fallback={<Spin style={{width:'100%'}} ></Spin>}>
+						<React.Suspense fallback={<> 
+							<Spin style={{width:'100%'}} ></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+						</>}>
 							<SearchResult/>
 						</React.Suspense>
 					}/>
 					<Route  path='profile' element={
 		
-						<React.Suspense fallback={<Spin style={{width:'100%'}} ></Spin>}>
+						<React.Suspense fallback={<> 
+							<Spin style={{width:'100%'}} ></Spin>
+							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+						</>}>
 							<Profile/>
 						</React.Suspense>
 					}/>
@@ -68,13 +74,14 @@ export default function App() :JSX.Element{
 						</>
 					}/>
 					<Route  path='chatty' element={
-						<>
-							<React.Suspense fallback={
+						<React.Suspense fallback={
+							<> 
 								<Spin style={{width:'100%'}} ></Spin>
-							}>
-								<Chatty/>
-							</React.Suspense>
-						</>
+								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+							</>
+						}>
+							<Chatty/>
+						</React.Suspense>
 					}/>
 				</Route>
 
