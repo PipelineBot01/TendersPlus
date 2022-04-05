@@ -14,6 +14,7 @@ window.addEventListener('resize', setRem)
 window.addEventListener('pageshow', setRem)
 
 
+
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>

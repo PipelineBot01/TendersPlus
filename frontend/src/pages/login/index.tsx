@@ -10,7 +10,7 @@ import { setUserInfo, type UserState } from '../../store/features/user'
 import { loginAPI } from '../../api'
 import type { Login } from '../../utils/types'
 import './index.css'
-import { researchFields } from '../../utils/data/researchFields'
+
 
 
 

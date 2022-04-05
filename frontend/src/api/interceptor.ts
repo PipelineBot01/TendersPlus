@@ -10,7 +10,6 @@ import { CustomAPIResponse } from "../utils/types"
 export default {
 	request:{
 		handleConfig(config:AxiosRequestConfig){
-            
 			const access_token =  Cookies.get('access_token') || false
 			if(access_token &&  config.headers){
 				config.headers['x-token'] = access_token
