@@ -9,7 +9,8 @@ import type {
 	MatchResearcher, 
 	UniversityStrengthMap,
 	QueryTender,
-	QueryType } from '../utils/types'
+	QueryType,
+	UserAction } from '../utils/types'
 
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
 	return request.get('/user')
@@ -52,9 +53,12 @@ export const queryTendersAPI = (type:QueryType, query:string|number):Promise<Cus
 	default:
 		return request.get('/search', {params:{query}})
 	}
-
 }
 
 export const queryTendersCountAPI = ():Promise<CustomAPIResponse<number>>=>{
 	return request.get('/search/count')
+}
+
+export const userActionAPI = (data:UserAction):Promise<CustomAPIResponse<string>>=>{
+	return request.post('/action', data)
 }

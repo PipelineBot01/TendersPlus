@@ -78,3 +78,8 @@ export interface QueryTender{
     'Agency':string
 }
 export type QueryType = 'latest' | 'expiring' | 'hot' | 'none'
+
+export interface UserAction{
+    type:number
+    payload:string
+}

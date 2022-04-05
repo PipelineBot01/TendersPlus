@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import {DonutChart} from '../charts'
 import {  queryTendersCountAPI, queryTendersAPI } from '../../api'
 import type {QueryTender} from '../../utils/types'
+import  {useCollector} from '../../utils/customHook'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -82,8 +83,12 @@ export default function Discovery():JSX.Element{
 
 					<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
 						<a  className='url' 
-							href={item['URL']}>
-															Read more
+							href={item['URL']}
+							onClick={()=>{
+								useCollector({type:1, payload:item['URL']})
+							}}
+						>
+							Read more
 							<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
 						</a>
 					</Row>
@@ -102,9 +107,14 @@ export default function Discovery():JSX.Element{
 					</div>
 				</Col>
 				<Col>
-					<div className='subtitle' onClick={()=>{navigate('/search')}}>
+					<div className='subtitle' onClick={()=>{
+						useCollector({type:1, payload:'/search'})
+						navigate('/search')
+						
+					}}>
 					All <span>{totalNumberTenders}</span> Opened
 					</div>
+					
 				</Col>
 			</Row>
 			
@@ -126,6 +136,9 @@ export default function Discovery():JSX.Element{
 					
 									fontSize:'0.8rem',
 								}}
+								onClick={()=>{
+									useCollector({type:1, payload:'/search/latest'})
+								}}
 							>READ MORE</Link>}
                         
 						>
@@ -146,7 +159,9 @@ export default function Discovery():JSX.Element{
 									fontWeight:700,
 									color:'#228e64',
 									fontSize:'0.8rem',
-								
+								}}
+								onClick={()=>{
+									useCollector({type:1, payload:'/search/hot'})
 								}}
 							>READ MORE</Link>}
 						>
@@ -166,6 +181,9 @@ export default function Discovery():JSX.Element{
 									fontWeight:700,
 									color:'#228e64',
 									fontSize:'0.8rem',
+								}}
+								onClick={()=>{
+									useCollector({type:1, payload:'/search/expring'})
 								}}
 							>READ MORE</Link>}>
 							{renderTenders(expiringTenders)}

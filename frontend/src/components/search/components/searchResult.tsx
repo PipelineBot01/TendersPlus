@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight, faLink} from '@fortawesome/free-solid-svg-icons'
 import {DonutChart} from '../../../components/charts'
 import {queryTendersAPI} from '../../../api'
+import {useCollector} from '../../../utils/customHook'
 import type { QueryTender, QueryType } from '../../../utils/types'
 
 export default function SearchResult():JSX.Element{
@@ -72,8 +73,11 @@ export default function SearchResult():JSX.Element{
 									return <List.Item key={item['GO ID']}>
 										<List.Item.Meta 
 											title={
-												<a href={item['URL']} className='link' >{item['GO ID'] + ' - ' + item['Title']}   </a>
-        
+												<a href={item['URL']} className='link' 
+													onClick={()=>{
+														useCollector({type:1, payload:item['URL']})
+													}}
+												>{item['GO ID'] + ' - ' + item['Title']}</a>        
 											} 
 											description={
 												<>
@@ -115,7 +119,11 @@ export default function SearchResult():JSX.Element{
 
 													<Row style={{marginTop:'1rem'}} justify='end' gutter={6}>
 														<a  className='url' 
-															href={item['URL']}>
+															href={item['URL']}
+															onClick={()=>{
+																useCollector({type:1, payload:item['URL']})
+															}}
+														>
 															Read more
 															<FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
 														</a>
