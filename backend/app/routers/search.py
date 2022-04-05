@@ -45,6 +45,6 @@ async def get_expiring_opportunities(n: int = 0):
 
 
 @router.get('/hot')
-async def get_expiring_opportunities(n: int = 3):
+async def get_expiring_opportunities(n: int = 0):
     docs = await crud.db_get_expiring_tenders(n)
     return {'code': 200, 'data': docs}
