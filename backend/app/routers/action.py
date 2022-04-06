@@ -20,6 +20,8 @@ async def add_user_action(data: ActionModel, email: str = Depends(check_access_t
         raise HTTPException(500)
 
 
+
+
 # ====== admin api ======
 @router.get('/all')
 async def get_all_user_info(flag: bool = Depends(check_admin_token)):

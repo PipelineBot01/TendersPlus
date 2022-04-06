@@ -7,6 +7,7 @@ from dependencies import get_db
 from db.mysql.curd.user import sql_get_user, sql_add_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag
+from db.mysql.curd.user_favourite import sql_get_user_favourite
 from utils.auth import encode_password, generate_token
 from config import settings
 
@@ -24,12 +25,15 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
             tags = [i.name for i in sql_get_user_tag(email=user.email, n=user.n_tag, session=db)]
             research_fields = [{'field': i.field_id, 'sub_field': []} for i in
                                sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)]
+
+
             return {'code': 200, 'data': {'access_token': access_token,
                                           'first_name': user.first_name,
                                           'last_name': user.last_name,
                                           'university': user.university,
                                           'tags': tags,
                                           'research_fields': research_fields
+                                    
                                           }}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')
@@ -65,5 +69,3 @@ def signup(data: SignupModel, db: Session = Depends(get_db)):
         print(e)
         db.rollback()
         raise HTTPException(500, str(e))
-
-
