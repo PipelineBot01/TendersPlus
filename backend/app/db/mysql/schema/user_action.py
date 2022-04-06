@@ -10,5 +10,5 @@ class SQLUserAction(base):
     email = Column(String(128), ForeignKey('user.email'))
     type = Column(String(2), nullable=False)
     payload = Column(String(256), nullable=False)
-    action_date = Column(DATETIME)
+    action_date = Column(DATETIME,nullable=False)
     PrimaryKeyConstraint(email, action_date)

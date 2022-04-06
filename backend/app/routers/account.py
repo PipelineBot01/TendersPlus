@@ -33,7 +33,7 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
                                           'university': user.university,
                                           'tags': tags,
                                           'research_fields': research_fields,
-                                          'favourite_tenders': [i.id for i in favourite_tenders]
+                                          'favourite': [i.id for i in favourite_tenders]
                                           }}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')

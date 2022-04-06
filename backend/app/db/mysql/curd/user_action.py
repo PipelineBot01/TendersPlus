@@ -12,3 +12,5 @@ def sql_add_user_action(email: str, type_: str, payload: str, session: Session):
 
 def sql_get_all_user_action(session: Session) -> List[SQLUserAction]:
     return session.query(SQLUserAction).all()
+
+# def sql_get_user_action(email:str,type_:str,payload:str,session:Session):

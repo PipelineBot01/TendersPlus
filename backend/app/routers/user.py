@@ -32,7 +32,7 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
             data['tags'] = [i.name for i in user_tags]
 
             user_favourite_tenders = sql_get_user_favourite(email=user.email, session=db)
-            data['favourite_tenders'] = [i.id for i in user_favourite_tenders]
+            data['favourite'] = [i.id for i in user_favourite_tenders]
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
