@@ -26,14 +26,14 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
             research_fields = [{'field': i.field_id, 'sub_field': []} for i in
                                sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)]
 
-
+            favourite_tenders = sql_get_user_favourite(email=data.email, session=db)
             return {'code': 200, 'data': {'access_token': access_token,
                                           'first_name': user.first_name,
                                           'last_name': user.last_name,
                                           'university': user.university,
                                           'tags': tags,
-                                          'research_fields': research_fields
-                                    
+                                          'research_fields': research_fields,
+                                          'favourite_tenders': [i.id for i in favourite_tenders]
                                           }}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')
