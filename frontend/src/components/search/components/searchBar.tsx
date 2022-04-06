@@ -5,7 +5,7 @@
  * 2. search tenders via divisions
  */
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import {Input } from 'antd'
 
 import './searchBar.css'
@@ -26,10 +26,19 @@ interface SearchBarProp{
 }
 export default function SearchBar(props:SearchBarProp):JSX.Element{
 	const navigate = useNavigate()
+	const location = useLocation()
 
 	const onSearch = (value:string)=>{
-		value === '' ? navigate('/search') : navigate('/search?query=' + window.btoa(value))
+		let targetPath = '/search'
 		useCollector({type:0, payload:value})
+		if(location.pathname.includes('dashboard')){
+			targetPath = '/dashboard' + targetPath
+		}
+		if(value){
+			targetPath += '?query=' + window.btoa(value)
+		}
+		console.log(targetPath)
+		navigate(targetPath)
 	}
 	return (
 		<>
