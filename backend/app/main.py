@@ -5,7 +5,13 @@ from fastapi.exceptions import RequestValidationError, HTTPException
 from errors import validation_exception_handler
 from errors import http_exception_handler
 
-from routers import account_router, user_router, matcher_router, strength_router, search_router, action_router
+from routers import account_router
+from routers import user_router
+from routers import matcher_router
+from routers import strength_router
+from routers import search_router
+from routers import action_router
+from routers import favourite_router
 
 from config import settings
 from scheduler import async_scheduler
@@ -35,6 +41,7 @@ server.include_router(matcher_router, prefix='/matcher', tags=['Matcher'])
 server.include_router(strength_router, prefix='/strength_overview', tags=['StrengthOverview'])
 server.include_router(search_router, prefix='/search', tags=['Search'])
 server.include_router(action_router, prefix='/action', tags=['UserAction'])
+server.include_router(favourite_router, prefix='/favourite', tags=['Favourite'])
 
 
 # setup startup event
@@ -67,4 +74,5 @@ if __name__ == '__main__':
     log_config['formatters']['access']['fmt'] = '%(asctime)s    ' + log_config['formatters']['access']['fmt']
 
     # launch app
-    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST, log_config=log_config,root_path='/tendersplus/api')
+    uvicorn.run(app=server, port=int(settings.APP_PORT), host=settings.APP_HOST, log_config=log_config,
+                root_path='/tendersplus/api')
