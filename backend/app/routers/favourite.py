@@ -34,7 +34,7 @@ async def add_user_favourite_tender(data: FavouriteTenderModel, email: str = Dep
 
 
 @router.post('/remove')
-async def add_user_favourite_tender(data: FavouriteTenderModel, email: str = Depends(check_access_token),
+async def remove_user_favourite_tender(data: FavouriteTenderModel, email: str = Depends(check_access_token),
                                     db: Session = Depends(get_db)):
     try:
         sql_remove_user_favourite(email=email, id=data.id, session=db)
