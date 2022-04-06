@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Layout, Divider, Menu  } from 'antd'
 
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
@@ -11,7 +11,7 @@ import { type UserState, setUserInfo, setAccessToken } from '../../store/feature
 import { getUserInfoAPI } from '../../api'
 import './index.css'
 
-const { Header, Footer, Sider, Content } = Layout
+const { Header, Sider, Content } = Layout
 
 export default function Dashboard():JSX.Element{
 	const navigate = useNavigate()

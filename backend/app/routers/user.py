@@ -5,6 +5,7 @@ from dependencies import check_access_token, get_db, check_admin_token
 from db.mysql.curd.user import sql_get_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field, sql_add_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag, sql_add_user_tag
+from db.mysql.curd.user_favourite import sql_get_user_favourite
 
 from models.user import ProfileModel
 from config import settings
@@ -29,6 +30,7 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
 
             user_tags = sql_get_user_tag(email=user.email, n=user.n_tag, session=db)
             data['tags'] = [i.name for i in user_tags]
+
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
