@@ -9,25 +9,17 @@ import { useNavigate, useLocation } from "react-router-dom"
 import {Input } from 'antd'
 
 import './searchBar.css'
-
 import { useCollector } from "../../../utils/customHook"
 
-
 const { Search } = Input
-
-
-
-
-
-
 
 interface SearchBarProp{
     placeholder:string
 }
+
 export default function SearchBar(props:SearchBarProp):JSX.Element{
 	const navigate = useNavigate()
 	const location = useLocation()
-
 	const onSearch = (value:string)=>{
 		let targetPath = '/search'
 		useCollector({type:0, payload:value})
