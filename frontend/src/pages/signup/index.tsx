@@ -38,7 +38,8 @@ export default function Header():JSX.Element{
 					rememberme:false,
 					tags:[],
 					email:response.data.email,
-					access_token:response.data.access_token
+					access_token:response.data.access_token,
+					favourite:response.data.favourite
 				}
 				dispatch(setUserInfo(user))
 				Cookies.set('access_token', user.access_token)

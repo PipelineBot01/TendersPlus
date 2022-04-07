@@ -9,14 +9,12 @@ import { useAppSelector, useAppDispatch } from '../../store'
 import { getUserInfoAPI } from '../../api'
 
 import './index.css'
-import { P } from '@antv/g2plot'
+
 export default function Header():JSX.Element{
 	const navigate = useNavigate()
 	const dispatch  = useAppDispatch()
 	const [headerStatus, setHeaderStatus] = useState('pending')
 	const userInfo = useAppSelector((state)=>state.user)
-
-
 
 	// fetch data
 	useEffect(()=>{

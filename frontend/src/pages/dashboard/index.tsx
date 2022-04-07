@@ -19,7 +19,7 @@ export default function Dashboard():JSX.Element{
 	const dispatch = useAppDispatch()
 	const userInfo = useAppSelector((state)=>state.user)
 	const tokenFromStore = userInfo.access_token
-
+	
 	useEffect(()=>{
 		const tokenFromCookie  = Cookies.get('access_token')
 		if (tokenFromCookie && (!tokenFromStore || tokenFromCookie !== tokenFromStore)){
@@ -40,7 +40,8 @@ export default function Dashboard():JSX.Element{
 							}})
 						,
 						tags:response.data.tags,
-						email:response.data.email
+						email:response.data.email,
+						favourite:response.data.favourite
 					}
 					console.log('dashboard get user', user)
 					
@@ -58,17 +59,20 @@ export default function Dashboard():JSX.Element{
 
 	const [isCollapsed, setIscollapsed] = useState(false)
 	const handleCollapse = ()=>{
-		setIscollapsed(!isCollapsed)
-	
-		
-		
+		setIscollapsed(!isCollapsed)		
 	}
 	
 	const handleLogout  = ()=>{
-		console.log('logout!')
 		Cookies.remove('access_token')
+		localStorage.removeItem('university')
+		localStorage.removeItem('first_name')
+		localStorage.removeItem('last_name')
+		localStorage.removeItem('email')
+		localStorage.removeItem('rememberme')
+		localStorage.removeItem('tags')
+		localStorage.removeItem('research_fields')
+		localStorage.removeItem('favourite')
 		dispatch(setAccessToken(''))
-
 		navigate('/')
 	}
 	return <>

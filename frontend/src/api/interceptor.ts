@@ -14,17 +14,17 @@ export default {
 			if(access_token &&  config.headers){
 				config.headers['x-token'] = access_token
 			}
-			console.log('intercept request:', config)
+			// console.log('intercept request:', config)
 			return config
 		},
 		handleError(error:AxiosError){
-			console.log('request error:', error)
+			// console.log('request error:', error)
 			return Promise.reject(error)
 		}
 	},
 	reponse:{
 		handleResponse(response:AxiosResponse<CustomAPIResponse<any>>){
-			console.log('intercept response:', response)
+			// console.log('intercept response:', response)
 			if(response.data){
 				return response.data
 			}else{

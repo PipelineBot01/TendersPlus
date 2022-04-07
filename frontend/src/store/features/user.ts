@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import Cookies from "js-cookie"
-import type {UserInfo, ResearchFieldsItem} from '../../utils/types'
+import type {UserInfo, ResearchFieldsItem, ProfileForm} from '../../utils/types'
 export  interface UserState extends UserInfo {
     rememberme:boolean
 	access_token:string
@@ -14,7 +14,8 @@ const initialState:UserState = {
 	tags:localStorage.getItem('tags')?.split('/').slice(1) || [],
 	university:localStorage.getItem('university') || '',
 	rememberme: localStorage.getItem('rememberme') === 'true',
-	access_token:''
+	access_token:Cookies.get('access_token') || '',
+	favourite:localStorage.getItem('favourite')?.split('/').slice(1) || [],
 }
 
 const userSlice = createSlice({
@@ -31,20 +32,32 @@ const userSlice = createSlice({
 		setUniversity(state, action:PayloadAction<string>){
 			state.university = action.payload
 		},
-		setTags(state, action:PayloadAction<Array<string>>){
+		setTags(state, action:PayloadAction<string[]>){
 			state.tags = action.payload
 		},
-		setResearchFields(state, action:PayloadAction<Array<ResearchFieldsItem>>){
+		setResearchFields(state, action:PayloadAction<ResearchFieldsItem[]>){
 			state.research_fields = action.payload
+			let research_field = ''
+			action.payload.forEach(e=>{
+				typeof e === 'object' ? research_field += `/${e.field}` : research_field += `/${e}`
+			})
+			localStorage.setItem('research_fields', research_field)
 		},
-		setUserInfo(state, action:PayloadAction<UserState|any>){
+		setUserInfo(state, action:PayloadAction<UserState>){
+			console.log('action.payload?.research_fields', action.payload?.research_fields)
+		
 			localStorage.setItem('first_name', action.payload.first_name)
 			localStorage.setItem('last_name', action.payload.last_name)
 			localStorage.setItem('email', action.payload.email)
 			localStorage.setItem('university', action.payload.university)
-			localStorage.setItem('rememberme', action.payload.rememberme)
+			localStorage.setItem('rememberme', action.payload.rememberme + '')
 			localStorage.setItem('tags', action.payload?.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
-			localStorage.setItem('research_fields', action.payload?.research_fields.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
+			let research_field = ''
+			action.payload?.research_fields.forEach(e=>{
+				typeof e === 'object' ? research_field += `/${e.field}` : research_field += `/${e}`
+			})
+			localStorage.setItem('research_fields', research_field)
+			localStorage.setItem('favourite', action.payload?.favourite.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
 			Object.assign(state, action.payload)
 		},
 		setRememberme(state, action:PayloadAction<boolean>){
@@ -52,9 +65,24 @@ const userSlice = createSlice({
 		},
 		setAccessToken(state, action:PayloadAction<string>){
 			state.access_token = action.payload
+		},
+		setFavourite(state, action:PayloadAction<string[]>){
+			state.favourite = action.payload
+			localStorage.setItem('favourite', action.payload.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
+		},
+		setUserProfile(state, action:PayloadAction<ProfileForm>){
+			Object.assign(state, action.payload)
 		}
 	}
 })
 
-export const {setFirstName, setLastName, setTags, setUniversity, setResearchFields, setUserInfo, setAccessToken } = userSlice.actions
+export const {setFirstName, 
+	setLastName, 
+	setTags,
+	setUniversity, 
+	setResearchFields, 
+	setUserInfo, 
+	setAccessToken,
+	setFavourite,
+	setUserProfile } = userSlice.actions
 export default userSlice.reducer

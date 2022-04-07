@@ -13,7 +13,6 @@ export function DonutChart(prop:DonutChartProp):JSX.Element{
 	const  radius = Math.min(prop.width, prop.height) / 2 * 0.8
 	const  circumference = Math.PI * 2 * radius
 
-	
 	return <span style={{display:'inline-flex', 'alignItems':'center', margin:'0 0.1rem'}}>
 	
 		<svg width={prop.width} height={prop.height} viewBox={`0 0 ${prop.width} ${prop.height}`} className="donut-chart">
@@ -24,7 +23,7 @@ export function DonutChart(prop:DonutChartProp):JSX.Element{
 				r={radius} 
 				fill="transparent" 
 				stroke={prop.backgroundColor} 
-				stroke-width={prop.strokeWidth}
+				strokeWidth={prop.strokeWidth}
 			/>
 			<circle
 				
@@ -34,9 +33,9 @@ export function DonutChart(prop:DonutChartProp):JSX.Element{
 			  	r={radius} 
 			   	fill="transparent" 
 			   	stroke={prop.chartColor} 
-				stroke-width={prop.strokeWidth}
-				stroke-dasharray={`${prop.percentage * circumference} ${circumference}`} 
-				stroke-dashoffset="0"></circle>
+				strokeWidth={prop.strokeWidth}
+				strokeDasharray={`${prop.percentage * circumference} ${circumference}`} 
+				strokeDashoffset="0"></circle>
 		</svg>
 	</span>
 }

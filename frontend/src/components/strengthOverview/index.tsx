@@ -86,7 +86,7 @@ export default function StrengthOverview():JSX.Element{
 			}
 			console.log('temp', tempConfig)
 			
-			render.push(<Card className="strength-card" title={<div className="name">{universitiesMap[key]}</div>}>
+			render.push(<Card key={key} className="strength-card" title={<div className="name">{universitiesMap[key]}</div>}>
 				<Radar {...tempConfig}/>
 			</Card>)
 			return render
