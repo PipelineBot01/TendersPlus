@@ -15,9 +15,9 @@ async def get_open_opportunities(query: str = None):
         keywords = None
         if query:
             keywords = base64.b64decode(query).decode('utf-8')
-        print('keywords:', keywords)
+        # print('keywords:', keywords)
         docs = await curd.db_get_tenders(keywords)
-        print(docs)
+        # print(docs)
 
         return {'code': 200, 'data': docs}
     except Exception as e:
