@@ -276,7 +276,10 @@ class ResearcherMatcher(Relation):
 
 if __name__ == '__main__':
 #     # matching by divisions/tags
-    rm = ResearcherMatcher()
+    rm = ResearcherMatcher('../assets/researcher_division.csv',
+                           '../assets/researcher_tag.csv',
+                           '../assets/tag_category_map.csv',
+                           '../assets/researcher_info.csv')
     print(rm.match_by_id('Canberra61585cffd7b0c43ebd755201'))
 #     division_list = ["d_10", "d_08"]
 #     tag_list = ['machine learning']

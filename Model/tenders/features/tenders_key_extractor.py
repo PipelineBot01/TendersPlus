@@ -204,6 +204,7 @@ class KeyExtractor:
 if __name__ == '__main__':
     input_df = pd.read_csv('../assets/clean_trains_info.csv')
     ke = KeyExtractor()
-    re_df = ke.get_tags(input_df, 'id', 'text')
-    re_df.to_csv('../assets/tenders_keyword.csv', index=0, encoding='utf-8_sig')
-    print(re_df)
+    re_df = ke.get_tags(input_df[1493:1495], 'id', 'text')
+    for i in re_df.columns:
+        print(re_df.loc[0, i])
+    # re_df.to_csv('../assets/tenders_keyword.csv', index=0, encoding='utf-8_sig')

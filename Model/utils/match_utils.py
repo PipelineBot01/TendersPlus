@@ -49,22 +49,24 @@ def normalize(input_df, target_col, method='proportion', bounds=[0, 1]):
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
 
     elif method == 'scaled_max_min':
+        input_df = input_df.sort_values(target_col).reset_index(drop=True)
         input_df['tmp'] = input_df[target_col].shift(-1)
         input_df = input_df.apply(lambda x: get_proportion(x), axis=1)
         input_df[target_col] = (input_df[target_col] - input_df[target_col].min()
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
 
-        input_df = input_df.sort_values(target_col).reset_index(drop=True)
         input_df.loc[0, target_col] = input_df.iloc[1][target_col] * input_df.iloc[0]['tmp']
         input_df.loc[len(input_df) - 1, target_col] = input_df.iloc[-2][target_col] / input_df.iloc[-2]['tmp']
 
         input_df = input_df.drop('tmp', axis=1)
 
     elif method == 'rank':
+        if input_df[target_col].nunique() == 1:
+            input_df[target_col] = np.mean(bounds)
+            return input_df
         input_df[target_col] = (bounds[0] + 1) + (bounds[1] - 1) / (
                 input_df[target_col].max() - input_df[target_col].min()) * (
                                        input_df[target_col] - input_df[target_col].min())
-
         input_df[target_col] = input_df[target_col].astype(int) * 2
         input_df.loc[input_df[target_col] < 0.3 * (bounds[0] + bounds[1]), target_col] = 0.3 * (bounds[0] + bounds[1])
         input_df.loc[input_df[target_col] > bounds[1], target_col] = bounds[1]

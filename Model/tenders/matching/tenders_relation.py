@@ -103,7 +103,7 @@ class TendersMatcher(Relation):
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.pk, how='outer')
             tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
             tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
-            tmp_df1['weight'] = tmp_df1['weight_y'] - tmp_df1['weight_x']
+            tmp_df1['weight'] = tmp_df1['weight_y'] - 1.2*tmp_df1['weight_x']
         del tmp_df2
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
@@ -133,10 +133,12 @@ class TendersMatcher(Relation):
 
 if __name__ == '__main__':
     # tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
-    tr = TendersMatcher()
+    tr = TendersMatcher('../assets/tenders_tag.csv',
+                        '../assets/tenders_topic.csv',
+                        '../assets/clean_trains_info.csv')
     # test_list = []
     # print('start')
-    result_df = tr.match('Grants623afc0fb34a6bd48ae4bd6c')
+    result_df = tr.match('Grants623afb69b34a6bd48ae4bd2c')
     print(result_df)
     # for i in range(20):
     #     test_df = tenders_tag_df.sample(1)
