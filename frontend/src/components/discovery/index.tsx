@@ -40,10 +40,10 @@ export default function Discovery():JSX.Element{
 		})
 	}, [])
 	const renderTenders = (tenders:QueryTender[])=>{
-		return tenders.map(item=>{
+		return tenders.map((item, index)=>{
 			const tags:Array<string> = item.tags?.split(' ')
 			return (
-				<Card
+				<Card key={index}
 					type='inner' 
 					style={{margin:'1rem 0'}} title={<>
 						<span style={{color:'#4b4b4b'}}>{`${item['GO ID']} - ${item['Title']}`}</span>

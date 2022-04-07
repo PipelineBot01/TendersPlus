@@ -3,17 +3,15 @@
  */
 import React, {useEffect, useState} from 'react'
 import type {ReactElement} from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import { Form, Input, Select, Button, Spin, Row, Col, message } from 'antd'
 import {LoadingOutlined} from '@ant-design/icons'
 
-import { setUserInfo, UserState } from '../../store/features/user'
+import { setUserProfile } from '../../store/features/user'
 import { setUserInfoAPI } from '../../api'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { researchFields } from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
-import type { ProfileForm, ResearchFieldsItem } from '../../utils/types'
+import type { ProfileForm } from '../../utils/types'
 import capitalize from '../../utils/capitalize'
 
 import './index.css'
@@ -42,29 +40,15 @@ export default function Profile():JSX.Element{
 		)
 	}, [userInfo])
 	
-
-	// const handleGetSubResearchFields = ()=>{
-	// 	const oldSubResearchFields = form.getFieldValue('research_sub_fields')
-	// 	let newSubResearchFields:Array<string> = []
-	// 	console.log(oldSubResearchFields, selectedResearchFields)
-	// 	if(selectedResearchFields?.length !== 0 && oldSubResearchFields?.length !== 0){
-	// 		for(const k of selectedResearchFields){	
-	// 			newSubResearchFields = newSubResearchFields.concat(oldSubResearchFields.filter((e:string)=>{
-	// 				return researchFields[k].sub_fields.includes(e)}))
-	// 		}
-	// 	}
-	// 	return newSubResearchFields
-	// }
 	const handleTriggerSubmitForm = ()=>{
 		setIsSubmitting(true)
 		form.submit()
 	}
 	const handleSubmitForm = (values:ProfileForm)=>{
 		console.log('handleSubmitForm', values)
-		setUserInfoAPI(values).then((response)=>{
+		setUserInfoAPI(values).then(()=>{
 			message.success('Updated!', 3)
-		
-			dispatch(setUserInfo(values))
+			dispatch(setUserProfile(values))
 		}).catch((error)=>{
 			message.error(error.msg, 3)
 		}).finally(()=>{

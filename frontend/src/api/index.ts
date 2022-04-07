@@ -62,3 +62,19 @@ export const queryTendersCountAPI = ():Promise<CustomAPIResponse<number>>=>{
 export const userActionAPI = (data:UserAction):Promise<CustomAPIResponse<string>>=>{
 	return request.post('/action', data)
 }
+
+export const getUserFavouriteAPI = ():Promise<CustomAPIResponse<QueryTender[]>>=>{
+	return request.get('/favourite')
+}
+
+export const getUserFavouriteIdAPI = ():Promise<CustomAPIResponse<string[]>>=>{
+	return request.get('/favourite/id')
+}
+
+export const addUserFavouriteAPI = (id:string):Promise<CustomAPIResponse<string>>=>{
+	return request.post('/favourite/add', {id})
+}
+
+export const removeUserFavouriteAPI = (id:string):Promise<CustomAPIResponse<string>>=>{
+	return request.post('/favourite/remove', {id})
+}

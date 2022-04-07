@@ -30,6 +30,7 @@ export interface UserInfo{
     research_fields:Array<ResearchFieldsItem>|Array<string>
     tags:Array<string>
     access_token:string
+    favourite:Array<string>
 }
 
 export interface ResearchFieldsItem{

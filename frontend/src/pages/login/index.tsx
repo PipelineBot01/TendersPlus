@@ -34,42 +34,23 @@ export default function Header():JSX.Element{
 					university:data.university,
 					tags:data.tags,
 					research_fields:data.research_fields,
-					access_token:data.access_token
+					access_token:data.access_token,
+					favourite:data.favourite
 				}
-				// update cookie
 				user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
-				
-				// update store
 				dispatch(setUserInfo(user))
-
-				message.success('Welcome back, ' + user.first_name, 3)
-				
-				// redirect to dashboard
 				navigate('/')
-
+				message.success('Welcome back, ' + user.first_name, 3)
 
 			}
 		}).catch((error)=>{
 			message.destroy('login')
-			switch (error.code){
-			case 400:
-				console.log(error.msg)
-				if((error.msg as string).indexOf('EMAIL') !== -1){
-					message.error({content:'Invalid email', key:'login', duration:1})		
-				}else if ((error.msg as string).indexOf('PASSWORD') !== -1){
-					message.error({content:'Invalid password', key:'login', duration:1})		
-				}
-				break
-			case 500:
-				message.error({content:'Internal server error', key:'login', duration:1})
-				break
-			case 404:
-				message.error({content:'User not found', key:'login', duration:1})
-			}
+			message.error({content:error.msg, duration:2})
 		}).finally(()=>{
 			setIsSubmitting(false)
 		})
 	}
+	
 	const handleTriggerSubmitForm = ()=>{
 		setIsSubmitting(true)
 		form.submit()

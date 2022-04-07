@@ -13,6 +13,7 @@ const Signup = React.lazy(()=>import('./pages/signup'))
 const Profile = React.lazy(()=>import('./components/profile'))
 const Dashboard = React.lazy(()=>import('./pages/dashboard'))
 const Chatty = React.lazy(()=>import('./components/chatty'))
+const Favourite = React.lazy(()=>import('./components/favourite'))
 
 
 export default function App() :JSX.Element{
@@ -62,10 +63,15 @@ export default function App() :JSX.Element{
 						</React.Suspense>
 					}/>
 					<Route  path='favorites' element={
-						<>
-							<Spin style={{width:'100%'}} ></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>Coming Soon ...</div>
-						</>
+					
+						<React.Suspense fallback={
+							<> 
+								<Spin style={{width:'100%'}} ></Spin>
+								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+							</>
+						}>
+							<Favourite/>
+						</React.Suspense>
 					}/>
 					<Route  path='analysis' element={
 						<> 
