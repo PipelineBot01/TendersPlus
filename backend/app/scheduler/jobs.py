@@ -20,13 +20,13 @@ def job(id: str, trigger: BaseTrigger, delay: bool = False):
 
 @job(id='get_all_user_info', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_info():
-    if datetime.now().hour < 3:
+    if len(settings.USER_INFO) == 0 or datetime.now().hour < 3:
         with session() as db:
             settings.USER_INFO = sql_get_all_users(db)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_action():
-    if datetime.now().hour < 3:
+    if len(settings.USER_ACTION) == 0 or datetime.now().hour < 3:
         with session() as db:
             settings.USER_ACTION = sql_get_all_user_action(db)
