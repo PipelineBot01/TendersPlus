@@ -24,7 +24,7 @@ async def get_user_favourite_tenders(email: str = Depends(check_access_token), d
 async def get_user_favourite_tenders_id(email: str = Depends(check_access_token), db: Session = Depends(get_db)):
     try:
         user_favourite_tenders_id = sql_get_user_favourite(email=email, session=db)
-        return {'code': 200, 'data': user_favourite_tenders_id}
+        return {'code': 200, 'data': [i.id for i in user_favourite_tenders_id]}
     except Exception as e:
         print(str(e))
         raise HTTPException(500, str(e))
