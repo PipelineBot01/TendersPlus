@@ -14,7 +14,7 @@ class ResearcherMatcher(Relation):
                  re_info_path=RESEARCHER_INFO_PATH, pk='Staff ID'):
         self.re_div_df = pd.read_csv(re_div_path)
         self.re_tag_df = pd.read_csv(re_tag_path)
-        self.MAP_DF = pd.read_csv(tag_div_path)
+        self.MAP_DF = pd.read_csv(tag_div_path).drop('weight', axis=1)
         self.INFO_DF = pd.read_csv(re_info_path)
         self.pk = pk
 
@@ -43,8 +43,8 @@ class ResearcherMatcher(Relation):
         pd.DataFrame, the matching result dataframe ordered by weight.
         '''
 
-        tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)']
-        ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)']
+        tar_df = tar_df[tar_df['division'] != 'OTHERS(IRRELEVANT)']
+        ref_df = ref_df[ref_df['division'] != 'OTHERS(IRRELEVANT)']
 
         penalty_df = add_penalty_term(ref_df.copy(), self.pk)
         ref_df = ref_df.merge(penalty_df)
@@ -55,11 +55,11 @@ class ResearcherMatcher(Relation):
         norm_ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         del tar_df, ref_df
 
-        merge_df = norm_ref_df.merge(norm_tar_df[['value', 'weight']], on='value')
+        merge_df = norm_ref_df.merge(norm_tar_df[['division', 'weight']], on='division')
         del norm_ref_df, norm_tar_df
 
         merge_df['weight'] = abs(merge_df['weight_x'] - merge_df['weight_y'])
-        merge_df = weighted_avg(merge_df, self.pk, 'value')
+        merge_df = weighted_avg(merge_df, self.pk, 'division')
 
         if merge_df.empty:
             return merge_df
@@ -85,8 +85,8 @@ class ResearcherMatcher(Relation):
         pd.DataFrame, the matching result dataframe ordered by weight.
         '''
 
-        tar_df = tar_df[tar_df['value'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
-        ref_df = ref_df[ref_df['value'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
+        tar_df = tar_df[tar_df['division'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
+        ref_df = ref_df[ref_df['division'] != 'OTHERS(IRRELEVANT)'][[self.pk, 'Tag', 'weight']]
 
         tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
@@ -170,7 +170,7 @@ class ResearcherMatcher(Relation):
 
         division_dict = get_div_rank_dict(divs)
         tar_div_df = pd.DataFrame({'Staff ID': 'current_tmp',
-                                   'value': list(division_dict.keys()),
+                                   'division': list(division_dict.keys()),
                                    'weight': list(division_dict.values())})
 
         tar_tag_df, ref_tag_df = pd.DataFrame(), pd.DataFrame()
@@ -214,8 +214,8 @@ class ResearcherMatcher(Relation):
 
         # filter other divisions out
         tmp_re_div = self.re_div_df[
-            ~self.re_div_df['value'].isin(['OTHERS(RELEVANT)',
-                                           'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
+            ~self.re_div_df['division'].isin(['OTHERS(RELEVANT)',
+                                              'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
         agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['value'].apply(
             lambda x: list(set(x))).reset_index()
         del tmp_re_div
@@ -278,7 +278,7 @@ if __name__ == '__main__':
 #     # matching by divisions/tags
     rm = ResearcherMatcher('../assets/researcher_division.csv',
                            '../assets/researcher_tag.csv',
-                           '../assets/tag_category_map.csv',
+                           '../assets/tag_division_map.csv',
                            '../assets/researcher_info.csv')
     print(rm.match_by_id('Canberra61585cffd7b0c43ebd755201'))
 #     division_list = ["d_10", "d_08"]

@@ -8,7 +8,7 @@ from tenders.features.tenders_feat_creator import TendersFeatCreator
 from tenders.features.tenders_key_extractor import KeyExtractor
 
 
-class Updater:
+class TendersUpdater:
     def __init__(self, pk: str):
         self.pk = pk
         self.mongx = MongoConx('tenders')
@@ -117,5 +117,5 @@ class Updater:
             del topic_df
 
 # if __name__=='__main__':
-#     upd = Updater('id')
+#     upd = TendersUpdater('id')
 #     upd.mongx.write_df(upd.update_opened(), 'clean_grants_opened', True)

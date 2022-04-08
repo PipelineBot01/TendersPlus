@@ -11,7 +11,7 @@ MODEL_FILE = '../tenders/assets/LdaModel.model'
 RESEARCHER_INFO_PATH = '../researcher/assets/researcher_info.csv'
 RESEARCHER_TAG_MAP_PATH = '../researcher/assets/researcher_tag.csv'
 RESEARCHER_DIVISION_MAP_PATH = '../researcher/assets/researcher_division.csv'
-RESEARCHER_TAG_CATE_MAP_PATH = '../researcher/assets/tag_category_map.csv'
+RESEARCHER_TAG_CATE_MAP_PATH = '../researcher/assets/tag_division_map.csv'
 
 TENDERS_MATCHING_OUTPUT = '../output/tenders_match_result.csv'
 RESEARCHER_MATCHING_OUTPUT = '../output/researcher_match_result.csv'

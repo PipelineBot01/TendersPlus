@@ -117,6 +117,6 @@ def add_penalty_term(div_df: pd.DataFrame, pk: str, ref_col: str = 'weight') -> 
     cond = div_df[f'{ref_col}_next'].notna()
     div_df.loc[cond & (div_df[f'{ref_col}_next'] > div_df[ref_col]), 'penalty'] = 1
     div_df['penalty'] = div_df.groupby(pk)['penalty'].cumsum()
-    div_df = div_df[['Staff ID', 'value', 'penalty']]
+    div_df = div_df[['Staff ID', 'division', 'penalty']]
     div_df['penalty'] = 1 - np.tanh(div_df['penalty'] / 10)
     return div_df

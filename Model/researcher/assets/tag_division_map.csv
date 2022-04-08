@@ -1,0 +1,3206 @@
+Tag,division,weight
+academic exchange,OTHERS(RELEVANT),1
+academic performance,OTHERS(RELEVANT),1
+academic success,OTHERS(RELEVANT),1
+academy,OTHERS(RELEVANT),1
+acceptability,OTHERS(RELEVANT),1
+achilles tendon,MEDICAL AND HEALTH,1
+acoustic waves,TECHNOLOGY,1
+acoustics,TECHNOLOGY,1
+acquired immunodeficiency syndrome,MEDICAL AND HEALTH,1
+act,OTHERS(IRRELEVANT),1
+adaptive capacity,OTHERS(RELEVANT),1
+adaptive management,OTHERS(RELEVANT),1
+adolescent,MEDICAL AND HEALTH,1
+age difference,OTHERS(RELEVANT),1
+age groups,OTHERS(RELEVANT),1
+aggression,HISTORY AND ARCHAEOLOGY,1
+aircraft,ENGINEERING,1
+airports,ENGINEERING,1
+alcohols,CHEMICAL,1
+allele,BIOLOGICAL,0.5
+allele,TECHNOLOGY,0.5
+allied health personnel,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+aluminum,PHYSICAL,1
+amendment,LAW AND LEGAL STUDIES,1
+amylases,BIOLOGICAL,1
+analog to digital conversion,TECHNOLOGY,1
+analysis,OTHERS(RELEVANT),1
+analysis of variance (anova),MATHEMATICAL,1
+androgens,BIOLOGICAL,1
+animal models,BIOLOGICAL,1
+annual conference,OTHERS(IRRELEVANT),1
+annual reports,OTHERS(IRRELEVANT),1
+anterior cruciate ligament,BIOLOGICAL,1
+anthropocene,BIOLOGICAL,1
+antimalarials,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+antiviral agents,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+appointments and schedules,OTHERS(IRRELEVANT),1
+aquatic ecosystem,BIOLOGICAL,0.5
+aquatic ecosystem,EARTH,0.5
+arid zones,EARTH,0.5
+arid zones,BIOLOGICAL,0.5
+arsenobetaine,PHYSICAL,1
+arthritis,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+articular range of motion,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+asthma,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+asylum seeker,OTHERS(IRRELEVANT),1
+atropine,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+authority,OTHERS(IRRELEVANT),0.5
+authority,HISTORY AND ARCHAEOLOGY,0.5
+autism spectrum disorder,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+autonomic nervous system,BIOLOGICAL,1
+availability,OTHERS(RELEVANT),1
+back,BIOLOGICAL,1
+bank,ECONOMICS,1
+bereavement,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+bill,ECONOMICS,1
+bioaccumulation,TECHNOLOGY,0.5
+bioaccumulation,BIOLOGICAL,0.5
+biological assessment,TECHNOLOGY,0.5
+biological assessment,BIOLOGICAL,0.5
+biological control,TECHNOLOGY,0.5
+biological control,BIOLOGICAL,0.5
+biomechanical phenomena,TECHNOLOGY,0.5
+biomechanical phenomena,BIOLOGICAL,0.5
+bivalvia,TECHNOLOGY,0.5
+bivalvia,BIOLOGICAL,0.5
+blogging,INFORMATION AND COMPUTING,0.5
+blogging,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+blood,BIOLOGICAL,1
+blood flow velocity,BIOLOGICAL,0.5
+blood flow velocity,MEDICAL AND HEALTH,0.5
+blood pressure,BIOLOGICAL,0.5
+blood pressure,MEDICAL AND HEALTH,0.5
+body composition,BIOLOGICAL,0.5
+body composition,MEDICAL AND HEALTH,0.5
+body mass,BIOLOGICAL,0.5
+body mass,MEDICAL AND HEALTH,0.5
+bone density,BIOLOGICAL,0.5
+bone density,MEDICAL AND HEALTH,0.5
+book,OTHERS(IRRELEVANT),1
+brain,BIOLOGICAL,0.5
+brain,MEDICAL AND HEALTH,0.5
+breast neoplasms,MEDICAL AND HEALTH,1
+building,BUILT ENVIRONMENT AND DESIGN,1
+bushfire,EARTH,1
+calcium,CHEMICAL,1
+canaries,BIOLOGICAL,1
+cannabis,BIOLOGICAL,1
+capitalist society,ECONOMICS,0.333333333
+capitalist society,LAW AND LEGAL STUDIES,0.333333333
+capitalist society,HISTORY AND ARCHAEOLOGY,0.333333333
+car,OTHERS(IRRELEVANT),1
+carbohydrates,CHEMICAL,1
+cardiac rehabilitation,MEDICAL AND HEALTH,1
+cardiorespiratory fitness,MEDICAL AND HEALTH,1
+career,OTHERS(IRRELEVANT),1
+caregiver,MEDICAL AND HEALTH,1
+caregivers,MEDICAL AND HEALTH,1
+cash,ECONOMICS,1
+causality,OTHERS(RELEVANT),1
+cause,OTHERS(IRRELEVANT),1
+chapbook,OTHERS(IRRELEVANT),1
+cheeses,ENGINEERING,1
+cherax destructor,MATHEMATICAL,1
+child,BIOLOGICAL,1
+child abuse,STUDIES IN HUMAN SOCIETY,1
+child behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+child health,MEDICAL AND HEALTH,1
+childhood,BIOLOGICAL,1
+china,EARTH,1
+chromosome,BIOLOGICAL,1
+chronic diseases,MEDICAL AND HEALTH,1
+chronic obstructive pulmonary disease,MEDICAL AND HEALTH,1
+citizens' participation,STUDIES IN HUMAN SOCIETY,1
+civil society,STUDIES IN HUMAN SOCIETY,0.5
+civil society,HISTORY AND ARCHAEOLOGY,0.5
+clay,CHEMICAL,1
+clinical competence,MEDICAL AND HEALTH,0.5
+clinical competence,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+clinical studies,MEDICAL AND HEALTH,0.5
+clinical studies,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+coaching,OTHERS(IRRELEVANT),1
+coalition,OTHERS(IRRELEVANT),1
+cognitive impairment,MEDICAL AND HEALTH,0.5
+cognitive impairment,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+cohort,OTHERS(IRRELEVANT),1
+collective decision,STUDIES IN HUMAN SOCIETY,0.5
+collective decision,HISTORY AND ARCHAEOLOGY,0.5
+colonization,HISTORY AND ARCHAEOLOGY,1
+commitment,OTHERS(IRRELEVANT),1
+commodity,ECONOMICS,0.333333333
+commodity,HISTORY AND ARCHAEOLOGY,0.333333333
+commodity,LAW AND LEGAL STUDIES,0.333333333
+commonwealth of nations,OTHERS(IRRELEVANT),1
+community development,STUDIES IN HUMAN SOCIETY,1
+community health services,STUDIES IN HUMAN SOCIETY,0.5
+community health services,MEDICAL AND HEALTH,0.5
+community structure,STUDIES IN HUMAN SOCIETY,1
+comorbidity,MEDICAL AND HEALTH,0.5
+comorbidity,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+composite materials,CHEMICAL,1
+computer simulation,INFORMATION AND COMPUTING,0.5
+computer simulation,TECHNOLOGY,0.5
+conditioning (psychology),MEDICAL AND HEALTH,0.5
+conditioning (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+conflict of interest,OTHERS(IRRELEVANT),1
+constitution,LAW AND LEGAL STUDIES,0.5
+constitution,HISTORY AND ARCHAEOLOGY,0.5
+constitutional state,LAW AND LEGAL STUDIES,0.5
+constitutional state,HISTORY AND ARCHAEOLOGY,0.5
+consumer health,MEDICAL AND HEALTH,0.5
+consumer health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+contemporary poetry,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+contemporary poetry,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+context,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+context,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+context,INFORMATION AND COMPUTING,0.333333333
+continuity of patient care,MEDICAL AND HEALTH,0.5
+continuity of patient care,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+convention,OTHERS(IRRELEVANT),1
+conventional,OTHERS(IRRELEVANT),1
+conversation,OTHERS(IRRELEVANT),1
+corporation,OTHERS(IRRELEVANT),1
+cost,OTHERS(IRRELEVANT),1
+cost of illness,MEDICAL AND HEALTH,1
+counterfeit drugs,MEDICAL AND HEALTH,1
+creative arts,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+creative arts,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+creative work,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+creative work,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+credit,OTHERS(IRRELEVANT),1
+criminal law,STUDIES IN HUMAN SOCIETY,0.5
+criminal law,LAW AND LEGAL STUDIES,0.5
+critical success factors,OTHERS(RELEVANT),1
+cross-cultural communication,STUDIES IN CREATIVE ARTS AND WRITING,1
+cues,OTHERS(IRRELEVANT),1
+cultural change,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+cultural change,HISTORY AND ARCHAEOLOGY,0.5
+cultural studies,STUDIES IN CREATIVE ARTS AND WRITING,1
+customer satisfaction,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+cytochrome,BIOLOGICAL,0.5
+cytochrome,TECHNOLOGY,0.5
+death,OTHERS(IRRELEVANT),1
+decision,OTHERS(RELEVANT),1
+decision support systems,INFORMATION AND COMPUTING,0.333333333
+decision support systems,ENGINEERING,0.333333333
+decision support systems,TECHNOLOGY,0.333333333
+decision support techniques,INFORMATION AND COMPUTING,0.333333333
+decision support techniques,ENGINEERING,0.333333333
+decision support techniques,TECHNOLOGY,0.333333333
+decomposition,OTHERS(RELEVANT),1
+democratic institutions,STUDIES IN HUMAN SOCIETY,0.5
+democratic institutions,HISTORY AND ARCHAEOLOGY,0.5
+depression,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+design of experiments,OTHERS(RELEVANT),1
+development policy,STUDIES IN HUMAN SOCIETY,0.5
+development policy,HISTORY AND ARCHAEOLOGY,0.5
+devolution,STUDIES IN HUMAN SOCIETY,0.5
+devolution,HISTORY AND ARCHAEOLOGY,0.5
+diagnostic imaging,MEDICAL AND HEALTH,1
+dichotomy,MATHEMATICAL,1
+dietary supplements,MEDICAL AND HEALTH,1
+digital forensics,TECHNOLOGY,0.5
+digital forensics,INFORMATION AND COMPUTING,0.5
+digital media,TECHNOLOGY,0.5
+digital media,INFORMATION AND COMPUTING,0.5
+digital storage,TECHNOLOGY,0.5
+digital storage,INFORMATION AND COMPUTING,0.5
+digitalization,TECHNOLOGY,0.5
+digitalization,INFORMATION AND COMPUTING,0.5
+direction compound,CHEMICAL,1
+disability,MEDICAL AND HEALTH,1
+disability insurance,MEDICAL AND HEALTH,0.333333333
+disability insurance,STUDIES IN HUMAN SOCIETY,0.333333333
+disability insurance,LAW AND LEGAL STUDIES,0.333333333
+disabled children,MEDICAL AND HEALTH,1
+disasters,EARTH,1
+discrimination,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+discrimination,STUDIES IN HUMAN SOCIETY,0.333333333
+discrimination,HISTORY AND ARCHAEOLOGY,0.333333333
+disposition,ENVIRONMENTAL,1
+dispute,OTHERS(IRRELEVANT),1
+distribution,OTHERS(RELEVANT),1
+divergence,OTHERS(RELEVANT),1
+documentation,OTHERS(IRRELEVANT),1
+dosimetry,MEDICAL AND HEALTH,1
+drama,STUDIES IN CREATIVE ARTS AND WRITING,1
+drive,OTHERS(IRRELEVANT),1
+driver,OTHERS(IRRELEVANT),1
+droughts,ENGINEERING,1
+early detection of cancer,MEDICAL AND HEALTH,1
+earthquakes,EARTH,1
+eating,OTHERS(IRRELEVANT),1
+eating behavior,MEDICAL AND HEALTH,1
+ecological system,BIOLOGICAL,1
+economic factors,ECONOMICS,1
+ecosystems,BIOLOGICAL,0.25
+ecosystems,ENVIRONMENTAL,0.25
+ecosystems,TECHNOLOGY,0.25
+ecosystems,EARTH,0.25
+ecotourism,ECONOMICS,0.5
+ecotourism,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+edition,OTHERS(IRRELEVANT),1
+education system,EDUCATION,1
+educational reform,STUDIES IN HUMAN SOCIETY,1
+efficiency,OTHERS(IRRELEVANT),1
+ego,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+election campaign,STUDIES IN HUMAN SOCIETY,0.5
+election campaign,HISTORY AND ARCHAEOLOGY,0.5
+elite,OTHERS(IRRELEVANT),1
+emancipation,STUDIES IN HUMAN SOCIETY,0.5
+emancipation,HISTORY AND ARCHAEOLOGY,0.5
+emergencies,OTHERS(IRRELEVANT),1
+emergency responders,OTHERS(IRRELEVANT),1
+emerging economies,ECONOMICS,1
+emigration and immigration,HISTORY AND ARCHAEOLOGY,0.333333333
+emigration and immigration,LAW AND LEGAL STUDIES,0.333333333
+emigration and immigration,STUDIES IN HUMAN SOCIETY,0.333333333
+empirical analysis,OTHERS(RELEVANT),1
+empirical investigation,OTHERS(RELEVANT),1
+employees,OTHERS(IRRELEVANT),1
+energy conservation,PHYSICAL,1
+energy intake,PHYSICAL,1
+energy utilization,PHYSICAL,1
+english language,"LANGUAGE, COMMUNICATION AND CULTURE",1
+entrepreneur,OTHERS(IRRELEVANT),1
+entropy,PHYSICAL,1
+environmental governance,ENVIRONMENTAL,1
+environmental issues,ENVIRONMENTAL,1
+environmental sustainability,ENVIRONMENTAL,1
+epistemology,STUDIES IN HUMAN SOCIETY,1
+equality,OTHERS(RELEVANT),1
+equipment and supplies,OTHERS(IRRELEVANT),1
+estuary,EARTH,1
+ethiopia,OTHERS(IRRELEVANT),1
+ethnic group,STUDIES IN HUMAN SOCIETY,0.5
+ethnic group,HISTORY AND ARCHAEOLOGY,0.5
+eu,OTHERS(IRRELEVANT),1
+evaluation studies,OTHERS(RELEVANT),1
+evidence,OTHERS(IRRELEVANT),1
+exanthema,MEDICAL AND HEALTH,1
+experiential knowledge,OTHERS(RELEVANT),1
+expropriation,OTHERS(RELEVANT),1
+extinction,BIOLOGICAL,1
+fabrication,CHEMICAL,0.5
+fabrication,ENGINEERING,0.5
+facilitation,OTHERS(RELEVANT),1
+factor analysis,OTHERS(RELEVANT),1
+fan,OTHERS(IRRELEVANT),1
+farmers,AGRICULTURAL AND VETERINARY,1
+farming system,AGRICULTURAL AND VETERINARY,1
+farming systems,AGRICULTURAL AND VETERINARY,1
+fast foods,ENGINEERING,1
+father,OTHERS(IRRELEVANT),1
+fatigue,MEDICAL AND HEALTH,0.5
+fatigue,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+fauna,BIOLOGICAL,1
+feasibility studies,OTHERS(RELEVANT),1
+federal budget,LAW AND LEGAL STUDIES,1
+federal police,OTHERS(IRRELEVANT),1
+feminism,STUDIES IN HUMAN SOCIETY,1
+femtocell,BIOLOGICAL,1
+festival,"LANGUAGE, COMMUNICATION AND CULTURE",1
+financial literacy,ECONOMICS,1
+fire management,ENVIRONMENTAL,1
+firefighters,ENVIRONMENTAL,1
+fish oils,ENGINEERING,1
+fitness,MEDICAL AND HEALTH,1
+floodplain,EARTH,1
+floodplains,EARTH,1
+folic acid,CHEMICAL,1
+food preferences,OTHERS(RELEVANT),1
+food security,ENGINEERING,1
+food webs,BIOLOGICAL,1
+foods,ENGINEERING,1
+foot,BIOLOGICAL,1
+foreign language,"LANGUAGE, COMMUNICATION AND CULTURE",1
+forensic genetics,MEDICAL AND HEALTH,0.5
+forensic genetics,TECHNOLOGY,0.5
+forests,EARTH,1
+formicidae,BIOLOGICAL,1
+fossil fuels,PHYSICAL,1
+framework,OTHERS(IRRELEVANT),1
+fresh water,EARTH,1
+freshwater ecosystem,EARTH,0.5
+freshwater ecosystem,BIOLOGICAL,0.5
+fuzzy inference,MATHEMATICAL,1
+fuzzy rules,MATHEMATICAL,1
+gadiformes,BIOLOGICAL,1
+gadopsis,BIOLOGICAL,1
+gait,MEDICAL AND HEALTH,1
+galaxias,ENGINEERING,1
+gambling,STUDIES IN HUMAN SOCIETY,1
+garden,AGRICULTURAL AND VETERINARY,1
+gases,CHEMICAL,1
+gastrointestinal microbiome,BIOLOGICAL,0.333333333
+gastrointestinal microbiome,TECHNOLOGY,0.333333333
+gastrointestinal microbiome,MEDICAL AND HEALTH,0.333333333
+gekkonidae,BIOLOGICAL,1
+gender equality,STUDIES IN HUMAN SOCIETY,1
+gene,BIOLOGICAL,0.5
+gene,TECHNOLOGY,0.5
+generation y,TECHNOLOGY,1
+genetic diversity,BIOLOGICAL,0.5
+genetic diversity,TECHNOLOGY,0.5
+genetic markers,BIOLOGICAL,0.5
+genetic markers,TECHNOLOGY,0.5
+genetic structure,BIOLOGICAL,0.5
+genetic structure,TECHNOLOGY,0.5
+genomics,BIOLOGICAL,0.5
+genomics,TECHNOLOGY,0.5
+geology,EARTH,1
+germany,OTHERS(IRRELEVANT),1
+global burden of disease,MEDICAL AND HEALTH,1
+global health,MEDICAL AND HEALTH,0.5
+global health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+god,PHILOSOPHY AND RELIGIOUS STUDIES,1
+governance system,STUDIES IN HUMAN SOCIETY,1
+government,STUDIES IN HUMAN SOCIETY,1
+government agency,STUDIES IN HUMAN SOCIETY,1
+government policy,STUDIES IN HUMAN SOCIETY,1
+grasslands,AGRICULTURAL AND VETERINARY,1
+grazing,AGRICULTURAL AND VETERINARY,1
+green space,AGRICULTURAL AND VETERINARY,1
+grief,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+grounded theory,OTHERS(RELEVANT),1
+group cohesion,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+grouping,OTHERS(RELEVANT),1
+growth,OTHERS(IRRELEVANT),1
+gryllidae,BIOLOGICAL,1
+habitat,EARTH,1
+habitat fragmentation,EARTH,1
+habitat use,EARTH,1
+handwriting,OTHERS(IRRELEVANT),1
+hazards,OTHERS(IRRELEVANT),1
+health care costs,MEDICAL AND HEALTH,0.5
+health care costs,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health education,MEDICAL AND HEALTH,0.5
+health education,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health expenditures,MEDICAL AND HEALTH,0.5
+health expenditures,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health personnel,MEDICAL AND HEALTH,0.5
+health personnel,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health professionals,MEDICAL AND HEALTH,0.5
+health professionals,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health service,MEDICAL AND HEALTH,0.5
+health service,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health services needs and demand,MEDICAL AND HEALTH,0.5
+health services needs and demand,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+healthy aging,MEDICAL AND HEALTH,0.5
+healthy aging,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+healthy diet,MEDICAL AND HEALTH,0.5
+healthy diet,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+heating,PHYSICAL,1
+heat-shock response,MEDICAL AND HEALTH,1
+helping behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+hemodynamics,MEDICAL AND HEALTH,1
+hermeneutics,OTHERS(RELEVANT),1
+heterogeneous networks,TECHNOLOGY,1
+heuristics,OTHERS(RELEVANT),1
+high-intensity interval training,MEDICAL AND HEALTH,1
+highlands,EARTH,1
+holocene,BIOLOGICAL,1
+homelessness,STUDIES IN HUMAN SOCIETY,1
+homicide,MEDICAL AND HEALTH,0.5
+homicide,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+honor,OTHERS(IRRELEVANT),1
+hospital information systems,MEDICAL AND HEALTH,1
+households,OTHERS(IRRELEVANT),1
+human being,BIOLOGICAL,1
+hypoxia,MEDICAL AND HEALTH,1
+ideologies,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+image quality,INFORMATION AND COMPUTING,1
+immigrant,STUDIES IN HUMAN SOCIETY,0.333333333
+immigrant,LAW AND LEGAL STUDIES,0.333333333
+immigrant,HISTORY AND ARCHAEOLOGY,0.333333333
+impulsive behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+incident,OTHERS(RELEVANT),1
+income distribution,ECONOMICS,0.5
+income distribution,STUDIES IN HUMAN SOCIETY,0.5
+indebtedness,ECONOMICS,1
+indian ocean,EARTH,1
+indigenous species,EARTH,1
+individuality,OTHERS(RELEVANT),1
+indonesia,OTHERS(IRRELEVANT),1
+influencing factors,OTHERS(RELEVANT),1
+information use,INFORMATION AND COMPUTING,1
+infrared spectroscopy,PHYSICAL,1
+infrastructure,OTHERS(IRRELEVANT),1
+ingestion,BIOLOGICAL,1
+inpatients,MEDICAL AND HEALTH,0.5
+inpatients,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+insulin,BIOLOGICAL,0.5
+insulin,TECHNOLOGY,0.5
+insulin resistance,BIOLOGICAL,0.5
+insulin resistance,TECHNOLOGY,0.5
+insurance,STUDIES IN HUMAN SOCIETY,1
+integrated,OTHERS(IRRELEVANT),1
+intensive care units,MEDICAL AND HEALTH,0.5
+intensive care units,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+intercultural education,EDUCATION,0.5
+intercultural education,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+interferon-alpha,BIOLOGICAL,1
+international organizations,STUDIES IN HUMAN SOCIETY,1
+internationalization,STUDIES IN HUMAN SOCIETY,0.5
+internationalization,HISTORY AND ARCHAEOLOGY,0.5
+internet,ENGINEERING,1
+interview,OTHERS(IRRELEVANT),1
+interviews,OTHERS(IRRELEVANT),1
+intimate partner violence,STUDIES IN HUMAN SOCIETY,1
+introduced species,BIOLOGICAL,1
+islands,EARTH,1
+israel,OTHERS(IRRELEVANT),1
+job satisfaction,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+journalist,STUDIES IN CREATIVE ARTS AND WRITING,1
+justice,STUDIES IN HUMAN SOCIETY,0.5
+justice,LAW AND LEGAL STUDIES,0.5
+kenya,OTHERS(IRRELEVANT),1
+kidney,BIOLOGICAL,1
+knee,BIOLOGICAL,1
+knowledge,OTHERS(RELEVANT),1
+knowledge transfer,OTHERS(RELEVANT),1
+korea,OTHERS(IRRELEVANT),1
+kuwait,OTHERS(IRRELEVANT),1
+labour market,ECONOMICS,1
+lake,EARTH,1
+lasers,PHYSICAL,1
+leader,OTHERS(IRRELEVANT),1
+learning environment,EDUCATION,1
+learning objective,EDUCATION,1
+learning organization,EDUCATION,1
+leaves,BIOLOGICAL,1
+leg,BIOLOGICAL,0.5
+leg,MEDICAL AND HEALTH,0.5
+length of stay,OTHERS(IRRELEVANT),1
+lepidoptera,BIOLOGICAL,1
+libraries,OTHERS(IRRELEVANT),1
+licensure,OTHERS(IRRELEVANT),1
+life cycle,OTHERS(IRRELEVANT),1
+life history trait,HISTORY AND ARCHAEOLOGY,0.5
+life history trait,LAW AND LEGAL STUDIES,0.5
+literature,"LANGUAGE, COMMUNICATION AND CULTURE",1
+litigation,LAW AND LEGAL STUDIES,1
+livelihood,OTHERS(IRRELEVANT),1
+liver,BIOLOGICAL,1
+lizard,BIOLOGICAL,1
+local authorities,STUDIES IN HUMAN SOCIETY,1
+local politics,STUDIES IN HUMAN SOCIETY,1
+longitudinal studies,OTHERS(RELEVANT),1
+longitudinal study,OTHERS(RELEVANT),1
+love,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+maccullochella macquariensis,BIOLOGICAL,1
+macquaria australasica,BIOLOGICAL,1
+macroinvertebrate,BIOLOGICAL,1
+macropodidae,BIOLOGICAL,1
+malaysia,OTHERS(IRRELEVANT),1
+management,OTHERS(IRRELEVANT),1
+manufacturing,OTHERS(IRRELEVANT),1
+manuscripts,OTHERS(IRRELEVANT),1
+marital status,STUDIES IN HUMAN SOCIETY,1
+marker,OTHERS(IRRELEVANT),1
+marriage,STUDIES IN HUMAN SOCIETY,1
+marsupialia,BIOLOGICAL,1
+mass drug administration,MEDICAL AND HEALTH,1
+mass media,INFORMATION AND COMPUTING,0.333333333
+mass media,ENGINEERING,0.333333333
+mass media,TECHNOLOGY,0.333333333
+media consumption,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+media consumption,INFORMATION AND COMPUTING,0.5
+media industry,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+media industry,INFORMATION AND COMPUTING,0.5
+medical problems,MEDICAL AND HEALTH,1
+member state,OTHERS(IRRELEVANT),1
+men's health,MEDICAL AND HEALTH,1
+menstruation,MEDICAL AND HEALTH,1
+mental competency,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+mentors,EDUCATION,1
+mercury,PHYSICAL,1
+metadata,INFORMATION AND COMPUTING,1
+microbiota,BIOLOGICAL,1
+midwifery,MEDICAL AND HEALTH,1
+migrants,STUDIES IN HUMAN SOCIETY,0.333333333
+migrants,LAW AND LEGAL STUDIES,0.333333333
+migrants,HISTORY AND ARCHAEOLOGY,0.333333333
+migration,STUDIES IN HUMAN SOCIETY,0.333333333
+migration,LAW AND LEGAL STUDIES,0.333333333
+migration,HISTORY AND ARCHAEOLOGY,0.333333333
+milk,ENGINEERING,1
+minority,OTHERS(IRRELEVANT),1
+mobile applications,TECHNOLOGY,1
+mobile computing,INFORMATION AND COMPUTING,0.5
+mobile computing,TECHNOLOGY,0.5
+mobile robots,TECHNOLOGY,1
+model,OTHERS(IRRELEVANT),1
+money,OTHERS(IRRELEVANT),1
+mortgages,ECONOMICS,1
+motion,PHYSICAL,1
+motivation,OTHERS(IRRELEVANT),1
+multi agent systems,INFORMATION AND COMPUTING,1
+mutation,BIOLOGICAL,1
+myalgia,MEDICAL AND HEALTH,1
+myopia,MEDICAL AND HEALTH,1
+nails,OTHERS(IRRELEVANT),1
+names,OTHERS(IRRELEVANT),1
+narrative therapy,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+national policy,STUDIES IN HUMAN SOCIETY,0.5
+national policy,LAW AND LEGAL STUDIES,0.5
+nationalism,STUDIES IN HUMAN SOCIETY,1
+nature,BIOLOGICAL,1
+navigation,ENGINEERING,1
+needles,ENGINEERING,1
+network security,INFORMATION AND COMPUTING,0.333333333
+network security,ENGINEERING,0.333333333
+network security,TECHNOLOGY,0.333333333
+neuromuscular agents,MEDICAL AND HEALTH,1
+new labour,OTHERS(RELEVANT),1
+new south wales,OTHERS(IRRELEVANT),1
+new species,BIOLOGICAL,1
+new technology,OTHERS(IRRELEVANT),1
+newspaper,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+newspaper,INFORMATION AND COMPUTING,0.5
+nineteenth century,OTHERS(IRRELEVANT),1
+nitrates,CHEMICAL,1
+noncommunicable diseases,MEDICAL AND HEALTH,1
+norm,MATHEMATICAL,1
+northern territory,OTHERS(IRRELEVANT),1
+nucleic acid repetitive sequences,TECHNOLOGY,0.5
+nucleic acid repetitive sequences,BIOLOGICAL,0.5
+nurse midwives,MEDICAL AND HEALTH,1
+nurses,MEDICAL AND HEALTH,1
+nurse's role,MEDICAL AND HEALTH,1
+nursing care,MEDICAL AND HEALTH,1
+nursing education,MEDICAL AND HEALTH,1
+nursing staff,MEDICAL AND HEALTH,1
+nutrition situation,MEDICAL AND HEALTH,1
+object attachment,OTHERS(RELEVANT),1
+observational studies,OTHERS(RELEVANT),1
+occupational exposure,OTHERS(IRRELEVANT),1
+occupational therapists,MEDICAL AND HEALTH,1
+odds ratio,MATHEMATICAL,1
+oecd,OTHERS(IRRELEVANT),1
+offender,STUDIES IN HUMAN SOCIETY,1
+online survey,OTHERS(RELEVANT),1
+organizational culture,OTHERS(IRRELEVANT),1
+ornithorhynchus anatinus,BIOLOGICAL,1
+osteoarthritis,MEDICAL AND HEALTH,1
+outcome assessment (health care),MEDICAL AND HEALTH,1
+overseas,STUDIES IN CREATIVE ARTS AND WRITING,1
+overweight,MEDICAL AND HEALTH,1
+oxidative stress,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+pain management,MEDICAL AND HEALTH,0.5
+pain management,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+papua new guinea,STUDIES IN CREATIVE ARTS AND WRITING,1
+paradigm,OTHERS(RELEVANT),1
+parenting,EDUCATION,1
+parkinson disease,MEDICAL AND HEALTH,1
+pathogen,MEDICAL AND HEALTH,1
+patient care,MEDICAL AND HEALTH,0.5
+patient care,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+pedestrians,OTHERS(IRRELEVANT),1
+pediatric obesity,MEDICAL AND HEALTH,1
+peer review,OTHERS(RELEVANT),1
+pelvic floor,BIOLOGICAL,1
+performance management,OTHERS(RELEVANT),1
+performance-enhancing substances,OTHERS(RELEVANT),1
+persistence,OTHERS(IRRELEVANT),1
+person,OTHERS(IRRELEVANT),1
+pesticide,PHYSICAL,1
+pesticides,PHYSICAL,1
+pharmaceutical services,MEDICAL AND HEALTH,1
+pharmacists,MEDICAL AND HEALTH,1
+pharmacy,MEDICAL AND HEALTH,1
+philippines,STUDIES IN CREATIVE ARTS AND WRITING,1
+phosphorylation,PHYSICAL,1
+photon absorptiometry,PHYSICAL,1
+physical,MEDICAL AND HEALTH,1
+physical education and training,MEDICAL AND HEALTH,0.5
+physical education and training,EDUCATION,0.5
+physical endurance,MEDICAL AND HEALTH,1
+physiological stress,MEDICAL AND HEALTH,1
+pisa study,PHYSICAL,1
+pixels,INFORMATION AND COMPUTING,1
+placebos,MEDICAL AND HEALTH,1
+plan,OTHERS(IRRELEVANT),1
+plasmas,PHYSICAL,1
+platypus,BIOLOGICAL,1
+pleistocene,BIOLOGICAL,1
+pneumonia,MEDICAL AND HEALTH,1
+policy reform,STUDIES IN HUMAN SOCIETY,0.333333333
+policy reform,LAW AND LEGAL STUDIES,0.333333333
+policy reform,HISTORY AND ARCHAEOLOGY,0.333333333
+policymaker,OTHERS(IRRELEVANT),1
+political apathy,STUDIES IN HUMAN SOCIETY,0.5
+political apathy,HISTORY AND ARCHAEOLOGY,0.5
+political decision,STUDIES IN HUMAN SOCIETY,1
+political leaders,STUDIES IN HUMAN SOCIETY,0.5
+political leaders,HISTORY AND ARCHAEOLOGY,0.5
+political system,STUDIES IN HUMAN SOCIETY,1
+political theory,STUDIES IN HUMAN SOCIETY,0.5
+political theory,HISTORY AND ARCHAEOLOGY,0.5
+politician,STUDIES IN HUMAN SOCIETY,0.5
+politician,HISTORY AND ARCHAEOLOGY,0.5
+polymethyl methacrylate,CHEMICAL,1
+polypharmacy,MEDICAL AND HEALTH,1
+popularity,OTHERS(IRRELEVANT),1
+population density,STUDIES IN HUMAN SOCIETY,1
+population groups,STUDIES IN HUMAN SOCIETY,1
+population size,STUDIES IN HUMAN SOCIETY,1
+power (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+practice guidelines,OTHERS(RELEVANT),1
+pragmatism,OTHERS(IRRELEVANT),1
+prazosin,MEDICAL AND HEALTH,1
+precariousness,OTHERS(RELEVANT),1
+predation,BIOLOGICAL,1
+predictive analytics,INFORMATION AND COMPUTING,0.5
+predictive analytics,MATHEMATICAL,0.5
+prefrontal cortex,BIOLOGICAL,1
+prenatal education,MEDICAL AND HEALTH,1
+presidential election,STUDIES IN HUMAN SOCIETY,0.5
+presidential election,LAW AND LEGAL STUDIES,0.5
+pricing,ECONOMICS,1
+primary health care,MEDICAL AND HEALTH,1
+primary school teacher,EDUCATION,1
+prisoners,STUDIES IN HUMAN SOCIETY,1
+product,OTHERS(IRRELEVANT),1
+professional practice,EDUCATION,1
+professionalism,OTHERS(IRRELEVANT),1
+profit,ECONOMICS,1
+profitability,ECONOMICS,1
+program,OTHERS(IRRELEVANT),1
+project,OTHERS(IRRELEVANT),1
+promotion,OTHERS(IRRELEVANT),1
+prospective studies,OTHERS(RELEVANT),1
+prostatic neoplasms,MEDICAL AND HEALTH,1
+protection of children,STUDIES IN HUMAN SOCIETY,1
+protest,OTHERS(IRRELEVANT),1
+proton pump inhibitors,CHEMICAL,1
+proxy,OTHERS(IRRELEVANT),1
+psychologist,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+psychotic disorders,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+public authorities,STUDIES IN HUMAN SOCIETY,0.5
+public authorities,LAW AND LEGAL STUDIES,0.5
+public hospitals,MEDICAL AND HEALTH,0.5
+public hospitals,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+public service,OTHERS(IRRELEVANT),1
+purchasing,OTHERS(IRRELEVANT),1
+qualitative method,OTHERS(RELEVANT),1
+quality of service,OTHERS(IRRELEVANT),1
+quotation,"LANGUAGE, COMMUNICATION AND CULTURE",1
+radiation,PHYSICAL,1
+rain,EARTH,1
+rainfall,EARTH,1
+ranking,OTHERS(IRRELEVANT),1
+reaction time,OTHERS(IRRELEVANT),1
+reader,OTHERS(IRRELEVANT),1
+reading,OTHERS(IRRELEVANT),1
+recidivism,STUDIES IN HUMAN SOCIETY,1
+recognition (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+recommendation,INFORMATION AND COMPUTING,1
+reconstruction,OTHERS(IRRELEVANT),1
+recovery,MEDICAL AND HEALTH,0.5
+recovery,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+refractive errors,MEDICAL AND HEALTH,1
+refugee,STUDIES IN HUMAN SOCIETY,1
+regional planning,BUILT ENVIRONMENT AND DESIGN,1
+regression,MATHEMATICAL,1
+rehabilitation (people),MEDICAL AND HEALTH,1
+religion,PHILOSOPHY AND RELIGIOUS STUDIES,1
+reptile,BIOLOGICAL,1
+reptiles,AGRICULTURAL AND VETERINARY,0.5
+reptiles,TECHNOLOGY,0.5
+research agenda,OTHERS(RELEVANT),1
+research approach,OTHERS(RELEVANT),1
+research design,OTHERS(RELEVANT),1
+research ethics,OTHERS(RELEVANT),1
+research facility,OTHERS(RELEVANT),1
+research personnel,OTHERS(RELEVANT),1
+research projects,OTHERS(RELEVANT),1
+retinal diseases,MEDICAL AND HEALTH,1
+return to sport,OTHERS(IRRELEVANT),1
+revenue,ECONOMICS,0.333333333
+revenue,STUDIES IN HUMAN SOCIETY,0.333333333
+revenue,LAW AND LEGAL STUDIES,0.333333333
+review,OTHERS(RELEVANT),1
+rhetoric,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+rhetoric,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+rheumatoid arthritis,MEDICAL AND HEALTH,1
+ribosomal dna,TECHNOLOGY,0.5
+ribosomal dna,BIOLOGICAL,0.5
+riparian vegetation,AGRICULTURAL AND VETERINARY,1
+risk communication,OTHERS(IRRELEVANT),1
+risk-taking,OTHERS(IRRELEVANT),1
+rna,TECHNOLOGY,0.5
+rna,BIOLOGICAL,0.5
+rock,EARTH,1
+rubus,OTHERS(IRRELEVANT),1
+rural community,AGRICULTURAL AND VETERINARY,1
+sale,OTHERS(IRRELEVANT),1
+sars virus,MEDICAL AND HEALTH,0.5
+sars virus,BIOLOGICAL,0.5
+saudi arabia,OTHERS(IRRELEVANT),1
+scabies,MEDICAL AND HEALTH,1
+scaling,OTHERS(IRRELEVANT),1
+scenarios,OTHERS(IRRELEVANT),1
+schizophrenia,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+school,EDUCATION,1
+school law,LAW AND LEGAL STUDIES,1
+screening,OTHERS(IRRELEVANT),1
+second world war,HISTORY AND ARCHAEOLOGY,1
+security systems,INFORMATION AND COMPUTING,0.333333333
+security systems,ENGINEERING,0.333333333
+security systems,TECHNOLOGY,0.333333333
+sedentary behavior,MEDICAL AND HEALTH,1
+seed,BIOLOGICAL,1
+selenium,CHEMICAL,1
+self concept,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+self-management,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+self-regulation,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+semantic web,INFORMATION AND COMPUTING,1
+sensors,ENGINEERING,1
+service delivery,OTHERS(IRRELEVANT),1
+sex determination,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+sex determination,STUDIES IN HUMAN SOCIETY,0.5
+sex education,EDUCATION,1
+sex reversal,BIOLOGICAL,0.5
+sex reversal,MEDICAL AND HEALTH,0.5
+sexual violence,STUDIES IN HUMAN SOCIETY,1
+shareholder,ECONOMICS,1
+shoes,OTHERS(IRRELEVANT),1
+skin temperature,MEDICAL AND HEALTH,1
+small and medium-sized enterprises (smes),ECONOMICS,1
+small business,ECONOMICS,1
+smartphone,INFORMATION AND COMPUTING,0.333333333
+smartphone,ENGINEERING,0.333333333
+smartphone,TECHNOLOGY,0.333333333
+smokers,MEDICAL AND HEALTH,0.5
+smokers,LAW AND LEGAL STUDIES,0.5
+social adjustment,STUDIES IN HUMAN SOCIETY,0.5
+social adjustment,HISTORY AND ARCHAEOLOGY,0.5
+social exclusion,STUDIES IN HUMAN SOCIETY,1
+social interaction,STUDIES IN HUMAN SOCIETY,1
+social support,STUDIES IN HUMAN SOCIETY,1
+social web,STUDIES IN HUMAN SOCIETY,0.5
+social web,INFORMATION AND COMPUTING,0.5
+socialisation,STUDIES IN HUMAN SOCIETY,0.5
+socialisation,HISTORY AND ARCHAEOLOGY,0.5
+socioeconomics,STUDIES IN HUMAN SOCIETY,0.5
+socioeconomics,ECONOMICS,0.5
+software engineering,INFORMATION AND COMPUTING,0.333333333
+software engineering,ENGINEERING,0.333333333
+software engineering,TECHNOLOGY,0.333333333
+sorting,OTHERS(IRRELEVANT),1
+south africa,OTHERS(IRRELEVANT),1
+southeast,OTHERS(IRRELEVANT),1
+southeast asia,OTHERS(IRRELEVANT),1
+species richness,BIOLOGICAL,1
+specifications,OTHERS(RELEVANT),1
+speed,PHYSICAL,1
+sports events,OTHERS(IRRELEVANT),1
+stable isotope,CHEMICAL,1
+stewardship,OTHERS(IRRELEVANT),1
+stroke,MEDICAL AND HEALTH,1
+structural equation modeling,MATHEMATICAL,1
+student,EDUCATION,1
+studies abroad,EDUCATION,1
+sugars,CHEMICAL,1
+sulfur,CHEMICAL,1
+supplier,OTHERS(IRRELEVANT),1
+survey data,OTHERS(RELEVANT),1
+sustainability reporting,STUDIES IN HUMAN SOCIETY,1
+sweden,OTHERS(IRRELEVANT),1
+sympathetic nervous system,TECHNOLOGY,0.333333333
+sympathetic nervous system,BIOLOGICAL,0.333333333
+sympathetic nervous system,MEDICAL AND HEALTH,0.333333333
+synergy,OTHERS(RELEVANT),1
+tai ji,EDUCATION,1
+taiwan,OTHERS(IRRELEVANT),1
+targeting,OTHERS(RELEVANT),1
+task performance and analysis,OTHERS(RELEVANT),1
+tasmania,OTHERS(IRRELEVANT),1
+teaching practice,EDUCATION,1
+technology adoption,OTHERS(RELEVANT),1
+tectonics,EARTH,1
+telemedicine,MEDICAL AND HEALTH,0.5
+telemedicine,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+tertiary care centers,MEDICAL AND HEALTH,0.5
+tertiary care centers,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+test,OTHERS(IRRELEVANT),1
+textures,STUDIES IN CREATIVE ARTS AND WRITING,1
+therapeutic alliance,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+tibia,MEDICAL AND HEALTH,1
+transcriptomics,BIOLOGICAL,1
+virion,TECHNOLOGY,1
+virus replication,TECHNOLOGY,1
+volleyball,EDUCATION,1
+volunteers,OTHERS(IRRELEVANT),1
+voter,OTHERS(IRRELEVANT),1
+vulnerable populations,STUDIES IN HUMAN SOCIETY,1
+waist-hip ratio,MEDICAL AND HEALTH,1
+walk test,MEDICAL AND HEALTH,1
+washing,OTHERS(IRRELEVANT),1
+water resource,EARTH,1
+water resources,EARTH,1
+water sports,EDUCATION,1
+watermarking,ENGINEERING,1
+wavelet transforms,PHYSICAL,1
+way of life,STUDIES IN HUMAN SOCIETY,1
+weapons,ENGINEERING,1
+weathering,EARTH,1
+web sites,INFORMATION AND COMPUTING,0.333333333
+web sites,ENGINEERING,0.333333333
+web sites,TECHNOLOGY,0.333333333
+weight loss,MEDICAL AND HEALTH,0.5
+weight loss,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+western australia,OTHERS(IRRELEVANT),1
+wetland,EARTH,1
+wheat,AGRICULTURAL AND VETERINARY,1
+widow,OTHERS(IRRELEVANT),1
+wilderness,ENVIRONMENTAL,1
+wildfire,ENVIRONMENTAL,1
+wildland fire management,ENVIRONMENTAL,1
+winter,EARTH,1
+women's health,MEDICAL AND HEALTH,0.5
+women's health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+work place,STUDIES IN HUMAN SOCIETY,1
+worker,STUDIES IN HUMAN SOCIETY,1
+working life,OTHERS(IRRELEVANT),1
+world war ii,HISTORY AND ARCHAEOLOGY,1
+wounds and injuries,MEDICAL AND HEALTH,0.5
+wounds and injuries,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+young,MEDICAL AND HEALTH,1
+youth sports,EDUCATION,1
+role play,OTHERS(RELEVANT),1
+supervised learning,INFORMATION AND COMPUTING,1
+endorsements,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+intrusion detection,INFORMATION AND COMPUTING,1
+incentive,ECONOMICS,1
+human erbb2 protein,MEDICAL AND HEALTH,1
+retina,MEDICAL AND HEALTH,1
+distributional impacts,OTHERS(IRRELEVANT),1
+islam,OTHERS(IRRELEVANT),1
+practice management,OTHERS(IRRELEVANT),1
+developed countries,OTHERS(IRRELEVANT),1
+lung,MEDICAL AND HEALTH,1
+beetle,ENVIRONMENTAL,1
+gross domestic product,ECONOMICS,1
+help-seeking behavior,MEDICAL AND HEALTH,1
+self-help groups,MEDICAL AND HEALTH,1
+wrist,MEDICAL AND HEALTH,1
+microfinance,ECONOMICS,1
+hospital emergency service,MEDICAL AND HEALTH,1
+parturition,ENGINEERING,1
+phase transition,ENGINEERING,1
+public housing,STUDIES IN HUMAN SOCIETY,1
+fish communities,AGRICULTURAL AND VETERINARY,1
+mathematics teaching,EDUCATION,1
+japan,OTHERS(IRRELEVANT),1
+financial management,ECONOMICS,1
+body condition,MEDICAL AND HEALTH,1
+disadvantage,OTHERS(IRRELEVANT),1
+semiotics,"LANGUAGE, COMMUNICATION AND CULTURE",1
+psychopathology,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+cameras,ENGINEERING,1
+salts,PHYSICAL,1
+consumption behavior,ECONOMICS,1
+semester,EDUCATION,1
+subjectivity,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+international accounting standards board,ECONOMICS,1
+water policy,ENVIRONMENTAL,1
+consciousness,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+baby,MEDICAL AND HEALTH,1
+prose poem,"LANGUAGE, COMMUNICATION AND CULTURE",1
+global financial crisis,ECONOMICS,1
+face recognition,TECHNOLOGY,1
+humanitarianism,PHILOSOPHY AND RELIGIOUS STUDIES,1
+comparison,OTHERS(IRRELEVANT),1
+eicosapentaenoic acid,CHEMICAL,1
+social determinants of health,MEDICAL AND HEALTH,1
+integrated model,OTHERS(RELEVANT),1
+license,OTHERS(RELEVANT),1
+engineers,TECHNOLOGY,1
+micronesia,OTHERS(IRRELEVANT),1
+walking speed,ENGINEERING,1
+child custody,STUDIES IN HUMAN SOCIETY,1
+research method,OTHERS(RELEVANT),1
+suicide,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+information seeking behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+head movements,MEDICAL AND HEALTH,1
+multicultural society,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+multicultural society,STUDIES IN HUMAN SOCIETY,0.5
+repository,INFORMATION AND COMPUTING,1
+health care services,MEDICAL AND HEALTH,1
+examination,OTHERS(RELEVANT),1
+vision,MEDICAL AND HEALTH,1
+electric fuses,TECHNOLOGY,1
+water management,ENVIRONMENTAL,1
+attack,TECHNOLOGY,1
+social attitude,STUDIES IN HUMAN SOCIETY,1
+political elite,STUDIES IN HUMAN SOCIETY,1
+career development,EDUCATION,1
+india,OTHERS(IRRELEVANT),1
+cultural factors,"LANGUAGE, COMMUNICATION AND CULTURE",1
+neuroimaging,MEDICAL AND HEALTH,1
+sharing economy,ECONOMICS,1
+self-injurious behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+basin,EARTH,1
+canberra,OTHERS(IRRELEVANT),1
+patellar ligament,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+decision-making process,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+enforcement,LAW AND LEGAL STUDIES,1
+wearable electronic devices,ENGINEERING,1
+national security,STUDIES IN HUMAN SOCIETY,1
+hot temperature,ENGINEERING,1
+midwife,MEDICAL AND HEALTH,1
+australian capital territory,OTHERS(IRRELEVANT),1
+textbook,EDUCATION,1
+reciprocity,OTHERS(IRRELEVANT),1
+sex offenses,LAW AND LEGAL STUDIES,1
+gender-specific factors,STUDIES IN HUMAN SOCIETY,1
+trade agreement,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+camera,ENGINEERING,1
+quality of health care,MEDICAL AND HEALTH,1
+continent,EARTH,1
+color,OTHERS(IRRELEVANT),1
+lawyers,LAW AND LEGAL STUDIES,1
+educator,EDUCATION,1
+turkey,OTHERS(IRRELEVANT),1
+child development,EDUCATION,1
+female student,EDUCATION,1
+degradation,BIOLOGICAL,1
+group membership,"LANGUAGE, COMMUNICATION AND CULTURE",1
+educational policy,EDUCATION,1
+human capital,STUDIES IN HUMAN SOCIETY,1
+developing country,OTHERS(IRRELEVANT),1
+amplification,BIOLOGICAL,1
+services,OTHERS(IRRELEVANT),1
+criminals,LAW AND LEGAL STUDIES,1
+world wide web,INFORMATION AND COMPUTING,1
+competency,OTHERS(IRRELEVANT),1
+segmentation,OTHERS(IRRELEVANT),1
+educational research,EDUCATION,1
+carbidopa,OTHERS(IRRELEVANT),1
+research project,OTHERS(RELEVANT),1
+technological change,ENGINEERING,1
+physiological adaptation,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+data base,INFORMATION AND COMPUTING,1
+psychological,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+high performance liquid chromatography,CHEMICAL,1
+cell death,BIOLOGICAL,1
+public transport,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+economic system,ECONOMICS,1
+singapore,OTHERS(IRRELEVANT),1
+sensitivity and specificity,MEDICAL AND HEALTH,1
+news value,"LANGUAGE, COMMUNICATION AND CULTURE",1
+breast feeding,MEDICAL AND HEALTH,1
+animation,INFORMATION AND COMPUTING,1
+functional foods,MEDICAL AND HEALTH,1
+victoria (australia),OTHERS(IRRELEVANT),1
+clone cells,BIOLOGICAL,1
+pubmed,BIOLOGICAL,1
+athlete,BIOLOGICAL,1
+physiology,BIOLOGICAL,1
+suburb,BUILT ENVIRONMENT AND DESIGN,1
+health occupations,MEDICAL AND HEALTH,1
+extremities,MEDICAL AND HEALTH,1
+ecological momentary assessment,ENVIRONMENTAL,1
+publications,"LANGUAGE, COMMUNICATION AND CULTURE",1
+method,OTHERS(RELEVANT),1
+land,AGRICULTURAL AND VETERINARY,1
+uno,EARTH,1
+defects,OTHERS(IRRELEVANT),1
+stakeholder,OTHERS(RELEVANT),1
+maccullochella peelii peelii,AGRICULTURAL AND VETERINARY,1
+access control,ENGINEERING,1
+woman,OTHERS(IRRELEVANT),1
+endurance training,MEDICAL AND HEALTH,1
+social problems,STUDIES IN HUMAN SOCIETY,1
+peace process,STUDIES IN HUMAN SOCIETY,1
+book review,STUDIES IN CREATIVE ARTS AND WRITING,1
+adipose tissue,MEDICAL AND HEALTH,1
+nitric acid,CHEMICAL,1
+inhibition (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+mixed methods,OTHERS(RELEVANT),1
+identification (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+optical flows,PHYSICAL,1
+maintenance,ENGINEERING,1
+hydrology,EARTH,1
+scincidae,AGRICULTURAL AND VETERINARY,1
+government supervision,STUDIES IN HUMAN SOCIETY,1
+editor,"LANGUAGE, COMMUNICATION AND CULTURE",1
+predator,ENVIRONMENTAL,1
+representative democracy,STUDIES IN HUMAN SOCIETY,1
+asymmetry,MATHEMATICAL,1
+world war i,HISTORY AND ARCHAEOLOGY,1
+intersectionality,OTHERS(IRRELEVANT),1
+social status,STUDIES IN HUMAN SOCIETY,1
+educational practice,EDUCATION,1
+urban renewal,BUILT ENVIRONMENT AND DESIGN,1
+big data,INFORMATION AND COMPUTING,1
+inhabitant,STUDIES IN HUMAN SOCIETY,1
+"health knowledge, attitudes, practice",PSYCHOLOGY AND COGNITIVE SCIENCES,1
+paint,STUDIES IN CREATIVE ARTS AND WRITING,1
+emerging asian countries,OTHERS(IRRELEVANT),1
+family income,STUDIES IN HUMAN SOCIETY,1
+world,OTHERS(IRRELEVANT),1
+journalists,STUDIES IN CREATIVE ARTS AND WRITING,1
+pleasure,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+loss,OTHERS(IRRELEVANT),1
+near infrared spectroscopy,PHYSICAL,1
+developing world,OTHERS(IRRELEVANT),1
+internet of things,INFORMATION AND COMPUTING,1
+researchers,OTHERS(IRRELEVANT),1
+communication technology,INFORMATION AND COMPUTING,1
+mask,MEDICAL AND HEALTH,1
+feeding and eating disorders,MEDICAL AND HEALTH,0.5
+feeding and eating disorders,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+social networking,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+social networking,STUDIES IN HUMAN SOCIETY,0.5
+east-timor,OTHERS(IRRELEVANT),1
+vip,OTHERS(IRRELEVANT),1
+typology,OTHERS(RELEVANT),1
+soldier,OTHERS(RELEVANT),1
+anterior cruciate ligament injuries,MEDICAL AND HEALTH,1
+australasia,OTHERS(IRRELEVANT),1
+lakes,EARTH,1
+employee,STUDIES IN HUMAN SOCIETY,1
+accelerometry,MEDICAL AND HEALTH,1
+social effects,OTHERS(IRRELEVANT),1
+basketball,OTHERS(IRRELEVANT),1
+accidental falls,MEDICAL AND HEALTH,1
+twentieth century,OTHERS(IRRELEVANT),1
+hydrological change,ENVIRONMENTAL,1
+logic,ENGINEERING,1
+emotions,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+sitting position,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+treaty,LAW AND LEGAL STUDIES,1
+negotiating,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+human health,MEDICAL AND HEALTH,1
+sexual and gender minorities,STUDIES IN HUMAN SOCIETY,1
+hacker,INFORMATION AND COMPUTING,1
+non-randomized controlled trials,OTHERS(RELEVANT),1
+percutaneous coronary intervention,MEDICAL AND HEALTH,1
+paper,ENGINEERING,1
+anthropology,HISTORY AND ARCHAEOLOGY,1
+triticum,AGRICULTURAL AND VETERINARY,1
+pregnant women,MEDICAL AND HEALTH,1
+narcissism,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+demographic statistics,STUDIES IN HUMAN SOCIETY,1
+normative theory,OTHERS(IRRELEVANT),1
+social theory,STUDIES IN HUMAN SOCIETY,1
+industrial design,ENGINEERING,1
+language policy,"LANGUAGE, COMMUNICATION AND CULTURE",1
+case management,OTHERS(RELEVANT),1
+immunization,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+political participation,STUDIES IN HUMAN SOCIETY,1
+macular degeneration,MEDICAL AND HEALTH,1
+economic geography,ECONOMICS,1
+flexibility,OTHERS(IRRELEVANT),1
+student teacher,EDUCATION,1
+relationship commitment,"LANGUAGE, COMMUNICATION AND CULTURE",1
+fatigue of materials,ENGINEERING,1
+environmental health,MEDICAL AND HEALTH,1
+retirement age,"LANGUAGE, COMMUNICATION AND CULTURE",1
+diary,MEDICAL AND HEALTH,1
+environmental factors,OTHERS(RELEVANT),1
+chronic pain,MEDICAL AND HEALTH,1
+income poverty,STUDIES IN HUMAN SOCIETY,1
+venous thromboembolism,MEDICAL AND HEALTH,1
+currency,ECONOMICS,1
+epidemiology,MEDICAL AND HEALTH,1
+interoperability,INFORMATION AND COMPUTING,1
+controllers,ENGINEERING,1
+minerals,EARTH,1
+carbon monoxide,CHEMICAL,1
+measuring,OTHERS(IRRELEVANT),1
+automobiles,ENGINEERING,1
+cyber physical system,INFORMATION AND COMPUTING,1
+soils,AGRICULTURAL AND VETERINARY,1
+sales,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+social environment,STUDIES IN HUMAN SOCIETY,1
+iraq,OTHERS(IRRELEVANT),1
+positioning,OTHERS(RELEVANT),1
+firm,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+predators,AGRICULTURAL AND VETERINARY,1
+school education,EDUCATION,1
+antennas,TECHNOLOGY,1
+skills,OTHERS(IRRELEVANT),1
+respect,"LANGUAGE, COMMUNICATION AND CULTURE",1
+delivery of health care,MEDICAL AND HEALTH,1
+incubation,AGRICULTURAL AND VETERINARY,1
+retapamulin,MEDICAL AND HEALTH,1
+nutrition policy,MEDICAL AND HEALTH,1
+psychology student,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+constructivism,OTHERS(IRRELEVANT),1
+political attitude,STUDIES IN HUMAN SOCIETY,1
+resistance training,MEDICAL AND HEALTH,1
+family business,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+health practitioners,MEDICAL AND HEALTH,1
+nursing models,MEDICAL AND HEALTH,1
+tensors,MATHEMATICAL,1
+disease management,MEDICAL AND HEALTH,1
+acceleration,PHYSICAL,1
+microsimulation,OTHERS(RELEVANT),1
+intention,OTHERS(IRRELEVANT),1
+sports science,MEDICAL AND HEALTH,1
+pediatrics,MEDICAL AND HEALTH,1
+information modeling,INFORMATION AND COMPUTING,1
+mucosal immunity,MEDICAL AND HEALTH,1
+time,OTHERS(IRRELEVANT),1
+occupational health,MEDICAL AND HEALTH,1
+meals,MEDICAL AND HEALTH,1
+glycohemoglobin,MEDICAL AND HEALTH,1
+confusion,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+mitochondrial genome,BIOLOGICAL,1
+hospitalization,MEDICAL AND HEALTH,1
+body weight,MEDICAL AND HEALTH,1
+iron,EARTH,1
+interpersonal relations,"LANGUAGE, COMMUNICATION AND CULTURE",1
+eye,MEDICAL AND HEALTH,1
+social inequality,STUDIES IN HUMAN SOCIETY,1
+blood platelets,MEDICAL AND HEALTH,1
+older people,MEDICAL AND HEALTH,1
+administrative personnel,STUDIES IN HUMAN SOCIETY,1
+clinical practice,MEDICAL AND HEALTH,1
+curriculum development,EDUCATION,1
+cultural difference,"LANGUAGE, COMMUNICATION AND CULTURE",1
+qualitative study,OTHERS(RELEVANT),1
+dialect,"LANGUAGE, COMMUNICATION AND CULTURE",1
+acetaminophen,MEDICAL AND HEALTH,1
+privilege,STUDIES IN HUMAN SOCIETY,1
+public administration,STUDIES IN HUMAN SOCIETY,1
+drying,ENVIRONMENTAL,1
+heart,MEDICAL AND HEALTH,1
+parastacidae,AGRICULTURAL AND VETERINARY,1
+regulation,LAW AND LEGAL STUDIES,1
+linkage,BIOLOGICAL,1
+organic carbon,CHEMICAL,1
+fruit,AGRICULTURAL AND VETERINARY,1
+emergency,MEDICAL AND HEALTH,1
+electroencephalography,MEDICAL AND HEALTH,1
+interferons,MEDICAL AND HEALTH,1
+friendship,"LANGUAGE, COMMUNICATION AND CULTURE",1
+public services,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+profession,OTHERS(IRRELEVANT),1
+confidence,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+invertebrate,AGRICULTURAL AND VETERINARY,1
+travel,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+resource management,ENVIRONMENTAL,1
+olympic games,OTHERS(RELEVANT),1
+noise,PHYSICAL,1
+muslims,PHILOSOPHY AND RELIGIOUS STUDIES,1
+weight gain,MEDICAL AND HEALTH,1
+alcohol drinking,MEDICAL AND HEALTH,1
+criminal justice,LAW AND LEGAL STUDIES,1
+mythology,HISTORY AND ARCHAEOLOGY,1
+airport,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+communicable diseases,MEDICAL AND HEALTH,1
+community engagement,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+classifiers,OTHERS(IRRELEVANT),1
+habitats,ENVIRONMENTAL,1
+confidence intervals,INFORMATION AND COMPUTING,1
+river system,EARTH,1
+modernity,"LANGUAGE, COMMUNICATION AND CULTURE",1
+community service,STUDIES IN HUMAN SOCIETY,1
+electric impedance,PHYSICAL,1
+unemployment,STUDIES IN HUMAN SOCIETY,1
+mouth,MEDICAL AND HEALTH,1
+visual fields,PHYSICAL,1
+hospital costs,MEDICAL AND HEALTH,1
+rural area,BUILT ENVIRONMENT AND DESIGN,1
+public-private partnerships,STUDIES IN HUMAN SOCIETY,1
+suppliers,ENGINEERING,1
+cognitive ability,MEDICAL AND HEALTH,1
+health status,MEDICAL AND HEALTH,1
+lung neoplasms,MEDICAL AND HEALTH,1
+punishment,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+price,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+ligaments,MEDICAL AND HEALTH,1
+carbon sequestration,CHEMICAL,1
+electric network analysis,TECHNOLOGY,1
+invasive species,ENVIRONMENTAL,1
+gray matter,MEDICAL AND HEALTH,1
+levodopa drug combination carbidopa,MEDICAL AND HEALTH,1
+rocks,EARTH,1
+social skills,STUDIES IN HUMAN SOCIETY,1
+metabolic syndrome,MEDICAL AND HEALTH,1
+water scarcity,ENVIRONMENTAL,1
+design,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+software defined networking,INFORMATION AND COMPUTING,1
+trace elements,MEDICAL AND HEALTH,1
+financial data,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+city,BUILT ENVIRONMENT AND DESIGN,1
+teacher training,EDUCATION,1
+karyotype,BIOLOGICAL,1
+city planning,BUILT ENVIRONMENT AND DESIGN,1
+zinc,CHEMICAL,1
+behavioral,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+bivalve,AGRICULTURAL AND VETERINARY,1
+rural population,STUDIES IN HUMAN SOCIETY,1
+smart city,INFORMATION AND COMPUTING,1
+open source,OTHERS(RELEVANT),1
+home range,OTHERS(IRRELEVANT),1
+motor vehicles,ENGINEERING,1
+mountain,EARTH,1
+pharmaceutical preparations,MEDICAL AND HEALTH,1
+protected area,ENVIRONMENTAL,1
+coverage,OTHERS(IRRELEVANT),1
+plant community,AGRICULTURAL AND VETERINARY,1
+neighboring countries,OTHERS(RELEVANT),1
+town,BUILT ENVIRONMENT AND DESIGN,1
+speaking,EDUCATION,1
+discrimination (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+intercultural communication,"LANGUAGE, COMMUNICATION AND CULTURE",1
+moral philosophy,PHILOSOPHY AND RELIGIOUS STUDIES,1
+alliances,OTHERS(IRRELEVANT),1
+occupation,STUDIES IN HUMAN SOCIETY,1
+banking sector,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+occupations,STUDIES IN HUMAN SOCIETY,1
+global climate,ENVIRONMENTAL,1
+holistic approach,OTHERS(RELEVANT),1
+development project,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+public management,STUDIES IN HUMAN SOCIETY,1
+vaccination,MEDICAL AND HEALTH,1
+middle aged,MEDICAL AND HEALTH,1
+pragmatics,"LANGUAGE, COMMUNICATION AND CULTURE",1
+social psychology,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+anti-inflammatory agents,MEDICAL AND HEALTH,1
+signal-to-noise ratio,INFORMATION AND COMPUTING,1
+website,INFORMATION AND COMPUTING,1
+exploitation,ENVIRONMENTAL,1
+genetic algorithms,BIOLOGICAL,1
+museums,STUDIES IN CREATIVE ARTS AND WRITING,1
+horses,AGRICULTURAL AND VETERINARY,1
+electric vehicles,ENGINEERING,1
+statistical methods,ENGINEERING,1
+social network,"LANGUAGE, COMMUNICATION AND CULTURE",1
+residential areas,BUILT ENVIRONMENT AND DESIGN,1
+influence,OTHERS(IRRELEVANT),1
+technology,OTHERS(IRRELEVANT),1
+location factors,OTHERS(IRRELEVANT),1
+blockchain,INFORMATION AND COMPUTING,1
+health services research,MEDICAL AND HEALTH,1
+hygiene,MEDICAL AND HEALTH,1
+worldview,STUDIES IN HUMAN SOCIETY,1
+social cohesion,STUDIES IN HUMAN SOCIETY,1
+climate change adaptation,ENVIRONMENTAL,1
+polymerase chain reaction,BIOLOGICAL,1
+legal status,LAW AND LEGAL STUDIES,1
+demand,OTHERS(IRRELEVANT),1
+observation,OTHERS(IRRELEVANT),1
+vacation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+substitution,OTHERS(IRRELEVANT),1
+physical functional performance,BIOLOGICAL,1
+health care professionals,MEDICAL AND HEALTH,1
+lactic acid,CHEMICAL,1
+industrial designs,ENGINEERING,1
+coronary disease,MEDICAL AND HEALTH,1
+tourism research,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+myocardial ischemia,MEDICAL AND HEALTH,1
+supervision,INFORMATION AND COMPUTING,1
+action research,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+chickens,AGRICULTURAL AND VETERINARY,1
+macros,OTHERS(IRRELEVANT),1
+suicidal ideation,MEDICAL AND HEALTH,1
+counseling,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+detection,MEDICAL AND HEALTH,1
+smoking cessation,MEDICAL AND HEALTH,1
+goods,ENGINEERING,1
+perches,AGRICULTURAL AND VETERINARY,1
+democratic theory,STUDIES IN HUMAN SOCIETY,1
+incivility,OTHERS(RELEVANT),1
+financial markets,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+migrant,STUDIES IN HUMAN SOCIETY,1
+imaging techniques,INFORMATION AND COMPUTING,1
+cryptography,INFORMATION AND COMPUTING,1
+sex characteristics,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+catchment,AGRICULTURAL AND VETERINARY,1
+psychological stress,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+expert,OTHERS(RELEVANT),1
+producer,OTHERS(RELEVANT),1
+elasticity,OTHERS(RELEVANT),1
+green tea,AGRICULTURAL AND VETERINARY,1
+peers,STUDIES IN HUMAN SOCIETY,1
+vitamin b complex,MEDICAL AND HEALTH,1
+income,ECONOMICS,1
+canopy,AGRICULTURAL AND VETERINARY,1
+repetitive sequences,BIOLOGICAL,1
+fatty acid-binding proteins,BIOLOGICAL,1
+sports medicine,MEDICAL AND HEALTH,1
+ecosystem services,ENVIRONMENTAL,1
+jordan,OTHERS(IRRELEVANT),1
+public participation,STUDIES IN HUMAN SOCIETY,1
+logistics,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+unesco,OTHERS(RELEVANT),1
+decapoda,AGRICULTURAL AND VETERINARY,1
+group homes,OTHERS(IRRELEVANT),1
+masks,TECHNOLOGY,1
+medical imaging,MEDICAL AND HEALTH,1
+recurrent neural networks,INFORMATION AND COMPUTING,1
+cancer survivors,MEDICAL AND HEALTH,1
+communications,INFORMATION AND COMPUTING,1
+costs and cost analysis,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+reform,OTHERS(IRRELEVANT),1
+labour party,STUDIES IN HUMAN SOCIETY,1
+sediment,EARTH,1
+frogs,AGRICULTURAL AND VETERINARY,1
+trial,MEDICAL AND HEALTH,1
+manuka honey,AGRICULTURAL AND VETERINARY,1
+first world war,HISTORY AND ARCHAEOLOGY,1
+parliament,STUDIES IN HUMAN SOCIETY,1
+sensory properties,MEDICAL AND HEALTH,1
+biometrics,BIOLOGICAL,1
+papua-new guinea,OTHERS(IRRELEVANT),1
+mental health support,MEDICAL AND HEALTH,1
+acupuncture,MEDICAL AND HEALTH,1
+quantitative method,OTHERS(RELEVANT),1
+first nations,"LANGUAGE, COMMUNICATION AND CULTURE",1
+pluralism,OTHERS(RELEVANT),1
+accused,LAW AND LEGAL STUDIES,1
+wireless networks,TECHNOLOGY,1
+emotion recognition,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+blood vessels,MEDICAL AND HEALTH,1
+cross-sectional study,OTHERS(RELEVANT),1
+fishes,AGRICULTURAL AND VETERINARY,1
+scotland,OTHERS(IRRELEVANT),1
+exegesis,PHILOSOPHY AND RELIGIOUS STUDIES,1
+multivariate analysis,INFORMATION AND COMPUTING,1
+chelidae,AGRICULTURAL AND VETERINARY,1
+sex determination processes,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+fusion reactions,PHYSICAL,1
+hemoglobins,MEDICAL AND HEALTH,1
+common cold,MEDICAL AND HEALTH,1
+prediabetic state,MEDICAL AND HEALTH,1
+compassion fatigue,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+scandal,"LANGUAGE, COMMUNICATION AND CULTURE",1
+social economics,ECONOMICS,1
+lenses,MEDICAL AND HEALTH,1
+instruction,OTHERS(IRRELEVANT),1
+adaptive boosting,ENGINEERING,1
+economic impact,ECONOMICS,1
+oxygen consumption,EARTH,1
+guidelines,OTHERS(IRRELEVANT),1
+dismissal,STUDIES IN HUMAN SOCIETY,1
+reuse,ENVIRONMENTAL,1
+compliance,OTHERS(IRRELEVANT),1
+social value,STUDIES IN HUMAN SOCIETY,1
+interest group,OTHERS(IRRELEVANT),1
+household income,ECONOMICS,1
+south australia,OTHERS(IRRELEVANT),1
+medication,MEDICAL AND HEALTH,1
+quadriceps muscle,MEDICAL AND HEALTH,1
+breast,MEDICAL AND HEALTH,1
+serogroup,BIOLOGICAL,1
+episode of care,MEDICAL AND HEALTH,1
+light,PHYSICAL,1
+fee,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+agricultural development,AGRICULTURAL AND VETERINARY,1
+letters,STUDIES IN CREATIVE ARTS AND WRITING,1
+nutrient,AGRICULTURAL AND VETERINARY,1
+fires,ENVIRONMENTAL,1
+lead,STUDIES IN HUMAN SOCIETY,1
+diabetes mellitus,MEDICAL AND HEALTH,1
+social movements,STUDIES IN HUMAN SOCIETY,1
+capital city,STUDIES IN HUMAN SOCIETY,1
+coronavirus,MEDICAL AND HEALTH,1
+threatened species,ENVIRONMENTAL,1
+serum,MEDICAL AND HEALTH,1
+humulus,AGRICULTURAL AND VETERINARY,1
+radio access networks,TECHNOLOGY,1
+nurse,MEDICAL AND HEALTH,1
+logistic models,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+attention capture,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+empirical evidence,OTHERS(RELEVANT),1
+doctrine,STUDIES IN HUMAN SOCIETY,1
+political behavior,STUDIES IN HUMAN SOCIETY,1
+consultation,OTHERS(IRRELEVANT),1
+market,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+high court,LAW AND LEGAL STUDIES,1
+recreation,STUDIES IN HUMAN SOCIETY,1
+tropical diseases,MEDICAL AND HEALTH,1
+population decline,STUDIES IN HUMAN SOCIETY,1
+infant health,MEDICAL AND HEALTH,1
+antarctica,EARTH,1
+lactation,AGRICULTURAL AND VETERINARY,1
+post-traumatic stress disorders,MEDICAL AND HEALTH,1
+altruism,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+rating,ECONOMICS,1
+demography,STUDIES IN HUMAN SOCIETY,1
+secondary school,EDUCATION,1
+alternative models,INFORMATION AND COMPUTING,1
+vision system,ENGINEERING,1
+basal metabolism,MEDICAL AND HEALTH,1
+harbor,EARTH,1
+empirical research,OTHERS(RELEVANT),1
+authentication,INFORMATION AND COMPUTING,1
+spine,MEDICAL AND HEALTH,1
+mothers,MEDICAL AND HEALTH,1
+evolutionary algorithms,INFORMATION AND COMPUTING,1
+image processing,INFORMATION AND COMPUTING,1
+biota,EARTH,1
+snails,AGRICULTURAL AND VETERINARY,1
+patient reported outcome measures,MEDICAL AND HEALTH,1
+child protection,MEDICAL AND HEALTH,1
+leadership,STUDIES IN HUMAN SOCIETY,1
+ergometry,MEDICAL AND HEALTH,1
+upper extremity,MEDICAL AND HEALTH,1
+athletic injuries,MEDICAL AND HEALTH,1
+construction project,BUILT ENVIRONMENT AND DESIGN,1
+policy responses,STUDIES IN HUMAN SOCIETY,1
+data mining,INFORMATION AND COMPUTING,1
+case studies,OTHERS(RELEVANT),1
+brain computer interface,INFORMATION AND COMPUTING,1
+drug therapy,MEDICAL AND HEALTH,1
+ethics committee,PHILOSOPHY AND RELIGIOUS STUDIES,1
+mental fatigue,MEDICAL AND HEALTH,1
+species recruitment,ENVIRONMENTAL,1
+insect,AGRICULTURAL AND VETERINARY,1
+vitamin b 12,MEDICAL AND HEALTH,1
+type 1 diabetes mellitus,MEDICAL AND HEALTH,1
+recommender systems,INFORMATION AND COMPUTING,1
+flooding,ENVIRONMENTAL,1
+perth,OTHERS(IRRELEVANT),1
+pathologists,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+tea,AGRICULTURAL AND VETERINARY,1
+destination,OTHERS(IRRELEVANT),1
+nursing home,MEDICAL AND HEALTH,1
+cooperation,STUDIES IN HUMAN SOCIETY,1
+immigration,STUDIES IN HUMAN SOCIETY,1
+deep neural networks,INFORMATION AND COMPUTING,1
+hand,MEDICAL AND HEALTH,1
+auckland,OTHERS(IRRELEVANT),1
+functional food,MEDICAL AND HEALTH,1
+homes for the aged,MEDICAL AND HEALTH,1
+asia,OTHERS(IRRELEVANT),1
+reporter,"LANGUAGE, COMMUNICATION AND CULTURE",1
+metabolism,BIOLOGICAL,1
+swimming,OTHERS(IRRELEVANT),1
+point-of-care testing,MEDICAL AND HEALTH,1
+retrospective studies,OTHERS(RELEVANT),1
+reporting system,INFORMATION AND COMPUTING,1
+cations,AGRICULTURAL AND VETERINARY,1
+import,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+architect,BUILT ENVIRONMENT AND DESIGN,1
+colorectal neoplasms,MEDICAL AND HEALTH,1
+candidacy,MEDICAL AND HEALTH,1
+autistic disorder,MEDICAL AND HEALTH,1
+tokyo,OTHERS(IRRELEVANT),1
+narrative,OTHERS(RELEVANT),1
+organization,OTHERS(IRRELEVANT),1
+data structures,INFORMATION AND COMPUTING,1
+forest industries,AGRICULTURAL AND VETERINARY,1
+bone and bones,MEDICAL AND HEALTH,1
+pharmacy students,MEDICAL AND HEALTH,1
+waist-height ratio,MEDICAL AND HEALTH,1
+broadcaster,TECHNOLOGY,1
+endophenotypes,MEDICAL AND HEALTH,1
+group,OTHERS(IRRELEVANT),1
+transaction,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+labor force,STUDIES IN HUMAN SOCIETY,1
+dialogue,"LANGUAGE, COMMUNICATION AND CULTURE",1
+accreditation,ENGINEERING,1
+finishing,OTHERS(IRRELEVANT),1
+health literacy,MEDICAL AND HEALTH,1
+social distance,PHILOSOPHY AND RELIGIOUS STUDIES,1
+transition economics,ECONOMICS,1
+public,STUDIES IN HUMAN SOCIETY,1
+federal republic of germany,OTHERS(IRRELEVANT),1
+nutritionists,MEDICAL AND HEALTH,1
+patient rehabilitation,MEDICAL AND HEALTH,1
+social research,STUDIES IN HUMAN SOCIETY,1
+clergy,MEDICAL AND HEALTH,1
+tendinopathy,MEDICAL AND HEALTH,1
+resident,MEDICAL AND HEALTH,1
+storytelling,OTHERS(RELEVANT),1
+acute coronary syndrome,MEDICAL AND HEALTH,1
+irrigation,AGRICULTURAL AND VETERINARY,1
+library science,INFORMATION AND COMPUTING,1
+cell phone use,TECHNOLOGY,1
+sustainable development goal,ENVIRONMENTAL,1
+information system,INFORMATION AND COMPUTING,1
+anatomy,MEDICAL AND HEALTH,1
+wisdom,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+intestinal microorganisms,BIOLOGICAL,1
+hong kong,OTHERS(IRRELEVANT),1
+territories,ENVIRONMENTAL,1
+excellence,OTHERS(IRRELEVANT),1
+proteomics,BIOLOGICAL,1
+community participation,"LANGUAGE, COMMUNICATION AND CULTURE",1
+diagnostic,MEDICAL AND HEALTH,1
+vocational education,EDUCATION,1
+materiality,ENGINEERING,1
+financial crisis,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+pyrus,AGRICULTURAL AND VETERINARY,1
+education sector,STUDIES IN HUMAN SOCIETY,1
+taxonomy,AGRICULTURAL AND VETERINARY,1
+victoria,OTHERS(IRRELEVANT),1
+urban planning,BUILT ENVIRONMENT AND DESIGN,1
+principal component analysis,CHEMICAL,1
+spiperone,MEDICAL AND HEALTH,1
+prose,"LANGUAGE, COMMUNICATION AND CULTURE",1
+content analysis,OTHERS(RELEVANT),1
+health workforce,MEDICAL AND HEALTH,1
+queensland,OTHERS(IRRELEVANT),1
+walkers,OTHERS(IRRELEVANT),1
+sensor networks,INFORMATION AND COMPUTING,1
+bacterial artificial chromosomes,BIOLOGICAL,1
+pharmacology,MEDICAL AND HEALTH,1
+lesions (animal),AGRICULTURAL AND VETERINARY,1
+mental health care,MEDICAL AND HEALTH,1
+citizen,STUDIES IN HUMAN SOCIETY,1
+registries,OTHERS(IRRELEVANT),1
+society,STUDIES IN HUMAN SOCIETY,1
+gestational weight gain,MEDICAL AND HEALTH,1
+grammar,"LANGUAGE, COMMUNICATION AND CULTURE",1
+disinformation,INFORMATION AND COMPUTING,1
+biosecurity,AGRICULTURAL AND VETERINARY,1
+language,"LANGUAGE, COMMUNICATION AND CULTURE",1
+follower,ENGINEERING,1
+disruption,MEDICAL AND HEALTH,1
+indicator,OTHERS(RELEVANT),1
+environmental amenities,ENVIRONMENTAL,1
+france,OTHERS(IRRELEVANT),1
+policy approach,STUDIES IN HUMAN SOCIETY,1
+farmer,AGRICULTURAL AND VETERINARY,1
+humidity,ENVIRONMENTAL,1
+cultural economy,ECONOMICS,1
+complementarity,MATHEMATICAL,1
+epidemiologic studies,MEDICAL AND HEALTH,1
+attribute,INFORMATION AND COMPUTING,1
+senate,STUDIES IN HUMAN SOCIETY,1
+network meta-analysis,INFORMATION AND COMPUTING,1
+federation,STUDIES IN HUMAN SOCIETY,1
+galaxiidae,AGRICULTURAL AND VETERINARY,1
+regulatory reform,STUDIES IN HUMAN SOCIETY,1
+self-determination,PHILOSOPHY AND RELIGIOUS STUDIES,1
+designer,STUDIES IN CREATIVE ARTS AND WRITING,1
+studios,INFORMATION AND COMPUTING,1
+dreams,PHILOSOPHY AND RELIGIOUS STUDIES,1
+magnetic resonance imaging,MEDICAL AND HEALTH,1
+ankle joint,MEDICAL AND HEALTH,1
+first-year student,EDUCATION,1
+aging of materials,ENGINEERING,1
+niche,OTHERS(IRRELEVANT),1
+arsenosugar,CHEMICAL,1
+group work,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+theory-practice,OTHERS(RELEVANT),1
+prototype,ENGINEERING,1
+resuscitation,OTHERS(RELEVANT),1
+grounding,TECHNOLOGY,1
+social identification,STUDIES IN HUMAN SOCIETY,1
+history of architecture,BUILT ENVIRONMENT AND DESIGN,1
+educational opportunity,EDUCATION,1
+mobile phone,TECHNOLOGY,1
+haiku,INFORMATION AND COMPUTING,1
+kinematics,MEDICAL AND HEALTH,1
+levodopa,MEDICAL AND HEALTH,1
+user interface,INFORMATION AND COMPUTING,1
+abdominal obesity,MEDICAL AND HEALTH,1
+academic achievement,OTHERS(IRRELEVANT),1
+access to health care,MEDICAL AND HEALTH,1
+accessibility,OTHERS(IRRELEVANT),1
+accounting,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+accounting curriculum,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+accounting curriculum,EDUCATION,0.5
+action plan,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+activation,OTHERS(IRRELEVANT),1
+actor-network-theory,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+actor-network-theory,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+acute care,MEDICAL AND HEALTH,1
+adelaide,OTHERS(IRRELEVANT),1
+adiposity,MEDICAL AND HEALTH,1
+age group,STUDIES IN HUMAN SOCIETY,0.333333333
+age group,BIOLOGICAL,0.333333333
+age group,OTHERS(RELEVANT),0.333333333
+agricultural land,AGRICULTURAL AND VETERINARY,0.333333333
+agricultural land,ENVIRONMENTAL,0.333333333
+agricultural land,BUILT ENVIRONMENT AND DESIGN,0.333333333
+alcohol,MEDICAL AND HEALTH,0.333333333
+alcohol,TECHNOLOGY,0.333333333
+alcohol,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+amphibian,BIOLOGICAL,1
+analytical framework,OTHERS(RELEVANT),1
+anchors,OTHERS(RELEVANT),1
+animal,BIOLOGICAL,1
+ankle,MEDICAL AND HEALTH,1
+ankle injuries,MEDICAL AND HEALTH,1
+anomaly detection,ENGINEERING,0.333333333
+anomaly detection,TECHNOLOGY,0.333333333
+anomaly detection,OTHERS(RELEVANT),0.333333333
+antagonism,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+antagonism,STUDIES IN HUMAN SOCIETY,0.333333333
+antagonism,OTHERS(RELEVANT),0.333333333
+anthology,OTHERS(IRRELEVANT),1
+anthropometry,MEDICAL AND HEALTH,1
+anti-bacterial agents,MEDICAL AND HEALTH,0.333333333
+anti-bacterial agents,TECHNOLOGY,0.333333333
+anti-bacterial agents,BIOLOGICAL,0.333333333
+anticoagulants,MEDICAL AND HEALTH,0.333333333
+anticoagulants,TECHNOLOGY,0.333333333
+anticoagulants,BIOLOGICAL,0.333333333
+antigens,BIOLOGICAL,1
+anura,BIOLOGICAL,1
+application programs,INFORMATION AND COMPUTING,0.5
+application programs,ENGINEERING,0.5
+aptitude,OTHERS(IRRELEVANT),1
+aquatic ecosystems,ENVIRONMENTAL,0.5
+aquatic ecosystems,TECHNOLOGY,0.5
+arab,OTHERS(IRRELEVANT),1
+area under curve,MATHEMATICAL,0.5
+area under curve,OTHERS(RELEVANT),0.5
+artwork,STUDIES IN CREATIVE ARTS AND WRITING,1
+aspirin,MEDICAL AND HEALTH,1
+assay,BIOLOGICAL,1
+assistance,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+assistance,OTHERS(IRRELEVANT),0.5
+assistant,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+assistant,OTHERS(IRRELEVANT),0.5
+athletic performance,MEDICAL AND HEALTH,0.5
+athletic performance,EDUCATION,0.5
+attitude to health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+attitude to health,MEDICAL AND HEALTH,0.5
+authenticity,OTHERS(IRRELEVANT),1
+automation,ENGINEERING,0.5
+automation,TECHNOLOGY,0.5
+aviation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+bachelor,OTHERS(IRRELEVANT),1
+bacteria,BIOLOGICAL,1
+banking industry,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+basins,EARTH,1
+best practice,OTHERS(IRRELEVANT),1
+biogeography,BIOLOGICAL,0.333333333
+biogeography,ENVIRONMENTAL,0.333333333
+biogeography,EARTH,0.333333333
+biomarkers,BIOLOGICAL,1
+bird,BIOLOGICAL,1
+bitcoin,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+bitcoin,ECONOMICS,0.333333333
+bitcoin,INFORMATION AND COMPUTING,0.333333333
+blended learning,INFORMATION AND COMPUTING,1
+blindness,MEDICAL AND HEALTH,1
+blood glucose,MEDICAL AND HEALTH,1
+body weight changes,MEDICAL AND HEALTH,0.5
+body weight changes,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+border,STUDIES IN HUMAN SOCIETY,0.333333333
+border,EARTH,0.333333333
+border,ENVIRONMENTAL,0.333333333
+brazil,OTHERS(IRRELEVANT),1
+broadcast,TECHNOLOGY,0.5
+broadcast,LAW AND LEGAL STUDIES,0.5
+buffers,OTHERS(IRRELEVANT),1
+built environment,BUILT ENVIRONMENT AND DESIGN,1
+bullying,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+bullying,STUDIES IN HUMAN SOCIETY,0.5
+burden,OTHERS(IRRELEVANT),1
+bureaucracy,STUDIES IN HUMAN SOCIETY,0.5
+bureaucracy,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+cacodylic acid,BIOLOGICAL,0.333333333
+cacodylic acid,CHEMICAL,0.333333333
+cacodylic acid,MEDICAL AND HEALTH,0.333333333
+campaign,STUDIES IN HUMAN SOCIETY,0.333333333
+campaign,HISTORY AND ARCHAEOLOGY,0.333333333
+campaign,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+canada,OTHERS(IRRELEVANT),1
+cardiovascular diseases,MEDICAL AND HEALTH,1
+case-control studies,MEDICAL AND HEALTH,1
+cash flow,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+catalysts,CHEMICAL,0.5
+catalysts,ENGINEERING,0.5
+catchments,ENVIRONMENTAL,0.5
+catchments,EARTH,0.5
+celebrity,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+celebrity,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+celebrity,STUDIES IN HUMAN SOCIETY,0.333333333
+cell phone,ENGINEERING,0.5
+cell phone,TECHNOLOGY,0.5
+cells,BIOLOGICAL,1
+cellular networks,TECHNOLOGY,1
+cellular telephones,TECHNOLOGY,1
+censuses,STUDIES IN HUMAN SOCIETY,1
+cerebrovascular circulation,MEDICAL AND HEALTH,1
+certification,OTHERS(IRRELEVANT),1
+cesarean section,MEDICAL AND HEALTH,1
+checklist,OTHERS(IRRELEVANT),1
+cheese,ENGINEERING,0.5
+cheese,TECHNOLOGY,0.5
+chemical analysis,CHEMICAL,1
+chemistry,CHEMICAL,1
+child care,MEDICAL AND HEALTH,1
+chronic disease,MEDICAL AND HEALTH,1
+chronic illness,MEDICAL AND HEALTH,1
+chronic kidney failure,MEDICAL AND HEALTH,1
+city center,STUDIES IN HUMAN SOCIETY,0.333333333
+city center,BUILT ENVIRONMENT AND DESIGN,0.333333333
+city center,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+classroom,EDUCATION,1
+climate policy,ENVIRONMENTAL,0.5
+climate policy,STUDIES IN HUMAN SOCIETY,0.5
+clinician,MEDICAL AND HEALTH,1
+clothing,ENGINEERING,1
+coach,EDUCATION,1
+co-creation,OTHERS(IRRELEVANT),1
+coding,INFORMATION AND COMPUTING,0.333333333
+coding,BIOLOGICAL,0.333333333
+coding,ENGINEERING,0.333333333
+cognitive behavioral therapy,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+cognitive dysfunction,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+cohort studies,OTHERS(RELEVANT),1
+cold temperature,OTHERS(RELEVANT),1
+collective behavior,STUDIES IN HUMAN SOCIETY,0.333333333
+collective behavior,BIOLOGICAL,0.333333333
+collective behavior,OTHERS(RELEVANT),0.333333333
+commonwealth,STUDIES IN HUMAN SOCIETY,0.5
+commonwealth,OTHERS(IRRELEVANT),0.5
+community research,STUDIES IN HUMAN SOCIETY,0.5
+community research,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+company value,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+comparative study,OTHERS(RELEVANT),1
+competitiveness,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+complementary therapies,MEDICAL AND HEALTH,0.5
+complementary therapies,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+computer vision,INFORMATION AND COMPUTING,1
+conceptual model,OTHERS(RELEVANT),1
+concretes,CHEMICAL,0.333333333
+concretes,ENGINEERING,0.333333333
+concretes,BUILT ENVIRONMENT AND DESIGN,0.333333333
+confidentiality,OTHERS(IRRELEVANT),1
+conflict,OTHERS(IRRELEVANT),1
+conflict (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+conservation management,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+conservation management,STUDIES IN HUMAN SOCIETY,0.5
+contact,OTHERS(IRRELEVANT),1
+contagious disease,MEDICAL AND HEALTH,0.333333333
+contagious disease,AGRICULTURAL AND VETERINARY,0.333333333
+contagious disease,BIOLOGICAL,0.333333333
+contextual factors,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+contingency,ENGINEERING,0.333333333
+contingency,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+contingency,OTHERS(RELEVANT),0.333333333
+control groups,OTHERS(RELEVANT),1
+cooling,ENGINEERING,1
+coping,OTHERS(IRRELEVANT),1
+coproduction,AGRICULTURAL AND VETERINARY,0.333333333
+coproduction,ENGINEERING,0.333333333
+coproduction,TECHNOLOGY,0.333333333
+correctional institution,MEDICAL AND HEALTH,0.5
+correctional institution,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+crack,OTHERS(RELEVANT),1
+creative writing,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+creative writing,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+credibility,OTHERS(RELEVANT),1
+criminal investigation,STUDIES IN HUMAN SOCIETY,1
+criminal justice systems,STUDIES IN HUMAN SOCIETY,1
+criminology,STUDIES IN HUMAN SOCIETY,1
+critic,STUDIES IN CREATIVE ARTS AND WRITING,1
+critical care,MEDICAL AND HEALTH,1
+cross-over studies,OTHERS(RELEVANT),1
+cross-sectional studies,OTHERS(RELEVANT),1
+cultural geography,STUDIES IN HUMAN SOCIETY,0.5
+cultural geography,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+cultural relations,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+cultural relations,STUDIES IN HUMAN SOCIETY,0.5
+curricula,EDUCATION,1
+customer,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+cyberbullying,STUDIES IN HUMAN SOCIETY,0.333333333
+cyberbullying,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+cyberbullying,LAW AND LEGAL STUDIES,0.333333333
+cytogenetics,BIOLOGICAL,1
+cytokines,BIOLOGICAL,1
+czech republic,OTHERS(IRRELEVANT),1
+damage,OTHERS(IRRELEVANT),1
+dams,BUILT ENVIRONMENT AND DESIGN,0.5
+dams,ENGINEERING,0.5
+dance,EDUCATION,1
+dancing,EDUCATION,1
+data analytics,OTHERS(RELEVANT),1
+data collection,OTHERS(RELEVANT),1
+data quality,OTHERS(RELEVANT),1
+data science,INFORMATION AND COMPUTING,1
+databases,INFORMATION AND COMPUTING,1
+datasets,INFORMATION AND COMPUTING,1
+deception,LAW AND LEGAL STUDIES,0.5
+deception,BIOLOGICAL,0.5
+deficit,STUDIES IN HUMAN SOCIETY,1
+delphi technique,MEDICAL AND HEALTH,1
+democratization,STUDIES IN HUMAN SOCIETY,1
+denmark,OTHERS(IRRELEVANT),1
+deprescriptions,MEDICAL AND HEALTH,1
+descriptive statistics,MATHEMATICAL,0.5
+descriptive statistics,OTHERS(RELEVANT),0.5
+desert,ENVIRONMENTAL,0.5
+desert,EARTH,0.5
+detectors,ENGINEERING,1
+detention,LAW AND LEGAL STUDIES,0.5
+detention,STUDIES IN HUMAN SOCIETY,0.5
+determinants,OTHERS(IRRELEVANT),1
+deuterium,CHEMICAL,0.5
+deuterium,PHYSICAL,0.5
+development model,STUDIES IN HUMAN SOCIETY,1
+development strategy,STUDIES IN HUMAN SOCIETY,1
+dietetics,MEDICAL AND HEALTH,0.333333333
+dietetics,ENGINEERING,0.333333333
+dietetics,TECHNOLOGY,0.333333333
+dietitians,MEDICAL AND HEALTH,0.333333333
+dietitians,ENGINEERING,0.333333333
+dietitians,TECHNOLOGY,0.333333333
+director,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+disabled persons,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+disabled persons,STUDIES IN HUMAN SOCIETY,0.333333333
+disabled persons,MEDICAL AND HEALTH,0.333333333
+disclosure,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+disclosure,OTHERS(RELEVANT),0.5
+discrimination law,LAW AND LEGAL STUDIES,1
+dismantling,ENGINEERING,1
+display devices,ENGINEERING,1
+district,STUDIES IN HUMAN SOCIETY,0.333333333
+district,BUILT ENVIRONMENT AND DESIGN,0.333333333
+district,OTHERS(RELEVANT),0.333333333
+dna,MEDICAL AND HEALTH,0.5
+dna,BIOLOGICAL,0.5
+dna barcoding,MEDICAL AND HEALTH,0.333333333
+dna barcoding,BIOLOGICAL,0.333333333
+dna barcoding,TECHNOLOGY,0.333333333
+docosahexaenoic acids,BIOLOGICAL,1
+donna haraway,OTHERS(IRRELEVANT),1
+dopamine,BIOLOGICAL,0.5
+dopamine,MEDICAL AND HEALTH,0.5
+drainage,BUILT ENVIRONMENT AND DESIGN,0.5
+drainage,ENGINEERING,0.5
+drinking,MEDICAL AND HEALTH,1
+drug,MEDICAL AND HEALTH,0.333333333
+drug,ENGINEERING,0.333333333
+drug,TECHNOLOGY,0.333333333
+drug-related side effects and adverse reactions,MEDICAL AND HEALTH,1
+economic development,ECONOMICS,1
+economic status,ECONOMICS,1
+economic success,ECONOMICS,1
+ecosystem function,ENVIRONMENTAL,0.5
+ecosystem function,EARTH,0.5
+educational setting,EDUCATION,1
+effect,OTHERS(IRRELEVANT),1
+efficacy,ENGINEERING,0.5
+efficacy,TECHNOLOGY,0.5
+ehealth,MEDICAL AND HEALTH,1
+elderly,STUDIES IN HUMAN SOCIETY,0.333333333
+elderly,OTHERS(RELEVANT),0.333333333
+elderly,MEDICAL AND HEALTH,0.333333333
+election,STUDIES IN HUMAN SOCIETY,1
+electricity,ENGINEERING,1
+electrodes,CHEMICAL,0.5
+electrodes,BIOLOGICAL,0.5
+electroencephalogram,MEDICAL AND HEALTH,0.333333333
+electroencephalogram,BIOLOGICAL,0.333333333
+electroencephalogram,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+electronics,ENGINEERING,0.5
+electronics,PHYSICAL,0.5
+eleocharis,BIOLOGICAL,1
+emerging markets,ECONOMICS,0.5
+emerging markets,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+employability,ECONOMICS,0.5
+employability,STUDIES IN HUMAN SOCIETY,0.5
+end effectors,TECHNOLOGY,0.5
+end effectors,ENGINEERING,0.5
+energy consumption,STUDIES IN HUMAN SOCIETY,0.333333333
+energy consumption,EARTH,0.333333333
+energy consumption,ENVIRONMENTAL,0.333333333
+energy metabolism,BIOLOGICAL,0.5
+energy metabolism,MEDICAL AND HEALTH,0.5
+engagement,OTHERS(IRRELEVANT),1
+engineering,ENGINEERING,1
+entrepreneurship,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+environmental impact,ENVIRONMENTAL,0.333333333
+environmental impact,EARTH,0.333333333
+environmental impact,BIOLOGICAL,0.333333333
+environmental justice,ENVIRONMENTAL,0.333333333
+environmental justice,EARTH,0.333333333
+environmental justice,BIOLOGICAL,0.333333333
+environmental law,ENVIRONMENTAL,0.5
+environmental law,BIOLOGICAL,0.5
+environmental management,ENVIRONMENTAL,0.333333333
+environmental management,EARTH,0.333333333
+environmental management,BIOLOGICAL,0.333333333
+ephemeroptera,BIOLOGICAL,1
+episodic memory,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+episodic memory,BIOLOGICAL,0.5
+erosion,CHEMICAL,0.333333333
+erosion,EARTH,0.333333333
+erosion,ENVIRONMENTAL,0.333333333
+error correction,OTHERS(IRRELEVANT),1
+estuaries,EARTH,1
+ethical concerns,PHILOSOPHY AND RELIGIOUS STUDIES,1
+ethical issues,PHILOSOPHY AND RELIGIOUS STUDIES,1
+ethics,PHILOSOPHY AND RELIGIOUS STUDIES,1
+europe,OTHERS(IRRELEVANT),1
+european commission,OTHERS(IRRELEVANT),1
+european union,OTHERS(IRRELEVANT),1
+event,OTHERS(IRRELEVANT),1
+everyday life,OTHERS(IRRELEVANT),1
+evidence-based practice,BIOLOGICAL,1
+examiner,OTHERS(IRRELEVANT),1
+exclusion,OTHERS(IRRELEVANT),1
+executive function,OTHERS(RELEVANT),1
+experience,OTHERS(RELEVANT),1
+experiments,OTHERS(RELEVANT),1
+explosive agents,CHEMICAL,0.333333333
+explosive agents,ENGINEERING,0.333333333
+explosive agents,TECHNOLOGY,0.333333333
+exposure,OTHERS(RELEVANT),1
+eyeglasses,ENGINEERING,1
+factors,OTHERS(RELEVANT),1
+family conflict,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+family conflict,STUDIES IN HUMAN SOCIETY,0.5
+farm,AGRICULTURAL AND VETERINARY,1
+farming,AGRICULTURAL AND VETERINARY,1
+fasting,MEDICAL AND HEALTH,1
+fats,ENGINEERING,0.333333333
+fats,MEDICAL AND HEALTH,0.333333333
+fats,BIOLOGICAL,0.333333333
+fear,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+feature extraction,INFORMATION AND COMPUTING,1
+feces,BIOLOGICAL,1
+federal government,STUDIES IN HUMAN SOCIETY,1
+feedback,OTHERS(RELEVANT),1
+feeding behavior,BIOLOGICAL,1
+femur,MEDICAL AND HEALTH,1
+fever,MEDICAL AND HEALTH,1
+fiction,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+fiction,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+field research,OTHERS(RELEVANT),1
+fiji,OTHERS(IRRELEVANT),1
+finland,OTHERS(IRRELEVANT),1
+fluoroscopy,MEDICAL AND HEALTH,1
+focus groups,OTHERS(IRRELEVANT),1
+food technology,TECHNOLOGY,0.5
+food technology,ENGINEERING,0.5
+food waste,STUDIES IN HUMAN SOCIETY,0.5
+food waste,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+food web,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+food web,BIOLOGICAL,0.5
+football,EDUCATION,1
+forest management,AGRICULTURAL AND VETERINARY,0.5
+forest management,ENVIRONMENTAL,0.5
+formal social control,STUDIES IN HUMAN SOCIETY,1
+fragmentation,OTHERS(IRRELEVANT),1
+frog,BIOLOGICAL,1
+frustration,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+fungus,BIOLOGICAL,1
+fuzzy logic,INFORMATION AND COMPUTING,0.5
+fuzzy logic,MATHEMATICAL,0.5
+gardening,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+gardening,BUILT ENVIRONMENT AND DESIGN,0.5
+gels,BIOLOGICAL,1
+gender role,STUDIES IN HUMAN SOCIETY,0.5
+gender role,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+general practice,OTHERS(RELEVANT),1
+general practitioners,MEDICAL AND HEALTH,1
+genetic analysis,BIOLOGICAL,1
+geometry,MATHEMATICAL,1
+geopolitics,STUDIES IN HUMAN SOCIETY,1
+germination,BIOLOGICAL,1
+glass,CHEMICAL,0.333333333
+glass,ENGINEERING,0.333333333
+glass,BUILT ENVIRONMENT AND DESIGN,0.333333333
+global governance,STUDIES IN HUMAN SOCIETY,1
+global positioning system,EARTH,0.333333333
+global positioning system,ENGINEERING,0.333333333
+global positioning system,ENVIRONMENTAL,0.333333333
+glucose,MEDICAL AND HEALTH,0.333333333
+glucose,ENGINEERING,0.333333333
+glucose,BIOLOGICAL,0.333333333
+glycated hemoglobin a,MEDICAL AND HEALTH,0.333333333
+glycated hemoglobin a,ENGINEERING,0.333333333
+glycated hemoglobin a,BIOLOGICAL,0.333333333
+gold standard,ECONOMICS,0.5
+gold standard,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+governance arrangement,STUDIES IN HUMAN SOCIETY,1
+government regulation,STUDIES IN HUMAN SOCIETY,1
+governmentality,STUDIES IN HUMAN SOCIETY,1
+graduate,EDUCATION,1
+grant,EDUCATION,1
+gray literature,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+gray literature,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+guarantee,OTHERS(IRRELEVANT),1
+hair,OTHERS(IRRELEVANT),1
+hamstring muscles,MEDICAL AND HEALTH,1
+handover,OTHERS(IRRELEVANT),1
+hdl cholesterol,MEDICAL AND HEALTH,0.333333333
+hdl cholesterol,ENGINEERING,0.333333333
+hdl cholesterol,BIOLOGICAL,0.333333333
+head,OTHERS(IRRELEVANT),1
+head and neck neoplasms,MEDICAL AND HEALTH,1
+health care providers,MEDICAL AND HEALTH,1
+health services accessibility,MEDICAL AND HEALTH,1
+health surveys,MEDICAL AND HEALTH,1
+healthcare,MEDICAL AND HEALTH,1
+heart diseases,MEDICAL AND HEALTH,1
+heart failure,MEDICAL AND HEALTH,1
+heat,OTHERS(RELEVANT),1
+heritage,HISTORY AND ARCHAEOLOGY,0.333333333
+heritage,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+heritage,PHILOSOPHY AND RELIGIOUS STUDIES,0.333333333
+hip,MEDICAL AND HEALTH,1
+historic,HISTORY AND ARCHAEOLOGY,1
+hiv,MEDICAL AND HEALTH,0.5
+hiv,BIOLOGICAL,0.5
+home care,MEDICAL AND HEALTH,1
+home care services,MEDICAL AND HEALTH,1
+hospital departments,MEDICAL AND HEALTH,1
+hotels,OTHERS(IRRELEVANT),1
+human,STUDIES IN HUMAN SOCIETY,0.5
+human,HISTORY AND ARCHAEOLOGY,0.5
+human body,MEDICAL AND HEALTH,1
+human computer interaction,INFORMATION AND COMPUTING,0.5
+human computer interaction,ENGINEERING,0.5
+human influenza,MEDICAL AND HEALTH,1
+hybridization,BIOLOGICAL,1
+hydrocortisone,MEDICAL AND HEALTH,0.5
+hydrocortisone,ENGINEERING,0.5
+hyperoxia,MEDICAL AND HEALTH,0.333333333
+hyperoxia,EARTH,0.333333333
+hyperoxia,CHEMICAL,0.333333333
+hypertension,MEDICAL AND HEALTH,1
+identification (control systems),MATHEMATICAL,0.5
+identification (control systems),TECHNOLOGY,0.5
+imagery,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+imagery,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+imagery,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+imagination,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+imagination,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+imagination,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+immigrants,STUDIES IN HUMAN SOCIETY,0.5
+immigrants,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+immunity,MEDICAL AND HEALTH,0.333333333
+immunity,AGRICULTURAL AND VETERINARY,0.333333333
+immunity,BIOLOGICAL,0.333333333
+impetigo,AGRICULTURAL AND VETERINARY,0.333333333
+impetigo,BIOLOGICAL,0.333333333
+impetigo,MEDICAL AND HEALTH,0.333333333
+impurities,CHEMICAL,0.5
+impurities,BIOLOGICAL,0.5
+incidence,MEDICAL AND HEALTH,0.333333333
+incidence,INFORMATION AND COMPUTING,0.333333333
+incidence,AGRICULTURAL AND VETERINARY,0.333333333
+income inequality,ECONOMICS,0.5
+income inequality,STUDIES IN HUMAN SOCIETY,0.5
+independent living,STUDIES IN HUMAN SOCIETY,0.5
+independent living,BIOLOGICAL,0.5
+index,OTHERS(IRRELEVANT),1
+indigenous peoples,STUDIES IN HUMAN SOCIETY,0.333333333
+indigenous peoples,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+indigenous peoples,HISTORY AND ARCHAEOLOGY,0.333333333
+industry 4.0,INFORMATION AND COMPUTING,0.333333333
+industry 4.0,BUILT ENVIRONMENT AND DESIGN,0.333333333
+industry 4.0,STUDIES IN HUMAN SOCIETY,0.333333333
+inflammation,MEDICAL AND HEALTH,0.5
+inflammation,BIOLOGICAL,0.5
+infrastructure projects,ENGINEERING,0.5
+infrastructure projects,BUILT ENVIRONMENT AND DESIGN,0.5
+insecticide,AGRICULTURAL AND VETERINARY,0.333333333
+insecticide,CHEMICAL,0.333333333
+insecticide,TECHNOLOGY,0.333333333
+insurance benefits,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+intercultural skills,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+intercultural skills,STUDIES IN HUMAN SOCIETY,0.5
+interdependence,OTHERS(RELEVANT),1
+interdisciplinary research,OTHERS(RELEVANT),1
+interleukin-6,MEDICAL AND HEALTH,0.333333333
+interleukin-6,TECHNOLOGY,0.333333333
+interleukin-6,ENGINEERING,0.333333333
+internal migration,STUDIES IN HUMAN SOCIETY,0.333333333
+internal migration,HISTORY AND ARCHAEOLOGY,0.333333333
+internal migration,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+internship and residency,OTHERS(RELEVANT),1
+interpretation,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+interpretation,OTHERS(RELEVANT),0.5
+ireland,OTHERS(IRRELEVANT),1
+joints,MEDICAL AND HEALTH,0.333333333
+joints,ENGINEERING,0.333333333
+joints,OTHERS(RELEVANT),0.333333333
+keratinophilic fungi,BIOLOGICAL,1
+kinetics,CHEMICAL,0.5
+kinetics,BIOLOGICAL,0.5
+knee joint,MEDICAL AND HEALTH,1
+knee osteoarthritis,MEDICAL AND HEALTH,1
+knowledge economy,ECONOMICS,1
+knowledge management,INFORMATION AND COMPUTING,1
+knowledge production,INFORMATION AND COMPUTING,1
+lack,OTHERS(IRRELEVANT),1
+law,LAW AND LEGAL STUDIES,1
+law and order,LAW AND LEGAL STUDIES,0.5
+law and order,STUDIES IN HUMAN SOCIETY,0.5
+lawyer,LAW AND LEGAL STUDIES,1
+learning disorder,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+learning strategy,EDUCATION,1
+lebanon,OTHERS(IRRELEVANT),1
+legal history,LAW AND LEGAL STUDIES,1
+legitimacy,LAW AND LEGAL STUDIES,1
+leisure activities,OTHERS(IRRELEVANT),1
+liberalism,STUDIES IN HUMAN SOCIETY,0.333333333
+liberalism,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+liberalism,PHILOSOPHY AND RELIGIOUS STUDIES,0.333333333
+life style,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+life style,OTHERS(IRRELEVANT),0.5
+limnology,EARTH,1
+linear models,MATHEMATICAL,0.5
+linear models,OTHERS(RELEVANT),0.5
+lipopolysaccharide-binding protein,TECHNOLOGY,0.333333333
+lipopolysaccharide-binding protein,ENGINEERING,0.333333333
+lipopolysaccharide-binding protein,BIOLOGICAL,0.333333333
+lipopolysaccharides,TECHNOLOGY,0.333333333
+lipopolysaccharides,ENGINEERING,0.333333333
+lipopolysaccharides,BIOLOGICAL,0.333333333
+lizards,BIOLOGICAL,1
+local communities,STUDIES IN HUMAN SOCIETY,0.333333333
+local communities,ECONOMICS,0.333333333
+local communities,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+long short-term memory,INFORMATION AND COMPUTING,1
+long term evolution (lte),INFORMATION AND COMPUTING,1
+lower extremity,MEDICAL AND HEALTH,0.5
+lower extremity,BIOLOGICAL,0.5
+lowlands,EARTH,1
+macquaria ambigua,BIOLOGICAL,1
+macroinvertebrates,BIOLOGICAL,1
+malaria,MEDICAL AND HEALTH,0.5
+malaria,BIOLOGICAL,0.5
+malnutrition,MEDICAL AND HEALTH,1
+mammal,BIOLOGICAL,1
+mammography,MEDICAL AND HEALTH,1
+manager,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+manager,STUDIES IN HUMAN SOCIETY,0.5
+mangrove,ENVIRONMENTAL,0.5
+mangrove,EARTH,0.5
+marsupial,BIOLOGICAL,1
+masculinity,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+masculinity,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+masculinity,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+mechanics,ENGINEERING,1
+medial tibial stress syndrome,MEDICAL AND HEALTH,1
+mediatization,LAW AND LEGAL STUDIES,0.5
+mediatization,STUDIES IN HUMAN SOCIETY,0.5
+mediator,LAW AND LEGAL STUDIES,0.5
+mediator,STUDIES IN HUMAN SOCIETY,0.5
+medicare,MEDICAL AND HEALTH,1
+medication adherence,MEDICAL AND HEALTH,1
+mediterranean diet,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+mediterranean diet,STUDIES IN HUMAN SOCIETY,0.5
+melanesia,OTHERS(IRRELEVANT),1
+melbourne,OTHERS(IRRELEVANT),1
+membranes,BIOLOGICAL,1
+memory,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+memory,TECHNOLOGY,0.333333333
+memory,MEDICAL AND HEALTH,0.333333333
+mental disorders,MEDICAL AND HEALTH,0.5
+mental disorders,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+mental health services,MEDICAL AND HEALTH,0.5
+mental health services,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+mental illness,MEDICAL AND HEALTH,0.5
+mental illness,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+mesocosm,ENVIRONMENTAL,0.5
+mesocosm,BIOLOGICAL,0.5
+metagenomics,BIOLOGICAL,1
+metal,CHEMICAL,0.5
+metal,ENGINEERING,0.5
+metals,CHEMICAL,0.5
+metals,ENGINEERING,0.5
+metaphor,"LANGUAGE, COMMUNICATION AND CULTURE",1
+metatheria,BIOLOGICAL,1
+metropolis,STUDIES IN HUMAN SOCIETY,0.333333333
+metropolis,BUILT ENVIRONMENT AND DESIGN,0.333333333
+metropolis,OTHERS(IRRELEVANT),0.333333333
+microcosm,OTHERS(IRRELEVANT),1
+micrornas,BIOLOGICAL,1
+middle cerebral artery,MEDICAL AND HEALTH,1
+military,OTHERS(RELEVANT),1
+minister,STUDIES IN HUMAN SOCIETY,1
+ministry,STUDIES IN HUMAN SOCIETY,1
+misgurnus anguillicaudatus,BIOLOGICAL,1
+mismatch,OTHERS(RELEVANT),1
+mobilization,STUDIES IN HUMAN SOCIETY,0.5
+mobilization,OTHERS(RELEVANT),0.5
+modernization,STUDIES IN HUMAN SOCIETY,0.333333333
+modernization,BUILT ENVIRONMENT AND DESIGN,0.333333333
+modernization,OTHERS(RELEVANT),0.333333333
+monoclonal antibodies,BIOLOGICAL,1
+monopoly,ECONOMICS,0.5
+monopoly,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+morbidity,MEDICAL AND HEALTH,0.333333333
+morbidity,AGRICULTURAL AND VETERINARY,0.333333333
+morbidity,BIOLOGICAL,0.333333333
+motor skills,MEDICAL AND HEALTH,0.5
+motor skills,EDUCATION,0.5
+motor vehicle,ENGINEERING,1
+multiple sclerosis,MEDICAL AND HEALTH,1
+muscle,MEDICAL AND HEALTH,0.5
+muscle,BIOLOGICAL,0.5
+muscle strength,MEDICAL AND HEALTH,0.5
+muscle strength,BIOLOGICAL,0.5
+muscle weakness,MEDICAL AND HEALTH,0.5
+muscle weakness,BIOLOGICAL,0.5
+muscles,MEDICAL AND HEALTH,0.5
+muscles,BIOLOGICAL,0.5
+museum,STUDIES IN HUMAN SOCIETY,0.333333333
+museum,HISTORY AND ARCHAEOLOGY,0.333333333
+museum,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+musician,STUDIES IN CREATIVE ARTS AND WRITING,1
+muslim,STUDIES IN HUMAN SOCIETY,0.333333333
+muslim,PHILOSOPHY AND RELIGIOUS STUDIES,0.333333333
+muslim,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+myth,HISTORY AND ARCHAEOLOGY,0.333333333
+myth,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+myth,PHILOSOPHY AND RELIGIOUS STUDIES,0.333333333
+nation state,STUDIES IN HUMAN SOCIETY,1
+national identity,STUDIES IN HUMAN SOCIETY,0.333333333
+national identity,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+national identity,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+neck pain,MEDICAL AND HEALTH,1
+need,OTHERS(IRRELEVANT),1
+needs assessment,OTHERS(RELEVANT),1
+nest,BIOLOGICAL,0.5
+nest,OTHERS(RELEVANT),0.5
+network analysis,TECHNOLOGY,1
+network architecture,TECHNOLOGY,1
+network protocols,TECHNOLOGY,1
+new guinea,OTHERS(IRRELEVANT),1
+new public management,STUDIES IN HUMAN SOCIETY,1
+new zealand,OTHERS(IRRELEVANT),1
+newborn infant,MEDICAL AND HEALTH,1
+news media,STUDIES IN CREATIVE ARTS AND WRITING,1
+news report,STUDIES IN CREATIVE ARTS AND WRITING,1
+nexus,OTHERS(RELEVANT),1
+non-governmental organization,STUDIES IN HUMAN SOCIETY,1
+nonparametric statistics,MATHEMATICAL,0.5
+nonparametric statistics,OTHERS(RELEVANT),0.5
+nurse practitioners,MEDICAL AND HEALTH,1
+nurse specialists,MEDICAL AND HEALTH,1
+nursing students,MEDICAL AND HEALTH,1
+nutrients,MEDICAL AND HEALTH,1
+obstetrics,MEDICAL AND HEALTH,1
+ocean,EARTH,1
+oceania,EARTH,1
+oceans and seas,EARTH,1
+ocular vision,MEDICAL AND HEALTH,0.5
+ocular vision,INFORMATION AND COMPUTING,0.5
+offense,OTHERS(IRRELEVANT),1
+oils,CHEMICAL,0.5
+oils,EARTH,0.5
+olympics,STUDIES IN HUMAN SOCIETY,0.5
+olympics,EDUCATION,0.5
+opposition,OTHERS(IRRELEVANT),1
+opuntia,BIOLOGICAL,1
+oral health,MEDICAL AND HEALTH,1
+organizations,OTHERS(IRRELEVANT),1
+outcomes research,OTHERS(RELEVANT),1
+ovarian neoplasms,MEDICAL AND HEALTH,1
+oxidation-reduction,CHEMICAL,0.5
+oxidation-reduction,BIOLOGICAL,0.5
+oxygen,CHEMICAL,0.333333333
+oxygen,BIOLOGICAL,0.333333333
+oxygen,EARTH,0.333333333
+ozenoxacin,MEDICAL AND HEALTH,0.333333333
+ozenoxacin,TECHNOLOGY,0.333333333
+ozenoxacin,ENGINEERING,0.333333333
+pakistan,OTHERS(IRRELEVANT),1
+panel data,OTHERS(RELEVANT),1
+parasites,BIOLOGICAL,1
+parents,OTHERS(IRRELEVANT),1
+path analysis,MATHEMATICAL,0.5
+path analysis,OTHERS(RELEVANT),0.5
+pathway,OTHERS(RELEVANT),1
+patient care team,MEDICAL AND HEALTH,1
+pattern recognition,INFORMATION AND COMPUTING,1
+pedagogy,EDUCATION,1
+pedestrian,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+peer influence,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+peer influence,OTHERS(RELEVANT),0.5
+penalty,LAW AND LEGAL STUDIES,1
+pension,STUDIES IN HUMAN SOCIETY,0.5
+pension,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+people with disabilities,STUDIES IN HUMAN SOCIETY,1
+peptides,BIOLOGICAL,1
+permeability,PHYSICAL,0.333333333
+permeability,CHEMICAL,0.333333333
+permeability,BIOLOGICAL,0.333333333
+personality disorders,MEDICAL AND HEALTH,0.5
+personality disorders,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+pharmacies,MEDICAL AND HEALTH,1
+pharmacist,MEDICAL AND HEALTH,1
+pharmacokinetics,MEDICAL AND HEALTH,1
+pharmacy education,MEDICAL AND HEALTH,0.5
+pharmacy education,EDUCATION,0.5
+phenomenology,BIOLOGICAL,1
+phenotype,BIOLOGICAL,1
+philosophy,PHILOSOPHY AND RELIGIOUS STUDIES,1
+phylogenetics,BIOLOGICAL,1
+physical education,EDUCATION,1
+physical fitness,MEDICAL AND HEALTH,1
+physical therapists,MEDICAL AND HEALTH,1
+physiological factors,MEDICAL AND HEALTH,1
+physiological response,MEDICAL AND HEALTH,1
+planning process,OTHERS(IRRELEVANT),1
+plant species,BIOLOGICAL,1
+plastic,CHEMICAL,0.333333333
+plastic,ENGINEERING,0.333333333
+plastic,ENVIRONMENTAL,0.333333333
+playground,STUDIES IN HUMAN SOCIETY,1
+poem,"LANGUAGE, COMMUNICATION AND CULTURE",1
+poetics,"LANGUAGE, COMMUNICATION AND CULTURE",1
+pogona vitticeps,BIOLOGICAL,1
+policy,STUDIES IN HUMAN SOCIETY,1
+policy change,STUDIES IN HUMAN SOCIETY,1
+policy studies,STUDIES IN HUMAN SOCIETY,1
+political history,STUDIES IN HUMAN SOCIETY,1
+political institution,STUDIES IN HUMAN SOCIETY,1
+political science,STUDIES IN HUMAN SOCIETY,1
+political scientist,STUDIES IN HUMAN SOCIETY,1
+population,STUDIES IN HUMAN SOCIETY,1
+population characteristics,STUDIES IN HUMAN SOCIETY,1
+population health,MEDICAL AND HEALTH,1
+power relations,STUDIES IN HUMAN SOCIETY,0.5
+power relations,LAW AND LEGAL STUDIES,0.5
+practice (psychology),PSYCHOLOGY AND COGNITIVE SCIENCES,1
+prediction,OTHERS(RELEVANT),1
+predictors,OTHERS(RELEVANT),1
+prescriptions,MEDICAL AND HEALTH,1
+president,STUDIES IN HUMAN SOCIETY,1
+pressure,OTHERS(RELEVANT),1
+primary school,EDUCATION,1
+principal,OTHERS(IRRELEVANT),1
+prisons,STUDIES IN HUMAN SOCIETY,0.333333333
+prisons,LAW AND LEGAL STUDIES,0.333333333
+prisons,BUILT ENVIRONMENT AND DESIGN,0.333333333
+private practice,OTHERS(IRRELEVANT),1
+probiotics,BIOLOGICAL,0.333333333
+probiotics,MEDICAL AND HEALTH,0.333333333
+probiotics,TECHNOLOGY,0.333333333
+problem behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+problem-based learning,OTHERS(RELEVANT),1
+production function,ENGINEERING,0.333333333
+production function,TECHNOLOGY,0.333333333
+production function,AGRICULTURAL AND VETERINARY,0.333333333
+professional education,EDUCATION,1
+professional role,EDUCATION,1
+program evaluation,ENGINEERING,0.5
+program evaluation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+projection,OTHERS(RELEVANT),1
+proliferation,BIOLOGICAL,0.333333333
+proliferation,MEDICAL AND HEALTH,0.333333333
+proliferation,TECHNOLOGY,0.333333333
+propaganda,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+propaganda,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+propaganda,STUDIES IN HUMAN SOCIETY,0.333333333
+property rights,LAW AND LEGAL STUDIES,1
+proprioception,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+proprioception,PHILOSOPHY AND RELIGIOUS STUDIES,0.5
+prose poetry,"LANGUAGE, COMMUNICATION AND CULTURE",1
+prosody,"LANGUAGE, COMMUNICATION AND CULTURE",1
+prosperity,OTHERS(IRRELEVANT),1
+proteins,BIOLOGICAL,0.5
+proteins,MEDICAL AND HEALTH,0.5
+protocols,OTHERS(RELEVANT),1
+psychiatry,MEDICAL AND HEALTH,1
+psychological theory,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+public health nursing,MEDICAL AND HEALTH,1
+public law,LAW AND LEGAL STUDIES,0.5
+public law,STUDIES IN HUMAN SOCIETY,0.5
+public opinion,STUDIES IN HUMAN SOCIETY,1
+public sphere,STUDIES IN HUMAN SOCIETY,1
+pulse,OTHERS(RELEVANT),1
+qualitative interview,OTHERS(RELEVANT),1
+quantitative research,OTHERS(RELEVANT),1
+questionnaire,OTHERS(RELEVANT),1
+questionnaire survey,OTHERS(RELEVANT),1
+radio,TECHNOLOGY,0.333333333
+radio,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+radio,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+radiography,MEDICAL AND HEALTH,1
+radiotherapy,MEDICAL AND HEALTH,1
+randomized controlled trials,OTHERS(RELEVANT),1
+rate,OTHERS(RELEVANT),1
+rationality,OTHERS(RELEVANT),1
+reconciliation,LAW AND LEGAL STUDIES,0.5
+reconciliation,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+recording,OTHERS(RELEVANT),1
+recurrence,MEDICAL AND HEALTH,1
+recycling,ENVIRONMENTAL,0.333333333
+recycling,CHEMICAL,0.333333333
+recycling,ENGINEERING,0.333333333
+referral and consultation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+referral and consultation,ENGINEERING,0.5
+refrigeration,ENGINEERING,1
+refugees,STUDIES IN HUMAN SOCIETY,1
+regime,STUDIES IN HUMAN SOCIETY,1
+regulatory framework,STUDIES IN HUMAN SOCIETY,1
+remediation,OTHERS(RELEVANT),1
+reproducibility of results,OTHERS(RELEVANT),1
+reproduction,MEDICAL AND HEALTH,0.5
+reproduction,BIOLOGICAL,0.5
+republic of south africa,OTHERS(IRRELEVANT),1
+reputation,OTHERS(IRRELEVANT),1
+research focus,OTHERS(RELEVANT),1
+research planning,OTHERS(RELEVANT),1
+research process,OTHERS(RELEVANT),1
+research program,OTHERS(RELEVANT),1
+research support,OTHERS(RELEVANT),1
+resettlement,STUDIES IN HUMAN SOCIETY,1
+residents,STUDIES IN HUMAN SOCIETY,1
+resource,OTHERS(RELEVANT),1
+responsibility,OTHERS(IRRELEVANT),1
+restructuring,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+restructuring,BIOLOGICAL,0.333333333
+restructuring,TECHNOLOGY,0.333333333
+retail,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+reward,OTHERS(IRRELEVANT),1
+rice,AGRICULTURAL AND VETERINARY,0.5
+rice,MEDICAL AND HEALTH,0.5
+rights,STUDIES IN HUMAN SOCIETY,0.333333333
+rights,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+rights,LAW AND LEGAL STUDIES,0.333333333
+rise,OTHERS(RELEVANT),1
+risk analysis,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+risk analysis,ENGINEERING,0.333333333
+risk analysis,OTHERS(RELEVANT),0.333333333
+risk factors,OTHERS(RELEVANT),1
+river,EARTH,1
+rna viruses,BIOLOGICAL,0.5
+rna viruses,MEDICAL AND HEALTH,0.5
+road,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+robot,INFORMATION AND COMPUTING,0.5
+robot,ENGINEERING,0.5
+robotics,INFORMATION AND COMPUTING,0.5
+robotics,ENGINEERING,0.5
+robots,INFORMATION AND COMPUTING,0.5
+robots,ENGINEERING,0.5
+roc curve,OTHERS(RELEVANT),1
+running,EDUCATION,1
+rural women,STUDIES IN HUMAN SOCIETY,0.5
+rural women,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+russia,OTHERS(IRRELEVANT),1
+salinity,EARTH,0.5
+salinity,ENVIRONMENTAL,0.5
+sample size,OTHERS(RELEVANT),1
+scenario,OTHERS(RELEVANT),1
+school grade,EDUCATION,1
+science,OTHERS(RELEVANT),1
+science policy,STUDIES IN HUMAN SOCIETY,0.5
+science policy,PHILOSOPHY AND RELIGIOUS STUDIES,0.5
+seawater,EARTH,1
+secondary education,EDUCATION,1
+secretory immunoglobulin a,MEDICAL AND HEALTH,0.333333333
+secretory immunoglobulin a,TECHNOLOGY,0.333333333
+secretory immunoglobulin a,BIOLOGICAL,0.333333333
+seed dispersal,AGRICULTURAL AND VETERINARY,0.5
+seed dispersal,ENVIRONMENTAL,0.5
+self efficacy,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+self report,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+self report,OTHERS(RELEVANT),0.5
+self-concept,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+self-control,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+self-esteem,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+servants,STUDIES IN HUMAN SOCIETY,0.333333333
+servants,HISTORY AND ARCHAEOLOGY,0.333333333
+servants,PHILOSOPHY AND RELIGIOUS STUDIES,0.333333333
+service provider,OTHERS(RELEVANT),1
+service quality,OTHERS(RELEVANT),1
+set theory,MATHEMATICAL,1
+sex ratio,MEDICAL AND HEALTH,0.5
+sex ratio,STUDIES IN HUMAN SOCIETY,0.5
+sexual health,MEDICAL AND HEALTH,1
+shame,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+shield,OTHERS(IRRELEVANT),1
+short-term memory,INFORMATION AND COMPUTING,1
+shoulder,MEDICAL AND HEALTH,1
+signal processing,ENGINEERING,0.5
+signal processing,TECHNOLOGY,0.5
+single nucleotide polymorphism,TECHNOLOGY,0.5
+single nucleotide polymorphism,CHEMICAL,0.5
+skeletal muscle,MEDICAL AND HEALTH,1
+skin,OTHERS(RELEVANT),1
+sleep,OTHERS(RELEVANT),1
+small and medium-sized enterprises,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+small and medium-sized enterprises,ECONOMICS,0.5
+social class,STUDIES IN HUMAN SOCIETY,1
+social development,STUDIES IN HUMAN SOCIETY,1
+social norms,STUDIES IN HUMAN SOCIETY,1
+social policy,STUDIES IN HUMAN SOCIETY,1
+social relations,STUDIES IN HUMAN SOCIETY,1
+social science,STUDIES IN HUMAN SOCIETY,1
+social system,STUDIES IN HUMAN SOCIETY,1
+social welfare,STUDIES IN HUMAN SOCIETY,1
+socioeconomic status,STUDIES IN HUMAN SOCIETY,1
+sociologist,STUDIES IN HUMAN SOCIETY,1
+source of information,INFORMATION AND COMPUTING,1
+south america,OTHERS(IRRELEVANT),1
+south korea,OTHERS(IRRELEVANT),1
+sovereignty,STUDIES IN HUMAN SOCIETY,1
+spain,OTHERS(IRRELEVANT),1
+spatial learning,MATHEMATICAL,0.5
+spatial learning,OTHERS(RELEVANT),0.5
+spatial reasoning,MATHEMATICAL,0.5
+spatial reasoning,OTHERS(RELEVANT),0.5
+spawning,BIOLOGICAL,1
+speech,STUDIES IN CREATIVE ARTS AND WRITING,1
+speech recognition,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+speech recognition,INFORMATION AND COMPUTING,0.5
+speech-language pathology,MEDICAL AND HEALTH,1
+spinal cord injuries,MEDICAL AND HEALTH,1
+sport,EDUCATION,1
+stable isotopes,PHYSICAL,0.333333333
+stable isotopes,EARTH,0.333333333
+stable isotopes,BIOLOGICAL,0.333333333
+staging,OTHERS(IRRELEVANT),1
+stakeholder participation,STUDIES IN HUMAN SOCIETY,0.5
+stakeholder participation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+stakeholders,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+stakeholders,ENGINEERING,0.333333333
+stakeholders,OTHERS(RELEVANT),0.333333333
+standard of living,STUDIES IN HUMAN SOCIETY,0.5
+standard of living,ECONOMICS,0.5
+stereotype,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+stereotype,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+stereotype,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+stock enhancement,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+stroop test,MEDICAL AND HEALTH,0.5
+stroop test,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+structural equation model,MATHEMATICAL,0.5
+structural equation model,OTHERS(RELEVANT),0.5
+subspecies,BIOLOGICAL,1
+sun,PHYSICAL,0.5
+sun,AGRICULTURAL AND VETERINARY,0.5
+supply chains,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+support vector machines,INFORMATION AND COMPUTING,0.5
+support vector machines,MATHEMATICAL,0.5
+survey method,OTHERS(RELEVANT),1
+switzerland,OTHERS(IRRELEVANT),1
+symbol,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+symbol,HISTORY AND ARCHAEOLOGY,0.5
+symbolic interactionism,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+symbolic interactionism,HISTORY AND ARCHAEOLOGY,0.5
+systematic reviews,OTHERS(RELEVANT),1
+systems analysis,OTHERS(RELEVANT),1
+tablets,OTHERS(RELEVANT),1
+tactics,INFORMATION AND COMPUTING,1
+tax,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+tax cuts,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+taxation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+tea tree oil,ENGINEERING,0.5
+tea tree oil,AGRICULTURAL AND VETERINARY,0.5
+teacher,OTHERS(IRRELEVANT),1
+technical innovation,OTHERS(RELEVANT),1
+technology use,OTHERS(RELEVANT),1
+telecommunication,TECHNOLOGY,1
+telecommunications,TECHNOLOGY,1
+telephone,TECHNOLOGY,1
+temporality,OTHERS(IRRELEVANT),1
+tendons,MEDICAL AND HEALTH,1
+terminology,OTHERS(RELEVANT),1
+tertiary education,EDUCATION,1
+text,OTHERS(IRRELEVANT),1
+textbooks,EDUCATION,0.5
+textbooks,OTHERS(RELEVANT),0.5
+textiles,ENGINEERING,0.5
+textiles,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+theanine,ENGINEERING,0.333333333
+theanine,TECHNOLOGY,0.333333333
+theanine,CHEMICAL,0.333333333
+theater,BUILT ENVIRONMENT AND DESIGN,0.333333333
+theater,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+theater,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+theoretical models,OTHERS(RELEVANT),1
+thinking,OTHERS(IRRELEVANT),1
+thorax,MEDICAL AND HEALTH,1
+tissues,BIOLOGICAL,0.5
+tissues,MEDICAL AND HEALTH,0.5
+tomography,ENGINEERING,0.333333333
+tomography,MEDICAL AND HEALTH,0.333333333
+tomography,TECHNOLOGY,0.333333333
+topical therapy,MEDICAL AND HEALTH,1
+topology,MATHEMATICAL,1
+torque,ENGINEERING,0.5
+torque,PHYSICAL,0.5
+torres strait,OTHERS(IRRELEVANT),1
+toy,ENGINEERING,1
+training program,EDUCATION,1
+transcranial direct current stimulation,MEDICAL AND HEALTH,1
+translocation,BIOLOGICAL,0.5
+translocation,MEDICAL AND HEALTH,0.5
+trapping,OTHERS(IRRELEVANT),1
+triage,MEDICAL AND HEALTH,1
+tropics,EARTH,0.333333333
+tropics,ENVIRONMENTAL,0.333333333
+tropics,OTHERS(RELEVANT),0.333333333
+tsunami,EARTH,1
+tungiasis,BIOLOGICAL,1
+turbidity,OTHERS(RELEVANT),1
+twenty first century,OTHERS(IRRELEVANT),1
+twitter,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+twitter,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+united nations,OTHERS(IRRELEVANT),1
+university teacher,EDUCATION,1
+urban areas,BUILT ENVIRONMENT AND DESIGN,0.333333333
+urban areas,ECONOMICS,0.333333333
+urban areas,STUDIES IN HUMAN SOCIETY,0.333333333
+urban development,ECONOMICS,0.5
+urban development,STUDIES IN HUMAN SOCIETY,0.5
+urinary tract infections,MEDICAL AND HEALTH,1
+user interfaces,INFORMATION AND COMPUTING,1
+utilization,OTHERS(IRRELEVANT),1
+utopia,STUDIES IN HUMAN SOCIETY,0.333333333
+utopia,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+utopia,HISTORY AND ARCHAEOLOGY,0.333333333
+vaccines,MEDICAL AND HEALTH,0.333333333
+vaccines,ENGINEERING,0.333333333
+vaccines,TECHNOLOGY,0.333333333
+validation studies,OTHERS(RELEVANT),1
+value co-creation,STUDIES IN HUMAN SOCIETY,0.333333333
+value co-creation,ECONOMICS,0.333333333
+value co-creation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+value creation,STUDIES IN HUMAN SOCIETY,0.333333333
+value creation,ECONOMICS,0.333333333
+value creation,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+vertebrate,BIOLOGICAL,1
+video,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+video,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+virtual community,STUDIES IN HUMAN SOCIETY,0.333333333
+virtual community,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+virtual community,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+virus diseases,BIOLOGICAL,0.333333333
+virus diseases,MEDICAL AND HEALTH,0.333333333
+virus diseases,AGRICULTURAL AND VETERINARY,0.333333333
+viruses,BIOLOGICAL,0.333333333
+viruses,MEDICAL AND HEALTH,0.333333333
+viruses,AGRICULTURAL AND VETERINARY,0.333333333
+visual acuity,MEDICAL AND HEALTH,1
+vocabulary,"LANGUAGE, COMMUNICATION AND CULTURE",1
+wages,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+warming,EARTH,0.5
+warming,ENVIRONMENTAL,0.5
+water planning,BUILT ENVIRONMENT AND DESIGN,1
+weblog,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+weblog,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+websites,INFORMATION AND COMPUTING,0.333333333
+websites,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+websites,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+welfare,STUDIES IN HUMAN SOCIETY,1
+welfare economics,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+who,STUDIES IN HUMAN SOCIETY,1
+wi-fi,TECHNOLOGY,1
+wildlife,ENVIRONMENTAL,1
+wireless sensor networks,TECHNOLOGY,1
+witness,OTHERS(IRRELEVANT),1
+women's health services,MEDICAL AND HEALTH,1
+woodlands,AGRICULTURAL AND VETERINARY,0.333333333
+woodlands,ENVIRONMENTAL,0.333333333
+woodlands,EARTH,0.333333333
+workers,STUDIES IN HUMAN SOCIETY,0.333333333
+workers,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+workers,ECONOMICS,0.333333333
+workforce,STUDIES IN HUMAN SOCIETY,0.333333333
+workforce,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+workforce,ECONOMICS,0.333333333
+workforce planning,STUDIES IN HUMAN SOCIETY,0.333333333
+workforce planning,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+workforce planning,ECONOMICS,0.333333333
+working hours,STUDIES IN HUMAN SOCIETY,0.333333333
+working hours,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+working hours,ECONOMICS,0.333333333
+workload,OTHERS(IRRELEVANT),1
+world bank,STUDIES IN HUMAN SOCIETY,1
+x rays,MEDICAL AND HEALTH,0.5
+x rays,PHYSICAL,0.5
+x-rays,MEDICAL AND HEALTH,0.5
+x-rays,PHYSICAL,0.5
+y chromosome,MEDICAL AND HEALTH,0.5
+y chromosome,BIOLOGICAL,0.5
+accountability,OTHERS(RELEVANT),1
+aesthetics,STUDIES IN CREATIVE ARTS AND WRITING,1
+agriculture,AGRICULTURAL AND VETERINARY,1
+anxiety,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+art,STUDIES IN CREATIVE ARTS AND WRITING,1
+artificial intelligence,ENGINEERING,1
+body mass index,BIOLOGICAL,0.5
+body mass index,MEDICAL AND HEALTH,0.5
+body size,BIOLOGICAL,0.5
+body size,MEDICAL AND HEALTH,0.5
+chromosomes,BIOLOGICAL,1
+cloud computing,INFORMATION AND COMPUTING,0.5
+cloud computing,TECHNOLOGY,0.5
+conservation,OTHERS(IRRELEVANT),1
+creativity,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+creativity,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+criticism,STUDIES IN CREATIVE ARTS AND WRITING,1
+drugs,MEDICAL AND HEALTH,1
+education,EDUCATION,1
+endangered species,BIOLOGICAL,1
+energy,PHYSICAL,1
+energy efficiency,PHYSICAL,1
+equity,OTHERS(RELEVANT),1
+infection,MEDICAL AND HEALTH,1
+information technology,INFORMATION AND COMPUTING,1
+learning,EDUCATION,1
+lipids,BIOLOGICAL,0.5
+lipids,CHEMICAL,0.5
+local government,STUDIES IN HUMAN SOCIETY,1
+microsatellite repeats,ENGINEERING,1
+new media,INFORMATION AND COMPUTING,0.5
+new media,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+participation,OTHERS(IRRELEVANT),1
+pathology,MEDICAL AND HEALTH,1
+politics,STUDIES IN HUMAN SOCIETY,0.5
+politics,HISTORY AND ARCHAEOLOGY,0.5
+polymorphism,STUDIES IN HUMAN SOCIETY,1
+poverty,STUDIES IN HUMAN SOCIETY,1
+public health,MEDICAL AND HEALTH,0.5
+public health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+quantitative analysis,OTHERS(RELEVANT),1
+regression analysis,MATHEMATICAL,1
+self-efficacy,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+soccer,EDUCATION,1
+social media,STUDIES IN HUMAN SOCIETY,0.5
+social media,INFORMATION AND COMPUTING,0.5
+teaching,EDUCATION,1
+temperature,PHYSICAL,1
+therapeutics,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+exercise test,MEDICAL AND HEALTH,0.5
+exercise test,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+gastrointestinal tract,MEDICAL AND HEALTH,1
+inbreeding,BIOLOGICAL,1
+bangladesh,OTHERS(IRRELEVANT),1
+soil,EARTH,0.333333333
+soil,BIOLOGICAL,0.333333333
+soil,AGRICULTURAL AND VETERINARY,0.333333333
+nutrition,MEDICAL AND HEALTH,1
+contamination,ENVIRONMENTAL,1
+dementia,MEDICAL AND HEALTH,1
+birds,BIOLOGICAL,0.5
+birds,TECHNOLOGY,0.5
+arbitration,LAW AND LEGAL STUDIES,1
+polarization,PHYSICAL,0.5
+polarization,TECHNOLOGY,0.5
+body image,MEDICAL AND HEALTH,1
+diploidy,BIOLOGICAL,1
+decision making,OTHERS(IRRELEVANT),1
+integrity,OTHERS(IRRELEVANT),1
+intercultural learning,EDUCATION,0.333333333
+intercultural learning,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+intercultural learning,STUDIES IN HUMAN SOCIETY,0.333333333
+life history,HISTORY AND ARCHAEOLOGY,1
+social structure,STUDIES IN HUMAN SOCIETY,1
+planning,OTHERS(IRRELEVANT),1
+public interest,STUDIES IN HUMAN SOCIETY,0.5
+public interest,LAW AND LEGAL STUDIES,0.5
+water quality,EARTH,0.5
+water quality,ENVIRONMENTAL,0.5
+habits,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+antioxidants,CHEMICAL,1
+facebook,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+facebook,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+corporate governance,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+population growth,STUDIES IN HUMAN SOCIETY,1
+apoptosis,BIOLOGICAL,1
+quinine,MEDICAL AND HEALTH,1
+construction industry,BUILT ENVIRONMENT AND DESIGN,1
+emotion,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+phylogeography,EARTH,1
+food supply,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.333333333
+food supply,ENGINEERING,0.333333333
+food supply,AGRICULTURAL AND VETERINARY,0.333333333
+systematic review,OTHERS(RELEVANT),1
+performance measurement,OTHERS(RELEVANT),1
+social isolation,STUDIES IN HUMAN SOCIETY,0.5
+social isolation,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+grassland,EARTH,0.5
+grassland,BIOLOGICAL,0.5
+ownership,LAW AND LEGAL STUDIES,1
+television,ENGINEERING,1
+village,AGRICULTURAL AND VETERINARY,1
+athletes,EDUCATION,1
+chromosome mapping,BIOLOGICAL,0.333333333
+chromosome mapping,TECHNOLOGY,0.333333333
+chromosome mapping,MEDICAL AND HEALTH,0.333333333
+cost-benefit analysis,ECONOMICS,1
+cluster analysis,INFORMATION AND COMPUTING,1
+disaster,ENVIRONMENTAL,1
+private sector,ECONOMICS,0.5
+private sector,LAW AND LEGAL STUDIES,0.5
+cultural diversity,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+cultural diversity,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+forestry,EARTH,0.5
+forestry,BIOLOGICAL,0.5
+benchmarking,OTHERS(IRRELEVANT),1
+labor,STUDIES IN HUMAN SOCIETY,1
+environmental policy,ENVIRONMENTAL,0.5
+environmental policy,LAW AND LEGAL STUDIES,0.5
+storage conditions,OTHERS(IRRELEVANT),1
+wine,ENGINEERING,0.5
+wine,AGRICULTURAL AND VETERINARY,0.5
+populism,HISTORY AND ARCHAEOLOGY,0.5
+populism,STUDIES IN HUMAN SOCIETY,0.5
+globalization,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+social capital,STUDIES IN HUMAN SOCIETY,0.5
+social capital,ECONOMICS,0.5
+assemblages,OTHERS(RELEVANT),0.5
+assemblages,PHYSICAL,0.5
+policy making,STUDIES IN HUMAN SOCIETY,1
+family,OTHERS(IRRELEVANT),1
+economic change,ECONOMICS,1
+project management,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+mediation,LAW AND LEGAL STUDIES,1
+land use,BUILT ENVIRONMENT AND DESIGN,1
+pandemics,MEDICAL AND HEALTH,1
+risk assessment,OTHERS(RELEVANT),1
+biodiversity,ENVIRONMENTAL,1
+physical activity,MEDICAL AND HEALTH,0.5
+physical activity,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+marketing,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+marketing,ECONOMICS,0.5
+mitochondrial dna,BIOLOGICAL,0.5
+mitochondrial dna,TECHNOLOGY,0.5
+neural networks,INFORMATION AND COMPUTING,0.333333333
+neural networks,TECHNOLOGY,0.333333333
+neural networks,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+cultural heritage,"LANGUAGE, COMMUNICATION AND CULTURE",1
+beverages,MEDICAL AND HEALTH,0.5
+beverages,ENGINEERING,0.5
+deliberative democracy,STUDIES IN HUMAN SOCIETY,1
+water,EARTH,0.333333333
+water,BIOLOGICAL,0.333333333
+water,ENVIRONMENTAL,0.333333333
+news,INFORMATION AND COMPUTING,0.5
+news,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+voting,OTHERS(IRRELEVANT),1
+choice behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+retirement,STUDIES IN HUMAN SOCIETY,1
+liability,STUDIES IN HUMAN SOCIETY,0.5
+liability,LAW AND LEGAL STUDIES,0.5
+writer,OTHERS(IRRELEVANT),1
+mass spectrometry,PHYSICAL,1
+industry,OTHERS(IRRELEVANT),1
+neoliberalism,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+neoliberalism,STUDIES IN HUMAN SOCIETY,0.5
+engineer,ENGINEERING,1
+information and communication technology,INFORMATION AND COMPUTING,1
+mortality,MEDICAL AND HEALTH,1
+income tax,ECONOMICS,1
+political economy,STUDIES IN HUMAN SOCIETY,0.5
+political economy,ECONOMICS,0.5
+methodology,OTHERS(RELEVANT),1
+corruption,LAW AND LEGAL STUDIES,0.333333333
+corruption,INFORMATION AND COMPUTING,0.333333333
+corruption,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+assays,BIOLOGICAL,1
+gene expression,BIOLOGICAL,1
+torsades de pointes,MEDICAL AND HEALTH,1
+livestock,AGRICULTURAL AND VETERINARY,1
+resources,OTHERS(IRRELEVANT),1
+cultural identity,"LANGUAGE, COMMUNICATION AND CULTURE",1
+autonomy,LAW AND LEGAL STUDIES,0.5
+autonomy,HISTORY AND ARCHAEOLOGY,0.5
+social responsibility,STUDIES IN HUMAN SOCIETY,1
+gene flow,BIOLOGICAL,1
+police,LAW AND LEGAL STUDIES,1
+acclimatization,EARTH,0.333333333
+acclimatization,MEDICAL AND HEALTH,0.333333333
+acclimatization,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+economic growth,ECONOMICS,1
+statistics,MATHEMATICAL,1
+learning algorithms,INFORMATION AND COMPUTING,1
+assault,OTHERS(IRRELEVANT),1
+taxes,ECONOMICS,0.5
+taxes,LAW AND LEGAL STUDIES,0.5
+natural resources,TECHNOLOGY,0.333333333
+natural resources,ENVIRONMENTAL,0.333333333
+natural resources,BIOLOGICAL,0.333333333
+broadcasting,TECHNOLOGY,1
+pain,MEDICAL AND HEALTH,1
+machine learning,INFORMATION AND COMPUTING,1
+health,MEDICAL AND HEALTH,1
+diet,MEDICAL AND HEALTH,1
+staff,OTHERS(IRRELEVANT),1
+latent class analysis,INFORMATION AND COMPUTING,0.5
+latent class analysis,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+waist circumference,MEDICAL AND HEALTH,1
+widowhood,OTHERS(IRRELEVANT),1
+legal system,LAW AND LEGAL STUDIES,1
+deliberation,STUDIES IN HUMAN SOCIETY,0.5
+deliberation,HISTORY AND ARCHAEOLOGY,0.5
+archaeology,HISTORY AND ARCHAEOLOGY,1
+budget,ECONOMICS,0.5
+budget,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+coal,EARTH,1
+tissue,MEDICAL AND HEALTH,1
+video cameras,INFORMATION AND COMPUTING,0.333333333
+video cameras,ENGINEERING,0.333333333
+video cameras,TECHNOLOGY,0.333333333
+present,OTHERS(IRRELEVANT),1
+scalability,OTHERS(RELEVANT),1
+decentralization,STUDIES IN HUMAN SOCIETY,0.5
+decentralization,HISTORY AND ARCHAEOLOGY,0.5
+health policy,MEDICAL AND HEALTH,0.5
+health policy,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+fish,AGRICULTURAL AND VETERINARY,1
+rivers,EARTH,1
+breeding,AGRICULTURAL AND VETERINARY,0.5
+breeding,TECHNOLOGY,0.5
+sports,EDUCATION,1
+trauma,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+curriculum,EDUCATION,1
+personality,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+democracy,STUDIES IN HUMAN SOCIETY,1
+social justice,STUDIES IN HUMAN SOCIETY,1
+personnel,OTHERS(IRRELEVANT),1
+cooking,OTHERS(IRRELEVANT),1
+architecture,BUILT ENVIRONMENT AND DESIGN,1
+financing,ECONOMICS,1
+middle east,OTHERS(IRRELEVANT),1
+innovation,OTHERS(IRRELEVANT),1
+history,EDUCATION,0.5
+history,HISTORY AND ARCHAEOLOGY,0.5
+young adult,EDUCATION,0.5
+young adult,MEDICAL AND HEALTH,0.5
+weights and measures,OTHERS(RELEVANT),1
+inclusion,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+cognition,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+corporate social responsibility,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+corporate social responsibility,STUDIES IN HUMAN SOCIETY,0.5
+testing,OTHERS(RELEVANT),1
+privacy,INFORMATION AND COMPUTING,0.5
+privacy,LAW AND LEGAL STUDIES,0.5
+genome,BIOLOGICAL,0.333333333
+genome,TECHNOLOGY,0.333333333
+genome,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+risk management,OTHERS(IRRELEVANT),1
+drought,AGRICULTURAL AND VETERINARY,1
+happiness,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+conceptual framework,OTHERS(RELEVANT),1
+malathion,ENVIRONMENTAL,1
+smoking,MEDICAL AND HEALTH,1
+citizenship,STUDIES IN HUMAN SOCIETY,1
+psychometrics,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+acceptance,OTHERS(IRRELEVANT),1
+acculturation,STUDIES IN HUMAN SOCIETY,0.5
+acculturation,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+air,ENVIRONMENTAL,0.5
+air,EARTH,0.5
+amphibians,BIOLOGICAL,1
+analysis of variance,MATHEMATICAL,0.5
+analysis of variance,OTHERS(RELEVANT),0.5
+animals,BIOLOGICAL,1
+apathy,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+arsenic,PHYSICAL,1
+artifact,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+artifact,HISTORY AND ARCHAEOLOGY,0.5
+artist,STUDIES IN CREATIVE ARTS AND WRITING,1
+assets,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+audit,ECONOMICS,0.5
+audit,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+banking,ECONOMICS,1
+capacity building,OTHERS(IRRELEVANT),1
+carbon,CHEMICAL,0.333333333
+carbon,EARTH,0.333333333
+carbon,ENVIRONMENTAL,0.333333333
+census,STUDIES IN HUMAN SOCIETY,1
+climate,EARTH,0.5
+climate,ENVIRONMENTAL,0.5
+climate change,ENVIRONMENTAL,0.5
+climate change,EARTH,0.5
+clinical trials,MEDICAL AND HEALTH,0.5
+clinical trials,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+coast,EARTH,1
+communication,TECHNOLOGY,0.5
+communication,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+connectivity,OTHERS(IRRELEVANT),1
+copper,CHEMICAL,1
+costs,OTHERS(IRRELEVANT),1
+crime,STUDIES IN HUMAN SOCIETY,1
+data analysis,OTHERS(RELEVANT),1
+deep learning,INFORMATION AND COMPUTING,1
+developing countries,STUDIES IN HUMAN SOCIETY,0.5
+developing countries,ECONOMICS,0.5
+digital divide,STUDIES IN HUMAN SOCIETY,0.5
+digital divide,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+discourse,OTHERS(RELEVANT),1
+domestic violence,STUDIES IN HUMAN SOCIETY,0.333333333
+domestic violence,LAW AND LEGAL STUDIES,0.333333333
+domestic violence,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+ecology,ENVIRONMENTAL,0.333333333
+ecology,EARTH,0.333333333
+ecology,BIOLOGICAL,0.333333333
+economics,ECONOMICS,1
+economy,ECONOMICS,1
+ecosystem,BIOLOGICAL,0.5
+ecosystem,TECHNOLOGY,0.5
+electronic mail,INFORMATION AND COMPUTING,0.5
+electronic mail,TECHNOLOGY,0.5
+empowerment,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",0.5
+empowerment,LAW AND LEGAL STUDIES,0.5
+environmental change,ENVIRONMENTAL,0.333333333
+environmental change,EARTH,0.333333333
+environmental change,BIOLOGICAL,0.333333333
+ethnography,HISTORY AND ARCHAEOLOGY,0.5
+ethnography,STUDIES IN HUMAN SOCIETY,0.5
+evaluation,OTHERS(IRRELEVANT),1
+exercise,EDUCATION,1
+exercise equipment,MEDICAL AND HEALTH,1
+experiment,OTHERS(RELEVANT),1
+expertise,OTHERS(IRRELEVANT),1
+fairness,LAW AND LEGAL STUDIES,1
+finance,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+financial performance,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+food,ENGINEERING,0.5
+food,TECHNOLOGY,0.5
+funding,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+gender,BIOLOGICAL,0.5
+gender,STUDIES IN HUMAN SOCIETY,0.5
+genes,TECHNOLOGY,0.5
+genes,BIOLOGICAL,0.5
+genetic variation,BIOLOGICAL,1
+geographic information systems,EARTH,0.5
+geographic information systems,INFORMATION AND COMPUTING,0.5
+geography,EARTH,1
+gold,OTHERS(RELEVANT),1
+governance,OTHERS(RELEVANT),1
+groundwater,EARTH,1
+health behavior,MEDICAL AND HEALTH,0.5
+health behavior,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health care,MEDICAL AND HEALTH,0.5
+health care,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health promotion,MEDICAL AND HEALTH,0.5
+health promotion,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+health services,MEDICAL AND HEALTH,0.5
+health services,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+heart rate,MEDICAL AND HEALTH,0.5
+heart rate,BIOLOGICAL,0.5
+honey,ENGINEERING,0.5
+honey,AGRICULTURAL AND VETERINARY,0.5
+household,OTHERS(IRRELEVANT),1
+human rights,STUDIES IN HUMAN SOCIETY,1
+ice,EARTH,0.5
+ice,BIOLOGICAL,0.5
+ideology,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+ideology,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+ideology,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+information systems,INFORMATION AND COMPUTING,1
+intellectual disability,MEDICAL AND HEALTH,1
+intelligence,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+intelligence,INFORMATION AND COMPUTING,0.333333333
+intelligence,BIOLOGICAL,0.333333333
+interaction,OTHERS(RELEVANT),1
+invertebrates,BIOLOGICAL,1
+journalism,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+journalism,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+jurisdiction,LAW AND LEGAL STUDIES,1
+jurisprudence,STUDIES IN HUMAN SOCIETY,0.5
+jurisprudence,LAW AND LEGAL STUDIES,0.5
+law enforcement,LAW AND LEGAL STUDIES,0.5
+law enforcement,STUDIES IN HUMAN SOCIETY,0.5
+legislation,LAW AND LEGAL STUDIES,1
+linguistics,"LANGUAGE, COMMUNICATION AND CULTURE",1
+literacy,OTHERS(IRRELEVANT),1
+literature review,OTHERS(IRRELEVANT),1
+low income,STUDIES IN HUMAN SOCIETY,0.5
+low income,ECONOMICS,0.5
+mammals,BIOLOGICAL,1
+managers,OTHERS(IRRELEVANT),1
+manipulation,OTHERS(IRRELEVANT),1
+mathematics,MATHEMATICAL,1
+medicine,MEDICAL AND HEALTH,1
+mental health,MEDICAL AND HEALTH,0.5
+mental health,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+mentoring,EDUCATION,1
+meta-analysis,INFORMATION AND COMPUTING,1
+military personnel,OTHERS(RELEVANT),1
+mitigation,LAW AND LEGAL STUDIES,1
+modeling,OTHERS(RELEVANT),1
+monitoring,OTHERS(RELEVANT),1
+multimedia,STUDIES IN CREATIVE ARTS AND WRITING,0.333333333
+multimedia,"LANGUAGE, COMMUNICATION AND CULTURE",0.333333333
+multimedia,INFORMATION AND COMPUTING,0.333333333
+music,STUDIES IN CREATIVE ARTS AND WRITING,1
+neoplasms,MEDICAL AND HEALTH,0.5
+neoplasms,BIOLOGICAL,0.5
+networking,TECHNOLOGY,1
+nursing,MEDICAL AND HEALTH,1
+obesity,MEDICAL AND HEALTH,1
+occupational stress,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+occupational therapy,PSYCHOLOGY AND COGNITIVE SCIENCES,0.5
+occupational therapy,MEDICAL AND HEALTH,0.5
+ontology,INFORMATION AND COMPUTING,1
+paradigm shift,OTHERS(RELEVANT),1
+peace,STUDIES IN HUMAN SOCIETY,1
+performance,OTHERS(IRRELEVANT),1
+photography,STUDIES IN CREATIVE ARTS AND WRITING,1
+phylogeny,BIOLOGICAL,1
+physical therapy,MEDICAL AND HEALTH,1
+poetry,STUDIES IN CREATIVE ARTS AND WRITING,0.5
+poetry,"LANGUAGE, COMMUNICATION AND CULTURE",0.5
+population genetics,BIOLOGICAL,1
+pregnancy,MEDICAL AND HEALTH,0.333333333
+pregnancy,BIOLOGICAL,0.333333333
+pregnancy,STUDIES IN HUMAN SOCIETY,0.333333333
+productivity,OTHERS(IRRELEVANT),1
+psychology,PSYCHOLOGY AND COGNITIVE SCIENCES,1
+public policy,STUDIES IN HUMAN SOCIETY,1
+public sector,STUDIES IN HUMAN SOCIETY,1
+public space,STUDIES IN HUMAN SOCIETY,1
+qualification,OTHERS(IRRELEVANT),1
+qualitative research,OTHERS(RELEVANT),1
+quality control,OTHERS(RELEVANT),1
+quality of life,STUDIES IN HUMAN SOCIETY,1
+reflexivity,MATHEMATICAL,1
+rehabilitation,MEDICAL AND HEALTH,1
+research practice,OTHERS(IRRELEVANT),1
+resilience,MEDICAL AND HEALTH,0.333333333
+resilience,PHYSICAL,0.333333333
+resilience,BIOLOGICAL,0.333333333
+restoration,BUILT ENVIRONMENT AND DESIGN,1
+roads,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+safety,OTHERS(RELEVANT),1
+sampling,OTHERS(RELEVANT),1
+sanitation,MEDICAL AND HEALTH,1
+sea level,EARTH,1
+search engine,INFORMATION AND COMPUTING,1
+sediments,EARTH,1
+semantics,"LANGUAGE, COMMUNICATION AND CULTURE",1
+sex chromosomes,MEDICAL AND HEALTH,0.5
+sex chromosomes,BIOLOGICAL,0.5
+simulation,INFORMATION AND COMPUTING,0.333333333
+simulation,ENGINEERING,0.333333333
+simulation,TECHNOLOGY,0.333333333
+snow,EARTH,1
+social change,STUDIES IN HUMAN SOCIETY,0.5
+social change,HISTORY AND ARCHAEOLOGY,0.5
+sociology,STUDIES IN HUMAN SOCIETY,1
+software,INFORMATION AND COMPUTING,1
+song,STUDIES IN CREATIVE ARTS AND WRITING,1
+spatial distribution,OTHERS(RELEVANT),1
+students,EDUCATION,1
+surveillance,OTHERS(RELEVANT),1
+sustainability,STUDIES IN HUMAN SOCIETY,0.5
+sustainability,ECONOMICS,0.5
+sustainable development,ENVIRONMENTAL,1
+terrorism,STUDIES IN HUMAN SOCIETY,1
+therapy,MEDICAL AND HEALTH,1
+threat,OTHERS(RELEVANT),1
+tourism,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+traffic,OTHERS(IRRELEVANT),1
+trajectories,ENGINEERING,0.5
+trajectories,TECHNOLOGY,0.5
+travel behavior,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1
+uncertainty,OTHERS(IRRELEVANT),1
+urban design,ENGINEERING,1
+urbanization,ECONOMICS,0.333333333
+urbanization,STUDIES IN HUMAN SOCIETY,0.333333333
+urbanization,HISTORY AND ARCHAEOLOGY,0.333333333
+vegetables,AGRICULTURAL AND VETERINARY,1
+vertebrates,BIOLOGICAL,1
+violence,STUDIES IN HUMAN SOCIETY,0.333333333
+violence,PSYCHOLOGY AND COGNITIVE SCIENCES,0.333333333
+violence,LAW AND LEGAL STUDIES,0.333333333
+virtual reality,INFORMATION AND COMPUTING,1
+visualization,OTHERS(RELEVANT),1
+vulnerability,MEDICAL AND HEALTH,1
+walking,OTHERS(IRRELEVANT),1
+well-being,STUDIES IN HUMAN SOCIETY,1
+wetlands,EARTH,1
+workplace,STUDIES IN HUMAN SOCIETY,1
