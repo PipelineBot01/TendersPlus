@@ -30,4 +30,5 @@ def sql_add_user(email: str, password: str, first_name: str, last_name: str, uni
 
 
 def sql_get_all_users(session: Session) -> List[SQLUser]:
-    return session.query(SQLUser).join(SQLUserResearchField, SQLUser.email == SQLUserResearchField.email).all()
+    return session.query(SQLUser.email, SQLUser.university, SQLUserResearchField.field_id).join(SQLUserResearchField,
+                                                                                                SQLUser.email == SQLUserResearchField.email).all()
