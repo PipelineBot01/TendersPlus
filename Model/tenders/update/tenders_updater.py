@@ -11,8 +11,8 @@ from tenders.features.tenders_key_extractor import KeyExtractor
 class TendersUpdater:
     def __init__(self, pk: str):
         self.pk = pk
-        self.mongx = MongoConx('tenders')
-        self.raw_data_df = self.mongx.read_df('raw_grants_opened')
+        self.mgx = MongoConx('tenders')
+        self.raw_data_df = self.mgx.read_df('raw_grants_opened')
         self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
         self.raw_data_df['id'] = 'Grants' + self.raw_data_df['_id']
 
@@ -91,7 +91,7 @@ class TendersUpdater:
 
             # update opened data
             new_open_info = self.__update_opened()
-            self.mongx.write_df(new_open_info, 'clean_grants_opened', True)
+            self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
 
             # create mapping file
             tfc = TendersFeatCreator()
@@ -106,7 +106,7 @@ class TendersUpdater:
 
             # update opened data
             new_open_info = self.__update_opened(raw_remain_data_df)
-            self.mongx.write_df(new_open_info, 'clean_grants_opened', True)
+            self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
             del tag_df, new_open_info
 
         topic_df = pd.read_csv(TENDERS_TOPIC_PATH)

@@ -2,7 +2,7 @@ from typing import List
 import numpy as np
 import pandas as pd
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
-    RESEARCHER_TAG_CATE_MAP_PATH, RESEARCHER_INFO_PATH
+    RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
 from utils.match_utils import *
 
@@ -10,8 +10,8 @@ from utils.match_utils import *
 class ResearcherMatcher(Relation):
     def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH,
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
-                 tag_div_path=RESEARCHER_TAG_CATE_MAP_PATH,
-                 re_info_path=RESEARCHER_INFO_PATH, pk='Staff ID'):
+                 tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,
+                 re_info_path=RESEARCHER_INFO_PATH, pk='id'):
         self.re_div_df = pd.read_csv(re_div_path)
         self.re_tag_df = pd.read_csv(re_tag_path)
         self.MAP_DF = pd.read_csv(tag_div_path).drop('weight', axis=1)
@@ -91,8 +91,8 @@ class ResearcherMatcher(Relation):
         tar_df = tar_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
         ref_df = ref_df.groupby(self.pk).apply(lambda x: normalize(x, 'weight'))
 
-        candidate_df = ref_df[ref_df['Tag'].isin(tar_df['Tag'])]
-        candidate_df = candidate_df.merge(tar_df, on='Tag', suffixes=('', '_x'))
+        candidate_df = ref_df[ref_df['tag'].isin(tar_df['tag'])]
+        candidate_df = candidate_df.merge(tar_df, on='tag', suffixes=('', '_x'))
 
         candidate_df['weight'] = abs(candidate_df['weight'] * candidate_df['weight_x'])
         candidate_df = candidate_df.groupby(self.pk)['weight'].sum().reset_index()
@@ -146,7 +146,7 @@ class ResearcherMatcher(Relation):
         ref_div_df = self.re_div_df[self.re_div_df[self.pk] != researcher_id]
 
         tar_tag_df, ref_tag_df = pd.DataFrame(), pd.DataFrame()
-        merged_tag_df = self.re_tag_df.merge(self.MAP_DF, on='Tag')
+        merged_tag_df = self.re_tag_df.merge(self.MAP_DF, on='tag')
 
         if researcher_id in merged_tag_df[self.pk].unique():
             tar_tag_df = merged_tag_df[merged_tag_df[self.pk] == researcher_id]
@@ -180,7 +180,7 @@ class ResearcherMatcher(Relation):
                 tag_dict[tag] = len(tags) - idx
             tar_tag_df = pd.DataFrame({'Name': 'current_tmp',
                                        'Staff ID': 'current_id',
-                                       'Tag': list(tag_dict.keys()),
+                                       'tag': list(tag_dict.keys()),
                                        'weight': list(tag_dict.values())})
             ref_tag_df = self.re_tag_df
             tar_tag_df = tar_tag_df.merge(self.MAP_DF, on='Tag')
@@ -209,7 +209,7 @@ class ResearcherMatcher(Relation):
         info_df = info_df.fillna('')
 
         self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
-        agg_tag_df = self.re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['Tag'].apply(
+        agg_tag_df = self.re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['tag'].apply(
             lambda x: list(set(x))).reset_index()
 
         # filter other divisions out
