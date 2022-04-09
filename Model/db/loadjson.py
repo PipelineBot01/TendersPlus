@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import requests
-from database import JSON_URL_USER, JSON_URL_ACT
+from db_conf import JSON_URL_USER, JSON_URL_ACT
 
 
 def get_data(data_name='user') -> pd.DataFrame:

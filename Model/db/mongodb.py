@@ -1,7 +1,7 @@
 from urllib import parse
 import pandas as pd
 from pymongo import MongoClient
-from database import SETTINGS
+from db_conf import SETTINGS
 import datetime
 
 
