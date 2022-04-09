@@ -21,6 +21,7 @@ async def get_user_favourite_tenders(email: str = Depends(check_access_token), d
         print(str(e))
         raise HTTPException(500, str(e))
 
+
 @router.get('/id')
 async def get_user_favourite_tenders_id(email: str = Depends(check_access_token), db: Session = Depends(get_db)):
     try:
@@ -29,6 +30,7 @@ async def get_user_favourite_tenders_id(email: str = Depends(check_access_token)
     except Exception as e:
         print(str(e))
         raise HTTPException(500, str(e))
+
 
 @router.post('/add')
 async def add_user_favourite_tender(data: FavouriteTenderModel, email: str = Depends(check_access_token),
@@ -44,7 +46,7 @@ async def add_user_favourite_tender(data: FavouriteTenderModel, email: str = Dep
 
 @router.post('/remove')
 async def remove_user_favourite_tender(data: FavouriteTenderModel, email: str = Depends(check_access_token),
-                                    db: Session = Depends(get_db)):
+                                       db: Session = Depends(get_db)):
     try:
         sql_remove_user_favourite(email=email, id=data.id, session=db)
         db.commit()

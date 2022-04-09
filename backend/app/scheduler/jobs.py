@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 from apscheduler.triggers.base import BaseTrigger
@@ -32,9 +33,13 @@ async def get_all_user_info():
                 {'field_id': lambda x: list(x)})
             df_all_user_tag = pd.DataFrame.from_records(sql_get_all_user_tag(db)).groupby('email', as_index=False).agg(
                 {'name': lambda x: list(x)})
-            data = pd.merge(df_all_user_research_field, df_all_user_tag, how='inner', on='email')
-            settings.USER_INFO = pd.merge(df_all_user, data, how='inner', on='email').to_dict('records')
+            data = pd.merge(df_all_user_research_field, df_all_user_tag, how='left', on='email')
+            data = pd.merge(df_all_user, data, how='inner', on='email')
+            data.fillna('',inplace=True)
+            data.rename(columns={'field_id':'divisions','name':'tags'},inplace=True)
+            settings.USER_INFO = data.to_dict('records')
             print(settings.USER_INFO)
+
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_action():
