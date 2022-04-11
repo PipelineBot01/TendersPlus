@@ -12,7 +12,8 @@ class ResearcherFeatCreator:
         self.__tag_div_map = pd.read_csv(tag_div_map_path)
 
     def create_researcher_division(self) -> pd.DataFrame:
-        merge_df = self.__tag_df.merge(self.__tag_div_map.drop('weight', axis=1), on='tag')
+        tmp_map_df = self.__tag_div_map[self.__tag_div_map['weight'] > 0.1]
+        merge_df = self.__tag_df.merge(tmp_map_df.drop('weight', axis=1), on='tag')
         merge_df = merge_df.groupby([self.pk, 'division']).agg({'weight': sum}).reset_index()
         return merge_df
 

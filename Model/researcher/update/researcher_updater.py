@@ -73,7 +73,6 @@ class ResearcherUpdater:
         tag_div_map_df = self.ri.fit_dataframe(self.__new_tag_div_map_df)
         # TODO: will not run during testing
         # tag_div_map_df.to_csv(self.tag_div_map_path, axis=0)
-        print(tag_div_map_df)
 
 
 if __name__ == '__main__':

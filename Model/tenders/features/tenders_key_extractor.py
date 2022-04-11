@@ -1,23 +1,26 @@
 import re
 from typing import List, Tuple
 
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
-from nltk import word_tokenize
-from nltk import pos_tag
-
 import numpy as np
 import pandas as pd
 from keybert._model import KeyBERT
+from nltk import pos_tag
+from nltk import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
 from utils.feature_utils import filter_words, PROJECT_STOP_WORDS
 
-RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
-RE_UPPER = '[A-Z]{2,}'
+RE_SYMBOL = r"[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
+RE_UPPER = r'[A-Z]{2,}'
+RE_NUM_RULE = r'\b(\d+|,)+\b'
+RE_WEB_RULE = r'[http|https]*://[a-zA-Z0-9.?/&=:-]*'
+RE_EMAIL_RULE = r'[a-zA-Z0-9.?/&=:-]+@+[a-zA-Z0-9.?/&=:-]+'
 RE_WEIGHT_RULE = r'\((.*?)\)'
 
 KW_MODEL = KeyBERT()
 STOP = stopwords.words('english')
+
 
 class KeyExtractor:
     def __init__(self):
@@ -30,11 +33,16 @@ class KeyExtractor:
         return raw_df
 
     def __preprocess(self, text: str) -> str:
+        print(text) \
+ \
+        # Remove pure numbers, e.g., 2014, 20,000
+        text = re.sub(RE_NUM_RULE, ' ', text)
+        text = re.sub(RE_EMAIL_RULE, '', text)
+        text = re.sub(RE_WEB_RULE, '', text)
         text = re.sub(RE_SYMBOL, ' ', text)
         text = re.sub(RE_UPPER, '', text)
 
-        # Remove pure numbers, e.g., 2014, 20,000
-        text = re.sub(RE_SYMBOL, ' ', text)
+        print(text)
         return text.lower()
 
     def __split_words(self, x: pd.DataFrame) -> pd.DataFrame:
@@ -79,7 +87,7 @@ class KeyExtractor:
         return keywords if len(keywords) > 0 else [('[none_tag]', 1)]
 
     def __convert_word_type(self, text: str) -> str:
-        text = self.__preprocess(text)
+        # text = self.__preprocess(text)
         token = word_tokenize(text)
         lemmatizer = WordNetLemmatizer()
         pos_tagged = pos_tag(token)
@@ -184,6 +192,7 @@ class KeyExtractor:
 
         assert text_col in input_df.columns, f'Missing column names "{text_col}".'
         tmp_df = input_df[input_df[text_col].notna()].copy()
+
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__preprocess(x))
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__convert_word_type(x))
         tmp_df = tmp_df.set_index(pk)[[text_col]]
@@ -196,15 +205,15 @@ class KeyExtractor:
             tmp_df = tmp_df[(tmp_df[f'key_{i}'] != '[none_tag]'
                              ) & (tmp_df['text'].notna())].drop(f'key_{i}', axis=1).set_index(pk)
             keys_col.append(f'key_{i}')
+            if (tmp_df['text'].str.isspace()).all():
+                break
 
-        input_df = input_df.replace('[none_tag]', np.nan)[[pk]+keys_col]
+        input_df = input_df.replace('[none_tag]', np.nan)[[pk] + keys_col]
         return input_df
 
 
 if __name__ == '__main__':
     input_df = pd.read_csv('../assets/clean_trains_info.csv')
     ke = KeyExtractor()
-    re_df = ke.get_tags(input_df[1493:1495], 'id', 'text')
-    for i in re_df.columns:
-        print(re_df.loc[0, i])
-    # re_df.to_csv('../assets/tenders_keyword.csv', index=0, encoding='utf-8_sig')
+    re_df = ke.get_tags(input_df, 'id', 'text')
+    re_df.to_csv('../assets/t.csv', index=0, encoding='utf-8_sig')
