@@ -9,7 +9,7 @@ from tenders.features.tenders_key_extractor import KeyExtractor
 
 
 class TendersUpdater:
-    def __init__(self, pk: str):
+    def __init__(self, pk: str = 'id'):
         self.pk = pk
         self.mgx = MongoConx('tenders')
         self.raw_data_df = self.mgx.read_df('raw_grants_opened')
@@ -79,7 +79,7 @@ class TendersUpdater:
         raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]
 
         if not raw_remain_data_df.empty:
-            print(f'new Grants {raw_remain_data_df[self.pk]}')
+            print(f'new Grants {raw_remain_data_df[self.pk].unique().tolist()}')
             # update info
             new_info_df = self.update_info(raw_remain_data_df)
 
@@ -90,7 +90,7 @@ class TendersUpdater:
             self.__update_topic(info_df)
 
             # update opened data
-            new_open_info = self.__update_opened()
+            new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
 
             # create mapping file
@@ -115,8 +115,3 @@ class TendersUpdater:
             # update topic file
             self.__update_topic(topic_df)
             del topic_df
-
-if __name__=='__main__':
-    upd = TendersUpdater('id')
-    upd.update_opened()
-    # upd.mongx.write_df(upd.update_opened(), 'clean_grants_opened', True)

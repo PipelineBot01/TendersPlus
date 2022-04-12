@@ -21,7 +21,7 @@ class LDAModel:
         ----------
         df: pd.DataFrame, input dataframe
 
-        this function will do initiation of the lda Model
+        this function will do initiation of the lda model
 
         Returns
         -------

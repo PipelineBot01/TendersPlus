@@ -34,7 +34,7 @@ class KeyExtractor:
         return raw_df
 
     def __preprocess(self, text: str) -> str:
-        print(text)
+
         # Remove pure numbers, e.g., 2014, 20,000
         text = re.sub(RE_NUM_RULE, ' ', text)
         text = re.sub(RE_EMAIL_RULE, '', text)
@@ -42,8 +42,6 @@ class KeyExtractor:
         text = re.sub(RE_URL_RULE, '', text)
         text = re.sub(RE_SYMBOL, ' ', text)
         text = re.sub(RE_UPPER, '', text)
-
-        print(text)
         return text.lower()
 
     def __split_words(self, x: pd.DataFrame) -> pd.DataFrame:

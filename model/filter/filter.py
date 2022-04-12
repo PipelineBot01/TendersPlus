@@ -8,7 +8,7 @@ from tenders.matching.tenders_relation import TendersMatcher
 from utils.match_utils import normalize
 
 WEIGHT_MAP = {1: 0.55, 2: 0.75}
-sys.path.append('../../Model')
+sys.path.append('..')
 
 
 class Filter:
