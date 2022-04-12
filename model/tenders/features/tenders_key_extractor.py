@@ -209,12 +209,3 @@ class KeyExtractor:
 
         input_df = input_df.replace('[none_tag]', np.nan)[[pk] + keys_col]
         return input_df
-
-
-if __name__ == '__main__':
-    input_df = pd.read_csv('../assets/clean_trains_info.csv')
-    ke = KeyExtractor()
-    re_df = ke.get_tags(input_df, 'id', 'text')
-    # for i in re_df.columns:
-    #     print(re_df[i])
-    re_df.to_csv('../assets/keywords_extracted.csv', index=0, encoding='utf-8_sig')

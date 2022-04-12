@@ -16,10 +16,3 @@ class ResearcherFeatCreator:
         merge_df = self.__tag_df.merge(tmp_map_df.drop('weight', axis=1), on='tag')
         merge_df = merge_df.groupby([self.pk, 'division']).agg({'weight': sum}).reset_index()
         return merge_df
-
-
-# if __name__ == '__main__':
-#     rfc = ResearcherFeatCreator('../assets/researcher_tag.csv',
-#                                 '../assets/researcher_division.csv',
-#                                 '../assets/tag_division_map.csv')
-#     print(rfc.create_researcher_division().columns)

@@ -88,33 +88,3 @@ class Filter:
         result_df = func(self, sim_tenders_df, act_tenders_df)
         return result_df.sort_values('weight')
         # return result_df.sort_values('weight')[:10].append(result_df.sort_values('weight')[-10:].sample(3))
-
-
-if __name__ == '__main__':
-    # Research Institute for Sport & Exercise  -visit-  Arthritis Information, Education and Support [high relation]
-    # Sport & Exercise Science  -visit-  National Disability Insurance Agency (NDIA)  [relation]
-    # Physiotherapy  -visit-  Mental Health in Mulitcultural Australia  [low relation]
-    # Sport & Exercise Science  -visit-  Department of Health (Indigenous Remote Service Delivery Traineeship NT)  [noise]
-    # Canberra School of Politics, Economics and Society  -visit-  National Health and Medical Research Council (NHMRC) [noise]
-    # Business, Government & Law Office  -visit-  Regional Jobs and Investment Packages - Tropical North Queensland region [noise]
-    pd.DataFrame({'r_id': ['Canberra61587c82d7b0c43ebd755358',
-                           'Canberra615861add7b0c43ebd755246',
-                           'Canberra615871d1d7b0c43ebd7552f7',
-                           'Canberra61585a56d7b0c43ebd7551dd',
-                           'Canberra61585a81d7b0c43ebd7551e1',
-                           'Canberra61585c9cd7b0c43ebd7551fa'],
-                  'time': [datetime.datetime.now(),
-                           datetime.datetime.now(),
-                           datetime.datetime.now(),
-                           datetime.datetime.now(),
-                           datetime.datetime.now(),
-                           datetime.datetime.now()],
-                  't_id': ['Grants623b012fb34a6bd48ae4bf53',
-                           'Grants623afc09b34a6bd48ae4bd6a',
-                           'Grants623afbf6b34a6bd48ae4bd63',
-                           'Grants623afc0fb34a6bd48ae4bd6c',
-                           'Grants623afc13b34a6bd48ae4bd6d',
-                           'Grants623afbb2b34a6bd48ae4bd49'],
-                  'act_type': [2, 1, 1, 1, 1, 1]}).to_csv('assets/test.csv', index=0)
-    filter = Filter()
-    print(filter.match('Canberra61585cffd7b0c43ebd755201')) #Health Office

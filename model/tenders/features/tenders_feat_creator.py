@@ -82,10 +82,3 @@ class TendersFeatCreator:
     def create_all(self, pk: str):
         self.create_tag_mapping(pk)
         self.create_topic_mapping(pk)
-
-if __name__ == '__main__':
-    ttg = TendersFeatCreator('../assets/keywords_extracted.csv',
-                             '../assets/tenders_tag.csv',
-                             '../assets/matching_result_by_lda.csv',
-                             '../assets/tenders_topic.csv')
-    ttg.create_all('id')

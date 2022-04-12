@@ -71,13 +71,3 @@ def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
 
     input_df['text'] = input_df['title'] + '.' + input_df['desc']
     return input_df
-
-#
-# if __name__ =='__main__':
-#     from db.mongodb import MongoConx
-#     mgx = MongoConx('tenders')
-#     raw_df = mgx.read_df('raw_grants_all')
-#     result = data_clean(raw_df, overwrite=True)
-#     result.to_csv(TENDERS_INFO_PATH)
-#     new_open_info = update_opened_data()
-#     mgx.write_df(new_open_info, 'clean_grants_opened', overwrite=True)

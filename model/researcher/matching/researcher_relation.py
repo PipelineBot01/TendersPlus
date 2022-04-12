@@ -272,36 +272,3 @@ class ResearcherMatcher(Relation):
                                                             tmp_info_df['Colleges']].sample(frac=1))
         sim_df = candidate_df[:match_num]
         return sim_df
-
-
-if __name__ == '__main__':
-#     # matching by divisions/tags
-    rm = ResearcherMatcher('../assets/researcher_division.csv',
-                           '../assets/researcher_tag.csv',
-                           '../assets/tag_division_map.csv',
-                           '../assets/researcher_info.csv')
-    print(rm.match_by_id('Canberra61585cffd7b0c43ebd755201'))
-#     division_list = ["d_10", "d_08"]
-#     tag_list = ['machine learning']
-#     temp_df = rm.match_by_profile(division_list, tag_list)
-#     for i in temp_df:
-#         print(i)
-
-    # matching by id
-    # researcher_division_df = pd.read_csv(RESEARCHER_DIVISION_MAP_PATH)
-    # id_list = researcher_division_df['Staff ID'].unique().tolist()
-    # rm = ResearcherMatcher()
-    # save = []
-    # for i in range(21, 40):
-    #     sample_id = id_list[i]
-    #     print(sample_id)
-    #     temp_df = rm.match(sample_id)
-    #     temp_df['origin_staff'] = sample_id
-    #     save.append(temp_df)
-    #
-    # stuff_info_df = pd.read_csv(RESEARCHER_INFO_PATH)[['Staff ID', 'Colleges', 'Profile']]
-    # merge_df = pd.concat(save).merge(stuff_info_df, on='Staff ID').merge(stuff_info_df,
-    #                                                                      right_on='Staff ID',
-    #                                                                      left_on='origin_staff',
-    #                                                                      suffixes=('_match', '_orig'))
-    # merge_df.to_csv(RESEARCHER_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')

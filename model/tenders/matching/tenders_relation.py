@@ -129,21 +129,3 @@ class TendersMatcher(Relation):
             candidate_df = candidate_df.append(self.__info_df[self.__info_df['category']
                                                               == tmp_info_df['category']].sample(frac=1))
         return candidate_df[:match_num]
-
-
-if __name__ == '__main__':
-    # tenders_tag_df = pd.read_csv(TENDERS_TAG_PATH)
-    tr = TendersMatcher('../assets/tenders_tag.csv',
-                        '../assets/tenders_topic.csv',
-                        '../assets/clean_trains_info.csv')
-    # test_list = []
-    # print('start')
-    result_df = tr.match('Grants623afb69b34a6bd48ae4bd2c')
-    print(result_df)
-    # for i in range(20):
-    #     test_df = tenders_tag_df.sample(1)
-    #     print(test_df['_id'])
-    #     result_df = tr.match(test_df['_id'].values[0])
-    #     result_df.loc[:, 'orig_id'] = test_df['_id'].values[0]
-    #     test_list.append(result_df)
-    # pd.concat(test_list, ignore_index=True).to_csv(TENDERS_MATCHING_OUTPUT, index=0, encoding='utf-8_sig')
