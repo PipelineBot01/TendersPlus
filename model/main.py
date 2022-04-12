@@ -9,9 +9,9 @@ bs = BlockingScheduler()
 def fn():
     ru = ResearcherUpdater()
     ru.update()
-    #
-    upd = TendersUpdater()
-    upd.update()
+
+    tu = TendersUpdater()
+    tu.update()
 
 
 bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
