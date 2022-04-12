@@ -170,6 +170,10 @@ class KeyExtractor:
 
         return input_df[[pk, f'key_{iteration_time}', 'text']]
 
+    def __check_data_quality(self, input_df, pk):
+        rows_null = input_df.isnull().sum(axis=1)
+        print(f'---- tenders with less than 3 keywords {input_df[rows_null<3][pk].unique().tolist()}')
+
     def get_tags(self, input_df: pd.DataFrame, pk: str, text_col: str, iterations=16) -> pd.DataFrame:
         '''
 
@@ -190,7 +194,7 @@ class KeyExtractor:
         '''
 
         assert text_col in input_df.columns, f'Missing column names "{text_col}".'
-        tmp_df = input_df[input_df[text_col].notna()].copy()
+        tmp_df = input_df[input_df[text_col].notna()].copy()[[pk, text_col]]
 
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__preprocess(x))
         tmp_df[text_col] = tmp_df[text_col].map(lambda x: self.__convert_word_type(x))
@@ -198,6 +202,7 @@ class KeyExtractor:
 
         keys_col = []
         for i in range(iterations):
+            print(f'---- start iteration {i}')
             tmp_df = self.extract_label(tmp_df, pk, i)
             input_df = input_df.drop('text', axis=1)
             input_df = input_df.merge(tmp_df[[pk, f'key_{i}', 'text']], on=pk, how='left')
@@ -206,6 +211,9 @@ class KeyExtractor:
             keys_col.append(f'key_{i}')
             if (tmp_df['text'].str.isspace()).all():
                 break
+            print(f'---- end iteration {i}')
 
         input_df = input_df.replace('[none_tag]', np.nan)[[pk] + keys_col]
+
+        self.__check_data_quality(input_df, pk)
         return input_df

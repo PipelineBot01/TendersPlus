@@ -67,7 +67,7 @@ class TendersFeatCreator:
 
         '''
         tenders_topic_df = pd.read_csv(self.topic_path)
-        tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1)
+        tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1).copy()
         tenders_topic_df = tenders_topic_df.set_index(pk)
         tenders_topic_df = tenders_topic_df[['values']].explode('values')
         tenders_topic_df = tenders_topic_df['values'].str.split(',',
