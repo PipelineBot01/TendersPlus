@@ -27,6 +27,6 @@ class MongoConx:
             self.database[df_name].insert_many(df.to_dict(orient='records'))
         except:
             print('Error happened during updating data')
-            tmp_save.to_csv(f'{datetime.datetime.now().date()}.csv')
+            tmp_save.to_csv(f'{datetime.datetime.now().date()}.csv', index=0)
             self.database[df_name].insert_many(tmp_save.to_dict(orient='records'))
         self.temp_save[df_name] = df

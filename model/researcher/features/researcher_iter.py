@@ -41,12 +41,12 @@ class ResearcherIter:
 
         tmp_df['division'] = tmp_df['division'].map(lambda x: RESEARCH_FIELDS[x]['field'])
         tag_div_map_df = self.__update_divs(tmp_df.drop('cnt', axis=1))
-        tag_div_map_df.to_csv(self.__tag_div_map_path)
+        tag_div_map_df.to_csv(self.__tag_div_map_path, index=0)
         return tag_div_map_df
 
     def fit_dataframe(self, input_df: pd.DataFrame) -> pd.DataFrame:
         tag_div_map_df = self.__update_divs(input_df)
-        tag_div_map_df.to_csv(self.__tag_div_map_path)
+        tag_div_map_df.to_csv(self.__tag_div_map_path, index=0)
         return tag_div_map_df
 
     def __update_divs(self, new_tag_df: pd.DataFrame) -> pd.DataFrame:
