@@ -116,6 +116,7 @@ class TendersUpdater:
             self.__update_topic(topic_df)
             del topic_df
 
-# if __name__=='__main__':
-#     upd = TendersUpdater('id')
-#     upd.mongx.write_df(upd.update_opened(), 'clean_grants_opened', True)
+if __name__=='__main__':
+    upd = TendersUpdater('id')
+    upd.update_opened()
+    # upd.mongx.write_df(upd.update_opened(), 'clean_grants_opened', True)

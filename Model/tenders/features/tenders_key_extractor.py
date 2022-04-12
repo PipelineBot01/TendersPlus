@@ -11,12 +11,13 @@ from nltk.stem import WordNetLemmatizer
 
 from utils.feature_utils import filter_words, PROJECT_STOP_WORDS
 
-RE_SYMBOL = r"[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
-RE_UPPER = r'[A-Z]{2,}'
-RE_NUM_RULE = r'\b(\d+|,)+\b'
-RE_WEB_RULE = r'[http|https]*://[a-zA-Z0-9.?/&=:-]*'
-RE_EMAIL_RULE = r'[a-zA-Z0-9.?/&=:-]+@+[a-zA-Z0-9.?/&=:-]+'
-RE_WEIGHT_RULE = r'\((.*?)\)'
+RE_SYMBOL = "[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）\-–——|{}【】‘’；：”“'。，、？%+_]"
+RE_UPPER = '[A-Z0-9]{2,}'
+RE_NUM_RULE = '\b(\d+|,)+\b'
+RE_WEB_RULE = '[http|https]*://[a-zA-Z0-9.?/&=:-]*'
+RE_URL_RULE = '[www|WWW]+\.[a-zA-Z0-9.?/&=:-]+'
+RE_EMAIL_RULE = '[a-zA-Z0-9.?/&=:-]+@+[a-zA-Z0-9.?/&=:-]+'
+RE_WEIGHT_RULE = '\((.*?)\)'
 
 KW_MODEL = KeyBERT()
 STOP = stopwords.words('english')
@@ -33,12 +34,12 @@ class KeyExtractor:
         return raw_df
 
     def __preprocess(self, text: str) -> str:
-        print(text) \
- \
+        print(text)
         # Remove pure numbers, e.g., 2014, 20,000
         text = re.sub(RE_NUM_RULE, ' ', text)
         text = re.sub(RE_EMAIL_RULE, '', text)
         text = re.sub(RE_WEB_RULE, '', text)
+        text = re.sub(RE_URL_RULE, '', text)
         text = re.sub(RE_SYMBOL, ' ', text)
         text = re.sub(RE_UPPER, '', text)
 
@@ -216,4 +217,6 @@ if __name__ == '__main__':
     input_df = pd.read_csv('../assets/clean_trains_info.csv')
     ke = KeyExtractor()
     re_df = ke.get_tags(input_df, 'id', 'text')
-    re_df.to_csv('../assets/t.csv', index=0, encoding='utf-8_sig')
+    # for i in re_df.columns:
+    #     print(re_df[i])
+    re_df.to_csv('../assets/keywords_extracted.csv', index=0, encoding='utf-8_sig')

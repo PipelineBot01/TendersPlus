@@ -59,9 +59,9 @@ class TendersMatcher(Relation):
         -------
 
         '''
-        candidate_df = ref_df[ref_df['Tag'].isin(tar_df['Tag'])]
-        candidate_df = candidate_df.groupby(self.pk)['Tag'].count().reset_index().rename(
-            columns={'Tag': 'weight'}).sort_values('weight', ascending=False)
+        candidate_df = ref_df[ref_df['tag'].isin(tar_df['tag'])]
+        candidate_df = candidate_df.groupby(self.pk)['tag'].count().reset_index().rename(
+            columns={'tag': 'weight'}).sort_values('weight', ascending=False)
         candidate_df = normalize(candidate_df, 'weight', 'max_min')
         return candidate_df
 

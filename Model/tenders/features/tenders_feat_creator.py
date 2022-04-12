@@ -47,8 +47,8 @@ class TendersFeatCreator:
                 remain_list.append(i)
         # TODO: adding weights -2022/4/1 Ray
         tenders_tag_df = tenders_tag_df[remain_list].melt(id_vars=pk)[[pk, 'value']].rename(
-            columns={'value': 'Tag'})
-        tenders_tag_df = tenders_tag_df[tenders_tag_df['Tag'].notna()]
+            columns={'value': 'tag'})
+        tenders_tag_df = tenders_tag_df[tenders_tag_df['tag'].notna()]
 
         duplicated_df = tenders_tag_df.duplicated()
         assert not duplicated_df.empty, \
@@ -84,7 +84,7 @@ class TendersFeatCreator:
         self.create_topic_mapping(pk)
 
 if __name__ == '__main__':
-    ttg = TendersFeatCreator('../assets/tenders_keyword.csv',
+    ttg = TendersFeatCreator('../assets/keywords_extracted.csv',
                              '../assets/tenders_tag.csv',
                              '../assets/matching_result_by_lda.csv',
                              '../assets/tenders_topic.csv')
