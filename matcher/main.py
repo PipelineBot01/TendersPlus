@@ -4,7 +4,7 @@ from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
 from datetime import datetime, timedelta
 
-bs = BlockingScheduler()
+
 
 
 def fn():
@@ -16,6 +16,6 @@ def fn():
     tu = TendersUpdater()
     tu.update()
 
-
-bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
+bs = BlockingScheduler()
+bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'),next_run_time=datetime.now()+timedelta(seconds=5))
 bs.start()
