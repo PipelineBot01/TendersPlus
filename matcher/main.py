@@ -3,13 +3,12 @@ from apscheduler.triggers.interval import IntervalTrigger
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 # from researcher.update.researcher_updater import ResearcherUpdater
 # from tenders.update.tenders_updater import TendersUpdater
-# from datetime import datetime, timedelta
-# import requests
+from datetime import datetime, timedelta
+
 
 
 def fn():
-    print('aaa')
-    # print(f'{datetime.now()} -- start update')
+    print(f'{datetime.now()} -- start update')
     #
     # ru = ResearcherUpdater()
     # ru.update()
@@ -22,10 +21,8 @@ def fn():
 
 
 if __name__ == '__main__':
-    bs = BlockingScheduler(executors={
-        'default':ThreadPoolExecutor(5)
-    },daemon=True)
-    bs.add_job(fn, IntervalTrigger(seconds=10, timezone='Asia/Hong_Kong'))
+    bs = BlockingScheduler(daemon=True)
+    bs.add_job(fn, 'interval',seconds=1)
     try:
         bs.start()
     except Exception as e:
