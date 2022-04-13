@@ -5,7 +5,6 @@ from tenders.update.tenders_updater import TendersUpdater
 from datetime import datetime
 
 
-
 def fn():
     print(f'{datetime.now()} -- start update')
 
@@ -18,10 +17,10 @@ def fn():
     print(f'{datetime.now()} -- done update')
 
 
-
 if __name__ == '__main__':
+    fn()
     bs = BlockingScheduler(daemon=True)
-    bs.add_job(fn, 'interval',seconds=5)
+    bs.add_job(fn, 'interval', seconds=5)
     try:
         bs.start()
     except Exception as e:
