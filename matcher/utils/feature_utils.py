@@ -1,3 +1,4 @@
+from typing import Tuple
 from nltk.corpus import stopwords
 import pandas as pd
 from conf.features import PROJECT_STOP_WORDS
