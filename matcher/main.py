@@ -5,8 +5,6 @@ from tenders.update.tenders_updater import TendersUpdater
 from datetime import datetime, timedelta
 
 
-
-
 def fn():
     print(f'{datetime.now()} -- start update')
 
@@ -15,10 +13,11 @@ def fn():
 
     tu = TendersUpdater()
     tu.update()
-    
+
     print(f'{datetime.now()} -- done update')
 
 
+fn()
 bs = BlockingScheduler()
-bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'),next_run_time=datetime.now()+timedelta(seconds=5))
+bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
 bs.start()
