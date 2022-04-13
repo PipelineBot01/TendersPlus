@@ -18,6 +18,6 @@ def fn():
 
 
 fn()
-bs = BlockingScheduler()
+bs = BlockingScheduler(daemon=True)
 bs.add_job(fn, IntervalTrigger(seconds=1, timezone='Asia/Hong_Kong'))
 bs.start()
