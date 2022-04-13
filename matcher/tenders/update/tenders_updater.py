@@ -142,7 +142,6 @@ class TendersUpdater:
             new_info_df = self.update_info(raw_remain_data_df, overwrite)
             print('-- end updating tender info')
 
-            return
             # update tag file
             print('-- start updating tender keyword')
             self.__update_keys(new_info_df)
