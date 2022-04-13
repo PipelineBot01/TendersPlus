@@ -17,5 +17,5 @@ def fn():
     tu.update()
 
 bs = BlockingScheduler()
-bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'),next_run_time=datetime.now()+timedelta(seconds=5))
+bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), next_run_time=datetime.now()+timedelta(seconds=5))
 bs.start()
