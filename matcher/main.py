@@ -20,7 +20,7 @@ def fn():
 if __name__ == '__main__':
     fn()
     bs = BlockingScheduler(daemon=True)
-    bs.add_job(fn, 'interval', seconds=5)
+    bs.add_job(fn, 'interval', hours=1)
     try:
         bs.start()
     except Exception as e:
