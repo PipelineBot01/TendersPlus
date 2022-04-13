@@ -1,4 +1,4 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
@@ -21,9 +21,11 @@ def fn():
 
 if __name__ == '__main__':
     fn()
-    bs = BlockingScheduler(daemon=True)
-    bs.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
+    bg = BackgroundScheduler(daemon=True)
+    bg.add_job(fn, IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'))
     try:
-        bs.start()
+        bg.start()
+        while True:
+            pass
     except Exception as e:
-        bs.shutdown()
+        bg.shutdown()
