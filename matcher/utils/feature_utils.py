@@ -5,7 +5,7 @@ from conf.features import PROJECT_STOP_WORDS
 from conf.division import RESEARCH_FIELDS
 import numpy as np
 from utils.match_utils import normalize
-
+from typing import Tuple
 
 STOP_WORDS = stopwords.words('english')
 
