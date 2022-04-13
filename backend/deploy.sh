@@ -13,6 +13,7 @@ echo "install requirements"
 
 cd /home/TendersPlus/backend/app
 
+
 # run the application
 python3 main.py
 
