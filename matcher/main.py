@@ -1,4 +1,4 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
@@ -18,6 +18,6 @@ def fn():
 
 
 fn()
-bs = BlockingScheduler()
+bs = BackgroundScheduler()
 bs.add_job(fn, IntervalTrigger(seconds=1, timezone='Asia/Hong_Kong'))
 bs.start()
