@@ -23,7 +23,6 @@ class TendersFeatCreator:
 
     def __split_topic(self, row):
         result = row['values'].split(',')
-        print(result)
         row['topic'] = result[0]
         row['weight'] = result[1]
         return row
@@ -67,7 +66,7 @@ class TendersFeatCreator:
 
         '''
         tenders_topic_df = pd.read_csv(self.topic_path)
-        tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1)
+        tenders_topic_df['values'] = tenders_topic_df.apply(self.__get_topic, axis=1).copy()
         tenders_topic_df = tenders_topic_df.set_index(pk)
         tenders_topic_df = tenders_topic_df[['values']].explode('values')
         tenders_topic_df = tenders_topic_df['values'].str.split(',',
@@ -82,10 +81,3 @@ class TendersFeatCreator:
     def create_all(self, pk: str):
         self.create_tag_mapping(pk)
         self.create_topic_mapping(pk)
-
-if __name__ == '__main__':
-    ttg = TendersFeatCreator('../assets/keywords_extracted.csv',
-                             '../assets/tenders_tag.csv',
-                             '../assets/matching_result_by_lda.csv',
-                             '../assets/tenders_topic.csv')
-    ttg.create_all('id')

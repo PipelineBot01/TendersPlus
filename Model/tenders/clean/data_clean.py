@@ -4,7 +4,7 @@ import re
 import numpy as np
 import pandas as pd
 
-from conf.file_path import TENDERS_RELEVANT_PATH
+from conf.file_path import TENDERS_RELEVANT_PATH, TENDERS_CATE_DIV_MAP_PATH
 
 
 def extract_award(item: str) -> str:
@@ -31,7 +31,6 @@ def convert_dtype(input_df: pd.DataFrame):
     return input_df
 
 
-# 'GO ID', 'Internal Reference ID', 'URL',
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
     input_df['_id'] = input_df['_id'].astype(str)
     input_df['id'] = 'Grants' + input_df['_id']
@@ -71,13 +70,3 @@ def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
 
     input_df['text'] = input_df['title'] + '.' + input_df['desc']
     return input_df
-
-#
-# if __name__ =='__main__':
-#     from db.mongodb import MongoConx
-#     mgx = MongoConx('tenders')
-#     raw_df = mgx.read_df('raw_grants_all')
-#     result = data_clean(raw_df, overwrite=True)
-#     result.to_csv(TENDERS_INFO_PATH)
-#     new_open_info = update_opened_data()
-#     mgx.write_df(new_open_info, 'clean_grants_opened', overwrite=True)

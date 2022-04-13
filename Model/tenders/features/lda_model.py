@@ -21,7 +21,7 @@ class LDAModel:
         ----------
         df: pd.DataFrame, input dataframe
 
-        this function will do initiation of the lda Model
+        this function will do initiation of the lda model
 
         Returns
         -------
@@ -147,13 +147,3 @@ class LDAModel:
             topic_dic[topic_id] = temp
         df = pd.DataFrame.from_dict(topic_dic, orient='index', columns=['keyword' + str(i) for i in range(num_words)])
         return df
-
-if __name__ == '__main__':
-    input_df = pd.read_csv('../assets/clean_trains_info.csv')
-    lda = LDAModel(input_df)
-    lda.build_lda_model()
-
-    # just print for demo, will save to file when the model is well enough
-    lda.get_tenders_topic().to_csv('../assets/matching_result_by_lda.csv', index=0)
-    # result = lda.get_topic(num_words=20)
-    # result.to_csv(TENDERS_TOPIC_PATH)

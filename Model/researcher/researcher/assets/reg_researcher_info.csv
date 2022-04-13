@@ -1,0 +1,20 @@
+email,university,divisions,tags,id
+123@anu.edu.au,University of Canberra,['d_05'],,Reg_123@anu.edu.au
+1@1.com,Charles Sturt University,['d_04'],,Reg_1@1.com
+1@a.com,Australian National University,"['d_08', 'd_10']",['machine learning'],Reg_1@a.com
+a@a.com,Australian National University,"['d_04', 'd_05', 'd_06']",['Health'],Reg_a@a.com
+a@anu.com,Australian National University,"['d_04', 'd_05', 'd_17']",,Reg_a@anu.com
+a@b.com,University of Canberra,"['d_03', 'd_06', 'd_07']",,Reg_a@b.com
+aa@a.com,University of Canberra,"['d_04', 'd_05']",,Reg_aa@a.com
+anu@anu.com,Australian National University,"['d_01', 'd_03', 'd_04']",,Reg_anu@anu.com
+b@anu.com,Charles Sturt University,"['d_02', 'd_03', 'd_18']",,Reg_b@anu.com
+blank@blank.com,Australian National University,['d_04'],,Reg_blank@blank.com
+carl.carla@hotmail.com,Australian National University,"['d_01', 'd_08', 'd_17']",,Reg_carl.carla@hotmail.com
+Ryanyang@anu.com,University of Canberra,"['d_20', 'd_21', 'd_22']",['Human'],Reg_Ryanyang@anu.com
+test2@anu.com,Australian National University,"['d_04', 'd_20', 'd_22']",,Reg_test2@anu.com
+test3@anu.com,Australian National University,"['d_15', 'd_20', 'd_22']",,Reg_test3@anu.com
+test@test.com,Australian National University,['d_04'],,Reg_test@test.com
+u7190388@anu.edu.au,Australian National University,['d_08'],['DATA SCIENCES'],Reg_u7190388@anu.edu.au
+u7194259@anu.edu.au,Australian National University,['d_08'],,Reg_u7194259@anu.edu.au
+u7195896@anu.edu.au,Australian National University,['d_08'],,Reg_u7195896@anu.edu.au
+v@v.com,University of Canberra,"['d_06', 'd_08', 'd_12']",,Reg_v@v.com
