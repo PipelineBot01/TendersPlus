@@ -1,3 +1,4 @@
+from typing import Tuple
 from nltk.corpus import stopwords
 import pandas as pd
 from conf.features import PROJECT_STOP_WORDS
@@ -35,7 +36,7 @@ def filter_words(pos_tagged, lemmatizer):
     return words
 
 
-def get_user_profile(input_df: pd.DataFrame, pk='id') -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def get_user_profile(input_df: pd.DataFrame, pk='id') -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     '''
 
     Parameters
