@@ -16,8 +16,11 @@ def fn():
 
     print(f'{datetime.now()} -- done update')
 
-
-fn()
-bs = BlockingScheduler(daemon=True)
-bs.add_job(fn, IntervalTrigger(seconds=1, timezone='Asia/Hong_Kong'))
-bs.start()
+if __name__ =='__main__':
+    fn()
+    bs = BlockingScheduler(daemon=True)
+    bs.add_job(fn, IntervalTrigger(seconds=1, timezone='Asia/Hong_Kong'))
+    try:
+        bs.start()
+    except Exception as e:
+        bs.shutdown()
