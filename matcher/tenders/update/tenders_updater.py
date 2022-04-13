@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
-    TENDERS_TOPIC_PATH
+    TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH
 from db.mongodb import MongoConx
 from tenders.clean.data_clean import data_clean, convert_dtype
 from tenders.features.lda_model import LDAModel
@@ -16,11 +16,13 @@ class TendersUpdater:
                  info_path=TENDERS_INFO_PATH,
                  tag_path=TENDERS_TAG_PATH,
                  topic_path=TENDERS_TOPIC_PATH,
+                 cate_div_map=TENDERS_CATE_DIV_MAP_PATH,
                  pk: str = 'id'):
         self.pk = pk
         self.info_path = info_path
         self.tag_path = tag_path
         self.topic_path = topic_path
+        self.cate_div_map = cate_div_map
 
         self.mgx = MongoConx('tenders')
         self.raw_data_df = self.mgx.read_df('raw_grants_opened')
@@ -76,13 +78,20 @@ class TendersUpdater:
 
         '''
         info_df = pd.read_csv(self.info_path)
-        info_df = info_df[info_df['is_on'] == 1][[self.pk, 'open_date', 'close_date', 'desc']]
+        info_df = info_df[info_df['is_on'] == 1][
+            [self.pk, 'open_date', 'close_date', 'desc', 'category', 'sub_category']]
 
         tag_df = pd.read_csv(self.tag_path)
         tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
-        # TODO: fix it
-        info_df['division'] = 'test'
+
+        cate_div_map_df = pd.read_csv(self.cate_div_map)
+        cate_df = info_df[['id', 'category', 'sub_category']].melt(id_vars='id').dropna()[['id', 'value']].rename(
+            columns={'value': 'category'})
+        cate_df = cate_df.merge(cate_div_map_df)
+        cate_df = cate_df.groupby('id')['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
+        info_df = info_df.merge(cate_df)
+
         info_df = convert_dtype(info_df)
         info_df = info_df.merge(self.raw_data_df, on=self.pk)
         info_df.fillna('', inplace=True)
@@ -170,7 +179,7 @@ class TendersUpdater:
         error_1 = self.__keyword_error_checking(info_df)
         error_2 = self.__topic_error_checking(info_df)
 
-        if error_1 or error_2:
+        if 1 == 1:
             print('-- fixing missing opened data')
             new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
