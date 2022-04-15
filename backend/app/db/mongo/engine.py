@@ -29,11 +29,11 @@ async def init_db() -> None:
 
     # build text index
     await collection.create_index(
-        [('Title', 'text'), ('desc', 'text'), ('Primary Category', 'text'), ('GO ID', 'text')],
-        name='clean_grants_opened_text_index', weights={'Title': 3, 'desc': 2, 'GO ID': 1})
+        [('division', 'text'), ('Title', 'text'), ('desc', 'text'), ('Primary Category', 'text'), ('GO ID', 'text')],
+        name='clean_grants_opened_text_index', weights={'division': 5, 'Title': 3, 'desc': 2, 'GO ID': 1})
 
     # build hash index
-    await collection.create_index([('GO ID','hashed')],name='clean_grants_opened_hash_index')
+    await collection.create_index([('GO ID', 'hashed')], name='clean_grants_opened_hash_index')
 
     # count the records
     mongo['tenders_client_docs_count'] = {}
