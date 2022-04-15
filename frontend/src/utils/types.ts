@@ -73,7 +73,7 @@ export interface QueryTender{
     'Publish Date':string
     'GO ID':string
     'tags':string
-    'division'?:string
+    'division':string
     'Close Date & Time':string
     'Location':string
     'Agency':string

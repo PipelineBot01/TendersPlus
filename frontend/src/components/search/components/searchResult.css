@@ -55,7 +55,7 @@ div.search-result-content .ant-list-item-meta-description .close-date,
 div.search-result-content .ant-list-item-meta-description .open-date,
 div.search-result-content .ant-list-item-meta-description .location,
 div.search-result-content .ant-list-item-meta-description .agency,
-div.search-result-content .ant-list-item-meta-description .divisions{
+div.search-result-content .ant-list-item-meta-description .division{
     font-size: 0.85rem;
     font-weight: 600;
     user-select: none;
@@ -83,11 +83,12 @@ div.search-result-content .ant-list-item-meta-description .favourite-btn .to-rem
 
 }
 
-div.search-result-content .ant-list-item-meta-description .divisions .ant-tag{
+div.search-result-content .ant-list-item-meta-description .division .ant-tag{
     font-size: 0.7rem;
     padding: 0 0.5rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
-    color: gray;
+    /* color: rgb(240, 155, 8); */
 }
 
 div.search-result-content .ant-list-item-meta-description .tags{

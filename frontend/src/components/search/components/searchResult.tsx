@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { List, Row, Col, Spin, message} from 'antd'
+import { List, Row, Col, Spin, message, Tag} from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight, faStar} from '@fortawesome/free-solid-svg-icons'
 
@@ -11,6 +11,7 @@ import {DonutChart} from '../../../components/charts'
 import {addUserFavouriteAPI, queryTendersAPI, removeUserFavouriteAPI, getUserFavouriteIdAPI} from '../../../api'
 import {useCollector} from '../../../utils/customHook'
 import type { QueryTender, QueryType } from '../../../utils/types'
+import capitalize from '../../../utils/capitalize'
 
 import SearchBar from './searchBar'
 import './searchResult.css'
@@ -24,12 +25,15 @@ export default function SearchResult():JSX.Element{
 	const dispatch = useAppDispatch()
 
 	useEffect(()=>{
-		getUserFavouriteIdAPI().then(response=>{
-			if(response.data){
-				dispatch(setFavourite(response.data))
-			}
-		})
+		if(user.access_token){
+			getUserFavouriteIdAPI().then(response=>{
+				if(response.data){
+					dispatch(setFavourite(response.data))
+				}
+			})
+		}
 	}, [])
+
 	useEffect(()=>{	
 		let encodeQuery = searchParams.get('query') || ''
 		const decodeQuery = window.atob(encodeQuery)
@@ -104,7 +108,8 @@ export default function SearchResult():JSX.Element{
 									{emptyText:' '}
 								}
 								renderItem={item=>{
-									const tags:Array<string> = item.tags?.split(' ')
+									const tags:string[] = item.tags?.split(' ')
+									const divisions:string[]  = item.division?.split('/')
 									return <List.Item key={item['GO ID']}>
 										<List.Item.Meta 
 											title={
@@ -132,6 +137,15 @@ export default function SearchResult():JSX.Element{
 														<Col style={{textAlign:'right'}} span={5}>Location:</Col>
 														<Col span={18}>{item['Location']}</Col>
 													</Row>
+													<Row className='division' style={{marginTop:'0.5rem'}}  gutter={6}>
+														<Col style={{textAlign:'right'}} span={5}>Divisions: </Col>
+														<Col span={18}>
+															{divisions.map((e, i)=>(
+																   <Tag color="volcano" key={i}>{capitalize(e)}</Tag>
+															))}
+								
+														</Col>
+													</Row>
 													<Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
 														<Col style={{textAlign:'right'}} span={5}>Keywords: </Col>
 														<Col span={18}>
@@ -148,8 +162,6 @@ export default function SearchResult():JSX.Element{
 															</span>))}
 								
 														</Col>
-											
-
 													</Row>
 
 													<Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
@@ -160,7 +172,7 @@ export default function SearchResult():JSX.Element{
 															}
 														</Col>
 													
-													
+			
 														<Col span={5}>
 															<a  className='url' 
 																href={item['URL']}
