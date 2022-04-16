@@ -1,6 +1,8 @@
 
 from pymongo import MongoClient
+from sympy import N, re
 import cfg
+import pandas as pd
 from urllib import parse
 
 mo_host = cfg.mongo_host
@@ -77,11 +79,15 @@ class mongo:
         result = self.collection.delete_many(kwargs)
         return result.deleted_count
 
+    def update_one(self, query, value):
+        result = self.collection.update_one(query, value)
+        return result
+
     def update(self, *args, **kwargs):
         """updata one or more records
         
-        :param args: dict:{"author":"XerCis"}，list[_id]:[{'_id': ObjectId('1')}, {'_id': ObjectId('2')}]
-        :param kwargs: attribute to be updated，country="China", age=22
+        :param args: dict:{"author":"XerCis"}, list[_id]:[{'_id': ObjectId('1')}, {'_id': ObjectId('2')}]
+        :param kwargs: attribute to be updated, country="China", age=22
         :return: update records numbers 
         """
         value = {"$set": kwargs}
@@ -131,7 +137,46 @@ class mongo:
         if collection not in self.db.list_collection_names():
             print("no such collection！:" + collection)
 
+    def merge_data(self, new_data):
+        old_df_urls = self.find_col('URL')
+        old_url = pd.DataFrame(old_df_urls)
+        new_url = new_data['URL']
+        new_data_dict = new_data.T.to_dict()
+        update_URL_list = list(pd.merge(new_url, old_url)['URL'])
+        old_url_list = list(old_url['URL'])
+        
 
+        update_set = set(update_URL_list)
+
+        print(len(update_URL_list))
+
+        delete_count = 0
+        update_count = 0
+        insert_count = 0
+        for i in old_url_list:
+            if i not in update_set:
+                delete_count += 1
+                self.delete(URL = i)
+        print('delete ' + str(delete_count) + ' records')
+        for j in new_data_dict:
+            url = new_data_dict[j]["URL"]
+            if url in update_set:
+                q = {'URL':url}
+                new_data_dict[j].pop('_id')
+                v = {'$set':new_data_dict[j]}
+                update_count = update_count + 1
+                self.update_one(q, v)
+            else:
+                insert_count = insert_count + 1
+                self.insert(new_data_dict[j])
+        print('update ' + str(update_count) + ' records')
+        print('insert ' + str(insert_count) + ' records')
+
+        
+
+        
+
+        
 
 #if __name__ == '__main__':
     """init and connection"""
