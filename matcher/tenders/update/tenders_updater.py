@@ -86,6 +86,9 @@ class TendersUpdater:
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
 
         cate_div_map_df = pd.read_csv(self.cate_div_map)
+        cate_div_map_df = cate_div_map_df[~cate_div_map_df['division'].isin(['OTHERS RELEVANT', 'OTHERS IRRELEVANT'])]
+        cate_div_map_df = cate_div_map_df.drop_duplicates()
+
         cate_df = info_df[['id', 'category', 'sub_category']].melt(id_vars='id').dropna()[['id', 'value']].rename(
             columns={'value': 'category'})
         cate_df = cate_df.merge(cate_div_map_df)
@@ -144,7 +147,7 @@ class TendersUpdater:
             overwrite = True
 
         if not raw_remain_data_df.empty:
-            print(f'-- new Grants {raw_remain_data_df[self.pk].unique().tolist()}')
+            print(f'-- {len(raw_remain_data_df)} new Grants {raw_remain_data_df[self.pk].unique().tolist()}')
 
             # update info
             print('-- start updating tender info')
