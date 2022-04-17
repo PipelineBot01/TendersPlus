@@ -169,7 +169,6 @@ class goScraper(webScarper):
         pages = [self.url_head]
         seed_html = etree.HTML(self.downloader(self.seed_url))
         pageLink = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/@href')
-        print(pageLink)
         pageId = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/text()')
         for i in range(1, len(pageId) - 1):
             pages.append(self.url_head + pageLink[i - 1])
@@ -181,7 +180,6 @@ class goScraper(webScarper):
             links = html.xpath('//div[@class="list-desc-inner"]/a/@href')
             ids = html.xpath('//div[@class="list-desc-inner"]/a/text()')
             for j in range(0, len(ids), 2):
-                print(ids[j])
                 gos[ids[j]] = self.go_head + links[j]
             print("page " + str(i + 1) + " finished")
 
@@ -200,7 +198,6 @@ class goScraper(webScarper):
     def run(self):
         print('collecting urls')
         self.get_urls()
-        # linkDic = self.url_collector
         errorStuff = {}
         print("Parsing links")
 
@@ -210,7 +207,6 @@ class goScraper(webScarper):
         old_urls = pd.DataFrame(self.db.find_col("URL"))
         skip_list = list(old_urls['URL'])
         gos_links = []
-        print(skip_list)
         for gid, link in linkDic.items():
             gos_links.append(link)
             if link in skip_list:

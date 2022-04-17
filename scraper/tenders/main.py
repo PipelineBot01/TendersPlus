@@ -13,14 +13,12 @@ def update_go():
     go_update.run()
 
     print(f'{datetime.now()} -- done update')
-    print("*********** update raw_grant_opened **********")
 
     print("*********** start update raw_grant_all **********")
     print(f'{datetime.now()} -- start update')
     update_raw_all()
 
     print(f'{datetime.now()} -- done update')
-    print("*********** update raw_grant_all**********")
 
 
 if __name__ == '__main__':
