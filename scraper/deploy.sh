@@ -5,7 +5,7 @@ git pull -X theirs
 
 echo "git pulling"
 
-cd scraper
+cd /home/TendersPlus/scraper
 
 # run the application
 python3 main.py
