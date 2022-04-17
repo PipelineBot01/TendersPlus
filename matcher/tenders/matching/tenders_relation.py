@@ -128,4 +128,4 @@ class TendersMatcher(Relation):
             tmp_info_df = self.__info_df[self.__info_df[self.pk] == tenders_id]
             candidate_df = candidate_df.append(self.__info_df[self.__info_df['category']
                                                               == tmp_info_df['category']].sample(frac=1))
-        return candidate_df[:match_num]
+        return candidate_df[:min(match_num, len(candidate_df))]

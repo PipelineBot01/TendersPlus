@@ -10,7 +10,6 @@ def convert_to_num(value):
 
 
 def data_clean(input_df, region, pk, ref_col='_id'):
-    input_df.copy()
     input_df[pk] = region + '_' + input_df[ref_col]
     rename_dict = {}
     for col in input_df.columns:
@@ -23,7 +22,7 @@ def data_clean(input_df, region, pk, ref_col='_id'):
     input_df['pt'] = input_df['ProjectTags'].str.split('<bk>')
     input_df['st'] = input_df['staffTags'].str.split('<bk>')
 
-    tag_df = input_df[[pk, 'pt', 'st']]
+    tag_df = input_df[[pk, 'pt', 'st']].copy()
     tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
     tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
 
