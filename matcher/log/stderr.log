@@ -1,0 +1,1483 @@
+From github.com:PipelineBot01/TendersPlus
+   ee33994..859ec65  master     -> origin/master
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:05:40 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:05:45 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:05:50 CST)" skipped: maximum number of running instances reached (1)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:05:55 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:00 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:05 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:10 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:20 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:25 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:30 CST)" skipped: maximum number of running instances reached (1)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:35 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:40 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:45 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:06:55 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:00 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:05 CST)" skipped: maximum number of running instances reached (1)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:10 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:15 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:20 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:25 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:35 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:40 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:45 CST)" skipped: maximum number of running instances reached (1)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:50 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:07:55 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:00 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:10 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:15 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:20 CST)" skipped: maximum number of running instances reached (1)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:25 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:30 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "fn (trigger: interval[0:00:05], next run at: 2022-04-13 17:08:35 CST)" skipped: maximum number of running instances reached (1)
+From github.com:PipelineBot01/TendersPlus
+   859ec65..cf433e2  master     -> origin/master
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+From github.com:PipelineBot01/TendersPlus
+   5148a19..c308261  master     -> origin/master
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:28: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['st'].notna(), 'st'] = tag_df[tag_df['st'].notna()]['st'].map(split_tag)
+/usr/local/lib64/python3.6/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+/home/TendersPlus/matcher/researcher/clean/clean_data.py:27: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tag_df.loc[tag_df['pt'].notna(), 'pt'] = tag_df[tag_df['pt'].notna()]['pt'].map(split_tag)
