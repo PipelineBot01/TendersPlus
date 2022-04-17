@@ -28,3 +28,8 @@
     background: #ff835d;
     border: none !important;
 }
+
+.search-bar .ant-input-group-addon{
+    direction: rtl !important;
+}
+

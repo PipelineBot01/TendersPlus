@@ -1,5 +1,4 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
 from datetime import datetime
