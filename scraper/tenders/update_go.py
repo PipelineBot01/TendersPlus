@@ -21,5 +21,4 @@ def update_go():
     print(f'{datetime.now()} -- done update')
 
 
-if __name__ == '__main__':
-    update_go()
+
