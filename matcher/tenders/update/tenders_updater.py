@@ -9,6 +9,7 @@ from tenders.clean.data_clean import data_clean, convert_dtype
 from tenders.features.lda_model import LDAModel
 from tenders.features.tenders_feat_creator import TendersFeatCreator
 from tenders.features.tenders_key_extractor import KeyExtractor
+from tenders.matching.tenders_relation import TendersMatcher
 
 
 class TendersUpdater:
@@ -26,8 +27,18 @@ class TendersUpdater:
 
         self.mgx = MongoConx('tenders')
         self.raw_data_df = self.mgx.read_df('raw_grants_opened')
+        self.raw_data_df = self.__check_quality(self.raw_data_df)
+
         self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
         self.raw_data_df[self.pk] = 'Grants' + self.raw_data_df['_id']
+
+    def __check_quality(self, raw_data: pd.DataFrame, key_id='GO ID') -> pd.DataFrame:
+        assert len(raw_data[raw_data[key_id].isna()]) / len(
+            raw_data) < 0.1, f'---- contains over 10% grants with missing {key_id}'
+        n_dup = len(raw_data[key_id].duplicated())
+        if n_dup > 0:
+            print(f'---- contains {n_dup} duplicated grants')
+        return raw_data.drop_duplicates(key_id, keep='first')
 
     def __reformat_key(self, row):
         row = row.dropna()
@@ -78,21 +89,19 @@ class TendersUpdater:
 
         '''
         info_df = pd.read_csv(self.info_path)
-        info_df = info_df[info_df['is_on'] == 1][
-            [self.pk, 'open_date', 'close_date', 'desc', 'category', 'sub_category']]
+        info_df = info_df[[self.pk, 'open_date', 'close_date', 'desc', 'category', 'sub_category']]
 
         tag_df = pd.read_csv(self.tag_path)
         tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
 
-        cate_div_map_df = pd.read_csv(self.cate_div_map)
-        cate_div_map_df = cate_div_map_df[~cate_div_map_df['division'].isin(['OTHERS RELEVANT', 'OTHERS IRRELEVANT'])]
-        cate_div_map_df = cate_div_map_df.drop_duplicates()
-
-        cate_df = info_df[['id', 'category', 'sub_category']].melt(id_vars='id').dropna()[['id', 'value']].rename(
+        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars='id').dropna()[[self.pk, 'value']].rename(
             columns={'value': 'category'})
-        cate_df = cate_df.merge(cate_div_map_df)
-        cate_df = cate_df.groupby('id')['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
+        cate_div_map_df = self.__update_cate_div_map(cate_df)
+        cate_div_map_df.to_csv(self.cate_div_map)
+
+        cate_df = cate_df.merge(cate_div_map_df, how='left')
+        cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
         info_df = info_df.merge(cate_df)
 
         info_df = convert_dtype(info_df)
@@ -125,6 +134,31 @@ class TendersUpdater:
             return True
         return False
 
+    def __update_cate_div_map(self, cate_df):
+        cate_div_map_df = pd.read_csv(self.cate_div_map)
+        cate_div_map_df = cate_div_map_df[~cate_div_map_df['division'].isin(['OTHERS RELEVANT',
+                                                                             'OTHERS IRRELEVANT'])].drop_duplicates()
+        new_div_df = cate_df[~cate_df['category'].isin(cate_div_map_df['category'])]
+        if not new_div_df.empty:
+            print(f'---- new category {new_div_df["category"].unique().tolist()}')
+            tm = TendersMatcher()
+            tmp_df = pd.DataFrame()
+            for t_id in new_div_df[self.pk].unique():
+                result_df = tm.match(t_id).merge(cate_df, on=self.pk).merge(cate_div_map_df, on='category')
+                result_df = result_df.groupby('division')[self.pk].count().reset_index().rename(columns={self.pk:
+                                                                                                         'cnt'})
+                result_df = result_df.sort_values('cnt', ascending=False)[:min(3, len(result_df))]
+                result_df['tmp'] = 1
+                orig_df = new_div_df[new_div_df[self.pk] == t_id].copy()
+                orig_df['tmp'] = 1
+                orig_df = orig_df.merge(result_df, on='tmp')
+                tmp_df = tmp_df.append(orig_df)
+            tmp_df = tmp_df.groupby(['division',
+                                     'category'])['cnt'].sum().reset_index().sort_values('cnt', ascending=False)
+            tmp_df = tmp_df.groupby(['category']).head(3)
+            cate_div_map_df = cate_div_map_df.append(tmp_df.drop('cnt', axis=1))
+        return cate_div_map_df
+
     def update(self):
         '''
 
@@ -133,6 +167,7 @@ class TendersUpdater:
 
         '''
         print('<start updating tenders files>')
+
         if os.path.exists(self.info_path):
             info_df = pd.read_csv(self.info_path)
             raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]
@@ -182,7 +217,7 @@ class TendersUpdater:
         error_1 = self.__keyword_error_checking(info_df)
         error_2 = self.__topic_error_checking(info_df)
 
-        if 1 == 1:
+        if error_1 or error_2:
             print('-- fixing missing opened data')
             new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
