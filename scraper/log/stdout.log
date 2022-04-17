@@ -1,0 +1,19 @@
+Already up-to-date.
+git pulling
+*********** start update raw_grant_opened **********
+2022-04-17 21:07:18.428461 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+[Errno 2] No such file or directory: './assets/gosLink.json'
+Parsing links
+Already up-to-date.
+git pulling
