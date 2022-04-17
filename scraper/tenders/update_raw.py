@@ -1,6 +1,6 @@
 import pandas as pd
 
-from scraper.db.mongoDB import mongo
+from db.mongoDB import mongo
 from go_conf import cfg
 
 

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from go_conf import go_config, seed_url, url_head, go_head, parser_config, interval, SAVE_MONGO
-from scraper.engine.httpScraper import goScraper
+from engine.httpScraper import goScraper
 from update_raw import update_raw_all
 
 
