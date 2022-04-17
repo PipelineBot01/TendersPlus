@@ -1,17 +1,14 @@
 import json
-from mimetypes import init
-import os
 import time
-from datetime import date
-from datetime import datetime
 import pandas as pd
 import requests
 from lxml import etree
-from mongoDB import mongo
-import cfg
+from scraper.db.mongoDB import mongo
 
-class webScarper():
-    def __init__(self, config, seed_url, url_head, parser_config,  interval, save_mongo = True, saveInfo=['asset/webScraperInfo', '.csv']) -> None:
+
+class webScarper:
+    def __init__(self, config, seed_url, url_head, parser_config, interval, save_mongo=True,
+                 saveInfo=['asset/webScraperInfo', '.csv']) -> None:
         self.config = config
         self.seed_url = seed_url
         self.saveInfo = saveInfo
@@ -23,52 +20,51 @@ class webScarper():
         self.db = mongo(host, port, user, pwd, db, collection)
         self.save_mongo = save_mongo
         self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/86.0.4240.198 Safari/537.36 '
         }
         pass
 
-
     def get_urls(self) -> None:
         pass
-
 
     def run(self):
         pass
 
-    def parser(self):
+    def parser(self, url):
         pass
 
-
-    def downloader(self):
+    def downloader(self, url):
         pass
 
-    def save2Monogo(self):
+    def save2Mongo(self, data):
         pass
 
 
 class tenderScraper(webScarper):
-    def __init__(self, config, seed_url, url_head, tender_head, interval, save_mongo, saveInfo=['results/historyInfo', '.csv']) -> None:
-        super().__init__(config, seed_url, url_head, interval, save_mongo, saveInfo)
+    def __init__(self, config, seed_url, url_head, parser_config, tender_head, interval, save_mongo,
+                 saveInfo=['results/historyInfo', '.csv']) -> None:
+        super().__init__(config, seed_url, url_head, parser_config, interval, save_mongo, saveInfo)
+        self.tenders = []
         self.tender_head = tender_head
 
-
     def get_urls(self) -> None:
-        pages = []
-        pages.append(self.url_head)
-        pageLink = html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/@href')
-        pageId = html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/text()')
-        for i in range(1,len(pageId) - 1):
+        pages = [self.url_head]
+        seed_html = self.downloader(self.seed_url)
+        pageLink = seed_html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/@href')
+        pageId = seed_html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/text()')
+        for i in range(1, len(pageId) - 1):
             pages.append(self.url_head + pageLink[i - 1])
 
         tenders = {}
         for i in range(len(pages)):
             link = pages[i]
-            html  = self.downloader(link)
+            html = self.downloader(link)
             links = html.xpath('//div[@class="list-desc-inner"]/a/@href')
             ids = html.xpath('//div[@class="list-desc-inner"]/a/text()')
-            for i in range(0,len(ids),2):
-                print (ids[i])
-                tenders[ids[i]] = self.tender_head + links[i]
+            for j in range(0, len(ids), 2):
+                print(ids[j])
+                tenders[ids[j]] = self.tender_head + links[j]
             print("page " + str(i + 1) + " finished")
 
         try:
@@ -78,36 +74,33 @@ class tenderScraper(webScarper):
             fileObject.write(jsObj)
             print('save Link finished')
             fileObject.close()
-            self.links.clear()
         except Exception as e:
             print(e)
         time.sleep(self.interval)
-
-
 
     def downloader(self, url) -> str:
         response = requests.get(url, self.headers)
         tendersPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
         return etree.HTML(tendersPage)
 
-    def run(self, save_mongo = False):
+    def run(self, save_mongo=False):
         print('collecting urls')
-        html = etree.HTML(self.downloader(self.seed_url, self.headers))
-        self.get_urls(html)
+        self.get_urls()
         linkDic = self.url_collector
         errorStuff = {}
         print("Parsing links")
 
-        for id, link in linkDic.items():
-            print('Generate tender info', id)
+        for tid, link in linkDic.items():
+            print('Generate tender info', tid)
             try:
-                tender = self.parser(id, link)
+                tender = self.parser(link)
+                self.tenders.append(tender)
                 if save_mongo:
-                    self.save2Monogo(tender)
+                    self.save2Mongo(tender)
             except Exception as e:
                 print(e)
-                print('-----> failed to scrap', id)
-                errorStuff.update({id: link})
+                print('-----> failed to scrap', tid)
+                errorStuff.update({tid: link})
                 continue
             time.sleep(self.interval)
         df = pd.DataFrame(self.tenders)
@@ -117,36 +110,25 @@ class tenderScraper(webScarper):
             fileObject = open('assets/errorsLink.json', 'w')
             fileObject.write(jsObj)
             fileObject.close()
-            self.links.clear()
             print('Saving errorStuff complete')
         except Exception as e:
             print(e)
             print('Saving errorStuff failed')
 
-
-    def parser(self, id, url) -> dict:
-        parser_cfg  = self.parser_config
+    def parser(self, url) -> dict:
+        parser_cfg = self.parser_config
         html = self.downloader(url)
         html = html.replace('<strong>', '')
         html = html.replace('</strong>', '')
-        html = html.replace('\r\n','')
-        html = html.replace('  ','')
-        tree = etree.HTML(html)      
+        html = html.replace('\r\n', '')
+        html = html.replace('  ', '')
+        tree = etree.HTML(html)
 
         title = tree.xpath(parser_cfg.get('Title'))[0]
-        #contacts = tree.xpath(config.get('Contacts'))
-        #while ":" in contacts: contacts.remove(":")
         labels = tree.xpath(parser_cfg.get('labels'))
         details = tree.xpath(parser_cfg.get('Details'))
-
-        go = {}
-        #contacts = tree.xpath(config.get('Contacts'))
-        #while ":" in contacts: contacts.remove(":")
         idx = 0
-        attributes={}
-        # attributes['_id'] = id
-        attributes['Title'] = title
-        attributes['URL'] = url
+        attributes = {'Title': title, 'URL': url}
         for i in range(len(labels)):
             label = labels[i]
             info = ''
@@ -163,17 +145,13 @@ class tenderScraper(webScarper):
                     else:
                         info = info + " " + details[idx]
                     idx += 1
-            l = label.replace(":","")
-            attributes[l] = info
-
+            ll = label.replace(":", "")
+            attributes[ll] = info
 
         go = attributes
         return go
 
-
-
-
-    def save2Monogo(self, tender: dict[str:str]):
+    def save2Mongo(self, tender):
         print('*******  insert tender info database *********')
         mongodb = self.db
         result = mongodb.insert(tender)
@@ -181,27 +159,30 @@ class tenderScraper(webScarper):
 
 
 class goScraper(webScarper):
-    def __init__(self, config, seed_url, url_head, go_head, parser_config, interval, save_mongo, saveInfo=['results/historyInfo', '.csv']) -> None:
+    def __init__(self, config, seed_url, url_head, go_head, parser_config, interval, save_mongo,
+                 saveInfo=['results/historyInfo', '.csv']) -> None:
         super().__init__(config, seed_url, url_head, parser_config, interval, save_mongo, saveInfo)
+        self.gos = []
         self.go_head = go_head
 
     def get_urls(self) -> None:
-        pages = []
-        pages.append(self.url_head)
-        pageLink = html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/@href')
-        pageId = html.xpath('//*[@id="mainContent"]/div/div[4]/ul/li/a/text()')
-        for i in range(1,len(pageId) - 1):
+        pages = [self.url_head]
+        seed_html = etree.HTML(self.downloader(self.seed_url))
+        pageLink = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/@href')
+        print(pageLink)
+        pageId = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/text()')
+        for i in range(1, len(pageId) - 1):
             pages.append(self.url_head + pageLink[i - 1])
 
         gos = {}
         for i in range(len(pages)):
             link = pages[i]
-            html  = self.downloader(link)
+            html = etree.HTML(self.downloader(link))
             links = html.xpath('//div[@class="list-desc-inner"]/a/@href')
             ids = html.xpath('//div[@class="list-desc-inner"]/a/text()')
-            for i in range(0,len(ids),2):
-                print (ids[i])
-                gos[ids[i]] = self.tender_head + links[i]
+            for j in range(0, len(ids), 2):
+                print(ids[j])
+                gos[ids[j]] = self.go_head + links[j]
             print("page " + str(i + 1) + " finished")
 
         try:
@@ -216,28 +197,40 @@ class goScraper(webScarper):
             print(e)
         time.sleep(self.interval)
 
-
     def run(self):
         print('collecting urls')
-        html = etree.HTML(self.downloader(self.seed_url, self.headers))
-        self.get_urls(html)
-        linkDic = self.url_collector
+        self.get_urls()
+        # linkDic = self.url_collector
         errorStuff = {}
         print("Parsing links")
 
-        for id, link in linkDic.items():
-            print('Generate go info', id)
+        file_path = "./assets/gosLink.json"
+        data = open(file_path, 'rb')
+        linkDic = json.load(data)
+        old_urls = pd.DataFrame(self.db.find_col("URL"))
+        skip_list = list(old_urls['URL'])
+        gos_links = []
+        print(skip_list)
+        for gid, link in linkDic.items():
+            gos_links.append(link)
+            if link in skip_list:
+                continue
+            print('Generate go info', gid)
             try:
-                go = self.parser(id, link)
+                go = self.parser(link)
+                self.gos.append(go)
                 if self.save_mongo:
-                    self.save2Monogo(go)
+                    self.save2Mongo(go)
             except Exception as e:
                 print(e)
-                print('-----> failed to scrap', id)
-                errorStuff.update({id: link})
+                print('-----> failed to scrap', gid)
+                errorStuff.update({gid: link})
                 continue
             time.sleep(self.interval)
-        df = pd.DataFrame(self.tenders)
+        df = pd.DataFrame(self.gos)
+        for url in skip_list:
+            if url not in gos_links:
+                self.db.delete(URL=url)
         print('Saving complete')
         try:
             jsObj = json.dumps(errorStuff)
@@ -250,16 +243,47 @@ class goScraper(webScarper):
             print(e)
             print('Saving errorStuff failed')
 
-    
-    def parser(self):
-        return super().parser()
+    def parser(self, url):
+        config = self.parser_config
+        html = self.downloader(url)
+        html = html.replace('<strong>', '')
+        html = html.replace('</strong>', '')
+        html = html.replace('\r\n', '')
+        html = html.replace('  ', '')
+        tree = etree.HTML(html)
+
+        title = tree.xpath(config.get('Title'))[0]
+        labels = tree.xpath(config.get('labels'))
+        details = tree.xpath(config.get('Details'))
+        idx = 0
+        attributes = {'Title': title, 'URL': url}
+        for i in range(len(labels)):
+            label = labels[i]
+            info = ''
+            while idx < len(details):
+                if details[idx] == label:
+                    idx += 1
+                elif details[idx] == ':':
+                    idx += 1
+                elif i < len(labels) - 1 and details[idx] == labels[i + 1]:
+                    break
+                else:
+                    if info == '':
+                        info = details[idx]
+                    else:
+                        info = info + " " + details[idx]
+                    idx += 1
+            ll = label.replace(":", "")
+            attributes[ll] = info
+        go = attributes
+        return go
 
     def downloader(self, url) -> str:
         response = requests.get(url, self.headers)
-        tendersPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
-        return etree.HTML(tendersPage)
+        gosPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
+        return gosPage
 
-    def save2Monogo(self, go: dict[str:str]):
+    def save2Mongo(self, go):
         print('*******  insert tender info database *********')
         mongodb = self.db
         result = mongodb.insert(go)

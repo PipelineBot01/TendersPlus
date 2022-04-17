@@ -1,7 +1,6 @@
 
 from pymongo import MongoClient
-from sympy import N, re
-import cfg
+import scraper.db.cfg as cfg
 import pandas as pd
 from urllib import parse
 
@@ -151,8 +150,7 @@ class mongo:
         print(len(update_URL_list))
 
         delete_count = 0
-        update_count = 0
-        insert_count = 0
+
         for i in old_url_list:
             if i not in update_set:
                 delete_count += 1
