@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    update_go()
+  File "/home/TendersPlus/scraper/tenders/update_go.py", line 13, in update_go
+    go_update.run()
+  File "/home/TendersPlus/scraper/engine/httpScraper.py", line 205, in run
+    data = open(file_path, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: './assets/gosLink.json'

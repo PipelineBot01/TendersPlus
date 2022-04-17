@@ -1,13 +1,13 @@
 
 from pymongo import MongoClient
-import scraper.db.test_cfg as cfg
+# import db.test_cfg as cfg
 import pandas as pd
 from urllib import parse
-
-mo_host = cfg.mongo_host
-mo_port = cfg.mongo_port
-mo_db = cfg.database_name
-mo_collection = cfg.collection_name
+#
+# mo_host = cfg.mongo_host
+# mo_port = cfg.mongo_port
+# mo_db = cfg.database_name
+# mo_collection = cfg.collection_name
 
 
 class mongo:
