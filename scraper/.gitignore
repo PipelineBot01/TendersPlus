@@ -1,4 +1,5 @@
 __pycache__
 .idea
-./config.py
-./go_conf.py
+config.py
+go_conf.py
+db/test_cfg.py
