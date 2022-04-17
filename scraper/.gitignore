@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __pycache__
 .vscode
 .idea
@@ -19,3 +20,10 @@ scraper/db/cfg.py
 /scraper/tenders/assets/
 /scraper/db/.ipynb_checkpoints/
 /scraper/db/test_cfg.py
+=======
+__pycache__
+.idea
+config.py
+go_conf.py
+db/test_cfg.py
+>>>>>>> fe246614430519802118e6347084fff848bf90e9
