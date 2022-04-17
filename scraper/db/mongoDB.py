@@ -1,6 +1,6 @@
 
 from pymongo import MongoClient
-import scraper.db.cfg as cfg
+import scraper.db.test_cfg as cfg
 import pandas as pd
 from urllib import parse
 
