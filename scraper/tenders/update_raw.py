@@ -1,11 +1,11 @@
 import pandas as pd
 
-from db.mongoDB import mongo
-from go_conf import cfg
+from scraper.db.mongoDB import mongo
+from go_conf import mongo_host, mongo_port, username, passwd, database_name
 
 
 def update_raw_all():
-    db = mongo(cfg.mongo_host, cfg.mongo_port, cfg.username, cfg.passwd, cfg.database_name, cfg.collection_name)
+    db = mongo(mongo_host, mongo_port, username, passwd, database_name, "raw_grants_opened")
     db.use_database('raw_grants_opened')
     open_df = pd.DataFrame(db.find_all())
     new_url = open_df['URL']
