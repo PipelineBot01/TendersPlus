@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import requests
 from lxml import etree
-from scraper.db.mongoDB import mongo
+from db.mongoDB import mongo
 
 
 class webScarper:
