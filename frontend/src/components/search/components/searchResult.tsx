@@ -52,7 +52,7 @@ export default function SearchResult():JSX.Element{
 			setData(response.data as Array<QueryTender>)
 			console.log(123123)
 		
-			useCollector({type:0, payload:	(encodeQuery ? `keywors=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
+			useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
 		}).catch(()=>{
 			setTotalResult(0)
 		})
