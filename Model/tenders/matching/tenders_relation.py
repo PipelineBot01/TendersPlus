@@ -24,6 +24,9 @@ class TendersMatcher(Relation):
 
         self.pk = pk
         self.__info_df = pd.read_csv(info_path)
+
+
+
         self.__tag_df = pd.read_csv(tag_map_path)
         self.__topic_df = pd.read_csv(topic_path)
 
