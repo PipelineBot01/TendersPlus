@@ -1,5 +1,5 @@
 from conf.file_path import RESEARCHER_DIVISION_MAP_PATH, RESEARCHER_INFO_PATH, REG_RESEARCHER_INFO_PATH, \
-    RESEARCHER_TAG_MAP_PATH, RESEARCHER_TAG_DIV_MAP_PATH
+    RESEARCHER_TAG_MAP_PATH, RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_ACTION_PATH
 from db.loadjson import get_data
 from db.mongodb import MongoConx
 from db_conf import UNI_DATA
@@ -16,6 +16,7 @@ class ResearcherUpdater:
                  researcher_tag_path=RESEARCHER_TAG_MAP_PATH,
                  researcher_div_path=RESEARCHER_DIVISION_MAP_PATH,
                  tag_div_map_path=RESEARCHER_TAG_DIV_MAP_PATH,
+                 action_path=RESEARCHER_ACTION_PATH,
                  pk='id'):
         self.pk = pk
         self.__info_path = info_path
@@ -23,6 +24,7 @@ class ResearcherUpdater:
         self.researcher_tag_path = researcher_tag_path
         self.researcher_div_path = researcher_div_path
         self.tag_div_map_path = tag_div_map_path
+        self.action_path = action_path
 
         # get university info from mongo
         self.__mgx = MongoConx('staffs')
@@ -48,6 +50,9 @@ class ResearcherUpdater:
         researcher_div_map = researcher_div_map[~researcher_div_map[self.pk].isin(div_df[self.pk])]
         researcher_div_map = researcher_div_map.append(div_df)
         return researcher_div_map
+
+    def __update_researcher_action(self):
+        get_data('action').to_csv(self.action_path, index=0)
 
     def update(self):
 
@@ -77,5 +82,10 @@ class ResearcherUpdater:
         tag_div_map_df = ri.fit_dataframe(self.__new_tag_div_map_df)
         tag_div_map_df.to_csv(self.tag_div_map_path, index=0)
         print('-- start updating tag div map')
+
+        # update researcher action info
+        print('-- start updating researcher action info')
+        self.__update_researcher_action()
+        print('-- start updating researcher action info')
 
         print('<end updating researcher files>')
