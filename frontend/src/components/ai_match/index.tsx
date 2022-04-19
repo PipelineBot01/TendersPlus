@@ -2,60 +2,63 @@ import React, {useEffect, useState} from 'react'
 
 import { Spin, Row, Col, List, Tag, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faAnglesRight } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesRight, faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+
+
 
 import { DonutChart } from '../charts'
 
 
 import { useAppSelector, useAppDispatch } from '../../store'
-import { setFavourite } from '../../store/features/user'
 
-import { matchTenderAPI, removeUserFavouriteAPI, addUserFavouriteAPI } from '../../api'
+
+import { matchTenderAPI } from '../../api'
 
 import { useCollector } from '../../utils/customHook'
 import capitalize from '../../utils/capitalize'
-import type {QueryTender}  from '../../utils/types'
+import type {QueryTender, MatcherParams}  from '../../utils/types'
+
+import './index.css'
 
 export default function AIMatch():JSX.Element{
 	const [matchResult, setMatchResult] = useState(new Array<QueryTender>())
 	const [isAnalyzing, setIsAnalyzing] = useState(true)
+	const [ratedTenders, setRatedTenders] = useState(new Array<string>())
 	const user = useAppSelector((state)=>state.user)
-	const dispatch = useAppDispatch()
 	useEffect(()=>{
-		matchTenderAPI().then(response=>{
+		const fields = new Array<string>()
+		for (const e of user.research_fields){
+			typeof e === 'string' ? fields.push(e) : fields.push(e.field)
+		}
+		const params:MatcherParams = {research_fields:fields, tags:user.tags}
+
+		matchTenderAPI(params).then(response=>{
 			if(response.data) setMatchResult(response.data)
 		}).finally(()=>{
 			setIsAnalyzing(false)
 		})
 	}, [])
 
-	const handleClickFavouriteBtn = (type:string, id:string)=>{
-		const newUserFavourite = user.favourite.slice()
-		if (type === 'to-remove'){
-			useCollector({type:3, payload:id})
-			message.warn('Cancel Favorite', 1)
-			const index = newUserFavourite.indexOf(id)
-			if(index !== -1){
-				newUserFavourite.splice(index, 1)
-			}
-			removeUserFavouriteAPI(id)
-		}else{
-			useCollector({type:2, payload:id})
-			message.success('Add Favorite', 1)
-			newUserFavourite.push(id)
-			addUserFavouriteAPI(id)
+	const handleClickRatingBtn = (target:HTMLElement, type:number, id:string)=>{
+		console.log(target)
+		setRatedTenders([id, ...ratedTenders])
+		target.classList.add('active')
+
+
+		switch(type){
+		case 0:
+			useCollector({type:4, payload:id})
+			break
+		case 1:
+			useCollector({type:5, payload:id})
 		}
-		dispatch(setFavourite(newUserFavourite))
+        
+		message.info('Thanks for your feedback!', 2)
 	}
 
-	const renderFavouriteBtn = (id:string)=>{
-		if(user.access_token){
-			const className = user.favourite.includes(id) ? 'to-remove' : ''
-			return	<FontAwesomeIcon className={className} onClick={()=>{handleClickFavouriteBtn(className, id)}}  icon={faStar}/>
-		}
-	}
 
-	return (<>
+
+	return (<div className='match-result'>
 		{
 			isAnalyzing ? 
 				<>
@@ -137,14 +140,7 @@ export default function AIMatch():JSX.Element{
 												</Row>
 
 												<Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
-													
-													<Col  className='favourite-btn' >
-														{
-															renderFavouriteBtn(item['GO ID'])
-														}
-													</Col>
-													
-			
+																							
 													<Col span={5}>
 														<a  className='url' 
 															href={item['URL']}
@@ -158,6 +154,26 @@ export default function AIMatch():JSX.Element{
 													</Col>
 													
 												</Row>
+
+												{
+													ratedTenders.includes(item['GO ID']) ?
+														''
+														:
+														<Row className='rating' style={{marginTop:'1rem'}} align='middle' justify='center' gutter={24}>
+															<Col   onClick={(event)=>{
+																handleClickRatingBtn(event.currentTarget, 0, item['GO ID'])
+															}} >
+                                                        	<FontAwesomeIcon style={{marginRight:'0.25rem'}} icon={faThumbsUp}/>Good
+															</Col>
+															<Col  onClick={(event)=>{
+																handleClickRatingBtn(event.currentTarget, 1, item['GO ID'])
+															}}>
+                                                        	<FontAwesomeIcon style={{marginRight:'0.3rem'}} icon={faThumbsDown}/>
+                                                            Dislike
+															</Col>
+														</Row>
+												}
+												
 											</>
 									
 										}
@@ -170,5 +186,5 @@ export default function AIMatch():JSX.Element{
 				</>
 				
 		}
-	</>)
+	</div>)
 }
