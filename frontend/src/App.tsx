@@ -14,7 +14,7 @@ const Profile = React.lazy(()=>import('./components/profile'))
 const Dashboard = React.lazy(()=>import('./pages/dashboard'))
 const Chatty = React.lazy(()=>import('./components/chatty'))
 const Favourite = React.lazy(()=>import('./components/favourite'))
-
+const AIMatch = React.lazy(()=>import('./components/ai_match'))
 
 export default function App() :JSX.Element{
 	return (
@@ -74,10 +74,15 @@ export default function App() :JSX.Element{
 						</React.Suspense>
 					}/>
 					<Route  path='analysis' element={
-						<> 
-							<Spin style={{width:'100%'}} ></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>Coming Soon ...</div>
-						</>
+
+						<React.Suspense fallback={
+							<> 
+								<Spin style={{width:'100%'}} ></Spin>
+								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+							</>
+						}>
+							<AIMatch/>
+						</React.Suspense>
 					}/>
 					<Route  path='chatty' element={
 						<React.Suspense fallback={

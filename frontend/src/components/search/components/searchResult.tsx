@@ -80,6 +80,7 @@ export default function SearchResult():JSX.Element{
 			return	<FontAwesomeIcon className={className} onClick={()=>{handleClickFavouriteBtn(className, id)}}  icon={faStar}/>
 		}
 	}
+	
 	return <>
 		<div className='search-result'>
 			<SearchBar placeholder={`Searched: ${queryKeywords}`}/>

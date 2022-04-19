@@ -36,6 +36,10 @@ export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIRespon
 	return request.post('/matcher/researchers', data)
 }
 
+export const matchTenderAPI = ():Promise<CustomAPIResponse<QueryTender[]>>=>{
+	return request.post('/match/tenders')
+}
+
 export const queryTendersAPI = (type:QueryType, query:string|number):Promise<CustomAPIResponse<QueryTender[]>>=>{
 	switch (type){
 	case 'latest':
@@ -78,3 +82,4 @@ export const addUserFavouriteAPI = (id:string):Promise<CustomAPIResponse<string>
 export const removeUserFavouriteAPI = (id:string):Promise<CustomAPIResponse<string>>=>{
 	return request.post('/favourite/remove', {id})
 }
+
