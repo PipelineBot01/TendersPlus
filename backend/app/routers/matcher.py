@@ -25,7 +25,7 @@ def match_researchers(data: MatcherModel):
         raise HTTPException(500, str(e))
 
 @router.post('/tenders')
-async def match_tenders(data:MatcherModel,email:Depends(check_access_token)):
+async def match_tenders(data:MatcherModel,email:str = Depends(check_access_token)):
     """
     Match tenders via user's divisions, tags and email
 
