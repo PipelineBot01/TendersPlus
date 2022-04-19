@@ -1,5 +1,5 @@
 import os
-from typing import List, Dict
+from typing import List, Dict, Tuple
 
 import numpy as np
 import pandas as pd
@@ -27,7 +27,7 @@ class TendersMatcher(Relation):
         self.__tag_df = pd.read_csv(tag_map_path)
         self.__topic_df = pd.read_csv(topic_path)
 
-    def prepare_dataset(self, tenders_id: str) -> tuple[list, list]:
+    def prepare_dataset(self, tenders_id: str) -> Tuple[list, list]:
         '''
 
         Parameters

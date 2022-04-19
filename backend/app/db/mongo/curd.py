@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from config import settings
-from typing import Union
+from typing import Union, Dict, List
 
 from .engine import mongo
 
@@ -24,7 +24,7 @@ async def db_get_latest_tenders(n: int) -> list:
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
 
 
-def db_get_hot_tenders(n: Union[int, None] = None) -> dict:
+def db_get_hot_tenders(n: Union[int, None] = None) -> Dict:
     """
         if n =None, get all related tenders
     """
@@ -33,7 +33,7 @@ def db_get_hot_tenders(n: Union[int, None] = None) -> dict:
     # setattr(settings, 'HOT_TENDERS', tenders)
 
 
-async def db_get_expiring_tenders(n: int) -> list:
+async def db_get_expiring_tenders(n: int) -> List:
     """
      if n =None, get all related tenders
     """
@@ -50,7 +50,7 @@ async def db_get_expiring_tenders(n: int) -> list:
     return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
 
 
-async def db_get_tenders(keywords: str = None) -> list:
+async def db_get_tenders(keywords: str = None) -> List:
     """
     query all opened opportunities via divisions and tags
     @param divisions: a list of divisions which comes from
@@ -79,7 +79,7 @@ async def db_get_tenders(keywords: str = None) -> list:
     return docs
 
 
-async def db_get_tenders_by_id(id_: str) -> Union[dict, None]:
+async def db_get_tenders_by_id(id_: str) -> Union[Dict, None]:
     """
     query tenders by id
     :param id_: the GO ID of each tenders

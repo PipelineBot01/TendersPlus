@@ -1,6 +1,5 @@
-from typing import List
-import numpy as np
-import pandas as pd
+from typing import Tuple
+
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
@@ -121,7 +120,7 @@ class ResearcherMatcher(Relation):
             tmp_df1['weight'] = tmp_df1['weight_x'] - 1.5 * tmp_df1['weight_y']
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
-    def prepare_dataset(self, researcher_id: str) -> tuple[list, list]:
+    def prepare_dataset(self, researcher_id: str) -> Tuple[list, list]:
 
         '''
 
@@ -155,7 +154,7 @@ class ResearcherMatcher(Relation):
         return [tar_div_df, ref_div_df], [tar_tag_df, ref_tag_df]
 
     # TODO: temp code
-    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> tuple[list, list]:
+    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> Tuple[list, list]:
         '''
 
         Parameters

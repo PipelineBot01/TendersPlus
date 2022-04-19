@@ -19,3 +19,4 @@ scraper/db/cfg.py
 /scraper/tenders/assets/
 /scraper/db/.ipynb_checkpoints/
 /scraper/db/test_cfg.py
+supervisord.conf

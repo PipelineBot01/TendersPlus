@@ -135,7 +135,7 @@ class ResearcherMatcher():
 
         Returns
         -------
-        tuple[list, list],
+        Tuple[list, list],
         '''
 
         # Check if this researcher exist or if the tags are not None
@@ -164,7 +164,7 @@ class ResearcherMatcher():
 
         Returns
         -------
-        tuple[list, list],
+        Tuple[list, list],
         '''
 
         division_dict = get_div_rank_dict(divs)
