@@ -1,7 +1,5 @@
 from tenders.update_go import update_go
-
 from apscheduler.schedulers.blocking import BlockingScheduler
-
 from datetime import datetime
 
 

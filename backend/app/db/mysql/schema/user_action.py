@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, DATETIME, ForeignKey, PrimaryKeyConstraint
+from sqlalchemy import Column, String, DATETIME, ForeignKey, PrimaryKeyConstraint,TEXT
 from ..engine import base
 
 
@@ -15,6 +15,6 @@ class SQLUserAction(base):
     __tablename__ = 'user_action'
     email = Column(String(128), ForeignKey('user.email'))
     type = Column(String(2), nullable=False)
-    payload = Column(String(256), nullable=False)
+    payload = Column(TEXT, nullable=False)
     action_date = Column(DATETIME,nullable=False)
     PrimaryKeyConstraint(email, action_date)
