@@ -4,7 +4,7 @@ from ..engine import base
 
 class SQLUserAction(base):
     """
-    tpye, "0": search, "1": open link, "2": save to favorite
+    tpye, "0": search, "1": open link, "2": save to favorite,"3" rate for matching
     """
     __tablename__ = 'user_action'
     email = Column(String(128), ForeignKey('user.email'))

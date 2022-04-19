@@ -18,27 +18,19 @@ export default function Discovery():JSX.Element{
 	const [expiringTenders, setExpiringTenders] = useState(new Array<QueryTender>())
 	const [hotTenders, setHotTenders] = useState(new Array<QueryTender>())
 	useEffect(()=>{
-		queryTendersCountAPI().then((response)=>{
-			if(response.data){
-				setTotalNumberTenders(response.data)
-			}
+		Promise.all([queryTendersCountAPI(),
+			queryTendersAPI('latest', 3),
+			queryTendersAPI('expiring', 3),
+			queryTendersAPI('hot', 3)]).then(responses=>{
+			const [res1, res2, res3, res4] = responses
+			if(res1.data) setTotalNumberTenders(res1.data)
+			if(res2.data) setLatestTenders(res2.data)
+			if(res3.data) setExpiringTenders(res3.data)
+			if(res4.data) setHotTenders(res4.data)
 		})
-		queryTendersAPI('latest', 3).then((response)=>{
-			if(response.data){
-				setLatestTenders(response.data)
-			}
-		})
-		queryTendersAPI('expiring', 3).then((response)=>{
-			if(response.data){
-				setExpiringTenders(response.data)
-			}
-		})
-		queryTendersAPI('hot', 3).then((response)=>{
-			if(response.data){
-				setHotTenders(response.data)
-			}
-		})
+		
 	}, [])
+	
 	const renderTenders = (tenders:QueryTender[])=>{
 		return tenders.map((item, index)=>{
 			const tags:Array<string> = item.tags?.split(' ')
