@@ -6,12 +6,11 @@ import type {
 	Login, 
 	Signup, 
 	ProfileForm,
-	MatchResearcher, 
+	MatcherParams, 
 	UniversityStrengthMap,
 	QueryTender,
 	QueryType,
 	UserAction } from '../utils/types'
-
 export const getUserInfoAPI = ():Promise<CustomAPIResponse<UserInfo>> =>{
 	return request.get('/user')
 }
@@ -32,12 +31,12 @@ export const strengthOverviewAPI = ():Promise<CustomAPIResponse<UniversityStreng
 	return request.get('/strength_overview')
 }
 
-export const matchResearcherAPI = (data:MatchResearcher):Promise<CustomAPIResponse<any>> =>{
+export const matchResearcherAPI = (data:MatcherParams):Promise<CustomAPIResponse<any>> =>{
 	return request.post('/matcher/researchers', data)
 }
 
-export const matchTenderAPI = ():Promise<CustomAPIResponse<QueryTender[]>>=>{
-	return request.post('/match/tenders')
+export const matchTenderAPI = (data:MatcherParams):Promise<CustomAPIResponse<QueryTender[]>>=>{
+	return request.post('/matcher/tenders', data)
 }
 
 export const queryTendersAPI = (type:QueryType, query:string|number):Promise<CustomAPIResponse<QueryTender[]>>=>{

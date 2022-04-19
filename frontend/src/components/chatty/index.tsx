@@ -2,16 +2,15 @@ import React, {useState, useEffect} from 'react'
 import {Row, Col, Card, Avatar, Tag, Divider, Spin } from 'antd'
 import { matchResearcherAPI } from '../../api'
 import { useAppSelector } from '../../store'
-import type { MatchResearcher } from '../../utils/types'
+import type { MatcherParams } from '../../utils/types'
 import capitalize from '../../utils/capitalize'
 import './index.css'
 export default function Chatty():JSX.Element{
 	const userInfo = useAppSelector(state=>state.user)
 	const [researchers, setResearchers] = useState(new Array<any>())
-
 	useEffect(()=>{
 		console.log('chatty', userInfo)
-		const data:MatchResearcher = {
+		const data:MatcherParams = {
 			research_fields:userInfo.research_fields.map(e=>{ 
 				if(typeof e === 'object'){
 					return e.field

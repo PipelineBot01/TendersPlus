@@ -56,7 +56,7 @@ export interface UniversityStrengthMap{
     [key:string]:Array<UniversityStrength>
 }
 
-export interface MatchResearcher{
+export interface MatcherParams{
     research_fields:Array<string>
     tags:Array<string>
 }
