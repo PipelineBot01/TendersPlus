@@ -2,18 +2,17 @@ import sys
 from typing import Dict
 
 import pandas as pd
-from conf.file_path import RESEARCHER_ACTION_PATH
-from db.loadjson import get_data
+from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
 from utils.match_utils import normalize
 
-WEIGHT_MAP = {1: 0.55, 2: 0.75}
-sys.path.append('../../Model')
+WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
+sys.path.append('../../matcher')
 
 
 class Filter:
-    def __init__(self, act_path=RESEARCHER_ACTION_PATH):
+    def __init__(self, act_path=RESEARCHER_ACTION_PATH, tenders_info_path=TENDERS_INFO_PATH):
         self.__rm = ResearcherMatcher(re_div_path='../researcher/assets/researcher_division.csv',
                                       re_tag_path='../researcher/assets/researcher_tag.csv',
                                       tag_div_path='../researcher/assets/tag_division_map.csv',
@@ -22,6 +21,7 @@ class Filter:
                                    topic_path='../tenders/assets/tenders_topic.csv',
                                    info_path='../tenders/assets/clean_trains_info.csv')
         self.__act_df = pd.read_csv(act_path)
+        self.__tenders_info_df = pd.read_csv(tenders_info_path)
 
     def __get_sim_researcher(self, r_id: str):
         result_df = self.__rm.match_by_id(r_id)
@@ -36,7 +36,7 @@ class Filter:
         return result_df
 
     def __get_sim_profile_res(self, profile):
-        result_df = self.__rm.match_by_profile(profile['divisions'], profile['tags'])
+        result_df = self.__rm.match_by_profile(profile['divisions'], profile['tags'], get_dict=False)
         if result_df.empty:
             pass
         return result_df
@@ -82,11 +82,14 @@ class Filter:
 
         '''
         sim_re_df = self.__get_sim_profile_res(profile_dict)
-        remain_movement = self.__act_df.merge(sim_re_df, left_on='r_id', right_on='Staff ID')
+        remain_movement = self.__act_df.merge(sim_re_df, on='id')
         del sim_re_df
 
-        remain_movement['act_type'] = remain_movement['act_type'].map(lambda x: WEIGHT_MAP[x])
-        act_tenders_df = remain_movement.groupby('t_id').agg({'act_type': 'max', 'weight': 'min'}).reset_index()
+        remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
+        remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
+
+        remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
+        act_tenders_df = remain_movement.groupby('id').agg({'type': 'max', 'weight': 'min'}).reset_index()
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
         del remain_movement
 
@@ -103,5 +106,5 @@ class Filter:
 
 
 if __name__ == '__main__':
-    filter = Filter()
-    print(filter.match())  # Health Office
+    filter = Filter('../researcher/assets/researcher_action.csv')
+    print(filter.match({'id': '123', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))

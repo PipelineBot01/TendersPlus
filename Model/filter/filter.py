@@ -1,9 +1,8 @@
 import sys
-from typing import Dict
-
+import numpy as np
 import pandas as pd
-
-from db.loadjson import get_data
+import datetime
+from conf.file_path import RESEARCHER_MOVEMENT
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
 from utils.match_utils import normalize
@@ -13,15 +12,10 @@ sys.path.append('../../Model')
 
 
 class Filter:
-    def __init__(self):
-        self.__rm = ResearcherMatcher(re_div_path='../researcher/assets/researcher_division.csv',
-                                      re_tag_path='../researcher/assets/researcher_tag.csv',
-                                      tag_div_path='../researcher/assets/tag_division_map.csv',
-                                      re_info_path='../researcher/assets/researcher_info.csv')
-        self.__tm = TendersMatcher(tag_map_path='../tenders/assets/tenders_tag.csv',
-                                   topic_path='../tenders/assets/tenders_topic.csv',
-                                   info_path='../tenders/assets/clean_trains_info.csv')
-        self.__act_df = get_data('action')
+    def __init__(self, act_path=RESEARCHER_MOVEMENT):
+        self.__rm = ResearcherMatcher()
+        self.__tm = TendersMatcher()
+        self.__act_df = pd.read_csv(act_path)
 
     def __get_sim_researcher(self, r_id: str):
         result_df = self.__rm.match_by_id(r_id)
@@ -31,12 +25,6 @@ class Filter:
 
     def __get_sim_tenders(self, t_id: str):
         result_df = self.__tm.match(t_id)
-        if result_df.empty:
-            pass
-        return result_df
-
-    def __get_sim_profile_res(self, profile):
-        result_df = self.__rm.match_by_profile(profile['divisions'], profile['tags'])
         if result_df.empty:
             pass
         return result_df
@@ -69,7 +57,7 @@ class Filter:
 
         return merge_df[['id', 'weight']]
 
-    def match(self, profile_dict: Dict, func=tmp_measure) -> pd.DataFrame:
+    def match(self, r_id: str, func=tmp_measure) -> pd.DataFrame:
         '''
 
         Parameters
@@ -81,10 +69,10 @@ class Filter:
         -------
 
         '''
-        sim_re_df = self.__get_sim_profile_res(profile_dict)
-        print(self.__act_df)
+        sim_re_df = self.__get_sim_researcher(r_id)
         remain_movement = self.__act_df.merge(sim_re_df, left_on='r_id', right_on='Staff ID')
         del sim_re_df
+
 
         remain_movement['act_type'] = remain_movement['act_type'].map(lambda x: WEIGHT_MAP[x])
         act_tenders_df = remain_movement.groupby('t_id').agg({'act_type': 'max', 'weight': 'min'}).reset_index()
@@ -104,5 +92,30 @@ class Filter:
 
 
 if __name__ == '__main__':
+    # Research Institute for Sport & Exercise  -visit-  Arthritis Information, Education and Support [high relation]
+    # Sport & Exercise Science  -visit-  National Disability Insurance Agency (NDIA)  [relation]
+    # Physiotherapy  -visit-  Mental Health in Mulitcultural Australia  [low relation]
+    # Sport & Exercise Science  -visit-  Department of Health (Indigenous Remote Service Delivery Traineeship NT)  [noise]
+    # Canberra School of Politics, Economics and Society  -visit-  National Health and Medical Research Council (NHMRC) [noise]
+    # Business, Government & Law Office  -visit-  Regional Jobs and Investment Packages - Tropical North Queensland region [noise]
+    pd.DataFrame({'r_id': ['Canberra61587c82d7b0c43ebd755358',
+                           'Canberra615861add7b0c43ebd755246',
+                           'Canberra615871d1d7b0c43ebd7552f7',
+                           'Canberra61585a56d7b0c43ebd7551dd',
+                           'Canberra61585a81d7b0c43ebd7551e1',
+                           'Canberra61585c9cd7b0c43ebd7551fa'],
+                  'time': [datetime.datetime.now(),
+                           datetime.datetime.now(),
+                           datetime.datetime.now(),
+                           datetime.datetime.now(),
+                           datetime.datetime.now(),
+                           datetime.datetime.now()],
+                  't_id': ['Grants623b012fb34a6bd48ae4bf53',
+                           'Grants623afc09b34a6bd48ae4bd6a',
+                           'Grants623afbf6b34a6bd48ae4bd63',
+                           'Grants623afc0fb34a6bd48ae4bd6c',
+                           'Grants623afc13b34a6bd48ae4bd6d',
+                           'Grants623afbb2b34a6bd48ae4bd49'],
+                  'act_type': [2, 1, 1, 1, 1, 1]}).to_csv('assets/test.csv', index=0)
     filter = Filter()
-    print(filter.match())  # Health Office
+    print(filter.match('Canberra61585cffd7b0c43ebd755201')) #Health Office

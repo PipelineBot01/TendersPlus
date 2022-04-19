@@ -103,7 +103,7 @@ class TendersMatcher(Relation):
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.pk, how='outer')
             tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
             tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
-            tmp_df1['weight'] = tmp_df1['weight_y'] - 1.2*tmp_df1['weight_x']
+            tmp_df1['weight'] = tmp_df1['weight_y'] - 1.2 * tmp_df1['weight_x']
         del tmp_df2
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
@@ -126,6 +126,6 @@ class TendersMatcher(Relation):
         # handle no enough matching result
         if len(candidate_df) < match_num:
             tmp_info_df = self.__info_df[self.__info_df[self.pk] == tenders_id]
-            candidate_df = candidate_df.append(self.__info_df[self.__info_df['category']
-                                                              == tmp_info_df['category']].sample(frac=1))
+            candidate_df = candidate_df.append(
+                self.__info_df[self.__info_df['category'].isin(tmp_info_df['category'])].sample(frac=1))
         return candidate_df[:min(match_num, len(candidate_df))]

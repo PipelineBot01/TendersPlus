@@ -35,7 +35,7 @@ class TendersUpdater:
     def __check_quality(self, raw_data: pd.DataFrame, key_id='GO ID') -> pd.DataFrame:
         assert len(raw_data[raw_data[key_id].isna()]) / len(
             raw_data) < 0.1, f'---- contains over 10% grants with missing {key_id}'
-        n_dup = len(raw_data[key_id].duplicated())
+        n_dup = len(raw_data.duplicated([key_id]))
         if n_dup > 0:
             print(f'---- contains {n_dup} duplicated grants')
         return raw_data.drop_duplicates(key_id, keep='first')

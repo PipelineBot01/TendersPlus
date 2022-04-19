@@ -52,8 +52,10 @@ class ResearcherUpdater:
         return researcher_div_map
 
     def __update_researcher_action(self):
-        get_data('action').to_csv(self.action_path, index=0)
-
+        action_df = get_data('action')
+        action_df[self.pk] = 'Reg_' + action_df['email']
+        action_df.to_csv(self.action_path, index=0)
+        
     def update(self):
 
         print('<start updating researcher files>')
@@ -86,6 +88,6 @@ class ResearcherUpdater:
         # update researcher action info
         print('-- start updating researcher action info')
         self.__update_researcher_action()
-        print('-- start updating researcher action info')
+        print('-- end updating researcher action info')
 
         print('<end updating researcher files>')
