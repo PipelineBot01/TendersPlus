@@ -50,6 +50,9 @@ export default function SearchResult():JSX.Element{
 		queryTendersAPI(type, encodeQuery).then((response)=>{
 			setTotalResult(response.data?.length || 0)
 			setData(response.data as Array<QueryTender>)
+			console.log(123123)
+		
+			useCollector({type:0, payload:	(encodeQuery ? `keywors=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
 		}).catch(()=>{
 			setTotalResult(0)
 		})
@@ -116,7 +119,7 @@ export default function SearchResult():JSX.Element{
 											title={
 												<a href={item['URL']} className='link' 
 													onClick={()=>{
-														useCollector({type:1, payload:item['URL']})
+														useCollector({type:1, payload:item['GO ID']})
 													}}
 												>{item['GO ID'] + ' - ' + item['Title']}</a>        
 											} 
@@ -178,7 +181,7 @@ export default function SearchResult():JSX.Element{
 															<a  className='url' 
 																href={item['URL']}
 																onClick={()=>{
-																	useCollector({type:1, payload:item['URL']})
+																	useCollector({type:1, payload:item['GO ID']})
 																}}
 															>
 															Read more

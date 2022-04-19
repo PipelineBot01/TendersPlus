@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
 
 import './searchBar.css'
-import { useCollector } from "../../../utils/customHook"
 import { researchFields } from "../../../utils/data/researchFields"
 import capitalize from '../../../utils/capitalize'
 
@@ -30,14 +29,12 @@ export default function SearchBar(props:SearchBarProp):JSX.Element{
 	const [dropdownVisible, setDropdownVisible] = useState(false)
 	const onSearch = (value:string)=>{
 		let targetPath = '/search'
-		useCollector({type:0, payload:value})
 		if(location.pathname.includes('dashboard')){
 			targetPath = '/dashboard' + targetPath
 		}
 		if(value){
 			targetPath += '?query=' + window.btoa(value)
 		}
-		console.log(targetPath)
 		navigate(targetPath)
 	}
 	const onSelectedMenuItem = (item:any)=>{

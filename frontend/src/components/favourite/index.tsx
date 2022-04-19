@@ -73,7 +73,7 @@ export default function Favourite():JSX.Element{
 							title={
 								<a href={item['URL']} className='link' 
 									onClick={()=>{
-										useCollector({type:1, payload:item['URL']})
+										useCollector({type:1, payload:item['GO ID']})
 									}}
 								>{item['GO ID'] + ' - ' + item['Title']}</a>        
 							} 
@@ -128,7 +128,7 @@ export default function Favourite():JSX.Element{
 											<a  className='url' 
 												href={item['URL']}
 												onClick={()=>{
-													useCollector({type:1, payload:item['URL']})
+													useCollector({type:1, payload:item['GO ID']})
 												}}
 											>
 															Read more

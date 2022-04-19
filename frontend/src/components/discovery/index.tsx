@@ -77,7 +77,7 @@ export default function Discovery():JSX.Element{
 						<a  className='url' 
 							href={item['URL']}
 							onClick={()=>{
-								useCollector({type:1, payload:item['URL']})
+								useCollector({type:1, payload:item['GO ID']})
 							}}
 						>
 							Read more
