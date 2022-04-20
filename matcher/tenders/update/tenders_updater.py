@@ -1,7 +1,7 @@
 import os
 
 import pandas as pd
-
+from conf.clean import REMAIN_COLS
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
     TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH
 from db.mongodb import MongoConx
@@ -26,7 +26,7 @@ class TendersUpdater:
         self.cate_div_map = cate_div_map
 
         self.mgx = MongoConx('tenders')
-        self.raw_data_df = self.mgx.read_df('raw_grants_opened')
+        self.raw_data_df = self.mgx.read_df_by_cols('raw_grants_opened', REMAIN_COLS)
         self.raw_data_df = self.__check_quality(self.raw_data_df)
 
         self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
@@ -173,7 +173,7 @@ class TendersUpdater:
             raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]
             overwrite = False
         else:
-            old_raw_data_df = self.mgx.read_df('raw_grants_all')
+            old_raw_data_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
             old_raw_data_df['_id'] = old_raw_data_df['_id'].astype(str)
             old_raw_data_df[self.pk] = 'Grants' + old_raw_data_df['_id']
             old_raw_data_df = old_raw_data_df[~old_raw_data_df[self.pk].isin(self.raw_data_df[self.pk].unique())]
@@ -217,7 +217,7 @@ class TendersUpdater:
         error_1 = self.__keyword_error_checking(info_df)
         error_2 = self.__topic_error_checking(info_df)
 
-        if error_1 or error_2:
+        if 1==1:
             print('-- fixing missing opened data')
             new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)

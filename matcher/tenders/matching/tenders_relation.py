@@ -126,6 +126,9 @@ class TendersMatcher(Relation):
         # handle no enough matching result
         if len(candidate_df) < match_num:
             tmp_info_df = self.__info_df[self.__info_df[self.pk] == tenders_id]
-            candidate_df = candidate_df.append(
-                self.__info_df[self.__info_df['category'].isin(tmp_info_df['category'])].sample(frac=1))
+            others_df = self.__info_df[self.__info_df[self.pk] != tenders_id]
+            tmp_df = others_df[others_df['category'].isin(tmp_info_df['category'])].sample(frac=1)[['id']]
+            tmp2_df = others_df[others_df['agency'].isin(tmp_info_df['agency'])].sample(frac=1)[['id']]
+            candidate_df = candidate_df.append(tmp_df).append(tmp2_df)
+            candidate_df['weight'] = candidate_df['weight'].fillna(1/len(candidate_df))
         return candidate_df[:min(match_num, len(candidate_df))]
