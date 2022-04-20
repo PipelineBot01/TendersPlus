@@ -118,6 +118,7 @@ class ResearcherMatcher(Relation):
             tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
             del tmp_df2
             tmp_df1['weight'] = tmp_df1['weight_x'] - 1.5 * tmp_df1['weight_y']
+        tmp_df1.loc[tmp_df1['weight'] == 0, 'weight'] = 0.000001
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]
 
     def prepare_dataset(self, researcher_id: str) -> Tuple[list, list]:
@@ -154,7 +155,7 @@ class ResearcherMatcher(Relation):
         return [tar_div_df, ref_div_df], [tar_tag_df, ref_tag_df]
 
     # TODO: temp code
-    def prepare_dataset_by_profile(self, divs: List[str], tags: List[str]) -> Tuple[list, list]:
+    def prepare_dataset_by_profile(self, id, divs: List[str], tags: List[str]) -> Tuple[list, list]:
         '''
 
         Parameters
@@ -168,7 +169,7 @@ class ResearcherMatcher(Relation):
         '''
 
         division_dict = get_div_rank_dict(divs)
-        tar_div_df = pd.DataFrame({self.pk: 'current_tmp',
+        tar_div_df = pd.DataFrame({self.pk: 'current_tmp' if not id else id,
                                    'division': list(division_dict.keys()),
                                    'weight': list(division_dict.values())})
 
@@ -219,9 +220,11 @@ class ResearcherMatcher(Relation):
             lambda x: list(set(x))).reset_index()
         del tmp_re_div
 
-        return info_df.merge(agg_tag_df, on=self.pk).merge(agg_div_df, on=self.pk).sort_values('weight')
+        return info_df.merge(agg_tag_df, on=self.pk, how='left'
+                             ).merge(agg_div_df, on=self.pk, how='left').sort_values('weight')
 
-    def match_by_profile(self, divs: List[str],
+    def match_by_profile(self, id: str,
+                         divs: List[str],
                          tags: List[str] = None,
                          match_num=10,
                          measure_func=__combined_measure,
@@ -230,6 +233,7 @@ class ResearcherMatcher(Relation):
 
         Parameters
         ----------
+        id: str, the input user id
         divs: List[str], list of divisions selected by user, cannot be empty
         tags: List[str], list of tags selected by user, default as None
         match_num: int, defined how many matched researcher will be returned.
@@ -241,8 +245,10 @@ class ResearcherMatcher(Relation):
         '''
 
         assert len(divs) != 0, 'At least the division should not be empty.'
-        div_list, tag_list = self.prepare_dataset_by_profile(divs, tags)
+        div_list, tag_list = self.prepare_dataset_by_profile(id, divs, tags)
+
         candidate_df = measure_func(self, div_list, tag_list)
+        candidate_df = candidate_df[candidate_df['id'] != id]
 
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
         sim_df = self.__reformat_output(sim_df, ['name', 'email', 'colleges'])
@@ -272,6 +278,6 @@ class ResearcherMatcher(Relation):
             other_df = self.INFO_DF[self.INFO_DF[self.pk] != researcher_id][[self.pk]]
             tmp_df = other_df[other_df['colleges'].isin(tmp_info_df['colleges'])].sample(frac=1)
             candidate_df = candidate_df.append(tmp_df)
-            candidate_df['weight'] = candidate_df['weight'].fillna(1/len(candidate_df))
+            candidate_df['weight'] = candidate_df['weight'].fillna(1 / len(candidate_df))
         sim_df = candidate_df[:match_num]
         return sim_df

@@ -1,6 +1,6 @@
 import sys
 from typing import Dict
-
+import os
 import pandas as pd
 from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
@@ -36,7 +36,7 @@ class Filter:
         return result_df
 
     def __get_sim_profile_res(self, profile):
-        result_df = self.__rm.match_by_profile(profile['divisions'], profile['tags'], get_dict=False)
+        result_df = self.__rm.match_by_profile(profile['id'], profile['divisions'], profile['tags'], get_dict=False)
         if result_df.empty:
             pass
         return result_df
@@ -58,7 +58,7 @@ class Filter:
         merge_df = re_weight_df.merge(act_tenders_df, left_on='orig', right_on='t_id')
         del act_tenders_df, save_df
 
-        merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['act_type'])
+        merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['type'])
         re_weight_df = merge_df.groupby(['id']).agg({'weight': 'min'}).reset_index()
         re_cnt_df = merge_df.groupby('id')['orig'].count().reset_index().rename(columns={'orig': 'cnt'})
         merge_df = re_weight_df.merge(re_cnt_df, on='id')
@@ -83,13 +83,28 @@ class Filter:
         '''
         sim_re_df = self.__get_sim_profile_res(profile_dict)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
+
+        if remain_movement.empty:
+            print(f'{profile_dict} with no similar data')
+            # TODO: only for testing -Ray 2022/4/20
+            profile_dict['divisions'] = '/'.join(i for i in profile_dict['divisions'])
+            profile_dict['tags'] = '/'.join(i for i in profile_dict['tags'])
+            if os.path.exists('missing_record.csv'):
+                tmp_df = pd.read_csv('missing_record.csv')
+                tmp_df.append(profile_dict, ignore_index=True).to_csv('missing_record.csv', index=0)
+            else:
+                pd.DataFrame(profile_dict, index=[0]).to_csv('missing_record.csv', index=0)
+            return pd.DataFrame()
         del sim_re_df
 
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
         remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
-
+        remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
         remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
-        act_tenders_df = remain_movement.groupby('id').agg({'type': 'max', 'weight': 'min'}).reset_index()
+        remain_movement.rename(columns={'id': 't_id'}, inplace=True)
+        remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / remain_movement[
+            'r_id'].nunique()
+        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'min'}).reset_index()
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
         del remain_movement
 
@@ -106,5 +121,6 @@ class Filter:
 
 
 if __name__ == '__main__':
-    filter = Filter('../researcher/assets/researcher_action.csv')
-    print(filter.match({'id': '123', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))
+    filter = Filter('../researcher/assets/researcher_action.csv',
+                    '../tenders/assets/clean_trains_info.csv')
+    print(filter.match({'id': 'Reg_Ryanyang@anu.com', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))

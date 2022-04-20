@@ -217,7 +217,7 @@ class TendersUpdater:
         error_1 = self.__keyword_error_checking(info_df)
         error_2 = self.__topic_error_checking(info_df)
 
-        if 1==1:
+        if error_1 or error_2:
             print('-- fixing missing opened data')
             new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)

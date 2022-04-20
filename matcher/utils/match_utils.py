@@ -49,7 +49,7 @@ def normalize(input_df, target_col, method='proportion', bounds=[0, 1]):
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
 
     elif method == 'scaled_max_min':
-        if len(input_df) == 1:
+        if input_df[target_col].nunique() == 1:
             input_df[target_col] = 1
             return input_df
         input_df = input_df.sort_values(target_col).reset_index(drop=True)

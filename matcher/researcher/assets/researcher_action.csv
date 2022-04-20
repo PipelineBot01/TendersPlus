@@ -1,52 +1,83 @@
-action_date,email,type,payload
-2022-04-06T12:00:34,a@a.com,0,covid-19
-2022-04-06T21:32:33,a@a.com,0,
-2022-04-06T23:24:06,a@a.com,0,dd
-2022-04-06T23:24:14,a@a.com,0,dd
-2022-04-06T23:24:18,a@a.com,0,dd
-2022-04-06T23:24:19,a@a.com,0,dd
-2022-04-06T23:24:20,a@a.com,0,dd
-2022-04-06T23:24:25,a@a.com,0,dd
-2022-04-06T23:24:26,a@a.com,0,dd
-2022-04-06T23:27:16,a@a.com,0,dd
-2022-04-07T09:01:27,a@a.com,1,https://www.grants.gov.au/Go/Show?GoUuid=010b4312-03ce-265c-c2db-7e8c3e86e724
-2022-04-07T10:54:05,a@a.com,0,
-2022-04-07T10:54:15,a@a.com,2,GO4344
-2022-04-07T10:54:17,a@a.com,2,GO356
-2022-04-07T10:54:21,a@a.com,3,GO356
-2022-04-07T10:54:22,a@a.com,3,GO4344
-2022-04-07T10:56:48,a@a.com,2,GO4344
-2022-04-07T13:15:25,a@a.com,3,GO4344
-2022-04-19T09:03:26,a@a.com,2,GO4916
-2022-04-19T09:03:28,a@a.com,3,GO4916
-2022-04-06T11:46:16,a@b.com,0,people
-2022-04-06T11:53:59,a@b.com,0,people
-2022-04-06T11:54:05,a@b.com,0,covid-19
-2022-04-06T11:54:10,a@b.com,0,covid-19
-2022-04-06T11:54:15,a@b.com,0,people
-2022-04-06T11:54:29,a@b.com,0,health
-2022-04-06T17:00:15,a@b.com,0,
-2022-04-06T21:27:30,a@b.com,0,
-2022-04-05T19:36:48,Ryanyang@anu.com,0,people
-2022-04-05T19:37:13,Ryanyang@anu.com,1,https://www.grants.gov.au/Go/Show?GoUuid=a9fdb376-058f-44c9-b0ff-c5f043268c5a
-2022-04-14T12:15:04,Ryanyang@anu.com,2,GO356
-2022-04-14T12:15:10,Ryanyang@anu.com,3,GO358
-2022-04-14T12:15:11,Ryanyang@anu.com,3,GO356
-2022-04-14T12:15:42,Ryanyang@anu.com,1,/search/expring
-2022-04-14T12:16:19,Ryanyang@anu.com,0,
-2022-04-15T10:25:46,Ryanyang@anu.com,0,edeee
-2022-04-15T12:57:29,Ryanyang@anu.com,0,Physical Chemical Earth
-2022-04-15T12:57:54,Ryanyang@anu.com,0,Earth
-2022-04-15T12:58:01,Ryanyang@anu.com,0,Environmental
-2022-04-15T12:59:33,Ryanyang@anu.com,0,Studies in human society
-2022-04-15T14:41:33,Ryanyang@anu.com,0,Chemical
-2022-04-05T16:47:06,v@v.com,0,abc
-2022-04-05T16:47:29,v@v.com,0,abc
-2022-04-05T16:47:37,v@v.com,0,people
-2022-04-05T18:42:03,v@v.com,0,
-2022-04-05T18:47:00,v@v.com,0,dsasd
-2022-04-05T18:47:02,v@v.com,0,asd
-2022-04-05T18:47:04,v@v.com,0,a
-2022-04-05T18:47:06,v@v.com,0,people
-2022-04-05T18:47:13,v@v.com,1,https://www.grants.gov.au/Go/Show?GoUuid=a9fdb376-058f-44c9-b0ff-c5f043268c5a
-2022-04-05T18:51:09,v@v.com,1,/search/latest
+id,type,action_date,go_id
+Reg_a@a.com,0,2022-04-19 16:26:41,GO5484
+Reg_a@a.com,0,2022-04-19 16:26:41,GO5359
+Reg_a@a.com,0,2022-04-19 16:26:41,GO4733
+Reg_a@a.com,0,2022-04-19 16:26:41,GO4778
+Reg_a@a.com,0,2022-04-19 16:26:41,GO5448
+Reg_a@a.com,2,2022-04-19 16:27:00,GO5484
+Reg_a@a.com,3,2022-04-19 16:27:01,GO5484
+Reg_a@a.com,2,2022-04-19 16:27:11,GO5448
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5563
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5562
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5443
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5602
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5472
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5181
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4778
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4491
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO3877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5547
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO3880
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5216
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO5254
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4749
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:26,GO4215
+Reg_Ryanyang@anu.com,2,2022-04-19 16:25:27,GO4215
+Reg_Ryanyang@anu.com,2,2022-04-19 16:25:29,GO4749
+Reg_Ryanyang@anu.com,2,2022-04-19 16:25:30,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5563
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5562
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5443
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5602
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5472
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5181
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4778
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4491
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO3877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5547
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO3880
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5216
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO5254
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4749
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:34,GO4215
+Reg_Ryanyang@anu.com,1,2022-04-19 16:25:35,GO4215
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5563
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5562
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5443
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5602
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5472
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5181
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4778
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4491
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO3877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5547
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO3880
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5216
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO5254
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4749
+Reg_Ryanyang@anu.com,0,2022-04-19 16:25:50,GO4215
+Reg_Ryanyang@anu.com,1,2022-04-19 16:26:01,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5563
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5562
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5443
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5602
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5472
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5181
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4778
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4491
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO3877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4877
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5547
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO3880
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5216
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO5254
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4863
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4749
+Reg_Ryanyang@anu.com,0,2022-04-19 16:26:03,GO4215
+Reg_Ryanyang@anu.com,1,2022-04-19 16:26:35,GO5496
