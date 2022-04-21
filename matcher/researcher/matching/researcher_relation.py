@@ -278,6 +278,7 @@ class ResearcherMatcher(Relation):
             other_df = self.INFO_DF[self.INFO_DF[self.pk] != researcher_id][[self.pk]]
             tmp_df = other_df[other_df['colleges'].isin(tmp_info_df['colleges'])].sample(frac=1)
             candidate_df = candidate_df.append(tmp_df)
-            candidate_df['weight'] = candidate_df['weight'].fillna(1 / len(candidate_df))
+            candidate_df['weight'] = candidate_df['weight'].fillna(
+                np.mean(candidate_df[candidate_df['weight'].notna()]))
         sim_df = candidate_df[:match_num]
         return sim_df

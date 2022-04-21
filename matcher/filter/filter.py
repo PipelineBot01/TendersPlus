@@ -1,7 +1,10 @@
+import os
 import sys
 from typing import Dict
-import os
+
+import numpy as np
 import pandas as pd
+
 from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
@@ -81,6 +84,8 @@ class Filter:
         -------
 
         '''
+        if profile_dict['id'] != '':
+            profile_dict['id'] = 'Reg_' + profile_dict['id']
         sim_re_df = self.__get_sim_profile_res(profile_dict)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
 
@@ -100,10 +105,11 @@ class Filter:
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
         remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
         remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
+        print(remain_movement.columns)
         remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
         remain_movement.rename(columns={'id': 't_id'}, inplace=True)
-        remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / remain_movement[
-            'r_id'].nunique()
+        remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
+            profile_dict[profile_dict['weight'].notna()])
         act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'min'}).reset_index()
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
         del remain_movement
@@ -123,4 +129,4 @@ class Filter:
 if __name__ == '__main__':
     filter = Filter('../researcher/assets/researcher_action.csv',
                     '../tenders/assets/clean_trains_info.csv')
-    print(filter.match({'id': 'Reg_Ryanyang@anu.com', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))
+    print(filter.match({'id': 'Ryanyang@anu.com', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))

@@ -16,11 +16,12 @@ def fn():
     print(f'{datetime.now()} -- done update')
 
 
-if __name__ == '__main__':
-    fn()
-    bs = BlockingScheduler(daemon=True)
-    bs.add_job(fn, 'interval', hours=1)
-    try:
-        bs.start()
-    except Exception as e:
-        bs.shutdown()
+# if __name__ == '__main__':
+#     fn()
+#     bs = BlockingScheduler(daemon=True)
+#     bs.add_job(fn, 'interval', hours=1)
+#     try:
+#         bs.start()
+#     except Exception as e:
+#         bs.shutdown()
+fn()
