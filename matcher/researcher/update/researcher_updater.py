@@ -4,10 +4,13 @@ from db.loadjson import get_data
 from db.mongodb import MongoConx
 from db_conf import UNI_DATA
 import pandas as pd
+import re
 from researcher.clean.clean_data import data_clean
 from researcher.features.researcher_feat_creator import ResearcherFeatCreator
 from researcher.features.researcher_iter import ResearcherIter
 from utils.feature_utils import get_user_profile
+
+GOID_RULES = r'(GO[0-9]{4})'
 
 
 class ResearcherUpdater:
@@ -35,6 +38,10 @@ class ResearcherUpdater:
 
         self.__new_reg_info = get_data()
         self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+
+    def __extract_goid(self, row):
+        result = re.findall(GOID_RULES, row)
+        return result
 
     def __update_researcher_info(self, info_df):
         info_df = self.__old_info_df.append(info_df)
@@ -90,7 +97,7 @@ class ResearcherUpdater:
 
         # update researcher action info
         print('-- start updating researcher action info')
-        action_df = pd.read_csv(self.action_path)
+        action_df = get_data('action')
         self.__update_researcher_action(action_df)
         print('-- end updating researcher action info')
 

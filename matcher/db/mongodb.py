@@ -15,10 +15,10 @@ class MongoConx:
         self.temp_save = {}
 
     def __reformat_cols(self, input_df):
-        for col in set(input_df.select_dtypes(object)) - set('_id'):
-            print(col)
-            for sig in REMOVE_SIG:
-                input_df[col] = input_df[col].str.replace(sig, ' ')
+        for col in set(input_df.select_dtypes(object)) :
+            if col != '_id':
+                for sig in REMOVE_SIG:
+                    input_df[col] = input_df[col].str.replace(sig, ' ')
         return input_df
 
     def read_df_by_cols(self, df_name, remain_cols):
