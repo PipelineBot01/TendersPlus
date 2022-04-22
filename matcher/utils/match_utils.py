@@ -49,9 +49,6 @@ def normalize(input_df, target_col, method='proportion', bounds=[0, 1]):
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
 
     elif method == 'scaled_max_min':
-        if input_df[target_col].nunique() == 1:
-            input_df[target_col] = 1
-            return input_df
         input_df = input_df.sort_values(target_col).reset_index(drop=True)
         input_df['tmp'] = input_df[target_col].shift(-1)
         input_df = input_df.apply(lambda x: get_proportion(x), axis=1)
@@ -120,6 +117,6 @@ def add_penalty_term(div_df: pd.DataFrame, pk: str, ref_col: str = 'weight') -> 
     cond = div_df[f'{ref_col}_next'].notna()
     div_df.loc[cond & (div_df[f'{ref_col}_next'] > div_df[ref_col]), 'penalty'] = 1
     div_df['penalty'] = div_df.groupby(pk)['penalty'].cumsum()
-    div_df = div_df[[pk, 'division', 'penalty']]
+    div_df = div_df[['id', 'division', 'penalty']]
     div_df['penalty'] = 1 - np.tanh(div_df['penalty'] / 10)
     return div_df
