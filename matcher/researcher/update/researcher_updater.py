@@ -3,6 +3,7 @@ from conf.file_path import RESEARCHER_DIVISION_MAP_PATH, RESEARCHER_INFO_PATH, R
 from db.loadjson import get_data
 from db.mongodb import MongoConx
 from db_conf import UNI_DATA
+import pandas as pd
 from researcher.clean.clean_data import data_clean
 from researcher.features.researcher_feat_creator import ResearcherFeatCreator
 from researcher.features.researcher_iter import ResearcherIter
@@ -51,9 +52,11 @@ class ResearcherUpdater:
         researcher_div_map = researcher_div_map.append(div_df)
         return researcher_div_map
 
-    def __update_researcher_action(self):
-        action_df = get_data('action')
+    def __update_researcher_action(self, action_df):
         action_df[self.pk] = 'Reg_' + action_df['email']
+        action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
+        action_df['action_date'] = pd.to_datetime(action_df['action_date'])
+        action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
         action_df.to_csv(self.action_path, index=0)
         
     def update(self):
@@ -87,7 +90,8 @@ class ResearcherUpdater:
 
         # update researcher action info
         print('-- start updating researcher action info')
-        self.__update_researcher_action()
+        action_df = pd.read_csv(self.action_path)
+        self.__update_researcher_action(action_df)
         print('-- end updating researcher action info')
 
         print('<end updating researcher files>')
