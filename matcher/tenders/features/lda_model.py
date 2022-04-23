@@ -48,6 +48,8 @@ class LDAModel:
 
         self.corpus = [self.dictionary.doc2bow(words) for words in self.word_list]
 
+        print('self.corpus',self.corpus)
+        print('self.dictionary',self.dictionary)
         self.lda = gensim.models.ldamodel.LdaModel(corpus=self.corpus, id2word=self.dictionary, num_topics=NUM_TOPICS,
                                                    iterations=500)
 
