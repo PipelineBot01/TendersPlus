@@ -1,7 +1,7 @@
 import os
 
 import pandas as pd
-
+from conf.clean import REMAIN_COLS
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
     TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH
 from db.mongodb import MongoConx
@@ -26,7 +26,7 @@ class TendersUpdater:
         self.cate_div_map = cate_div_map
 
         self.mgx = MongoConx('tenders')
-        self.raw_data_df = self.mgx.read_df('raw_grants_opened')
+        self.raw_data_df = self.mgx.read_df_by_cols('raw_grants_opened', REMAIN_COLS)
         self.raw_data_df = self.__check_quality(self.raw_data_df)
 
         self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
@@ -35,7 +35,7 @@ class TendersUpdater:
     def __check_quality(self, raw_data: pd.DataFrame, key_id='GO ID') -> pd.DataFrame:
         assert len(raw_data[raw_data[key_id].isna()]) / len(
             raw_data) < 0.1, f'---- contains over 10% grants with missing {key_id}'
-        n_dup = len(raw_data[key_id].duplicated())
+        n_dup = len(raw_data.duplicated([key_id]))
         if n_dup > 0:
             print(f'---- contains {n_dup} duplicated grants')
         return raw_data.drop_duplicates(key_id, keep='first')
@@ -174,7 +174,7 @@ class TendersUpdater:
             raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]
             overwrite = False
         else:
-            old_raw_data_df = self.mgx.read_df('raw_grants_all')
+            old_raw_data_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
             old_raw_data_df['_id'] = old_raw_data_df['_id'].astype(str)
             old_raw_data_df[self.pk] = 'Grants' + old_raw_data_df['_id']
             old_raw_data_df = old_raw_data_df[~old_raw_data_df[self.pk].isin(self.raw_data_df[self.pk].unique())]

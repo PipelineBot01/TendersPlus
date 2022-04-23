@@ -41,7 +41,7 @@ class LDAModel:
             self.model_file = datapath(model_file)
 
     def build_lda_model(self):
-        self.relevant_tenders['ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
+        self.relevant_tenders.loc[:, 'ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
         self.dictionary = gensim.corpora.Dictionary(self.word_list)
         self.dictionary.filter_extremes(no_above=0.5)
         self.dictionary.compactify()

@@ -3,10 +3,14 @@ from conf.file_path import RESEARCHER_DIVISION_MAP_PATH, RESEARCHER_INFO_PATH, R
 from db.loadjson import get_data
 from db.mongodb import MongoConx
 from db_conf import UNI_DATA
+import pandas as pd
+import re
 from researcher.clean.clean_data import data_clean
 from researcher.features.researcher_feat_creator import ResearcherFeatCreator
 from researcher.features.researcher_iter import ResearcherIter
 from utils.feature_utils import get_user_profile
+
+GOID_RULES = r'(GO[0-9]{4})'
 
 
 class ResearcherUpdater:
@@ -35,6 +39,10 @@ class ResearcherUpdater:
         self.__new_reg_info = get_data()
         self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
 
+    def __extract_goid(self, row):
+        result = re.findall(GOID_RULES, row)
+        return result
+
     def __update_researcher_info(self, info_df):
         info_df = self.__old_info_df.append(info_df)
         info_df = info_df.drop_duplicates(self.pk, keep='last')
@@ -51,9 +59,11 @@ class ResearcherUpdater:
         researcher_div_map = researcher_div_map.append(div_df)
         return researcher_div_map
 
-    def __update_researcher_action(self):
-        action_df = get_data('action')
+    def __update_researcher_action(self, action_df):
         action_df[self.pk] = 'Reg_' + action_df['email']
+        action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
+        action_df['action_date'] = pd.to_datetime(action_df['action_date'])
+        action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
         action_df.to_csv(self.action_path, index=0)
         
     def update(self):
@@ -87,7 +97,8 @@ class ResearcherUpdater:
 
         # update researcher action info
         print('-- start updating researcher action info')
-        self.__update_researcher_action()
+        action_df = get_data('action')
+        self.__update_researcher_action(action_df)
         print('-- end updating researcher action info')
 
         print('<end updating researcher files>')

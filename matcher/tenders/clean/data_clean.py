@@ -33,7 +33,7 @@ def convert_dtype(input_df: pd.DataFrame):
 
 # 'GO ID', 'Internal Reference ID', 'URL',
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
-    input_df['_id'] = input_df['_id'].astype(str)
+    input_df['_id'] = input_df['_id'].astype(str).copy()
     input_df['id'] = 'Grants' + input_df['_id']
     input_df = input_df[['id',
                          'Agency',
@@ -45,7 +45,7 @@ def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
                          'Primary Category',
                          'Secondary Category',
                          'Total Amount Available (AUD)',
-                         'Location', 'Selection Process'
+                         'Location', 'Selection Process', 'GO ID'
                          ]].rename(columns={'Agency': 'agency',
                                             'Publish Date': 'open_date',
                                             'Close Date & Time': 'close_date',
@@ -55,7 +55,8 @@ def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
                                             'Secondary Category': 'sub_category',
                                             'Total Amount Available (AUD)': 'award',
                                             'Location': 'loc',
-                                            'Selection Process': 'sp'})
+                                            'Selection Process': 'sp',
+                                            'GO ID': 'go_id'})
 
     input_df.loc[input_df['close_date'] == 'Ongoing', 'is_on'] = 1
     input_df.loc[input_df['is_on'] != 1, 'close_date'] = input_df[input_df['is_on'] != 1]['close_date'].map(
