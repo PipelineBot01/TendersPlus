@@ -2,8 +2,6 @@ import os
 from typing import Dict
 import numpy as np
 import pandas as pd
-import sys
-sys.path.append('../')
 from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
@@ -119,6 +117,3 @@ class Filter:
         # return result_df.sort_values('weight')[:10].append(result_df.sort_values('weight')[-10:].sample(3))
 
 
-if __name__ == '__main__':
-    filter = Filter()
-    print(filter.match({'id': 'Ryanyang@anu.com', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))

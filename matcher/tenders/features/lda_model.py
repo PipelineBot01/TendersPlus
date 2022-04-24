@@ -39,7 +39,7 @@ class LDAModel:
     def build_lda_model(self):
         self.relevant_tenders.loc[:, 'ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
         self.dictionary = gensim.corpora.Dictionary(self.word_list)
-        self.dictionary.filter_extremes(no_above=0.5)
+        self.dictionary.filter_extremes(no_above=0.9)
         self.dictionary.compactify()
 
         self.corpus = [self.dictionary.doc2bow(words) for words in self.word_list]
@@ -116,8 +116,8 @@ class LDAModel:
         return lda_model
 
     def add_lda_result_to_data(self):
-        self.relevant_tenders['keywords'] = self.relevant_tenders.apply(self.extract_keyword, axis=1)
-        self.relevant_tenders['topics'] = self.relevant_tenders.apply(self.get_doc_topic, axis=1)
+        self.relevant_tenders['keywords'] = self.relevant_tenders.apply(self.extract_keyword, axis=1).copy()
+        self.relevant_tenders['topics'] = self.relevant_tenders.apply(self.get_doc_topic, axis=1).copy()
 
     def get_tenders_topic(self):
         self.add_lda_result_to_data()
