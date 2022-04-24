@@ -1,7 +1,10 @@
+import os
+from typing import Dict
+
 import pandas as pd
+
 from conf.file_path import RESEARCHER_DIVISION_MAP_PATH
 from utils.match_utils import normalize, get_div_id_dict
-from typing import Dict
 
 DIVISION_PATH = '../researcher/assets/' + RESEARCHER_DIVISION_MAP_PATH
 
@@ -36,4 +39,13 @@ def get_research_strength(div_path: str = DIVISION_PATH, pk='Staff ID') -> Dict[
     # TODO: hard code for university id  -2022/3/26 ray
     return {'u_01': div_df.to_dict(orient='records')}
 
-print(get_research_strength())
+
+def add_dir(sig='matcher'):
+    current_path = os.getcwd()
+    append_list = []
+    for loc in current_path.split('\\')[::-1]:
+        if loc == sig:
+            return '/'.join(i for i in append_list)
+        append_list.append('..')
+    assert False, f'No such file "{sig}"'
+    return None

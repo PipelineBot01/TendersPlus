@@ -9,20 +9,21 @@ from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
 from utils.match_utils import normalize
+from utils.tool_utils import add_dir
 
 WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
-sys.path.append('../../matcher')
+sys.path.append(add_dir())
 
 
 class Filter:
     def __init__(self, act_path=RESEARCHER_ACTION_PATH, tenders_info_path=TENDERS_INFO_PATH):
-        self.__rm = ResearcherMatcher(re_div_path='../researcher/assets/researcher_division.csv',
-                                      re_tag_path='../researcher/assets/researcher_tag.csv',
-                                      tag_div_path='../researcher/assets/tag_division_map.csv',
-                                      re_info_path='../researcher/assets/researcher_info.csv')
-        self.__tm = TendersMatcher(tag_map_path='../tenders/assets/tenders_tag.csv',
-                                   topic_path='../tenders/assets/tenders_topic.csv',
-                                   info_path='../tenders/assets/clean_trains_info.csv')
+        self.__rm = ResearcherMatcher(re_div_path='/researcher/assets/researcher_division.csv',
+                                      re_tag_path='/researcher/assets/researcher_tag.csv',
+                                      tag_div_path='/researcher/assets/tag_division_map.csv',
+                                      re_info_path='/researcher/assets/researcher_info.csv')
+        self.__tm = TendersMatcher(tag_map_path='/tenders/assets/tenders_tag.csv',
+                                   topic_path='/tenders/assets/tenders_topic.csv',
+                                   info_path='/tenders/assets/clean_trains_info.csv')
         self.__act_df = pd.read_csv(act_path)
         self.__tenders_info_df = pd.read_csv(tenders_info_path)
 
@@ -105,7 +106,6 @@ class Filter:
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
         remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
         remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
-        print(remain_movement.columns)
         remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
         remain_movement.rename(columns={'id': 't_id'}, inplace=True)
         remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
@@ -127,6 +127,6 @@ class Filter:
 
 
 if __name__ == '__main__':
-    filter = Filter('../researcher/assets/researcher_action.csv',
-                    '../tenders/assets/clean_trains_info.csv')
+    filter = Filter('/researcher/assets/researcher_action.csv',
+                    '/tenders/assets/clean_trains_info.csv')
     print(filter.match({'id': 'Ryanyang@anu.com', 'divisions': ["d_20", "d_21", "d_22"], 'tags': ["Human"]}))
