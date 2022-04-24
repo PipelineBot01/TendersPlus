@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from scheduler import scheduler
 from filter.filter import Filter
 from researcher.matching.researcher_relation import ResearcherMatcher
+from utils.tool_utils import get_research_strength
 
 # create web server
 app = FastAPI()
@@ -25,6 +26,11 @@ async def get_sim_researchers(data: Profile):
 @app.post('/get_reco_tenders')
 async def get_reco_tenders(data: Profile):
     return {'code': 200, 'data': Filter().match(data)}
+
+
+@app.get('/get_research_strength')
+async def get_research_strength():
+    return {'code': 200, 'data': get_research_strength()}
 
 
 @app.on_event('startup')
