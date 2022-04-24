@@ -30,8 +30,14 @@ async def get_reco_tenders(data: Profile):
 @app.on_event('startup')
 async def init():
     print('initial update task')
-    await scheduler.get_job(job_id='update_tenders_pool').func()
-    await scheduler.get_job(job_id='update_researchers_pool').func()
+    job_1 = scheduler.get_job(job_id='update_tenders_pool')
+    if job_1:
+        await job_1.func()
+
+    job_2 = scheduler.get_job(job_id='update_researchers_pool')
+    if job_2:
+        await job_2.func()
+
     scheduler.start()
 
 
