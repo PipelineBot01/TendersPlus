@@ -1,25 +1,37 @@
+from pydantic import BaseModel
+from typing import Optional, List
 from fastapi import FastAPI
-from apscheduler.schedulers.blocking import BlockingScheduler
-# from researcher.update.researcher_updater import ResearcherUpdater
-from tenders.update.tenders_updater import TendersUpdater
-from datetime import datetime
 
+from scheduler import scheduler
+from filter.filter import Filter
+from researcher.matching.researcher_relation import ResearcherMatcher
 
-def fn():
-    print(f'{datetime.now()} -- start update')
-
-    # ru = ResearcherUpdater()
-    # ru.update()
-
-    tu = TendersUpdater()
-    tu.update()
-
-    print(f'{datetime.now()} -- done update')
-
-
+# create web server
 app = FastAPI()
 
-app.on_event('startup')
+
+# define api parameters
+class Profile(BaseModel):
+    id: Optional[str]
+    divisions: List[str]
+    tags: List[str]
+
+
+@app.post('/get_sim_researchers')
+async def get_sim_researchers(data: Profile):
+    return {'code': 200, 'data': ResearcherMatcher().match_by_profile(data)}
+
+
+@app.post('/get_reco_tenders')
+async def get_reco_tenders(data: Profile):
+    return {'code': 200, 'data': Filter().match(data)}
+
+
+@app.on_event('startup')
+async def init():
+    print('initial update task')
+    await scheduler.get_job(job_id='update_tenders_pool').func()
+    await scheduler.get_job(job_id='update_researchers_pool').func()
 
 
 if __name__ == '__main__':
