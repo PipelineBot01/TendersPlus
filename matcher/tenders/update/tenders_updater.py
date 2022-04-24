@@ -57,6 +57,7 @@ class TendersUpdater:
         return new_key_df
 
     def __update_topic(self, info_df):
+        print(info_df.head())
         lda = LDAModel(info_df)
         lda.build_lda_model()
         new_topic_df = lda.get_tenders_topic()

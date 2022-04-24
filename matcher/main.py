@@ -1,5 +1,5 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from researcher.update.researcher_updater import ResearcherUpdater
+# from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
 from datetime import datetime
 
@@ -7,8 +7,8 @@ from datetime import datetime
 def fn():
     print(f'{datetime.now()} -- start update')
 
-    ru = ResearcherUpdater()
-    ru.update()
+    # ru = ResearcherUpdater()
+    # ru.update()
 
     tu = TendersUpdater()
     tu.update()
