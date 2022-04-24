@@ -5,6 +5,7 @@ import pandas as pd
 from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
+from typing import List
 from utils.match_utils import normalize
 
 WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
@@ -63,7 +64,12 @@ class Filter:
 
         return merge_df[['id', 'weight']]
 
-    def match(self, profile_dict: Dict, func=tmp_measure) -> pd.DataFrame:
+    def __reformat_result(self, input_df):
+        merge_df = input_df.merge(self.__tenders_info_df, on='id')
+        merge_df = merge_df.dropna()
+        return merge_df['go_id'].to_list()
+
+    def match(self, profile_dict: Dict, func=tmp_measure) -> List[str]:
         '''
 
         Parameters
@@ -118,6 +124,6 @@ class Filter:
             sim_tenders_df = sim_tenders_df.append(tmp_df)
 
         result_df = func(self, sim_tenders_df, act_tenders_df)
-        return result_df.sort_values('weight')
+        return self.__reformat_result(result_df.sort_values('weight'))
 
 
