@@ -32,6 +32,12 @@ async def init():
     print('initial update task')
     await scheduler.get_job(job_id='update_tenders_pool').func()
     await scheduler.get_job(job_id='update_researchers_pool').func()
+    scheduler.start()
+
+
+@app.on_event('shutdown')
+async def close():
+    scheduler.shutdown()
 
 
 if __name__ == '__main__':
