@@ -1,3 +1,4 @@
+from fastapi import FastAPI
 from apscheduler.schedulers.blocking import BlockingScheduler
 # from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
@@ -16,12 +17,19 @@ def fn():
     print(f'{datetime.now()} -- done update')
 
 
-# if __name__ == '__main__':
-#     fn()
-#     bs = BlockingScheduler(daemon=True)
-#     bs.add_job(fn, 'interval', hours=1)
-#     try:
-#         bs.start()
-#     except Exception as e:
-#         bs.shutdown()
-fn()
+app = FastAPI()
+
+app.on_event('startup')
+
+
+if __name__ == '__main__':
+    import uvicorn
+    from uvicorn.config import LOGGING_CONFIG
+
+    # modify log
+    log_config = LOGGING_CONFIG.copy()
+    log_config['formatters']['default']['fmt'] = '%(asctime)s    ' + log_config['formatters']['default']['fmt']
+    log_config['formatters']['access']['fmt'] = '%(asctime)s    ' + log_config['formatters']['access']['fmt']
+
+    # launch app
+    uvicorn.run(app=app, port=20222, host='localhost', log_config=log_config)
