@@ -28,8 +28,8 @@ async def get_reco_tenders(data: Profile):
     return {'code': 200, 'data': Filter().match(data)}
 
 
-@app.get('/get_research_strength')
-async def get_research_strength():
+@app.get('/get_university_strength')
+async def get_university_strength():
     return {'code': 200, 'data': get_research_strength()}
 
 
