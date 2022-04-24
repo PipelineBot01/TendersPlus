@@ -35,10 +35,6 @@ class LDAModel:
         self.model_file = None
         self.first = first
         self.lda = None
-        if not first:
-            self.lda = self.loadLDAModel()
-        if not self.first:
-            self.model_file = datapath(model_file)
 
     def build_lda_model(self):
         self.relevant_tenders.loc[:, 'ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
@@ -47,7 +43,7 @@ class LDAModel:
         self.dictionary.compactify()
 
         self.corpus = [self.dictionary.doc2bow(words) for words in self.word_list]
-
+        print(self.word_list)
         self.lda = gensim.models.ldamodel.LdaModel(corpus=self.corpus, id2word=self.dictionary, num_topics=NUM_TOPICS,
                                                    iterations=500)
 
@@ -114,13 +110,6 @@ class LDAModel:
         doc_bow = self.dictionary.doc2bow(words)
         doc_topics = self.lda.get_document_topics(doc_bow)
         return doc_topics
-
-    def save_lda_model(self):
-        # todo: save the result of lda model including the keywords list
-        if self.lda is None:
-            return False
-        self.lda.save(self.model_file)
-        return True
 
     def load_lda_model(self):
         lda_model = gensim.models.ldamodel.LdaModel.load(self.model_file)

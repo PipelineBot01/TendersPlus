@@ -1,5 +1,4 @@
 from typing import Tuple
-
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
@@ -11,6 +10,7 @@ class ResearcherMatcher(Relation):
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
                  tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,
                  re_info_path=RESEARCHER_INFO_PATH, pk='id'):
+
         self.re_div_df = pd.read_csv(re_div_path)
         self.re_tag_df = pd.read_csv(re_tag_path)
         self.MAP_DF = pd.read_csv(tag_div_path).drop('weight', axis=1)

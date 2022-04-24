@@ -15,7 +15,7 @@ class MongoConx:
         self.temp_save = {}
 
     def __reformat_cols(self, input_df):
-        for col in set(input_df.select_dtypes(object)) :
+        for col in set(input_df.select_dtypes(object)):
             if col != '_id':
                 for sig in REMOVE_SIG:
                     input_df[col] = input_df[col].str.replace(sig, ' ')

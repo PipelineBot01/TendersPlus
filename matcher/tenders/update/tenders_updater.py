@@ -1,5 +1,4 @@
 import os
-
 import pandas as pd
 from conf.clean import REMAIN_COLS
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \

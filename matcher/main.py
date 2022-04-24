@@ -7,8 +7,8 @@ from datetime import datetime
 def fn():
     print(f'{datetime.now()} -- start update')
 
-    ru = ResearcherUpdater()
-    ru.update()
+    # ru = ResearcherUpdater()
+    # ru.update()
 
     tu = TendersUpdater()
     tu.update()

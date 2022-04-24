@@ -45,7 +45,7 @@ def add_dir(sig='matcher'):
     append_list = []
     for loc in current_path.split('\\')[::-1]:
         if loc == sig:
-            return '/'.join(i for i in append_list)
+            return '/'.join(i for i in append_list)+'/'
         append_list.append('..')
     assert False, f'No such file "{sig}"'
     return None
