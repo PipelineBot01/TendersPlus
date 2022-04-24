@@ -1,10 +1,11 @@
+import re
+import pandas as pd
+
 from conf.file_path import RESEARCHER_DIVISION_MAP_PATH, RESEARCHER_INFO_PATH, REG_RESEARCHER_INFO_PATH, \
     RESEARCHER_TAG_MAP_PATH, RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_ACTION_PATH
 from db.loadjson import get_data
 from db.mongodb import MongoConx
 from db_conf import UNI_DATA
-import pandas as pd
-import re
 from researcher.clean.clean_data import data_clean
 from researcher.features.researcher_feat_creator import ResearcherFeatCreator
 from researcher.features.researcher_iter import ResearcherIter
@@ -65,9 +66,8 @@ class ResearcherUpdater:
         action_df['action_date'] = pd.to_datetime(action_df['action_date'])
         action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
         action_df.to_csv(self.action_path, index=0)
-        
-    def update(self):
 
+    def update(self):
         print('<start updating researcher files>')
         # update info
         print('-- start updating researcher info')

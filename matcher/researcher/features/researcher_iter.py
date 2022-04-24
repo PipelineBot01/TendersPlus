@@ -58,7 +58,7 @@ class ResearcherIter:
         new_tag_df = new_tag_df.merge(self.div_cnt_df, suffixes=('', '_new'), on='division')
         assert not new_tag_df.empty, 'input tags are not contained in user data'
 
-        new_tag_df['weight'] = new_tag_df['weight'] / (new_tag_df['cnt'] / 2 + new_tag_df['cnt_new'])
+        new_tag_df['weight'] = new_tag_df['weight'] / (new_tag_df['cnt'] / 10 + new_tag_df['cnt_new'])
         tag_div_map_df = self.__tag_div_map_df.append(new_tag_df.drop('cnt', axis=1))
         del new_tag_df
 

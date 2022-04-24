@@ -1,5 +1,4 @@
 from typing import Tuple
-
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
 from relation_interface.Relation import Relation
@@ -11,14 +10,15 @@ class ResearcherMatcher(Relation):
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
                  tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,
                  re_info_path=RESEARCHER_INFO_PATH, pk='id'):
-        self.re_div_df = pd.read_csv(re_div_path)
-        self.re_tag_df = pd.read_csv(re_tag_path)
-        self.MAP_DF = pd.read_csv(tag_div_path).drop('weight', axis=1)
-        self.INFO_DF = pd.read_csv(re_info_path)
+
+        self.__re_div_df = pd.read_csv(re_div_path)
+        self.__re_tag_df = pd.read_csv(re_tag_path)
+        self.__MAP_DF = pd.read_csv(tag_div_path).drop('weight', axis=1)
+        self.__INFO_DF = pd.read_csv(re_info_path)
         self.pk = pk
 
-        assert not self.re_div_df.empty, 'Cannot generate matcher due to empty file!'
-        assert not (self.re_div_df.duplicated(pk).empty and self.re_tag_df.duplicated(pk).empty), \
+        assert not self.__re_div_df.empty, 'Cannot generate matcher due to empty file!'
+        assert not (self.__re_div_df.duplicated(pk).empty and self.__re_tag_df.duplicated(pk).empty), \
             f'{pk} cannot be set as primary key!'
 
     def __weighted_div_sim(self, tar_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
@@ -140,13 +140,13 @@ class ResearcherMatcher(Relation):
         '''
 
         # Check if this researcher exist or if the tags are not None
-        assert researcher_id in self.re_div_df[self.pk].unique(), f'No such researcher {self.pk}: {researcher_id}'
+        assert researcher_id in self.__re_div_df[self.pk].unique(), f'No such researcher {self.pk}: {researcher_id}'
 
-        tar_div_df = self.re_div_df[self.re_div_df[self.pk] == researcher_id]
-        ref_div_df = self.re_div_df[self.re_div_df[self.pk] != researcher_id]
+        tar_div_df = self.__re_div_df[self.__re_div_df[self.pk] == researcher_id]
+        ref_div_df = self.__re_div_df[self.__re_div_df[self.pk] != researcher_id]
 
         tar_tag_df, ref_tag_df = pd.DataFrame(), pd.DataFrame()
-        merged_tag_df = self.re_tag_df.merge(self.MAP_DF, on='tag')
+        merged_tag_df = self.__re_tag_df.merge(self.__MAP_DF, on='tag')
 
         if researcher_id in merged_tag_df[self.pk].unique():
             tar_tag_df = merged_tag_df[merged_tag_df[self.pk] == researcher_id]
@@ -182,10 +182,10 @@ class ResearcherMatcher(Relation):
                                        self.pk: 'current_id',
                                        'tag': list(tag_dict.keys()),
                                        'weight': list(tag_dict.values())})
-            ref_tag_df = self.re_tag_df
-            tar_tag_df = tar_tag_df.merge(self.MAP_DF, on='tag')
-            ref_tag_df = ref_tag_df.merge(self.MAP_DF, on='tag')
-        return [tar_div_df, self.re_div_df], [tar_tag_df, ref_tag_df]
+            ref_tag_df = self.__re_tag_df
+            tar_tag_df = tar_tag_df.merge(self.__MAP_DF, on='tag')
+            ref_tag_df = ref_tag_df.merge(self.__MAP_DF, on='tag')
+        return [tar_div_df, self.__re_div_df], [tar_tag_df, ref_tag_df]
 
     def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], div_num=3, tag_num=10) -> pd.DataFrame:
         '''
@@ -205,16 +205,16 @@ class ResearcherMatcher(Relation):
 
         assert self.pk in sim_df.columns, 'Primary key is not in similar df.'
 
-        info_df = self.INFO_DF.merge(sim_df, on=self.pk)[[self.pk, 'weight'] + tar_col]
+        info_df = self.__INFO_DF.merge(sim_df, on=self.pk)[[self.pk, 'weight'] + tar_col]
         info_df = info_df.fillna('')
 
-        self.re_tag_df = self.re_tag_df.sort_values('weight', ascending=False)
-        agg_tag_df = self.re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['tag'].apply(
+        self.__re_tag_df = self.__re_tag_df.sort_values('weight', ascending=False)
+        agg_tag_df = self.__re_tag_df.groupby(self.pk).head(tag_num).groupby(self.pk)['tag'].apply(
             lambda x: list(set(x))).reset_index()
 
         # filter other divisions out
-        tmp_re_div = self.re_div_df[
-            ~self.re_div_df['division'].isin(['OTHERS(RELEVANT)',
+        tmp_re_div = self.__re_div_df[
+            ~self.__re_div_df['division'].isin(['OTHERS(RELEVANT)',
                                               'OTHERS(IRRELEVANT)'])].sort_values('weight', ascending=False)
         agg_div_df = tmp_re_div.groupby(self.pk).head(div_num).groupby(self.pk)['division'].apply(
             lambda x: list(set(x))).reset_index()
@@ -274,8 +274,8 @@ class ResearcherMatcher(Relation):
 
         # handle no enough matching result
         if len(candidate_df) < match_num:
-            tmp_info_df = self.INFO_DF[self.INFO_DF[self.pk] == researcher_id][[self.pk]]
-            other_df = self.INFO_DF[self.INFO_DF[self.pk] != researcher_id][[self.pk]]
+            tmp_info_df = self.__INFO_DF[self.__INFO_DF[self.pk] == researcher_id][[self.pk]]
+            other_df = self.__INFO_DF[self.__INFO_DF[self.pk] != researcher_id][[self.pk]]
             tmp_df = other_df[other_df['colleges'].isin(tmp_info_df['colleges'])].sample(frac=1)
             candidate_df = candidate_df.append(tmp_df)
             candidate_df['weight'] = candidate_df['weight'].fillna(
