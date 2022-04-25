@@ -102,7 +102,7 @@ async def db_get_tenders_by_ids(ids: list) -> Union[Dict, None]:
     """
     if len(ids) == 0:
         return []
-    
+
     client = mongo['tenders_client']
     db = client.get_default_database()
     collection = db['clean_grants_opened']

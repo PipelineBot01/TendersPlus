@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 
 from db.mysql.curd.user_favourite import sql_get_user_favourite, sql_add_user_favourite, sql_remove_user_favourite
-from db.mongo.curd import db_get_tenders_by_id
+from db.mongo.curd import db_get_tenders_by_ids
 
 from models.favourite import FavouriteTenderModel
 from dependencies import get_db, check_access_token
@@ -15,7 +15,7 @@ async def get_user_favourite_tenders(email: str = Depends(check_access_token), d
     try:
         user_favourite_tenders_ids = sql_get_user_favourite(email=email, session=db)
 
-        docs = await user_favourite_tenders_ids([i.id for i in user_favourite_tenders_ids])
+        docs = await db_get_tenders_by_ids([i.id for i in user_favourite_tenders_ids])
         return {'code': 200, 'data': docs}
     except Exception as e:
         print(str(e))
