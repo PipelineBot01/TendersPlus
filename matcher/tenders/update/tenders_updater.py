@@ -57,7 +57,6 @@ class TendersUpdater:
         return new_key_df
 
     def __update_topic(self, info_df):
-        print(info_df.head())
         lda = LDAModel(info_df)
         lda.build_lda_model()
         new_topic_df = lda.get_tenders_topic()
@@ -67,6 +66,7 @@ class TendersUpdater:
     def update_info(self, new_data_df, overwrite=False):
         new_info_df = data_clean(new_data_df, overwrite)
         self.__update_file(new_info_df, self.info_path)
+
         return new_info_df
 
     def __create_index(self, collection):
@@ -95,10 +95,10 @@ class TendersUpdater:
         tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
 
-        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars='id').dropna()[[self.pk, 'value']].rename(
+        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars=self.pk).dropna()[[self.pk, 'value']].rename(
             columns={'value': 'category'})
         cate_div_map_df = self.__update_cate_div_map(cate_df)
-        cate_div_map_df.to_csv(self.cate_div_map)
+        cate_div_map_df.to_csv(self.cate_div_map, index=0)
 
         cate_df = cate_df.merge(cate_div_map_df, how='left')
         cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
@@ -109,6 +109,25 @@ class TendersUpdater:
         info_df.fillna('', inplace=True)
         info_df = KeyExtractor.remove_stopword(info_df, 'desc')
         return info_df
+
+    # TODO: only for test
+    def __update_all(self):
+        all_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
+        info_df = data_clean(all_df)
+        tag_df = pd.read_csv(self.tag_path)
+        tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
+        info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
+        cate_map_df = pd.read_csv(self.cate_div_map)
+        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars=self.pk).dropna()[[self.pk, 'value']].rename(
+            columns={'value': 'category'})
+        cate_df = cate_df.merge(cate_map_df, how='left')
+        cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
+        info_df = info_df.merge(cate_df)
+        info_df = convert_dtype(info_df)
+        info_df = info_df.merge(all_df, on=self.pk)
+        info_df.fillna('', inplace=True)
+        info_df = KeyExtractor.remove_stopword(info_df, 'desc')
+        self.mgx.write_df(info_df, 'clean_grants_all', True)
 
     def __keyword_error_checking(self, info_df):
         keyword_df = pd.read_csv(self.tag_path)
@@ -223,5 +242,8 @@ class TendersUpdater:
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
             self.__create_index(self.mgx.database['clean_grants_opened'])
             print('-- fixing end')
+
+        # TODO: only for testing
+        self.__update_all()
 
         print('<end updating tenders files>')
