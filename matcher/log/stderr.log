@@ -1,0 +1,28 @@
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+From github.com:PipelineBot01/TendersPlus
+   0a71112..2b8df77  master     -> origin/master
+2022-04-25 10:10:02,505    INFO:     Started server process [26756]
+2022-04-25 10:10:02,506    INFO:     Waiting for application startup.
+2022-04-25 10:10:02,507    INFO:     Application startup complete.
+2022-04-25 10:10:02,508    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)

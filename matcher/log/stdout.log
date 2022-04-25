@@ -1,0 +1,11 @@
+[master f27c3cc] update model
+ 2 files changed, 93 deletions(-)
+ rewrite matcher/log/stderr.log (100%)
+ rewrite matcher/log/stdout.log (100%)
+Merge made by the 'recursive' strategy.
+ matcher/deploy.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+git pulling
+run matcher
+git pulling
+Already up-to-date.
