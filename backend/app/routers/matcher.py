@@ -1,10 +1,11 @@
-
-from fastapi import APIRouter, HTTPException,Depends
+import requests
+import json
+from fastapi import APIRouter, HTTPException, Depends
 
 from dependencies import check_access_token
 from models.matcher import MatcherModel
-from utils.matcher.researcher import researcher_matcher
 from db.mongo import curd
+
 router = APIRouter()
 
 
@@ -17,15 +18,19 @@ def match_researchers(data: MatcherModel):
     """
     try:
         output = []
-        if len(data.tags) != 0 or len(data.research_fields) != 0:
-            output = researcher_matcher.match_by_profile(divs=data.research_fields, tags=data.tags)
+        response = requests.post('http://localhost:20222/get_sim_researchers',
+                                 json={'divisions': data.research_fields,
+                                       'tags': data.tags})
+        if response.status_code == 200:
+            output = json.loads(response.content)['data']
         return {'code': 200, 'data': output}
     except Exception as e:
         print(e)
         raise HTTPException(500, str(e))
 
+
 @router.post('/tenders')
-async def match_tenders(data:MatcherModel,email:str = Depends(check_access_token)):
+async def match_tenders(data: MatcherModel, email: str = Depends(check_access_token)):
     """
     Match tenders via user's divisions, tags and email
 
@@ -40,7 +45,7 @@ async def match_tenders(data:MatcherModel,email:str = Depends(check_access_token
     """
     try:
         docs = await curd.db_get_latest_tenders(3)
-        return {'code':200,'data':docs}
+        return {'code': 200, 'data': docs}
     except Exception as e:
         print(e)
         raise HTTPException(500, str(e))
