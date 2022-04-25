@@ -26,3 +26,27 @@ From github.com:PipelineBot01/TendersPlus
 2022-04-25 10:10:02,506    INFO:     Waiting for application startup.
 2022-04-25 10:10:02,507    INFO:     Application startup complete.
 2022-04-25 10:10:02,508    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: 'origin/master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2022-04-25 10:12:49,081    INFO:     Started server process [27558]
+2022-04-25 10:12:49,082    INFO:     Waiting for application startup.
+2022-04-25 10:12:49,083    INFO:     Application startup complete.
+2022-04-25 10:12:49,084    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-25 10:13:32,393    INFO:     Shutting down
