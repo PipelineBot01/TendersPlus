@@ -211,7 +211,6 @@ class ResearcherMatcher:
 
         info_df = self.__INFO_DF.merge(sim_df, on=self.__pk)[[self.__pk, 'weight'] + tar_col]
         info_df = info_df.fillna('')
-
         self.__re_tag_df = self.__re_tag_df.sort_values('weight', ascending=False)
         agg_tag_df = self.__re_tag_df.groupby(self.__pk).head(tag_num).groupby(self.__pk)['tag'].apply(
             lambda x: list(set(x))).reset_index()
@@ -259,9 +258,10 @@ class ResearcherMatcher:
         assert len(divisions) != 0, 'At least the division should not be empty.'
         div_list, tag_list = self.__prepare_dataset_by_profile(id, divisions, tags)
         candidate_df = measure_func(self, div_list, tag_list)
-        # candidate_df = candidate_df[candidate_df['id'] != id]
+        candidate_df = candidate_df[candidate_df['id'] != id]
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
-        sim_df = self.__reformat_output(sim_df, ['name', 'email', 'colleges'])
+        sim_df = self.__reformat_output(sim_df, ['name', 'email', 'university'])
+
         if get_dict:
             sim_df = sim_df.to_dict(orient='records')
             for value in sim_df:
