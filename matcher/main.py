@@ -3,7 +3,7 @@ from typing import Optional, List
 from fastapi import FastAPI
 
 from scheduler import scheduler
-from matcher.filter import tenders_filter
+from matcher.auto_reco import tenders_filter
 from matcher.researcher.matching import researcher_matcher
 from utils.tool_utils import get_research_strength
 

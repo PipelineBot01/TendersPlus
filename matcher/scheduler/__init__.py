@@ -4,7 +4,7 @@ from datetime import datetime
 #
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
-from matcher.filter import tenders_filter
+from matcher.auto_reco import tenders_filter
 from matcher.researcher.matching import researcher_matcher
 scheduler = AsyncIOScheduler()
 
