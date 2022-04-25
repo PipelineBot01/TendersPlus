@@ -1,11 +1,10 @@
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Union
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
-from relation_interface.Relation import Relation
 from utils.match_utils import *
 
 
-class ResearcherMatcher(Relation):
+class ResearcherMatcher():
     def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH,
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
                  tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,
@@ -233,7 +232,7 @@ class ResearcherMatcher(Relation):
         self.__MAP_DF = pd.read_csv(self.__tag_div_path).drop('weight', axis=1)
         self.__INFO_DF = pd.read_csv(self.__re_info_path)
 
-    def match_by_profile(self, profile_dict: Dict[str],
+    def match_by_profile(self, profile_dict: Dict[str, Union[str,List[str]]],
                          match_num=10,
                          measure_func=__combined_measure,
                          get_dict=True):
@@ -241,7 +240,7 @@ class ResearcherMatcher(Relation):
 
         Parameters
         ----------
-        profile_dict: Dict[str], in the form of
+        profile_dict: Dict[str, Union[str,List[str]]], in the form of
                 id: the input user id
                 divisions: List[str], list of divisions selected by user, cannot be empty
                 tags: List[str], list of tags selected by user, default as None

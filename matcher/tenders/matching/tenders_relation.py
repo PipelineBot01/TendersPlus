@@ -5,12 +5,11 @@ import numpy as np
 import pandas as pd
 
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TOPIC_MAP_PATH, TENDERS_TAG_MAP_PATH
-from relation_interface.Relation import Relation
 from tenders.features.tenders_feat_creator import TendersFeatCreator
 from utils.match_utils import normalize, weighted_avg
 
 
-class TendersMatcher(Relation):
+class TendersMatcher():
     def __init__(self, tag_map_path=TENDERS_TAG_MAP_PATH,
                  topic_path=TENDERS_TOPIC_MAP_PATH,
                  info_path=TENDERS_INFO_PATH, pk='id'):

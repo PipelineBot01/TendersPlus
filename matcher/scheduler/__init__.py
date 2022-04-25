@@ -4,8 +4,8 @@ from datetime import datetime
 #
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
-from matcher.auto_reco import tenders_filter
-from matcher.researcher.matching import researcher_matcher
+from auto_reco import tenders_filter
+from researcher.matching import researcher_matcher
 scheduler = AsyncIOScheduler()
 
 @scheduler.scheduled_job(id='update_tenders_pool', trigger=IntervalTrigger(hours=2))
