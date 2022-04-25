@@ -1,4 +1,5 @@
 from typing import Tuple, Dict, Union
+
 from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH, \
     RESEARCHER_TAG_DIV_MAP_PATH, RESEARCHER_INFO_PATH
 from utils.match_utils import *
@@ -224,7 +225,7 @@ class ResearcherMatcher:
         del tmp_re_div
 
         return info_df.merge(agg_tag_df, on=self.__pk, how='left'
-                             ).merge(agg_div_df, on=self.__pk, how='left').sort_values('weight').fillna('')
+                             ).merge(agg_div_df, on=self.__pk, how='left').sort_values('weight')
 
     def update(self):
         self.__re_div_df = pd.read_csv(self.__re_div_path)
@@ -232,7 +233,7 @@ class ResearcherMatcher:
         self.__MAP_DF = pd.read_csv(self.__tag_div_path).drop('weight', axis=1)
         self.__INFO_DF = pd.read_csv(self.__re_info_path)
 
-    def match_by_profile(self, profile_dict: Dict[str, Union[str,List[str]]],
+    def match_by_profile(self, profile_dict: Dict[str, Union[str, List[str]]],
                          match_num=10,
                          measure_func=__combined_measure,
                          get_dict=True):
@@ -261,8 +262,12 @@ class ResearcherMatcher:
         # candidate_df = candidate_df[candidate_df['id'] != id]
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
         sim_df = self.__reformat_output(sim_df, ['name', 'email', 'colleges'])
-
-        return sim_df.to_dict(orient='records') if get_dict else sim_df
+        if get_dict:
+            sim_df = sim_df.to_dict(orient='records')
+            for value in sim_df:
+                if type(value['tag']) != type([]):
+                    value['tag'] = []
+        return sim_df
 
     def match_by_id(self, researcher_id: str, match_num=10, measure_func=__combined_measure) -> pd.DataFrame:
         '''

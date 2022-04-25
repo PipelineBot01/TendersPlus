@@ -33,7 +33,7 @@ class Filter:
         return result_df
 
     def __get_sim_profile_res(self, profile):
-        result_df = self.__rm.match_by_profile(profile['id'], profile['divisions'], profile['tags'], get_dict=False)
+        result_df = self.__rm.match_by_profile(profile, get_dict=False)
         if result_df.empty:
             pass
         return result_df
@@ -68,7 +68,7 @@ class Filter:
 
     def __reformat_result(self, input_df):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
-        merge_df = merge_df.dropna()
+        merge_df = merge_df[merge_df['go_id'].notna()]
         return merge_df['go_id'].to_list()
 
     def update_data(self):
@@ -133,7 +133,7 @@ class Filter:
             tmp_df['orig'] = tmp_id
             tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
             sim_tenders_df = sim_tenders_df.append(tmp_df)
-
         result_df = func(self, sim_tenders_df, act_tenders_df)
+
         return self.__reformat_result(result_df.sort_values('weight'))
 
