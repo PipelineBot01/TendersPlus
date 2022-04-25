@@ -12,3 +12,22 @@ Already up-to-date.
 [master e66b9a5] update model
  2 files changed, 39 insertions(+)
 run matcher
+git pulling
+Updating 76027b9..485490a
+Fast-forward
+ matcher/auto_reco/__init__.py                      |   3 +
+ .../{filter/filter.py => auto_reco/clb_filter.py}  |  11 ++-
+ matcher/{filter => auto_reco}/postprocess.py       |   0
+ matcher/conf/file_path.py                          |   2 +-
+ matcher/filter/__init__.py                         |   1 -
+ matcher/main.py                                    |   8 +-
+ matcher/matching.py                                |  16 ++++
+ matcher/researcher/matching/__init__.py            |   3 +-
+ matcher/researcher/matching/researcher_relation.py | 106 ++++++++++++---------
+ matcher/scheduler/__init__.py                      |   7 +-
+ 10 files changed, 100 insertions(+), 57 deletions(-)
+ create mode 100644 matcher/auto_reco/__init__.py
+ rename matcher/{filter/filter.py => auto_reco/clb_filter.py} (93%)
+ rename matcher/{filter => auto_reco}/postprocess.py (100%)
+ delete mode 100644 matcher/filter/__init__.py
+ create mode 100644 matcher/matching.py
