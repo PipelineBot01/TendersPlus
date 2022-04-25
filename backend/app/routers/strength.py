@@ -9,9 +9,9 @@ router = APIRouter()
 def get_strength_overview():
     try:
         data = {}
-        response = requests.get('http://localhost:20222/get_research_strength')
+        response = requests.get('http://localhost:20222/get_university_strength')
         if response.status_code == 200:
-            data = json.loads(response)['data']
+            data = json.loads(response.content)['data']
         return {'code': 200, 'data': data}
     except Exception as e:
         print(e)
