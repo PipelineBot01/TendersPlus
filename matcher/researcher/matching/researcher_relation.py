@@ -224,7 +224,7 @@ class ResearcherMatcher:
         del tmp_re_div
 
         return info_df.merge(agg_tag_df, on=self.__pk, how='left'
-                             ).merge(agg_div_df, on=self.__pk, how='left').sort_values('weight')
+                             ).merge(agg_div_df, on=self.__pk, how='left').sort_values('weight').fillna('')
 
     def update(self):
         self.__re_div_df = pd.read_csv(self.__re_div_path)
