@@ -51,7 +51,7 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
                                        'tags': data.tags})
         if response.status_code == 200:
             GO_ID = json.loads(response.content)['data']
-            docs = curd.db_get_tenders_by_ids(GO_ID)
+            docs = await curd.db_get_tenders_by_ids(GO_ID)
 
         return {'code': 200, 'data': docs}
     except Exception as e:
