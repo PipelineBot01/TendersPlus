@@ -23,67 +23,67 @@ interface SearchBarProp{
 }
 
 export default function SearchBar(props:SearchBarProp):JSX.Element{
-	const navigate = useNavigate()
-	const location = useLocation()
-	const [searchContent, setSearchContent]  = useState('')
-	const [dropdownVisible, setDropdownVisible] = useState(false)
-	const onSearch = (value:string)=>{
-		let targetPath = '/search'
-		if(location.pathname.includes('dashboard')){
-			targetPath = '/dashboard' + targetPath
-		}
-		if(value){
-			targetPath += '?query=' + window.btoa(value)
-		}
-		navigate(targetPath)
-	}
-	const onSelectedMenuItem = (item:any)=>{
-		console.log('item:', item)
-		console.log(searchContent)
-		searchContent === '' ? 
-			setSearchContent(capitalize(researchFields[item.key].field)) :  
-			setSearchContent(searchContent + ' ' + capitalize(researchFields[item.key].field))
-	}
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [searchContent, setSearchContent]  = useState('')
+  const [dropdownVisible, setDropdownVisible] = useState(false)
+  const onSearch = (value:string)=>{
+    let targetPath = '/search'
+    if(location.pathname.includes('dashboard')){
+      targetPath = '/dashboard' + targetPath
+    }
+    if(value){
+      targetPath += '?query=' + window.btoa(value)
+    }
+    navigate(targetPath)
+  }
+  const onSelectedMenuItem = (item:any)=>{
+    console.log('item:', item)
+    console.log(searchContent)
+    searchContent === '' ? 
+      setSearchContent(capitalize(researchFields[item.key].field)) :  
+      setSearchContent(searchContent + ' ' + capitalize(researchFields[item.key].field))
+  }
 
-	const renderDropdownMenu = ()=>{
-		const menuItem = Object.entries(researchFields).map(([k, v])=>{
-			return <Menu.Item key={k} onClick={onSelectedMenuItem}>
-				{capitalize(v.field)}
-			</Menu.Item>
-		})
+  const renderDropdownMenu = ()=>{
+    const menuItem = Object.entries(researchFields).map(([k, v])=>{
+      return <Menu.Item key={k} onClick={onSelectedMenuItem}>
+        {capitalize(v.field)}
+      </Menu.Item>
+    })
 		
-		const menu = (<Menu 
-			triggerSubMenuAction='click'
-		>
-			{
-				menuItem
-			}
-		</Menu>)
-		return (
-			<Dropdown 
-				trigger={['click', 'hover']}  
-				placement="bottomCenter" 
-				overlay={menu} 
-				overlayStyle={{maxHeight:'15rem', overflowY:'scroll'}}
-				visible={dropdownVisible}
-				onVisibleChange={(flag)=>{setDropdownVisible(flag)}}
-			>
-				<FontAwesomeIcon icon={faChevronDown} style={{padding:'0 0.8rem'}}/>
-			</Dropdown>)
-	}
+    const menu = (<Menu 
+      triggerSubMenuAction='click'
+    >
+      {
+        menuItem
+      }
+    </Menu>)
+    return (
+      <Dropdown 
+        trigger={['click', 'hover']}  
+        placement="bottomCenter" 
+        overlay={menu} 
+        overlayStyle={{maxHeight:'15rem', overflowY:'scroll'}}
+        visible={dropdownVisible}
+        onVisibleChange={(flag)=>{setDropdownVisible(flag)}}
+      >
+        <FontAwesomeIcon icon={faChevronDown} style={{padding:'0 0.8rem'}}/>
+      </Dropdown>)
+  }
 
-	return (
-		<>
-			<div className="search-bar">	
-				<Search  maxLength={100} 
-					addonAfter={renderDropdownMenu()}
-					value={searchContent}
-					onSearch={onSearch}
-					onChange={(e)=>{setSearchContent(e.currentTarget.value)}}
-					placeholder={props.placeholder}
-					enterButton></Search>
-			</div>
-		</>
-	)
+  return (
+    <>
+      <div className="search-bar">	
+        <Search  maxLength={100} 
+          addonAfter={renderDropdownMenu()}
+          value={searchContent}
+          onSearch={onSearch}
+          onChange={(e)=>{setSearchContent(e.currentTarget.value)}}
+          placeholder={props.placeholder}
+          enterButton></Search>
+      </div>
+    </>
+  )
 
 }

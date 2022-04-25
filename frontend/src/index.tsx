@@ -16,13 +16,13 @@ window.addEventListener('pageshow', setRem)
 
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<BrowserRouter basename='tendersplus' >
-				<App />
-			</BrowserRouter>
-		</Provider>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter basename='tendersplus' >
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
 
 )

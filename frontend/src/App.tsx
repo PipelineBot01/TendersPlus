@@ -17,89 +17,89 @@ const Favourite = React.lazy(()=>import('./components/favourite'))
 const AIMatch = React.lazy(()=>import('./components/ai_match'))
 
 export default function App() :JSX.Element{
-	return (
-		<>
-			<Routes>
-				<Route path='/' element={<BasicLayout/>}>
-					<Route index element={<Home/>}></Route>
-					<Route path='search' element={
-						<React.Suspense fallback={<div><Spin></Spin></div>}>
-							<SearchResult/>
-						</React.Suspense>
-					}/>
-				</Route>
-				<Route path='/login' element={
-					<React.Suspense fallback={<div><Spin></Spin></div>}>
-						<Login/>
-					</React.Suspense>
-				}/>
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<BasicLayout/>}>
+          <Route index element={<Home/>}></Route>
+          <Route path='search' element={
+            <React.Suspense fallback={<div><Spin></Spin></div>}>
+              <SearchResult/>
+            </React.Suspense>
+          }/>
+        </Route>
+        <Route path='/login' element={
+          <React.Suspense fallback={<div><Spin></Spin></div>}>
+            <Login/>
+          </React.Suspense>
+        }/>
 
-				<Route path='/signup' element={
-					<React.Suspense fallback={<div><Spin></Spin></div>}>
-						<Signup/>
-					</React.Suspense>
-				}/>
+        <Route path='/signup' element={
+          <React.Suspense fallback={<div><Spin></Spin></div>}>
+            <Signup/>
+          </React.Suspense>
+        }/>
 
-				<Route path='/dashboard'element={
-					<React.Suspense fallback={<div><Spin></Spin></div>}>
-						<Dashboard/>
-					</React.Suspense>
-				} >
-					<Route  path='search' element={
-						<React.Suspense fallback={<> 
-							<Spin style={{width:'100%'}} ></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
-						</>}>
-							<SearchResult/>
-						</React.Suspense>
-					}/>
-					<Route  path='profile' element={
+        <Route path='/dashboard'element={
+          <React.Suspense fallback={<div><Spin></Spin></div>}>
+            <Dashboard/>
+          </React.Suspense>
+        } >
+          <Route  path='search' element={
+            <React.Suspense fallback={<> 
+              <Spin style={{width:'100%'}} ></Spin>
+              <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+            </>}>
+              <SearchResult/>
+            </React.Suspense>
+          }/>
+          <Route  path='profile' element={
 		
-						<React.Suspense fallback={<> 
-							<Spin style={{width:'100%'}} ></Spin>
-							<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
-						</>}>
-							<Profile/>
-						</React.Suspense>
-					}/>
-					<Route  path='favorites' element={
+            <React.Suspense fallback={<> 
+              <Spin style={{width:'100%'}} ></Spin>
+              <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+            </>}>
+              <Profile/>
+            </React.Suspense>
+          }/>
+          <Route  path='favorites' element={
 					
-						<React.Suspense fallback={
-							<> 
-								<Spin style={{width:'100%'}} ></Spin>
-								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
-							</>
-						}>
-							<Favourite/>
-						</React.Suspense>
-					}/>
-					<Route  path='analysis' element={
+            <React.Suspense fallback={
+              <> 
+                <Spin style={{width:'100%'}} ></Spin>
+                <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+              </>
+            }>
+              <Favourite/>
+            </React.Suspense>
+          }/>
+          <Route  path='analysis' element={
 
-						<React.Suspense fallback={
-							<> 
-								<Spin style={{width:'100%'}} ></Spin>
-								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
-							</>
-						}>
-							<AIMatch/>
-						</React.Suspense>
-					}/>
-					<Route  path='chatty' element={
-						<React.Suspense fallback={
-							<> 
-								<Spin style={{width:'100%'}} ></Spin>
-								<div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
-							</>
-						}>
-							<Chatty/>
-						</React.Suspense>
-					}/>
-				</Route>
+            <React.Suspense fallback={
+              <> 
+                <Spin style={{width:'100%'}} ></Spin>
+                <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+              </>
+            }>
+              <AIMatch/>
+            </React.Suspense>
+          }/>
+          <Route  path='chatty' element={
+            <React.Suspense fallback={
+              <> 
+                <Spin style={{width:'100%'}} ></Spin>
+                <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>loading...</div>
+              </>
+            }>
+              <Chatty/>
+            </React.Suspense>
+          }/>
+        </Route>
 
 	
-			</Routes>
+      </Routes>
 		
-		</>
-	)
+    </>
+  )
 }
 

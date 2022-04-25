@@ -30,4 +30,5 @@ def sql_add_user(email: str, password: str, first_name: str, last_name: str, uni
 
 
 def sql_get_all_users(session: Session) -> List[SQLUser]:
-    return [{'email': i[0], 'university': i[1]} for i in session.query(SQLUser.email, SQLUser.university).all()]
+    return [{'email': i[0], 'university': i[1], 'name': f'{i[2]} {i[3]}'} for i in
+            session.query(SQLUser.email, SQLUser.university, SQLUser.first_name, SQLUser.last_name).all()]
