@@ -1,8 +1,11 @@
+import datetime
 from urllib import parse
 import pandas as pd
 from pymongo import MongoClient
 from db_conf import SETTINGS
-import datetime
+
+REMOVE_SIG = ['’', '‘', '’', "'", '”', '“']
+
 
 class MongoConx:
     def __init__(self, database, conf=SETTINGS, auth=True):
@@ -12,9 +15,10 @@ class MongoConx:
         self.temp_save = {}
 
     def __reformat_cols(self, input_df):
-        for col in input_df.select_dtypes(object).columns[1:]:
-            input_df[col] = input_df[col].str.replace('’', ' ')
-            input_df[col] = input_df[col].str.replace('‘', ' ')
+        for col in set(input_df.select_dtypes(object)) :
+            if col != '_id':
+                for sig in REMOVE_SIG:
+                    input_df[col] = input_df[col].str.replace(sig, ' ')
         return input_df
 
     def read_df_by_cols(self, df_name, remain_cols):

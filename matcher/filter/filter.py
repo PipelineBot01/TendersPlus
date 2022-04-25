@@ -1,21 +1,22 @@
-import sys
+import os
+from typing import Dict
 import numpy as np
 import pandas as pd
-import datetime
-from conf.file_path import RESEARCHER_MOVEMENT
+from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
+from typing import List
 from utils.match_utils import normalize
 
-WEIGHT_MAP = {1: 0.55, 2: 0.75}
-sys.path.append('..')
+WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
 
 
 class Filter:
-    def __init__(self, act_path=RESEARCHER_MOVEMENT):
+    def __init__(self, act_path=RESEARCHER_ACTION_PATH, tenders_info_path=TENDERS_INFO_PATH):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
         self.__act_df = pd.read_csv(act_path)
+        self.__tenders_info_df = pd.read_csv(tenders_info_path)
 
     def __get_sim_researcher(self, r_id: str):
         result_df = self.__rm.match_by_id(r_id)
@@ -25,6 +26,12 @@ class Filter:
 
     def __get_sim_tenders(self, t_id: str):
         result_df = self.__tm.match(t_id)
+        if result_df.empty:
+            pass
+        return result_df
+
+    def __get_sim_profile_res(self, profile):
+        result_df = self.__rm.match_by_profile(profile['id'], profile['divisions'], profile['tags'], get_dict=False)
         if result_df.empty:
             pass
         return result_df
@@ -46,7 +53,7 @@ class Filter:
         merge_df = re_weight_df.merge(act_tenders_df, left_on='orig', right_on='t_id')
         del act_tenders_df, save_df
 
-        merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['act_type'])
+        merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['type'])
         re_weight_df = merge_df.groupby(['id']).agg({'weight': 'min'}).reset_index()
         re_cnt_df = merge_df.groupby('id')['orig'].count().reset_index().rename(columns={'orig': 'cnt'})
         merge_df = re_weight_df.merge(re_cnt_df, on='id')
@@ -57,24 +64,55 @@ class Filter:
 
         return merge_df[['id', 'weight']]
 
-    def match(self, r_id: str, func=tmp_measure) -> pd.DataFrame:
+    def __reformat_result(self, input_df):
+        merge_df = input_df.merge(self.__tenders_info_df, on='id')
+        merge_df = merge_df.dropna()
+        return merge_df['go_id'].to_list()
+
+    def match(self, profile_dict: Dict, func=tmp_measure) -> List[str]:
         '''
 
         Parameters
         ----------
-        r_id
+        profile_dict
         func
 
         Returns
         -------
 
         '''
-        sim_re_df = self.__get_sim_researcher(r_id)
-        remain_movement = self.__act_df.merge(sim_re_df, left_on='r_id', right_on='Staff ID')
+        if profile_dict['id'] != '':
+            profile_dict['id'] = 'Reg_' + profile_dict['id']
+        sim_re_df = self.__get_sim_profile_res(profile_dict)
+        remain_movement = self.__act_df.merge(sim_re_df, on='id')
+
+        if remain_movement.empty:
+            print(f'{profile_dict} with no similar data')
+            # TODO: only for testing -Ray 2022/4/20
+            profile_dict['divisions'] = '/'.join(i for i in profile_dict['divisions'])
+            profile_dict['tags'] = '/'.join(i for i in profile_dict['tags'])
+            if os.path.exists('missing_record.csv'):
+                tmp_df = pd.read_csv('missing_record.csv')
+                tmp_df.append(profile_dict, ignore_index=True).to_csv('missing_record.csv', index=0)
+            else:
+                pd.DataFrame(profile_dict, index=[0]).to_csv('missing_record.csv', index=0)
+            return pd.DataFrame()
         del sim_re_df
 
-        remain_movement['act_type'] = remain_movement['act_type'].map(lambda x: WEIGHT_MAP[x])
-        act_tenders_df = remain_movement.groupby('t_id').agg({'act_type': 'max', 'weight': 'min'}).reset_index()
+        remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
+        remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
+        remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
+        remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
+        remain_movement.rename(columns={'id': 't_id'}, inplace=True)
+
+        tmp_df = remain_movement[remain_movement['weight'].notna()]
+
+        if not tmp_df.empty:
+            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
+                remain_movement[remain_movement['weight'].notna()]['weight'])
+        else:
+            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1/len(remain_movement)
+        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'min'}).reset_index()
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
         del remain_movement
 
@@ -86,5 +124,6 @@ class Filter:
             sim_tenders_df = sim_tenders_df.append(tmp_df)
 
         result_df = func(self, sim_tenders_df, act_tenders_df)
-        return result_df.sort_values('weight')
-        # return result_df.sort_values('weight')[:10].append(result_df.sort_values('weight')[-10:].sample(3))
+        return self.__reformat_result(result_df.sort_values('weight'))
+
+

@@ -1,65 +1,51 @@
-error: Ref refs/remotes/origin/master is at ade87122eb174c4393399eccf2da15cba3f1aecc but expected 0db35e018d98ee3f254bab59ba74ab3f85e485e3
-From github.com:PipelineBot01/TendersPlus
- ! 0db35e0..ade8712  master     -> origin/master  (unable to update local ref)
-error: Ref refs/remotes/origin/feat_engine is at 2fbedca0f2e77cf2de8cf042bc80823e54f2877e but expected dee9d472169561bb9398fe19ab6bd1b17586be0e
- ! dee9d47..2fbedca  feat_engine -> origin/feat_engine  (unable to update local ref)
-/home/TendersPlus/matcher/tenders/features/lda_model.py:44: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self.relevant_tenders['ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
+2022-04-25 09:57:26,026    ERROR:    Exception in ASGI application
 Traceback (most recent call last):
-  File "main.py", line 20, in <module>
-    fn()
-  File "main.py", line 14, in fn
-    tu.update()
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 218, in update
-    error_2 = self.__topic_error_checking(info_df)
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 130, in __topic_error_checking
-    self.__update_topic(remain_df)
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 62, in __update_topic
-    lda.build_lda_model()
-  File "/home/TendersPlus/matcher/tenders/features/lda_model.py", line 52, in build_lda_model
-    iterations=500)
-  File "/root/.local/lib/python3.6/site-packages/gensim/models/ldamodel.py", line 447, in __init__
-    raise ValueError("cannot compute LDA over an empty collection (no terms)")
-ValueError: cannot compute LDA over an empty collection (no terms)
-error: Your local changes to the following files would be overwritten by merge:
-	matcher/researcher/assets/researcher_action.csv
-	matcher/researcher/assets/researcher_info.csv
-	matcher/researcher/assets/tag_division_map.csv
-	matcher/tenders/assets/clean_trains_info.csv
-	matcher/tenders/assets/tenders_keyword.csv
-Please, commit your changes or stash them before you can merge.
-Aborting
-/home/TendersPlus/matcher/tenders/features/lda_model.py:44: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
+  File "/usr/local/lib/python3.6/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'coroutine' object is not iterable
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self.relevant_tenders['ProcessedText'] = self.relevant_tenders.apply(self.document_process, axis=1)
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
-  File "main.py", line 20, in <module>
-    fn()
-  File "main.py", line 14, in fn
-    tu.update()
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 218, in update
-    error_2 = self.__topic_error_checking(info_df)
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 130, in __topic_error_checking
-    self.__update_topic(remain_df)
-  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 62, in __update_topic
-    lda.build_lda_model()
-  File "/home/TendersPlus/matcher/tenders/features/lda_model.py", line 52, in build_lda_model
-    iterations=500)
-  File "/root/.local/lib/python3.6/site-packages/gensim/models/ldamodel.py", line 447, in __init__
-    raise ValueError("cannot compute LDA over an empty collection (no terms)")
-ValueError: cannot compute LDA over an empty collection (no terms)
-error: Your local changes to the following files would be overwritten by merge:
-	matcher/researcher/assets/researcher_action.csv
-	matcher/researcher/assets/researcher_info.csv
-	matcher/researcher/assets/tag_division_map.csv
-	matcher/tenders/assets/clean_trains_info.csv
-	matcher/tenders/assets/tenders_keyword.csv
-Please, commit your changes or stash them before you can merge.
-Aborting
+  File "/usr/local/lib/python3.6/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 244, in app
+    is_coroutine=is_coroutine,
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 149, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/encoders.py", line 107, in jsonable_encoder
+    sqlalchemy_safe=sqlalchemy_safe,
+  File "/usr/local/lib/python3.6/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'coroutine' object is not iterable",), TypeError('vars() argument must have __dict__ attribute',)]
