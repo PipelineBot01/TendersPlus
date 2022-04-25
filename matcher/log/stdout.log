@@ -146,3 +146,631 @@ Already up-to-date.
 run matcher
 git pulling
 Already up-to-date.
+[master 91d3316] update model
+ 2 files changed, 29 insertions(+)
+run matcher
+git pulling
+Updating 91d3316..40a9e3b
+Fast-forward
+ matcher/relation_interface/Relation.py             | 7 -------
+ matcher/relation_interface/__init__.py             | 0
+ matcher/researcher/matching/researcher_relation.py | 9 ++++-----
+ matcher/tenders/matching/tenders_relation.py       | 3 +--
+ 4 files changed, 5 insertions(+), 14 deletions(-)
+ delete mode 100644 matcher/relation_interface/Relation.py
+ delete mode 100644 matcher/relation_interface/__init__.py
+[master e6bd264] update model
+ 2 files changed, 39 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 884b235] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 66103a5] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 0212e4a] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 0cc7e52] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 4f957a5] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 1f12a62] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 83e0a6e] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f78b9b5] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 306b666] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master e12cd73] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master dcd0955] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 4e10399] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a27d848] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master c07e9a2] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 49bb77b] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 2e3eced] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 55187c7] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 649dfcc] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9967c42] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 7dc8bee] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 379f5f4] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9c8bf4f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 2727b97] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 022eeb3] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 0981a7d] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master cb6496d] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9fa1b33] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f8e17c5] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 409410f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master cca292f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f0da666] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 67baa84] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 41b7a5f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 2182150] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master cf8c325] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master b02d2db] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 1e40028] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master c0b6205] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 6bf1052] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 31ca9df] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master da55a5f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 137bec2] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f08d1b6] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 6db651f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 5566b38] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master d500d71] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 009c87b] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 7159825] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master ba203fd] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 3d2dcc2] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a1fcaa5] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a5edfd9] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9d8d50b] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master c1217bf] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 7b98bed] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 8fcf9b2] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 466573f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9c0ccd3] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a4d7135] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 648a949] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f6845e4] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master d2b07ad] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 73c26b6] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master ce409fd] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 46ebec6] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master dba862d] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 8f834e8] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 55e77f0] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 2d4789b] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 099b7e4] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master c2a84ad] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master f1de4a6] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a1f70c0] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 177e1aa] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9d13ec2] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 9a3ccc8] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 513f221] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 55e7f0c] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master e538221] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master d216b7c] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 53a7d02] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a81b964] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 149d83a] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 38d0449] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master b1e7268] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master b33593e] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 1fdb506] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 4065d3c] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master cff20fd] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a77c6ed] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master ea423ee] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 49a361d] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 5e003b4] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a8a871e] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master c162180] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master a1c83ff] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 6e98c68] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master db2787f] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 61586ea] update model
+ 2 files changed, 14 insertions(+)
+git pulling
+Already up-to-date.
+[master e4f5cd4] update model
+ 2 files changed, 5 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 0154eb3] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+initial update task
+git pulling
+Already up-to-date.
+[master 7109344] update model
+ 2 files changed, 14 insertions(+)
+run matcher
+git pulling
+Already up-to-date.
