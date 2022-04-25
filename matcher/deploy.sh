@@ -1,12 +1,14 @@
 cd /home/TendersPlus
+
+echo "git pulling"
+# fetch the latest files
+git pull -X theirs
+
 git add .
 git commit -m"update model"
 git push origin/master
 
-# fetch the latest files
-git pull -X theirs
 
-echo "git pulling"
 
 cd /home/TendersPlus/matcher
 
