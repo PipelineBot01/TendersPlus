@@ -4,7 +4,7 @@ from conf.file_path import RESEARCHER_TAG_MAP_PATH, RESEARCHER_DIVISION_MAP_PATH
 from utils.match_utils import *
 
 
-class ResearcherMatcher():
+class ResearcherMatcher:
     def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH,
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
                  tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,

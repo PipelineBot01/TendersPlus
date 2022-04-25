@@ -9,7 +9,7 @@ from tenders.features.tenders_feat_creator import TendersFeatCreator
 from utils.match_utils import normalize, weighted_avg
 
 
-class TendersMatcher():
+class TendersMatcher:
     def __init__(self, tag_map_path=TENDERS_TAG_MAP_PATH,
                  topic_path=TENDERS_TOPIC_MAP_PATH,
                  info_path=TENDERS_INFO_PATH, pk='id'):
@@ -26,7 +26,7 @@ class TendersMatcher():
         self.__tag_df = pd.read_csv(tag_map_path)
         self.__topic_df = pd.read_csv(topic_path)
 
-    def prepare_dataset(self, tenders_id: str) -> Tuple[list, list]:
+    def __prepare_dataset(self, tenders_id: str) -> Tuple[list, list]:
         '''
 
         Parameters
@@ -119,7 +119,7 @@ class TendersMatcher():
         -------
 
         '''
-        topic_list, tag_list = self.prepare_dataset(tenders_id)
+        topic_list, tag_list = self.__prepare_dataset(tenders_id)
         candidate_df = measure_func(self, topic_list, tag_list)
 
         # handle no enough matching result
