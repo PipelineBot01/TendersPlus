@@ -15,6 +15,8 @@ class Filter:
     def __init__(self, act_path=RESEARCHER_ACTION_PATH, tenders_info_path=TENDERS_INFO_PATH):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
+        self.__act_path = act_path
+        self.__tenders_info_path = tenders_info_path
         self.__act_df = pd.read_csv(act_path)
         self.__tenders_info_df = pd.read_csv(tenders_info_path)
 
@@ -69,6 +71,12 @@ class Filter:
         merge_df = merge_df.dropna()
         return merge_df['go_id'].to_list()
 
+    def update_data(self):
+        self.__rm = ResearcherMatcher()
+        self.__tm = TendersMatcher()
+        self.__act_df = pd.read_csv(self.__act_path)
+        self.__tenders_info_df = pd.read_csv(self.__tenders_info_path)
+
     def match(self, profile_dict: Dict, func=tmp_measure) -> List[str]:
         '''
 
@@ -111,7 +119,7 @@ class Filter:
             remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
                 remain_movement[remain_movement['weight'].notna()]['weight'])
         else:
-            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1/len(remain_movement)
+            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / len(remain_movement)
         act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'min'}).reset_index()
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
         del remain_movement
@@ -125,5 +133,4 @@ class Filter:
 
         result_df = func(self, sim_tenders_df, act_tenders_df)
         return self.__reformat_result(result_df.sort_values('weight'))
-
 

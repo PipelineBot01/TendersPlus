@@ -3,8 +3,8 @@ from typing import Optional, List
 from fastapi import FastAPI
 
 from scheduler import scheduler
-from filter.filter import Filter
-from researcher.matching.researcher_relation import ResearcherMatcher
+from matcher.filter import tenders_filter
+from matcher.researcher.matching import researcher_matcher
 from utils.tool_utils import get_research_strength
 
 # create web server
@@ -20,12 +20,12 @@ class Profile(BaseModel):
 
 @app.post('/get_sim_researchers')
 async def get_sim_researchers(data: Profile):
-    return {'code': 200, 'data': ResearcherMatcher().match_by_profile(data)}
+    return {'code': 200, 'data': researcher_matcher.match_by_profile(data)}
 
 
 @app.post('/get_reco_tenders')
 async def get_reco_tenders(data: Profile):
-    return {'code': 200, 'data': Filter().match(data)}
+    return {'code': 200, 'data': tenders_filter.match(data)}
 
 
 @app.get('/get_university_strength')
