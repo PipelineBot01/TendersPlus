@@ -44,7 +44,15 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
 
     """
     try:
-        docs = await curd.db_get_latest_tenders(3)
+
+        docs = []
+        response = requests.post('http://localhost:20222/get_sim_researchers',
+                                 json={'divisions': data.research_fields,
+                                       'tags': data.tags})
+        if response.status_code == 200:
+            GO_ID = json.loads(response.content)['data']
+            docs = curd.db_get_tenders_by_ids(GO_ID)
+
         return {'code': 200, 'data': docs}
     except Exception as e:
         print(e)

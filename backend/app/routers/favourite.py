@@ -13,9 +13,9 @@ router = APIRouter()
 @router.get('')
 async def get_user_favourite_tenders(email: str = Depends(check_access_token), db: Session = Depends(get_db)):
     try:
-        user_favourite_tenders_id = sql_get_user_favourite(email=email, session=db)
+        user_favourite_tenders_ids = sql_get_user_favourite(email=email, session=db)
 
-        docs = [await db_get_tenders_by_id(i.id) for i in user_favourite_tenders_id]
+        docs = await user_favourite_tenders_ids([i.id for i in user_favourite_tenders_ids])
         return {'code': 200, 'data': docs}
     except Exception as e:
         print(str(e))
