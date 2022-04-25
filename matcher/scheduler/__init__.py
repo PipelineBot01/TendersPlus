@@ -6,7 +6,9 @@ from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
 from auto_reco import tenders_filter
 from researcher.matching import researcher_matcher
+
 scheduler = AsyncIOScheduler()
+
 
 @scheduler.scheduled_job(id='update_tenders_pool', trigger=IntervalTrigger(hours=2))
 async def update_tenders_pool():
@@ -25,4 +27,3 @@ async def update_researchers_pool():
         tenders_filter.update_data()
         researcher_matcher.update()
         print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
-

@@ -50,3 +50,437 @@ and the repository exists.
 2022-04-25 10:12:49,083    INFO:     Application startup complete.
 2022-04-25 10:12:49,084    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
 2022-04-25 10:13:32,393    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   76027b9..485490a  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   485490a..667ef9f  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   667ef9f..6c8c291  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   6c8c291..bb02303  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   bb02303..5bf3d68  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   5bf3d68..99fabda  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   99fabda..933d75e  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   933d75e..938bb95  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   938bb95..ed4845c  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   ed4845c..f8bd9e5  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   f8bd9e5..2d54d09  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   2d54d09..0760eb7  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   0760eb7..625fb71  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   625fb71..64b04cd  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   64b04cd..787779a  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   787779a..fa8bdf7  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   fa8bdf7..4762e53  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   4762e53..9f88172  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
+To git@github.com:PipelineBot01/TendersPlus.git
+   9f88172..d989669  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import tenders_filter
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 6, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 1, in <module>
+    from .researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 8, in <module>
+    class ResearcherMatcher(Relation):
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 239, in ResearcherMatcher
+    get_dict=True):
+  File "/usr/lib64/python3.6/typing.py", line 682, in inner
+    return func(*args, **kwds)
+  File "/usr/lib64/python3.6/typing.py", line 1131, in __getitem__
+    _check_generic(self, params)
+  File "/usr/local/lib/python3.6/site-packages/typing_extensions.py", line 113, in _check_generic
+    raise TypeError(f"Too {'many' if alen > elen else 'few'} parameters for {cls};"
+TypeError: Too few parameters for typing.Dict; actual 1, expected 2
