@@ -6,7 +6,7 @@ git pull -X theirs
 
 git add .
 git commit -m"update model"
-git push origin/master
+git push origin master
 
 
 
