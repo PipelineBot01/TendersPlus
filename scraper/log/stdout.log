@@ -1,7 +1,12 @@
-Already up-to-date.
+Updating 2e2e4cb..4cf2bad
+Fast-forward
+ .gitignore            |   1 +
+ .supervisord.conf.swp | Bin 20480 -> 0 bytes
+ 2 files changed, 1 insertion(+)
+ delete mode 100644 .supervisord.conf.swp
 git pulling
 *********** start update raw_grant_opened **********
-2022-04-17 21:07:18.428461 -- start update
+2022-04-18 00:29:28.883154 -- start update
 collecting urls
 page 1 finished
 page 2 finished
@@ -13,7 +18,318 @@ page 7 finished
 page 8 finished
 page 9 finished
 page 10 finished
-[Errno 2] No such file or directory: './assets/gosLink.json'
+save gos Link finished
 Parsing links
-Already up-to-date.
-git pulling
+Saving complete
+Saving errorStuff complete
+2022-04-18 00:29:50.264785 -- done update
+*********** start update raw_grant_all **********
+2022-04-18 00:29:50.264809 -- start update
+update 139 records
+insert 0 records
+2022-04-18 00:29:59.765456 -- done update
+*********** start update raw_grant_opened **********
+2022-04-18 01:29:28.884322 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-18 01:29:51.156530 -- done update
+*********** start update raw_grant_all **********
+2022-04-18 01:29:51.156549 -- start update
+update 139 records
+insert 0 records
+2022-04-18 01:30:00.558924 -- done update
+*********** start update raw_grant_opened **********
+2022-04-18 02:29:28.883648 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-18 02:29:52.169109 -- done update
+*********** start update raw_grant_all **********
+2022-04-18 02:29:52.169134 -- start update
+update 139 records
+insert 0 records
+2022-04-18 02:30:00.744851 -- done update
+*********** start update raw_grant_opened **********
+2022-04-19 00:29:28.882779 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-19 00:30:02.846343 -- done update
+*********** start update raw_grant_all **********
+2022-04-19 00:30:02.846367 -- start update
+update 138 records
+insert 0 records
+2022-04-19 00:30:11.733426 -- done update
+*********** start update raw_grant_opened **********
+2022-04-19 01:29:28.882745 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-19 01:29:50.697125 -- done update
+*********** start update raw_grant_all **********
+2022-04-19 01:29:50.697146 -- start update
+update 138 records
+insert 0 records
+2022-04-19 01:29:59.862645 -- done update
+*********** start update raw_grant_opened **********
+2022-04-19 02:29:28.882732 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-19 02:29:45.941183 -- done update
+*********** start update raw_grant_all **********
+2022-04-19 02:29:45.941205 -- start update
+update 138 records
+insert 0 records
+2022-04-19 02:29:55.025979 -- done update
+*********** start update raw_grant_opened **********
+2022-04-20 00:29:28.916644 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5454
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-20 00:29:55.825395 -- done update
+*********** start update raw_grant_all **********
+2022-04-20 00:29:55.825420 -- start update
+update 138 records
+insert 1 records
+2022-04-20 00:30:04.901015 -- done update
+*********** start update raw_grant_opened **********
+2022-04-20 01:29:28.934175 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-20 01:29:46.605893 -- done update
+*********** start update raw_grant_all **********
+2022-04-20 01:29:46.605915 -- start update
+update 139 records
+insert 0 records
+2022-04-20 01:29:55.897472 -- done update
+*********** start update raw_grant_opened **********
+2022-04-20 02:29:28.932947 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-20 02:29:44.986336 -- done update
+*********** start update raw_grant_all **********
+2022-04-20 02:29:44.986355 -- start update
+update 139 records
+insert 0 records
+2022-04-20 02:29:54.364173 -- done update
+*********** start update raw_grant_opened **********
+2022-04-21 00:29:28.882761 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5606
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-21 00:29:55.885159 -- done update
+*********** start update raw_grant_all **********
+2022-04-21 00:29:55.885179 -- start update
+update 136 records
+insert 1 records
+2022-04-21 00:30:04.953941 -- done update
+*********** start update raw_grant_opened **********
+2022-04-21 01:29:28.882808 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-21 01:29:57.955555 -- done update
+*********** start update raw_grant_all **********
+2022-04-21 01:29:57.955576 -- start update
+update 137 records
+insert 0 records
+2022-04-21 01:30:06.869511 -- done update
+*********** start update raw_grant_opened **********
+2022-04-21 02:29:28.882798 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-21 02:29:45.732681 -- done update
+*********** start update raw_grant_all **********
+2022-04-21 02:29:45.732702 -- start update
+update 137 records
+insert 0 records
+2022-04-21 02:29:55.384977 -- done update
+*********** start update raw_grant_opened **********
+2022-04-22 00:29:28.882766 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5611
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-22 00:29:57.928998 -- done update
+*********** start update raw_grant_all **********
+2022-04-22 00:29:57.929021 -- start update
+update 136 records
+insert 1 records
+2022-04-22 00:30:06.303452 -- done update
+*********** start update raw_grant_opened **********
+2022-04-22 01:29:28.882795 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-22 01:29:46.947999 -- done update
+*********** start update raw_grant_all **********
+2022-04-22 01:29:46.948022 -- start update

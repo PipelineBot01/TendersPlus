@@ -8,16 +8,13 @@ from typing import Dict, List
 def get_research_strength(score_range: List[int] = [0, 10],
                           div_path: str = RESEARCHER_DIVISION_MAP_PATH, pk='id') -> Dict[str, dict]:
     '''
-
     Parameters
     ----------
     score_range: List[int, int]: range of score
     div_path: str, path for division data file
     pk: str, primary key for division dataframe, default as Staff ID.
-
     This function will generate the research strength for a university, final
     mark will be compressed to int(3~10)
-
     Returns
     -------
     dict[str, dict]
