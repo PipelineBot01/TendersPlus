@@ -58,7 +58,7 @@ class PostProcess:
             rel_save_df = rel_save_df + tm.match(t_id)['id'].unique().tolist()
 
         cond_rel = input_df['go_id'].isin(rel_save_df)
-        input_df.loc[cond_rel, 'weight'] = input_df[cond_rel]['weight']+sum(input_df['weight'])/3
+        input_df.loc[cond_rel, 'weight'] = input_df[cond_rel]['weight'] + sum(input_df['weight']) / 3
         del cond_rel
 
         cond_tar = input_df['go_id'].isin(tar_save_df)
@@ -88,14 +88,11 @@ class PostProcess:
             save_list.append(tmp_hot_df)
         return save_list
 
-
     def __reformat_location(self):
         pass
 
     def __reformat_others(self):
         pass
-
-
 
     def run(self, user_id, input_df):
 

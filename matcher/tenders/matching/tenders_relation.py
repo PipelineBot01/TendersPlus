@@ -100,8 +100,8 @@ class TendersMatcher:
 
         if not tmp_df1[tmp_df1['weight'].notna()].empty:
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.pk, how='outer')
-            tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
-            tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
+            tmp_df1['weight_x'] = tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
+            tmp_df1['weight_y'] = tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
             tmp_df1['weight'] = tmp_df1['weight_y'] - 1.2 * tmp_df1['weight_x']
         del tmp_df2
         return tmp_df1.sort_values('weight')[[self.pk, 'weight']]

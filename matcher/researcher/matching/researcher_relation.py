@@ -118,8 +118,8 @@ class ResearcherMatcher:
         if not tag_list[0].empty:
             tmp_df2 = self.__weighted_tag_sim(*tag_list)
             tmp_df1 = tmp_df1.merge(tmp_df2, on=self.__pk, how='outer')
-            tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
-            tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
+            tmp_df1['weight_x'] = tmp_df1['weight_x'].fillna(np.mean(tmp_df1['weight_x']))
+            tmp_df1['weight_y'] = tmp_df1['weight_y'].fillna(np.mean(tmp_df1['weight_y']))
             del tmp_df2
             tmp_df1['weight'] = tmp_df1['weight_x'] - 1.5 * tmp_df1['weight_y']
         tmp_df1.loc[tmp_df1['weight'] == 0, 'weight'] = 0.000001
@@ -180,7 +180,7 @@ class ResearcherMatcher:
         if tags and len(tags) != 0:
             tag_dict = {}
             for idx, tag in enumerate(tags):
-                tag_dict[tag] = len(tags) - idx
+                tag_dict[tag.lower()] = len(tags) - idx
             tar_tag_df = pd.DataFrame({'name': 'current_tmp',
                                        self.__pk: 'current_id',
                                        'tag': list(tag_dict.keys()),
@@ -257,10 +257,8 @@ class ResearcherMatcher:
         tags = profile_dict['tags']
         assert len(divisions) != 0, 'At least the division should not be empty.'
         div_list, tag_list = self.__prepare_dataset_by_profile(id, divisions, tags)
-
         candidate_df = measure_func(self, div_list, tag_list)
         # candidate_df = candidate_df[candidate_df['id'] != id]
-
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
         sim_df = self.__reformat_output(sim_df, ['name', 'email', 'colleges'])
 

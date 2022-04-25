@@ -89,6 +89,9 @@ class Filter:
         -------
 
         '''
+        if 'id' not in profile_dict.keys():
+            profile_dict['id'] = ''
+
         if profile_dict['id'] != '':
             profile_dict['id'] = 'Reg_' + profile_dict['id']
         sim_re_df = self.__get_sim_profile_res(profile_dict)
