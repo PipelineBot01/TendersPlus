@@ -133,3 +133,9 @@ ValueError: Out of range float values are not JSON compliant
 2022-04-25 15:46:16,844    INFO:     Shutting down
 From github.com:PipelineBot01/TendersPlus
    ee353dd..3a06111  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   3a06111..ca7e43b  master -> master
+2022-04-25 15:46:42,959    INFO:     Started server process [18433]
+2022-04-25 15:46:42,960    INFO:     Waiting for application startup.
+2022-04-25 15:46:42,961    INFO:     Application startup complete.
+2022-04-25 15:46:42,962    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
