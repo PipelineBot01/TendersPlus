@@ -1,4 +1,4 @@
-from filter.filter import Filter
+from auto_reco.clb_filter import Filter
 from researcher.matching.researcher_relation import ResearcherMatcher
 
 rm = ResearcherMatcher()

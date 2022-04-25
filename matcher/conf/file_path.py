@@ -19,4 +19,4 @@ RESEARCHER_ACTION_PATH = './researcher/assets/researcher_action.csv'
 TENDERS_MATCHING_OUTPUT = './output/tenders_match_result.csv'
 RESEARCHER_MATCHING_OUTPUT = './output/researcher_match_result.csv'
 
-RESEARCHER_MOVEMENT = './filter/assets/test.csv'
+RESEARCHER_MOVEMENT = './auto_reco/assets/test.csv'
