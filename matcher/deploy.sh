@@ -1,7 +1,7 @@
 cd /home/TendersPlus
 git add .
 git commit -m"update model"
-git push
+git push origin/master
 
 # fetch the latest files
 git pull -X theirs
