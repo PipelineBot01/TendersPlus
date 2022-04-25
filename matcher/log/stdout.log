@@ -146,3 +146,16 @@ Already up-to-date.
 run matcher
 git pulling
 Already up-to-date.
+[master 91d3316] update model
+ 2 files changed, 29 insertions(+)
+run matcher
+git pulling
+Updating 91d3316..40a9e3b
+Fast-forward
+ matcher/relation_interface/Relation.py             | 7 -------
+ matcher/relation_interface/__init__.py             | 0
+ matcher/researcher/matching/researcher_relation.py | 9 ++++-----
+ matcher/tenders/matching/tenders_relation.py       | 3 +--
+ 4 files changed, 5 insertions(+), 14 deletions(-)
+ delete mode 100644 matcher/relation_interface/Relation.py
+ delete mode 100644 matcher/relation_interface/__init__.py
