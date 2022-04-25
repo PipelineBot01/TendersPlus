@@ -15,5 +15,5 @@ def get_strength_overview():
         return {'code': 200, 'data': data}
     except Exception as e:
         print(e)
-        
+
         raise HTTPException(500, 'INTERNAL SERVER ERROR')
