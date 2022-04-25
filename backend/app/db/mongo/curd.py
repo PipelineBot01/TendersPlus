@@ -106,9 +106,9 @@ async def db_get_tenders_by_ids(ids: list) -> list:
     client = mongo['tenders_client']
     db = client.get_default_database()
     collection = db['clean_grants_opened']
-    cursor =  collection.find({'GO ID': {'$in': ids}},
-                                 {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
-                                  'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
+    cursor = collection.find({'GO ID': {'$in': ids}},
+                             {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+                              'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
     docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
     return docs
