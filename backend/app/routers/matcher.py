@@ -46,8 +46,8 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
     try:
 
         docs = []
-        response = requests.post('http://localhost:20222/get_sim_researchers',
-                                 json={'divisions': data.research_fields,
+        response = requests.post('http://localhost:20222/get_reco_tenders',
+                                 json={'id': email, 'divisions': data.research_fields,
                                        'tags': data.tags})
         if response.status_code == 200:
             GO_ID = json.loads(response.content)['data']
