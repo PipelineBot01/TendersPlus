@@ -10,3 +10,18 @@ Fast-forward
  matcher/researcher/matching/researcher_relation.py | 10 ++++------
  matcher/tenders/matching/tenders_relation.py       | 10 +++++-----
  6 files changed, 15 insertions(+), 17 deletions(-)
+[master ee353dd] update model
+ 2 files changed, 97 insertions(+), 2219 deletions(-)
+ rewrite matcher/log/stderr.log (99%)
+ rewrite matcher/log/stdout.log (99%)
+run matcher
+initial update task
+2022-04-25 14:28:25,181    INFO:     ::1:60298 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-25 14:28:28,230    INFO:     ::1:60312 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+git pulling
+Updating ee353dd..3a06111
+Fast-forward
+ matcher/auto_reco/clb_filter.py                    |  6 +--
+ matcher/researcher/assets/researcher_action.csv    | 53 ----------------------
+ matcher/researcher/matching/researcher_relation.py | 11 +++--
+ 3 files changed, 11 insertions(+), 59 deletions(-)
