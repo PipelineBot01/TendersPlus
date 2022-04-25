@@ -20,6 +20,7 @@ def get_research_strength(div_path: str = RESEARCHER_DIVISION_MAP_PATH, pk='Staf
     '''
 
     div_df = pd.read_csv(div_path)
+    print(div_df.head(),div_df.columns)
     div_df = div_df.groupby('value').agg({pk: 'count',
                                           'weight': 'sum'}).reset_index().sort_values('value').rename(
         columns={pk: 'count', 'weight': 'Total_weight'})
