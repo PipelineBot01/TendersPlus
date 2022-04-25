@@ -926,3 +926,11 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-25 12:54:44,184    ERROR:    [Errno 98] error while attempting to bind on address ('127.0.0.1', 20222): address already in use
 2022-04-25 12:54:44,184    INFO:     Waiting for application shutdown.
 2022-04-25 12:54:44,185    INFO:     Application shutdown complete.
+To git@github.com:PipelineBot01/TendersPlus.git
+   b02d2db..1e40028  master -> master
+2022-04-25 12:55:10,497    INFO:     Started server process [5638]
+2022-04-25 12:55:10,498    INFO:     Waiting for application startup.
+2022-04-25 12:55:10,499    INFO:     Application startup complete.
+2022-04-25 12:55:10,500    ERROR:    [Errno 98] error while attempting to bind on address ('127.0.0.1', 20222): address already in use
+2022-04-25 12:55:10,500    INFO:     Waiting for application shutdown.
+2022-04-25 12:55:10,501    INFO:     Application shutdown complete.
