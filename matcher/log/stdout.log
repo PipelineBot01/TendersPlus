@@ -91,3 +91,17 @@ Fast-forward
  matcher/tenders/update/tenders_updater.py         |    32 +-
  10 files changed, 46015 insertions(+), 2630 deletions(-)
  create mode 100644 matcher/tenders/assets/tenders_relation_map.csv
+[master 463b5e4] update model
+ 3 files changed, 59 insertions(+)
+ create mode 100644 matcher/missing_record.csv
+run matcher
+initial update task
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-26 11:33:21,286    INFO:     ::1:52680 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-26 11:33:31,855    INFO:     ::1:52726 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Updating 463b5e4..38df299
+Fast-forward
+ matcher/main.py | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)

@@ -155,3 +155,12 @@ TypeError: Required argument 'format' (pos 1) not found
 2022-04-26 11:32:49,692    INFO:     Shutting down
 From github.com:PipelineBot01/TendersPlus
    c2238b9..d11dcfe  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   d11dcfe..463b5e4  master -> master
+2022-04-26 11:33:19,533    INFO:     Started server process [19550]
+2022-04-26 11:33:19,534    INFO:     Waiting for application startup.
+2022-04-26 11:33:19,536    INFO:     Application startup complete.
+2022-04-26 11:33:19,537    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-26 11:35:31,684    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   463b5e4..38df299  master     -> origin/master
