@@ -41,9 +41,10 @@ export default function Header():JSX.Element{
           access_token:response.data.access_token,
           favourite:response.data.favourite
         }
+        setIsSucceeded(true)
         dispatch(setUserInfo(user))
         Cookies.set('access_token', user.access_token)
-        setIsSucceeded(true)
+
       }
     }).catch((response)=>{
       message.destroy('signup')
@@ -53,15 +54,16 @@ export default function Header():JSX.Element{
     })
   }
   const handleTriggerSubmitForm = ()=>{
-	
     setIsSubmitting(true)
     form.submit()
   }
+
   const handleSubmitFormFailed = ()=>{
     setTimeout(()=>{
       setIsSubmitting(false)
     }, 1000)
   }
+
   const renderUniversitiesOptions = ()=>{
     const arr = new Array<ReactElement>()
     for(const key of Object.keys(universities)){
@@ -74,6 +76,7 @@ export default function Header():JSX.Element{
     }
     return arr
   }
+
   const renderResearchFieldsOptions = ()=>{
     const arr = new Array<ReactElement>()
     for(const key of Object.keys(researchFields)){
@@ -258,6 +261,7 @@ export default function Header():JSX.Element{
       </div>
     </>
   }
+
   const renderSignupResult = ()=>{
     return <Result
       status="success"
