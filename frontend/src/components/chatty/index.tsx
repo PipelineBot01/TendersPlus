@@ -36,7 +36,7 @@ export default function Chatty():JSX.Element{
                 title={e?.name}
                 description={<>
                   <div className='email' style={{fontWeight:500}}>{e?.email || e.name.replace(' ', '').toLowerCase() + '@uc.au'}</div>
-                  <div className='university'>University of Canberra</div>
+                  <div className='university'>{e?.university}</div>
                   <Divider style={{margin:'0.8rem 0'}}/>
                   <div className='research_fields'>
                     {e?.division?.slice(0, 3).map((e2:any, index2:any)=>{

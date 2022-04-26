@@ -13,17 +13,17 @@ scheduler = AsyncIOScheduler()
 @scheduler.scheduled_job(id='update_tenders_pool', trigger=IntervalTrigger(hours=2))
 async def update_tenders_pool():
     if 2 < datetime.now().hour < 6:
-        print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ start update tenders pool')
+        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update tenders pool')
         TendersUpdater().update()
         tenders_filter.update_data()
-        print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ end update tenders pool')
+        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update tenders pool')
 
 
 @scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(hours=1))
 async def update_researchers_pool():
     if 20 < datetime.now().hour < 8:
-        print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
+        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
         ResearcherUpdater().update()
         tenders_filter.update_data()
         researcher_matcher.update()
-        print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
+        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
