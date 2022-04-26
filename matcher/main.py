@@ -20,6 +20,7 @@ class Profile(BaseModel):
 
 @app.post('/get_sim_researchers')
 async def get_sim_researchers(data: Profile):
+    print(data.__dict__)
     output = researcher_matcher.match_by_profile(data.__dict__)
     print(output)
     return {'code': 200, 'data': output}
@@ -27,6 +28,7 @@ async def get_sim_researchers(data: Profile):
 
 @app.post('/get_reco_tenders')
 async def get_reco_tenders(data: Profile):
+    print(data.__dict__)
     output = tenders_filter.match(data.__dict__)
     print(output)
     return {'code': 200, 'data':output}
