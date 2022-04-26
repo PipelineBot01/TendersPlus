@@ -113,76 +113,22 @@ async def db_get_tenders_by_ids(ids: list) -> list:
     docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
     return docs
 
+
 async def db_get_tenders_from_history(ids: list) -> list:
-        """
-        query tenders by id
-        :param id_: the GO ID of each tenders
-        :return: an tender object
-        """
-        if len(ids) == 0:
-            return []
+    """
+    query tenders by id
+    :param id_: the GO ID of each tenders
+    :return: an tender object
+    """
+    if len(ids) == 0:
+        return []
 
-        client = mongo['tenders_client']
-        db = client.get_default_database()
-        collection = db['clean_grants_all']
-        cursor = collection.find({'GO ID': {'$in': ids}},
-                                 {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
-                                  'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
+    client = mongo['tenders_client']
+    db = client.get_default_database()
+    collection = db['clean_grants_all']
+    cursor = collection.find({'GO ID': {'$in': ids}},
+                             {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
+                              'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
-        docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
-        return docs
-    # async def db_relax_search(n: Union[int, None] = None, words: list = None) -> dict:
-    #     collection = mongo['tenders_client']['tenders']['open']
-    #     relax_query_list = []
-    #     for word in words:
-    #         key = '(?i)' + word
-    #         relx_query = {'$regex':key}
-    #         relax_query_list.append({"Title":relx_query})
-    #         relax_query_list.append({"Description":relx_query})
-    #         relax_query_list.append({"Agency":relx_query})
-    #     querys ={"$or":relax_query_list}
-    #     limit = n
-    #     docs = await do_relax_find(collection=collection, querys=querys, limit=limit)
-    #     latest_datetime = datetime.now() - timedelta(weeks=settings.LATEST_WEEK_THRESHOLD)
-    #
-    #     df = pd.DataFrame.from_records(docs).sort_values("Publish Date", ascending=False)[:n]
-    #     df['timestamp'] = df['Publish Date'].map(lambda x: datetime.strptime(x, settings.DATETIME_FORMAT))
-    #     df.drop(df[df['timestamp'] < latest_datetime].index, inplace=True)
-    #     print(df)
-    #     return df.to_dict()
-
-    # async def do_find(collection: AsyncIOMotorCollection, condition: dict, skip: Union[int, None] = None,
-    #                   limit: Union[int, None] = None,
-    #                   sort: Union[dict, None] = None):
-    #     tmp = []
-    #     cursor = collection.find(condition)
-    #     if sort:
-    #         cursor.sort(sort)
-    #     if skip:
-    #         cursor.skip(skip)
-    #     if limit:
-    #         cursor.limit(limit)
-    #     for doc in await cursor.to_list(1000):
-    #         tmp.append(doc)
-    #
-    #     return tmp
-    #
-    # async def do_relax_find(collection: AsyncIOMotorCollection, querys: dict,
-    #                     skip: Union[int, None] = None,
-    #                     limit: Union[int, None] = None,
-    #                     sort: Union[dict,None] = None):
-    #     tmp = []
-    #     cursor = collection.find(querys)
-    #     if sort:
-    #         cursor.sort(sort)
-    #     if skip:
-    #         cursor.skip(skip)
-    #     if limit:
-    #         cursor.limit(limit)
-    #     for doc in await cursor.to_list(1000):
-    #         tmp.append(doc)
-    #     return tmp
-
-    # db_get_latest_tenders(10)
-
-    # db_relax_search(n=30, words=["Health", "Agriculture"])
+    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    return docs
