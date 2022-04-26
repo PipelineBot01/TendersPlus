@@ -25,24 +25,6 @@ class Filter:
         self.__tenders_info_df = pd.read_csv(tenders_info_path)
         self.__tenders_relation_df = pd.read_csv(tenders_relation_path)
 
-    def __get_sim_researcher(self, r_id: str):
-        result_df = self.__rm.match_by_id(r_id)
-        if result_df.empty:
-            pass
-        return result_df
-
-    def __get_sim_tenders(self, t_id: str):
-        result_df = self.__tm.match(t_id)
-        if result_df.empty:
-            pass
-        return result_df
-
-    def __get_sim_profile_res(self, profile):
-        result_df = self.__rm.match_by_profile(profile, get_dict=False)
-        if result_df.empty:
-            pass
-        return result_df
-
     def tmp_measure(self, save_df: pd.DataFrame, act_tenders_df: pd.DataFrame) -> pd.DataFrame:
         '''
 
@@ -100,7 +82,7 @@ class Filter:
 
         if profile_dict['id'] != '':
             profile_dict['id'] = 'Reg_' + profile_dict['id']
-        sim_re_df = self.__get_sim_profile_res(profile_dict)
+        sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
 
         if remain_movement.empty:

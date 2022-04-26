@@ -12,4 +12,4 @@ def get_reco_tenders(profile):
     return fl.match(profile)
 
 if __name__ == '__main__':
-    print(get_reco_tenders({'id': 'string', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['baby']}))
+    print(get_reco_tenders({'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}))

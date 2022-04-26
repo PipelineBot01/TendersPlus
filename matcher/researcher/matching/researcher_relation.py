@@ -235,7 +235,8 @@ class ResearcherMatcher:
     def match_by_profile(self, profile_dict: Dict[str, Union[str, List[str]]],
                          match_num=10,
                          measure_func=__combined_measure,
-                         get_dict=True):
+                         get_dict=True,
+                         remove_cur_id=True):
         '''
 
         Parameters
@@ -247,6 +248,7 @@ class ResearcherMatcher:
         match_num: int, defined how many matched researcher will be returned.
         measure_func: func, the measurement function for calculating similarity
         get_dict: boolean, whether return a dictionary
+        remove_cur_id: boolean, whether remove current user id
         Returns
         -------
         List, info of similar researchers
@@ -258,7 +260,7 @@ class ResearcherMatcher:
         assert len(divisions) != 0, 'At least the division should not be empty.'
         div_list, tag_list = self.__prepare_dataset_by_profile(id, divisions, tags)
         candidate_df = measure_func(self, div_list, tag_list)
-        candidate_df = candidate_df[candidate_df['id'] != id]
+        candidate_df = candidate_df[candidate_df['id'] != id] if remove_cur_id else candidate_df
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
         sim_df = self.__reformat_output(sim_df, ['name', 'email', 'university'])
 
