@@ -92,7 +92,8 @@ class Filter:
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             # TODO: only for testing -Ray 2022/4/20
-            melt_df = self.__tenders_info_df[['id', 'category', 'sub_category']].melt(id_vars='id')[['id', 'value']]
+            filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
+            melt_df = filter_info_df[['id', 'category', 'sub_category']].melt(id_vars='id')[['id', 'value']]
             melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
             div_dict = get_div_id_dict()
             melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
