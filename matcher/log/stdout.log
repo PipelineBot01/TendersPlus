@@ -6,3 +6,14 @@ Index: []
 2022-04-26 11:37:05,267    INFO:     ::1:53030 - "POST /get_reco_tenders HTTP/1.1" 200 OK
 git pulling
 Already up-to-date.
+[master 01b8e99] update model
+ 1 file changed, 2 insertions(+)
+run matcher
+initial update task
+['GO5147', 'GO4117', 'GO4287', 'GO4739', 'GO4555', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO5296', 'GO3844', 'GO5242', 'GO4031', 'GO1772', 'GO1701', 'GO4808', 'GO3940', 'GO5027', 'GO5027', 'GO3112', 'GO4642', 'GO5123', 'GO3423', 'GO4710', 'GO4151', 'GO4081', 'GO2986', 'GO5414', 'GO5414', 'GO5334', 'GO5170', 'GO3069', 'GO3069', 'GO5397', 'GO1683', 'GO4656', 'GO1943', 'GO4926', 'GO167', 'GO4167', 'GO2783', 'GO5258', 'GO4990', 'GO4724', 'GO4480', 'GO5409', 'GO4297', 'GO4068', 'GO356', 'GO356', 'GO358', 'GO358', 'GO5285', 'GO3421', 'GO4504', 'GO1676', 'GO5241', 'GO2332', 'GO3462', 'GO1539', 'GO4682', 'GO3957', 'GO4758', 'GO438', 'GO5005', 'GO4618', 'GO3408', 'GO1824', 'GO5316', 'GO4688', 'GO3970', 'GO5113', 'GO5611', 'GO5611', 'GO2899', 'GO3173', 'GO1952', 'GO2842', 'GO2843']
+2022-04-26 11:49:51,413    INFO:     ::1:53984 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Updating 01b8e99..57626eb
+Fast-forward
+ matcher/main.py | 2 ++
+ 1 file changed, 2 insertions(+)
