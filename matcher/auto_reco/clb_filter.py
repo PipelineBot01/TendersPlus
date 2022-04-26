@@ -93,12 +93,12 @@ class Filter:
             print(f'{profile_dict} with no similar data')
             # TODO: only for testing -Ray 2022/4/20
             filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
-            melt_df = filter_info_df[['id', 'category', 'sub_category']].melt(id_vars='id')[['id', 'value']]
+            melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
             melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
             div_dict = get_div_id_dict()
             melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
             melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
-            return melt_df.sample(frac=1)['id'].unique().tolist()
+            return melt_df.sample(frac=1)['go_id'].unique().tolist()
         del sim_re_df
 
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
