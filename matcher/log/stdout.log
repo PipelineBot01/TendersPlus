@@ -53,3 +53,41 @@ initial update task
 2022-04-25 20:52:55,796    INFO:     ::1:56234 - "POST /get_sim_researchers HTTP/1.1" 200 OK
 git pulling
 Already up-to-date.
+[master 0896a88] update model
+ 2 files changed, 34 insertions(+)
+run matcher
+initial update task
+2022-04-25 20:58:00,518    INFO:     ::1:56586 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-25 20:58:04,373    INFO:     ::1:56598 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-25 20:58:23,175    INFO:     ::1:56660 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-25 20:58:26,455    INFO:     ::1:56696 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-25 23:20:22,960    INFO:     ::1:36890 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-25 23:20:40,949    INFO:     ::1:36934 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-25 23:20:43,842    INFO:     ::1:36946 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-25 23:20:46,143    INFO:     ::1:36954 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-25 23:20:50,322    INFO:     ::1:36996 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-25 23:22:12,018    INFO:     ::1:37122 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-25 23:22:20,486    INFO:     ::1:37162 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-25 23:23:07,124    INFO:     ::1:37226 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+2022-04-25 23:23:16,775    INFO:     ::1:37270 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-26 10:03:50,566    INFO:     ::1:47224 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-26 10:04:16,993    INFO:     ::1:47266 - "GET /get_university_strength HTTP/1.1" 200 OK
+git pulling
+Updating c2238b9..d11dcfe
+Fast-forward
+ backend/app/db/mongo/curd.py                      |    90 +-
+ matcher/auto_reco/clb_filter.py                   |    21 +-
+ matcher/conf/file_path.py                         |     5 +-
+ matcher/matching.py                               |    10 +-
+ matcher/researcher/assets/researcher_action.csv   |  2464 --
+ matcher/researcher/assets/researcher_division.csv |   207 +-
+ matcher/researcher/update/researcher_updater.py   |     7 +
+ matcher/scheduler/__init__.py                     |     8 +-
+ matcher/tenders/assets/tenders_relation_map.csv   | 45801 ++++++++++++++++++++
+ matcher/tenders/update/tenders_updater.py         |    32 +-
+ 10 files changed, 46015 insertions(+), 2630 deletions(-)
+ create mode 100644 matcher/tenders/assets/tenders_relation_map.csv

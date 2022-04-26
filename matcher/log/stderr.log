@@ -139,3 +139,19 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-25 15:46:42,960    INFO:     Waiting for application startup.
 2022-04-25 15:46:42,961    INFO:     Application startup complete.
 2022-04-25 15:46:42,962    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+To git@github.com:PipelineBot01/TendersPlus.git
+   674f4e6..0896a88  master -> master
+2022-04-25 20:54:52,584    INFO:     Started server process [29800]
+2022-04-25 20:54:52,586    INFO:     Waiting for application startup.
+2022-04-25 20:54:52,859    INFO:     Application startup complete.
+2022-04-25 20:54:52,917    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-04-26 06:54:50 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 16, in update_tenders_pool
+    print(datetime.now().strftime(fmt='%Y-%m-%d %H:%M:%S') + ' ------ start update tenders pool')
+TypeError: Required argument 'format' (pos 1) not found
+2022-04-26 11:32:49,692    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   c2238b9..d11dcfe  master     -> origin/master
