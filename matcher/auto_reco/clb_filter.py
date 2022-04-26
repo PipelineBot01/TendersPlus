@@ -2,11 +2,13 @@ import os
 from typing import Dict
 import numpy as np
 import pandas as pd
-from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH, TENDERS_RELATION_MAP_PATH
+from conf.file_path import RESEARCHER_ACTION_PATH, \
+    TENDERS_INFO_PATH, TENDERS_RELATION_MAP_PATH, TENDERS_CATE_DIV_MAP_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
 from typing import List
 from utils.match_utils import normalize
+from utils.match_utils import get_div_id_dict
 
 WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
 
@@ -14,7 +16,8 @@ WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
 class Filter:
     def __init__(self, act_path=RESEARCHER_ACTION_PATH,
                  tenders_info_path=TENDERS_INFO_PATH,
-                 tenders_relation_path = TENDERS_RELATION_MAP_PATH):
+                 tenders_relation_path=TENDERS_RELATION_MAP_PATH,
+                 cate_div_map_path=TENDERS_CATE_DIV_MAP_PATH):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
         self.__act_path = act_path
@@ -24,6 +27,7 @@ class Filter:
         self.__act_df = pd.read_csv(act_path)
         self.__tenders_info_df = pd.read_csv(tenders_info_path)
         self.__tenders_relation_df = pd.read_csv(tenders_relation_path)
+        self.__cate_div_map_df = pd.read_csv(cate_div_map_path)
 
     def tmp_measure(self, save_df: pd.DataFrame, act_tenders_df: pd.DataFrame) -> pd.DataFrame:
         '''
@@ -88,14 +92,12 @@ class Filter:
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             # TODO: only for testing -Ray 2022/4/20
-            profile_dict['divisions'] = '/'.join(i for i in profile_dict['divisions'])
-            profile_dict['tags'] = '/'.join(i for i in profile_dict['tags'])
-            if os.path.exists('missing_record.csv'):
-                tmp_df = pd.read_csv('missing_record.csv')
-                tmp_df.append(profile_dict, ignore_index=True).to_csv('missing_record.csv', index=0)
-            else:
-                pd.DataFrame(profile_dict, index=[0]).to_csv('missing_record.csv', index=0)
-            return pd.DataFrame()
+            melt_df = self.__tenders_info_df[['id', 'category', 'sub_category']].melt(id_vars='id')[['id', 'value']]
+            melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
+            div_dict = get_div_id_dict()
+            melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
+            melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
+            return melt_df.sample(frac=1)['id'].unique().tolist()
         del sim_re_df
 
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]

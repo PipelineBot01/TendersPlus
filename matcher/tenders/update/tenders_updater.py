@@ -102,7 +102,7 @@ class TendersUpdater:
         cate_div_map_df.to_csv(self.cate_div_map, index=0)
 
         cate_df = cate_df.merge(cate_div_map_df, how='left')
-        cate_df.drop_duplicates(inplace=True)
+        cate_df.drop_duplicates([self.pk, 'division'], inplace=True)
         cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
         info_df = info_df.merge(cate_df)
 
@@ -120,10 +120,10 @@ class TendersUpdater:
         tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
         cate_map_df = pd.read_csv(self.cate_div_map)
-        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars=self.pk).dropna()[[self.pk, 'value']].rename(
-            columns={'value': 'category'})
+        cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(
+            id_vars=self.pk).dropna()[[self.pk, 'value']].rename(columns={'value': 'category'})
         cate_df = cate_df.merge(cate_map_df, how='left')
-        cate_df.drop_duplicates(inplace=True)
+        cate_df.drop_duplicates([self.pk, 'division'], inplace=True)
         cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
         info_df = info_df.merge(cate_df)
         info_df = convert_dtype(info_df)

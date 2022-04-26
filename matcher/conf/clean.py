@@ -4,5 +4,5 @@ REMAIN_COLS = ['_id', 'Agency', 'Publish Date', 'Close Date & Time', 'Title',
                'Primary Category',
                'Secondary Category',
                'Total Amount Available (AUD)',
-               'Location', 'Selection Process', 'GO ID'
+               'Location', 'Selection Process', 'GO ID', 'URL'
                ]

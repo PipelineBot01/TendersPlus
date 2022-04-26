@@ -17,3 +17,53 @@ Updating 01b8e99..57626eb
 Fast-forward
  matcher/main.py | 2 ++
  1 file changed, 2 insertions(+)
+[master c61c50a] update model
+ 2 files changed, 19 insertions(+)
+run matcher
+initial update task
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 11:53:57,457    INFO:     ::1:54290 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'string', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['human']}
+['GO5147', 'GO4117', 'GO4287', 'GO4739', 'GO4555', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO5296', 'GO3844', 'GO5242', 'GO4031', 'GO1772', 'GO1701', 'GO4808', 'GO3940', 'GO5027', 'GO5027', 'GO3112', 'GO4642', 'GO5123', 'GO3423', 'GO4710', 'GO4151', 'GO4081', 'GO2986', 'GO5414', 'GO5414', 'GO5334', 'GO5170', 'GO3069', 'GO3069', 'GO5397', 'GO1683', 'GO4656', 'GO1943', 'GO4926', 'GO167', 'GO4167', 'GO2783', 'GO5258', 'GO4990', 'GO4724', 'GO4480', 'GO5409', 'GO4297', 'GO4068', 'GO356', 'GO356', 'GO358', 'GO358', 'GO5285', 'GO3421', 'GO4504', 'GO1676', 'GO5241', 'GO2332', 'GO3462', 'GO1539', 'GO4682', 'GO3957', 'GO4758', 'GO438', 'GO5005', 'GO4618', 'GO3408', 'GO1824', 'GO5316', 'GO4688', 'GO3970', 'GO5113', 'GO5611', 'GO5611', 'GO2899', 'GO3173', 'GO1952', 'GO2842', 'GO2843']
+2022-04-26 11:54:14,739    INFO:     ::1:54308 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 11:56:43,577    INFO:     ::1:54560 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 11:57:22,755    INFO:     ::1:54640 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 12:07:04,113    INFO:     ::1:55362 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-26 13:20:09,553    INFO:     ::1:59724 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-26 13:20:12,777    INFO:     ::1:59750 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+{'id': 'Reg_a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 13:20:16,281    INFO:     ::1:59762 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'Reg_a@a.com', 'weight': -1.5, 'name': 'Robot A', 'email': 'a@a.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['ENVIRONMENTAL', 'EARTH', 'BIOLOGICAL']}, {'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.3032657937253135, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['political elite', 'citizen', 'advisers', 'expertise', 'minister', 'health', 'integrity', 'election'], 'division': ['STUDIES IN HUMAN SOCIETY', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1329721140383412, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['resilience', 'legal professionals', 'legal usage', 'psychologist', 'alternative dispute resolution', 'health', 'lawyer', 'health practitioners'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.1024109962772955, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['sustainable development', 'environmental health', 'twenty first century', 'health', 'oceania', 'australian capital territory', 'tutelage', 'synergy', 'health promotion', 'anthropocene'], 'division': ['ENVIRONMENTAL', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09112031806467218, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'ENVIRONMENTAL', 'EARTH']}, {'id': 'Reg_a@b.com', 'weight': -0.09112031806467218, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['AGRICULTURAL AND VETERINARY', 'CHEMICAL', 'BIOLOGICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09112031806467218, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'CHEMICAL', 'EARTH']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09112031806467218, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_v@v.com', 'weight': -0.09112031806467218, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING', 'BIOLOGICAL']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.056019378338014014, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['traffic', 'walking', 'urban design', 'city planning', 'hospital costs', 'health', 'public transport', 'chronic disease hospitals', 'geographic information systems', 'social capital'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'BUILT ENVIRONMENT AND DESIGN']}]
+2022-04-26 13:20:18,266    INFO:     ::1:59772 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+{'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
+Empty DataFrame
+Columns: []
+Index: []
+2022-04-26 13:40:16,964    INFO:     ::1:60978 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Already up-to-date.
