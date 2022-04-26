@@ -44,6 +44,11 @@ class ResearcherUpdater:
         result = re.findall(GOID_RULES, row)
         return result
 
+    def __filter_size(self, row, size=15):
+        if len(row['go_id']) > size:
+            row['go_id'] = []
+        return row
+
     def __update_researcher_info(self, info_df):
         info_df = self.__old_info_df.append(info_df)
         info_df = info_df.drop_duplicates(self.pk, keep='last')
@@ -64,7 +69,9 @@ class ResearcherUpdater:
         action_df[self.pk] = 'Reg_' + action_df['email']
         action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
         action_df['action_date'] = pd.to_datetime(action_df['action_date'])
+        action_df = action_df.apply(lambda x: self.__filter_size(x), axis=1)
         action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
+        action_df = action_df.dropna()
         action_df.to_csv(self.action_path, index=0)
 
     def update(self):

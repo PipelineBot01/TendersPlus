@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from conf.clean import REMAIN_COLS
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
-    TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH
+    TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH, TENDERS_RELATION_MAP_PATH
 from db.mongodb import MongoConx
 from tenders.clean.data_clean import data_clean, convert_dtype
 from tenders.features.lda_model import LDAModel
@@ -112,7 +112,7 @@ class TendersUpdater:
         info_df = KeyExtractor.remove_stopword(info_df, 'desc')
         return info_df
 
-    # TODO: only for test
+    # TODO: only for testing
     def __update_all(self):
         all_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
         info_df = data_clean(all_df)
@@ -181,6 +181,18 @@ class TendersUpdater:
             cate_div_map_df = cate_div_map_df.append(tmp_df.drop('cnt', axis=1))
         return cate_div_map_df
 
+    def update_relation_map(self):
+        tm = TendersMatcher()
+        info_df = pd.read_csv(self.info_path)[['id']]
+        size = len(info_df)
+        tmp_dict = pd.DataFrame()
+        for index, row in info_df.iterrows():
+            result_df = tm.match(row['id'])
+            result_df['orig_id'] = row['id']
+            tmp_dict = tmp_dict.append(result_df)
+            print(f'---- complete {index}/{size}')
+        tmp_dict.to_csv(TENDERS_RELATION_MAP_PATH, index=0)
+
     def update(self):
         '''
 
@@ -235,18 +247,29 @@ class TendersUpdater:
             print('-- end updating tenders mapping files')
             del raw_remain_data_df, new_info_df, new_open_info
 
+            print('-- start updating tenders relation')
+            self.update_relation_map()
+            print('-- end updating tenders relation')
+
         info_df = pd.read_csv(self.info_path)
         error_1 = self.__keyword_error_checking(info_df)
         error_2 = self.__topic_error_checking(info_df)
 
-        if 1 == 1:
+        if error_1 or error_2:
             print('-- fixing missing opened data')
             new_open_info = self.update_opened()
             self.mgx.write_df(new_open_info, 'clean_grants_opened', True)
             self.__create_index(self.mgx.database['clean_grants_opened'])
             print('-- fixing end')
 
+            print('-- fixing updating tenders relation')
+            self.update_relation_map()
+            print('-- fixing updating tenders relation')
+
         # TODO: only for testing
+        print('-- start updating all grants info')
         self.__update_all()
         self.__create_index(self.mgx.database['clean_grants_all'])
+        print('-- end updating all grants info')
+
         print('<end updating tenders files>')

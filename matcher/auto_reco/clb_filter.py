@@ -2,7 +2,7 @@ import os
 from typing import Dict
 import numpy as np
 import pandas as pd
-from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
+from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH, TENDERS_RELATION_MAP_PATH
 from researcher.matching.researcher_relation import ResearcherMatcher
 from tenders.matching.tenders_relation import TendersMatcher
 from typing import List
@@ -12,13 +12,18 @@ WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
 
 
 class Filter:
-    def __init__(self, act_path=RESEARCHER_ACTION_PATH, tenders_info_path=TENDERS_INFO_PATH):
+    def __init__(self, act_path=RESEARCHER_ACTION_PATH,
+                 tenders_info_path=TENDERS_INFO_PATH,
+                 tenders_relation_path = TENDERS_RELATION_MAP_PATH):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
         self.__act_path = act_path
         self.__tenders_info_path = tenders_info_path
+        self.__tenders_relation_path = tenders_relation_path
+
         self.__act_df = pd.read_csv(act_path)
         self.__tenders_info_df = pd.read_csv(tenders_info_path)
+        self.__tenders_relation_df = pd.read_csv(tenders_relation_path)
 
     def __get_sim_researcher(self, r_id: str):
         result_df = self.__rm.match_by_id(r_id)
@@ -50,14 +55,14 @@ class Filter:
         -------
 
         '''
-        save_df = save_df[~save_df['id'].isin(save_df['orig'])]
-        re_weight_df = save_df.groupby(['id', 'orig']).agg({'weight': 'min'}).reset_index()
-        merge_df = re_weight_df.merge(act_tenders_df, left_on='orig', right_on='t_id')
+        save_df = save_df[~save_df['id'].isin(save_df['orig_id'])]
+        re_weight_df = save_df.groupby(['id', 'orig_id']).agg({'weight': 'min'}).reset_index()
+        merge_df = re_weight_df.merge(act_tenders_df, left_on='orig_id', right_on='t_id')
         del act_tenders_df, save_df
 
         merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['type'])
         re_weight_df = merge_df.groupby(['id']).agg({'weight': 'min'}).reset_index()
-        re_cnt_df = merge_df.groupby('id')['orig'].count().reset_index().rename(columns={'orig': 'cnt'})
+        re_cnt_df = merge_df.groupby('id')['orig_id'].count().reset_index().rename(columns={'orig_id': 'cnt'})
         merge_df = re_weight_df.merge(re_cnt_df, on='id')
         del re_cnt_df, re_weight_df
 
@@ -76,6 +81,7 @@ class Filter:
         self.__tm = TendersMatcher()
         self.__act_df = pd.read_csv(self.__act_path)
         self.__tenders_info_df = pd.read_csv(self.__tenders_info_path)
+        self.__tenders_relation_df = pd.read_csv(self.__tenders_relation_path)
 
     def match(self, profile_dict: Dict, func=tmp_measure) -> List[str]:
         '''
@@ -129,8 +135,7 @@ class Filter:
 
         sim_tenders_df = pd.DataFrame()
         for tmp_id in act_tenders_df['t_id'].unique():
-            tmp_df = self.__get_sim_tenders(tmp_id)
-            tmp_df['orig'] = tmp_id
+            tmp_df = self.__tenders_relation_df[self.__tenders_relation_df['orig_id'] == tmp_id]
             tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)

@@ -5,6 +5,7 @@ TENDERS_TAG_PATH = './tenders/assets/tenders_keyword.csv'
 TENDERS_TOPIC_PATH = './tenders/assets/matching_result_by_lda.csv'
 TENDERS_RELEVANT_PATH = './tenders/assets/clean_relevant_tenders.csv'
 TENDERS_CATE_DIV_MAP_PATH = './tenders/assets/cate_div_map.csv'
+TENDERS_RELATION_MAP_PATH = './tenders/assets/tenders_relation_map.csv'
 
 LOCAL_PATH = './assets'
 MODEL_FILE = '../tenders/assets/LdaModel.model'
@@ -16,7 +17,3 @@ RESEARCHER_DIVISION_MAP_PATH = './researcher/assets/researcher_division.csv'
 RESEARCHER_TAG_DIV_MAP_PATH = './researcher/assets/tag_division_map.csv'
 RESEARCHER_ACTION_PATH = './researcher/assets/researcher_action.csv'
 
-TENDERS_MATCHING_OUTPUT = './output/tenders_match_result.csv'
-RESEARCHER_MATCHING_OUTPUT = './output/researcher_match_result.csv'
-
-RESEARCHER_MOVEMENT = './auto_reco/assets/test.csv'
