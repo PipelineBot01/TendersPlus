@@ -31,7 +31,6 @@ class PostProcess:
         remain_df = self.__action_df[self.__action_df.isna().any(axis=1)]
         action_df = remain_df.append(save_df).append(like_df).rename(columns={'id': 'r_id'}
                                                                      ).merge(self.__info_df, on='go_id')
-        del self.__info_df
         return action_df
 
     def __remove_dislike(self, user_id, input_df):
