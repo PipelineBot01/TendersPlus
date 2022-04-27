@@ -5160,3 +5160,458 @@ Updating a721c84..f777dc0
 Fast-forward
  matcher/scheduler/__init__.py | 18 ++++++++++--------
  1 file changed, 10 insertions(+), 8 deletions(-)
+[master 3e67d59] update model
+ 2 files changed, 91 insertions(+)
+run matcher
+initial update task
+2022-04-27 20:34:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20273.740768432617毫秒
+2022-04-27 20:35:12 ------ end update researchers pool
+2022-04-27 20:39:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20173.26283454895毫秒
+2022-04-27 20:40:12 ------ end update researchers pool
+2022-04-27 20:44:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20141.799688339233毫秒
+2022-04-27 20:45:12 ------ end update researchers pool
+2022-04-27 20:49:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20018.202304840088毫秒
+2022-04-27 20:50:12 ------ end update researchers pool
+2022-04-27 20:54:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20603.980779647827毫秒
+2022-04-27 20:55:12 ------ end update researchers pool
+2022-04-27 20:59:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20956.432342529297毫秒
+2022-04-27 21:00:12 ------ end update researchers pool
+2022-04-27 21:04:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21890.1846408844毫秒
+2022-04-27 21:05:13 ------ end update researchers pool
+2022-04-27 21:09:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20079.559326171875毫秒
+2022-04-27 21:10:12 ------ end update researchers pool
+2022-04-27 21:14:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21747.787952423096毫秒
+2022-04-27 21:15:13 ------ end update researchers pool
+2022-04-27 21:19:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20010.92219352722毫秒
+2022-04-27 21:20:12 ------ end update researchers pool
+2022-04-27 21:24:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21580.62481880188毫秒
+2022-04-27 21:25:13 ------ end update researchers pool
+2022-04-27 21:29:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20274.739980697632毫秒
+2022-04-27 21:30:12 ------ end update researchers pool
+2022-04-27 21:34:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21509.22703742981毫秒
+2022-04-27 21:35:13 ------ end update researchers pool
+2022-04-27 21:39:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21346.696138381958毫秒
+2022-04-27 21:40:13 ------ end update researchers pool
+2022-04-27 21:44:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21495.733499526978毫秒
+2022-04-27 21:45:13 ------ end update researchers pool
+2022-04-27 21:49:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21509.737968444824毫秒
+2022-04-27 21:50:13 ------ end update researchers pool
+2022-04-27 21:54:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:19902.358770370483毫秒
+2022-04-27 21:55:11 ------ end update researchers pool
+2022-04-27 21:59:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20692.473649978638毫秒
+2022-04-27 22:00:12 ------ end update researchers pool
+2022-04-27 22:04:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20613.579511642456毫秒
+2022-04-27 22:05:12 ------ end update researchers pool
+2022-04-27 22:09:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20398.85115623474毫秒
+2022-04-27 22:10:12 ------ end update researchers pool
+2022-04-27 22:14:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21502.517223358154毫秒
+2022-04-27 22:15:13 ------ end update researchers pool
+2022-04-27 22:19:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20757.908582687378毫秒
+2022-04-27 22:20:12 ------ end update researchers pool
+2022-04-27 22:24:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20748.977422714233毫秒
+2022-04-27 22:25:12 ------ end update researchers pool
+2022-04-27 22:28:24,602    INFO:     ::1:41790 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:29:35,723    INFO:     ::1:41874 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:29:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21428.038120269775毫秒
+2022-04-27 22:30:13 ------ end update researchers pool
+2022-04-27 22:34:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21476.85956954956毫秒
+2022-04-27 22:35:13 ------ end update researchers pool
+2022-04-27 22:39:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21590.08264541626毫秒
+2022-04-27 22:40:13 ------ end update researchers pool
+2022-04-27 22:40:21,723    INFO:     ::1:42604 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:40:51,781    INFO:     ::1:42672 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:42:51,919    INFO:     ::1:42822 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:42:54,763    INFO:     ::1:42842 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:44:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:21629.329919815063毫秒
+2022-04-27 22:45:13 ------ end update researchers pool
+2022-04-27 22:45:13,655    INFO:     ::1:42980 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:45:13,673    INFO:     ::1:43000 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-27 22:49:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20567.580699920654毫秒
+2022-04-27 22:50:12 ------ end update researchers pool
+2022-04-27 22:54:52 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+程序运行时间:20675.72569847107毫秒
+2022-04-27 22:55:12 ------ end update researchers pool
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO4568', 'GO1788', 'GO453', 'GO3209', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO4946', 'GO5282', 'GO4642', 'GO4214', 'GO5244', 'GO5474', 'GO1008', 'GO4310', 'GO5455', 'GO2361', 'GO4450', 'GO5536', 'GO3690', 'GO5337', 'GO5337', 'GO1943', 'GO1155', 'GO2793', 'GO5066', 'GO3955', 'GO2259', 'GO5432', 'GO4641', 'GO4721', 'GO5147', 'GO5338', 'GO5485', 'GO5485', 'GO4192', 'GO4682', 'GO5316', 'GO4195', 'GO4687', 'GO5246', 'GO4736', 'GO4579', 'GO4466', 'GO1749', 'GO1336', 'GO2796', 'GO1140', 'GO2797', 'GO2099', 'GO1748', 'GO2884', 'GO2641', 'GO4995', 'GO3199', 'GO2332', 'GO5527', 'GO5527', 'GO3337', 'GO2450', 'GO2329', 'GO3034', 'GO5137', 'GO3756', 'GO860', 'GO3551', 'GO3351', 'GO3814', 'GO802', 'GO5181', 'GO5181', 'GO5118', 'GO4421']
+2022-04-27 22:55:36,661    INFO:     ::1:43728 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Updating 3e67d59..45861d3
+Fast-forward
+ matcher/scheduler/__init__.py | 3 ---
+ 1 file changed, 3 deletions(-)
