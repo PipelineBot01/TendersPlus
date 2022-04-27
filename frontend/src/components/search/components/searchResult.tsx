@@ -50,8 +50,6 @@ export default function SearchResult():JSX.Element{
     queryTendersAPI(type, encodeQuery).then((response)=>{
       setTotalResult(response.data?.length || 0)
       setData(response.data as Array<QueryTender>)
-      console.log(123123)
-		
       useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
     }).catch(()=>{
       setTotalResult(0)
