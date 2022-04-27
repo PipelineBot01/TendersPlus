@@ -34,3 +34,24 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-26 20:57:47,643    INFO:     Shutting down
 From github.com:PipelineBot01/TendersPlus
    c77cdf2..7bfcc7f  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   7bfcc7f..a236b1d  master -> master
+2022-04-26 20:58:20,765    INFO:     Started server process [29791]
+2022-04-26 20:58:20,766    INFO:     Waiting for application startup.
+2022-04-26 20:58:20,768    INFO:     Application startup complete.
+2022-04-26 20:58:20,769    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['_id'] = input_df['_id'].astype(str).copy()
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:37: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['_id']
+Run time of job "update_researchers_pool (trigger: interval[1:00:00], next run at: 2022-04-27 05:58:20 CST)" was missed by 0:07:18.444760
+From github.com:PipelineBot01/TendersPlus
+   a236b1d..3b22f7f  master     -> origin/master

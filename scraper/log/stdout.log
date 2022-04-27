@@ -333,3 +333,333 @@ Saving errorStuff complete
 2022-04-22 01:29:46.947999 -- done update
 *********** start update raw_grant_all **********
 2022-04-22 01:29:46.948022 -- start update
+update 137 records
+insert 0 records
+2022-04-22 01:29:55.688157 -- done update
+*********** start update raw_grant_opened **********
+2022-04-22 02:29:28.882752 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-22 02:29:46.686044 -- done update
+*********** start update raw_grant_all **********
+2022-04-22 02:29:46.686062 -- start update
+update 137 records
+insert 0 records
+2022-04-22 02:29:55.798497 -- done update
+*********** start update raw_grant_opened **********
+2022-04-23 00:29:28.882702 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5608
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-23 00:29:53.638627 -- done update
+*********** start update raw_grant_all **********
+2022-04-23 00:29:53.638646 -- start update
+update 136 records
+insert 1 records
+2022-04-23 00:30:02.565748 -- done update
+*********** start update raw_grant_opened **********
+2022-04-23 01:29:28.882727 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-23 01:29:52.579347 -- done update
+*********** start update raw_grant_all **********
+2022-04-23 01:29:52.579371 -- start update
+update 137 records
+insert 0 records
+2022-04-23 01:30:01.435251 -- done update
+*********** start update raw_grant_opened **********
+2022-04-23 02:29:28.882741 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-23 02:29:48.529799 -- done update
+*********** start update raw_grant_all **********
+2022-04-23 02:29:48.529818 -- start update
+update 137 records
+insert 0 records
+2022-04-23 02:29:57.397484 -- done update
+*********** start update raw_grant_opened **********
+2022-04-24 00:29:28.882716 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-24 00:29:55.954076 -- done update
+*********** start update raw_grant_all **********
+2022-04-24 00:29:55.954099 -- start update
+update 137 records
+insert 0 records
+2022-04-24 00:30:04.501018 -- done update
+*********** start update raw_grant_opened **********
+2022-04-24 01:29:28.882772 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-24 01:30:04.509540 -- done update
+*********** start update raw_grant_all **********
+2022-04-24 01:30:04.509565 -- start update
+update 137 records
+insert 0 records
+2022-04-24 01:30:14.003493 -- done update
+*********** start update raw_grant_opened **********
+2022-04-24 02:29:28.882839 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-24 02:29:45.515863 -- done update
+*********** start update raw_grant_all **********
+2022-04-24 02:29:45.515888 -- start update
+update 137 records
+insert 0 records
+2022-04-24 02:29:54.307941 -- done update
+*********** start update raw_grant_opened **********
+2022-04-25 00:29:28.882884 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-25 00:29:54.822012 -- done update
+*********** start update raw_grant_all **********
+2022-04-25 00:29:54.822030 -- start update
+update 137 records
+insert 0 records
+2022-04-25 00:30:04.303880 -- done update
+*********** start update raw_grant_opened **********
+2022-04-25 01:29:28.882841 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-25 01:29:45.854407 -- done update
+*********** start update raw_grant_all **********
+2022-04-25 01:29:45.854426 -- start update
+update 137 records
+insert 0 records
+2022-04-25 01:29:54.895810 -- done update
+*********** start update raw_grant_opened **********
+2022-04-25 02:29:28.882878 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-25 02:29:45.009199 -- done update
+*********** start update raw_grant_all **********
+2022-04-25 02:29:45.009226 -- start update
+update 137 records
+insert 0 records
+2022-04-25 02:29:53.557218 -- done update
+*********** start update raw_grant_opened **********
+2022-04-26 00:29:28.903022 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-26 00:29:51.972187 -- done update
+*********** start update raw_grant_all **********
+2022-04-26 00:29:51.972211 -- start update
+update 137 records
+insert 0 records
+2022-04-26 00:30:01.023318 -- done update
+*********** start update raw_grant_opened **********
+2022-04-26 01:29:28.887409 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-26 01:29:55.126709 -- done update
+*********** start update raw_grant_all **********
+2022-04-26 01:29:55.126734 -- start update
+update 137 records
+insert 0 records
+2022-04-26 01:30:04.841470 -- done update
+*********** start update raw_grant_opened **********
+2022-04-26 02:29:28.887374 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-26 02:29:46.424043 -- done update
+*********** start update raw_grant_all **********
+2022-04-26 02:29:46.424061 -- start update
+update 137 records
+insert 0 records
+2022-04-26 02:29:55.261378 -- done update
+*********** start update raw_grant_opened **********
+2022-04-27 00:29:28.882764 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-27 00:30:26.175120 -- done update
+*********** start update raw_grant_all **********
+2022-04-27 00:30:26.175143 -- start update
+update 138 records
+insert 0 records
+2022-04-27 00:30:35.316356 -- done update
+*********** start update raw_grant_opened **********
+2022-04-27 01:29:28.882751 -- start update
