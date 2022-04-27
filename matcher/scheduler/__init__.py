@@ -22,10 +22,7 @@ async def update_tenders_pool():
 @scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(minutes=5))
 async def update_researchers_pool():
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
-    T1 = time.time()
     ResearcherUpdater().update()
     tenders_filter.update_data()
     researcher_matcher.update()
-    T2 = time.time()
-    print('程序运行时间:%s毫秒' % ((T2 - T1) * 1000))
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
