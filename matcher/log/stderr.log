@@ -25,3 +25,12 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-26 13:43:37,203    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
 From github.com:PipelineBot01/TendersPlus
    160e363..9f6136c  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   9f6136c..c77cdf2  master -> master
+2022-04-26 20:02:38,724    INFO:     Started server process [16084]
+2022-04-26 20:02:38,725    INFO:     Waiting for application startup.
+2022-04-26 20:02:38,727    INFO:     Application startup complete.
+2022-04-26 20:02:38,728    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-26 20:57:47,643    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   c77cdf2..7bfcc7f  master     -> origin/master
