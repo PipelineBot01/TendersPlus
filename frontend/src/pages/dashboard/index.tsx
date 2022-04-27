@@ -21,6 +21,8 @@ export default function Dashboard():JSX.Element{
   const tokenFromStore = userInfo.access_token
 	
   useEffect(()=>{
+    console.log('fetch user info')
+    
     const tokenFromCookie  = Cookies.get('access_token')
     if (tokenFromCookie && (!tokenFromStore || tokenFromCookie !== tokenFromStore)){
       // fetch latest user info

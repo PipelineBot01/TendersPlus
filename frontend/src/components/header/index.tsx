@@ -42,7 +42,7 @@ export default function Header():JSX.Element{
     }else if (tokenFromCookie === tokenFromStore){
       setHeaderStatus('resolve')
     }
-  })
+  }, [])
 
 
   const renderHeaderBtn = ()=>{

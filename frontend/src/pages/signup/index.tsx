@@ -22,11 +22,9 @@ export default function Header():JSX.Element{
   const [isSucceeded, setIsSucceeded ] = useState(false)
 
   const handleSubmitForm = (values:Signup)=>{
-    console.log(values)
-		
+    
     message.loading({content:'Requesting...', key:'signup', duration:1.5})
 		
-    console.log('handleSubmitForm', values)
     signupAPI(values).then((response)=>{
       message.destroy('signup')
       if(response.data){
@@ -39,16 +37,19 @@ export default function Header():JSX.Element{
           tags:[],
           email:response.data.email,
           access_token:response.data.access_token,
-          favourite:response.data.favourite
+          favourite:[]
         }
         setIsSucceeded(true)
         dispatch(setUserInfo(user))
-        Cookies.set('access_token', user.access_token)
-
+        Cookies.set('access_token', response.data.access_token)
       }
-    }).catch((response)=>{
+    }, (error)=>{
+      console.log(error)
       message.destroy('signup')
-      message.warn(`Warn: ${(response.msg as string).toLowerCase()}`, 3)
+      message.warn(error?.msg, 3)
+    }).catch((error)=>{
+      console.log(error)
+     
     }).finally(()=>{
       setIsSubmitting(false)
     })

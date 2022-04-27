@@ -19,7 +19,7 @@ export interface ProfileForm{
     last_name:string
     university:string
     research_fields:Array<string>
-    tag:Array<string>
+    tags:Array<string>
 }
 
 export interface UserInfo{

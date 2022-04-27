@@ -14,7 +14,7 @@ const initialState:UserState = {
   tags:localStorage.getItem('tags')?.split('/').slice(1) || [],
   university:localStorage.getItem('university') || '',
   rememberme: localStorage.getItem('rememberme') === 'true',
-  access_token:Cookies.get('access_token') || '',
+  access_token:'',
   favourite:localStorage.getItem('favourite')?.split('/').slice(1) || [],
 }
 
@@ -44,26 +44,31 @@ const userSlice = createSlice({
       localStorage.setItem('research_fields', research_field)
     },
     setUserInfo(state, action:PayloadAction<UserState>){
-      console.log('action.payload?.research_fields', action.payload?.research_fields)
-		
+      console.log('payload', action)
+      
       localStorage.setItem('first_name', action.payload.first_name)
       localStorage.setItem('last_name', action.payload.last_name)
       localStorage.setItem('email', action.payload.email)
       localStorage.setItem('university', action.payload.university)
       localStorage.setItem('rememberme', action.payload.rememberme + '')
       localStorage.setItem('tags', action.payload?.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
+
       let research_field = ''
       action.payload?.research_fields.forEach(e=>{
         typeof e === 'object' ? research_field += `/${e.field}` : research_field += `/${e}`
       })
+
       localStorage.setItem('research_fields', research_field)
       localStorage.setItem('favourite', action.payload?.favourite.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
+
       Object.assign(state, action.payload)
     },
     setRememberme(state, action:PayloadAction<boolean>){
+      localStorage.setItem('rememberme', action.payload + '')
       state.rememberme = action.payload
     },
     setAccessToken(state, action:PayloadAction<string>){
+      
       state.access_token = action.payload
     },
     setFavourite(state, action:PayloadAction<string[]>){
@@ -71,6 +76,9 @@ const userSlice = createSlice({
       localStorage.setItem('favourite', action.payload.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
     },
     setUserProfile(state, action:PayloadAction<ProfileForm>){
+      localStorage.setItem('first_name', action.payload.first_name)
+      localStorage.setItem('last_name', action.payload.last_name)
+      localStorage.setItem('tags', action.payload.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
       Object.assign(state, action.payload)
     }
   }
