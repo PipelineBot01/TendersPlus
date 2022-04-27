@@ -79,7 +79,7 @@ async def db_get_tenders_by_keywords(keywords: str = None) -> List:
     return docs
 
 
-async def db_get_tenders_by_id(id_: str) -> Union[Dict, None]:
+async def db_get_tenders_from_history_by_id(id_: str) -> Union[Dict, None]:
     """
     query tenders by id
     :param id_: the GO ID of each tenders
@@ -88,7 +88,7 @@ async def db_get_tenders_by_id(id_: str) -> Union[Dict, None]:
 
     client = mongo['tenders_client']
     db = client.get_default_database()
-    collection = db['clean_grants_opened']
+    collection = db['clean_grants_all']
     return await collection.find_one({'GO ID': id_},
                                      {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                                       'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
