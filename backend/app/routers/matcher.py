@@ -53,7 +53,11 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
             content = json.loads(response.content)
             GO_ID = content['data']
             print('go id:', GO_ID)
-            docs = [await curd.db_get_tenders_by_id(i) for i in GO_ID]
+            docs = []
+            for i in GO_ID:
+                doc = await curd.db_get_tenders_by_id(i)
+                if doc:
+                    docs.append(doc)
 
         return {'code': 200, 'data': docs}
     except Exception as e:
