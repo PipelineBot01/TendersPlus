@@ -150,3 +150,10 @@ Traceback (most recent call last):
 AttributeError: 'DataFrame' object has no attribute 'unique'
 From github.com:PipelineBot01/TendersPlus
    e53fad6..dd688e3  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   dd688e3..15f6f8d  master -> master
+2022-04-27 12:02:53,170    INFO:     Started server process [25661]
+2022-04-27 12:02:53,171    INFO:     Waiting for application startup.
+2022-04-27 12:02:53,172    INFO:     Application startup complete.
+2022-04-27 12:02:53,173    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-27 12:02:56,782    INFO:     Shutting down
