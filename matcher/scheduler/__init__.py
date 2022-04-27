@@ -6,7 +6,7 @@ from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
 from auto_reco import tenders_filter
 from researcher.matching import researcher_matcher
-
+import time
 scheduler = AsyncIOScheduler()
 
 
@@ -19,11 +19,10 @@ async def update_tenders_pool():
         print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update tenders pool')
 
 
-@scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(hours=1))
+@scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(minutes=5))
 async def update_researchers_pool():
-    if 20 < datetime.now().hour < 8:
-        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
-        ResearcherUpdater().update()
-        tenders_filter.update_data()
-        researcher_matcher.update()
-        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
+    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
+    ResearcherUpdater().update()
+    tenders_filter.update_data()
+    researcher_matcher.update()
+    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
