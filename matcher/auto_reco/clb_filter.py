@@ -60,7 +60,7 @@ class Filter:
     def __reformat_result(self, input_df):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
         merge_df = merge_df[merge_df['go_id'].notna()]
-        return merge_df['go_id'].to_list()
+        return merge_df
 
     def update_data(self):
         self.__rm = ResearcherMatcher()
@@ -102,7 +102,7 @@ class Filter:
             cnt_df = melt_df.groupby('go_id'
                                      )['division'].count().reset_index().rename(columns={'division': 'cnt'}
                                                                                 ).sort_values('cnt', ascending=False)
-            return cnt_df['go_id'].unique().tolist()
+            return cnt_df
         del sim_re_df
 
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]

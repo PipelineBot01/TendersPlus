@@ -29,7 +29,8 @@ class PostProcess:
         like_df = action_df[action_df['like'] == 1].drop_duplicates(['id', 'type', 'go_id'], keep='first')
 
         remain_df = self.__action_df[self.__action_df.isna().any(axis=1)]
-        action_df = remain_df.append(save_df).append(like_df).merge(self.__info_df, on='go_id')
+        action_df = remain_df.append(save_df).append(like_df).rename(columns={'id': 'r_id'}
+                                                                     ).merge(self.__info_df, on='go_id')
         del self.__info_df
         return action_df
 
@@ -48,9 +49,7 @@ class PostProcess:
 
     def __reformat_rmv_fav(self, user_id, input_df):
         remove_fav_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 3)]
-        tm = TendersMatcher(tag_map_path='../tenders/assets/tenders_tag.csv',
-                            topic_path='../tenders/assets/tenders_topic.csv',
-                            info_path='../tenders/assets/clean_trains_info.csv')
+        tm = TendersMatcher()
 
         rel_save_df = []
         tar_save_df = remove_fav_df['id'].unique().tolist()
@@ -95,14 +94,13 @@ class PostProcess:
         pass
 
     def run(self, user_id, input_df):
-
         self.__action_df = self.__reformat_user_action()
+        if user_id in self.__action_df['r_id'].unique():
+            # remove dislike tenders
+            input_df = self.__remove_dislike(user_id, input_df)
+            # reformat favourite tenders
+            input_df = self.__reformat_fav(user_id, input_df)
 
-        # remove dislike tenders
-        self.__remove_dislike(user_id, input_df)
-
-        # reformat favourite tenders
-        self.__reformat_fav(user_id, input_df)
-
-        # reformat removed favourite tenders
-        self.__reformat_rmv_fav(user_id, input_df)
+            # reformat removed favourite tenders
+            input_df = self.__reformat_rmv_fav(user_id, input_df)
+        return input_df['go_id'].tolist()
