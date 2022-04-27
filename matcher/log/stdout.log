@@ -5039,3 +5039,13 @@ Fast-forward
  matcher/main.py                  |  7 ++++---
  matcher/matching.py              |  8 +++++---
  5 files changed, 29 insertions(+), 23 deletions(-)
+[master d457e50] update model
+ 10 files changed, 10463 insertions(+), 5248 deletions(-)
+ rewrite scraper/assets/gosLink.json (89%)
+run matcher
+git pulling
+Updating d457e50..ce18357
+Fast-forward
+ matcher/auto_reco/postprocess.py | 1 -
+ matcher/matching.py              | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
