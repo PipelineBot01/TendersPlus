@@ -16,38 +16,43 @@ class PostProcess:
         self.__action_df = pd.read_csv(action_path)
         self.__info_df = pd.read_csv(info_path)
         self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+        self.__action_df = self.__reformat_user_action()
 
     def __diff_month(self, date):
         return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
 
     def __reformat_user_action(self):
-        self.__action_df.loc[(self.__action_df['type'] == 2) | (self.__action_df['type'] == 3), 'save'] = 1
-        self.__action_df.loc[(self.__action_df['type'] == 4) | (self.__action_df['type'] == 5), 'like'] = 1
+        tmp_df = self.__action_df.copy()
+        tmp_df.loc[(tmp_df['type'] == 2) | (tmp_df['type'] == 3), 'save'] = 1
+        tmp_df.loc[(tmp_df['type'] == 4) | (tmp_df['type'] == 5), 'like'] = 1
 
-        action_df = self.__action_df.sort_values('action_date', ascending=False)
+        action_df = tmp_df.sort_values('action_date', ascending=False)
         save_df = action_df[action_df['save'] == 1].drop_duplicates(['id', 'type', 'go_id'], keep='first')
         like_df = action_df[action_df['like'] == 1].drop_duplicates(['id', 'type', 'go_id'], keep='first')
 
-        remain_df = self.__action_df[self.__action_df.isna().any(axis=1)]
+        remain_df = tmp_df[tmp_df.isna().any(axis=1)]
+        del tmp_df
         action_df = remain_df.append(save_df).append(like_df).rename(columns={'id': 'r_id'}
                                                                      ).merge(self.__info_df, on='go_id')
         return action_df
 
     def __remove_dislike(self, user_id, input_df):
-        dislike_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 5)]
+        tmp_df = self.__action_df.copy()
+        dislike_df = tmp_df[(tmp_df['id'] == user_id) & (tmp_df['type'] == 5)]
+        del tmp_df
         if not dislike_df.empty:
             input_df = input_df[~input_df['go_id'].isin(dislike_df['go_id'].unique())]
         return input_df
 
     def __reformat_fav(self, user_id, input_df):
-        fav_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 2)]
+        fav_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 2)].copy()
         if not fav_df.empty:
             tmp_df = input_df[input_df['go_id'].isin(fav_df['go_id'].unique())].sort_values('weight')
             input_df = tmp_df.append(input_df[~input_df['go_id'].isin(fav_df['go_id'].unique())])
         return input_df
 
     def __reformat_rmv_fav(self, user_id, input_df):
-        remove_fav_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 3)]
+        remove_fav_df = self.__action_df[(self.__action_df['id'] == user_id) & (self.__action_df['type'] == 3)].copy()
         tm = TendersMatcher()
 
         rel_save_df = []
@@ -93,7 +98,6 @@ class PostProcess:
         pass
 
     def run(self, user_id, input_df):
-        self.__action_df = self.__reformat_user_action()
         if user_id in self.__action_df['r_id'].unique():
             # remove dislike tenders
             input_df = self.__remove_dislike(user_id, input_df)
