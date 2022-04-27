@@ -55,7 +55,7 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
             print('go id:', GO_ID)
             docs = []
             for i in GO_ID:
-                doc = await curd.db_get_tenders_by_id(i)
+                doc = await curd.db_get_tenders_from_history_by_id(i)
                 if doc:
                     docs.append(doc)
 
