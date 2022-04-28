@@ -174,3 +174,42 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-27 20:35:12,341    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
 From github.com:PipelineBot01/TendersPlus
    3e67d59..45861d3  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   45861d3..aecdaeb  master -> master
+2022-04-27 23:05:48,434    INFO:     Started server process [26711]
+2022-04-27 23:05:48,434    INFO:     Waiting for application startup.
+2022-04-27 23:06:08,947    INFO:     Application startup complete.
+2022-04-27 23:06:08,948    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['_id'] = input_df['_id'].astype(str).copy()
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:37: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['_id']
+Run time of job "update_researchers_pool (trigger: interval[0:05:00], next run at: 2022-04-28 03:10:48 CST)" was missed by 0:07:14.240412
+Run time of job "update_researchers_pool (trigger: interval[0:05:00], next run at: 2022-04-28 03:15:48 CST)" was missed by 0:02:14.241044
+Run time of job "update_researchers_pool (trigger: interval[0:05:00], next run at: 2022-04-28 05:10:48 CST)" was missed by 0:03:27.241656
+Job "update_researchers_pool (trigger: interval[0:05:00], next run at: 2022-04-28 09:50:48 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 25, in update_researchers_pool
+    ResearcherUpdater().update()
+  File "/home/TendersPlus/matcher/researcher/update/researcher_updater.py", line 40, in __init__
+    self.__new_reg_info = get_data()
+  File "/home/TendersPlus/matcher/db/loadjson.py", line 11, in get_data
+    return pd.DataFrame(json.loads(response.content)['data'])
+  File "/usr/lib64/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+/home/TendersPlus/matcher/deploy.sh: line 18: 26711 Killed                  python3 main.py
