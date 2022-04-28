@@ -213,3 +213,11 @@ Traceback (most recent call last):
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 /home/TendersPlus/matcher/deploy.sh: line 18: 26711 Killed                  python3 main.py
+To git@github.com:PipelineBot01/TendersPlus.git
+   4a94810..7d09af5  master -> master
+2022-04-28 09:54:37,646    INFO:     Started server process [24604]
+2022-04-28 09:54:37,646    INFO:     Waiting for application startup.
+2022-04-28 09:54:58,617    INFO:     Application startup complete.
+2022-04-28 09:54:58,618    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+From github.com:PipelineBot01/TendersPlus
+   7d09af5..7ab8631  master     -> origin/master
