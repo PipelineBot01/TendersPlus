@@ -12,6 +12,6 @@ def get_reco_tenders(profile):
     return fl.match(profile)
 
 if __name__ == '__main__':
-    profile = {'id': 'Test@0.com', 'divisions': ['d_08', 'd_10', 'd_09'], 'tags': []}
+    profile = {"id": "Test@0.com","divisions": ["d_08", "d_10", "d_09"], "tags": []}
     tmp_df = get_reco_tenders(profile)
     print(pp.run(profile['id'], tmp_df))

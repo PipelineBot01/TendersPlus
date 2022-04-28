@@ -62,7 +62,7 @@ class Filter:
         merge_df = merge_df[merge_df['go_id'].notna()]
         return merge_df
 
-    def update_data(self):
+    def update(self):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
         self.__act_df = pd.read_csv(self.__act_path)

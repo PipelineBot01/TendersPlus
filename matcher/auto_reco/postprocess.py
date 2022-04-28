@@ -13,6 +13,9 @@ DISLIKE_TYPE = 3
 class PostProcess:
     def __init__(self, action_path=RESEARCHER_ACTION_PATH,
                  info_path=TENDERS_INFO_PATH):
+        self.__action_path = action_path
+        self.__info_path = info_path
+
         self.__action_df = pd.read_csv(action_path)
         self.__info_df = pd.read_csv(info_path)
         self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
@@ -20,6 +23,12 @@ class PostProcess:
 
     def __diff_month(self, date):
         return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
+
+    def update(self):
+        self.__action_path = pd.read_csv(self.__action_path)
+        self.__info_path = pd.read_csv(self.__info_path)
+        self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+        self.__action_df = self.__reformat_user_action()
 
     def __reformat_user_action(self):
         tmp_df = self.__action_df.copy()

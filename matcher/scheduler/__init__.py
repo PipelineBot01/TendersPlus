@@ -4,7 +4,7 @@ from datetime import datetime
 #
 from researcher.update.researcher_updater import ResearcherUpdater
 from tenders.update.tenders_updater import TendersUpdater
-from auto_reco import tenders_filter
+from auto_reco import tenders_filter, tender_process
 from researcher.matching import researcher_matcher
 import time
 scheduler = AsyncIOScheduler()
@@ -15,7 +15,8 @@ async def update_tenders_pool():
     if 2 < datetime.now().hour < 6:
         print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update tenders pool')
         TendersUpdater().update()
-        tenders_filter.update_data()
+        tenders_filter.update()
+        tender_process.update()
         print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update tenders pool')
 
 
@@ -23,6 +24,6 @@ async def update_tenders_pool():
 async def update_researchers_pool():
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
     ResearcherUpdater().update()
-    tenders_filter.update_data()
+    tenders_filter.update()
     researcher_matcher.update()
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update researchers pool')
