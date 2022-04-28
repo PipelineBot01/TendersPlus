@@ -230,3 +230,16 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-28 12:52:20,162    INFO:     Shutting down
 From github.com:PipelineBot01/TendersPlus
    a9fe9bc..91fb609  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   91fb609..06cd521  master -> master
+2022-04-28 12:53:10,703    INFO:     Started server process [3962]
+2022-04-28 12:53:10,703    INFO:     Waiting for application startup.
+2022-04-28 12:53:13,428    INFO:     Application startup complete.
+2022-04-28 12:53:13,429    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+Killed by signal 15.
+From github.com:PipelineBot01/TendersPlus
+   06cd521..563ec13  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
