@@ -89,7 +89,6 @@ class PostProcess:
         hot_df = tmp_df[(tmp_df['type'].isin(SELF_ACT_LIST)) & (tmp_df['1_month'])
                         ].groupby('go_id')['id'].count().reset_index().rename(columns={'id': 'cnt'}).sort_values(
             'cnt', ascending=False).reset_index(drop=True).reset_index()
-        print(hot_df)
         return hot_df['go_id'].tolist()
 
     def __reformat_location(self):
