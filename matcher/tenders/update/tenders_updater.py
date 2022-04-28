@@ -25,11 +25,7 @@ class TendersUpdater:
         self.cate_div_map = cate_div_map
 
         self.mgx = MongoConx('tenders')
-        self.raw_data_df = self.mgx.read_df_by_cols('raw_grants_opened', REMAIN_COLS)
-        self.raw_data_df = self.__check_quality(self.raw_data_df)
-
-        self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
-        self.raw_data_df[self.pk] = 'Grants' + self.raw_data_df['_id']
+        self.raw_data_df = None
 
     def __check_quality(self, raw_data: pd.DataFrame, key_id='GO ID') -> pd.DataFrame:
         assert len(raw_data[raw_data[key_id].isna()]) / len(
@@ -180,7 +176,15 @@ class TendersUpdater:
             tmp_df = tmp_df.groupby(['category']).head(3)
             cate_div_map_df = cate_div_map_df.append(tmp_df.drop('cnt', axis=1))
         return cate_div_map_df
-
+    
+    def __get_opened(self):
+        print('-- start getting opened tenders info')
+        self.raw_data_df = self.mgx.read_df_by_cols('raw_grants_opened', REMAIN_COLS)
+        self.raw_data_df = self.__check_quality(self.raw_data_df)
+        self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
+        self.raw_data_df[self.pk] = 'Grants' + self.raw_data_df['_id']
+        print('-- end getting opened tender info')
+    
     def update_relation_map(self):
         tm = TendersMatcher()
         info_df = pd.read_csv(self.info_path)[['id']]
@@ -192,7 +196,7 @@ class TendersUpdater:
             tmp_dict = tmp_dict.append(result_df)
             print(f'---- complete {index}/{size}')
         tmp_dict.to_csv(TENDERS_RELATION_MAP_PATH, index=0)
-
+    
     def update(self):
         '''
 
@@ -201,7 +205,9 @@ class TendersUpdater:
 
         '''
         print('<start updating tenders files>')
-
+        
+        self.__get_opened()
+        
         if os.path.exists(self.info_path):
             info_df = pd.read_csv(self.info_path)
             raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]

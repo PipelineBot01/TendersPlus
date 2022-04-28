@@ -3,7 +3,7 @@ from typing import Optional, List
 from fastapi import FastAPI
 
 from scheduler import scheduler
-from auto_reco import tenders_filter, tender_process
+from auto_reco import reco_filter, reco_process
 from researcher.matching import researcher_matcher
 from utils.tool_utils import get_research_strength
 
@@ -29,8 +29,8 @@ async def get_sim_researchers(data: Profile):
 @app.post('/get_reco_tenders')
 async def get_reco_tenders(data: Profile):
     print(data.__dict__)
-    tmp_output = tenders_filter.match(data.__dict__)
-    output = tender_process.run(data.__dict__['id'], tmp_output)
+    tmp_output = reco_filter.match(data.__dict__)
+    output = reco_process.run(data.__dict__['id'], tmp_output)
     print(output)
     return {'code': 200, 'data': output}
 

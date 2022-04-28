@@ -25,8 +25,8 @@ class PostProcess:
         return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
 
     def update(self):
-        self.__action_path = pd.read_csv(self.__action_path)
-        self.__info_path = pd.read_csv(self.__info_path)
+        self.__action_df = pd.read_csv(self.__action_path)
+        self.__info_df = pd.read_csv(self.__info_path)
         self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
         self.__action_df = self.__reformat_user_action()
 

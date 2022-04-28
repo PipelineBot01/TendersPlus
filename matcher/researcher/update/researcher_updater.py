@@ -36,9 +36,8 @@ class ResearcherUpdater:
         raw_data_df = self.__mgx.read_df(UNI_DATA['UC'])
         self.__old_info_df, self.__old_tag_df = data_clean(raw_data_df, 'UC', pk)
         del raw_data_df
-
-        self.__new_reg_info = get_data()
-        self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+        
+        self.__new_reg_info, self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = None, None, None, None
 
     def __extract_goid(self, row):
         result = re.findall(GOID_RULES, row)
@@ -73,9 +72,15 @@ class ResearcherUpdater:
         action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
         action_df = action_df.dropna()
         action_df.to_csv(self.action_path, index=0)
-
+    
     def update(self):
         print('<start updating researcher files>')
+
+        print('-- start getting new register user')
+        self.__new_reg_info = get_data()
+        self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+        print('-- finish getting new register user')
+        
         # update info
         print('-- start updating researcher info')
         info_df = self.__update_researcher_info(self.__new_reg_info.drop(['divisions', 'tags'], axis=1))
