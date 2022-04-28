@@ -243,3 +243,21 @@ error: Your local changes to the following files would be overwritten by merge:
 	matcher/researcher/assets/tag_division_map.csv
 Please, commit your changes or stash them before you can merge.
 Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2022-04-28 14:44:04,775    INFO:     Started server process [31254]
+2022-04-28 14:44:04,776    INFO:     Waiting for application startup.
+2022-04-28 14:44:07,533    INFO:     Application startup complete.
+2022-04-28 14:44:07,534    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-28 14:50:05,173    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   563ec13..677ec87  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
