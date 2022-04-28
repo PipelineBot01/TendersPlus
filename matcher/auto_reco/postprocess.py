@@ -107,12 +107,15 @@ class PostProcess:
         pass
 
     def run(self, user_id, input_df):
-        if user_id in self.__action_df['r_id'].unique():
-            # remove dislike tenders
-            input_df = self.__remove_dislike(user_id, input_df)
-            # reformat favourite tenders
-            input_df = self.__reformat_fav(user_id, input_df)
+        try:
+            if user_id in self.__action_df['r_id'].unique():
+                # remove dislike tenders
+                input_df = self.__remove_dislike(user_id, input_df)
+                # reformat favourite tenders
+                input_df = self.__reformat_fav(user_id, input_df)
 
-            # reformat removed favourite tenders
-            input_df = self.__reformat_rmv_fav(user_id, input_df)
+                # reformat removed favourite tenders
+                input_df = self.__reformat_rmv_fav(user_id, input_df)
+        except:
+            print(self.__action_df.columns)
         return input_df['go_id'].tolist()
