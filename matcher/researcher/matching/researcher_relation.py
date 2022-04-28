@@ -260,7 +260,7 @@ class ResearcherMatcher:
         assert len(divisions) != 0, 'At least the division should not be empty.'
         div_list, tag_list = self.__prepare_dataset_by_profile(id, divisions, tags)
         candidate_df = measure_func(self, div_list, tag_list)
-        candidate_df = candidate_df[candidate_df['id'] != id] if remove_cur_id else candidate_df
+        candidate_df = candidate_df[candidate_df['id'] != 'Reg_' + id] if remove_cur_id else candidate_df
         sim_df = candidate_df[:min(len(candidate_df), match_num)]
         sim_df = self.__reformat_output(sim_df, ['name', 'email', 'university'])
 

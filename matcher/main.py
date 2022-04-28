@@ -40,6 +40,11 @@ async def get_university_strength():
     return {'code': 200, 'data': get_research_strength()}
 
 
+@app.get('/get_hot_tenders')
+async def get_hot_tenders():
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+
+
 @app.on_event('startup')
 async def init():
     print('initial update task')

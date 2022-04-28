@@ -43,7 +43,6 @@ class LDAModel:
         self.dictionary.compactify()
 
         self.corpus = [self.dictionary.doc2bow(words) for words in self.word_list]
-        print(self.word_list)
         self.lda = gensim.models.ldamodel.LdaModel(corpus=self.corpus, id2word=self.dictionary, num_topics=NUM_TOPICS,
                                                    iterations=500)
 
