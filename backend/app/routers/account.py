@@ -42,6 +42,8 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
 @router.post('/signup')
 def signup(data: SignupModel, db: Session = Depends(get_db)):
     try:
+        if not data.email:
+            raise HTTPException(400, 'INVALID EMAIL')
         if data.password != data.confirmed_password:
             raise HTTPException(400, 'PASSWORDS MISMATCHING')
         if data.university not in settings.UNIVERSITIES:
@@ -49,6 +51,10 @@ def signup(data: SignupModel, db: Session = Depends(get_db)):
         for i in data.research_fields:
             if i not in settings.RESEARCH_FIELDS:
                 raise HTTPException(400, f'INVALID RESEARCH FIELD {i}')
+
+        # clean email
+        data.email = data.email.lower()
+
         user = sql_get_user(email=data.email, session=db)
         if user:
             raise HTTPException(403, 'EMAIL EXISTED')
