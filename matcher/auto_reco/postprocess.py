@@ -17,7 +17,7 @@ class PostProcess:
         self.__info_path = info_path
 
         self.__action_df = pd.read_csv(action_path)
-        self.__info_df = pd.read_csv(info_path)
+        self.__info_df = pd.read_csv(info_path)[['id', 'go_id']]
         self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
         self.__action_df = self.__reformat_user_action()
 
@@ -36,10 +36,9 @@ class PostProcess:
         tmp_df.loc[(tmp_df['type'] == 4) | (tmp_df['type'] == 5), 'like'] = 1
 
         action_df = tmp_df.sort_values('action_date', ascending=False)
-        save_df = action_df[action_df['save'] == 1].drop_duplicates(['id', 'type', 'go_id'], keep='first')
-        like_df = action_df[action_df['like'] == 1].drop_duplicates(['id', 'type', 'go_id'], keep='first')
-
-        remain_df = tmp_df[tmp_df.isna().any(axis=1)]
+        save_df = action_df[action_df['save'] == 1].drop_duplicates(['id', 'go_id'], keep='first')
+        like_df = action_df[action_df['like'] == 1].drop_duplicates(['id', 'go_id'], keep='first')
+        remain_df = tmp_df[(tmp_df['save'].isna()) & (tmp_df['like'].isna())]
         del tmp_df
         action_df = remain_df.append(save_df).append(like_df).rename(columns={'id': 'r_id'}
                                                                      ).merge(self.__info_df, on='go_id')
@@ -76,29 +75,22 @@ class PostProcess:
         cond_tar = input_df['go_id'].isin(tar_save_df)
         input_df.loc[cond_tar, 'weight'] = input_df[cond_tar]['weight'] + sum(input_df['weight']) / 2
         return input_df.sort_values('weight')
-
+    
     def get_hot_tenders(self):
         tmp_df = self.__action_df.copy()
+        tmp_df.to_csv('ff.csv', index=0)
         tmp_df['date'] = tmp_df['action_date'].dt.normalize()
         tmp_df = tmp_df.drop_duplicates(['id', 'type', 'go_id', 'date'])
 
-        tmp_df.loc[datetime.datetime.now() - tmp_df['action_date'] < datetime.timedelta(days=7), '1_week'] = 1
-        tmp_df['1_week'] = tmp_df['1_week'].fillna(0)
         tmp_df['1_month'] = tmp_df['action_date'].map(lambda x: self.__diff_month(x))
-        tmp_df['3_month'] = tmp_df['1_month']
         tmp_df.loc[tmp_df['1_month'] < 2, '1_month'] = 1
         tmp_df['1_month'] = tmp_df['1_month'].fillna(0)
-        tmp_df.loc[tmp_df['3_month'] < 4, '3_month'] = 1
-        tmp_df['3_month'] = tmp_df['3_month'].fillna(0)
 
-        save_list = []
-        for window in ['1_week', '1_month', '3_month']:
-            tmp_hot_df = tmp_df[(tmp_df['type'].isin(SELF_ACT_LIST)) & (tmp_df[window])].groupby('go_id')[
-                'id'].count().reset_index().rename(columns={'id': 'cnt'}
-                                                   ).sort_values('cnt', ascending=False).reset_index(drop=True
-                                                                                                     ).reset_index()
-            save_list.append(tmp_hot_df)
-        return save_list
+        hot_df = tmp_df[(tmp_df['type'].isin(SELF_ACT_LIST)) & (tmp_df['1_month'])
+                        ].groupby('go_id')['id'].count().reset_index().rename(columns={'id': 'cnt'}).sort_values(
+            'cnt', ascending=False).reset_index(drop=True).reset_index()
+        print(hot_df)
+        return hot_df['go_id'].tolist()
 
     def __reformat_location(self):
         pass

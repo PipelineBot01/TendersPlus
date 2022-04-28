@@ -216,7 +216,7 @@ class TendersUpdater:
             old_raw_data_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
             old_raw_data_df['_id'] = old_raw_data_df['_id'].astype(str)
             old_raw_data_df[self.pk] = 'Grants' + old_raw_data_df['_id']
-            old_raw_data_df = old_raw_data_df[~old_raw_data_df[self.pk].isin(self.raw_data_df[self.pk].unique())]
+            old_raw_data_df = old_raw_data_df[~old_raw_data_df['GO ID'].isin(self.raw_data_df['GO ID'].unique())]
             raw_remain_data_df = old_raw_data_df.append(self.raw_data_df)
             del old_raw_data_df
             overwrite = True
