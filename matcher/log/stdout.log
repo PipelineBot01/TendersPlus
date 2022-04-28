@@ -12131,3 +12131,295 @@ Fast-forward
 git pulling
 git pulling
 Already up-to-date.
+[master a9fe9bc] update model
+ 1 file changed, 5 insertions(+)
+run matcher
+initial update task
+2022-04-28 10:54:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 10:54:51 ------ end update researchers pool
+2022-04-28 10:59:21,025    INFO:     ::1:33792 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 10:59:28,025    INFO:     ::1:33832 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 10:59:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 10:59:51 ------ end update researchers pool
+2022-04-28 10:59:51,912    INFO:     ::1:33900 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO4568', 'GO1788', 'GO453', 'GO3209', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO4946', 'GO5282', 'GO4642', 'GO4214', 'GO5244', 'GO5474', 'GO1008', 'GO4310', 'GO5455', 'GO2361', 'GO4450', 'GO5536', 'GO3690', 'GO5337', 'GO5337', 'GO1943', 'GO1155', 'GO2793', 'GO5066', 'GO3955', 'GO2259', 'GO5432', 'GO4641', 'GO4721', 'GO5147', 'GO5338', 'GO5485', 'GO5485', 'GO4192', 'GO4682', 'GO5316', 'GO4195', 'GO4687', 'GO5246', 'GO4736', 'GO4579', 'GO4466', 'GO1749', 'GO1336', 'GO2796', 'GO1140', 'GO2797', 'GO2099', 'GO1748', 'GO2884', 'GO2641', 'GO4995', 'GO3199', 'GO2332', 'GO5527', 'GO5527', 'GO3337', 'GO2450', 'GO2329', 'GO3034', 'GO5137', 'GO3756', 'GO860', 'GO3551', 'GO3351', 'GO3814', 'GO802', 'GO5181', 'GO5181', 'GO5118', 'GO4421']
+2022-04-28 11:02:20,586    INFO:     ::1:34058 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 11:04:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:04:51 ------ end update researchers pool
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO4568', 'GO1788', 'GO453', 'GO3209', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO4946', 'GO5282', 'GO4642', 'GO4214', 'GO5244', 'GO5474', 'GO1008', 'GO4310', 'GO5455', 'GO2361', 'GO4450', 'GO5536', 'GO3690', 'GO5337', 'GO5337', 'GO1943', 'GO1155', 'GO2793', 'GO5066', 'GO3955', 'GO2259', 'GO5432', 'GO4641', 'GO4721', 'GO5147', 'GO5338', 'GO5485', 'GO5485', 'GO4192', 'GO4682', 'GO5316', 'GO4195', 'GO4687', 'GO5246', 'GO4736', 'GO4579', 'GO4466', 'GO1749', 'GO1336', 'GO2796', 'GO1140', 'GO2797', 'GO2099', 'GO1748', 'GO2884', 'GO2641', 'GO4995', 'GO3199', 'GO2332', 'GO5527', 'GO5527', 'GO3337', 'GO2450', 'GO2329', 'GO3034', 'GO5137', 'GO3756', 'GO860', 'GO3551', 'GO3351', 'GO3814', 'GO802', 'GO5181', 'GO5181', 'GO5118', 'GO4421']
+2022-04-28 11:07:22,706    INFO:     ::1:34388 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'Reg_a@a.com', 'weight': -1.5, 'name': 'Robot A', 'email': 'a@a.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['ENVIRONMENTAL', 'BIOLOGICAL', 'EARTH']}, {'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'expertise', 'health', 'advisers', 'minister', 'integrity', 'election', 'political elite'], 'division': ['BIOLOGICAL', 'EARTH', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['alternative dispute resolution', 'resilience', 'legal professionals', 'psychologist', 'health practitioners', 'health', 'lawyer', 'legal usage'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.11226528037547948, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['twenty first century', 'emerging diseases', 'australasian region', 'tutelage', 'environmental health', 'health', 'dementia', 'anthropocene', 'health promotion', 'synergy'], 'division': ['MEDICAL AND HEALTH', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['ENVIRONMENTAL', 'PSYCHOLOGY AND COGNITIVE SCIENCES', 'EARTH']}, {'id': 'Reg_a@b.com', 'weight': -0.09031754600699499, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['AGRICULTURAL AND VETERINARY', 'BIOLOGICAL', 'CHEMICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_v@v.com', 'weight': -0.09031754600699499, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'BIOLOGICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.06020139392609125, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['city planning', 'hospital costs', 'geographic information systems', 'students', 'public transport', 'health', 'social capital', 'chronic disease hospitals', 'residential environment', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}]
+2022-04-28 11:07:55,947    INFO:     ::1:34426 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO4568', 'GO1788', 'GO453', 'GO3209', 'GO1392', 'GO3250', 'GO5201', 'GO5201', 'GO4508', 'GO5199', 'GO4946', 'GO5282', 'GO4642', 'GO4214', 'GO5244', 'GO5474', 'GO1008', 'GO4310', 'GO5455', 'GO2361', 'GO4450', 'GO5536', 'GO3690', 'GO5337', 'GO5337', 'GO1943', 'GO1155', 'GO2793', 'GO5066', 'GO3955', 'GO2259', 'GO5432', 'GO4641', 'GO4721', 'GO5147', 'GO5338', 'GO5485', 'GO5485', 'GO4192', 'GO4682', 'GO5316', 'GO4195', 'GO4687', 'GO5246', 'GO4736', 'GO4579', 'GO4466', 'GO1749', 'GO1336', 'GO2796', 'GO1140', 'GO2797', 'GO2099', 'GO1748', 'GO2884', 'GO2641', 'GO4995', 'GO3199', 'GO2332', 'GO5527', 'GO5527', 'GO3337', 'GO2450', 'GO2329', 'GO3034', 'GO5137', 'GO3756', 'GO860', 'GO3551', 'GO3351', 'GO3814', 'GO802', 'GO5181', 'GO5181', 'GO5118', 'GO4421']
+2022-04-28 11:07:58,346    INFO:     ::1:34432 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'Reg_a@a.com', 'weight': -1.5, 'name': 'Robot A', 'email': 'a@a.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['ENVIRONMENTAL', 'BIOLOGICAL', 'EARTH']}, {'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'expertise', 'health', 'advisers', 'minister', 'integrity', 'election', 'political elite'], 'division': ['BIOLOGICAL', 'EARTH', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['alternative dispute resolution', 'resilience', 'legal professionals', 'psychologist', 'health practitioners', 'health', 'lawyer', 'legal usage'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.11226528037547942, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['lagorchestes hirsutus', 'emerging diseases', 'seals', 'hendra virus', 'emerging communicable diseases', 'tutelage', 'australasian region', 'antarctic regions', 'antarctic treaty', 'serodiagnosis'], 'division': ['MEDICAL AND HEALTH', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['ENVIRONMENTAL', 'PSYCHOLOGY AND COGNITIVE SCIENCES', 'EARTH']}, {'id': 'Reg_a@b.com', 'weight': -0.09031754600699499, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['AGRICULTURAL AND VETERINARY', 'BIOLOGICAL', 'CHEMICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_v@v.com', 'weight': -0.09031754600699499, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'BIOLOGICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.06020139392609136, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['traffic', 'city planning', 'hospital costs', 'geographic information systems', 'public transport', 'social capital', 'chronic disease hospitals', 'health', 'urban design', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}]
+2022-04-28 11:08:00,349    INFO:     ::1:34440 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 11:09:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:09:51 ------ end update researchers pool
+2022-04-28 11:14:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:14:51 ------ end update researchers pool
+2022-04-28 11:19:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:19:51 ------ end update researchers pool
+2022-04-28 11:24:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:24:51 ------ end update researchers pool
+2022-04-28 11:29:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:30:06 ------ end update researchers pool
+2022-04-28 11:34:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:34:59 ------ end update researchers pool
+2022-04-28 11:39:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:39:52 ------ end update researchers pool
+2022-04-28 11:44:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:44:51 ------ end update researchers pool
+2022-04-28 11:49:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:49:51 ------ end update researchers pool
+2022-04-28 11:54:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:54:51 ------ end update researchers pool
+2022-04-28 11:59:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 11:59:51 ------ end update researchers pool
+2022-04-28 12:04:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 12:04:52 ------ end update researchers pool
+2022-04-28 12:09:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 12:09:51 ------ end update researchers pool
+2022-04-28 12:14:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 12:14:52 ------ end update researchers pool
+2022-04-28 12:19:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 12:19:51 ------ end update researchers pool
+2022-04-28 12:24:31 ------ start update researchers pool
+<start updating researcher files>
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div mapgit pulling
+Updating a9fe9bc..91fb609
+Fast-forward
+ matcher/auto_reco/__init__.py                   |  4 ++--
+ matcher/auto_reco/postprocess.py                |  4 ++--
+ matcher/main.py                                 |  6 +++---
+ matcher/researcher/update/__init__.py           |  2 ++
+ matcher/researcher/update/researcher_updater.py | 13 +++++++++----
+ matcher/scheduler/__init__.py                   | 18 +++++++++---------
+ matcher/tenders/update/__init__.py              |  2 ++
+ matcher/tenders/update/tenders_updater.py       | 22 ++++++++++++++--------
+ 8 files changed, 43 insertions(+), 28 deletions(-)
