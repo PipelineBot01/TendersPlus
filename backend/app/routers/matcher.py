@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.post('/researchers')
-def match_researchers(data: MatcherModel):
+def match_researchers(data: MatcherModel,email: str = Depends(check_access_token)):
     """
     Match similar researchers
     :param data:
@@ -19,7 +19,8 @@ def match_researchers(data: MatcherModel):
     try:
         output = []
         response = requests.post('http://localhost:20222/get_sim_researchers',
-                                 json={'divisions': data.research_fields,
+                                 json={'id':email,
+                                     'divisions': data.research_fields,
                                        'tags': data.tags})
         if response.status_code == 200:
             output = json.loads(response.content)['data']
