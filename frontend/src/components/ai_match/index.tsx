@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 import { Spin, Row, Col, List, Tag, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAnglesRight, faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesRight, faStar, faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -10,9 +10,9 @@ import { DonutChart } from '../charts'
 
 
 import { useAppSelector, useAppDispatch } from '../../store'
+import {setFavourite} from '../../store/features/user'
 
-
-import { matchTenderAPI } from '../../api'
+import { matchTenderAPI, removeUserFavouriteAPI, addUserFavouriteAPI} from '../../api'
 
 import { useCollector } from '../../utils/customHook'
 import capitalize from '../../utils/capitalize'
@@ -25,6 +25,7 @@ export default function AIMatch():JSX.Element{
   const [isAnalyzing, setIsAnalyzing] = useState(true)
   const [ratedTenders, setRatedTenders] = useState(new Array<string>())
   const user = useAppSelector((state)=>state.user)
+  const dispatch = useAppDispatch()
   useEffect(()=>{
     const fields = new Array<string>()
     for (const e of user.research_fields){
@@ -55,7 +56,31 @@ export default function AIMatch():JSX.Element{
         
     message.info('Thanks for your feedback!', 2)
   }
+  const handleClickFavouriteBtn = (type:string, id:string)=>{
+    const newUserFavourite = user.favourite.slice()
+    if (type === 'to-remove'){
+      useCollector({type:3, payload:id})
+      message.warn('Cancel Favorite', 1)
+      const index = newUserFavourite.indexOf(id)
+      if(index !== -1){
+        newUserFavourite.splice(index, 1)
+      }
+      removeUserFavouriteAPI(id)
+    }else{
+      useCollector({type:2, payload:id})
+      message.success('Add Favorite', 1)
+      newUserFavourite.push(id)
+      addUserFavouriteAPI(id)
+    }
+    dispatch(setFavourite(newUserFavourite))
+  }
 
+  const renderFavouriteBtn = (id:string)=>{
+    if(user.access_token){
+      const className = user.favourite.includes(id) ? 'to-remove' : ''
+      return	<FontAwesomeIcon className={className} onClick={()=>{handleClickFavouriteBtn(className, id)}}  icon={faStar}/>
+    }
+  }
 
 
   return (<div className='match-result'>
@@ -140,7 +165,11 @@ export default function AIMatch():JSX.Element{
                         </Row>
 
                         <Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
-																							
+                          <Col  className='favourite-btn' >
+                            {
+                              renderFavouriteBtn(item['GO ID'])
+                            }
+                          </Col>
                           <Col span={5}>
                             <a  className='url' 
                               href={item['URL']}

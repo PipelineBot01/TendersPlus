@@ -49,7 +49,7 @@ export default function Profile():JSX.Element{
     setUserInfoAPI(values).then(()=>{
       message.success('Updated!', 3)
       dispatch(setUserProfile(values))
-    }).catch((error)=>{
+    }, error=>{
       message.error(error.msg, 3)
     }).finally(()=>{
       setIsSubmitting(false)
