@@ -16,7 +16,7 @@ async def init_db() -> None:
     mongo['tenders_client'] = AsyncIOMotorClient(mongo['base_url'] + '/tenders')
     mongo['staff_client'] = AsyncIOMotorClient(mongo['base_url'] + '/staffs')
 
-    collection = mongo['tenders_client'].get_default_database().get_collection('clean_grants_opened')
+    collection = mongo['tenders_client'].get_default_database().get_collection('clean_grants_all')
 
     existed_indexes = await collection.index_information()
 
@@ -37,6 +37,6 @@ async def init_db() -> None:
 
     # count the records
     mongo['tenders_client_docs_count'] = {}
-    mongo['tenders_client_docs_count']['clean_grants_opened'] = await mongo[
-        'tenders_client'].get_default_database().get_collection('clean_grants_opened').count_documents({})
-    print('opened tenders:', mongo['tenders_client_docs_count']['clean_grants_opened'])
+    mongo['tenders_client_docs_count']['clean_grants_all'] = await mongo[
+        'tenders_client'].get_default_database().get_collection('clean_grants_all').count_documents({})
+    print('opened tenders:', mongo['tenders_client_docs_count']['clean_grants_all'])

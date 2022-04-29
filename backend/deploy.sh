@@ -15,5 +15,5 @@ cd /home/TendersPlus/backend/app
 
 
 # run the application
-python3 main.py
+python3 main.py --env_path=./.env
 

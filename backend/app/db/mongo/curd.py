@@ -14,14 +14,14 @@ async def db_get_latest_tenders(n: int) -> list:
     client = mongo['tenders_client']
     db = client.get_default_database()
 
-    collection = db['clean_grants_opened']
+    collection = db['clean_grants_all']
     date_range = datetime.now() - settings.LATEST_DATE_THRESHOLD
     cursor = collection.find({"open_date": {"$gt": date_range}},
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
     if n != 0:
         cursor.limit(n)
-    return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_all'])
 
 
 def db_get_hot_tenders(n: Union[int, None] = None) -> Dict:
@@ -40,14 +40,14 @@ async def db_get_expiring_tenders(n: int) -> List:
 
     client = mongo['tenders_client']
     db = client.get_default_database()
-    collection = db['clean_grants_opened']
+    collection = db['clean_grants_all']
     date_range = datetime.now() + settings.LATEST_DATE_THRESHOLD
     cursor = collection.find({"close_date": {"$lt": date_range}},
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
     if n != 0:
         cursor.limit(n)
-    return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    return await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_all'])
 
 
 async def db_get_tenders_by_keywords(keywords: str = None) -> List:
@@ -62,7 +62,7 @@ async def db_get_tenders_by_keywords(keywords: str = None) -> List:
 
     client = mongo['tenders_client']
     db = client.get_default_database()
-    collection = db['clean_grants_opened']
+    collection = db['clean_grants_all']
 
     if keywords:
         cursor = collection.find(
@@ -74,7 +74,7 @@ async def db_get_tenders_by_keywords(keywords: str = None) -> List:
         cursor = collection.find({}, {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                                       'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
-    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_all'])
 
     return docs
 
@@ -94,7 +94,7 @@ async def db_get_tenders_from_history_by_id(id_: str) -> Union[Dict, None]:
                                       'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
 
-async def db_get_tenders_by_ids(ids: list) -> list:
+async def db_get_tenders_from_opened_by_ids(ids: list) -> list:
     """
     query tenders by id
     :param id_: the GO ID of each tenders
@@ -110,11 +110,11 @@ async def db_get_tenders_by_ids(ids: list) -> list:
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
-    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_all'])
     return docs
 
 
-async def db_get_tenders_from_history(ids: list) -> list:
+async def db_get_tenders_from_history_by_ids(ids: list) -> list:
     """
     query tenders by id
     :param id_: the GO ID of each tenders
@@ -130,5 +130,5 @@ async def db_get_tenders_from_history(ids: list) -> list:
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
 
-    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_opened'])
+    docs = await cursor.to_list(length=mongo['tenders_client_docs_count']['clean_grants_all'])
     return docs
