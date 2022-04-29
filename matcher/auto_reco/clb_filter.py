@@ -129,5 +129,5 @@ class Filter:
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)
 
-        return self.__reformat_result(result_df.sort_values('weight'))
+        return self.__reformat_result(result_df.sort_values('weight'))[['id', 'go_id']]
 
