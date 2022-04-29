@@ -13701,3 +13701,10 @@ Fast-forward
  matcher/researcher/assets/researcher_info.csv | 453 ++++++++++++++++++++++++++
  2 files changed, 458 insertions(+), 5 deletions(-)
  create mode 100644 matcher/researcher/assets/researcher_info.csv
+[master 81fdac1] update model
+ 2 files changed, 42 insertions(+)
+run matcher
+initial update task
+2022-04-29 10:35:18 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
