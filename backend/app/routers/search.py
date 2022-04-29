@@ -28,7 +28,10 @@ async def get_open_opportunities(query: str = None):
 
 @router.get('/count')
 async def get_open_opportunities_count():
-    return {'code': 200, 'data': mongo['tenders_client_docs_count']['clean_grants_opened']}
+    count = 0
+    if 'clean_grants_all' in mongo['tenders_client_docs_count']:
+        count = mongo['tenders_client_docs_count']['clean_grants_all']
+    return {'code': 200, 'data': count }
 
 
 @router.get('/latest')
