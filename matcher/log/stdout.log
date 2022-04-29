@@ -14191,3 +14191,111 @@ Updating 5720466..7233b53
 Fast-forward
  matcher/scheduler/__init__.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
+[master f17f44b] update model
+ 9 files changed, 1731 insertions(+), 314 deletions(-)
+ create mode 100644 matcher/ff.csv
+ rewrite matcher/researcher/assets/reg_researcher_info.csv (100%)
+ rewrite matcher/researcher/assets/researcher_action.csv (99%)
+run matcher
+initial update task
+2022-04-29 11:15:13 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 11:15:16 ------ end update researchers pool
+2022-04-29 11:15:27,306    INFO:     ::1:43352 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:15:27,323    INFO:     ::1:43350 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_t@t.com', 'weight': 1e-06, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['hardness', 'heel', 'foot orthoses', 'orthotic devices', 'career', 'knee osteoarthritis', 'systematic reviews', 'meta-analysis', 'shoes'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11598846860725394, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['robotic art', 'stereo vision', 'art', 'health care', 'robot', 'government agencies', 'simultaneous localization and mapping', 'religious behavior', 'grippers', 'embodiment'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['genotype', 'singular value decomposition', 'deep learning', 'camera', 'face recognition', 'engineering', 'robots', 'electroencephalography', 'speech synthesis', 'collision'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['radio', 'autonomous underwater vehicles', 'long term evolution (lte)', 'routing protocols', 'fiber optic networks', 'traffic', 'frog', 'cyber physical system', 'intrusion detection', 'energy saving'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['problem-based learning', 'watches', 'anomaly detection', 'hinges', 'personnel', 'learning algorithms', 'crowdsourcing', 'eye tracking', 'emotions', 'sensors'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.1369873072306149, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['rotation invariance', 'lower extremity', 'benchmarking', 'deep neural networks', 'center of pressure', 'performance model', 'quinine', 'students', 'supervised learning', 'segmentation'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['design education', 'clothes', 'emperor', 'discourse', 'magic'], 'division': ['HISTORY AND ARCHAEOLOGY', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16141534574149802, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['information technology', 'learning', 'mental health service', 'social media', 'human computer interaction', 'technology adoption', 'indigenous communities', 'action plan', 'digital divide'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587b08d7b0c43ebd755346', 'weight': 0.16316125542943374, 'name': 'Girija Chetty', 'email': '', 'university': 'Canberra', 'tag': ['fusion reactions', 'digital libraries', 'interoperability', 'color', 'electric fuses', 'data mining', 'colonoscopy', 'electroencephalography', 'body sensor networks', 'segmentation'], 'division': ['TECHNOLOGY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:15:29,740    INFO:     ::1:43368 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:15:31,369    INFO:     ::1:43380 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:15:37,310    INFO:     ::1:43390 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:15:50,194    INFO:     ::1:43416 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:16:02,496    INFO:     ::1:43434 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:06,303    INFO:     ::1:43450 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:16:06,320    INFO:     ::1:43452 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:11,027    INFO:     ::1:43472 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:11,053    INFO:     ::1:43474 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:16:21,741    INFO:     ::1:43492 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['timber', 'pathway', 'facades', 'concrete construction', 'liquid', 'casting', 'pavilion', 'fabrication', 'feedback', 'robotics'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'camera', 'face recognition', 'engineering', 'robots', 'electroencephalography', 'speech synthesis', 'collision'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6692229549021105, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['speech intelligibility', 'robotic art', 'discrete event systems', 'stereo vision', 'art', 'motion planning', 'computer integrated manufacturing', 'government agencies', 'robots', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['patent', 'science', 'biology', 'emerging technologies', 'engineering', 'legal ramification', 'synthetic biology', 'intellectual property'], 'division': ['ENGINEERING', 'STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['patient rehabilitation', 'composite beams', 'clutches', 'robotic arms', 'teaching', 'nanotubes', 'arches', 'minimally invasive surgery', 'energy transfer', 'students'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8058797714287397, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'fusion reactions', 'risk analysis', 'trajectories', 'video cameras', 'gene expression', 'deep neural networks', 'computer vision', 'kinematics', 'gait analysis'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'TECHNOLOGY']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['semantic web', 'social interaction', 'benchmarking', 'video conferencing', 'human computer interaction', 'learning algorithms', 'multi-task learning', 'electroencephalography', 'classifiers', 'cameras'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:16:22,280    INFO:     ::1:43498 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:16:27,665    INFO:     ::1:43506 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:38,424    INFO:     ::1:43532 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:38,449    INFO:     ::1:43534 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:16:44,491    INFO:     ::1:43554 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:16:44,520    INFO:     ::1:43556 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:16:53,334    INFO:     ::1:43598 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:17:01,609    INFO:     ::1:43614 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:17:22,302    INFO:     ::1:43644 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_test@2.com', 'weight': 1e-06, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['hardness', 'heel', 'foot orthoses', 'orthotic devices', 'career', 'knee osteoarthritis', 'systematic reviews', 'meta-analysis', 'shoes'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11598846860725394, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['speech intelligibility', 'robotic art', 'stereo vision', 'art', 'health care', 'government agencies', 'simultaneous localization and mapping', 'religious behavior', 'grippers', 'embodiment'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['genotype', 'singular value decomposition', 'deep learning', 'camera', 'face recognition', 'engineering', 'robots', 'electroencephalography', 'speech synthesis', 'collision'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['radio', 'autonomous underwater vehicles', 'long term evolution (lte)', 'routing protocols', 'fiber optic networks', 'traffic', 'frog', 'cyber physical system', 'intrusion detection', 'energy saving'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['semantic web', 'problem-based learning', 'watches', 'anomaly detection', 'hinges', 'personnel', 'human computer interaction', 'eye tracking', 'emotions', 'sensors'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.1369873072306149, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['rotation invariance', 'lower extremity', 'benchmarking', 'deep neural networks', 'center of pressure', 'performance model', 'quinine', 'students', 'supervised learning', 'segmentation'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['design education', 'clothes', 'emperor', 'discourse', 'magic'], 'division': ['HISTORY AND ARCHAEOLOGY', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16141534574149802, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['information technology', 'learning', 'mental health service', 'social media', 'human computer interaction', 'technology adoption', 'indigenous communities', 'digital divide', 'communication'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587b08d7b0c43ebd755346', 'weight': 0.16316125542943374, 'name': 'Girija Chetty', 'email': '', 'university': 'Canberra', 'tag': ['fusion reactions', 'digital libraries', 'interoperability', 'color', 'electric fuses', 'data mining', 'colonoscopy', 'electroencephalography', 'body sensor networks', 'segmentation'], 'division': ['TECHNOLOGY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:17:23,722    INFO:     ::1:43648 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:18:36,988    INFO:     ::1:43738 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:18:37,013    INFO:     ::1:43740 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:18:41,046    INFO:     ::1:43760 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:18:41,071    INFO:     ::1:43762 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:19:39,415    INFO:     ::1:43886 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:19:39,441    INFO:     ::1:43888 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:19:52,347    INFO:     ::1:43922 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:19:52,371    INFO:     ::1:43926 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:25:13 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 11:25:16 ------ end update researchers pool
+2022-04-29 11:26:36,790    INFO:     ::1:44440 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:26:36,815    INFO:     ::1:44442 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:26:47,863    INFO:     ::1:44468 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:26:47,887    INFO:     ::1:44470 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:30:11,797    INFO:     ::1:44726 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:31:32,955    INFO:     ::1:44832 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:31:32,972    INFO:     ::1:44834 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:31:33,527    INFO:     ::1:44860 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:31:33,555    INFO:     ::1:44862 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:31:37,657    INFO:     ::1:44890 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:31:37,682    INFO:     ::1:44892 - "GET /get_university_strength HTTP/1.1" 200 OK
+git pulling
+Updating b0f5d5f..2a620cd
+Fast-forward
+ matcher/auto_reco/clb_filter.py  |  2 +-
+ matcher/auto_reco/postprocess.py | 15 ++++++++-------
+ 2 files changed, 9 insertions(+), 8 deletions(-)
