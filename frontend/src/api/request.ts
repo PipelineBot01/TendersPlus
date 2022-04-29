@@ -3,8 +3,8 @@ import interceptor from "./interceptor"
 
 
 export const request = axios.create({
-  // baseURL:'http://110.40.137.110/tendersplus/api',
-  baseURL:'http://localhost:20220',
+  baseURL:'http://110.40.137.110/tendersplus/api',
+  // baseURL:'http://localhost:20220',
   timeout:5000
 })
 
