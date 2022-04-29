@@ -2837,3 +2837,11 @@ To git@github.com:PipelineBot01/TendersPlus.git
 Run time of job "update_researchers_pool (trigger: interval[0:02:00], next run at: 2022-04-29 11:14:20 CST)" was missed by 0:00:02.687088
 From github.com:PipelineBot01/TendersPlus
    5720466..7233b53  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   7233b53..f17f44b  master -> master
+2022-04-29 11:15:13,541    INFO:     Started server process [17490]
+2022-04-29 11:15:13,542    INFO:     Waiting for application startup.
+2022-04-29 11:15:16,175    INFO:     Application startup complete.
+2022-04-29 11:15:16,176    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+From github.com:PipelineBot01/TendersPlus
+   b0f5d5f..2a620cd  master     -> origin/master
