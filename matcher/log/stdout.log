@@ -13617,3 +13617,21 @@ initial update task
 -- start getting new register user
 git pulling
 Already up-to-date.
+[master 577d274] update model
+ 2 files changed, 47 insertions(+)
+run matcher
+initial update task
+2022-04-29 09:46:53 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+git pulling
+Updating 577d274..2c1a0e0
+Fast-forward
+ matcher/researcher/assets/reg_researcher_info.csv  |  41 +-
+ matcher/researcher/assets/researcher_info.csv      | 492 ---------------------
+ matcher/researcher/assets/researcher_tag.csv       |  42 --
+ matcher/researcher/assets/tag_division_map.csv     |  70 +--
+ matcher/researcher/matching/researcher_relation.py |   8 +-
+ matcher/researcher/update/researcher_updater.py    |  49 +-
+ 6 files changed, 71 insertions(+), 631 deletions(-)
+ delete mode 100644 matcher/researcher/assets/researcher_info.csv
