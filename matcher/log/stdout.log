@@ -13607,3 +13607,13 @@ Fast-forward
  delete mode 100644 backend/app/test/test_get_user_info_api.py
  rename backend/app/{test => utils_test}/__init__.py (100%)
  create mode 100644 backend/app/utils_test/test_auth.py
+[master b8b5e8f] update model
+ 8 files changed, 3024 insertions(+), 40 deletions(-)
+ rewrite scraper/assets/gosLink.json (100%)
+run matcher
+initial update task
+2022-04-29 09:44:53 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+git pulling
+Already up-to-date.
