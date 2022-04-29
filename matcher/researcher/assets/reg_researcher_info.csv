@@ -1,1 +1,5 @@
-
+email,university,name,divisions,tags,id
+t@t.com,Southern Cross University,Test Robot,"['d_08', 'd_09', 'd_10']",,Reg_t@t.com
+test@0.com,Macquarie University,Test Test,['d_09'],,Reg_test@0.com
+test@anu.com,Australian National University,F Test,"['d_01', 'd_02']",['Health'],Reg_test@anu.com
+tester@anu.com,Australian National University,David James,"['d_01', 'd_04', 'd_05']",['Health'],Reg_tester@anu.com
