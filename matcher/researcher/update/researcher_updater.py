@@ -78,7 +78,7 @@ class ResearcherUpdater:
             action_df = action_df.dropna()
             action_df.to_csv(self.action_path, index=0)
         else:
-            action_df.to_csv(self.action_path, index=0)
+            pd.DataFrame({'id': [], 'type': [], 'action_date': [], 'go_id': []}).to_csv(self.action_path, index=0)
     
     def update(self):
         print('<start updating researcher files>')

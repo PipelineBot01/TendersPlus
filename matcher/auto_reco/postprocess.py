@@ -18,9 +18,9 @@ class PostProcess:
 
         self.__action_df = pd.read_csv(action_path)
         self.__info_df = pd.read_csv(info_path)[['id', 'go_id']]
-        self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
-        self.__action_df = self.__reformat_user_action()
-
+        if not self.__action_df.empty:
+            self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+            self.__action_df = self.__reformat_user_action()
 
     def __diff_month(self, date):
         return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
@@ -28,8 +28,9 @@ class PostProcess:
     def update(self):
         self.__action_df = pd.read_csv(self.__action_path)
         self.__info_df = pd.read_csv(self.__info_path)
-        self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
-        self.__action_df = self.__reformat_user_action()
+        if not self.__action_df.empty:
+            self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+            self.__action_df = self.__reformat_user_action()
 
     def __reformat_user_action(self):
         tmp_df = self.__action_df.copy()

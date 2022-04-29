@@ -90,7 +90,6 @@ class TendersUpdater:
         tag_df = pd.read_csv(self.tag_path)
         tag_df['tags'] = tag_df.apply(lambda x: self.__reformat_key(x), axis=1)
         info_df = info_df.merge(tag_df[[self.pk, 'tags']], on=self.pk)
-
         cate_df = info_df[[self.pk, 'category', 'sub_category']].melt(id_vars=self.pk
                                                                       ).dropna()[[self.pk, 'value']].rename(
             columns={'value': 'category'})
@@ -181,8 +180,8 @@ class TendersUpdater:
         print('-- start getting opened tenders info')
         self.raw_data_df = self.mgx.read_df_by_cols('raw_grants_opened', REMAIN_COLS)
         self.raw_data_df = self.__check_quality(self.raw_data_df)
-        self.raw_data_df['_id'] = self.raw_data_df['_id'].astype(str)
-        self.raw_data_df[self.pk] = 'Grants' + self.raw_data_df['_id']
+        self.raw_data_df['GO ID'] = self.raw_data_df['GO ID'].astype(str)
+        self.raw_data_df[self.pk] = 'Grants' + self.raw_data_df['GO ID']
         print('-- end getting opened tender info')
     
     def update_relation_map(self):
@@ -214,8 +213,7 @@ class TendersUpdater:
             overwrite = False
         else:
             old_raw_data_df = self.mgx.read_df_by_cols('raw_grants_all', REMAIN_COLS)
-            old_raw_data_df['_id'] = old_raw_data_df['_id'].astype(str)
-            old_raw_data_df[self.pk] = 'Grants' + old_raw_data_df['_id']
+            old_raw_data_df[self.pk] = 'Grants' + old_raw_data_df['GO ID']
             old_raw_data_df = old_raw_data_df[~old_raw_data_df['GO ID'].isin(self.raw_data_df['GO ID'].unique())]
             raw_remain_data_df = old_raw_data_df.append(self.raw_data_df)
             del old_raw_data_df
