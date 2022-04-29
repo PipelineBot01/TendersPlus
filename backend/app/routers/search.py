@@ -18,7 +18,7 @@ async def get_opportunities(query: str = None, limit: int = 0, skip: int = 0):
         if query:
             keywords = base64.b64decode(query).decode('utf-8')
         # print('keywords:', keywords)
-        docs = await curd.db_get_tenders_by_keywords(keywords,limit,skip)
+        docs = await curd.db_get_tenders_by_keywords(keywords, limit, skip)
         # print(docs)
         return {'code': 200, 'data': docs}
     except Exception as e:
@@ -36,20 +36,24 @@ async def get_open_opportunities_count():
 
 @router.get('/latest')
 async def get_latest_opportunities(limit: int = 0, skip: int = 0):
-    docs = await curd.db_get_latest_tenders(limit,skip)
+    docs = await curd.db_get_latest_tenders(limit, skip)
     return {'code': 200, 'data': docs}
 
 
 @router.get('/expiring')
 async def get_expiring_opportunities(limit: int = 0, skip: int = 0):
-    docs = await curd.db_get_expiring_tenders(limit,skip)
+    docs = await curd.db_get_expiring_tenders(limit, skip)
     return {'code': 200, 'data': docs}
 
 
 @router.get('/hot')
 async def get_hot_opportunities(limit: int = 0, skip: int = 0):
-    response = requests.get('http://localhost:20222/get_hot_tenders')
     docs = []
+    try:
+        response = requests.get('http://localhost:20222/get_hot_tenders', timeout=5)
+    except:
+        return {'code': 200, 'data': docs}
+
     if response.status_code == 200:
         content = json.loads(response.content)
         go_id = content['data']
