@@ -2422,3 +2422,322 @@ Traceback (most recent call last):
 KeyError: 'email'
 
 2022-04-29 09:44:53,368    ERROR:    Application startup failed. Exiting.
+To git@github.com:PipelineBot01/TendersPlus.git
+   b8b5e8f..577d274  master -> master
+2022-04-29 09:46:53,657    INFO:     Started server process [26580]
+2022-04-29 09:46:53,657    INFO:     Waiting for application startup.
+2022-04-29 09:46:53,673    ERROR:    Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1675, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1683, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'email'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 598, in startup
+    await handler()
+  File "main.py", line 57, in init
+    await job_2.func()
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 25, in update_researchers_pool
+    ru.update()
+  File "/home/TendersPlus/matcher/researcher/update/researcher_updater.py", line 81, in update
+    self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+  File "/home/TendersPlus/matcher/utils/feature_utils.py", line 53, in get_user_profile
+    input_df[pk] = 'Reg_' + input_df['email']
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/frame.py", line 2906, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 'email'
+
+2022-04-29 09:46:53,673    ERROR:    Application startup failed. Exiting.
+From github.com:PipelineBot01/TendersPlus
+   577d274..2c1a0e0  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   2c1a0e0..00fa5ca  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   00fa5ca..0090767  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   0090767..114397d  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   114397d..6be903c  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   6be903c..e4c4eb7  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   e4c4eb7..7c280b6  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   7c280b6..6a733d9  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   6a733d9..6787c45  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   6787c45..0aabc39  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
+To git@github.com:PipelineBot01/TendersPlus.git
+   0aabc39..8815646  master -> master
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 1, in <module>
+    from .clb_filter import Filter
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 7, in <module>
+    from researcher.matching.researcher_relation import ResearcherMatcher
+  File "/home/TendersPlus/matcher/researcher/matching/__init__.py", line 3, in <module>
+    researcher_matcher = ResearcherMatcher()
+  File "/home/TendersPlus/matcher/researcher/matching/researcher_relation.py", line 22, in __init__
+    self.__INFO_DF = pd.read_csv(self.__info_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: './researcher/assets/researcher_info.csv'
