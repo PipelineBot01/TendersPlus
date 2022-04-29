@@ -54,7 +54,6 @@ class PostProcess:
         return input_df
 
     def __reformat_fav(self, user_id, input_df):
-        print(input_df.columns)
         fav_df = self.__action_df[(self.__action_df['r_id'] == user_id) & (self.__action_df['type'] == 2)].copy()
         if not fav_df.empty:
             input_df = fav_df.append(input_df[~input_df['go_id'].isin(fav_df['go_id'].unique())])
@@ -79,7 +78,6 @@ class PostProcess:
     
     def get_hot_tenders(self):
         tmp_df = self.__action_df.copy()
-        tmp_df.to_csv('ff.csv', index=0)
         tmp_df['date'] = tmp_df['action_date'].dt.normalize()
         tmp_df = tmp_df.drop_duplicates(['r_id', 'type', 'go_id', 'date'])
 
