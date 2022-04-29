@@ -49,41 +49,52 @@ class ResearcherUpdater:
         return row
 
     def __update_researcher_info(self, info_df):
-        info_df = self.__old_info_df.append(info_df)
-        info_df = info_df.drop_duplicates(self.pk, keep='last')
+        if not info_df.empty:
+            info_df = info_df.drop(['divisions', 'tags'], axis=1)
+            info_df = self.__old_info_df.append(info_df)
+            info_df = info_df.drop_duplicates(self.pk, keep='last')
+        else:
+            info_df = self.__old_info_df.drop_duplicates(self.pk, keep='last')
         return info_df
 
     def __update_researcher_tag(self, tag_df):
-        researcher_tag_map = self.__old_tag_df.append(tag_df)
+        researcher_tag_map = self.__old_tag_df.append(tag_df) if not tag_df.empty else self.__old_tag_df
         return researcher_tag_map
 
     def __update_researcher_div(self, div_df):
         rfc = ResearcherFeatCreator(self.researcher_tag_path, self.tag_div_map_path)
         researcher_div_map = rfc.create_researcher_division()
         researcher_div_map = researcher_div_map[~researcher_div_map[self.pk].isin(div_df[self.pk])]
-        researcher_div_map = researcher_div_map.append(div_df)
+        researcher_div_map = researcher_div_map.append(div_df) if not div_df.empty else researcher_div_map
         return researcher_div_map
 
     def __update_researcher_action(self, action_df):
-        action_df[self.pk] = 'Reg_' + action_df['email']
-        action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
-        action_df['action_date'] = pd.to_datetime(action_df['action_date'])
-        action_df = action_df.apply(lambda x: self.__filter_size(x), axis=1)
-        action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
-        action_df = action_df.dropna()
-        action_df.to_csv(self.action_path, index=0)
+        if not action_df.empty:
+            action_df[self.pk] = 'Reg_' + action_df['email']
+            action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
+            action_df['action_date'] = pd.to_datetime(action_df['action_date'])
+            action_df = action_df.apply(lambda x: self.__filter_size(x), axis=1)
+            action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
+            action_df = action_df.dropna()
+            action_df.to_csv(self.action_path, index=0)
     
     def update(self):
         print('<start updating researcher files>')
 
         print('-- start getting new register user')
         self.__new_reg_info = get_data()
-        self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+        if not self.__new_reg_info.empty:
+            self.__new_tag_df, self.__new_div_df, self.__new_tag_div_map_df = get_user_profile(self.__new_reg_info)
+        else:
+            print('---- empty register user')
+            self.__new_tag_df = pd.DataFrame()
+            self.__new_div_df = pd.DataFrame()
+            self.__new_tag_div_map_df = pd.DataFrame()
         print('-- finish getting new register user')
         
         # update info
         print('-- start updating researcher info')
-        info_df = self.__update_researcher_info(self.__new_reg_info.drop(['divisions', 'tags'], axis=1))
+        info_df = self.__update_researcher_info(self.__new_reg_info)
         info_df.to_csv(self.__info_path, index=0)
         self.__new_reg_info.to_csv(self.__reg_info_path, index=0)
         print('-- end updating researcher info')
@@ -96,15 +107,17 @@ class ResearcherUpdater:
 
         # update researcher-div map
         print('-- start updating researcher div map')
-        researcher_div_map = self.__update_researcher_div(self.__new_div_df)
-        researcher_div_map.to_csv(self.researcher_div_path, index=0)
+        if not self.__new_div_df.empty:
+            researcher_div_map = self.__update_researcher_div(self.__new_div_df)
+            researcher_div_map.to_csv(self.researcher_div_path, index=0)
         print('-- start updating researcher div map')
 
         # update tag-div map
         print('-- start updating tag div map')
-        ri = ResearcherIter(self.tag_div_map_path, self.researcher_div_path)
-        tag_div_map_df = ri.fit_dataframe(self.__new_tag_div_map_df)
-        tag_div_map_df.to_csv(self.tag_div_map_path, index=0)
+        if not self.__new_tag_div_map_df.empty:
+            ri = ResearcherIter(self.tag_div_map_path, self.researcher_div_path)
+            tag_div_map_df = ri.fit_dataframe(self.__new_tag_div_map_df)
+            tag_div_map_df.to_csv(self.tag_div_map_path, index=0)
         print('-- start updating tag div map')
 
         # update researcher action info

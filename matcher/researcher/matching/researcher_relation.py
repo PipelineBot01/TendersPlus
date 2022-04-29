@@ -9,17 +9,17 @@ class ResearcherMatcher:
     def __init__(self, re_div_path=RESEARCHER_DIVISION_MAP_PATH,
                  re_tag_path=RESEARCHER_TAG_MAP_PATH,
                  tag_div_path=RESEARCHER_TAG_DIV_MAP_PATH,
-                 re_info_path=RESEARCHER_INFO_PATH, pk='id'):
+                 info_path=RESEARCHER_INFO_PATH, pk='id'):
 
         self.__re_div_path = re_div_path
         self.__re_tag_path = re_tag_path
         self.__tag_div_path = tag_div_path
-        self.__re_info_path = re_info_path
+        self.__info_path = info_path
 
         self.__re_div_df = pd.read_csv(self.__re_div_path)
         self.__re_tag_df = pd.read_csv(self.__re_tag_path)
         self.__MAP_DF = pd.read_csv(self.__tag_div_path).drop('weight', axis=1)
-        self.__INFO_DF = pd.read_csv(self.__re_info_path)
+        self.__INFO_DF = pd.read_csv(self.__info_path)
         self.__pk = pk
 
         assert not self.__re_div_df.empty, 'Cannot generate matcher due to empty file!'
@@ -230,7 +230,7 @@ class ResearcherMatcher:
         self.__re_div_df = pd.read_csv(self.__re_div_path)
         self.__re_tag_df = pd.read_csv(self.__re_tag_path)
         self.__MAP_DF = pd.read_csv(self.__tag_div_path).drop('weight', axis=1)
-        self.__INFO_DF = pd.read_csv(self.__re_info_path)
+        self.__INFO_DF = pd.read_csv(self.__info_path)
 
     def match_by_profile(self, profile_dict: Dict[str, Union[str, List[str]]],
                          match_num=10,
