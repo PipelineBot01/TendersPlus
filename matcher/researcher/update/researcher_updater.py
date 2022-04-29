@@ -77,6 +77,8 @@ class ResearcherUpdater:
             action_df = action_df.explode('go_id')[['id', 'type', 'action_date', 'go_id']]
             action_df = action_df.dropna()
             action_df.to_csv(self.action_path, index=0)
+        else:
+            action_df.to_csv(self.action_path, index=0)
     
     def update(self):
         print('<start updating researcher files>')
