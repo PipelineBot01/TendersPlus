@@ -12751,3 +12751,859 @@ git pulling
 run matcher
 git pulling
 Already up-to-date.
+[master 2d6e0f2] update model
+ 3 files changed, 1381 insertions(+), 1453 deletions(-)
+run matcher
+initial update task
+2022-04-28 16:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 16:40:32 ------ end update researchers pool
+2022-04-28 16:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 16:50:31 ------ end update researchers pool
+2022-04-28 17:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:00:32 ------ end update researchers pool
+2022-04-28 17:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:10:32 ------ end update researchers pool
+2022-04-28 17:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:20:31 ------ end update researchers pool
+2022-04-28 17:21:40,440    INFO:     ::1:58332 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:21:43,562    INFO:     ::1:58354 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO453', 'GO1788', 'GO3209', 'GO4568', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO3425', 'GO4891', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO4672', 'GO4674', 'GO401', 'GO1224', 'GO3814', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO3034']
+2022-04-28 17:21:47,045    INFO:     ::1:58368 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+2022-04-28 17:21:49,264    INFO:     ::1:58378 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO453', 'GO1788', 'GO3209', 'GO4568', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO3425', 'GO4891', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO4672', 'GO4674', 'GO401', 'GO1224', 'GO3814', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO3034']
+2022-04-28 17:21:57,238    INFO:     ::1:58390 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+2022-04-28 17:21:58,530    INFO:     ::1:58394 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+2022-04-28 17:22:11,392    INFO:     ::1:58424 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+2022-04-28 17:22:40,874    INFO:     ::1:58486 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO453', 'GO1788', 'GO3209', 'GO4568', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO3425', 'GO4891', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO4672', 'GO4674', 'GO401', 'GO1224', 'GO3814', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO3034']
+2022-04-28 17:23:44,590    INFO:     ::1:58558 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': None, 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+2022-04-28 17:23:59,414    INFO:     ::1:58580 - "POST /get_sim_researchers HTTP/1.1" 500 Internal Server Error
+2022-04-28 17:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:30:31 ------ end update researchers pool
+2022-04-28 17:34:17,753    INFO:     ::1:59274 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'health', 'political elite', 'expertise', 'integrity', 'advisers', 'minister', 'election'], 'division': ['BIOLOGICAL', 'STUDIES IN HUMAN SOCIETY', 'EARTH']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['legal usage', 'legal professionals', 'health', 'psychologist', 'resilience', 'health practitioners', 'lawyer', 'alternative dispute resolution'], 'division': ['PHYSICAL', 'MEDICAL AND HEALTH', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.11226528037547948, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['synergy', 'tutelage', 'anthropocene', 'dementia', 'environmental health', 'health', 'australasian region', 'emerging diseases', 'twenty first century', 'health promotion'], 'division': ['ENVIRONMENTAL', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'ENVIRONMENTAL', 'EARTH']}, {'id': 'Reg_a@b.com', 'weight': -0.09031754600699499, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'AGRICULTURAL AND VETERINARY', 'CHEMICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_v@v.com', 'weight': -0.09031754600699499, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.06020139392609125, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['hospital costs', 'students', 'health', 'residential environment', 'geographic information systems', 'public transport', 'city planning', 'chronic disease hospitals', 'social capital', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}, {'id': 'UC_61587a14d7b0c43ebd75533e', 'weight': -0.051043056883826876, 'name': 'Indira Samarawickrema', 'email': '', 'university': 'Canberra', 'tag': ['asian americans', 'child welfare', 'gender equity', 'knee osteoarthritis', 'impetigo', 'solar system', 'leader', 'visceral leishmaniasis', 'venous thromboembolism'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'EDUCATION']}]
+2022-04-28 17:34:44,862    INFO:     ::1:59318 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'health', 'political elite', 'expertise', 'integrity', 'advisers', 'minister', 'election'], 'division': ['BIOLOGICAL', 'STUDIES IN HUMAN SOCIETY', 'EARTH']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['legal usage', 'legal professionals', 'health', 'psychologist', 'resilience', 'health practitioners', 'lawyer', 'alternative dispute resolution'], 'division': ['PHYSICAL', 'MEDICAL AND HEALTH', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.11226528037547942, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['serodiagnosis', 'tutelage', 'hendra virus', 'emerging communicable diseases', 'australasian region', 'antarctic regions', 'emerging diseases', 'seals', 'lagorchestes hirsutus', 'antarctic treaty'], 'division': ['ENVIRONMENTAL', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'ENVIRONMENTAL', 'EARTH']}, {'id': 'Reg_a@b.com', 'weight': -0.09031754600699499, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'AGRICULTURAL AND VETERINARY', 'CHEMICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_v@v.com', 'weight': -0.09031754600699499, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.06020139392609136, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['hospital costs', 'health', 'traffic', 'urban design', 'geographic information systems', 'city planning', 'public transport', 'chronic disease hospitals', 'social capital', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}, {'id': 'UC_61587a14d7b0c43ebd75533e', 'weight': -0.0510430568838276, 'name': 'Indira Samarawickrema', 'email': '', 'university': 'Canberra', 'tag': ['asian americans', 'child welfare', 'gender equity', 'knee osteoarthritis', 'impetigo', 'solar system', 'leader', 'visceral leishmaniasis', 'venous thromboembolism'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'EDUCATION']}]
+2022-04-28 17:36:00,612    INFO:     ::1:59408 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO4528', 'GO4020', 'GO453', 'GO1788', 'GO3209', 'GO4568', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO3425', 'GO4891', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO4672', 'GO4674', 'GO401', 'GO1224', 'GO3814', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO3034']
+2022-04-28 17:36:09,169    INFO:     ::1:59418 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 17:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:40:31 ------ end update researchers pool
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+[{'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'health', 'political elite', 'expertise', 'integrity', 'advisers', 'minister', 'election'], 'division': ['ENVIRONMENTAL', 'STUDIES IN HUMAN SOCIETY', 'EARTH']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['legal usage', 'legal professionals', 'health', 'psychologist', 'resilience', 'health practitioners', 'lawyer', 'alternative dispute resolution'], 'division': ['PHYSICAL', 'MEDICAL AND HEALTH', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.11226528037547948, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['synergy', 'tutelage', 'anthropocene', 'dementia', 'environmental health', 'health', 'australasian region', 'emerging diseases', 'twenty first century', 'health promotion'], 'division': ['ENVIRONMENTAL', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['ENVIRONMENTAL', 'EARTH', 'PSYCHOLOGY AND COGNITIVE SCIENCES']}, {'id': 'Reg_a@b.com', 'weight': -0.09031754600699499, 'name': 'A A', 'email': 'a@b.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'AGRICULTURAL AND VETERINARY', 'CHEMICAL']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_v@v.com', 'weight': -0.09031754600699499, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.06020139392609125, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['hospital costs', 'students', 'health', 'residential environment', 'geographic information systems', 'public transport', 'city planning', 'chronic disease hospitals', 'social capital', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}, {'id': 'UC_61587a14d7b0c43ebd75533e', 'weight': -0.051043056883826876, 'name': 'Indira Samarawickrema', 'email': '', 'university': 'Canberra', 'tag': ['asian americans', 'child welfare', 'gender equity', 'knee osteoarthritis', 'impetigo', 'solar system', 'leader', 'visceral leishmaniasis', 'venous thromboembolism'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'EDUCATION']}]
+2022-04-28 17:42:12,777    INFO:     ::1:59794 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 17:42:15,320    INFO:     ::1:59806 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:42:17,039    INFO:     ::1:59828 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:42:22,377    INFO:     ::1:59854 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_carl.carla@hotmail.com', 'weight': 1e-06, 'name': 'Steve Jobs', 'email': 'carl.carla@hotmail.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MATHEMATICAL', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@1.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@1.com', 'university': 'University of Newcastle', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_v@v.com', 'weight': 1e-06, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['career', 'foot orthoses', 'shoes', 'hardness', 'meta-analysis', 'orthotic devices', 'knee osteoarthritis', 'heel', 'systematic reviews'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11431702754837803, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['art', 'speech intelligibility', 'human robot interaction', 'robotic art', 'robot', 'simultaneous localization and mapping', 'government agencies', 'robots', 'motion planning', 'stereo vision'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['face recognition', 'highway accidents', 'engineering', 'biopsy', 'wine', 'genotype', 'deep learning', 'robots', 'velocity distribution', 'segmentation'], 'division': ['MEDICAL AND HEALTH', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['resource allocation', 'cloud computing', 'energy saving', 'fiber optic networks', 'green computing', 'autonomous underwater vehicles', 'smart grid', 'long term evolution (lte)', 'networking', 'routing protocols'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13375860090660557, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['fusion reactions', 'depressive disorder', 'display devices', 'recognition (psychology)', 'memory term', 'electric fuses', 'datasets', 'emotional speech', 'glossaries', 'video cameras'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['crowdsourcing', 'personnel', 'sensors', 'semantic web', 'video conferencing', 'emotions', 'human computer interaction', 'cameras', 'classifiers', 'eye tracking'], 'division': ['MEDICAL AND HEALTH', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.15977723528602011, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['digital divide', 'information technology', 'learning', 'human computer interaction', 'communication', 'social media', 'action plan', 'technology adoption', 'mental health service'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'INFORMATION AND COMPUTING']}]
+2022-04-28 17:42:26,850    INFO:     ::1:59862 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 17:42:55,571    INFO:     ::1:59900 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:43:01,484    INFO:     ::1:59922 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:43:04,166    INFO:     ::1:59934 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:43:08,520    INFO:     ::1:59950 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:43:18,218    INFO:     ::1:59976 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 17:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 17:50:32 ------ end update researchers pool
+2022-04-28 18:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:00:31 ------ end update researchers pool
+2022-04-28 18:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:10:31 ------ end update researchers pool
+2022-04-28 18:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:20:31 ------ end update researchers pool
+2022-04-28 18:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:30:32 ------ end update researchers pool
+2022-04-28 18:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:40:31 ------ end update researchers pool
+2022-04-28 18:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 18:50:32 ------ end update researchers pool
+2022-04-28 19:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:00:31 ------ end update researchers pool
+2022-04-28 19:04:43,578    INFO:     ::1:36722 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 19:05:00,869    INFO:     ::1:36764 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+['GO4528', 'GO4020', 'GO3702', 'GO4845', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO3904', 'GO4844', 'GO1726', 'GO3957', 'GO4740', 'GO2868', 'GO3699', 'GO3876', 'GO4739', 'GO5009', 'GO5147', 'GO4068', 'GO5458', 'GO3324', 'GO738', 'GO4565', 'GO2204', 'GO1224', 'GO5113', 'GO966', 'GO5223', 'GO967', 'GO5414', 'GO4117', 'GO4555', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO2407', 'GO4204', 'GO3789', 'GO2203', 'GO4287', 'GO4900', 'GO5221', 'GO1615', 'GO5393', 'GO5461', 'GO2332', 'GO2815', 'GO4897', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO5102', 'GO5027', 'GO5334', 'GO4747', 'GO4600', 'GO5447', 'GO4752', 'GO1532', 'GO3844', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO5165', 'GO1246', 'GO1854', 'GO5248', 'GO5525', 'GO3069', 'GO4265', 'GO275', 'GO4587', 'GO3425', 'GO4558', 'GO4054', 'GO2860', 'GO2884', 'GO4808', 'GO5244', 'GO5424', 'GO3726', 'GO1772', 'GO4883', 'GO5364', 'GO2906', 'GO2986', 'GO3199', 'GO1056', 'GO4721', 'GO358', 'GO4081', 'GO4710', 'GO5170', 'GO167', 'GO5168', 'GO1943', 'GO1605', 'GO356', 'GO3408', 'GO1683', 'GO4554', 'GO1505', 'GO1824', 'GO4480', 'GO4963', 'GO1684', 'GO2941', 'GO2575', 'GO4746', 'GO5566', 'GO4504', 'GO4758', 'GO5472', 'GO4534', 'GO3278', 'GO224', 'GO34', 'GO5258', 'GO4709', 'GO5118', 'GO1539', 'GO1219', 'GO4279', 'GO1604', 'GO4936', 'GO5097', 'GO1952', 'GO3173', 'GO5611', 'GO5076', 'GO4642', 'GO4742', 'GO4684']
+2022-04-28 19:05:25,314    INFO:     ::1:36850 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 19:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:10:31 ------ end update researchers pool
+{'id': 'ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+['GO4528', 'GO4020', 'GO3702', 'GO4845', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO3904', 'GO4844', 'GO1726', 'GO3957', 'GO4740', 'GO2868', 'GO3699', 'GO3876', 'GO4739', 'GO5009', 'GO5147', 'GO4068', 'GO5458', 'GO3324', 'GO738', 'GO4565', 'GO2204', 'GO1224', 'GO5113', 'GO966', 'GO5223', 'GO967', 'GO5414', 'GO4117', 'GO4555', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO2407', 'GO4204', 'GO3789', 'GO2203', 'GO4287', 'GO4900', 'GO5221', 'GO1615', 'GO5393', 'GO5461', 'GO2332', 'GO2815', 'GO4897', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO5102', 'GO5027', 'GO5334', 'GO4747', 'GO4600', 'GO5447', 'GO4752', 'GO1532', 'GO3844', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO5165', 'GO1246', 'GO1854', 'GO5248', 'GO5525', 'GO3069', 'GO4265', 'GO275', 'GO4587', 'GO3425', 'GO4558', 'GO4054', 'GO2860', 'GO2884', 'GO4808', 'GO5244', 'GO5424', 'GO3726', 'GO1772', 'GO4883', 'GO5364', 'GO2906', 'GO2986', 'GO3199', 'GO1056', 'GO4721', 'GO358', 'GO4081', 'GO4710', 'GO5170', 'GO167', 'GO5168', 'GO1943', 'GO1605', 'GO356', 'GO3408', 'GO1683', 'GO4554', 'GO1505', 'GO1824', 'GO4480', 'GO4963', 'GO1684', 'GO2941', 'GO2575', 'GO4746', 'GO5566', 'GO4504', 'GO4758', 'GO5472', 'GO4534', 'GO3278', 'GO224', 'GO34', 'GO5258', 'GO4709', 'GO5118', 'GO1539', 'GO1219', 'GO4279', 'GO1604', 'GO4936', 'GO5097', 'GO1952', 'GO3173', 'GO5611', 'GO5076', 'GO4642', 'GO4742', 'GO4684']
+2022-04-28 19:15:50,780    INFO:     ::1:37520 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 19:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:20:31 ------ end update researchers pool
+{'id': 'ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_Ryanyang@anu.com', 'weight': -1.5, 'name': 'Ryan Test', 'email': 'Ryanyang@anu.com', 'university': 'University of Canberra', 'tag': ['human'], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['translating', 'art', 'twentieth century', 'crack', 'chemist', 'finnegans wake', 'storytelling', 'hannah', 'poetics', 'selinum'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['linguistics', 'east-timor', 'mother-tongue education', 'social relations', 'book review', 'agricultural development', 'cultural factors', 'deficit', 'language'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'massacre', 'creative writing', 'selected poems', 'poem', 'oil', 'creative work', 'leicester', 'torres strait', 'memento mori'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'international communication', 'creative nonfiction', 'colonial australia', 'servants', 'reuters', 'british press', '1870s', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['journalist', 'press releases', 'conflict of interest', 'switzerland', 'search engines', 'broadband networks', 'lenses', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:29:07,584    INFO:     ::1:38310 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_Ryanyang@anu.com', 'weight': -1.5, 'name': 'Ryan Test', 'email': 'Ryanyang@anu.com', 'university': 'University of Canberra', 'tag': ['human'], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['art', 'avant-garde', 'twentieth century', 'crack', 'vladimir mayakovsky', 'self-love', 'chemist', 'storytelling', 'hannah', 'selinum'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['linguistics', 'east-timor', 'book review', 'agricultural development', 'bilingual education', 'cultural factors', 'deficit', 'classroom', 'dialect'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'mantle', 'poem', 'leicester', 'temporality', 'prose poetry', 'women poets', 'wire', 'donna haraway', 'shroud'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'creative nonfiction', 'colonial australia', 'servants', '1870s', 'reuters', 'british press', 'international communication', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['press releases', 'public relations', 'conflict of interest', 'search engines', 'broadband networks', 'public space', 'expert', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:30:17,364    INFO:     ::1:38422 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 19:30:28,335    INFO:     ::1:38448 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 19:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:30:31 ------ end update researchers pool
+2022-04-28 19:30:37,379    INFO:     ::1:38486 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+['GO4528', 'GO4020', 'GO3702', 'GO4845', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO3904', 'GO4844', 'GO1726', 'GO3957', 'GO4740', 'GO2868', 'GO3699', 'GO3876', 'GO4739', 'GO5009', 'GO5147', 'GO4068', 'GO5458', 'GO3324', 'GO738', 'GO4565', 'GO2204', 'GO1224', 'GO5113', 'GO966', 'GO5223', 'GO967', 'GO5414', 'GO4117', 'GO4555', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO2407', 'GO4204', 'GO3789', 'GO2203', 'GO4287', 'GO4900', 'GO5221', 'GO1615', 'GO5393', 'GO5461', 'GO2332', 'GO2815', 'GO4897', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO5102', 'GO5027', 'GO5334', 'GO4747', 'GO4600', 'GO5447', 'GO4752', 'GO1532', 'GO3844', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO5165', 'GO1246', 'GO1854', 'GO5248', 'GO5525', 'GO3069', 'GO4265', 'GO275', 'GO4587', 'GO3425', 'GO4558', 'GO4054', 'GO2860', 'GO2884', 'GO4808', 'GO5244', 'GO5424', 'GO3726', 'GO1772', 'GO4883', 'GO5364', 'GO2906', 'GO2986', 'GO3199', 'GO1056', 'GO4721', 'GO358', 'GO4081', 'GO4710', 'GO5170', 'GO167', 'GO5168', 'GO1943', 'GO1605', 'GO356', 'GO3408', 'GO1683', 'GO4554', 'GO1505', 'GO1824', 'GO4480', 'GO4963', 'GO1684', 'GO2941', 'GO2575', 'GO4746', 'GO5566', 'GO4504', 'GO4758', 'GO5472', 'GO4534', 'GO3278', 'GO224', 'GO34', 'GO5258', 'GO4709', 'GO5118', 'GO1539', 'GO1219', 'GO4279', 'GO1604', 'GO4936', 'GO5097', 'GO1952', 'GO3173', 'GO5611', 'GO5076', 'GO4642', 'GO4742', 'GO4684']
+2022-04-28 19:30:40,531    INFO:     ::1:38496 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['translating', 'art', 'twentieth century', 'crack', 'chemist', 'finnegans wake', 'storytelling', 'hannah', 'poetics', 'selinum'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['linguistics', 'east-timor', 'mother-tongue education', 'social relations', 'book review', 'agricultural development', 'cultural factors', 'deficit', 'language'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'massacre', 'creative writing', 'selected poems', 'poem', 'oil', 'creative work', 'leicester', 'torres strait', 'memento mori'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'international communication', 'creative nonfiction', 'colonial australia', 'servants', 'reuters', 'british press', '1870s', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['journalist', 'press releases', 'conflict of interest', 'switzerland', 'search engines', 'broadband networks', 'lenses', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586802d7b0c43ebd75528c', 'weight': -0.15014125460492544, 'name': 'Tracy Ireland', 'email': 'mailto:Tracy.Ireland@canberra.edu.au', 'university': 'Canberra', 'tag': ['hat', 'experiment', 'archaeology', 'orhan pamuk', 'slavery', 'hotels', 'acrylic paint', 'aviation', 'monument', 'object biography'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:30:41,383    INFO:     ::1:38504 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+['GO4528', 'GO4020', 'GO3702', 'GO4845', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO3904', 'GO4844', 'GO1726', 'GO3957', 'GO4740', 'GO2868', 'GO3699', 'GO3876', 'GO4739', 'GO5009', 'GO5147', 'GO4068', 'GO5458', 'GO3324', 'GO738', 'GO4565', 'GO2204', 'GO1224', 'GO5113', 'GO966', 'GO5223', 'GO967', 'GO5414', 'GO4117', 'GO4555', 'GO4508', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO2407', 'GO4204', 'GO3789', 'GO2203', 'GO4287', 'GO4900', 'GO5221', 'GO1615', 'GO5393', 'GO5461', 'GO2332', 'GO2815', 'GO4897', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO5102', 'GO5027', 'GO5334', 'GO4747', 'GO4600', 'GO5447', 'GO4752', 'GO1532', 'GO3844', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO5165', 'GO1246', 'GO1854', 'GO5248', 'GO5525', 'GO3069', 'GO4265', 'GO275', 'GO4587', 'GO3425', 'GO4558', 'GO4054', 'GO2860', 'GO2884', 'GO4808', 'GO5244', 'GO5424', 'GO3726', 'GO1772', 'GO4883', 'GO5364', 'GO2906', 'GO2986', 'GO3199', 'GO1056', 'GO4721', 'GO358', 'GO4081', 'GO4710', 'GO5170', 'GO167', 'GO5168', 'GO1943', 'GO1605', 'GO356', 'GO3408', 'GO1683', 'GO4554', 'GO1505', 'GO1824', 'GO4480', 'GO4963', 'GO1684', 'GO2941', 'GO2575', 'GO4746', 'GO5566', 'GO4504', 'GO4758', 'GO5472', 'GO4534', 'GO3278', 'GO224', 'GO34', 'GO5258', 'GO4709', 'GO5118', 'GO1539', 'GO1219', 'GO4279', 'GO1604', 'GO4936', 'GO5097', 'GO1952', 'GO3173', 'GO5611', 'GO5076', 'GO4642', 'GO4742', 'GO4684']
+2022-04-28 19:30:45,376    INFO:     ::1:38508 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['art', 'avant-garde', 'twentieth century', 'crack', 'vladimir mayakovsky', 'self-love', 'chemist', 'storytelling', 'hannah', 'selinum'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['linguistics', 'east-timor', 'book review', 'agricultural development', 'bilingual education', 'cultural factors', 'deficit', 'classroom', 'dialect'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'mantle', 'poem', 'leicester', 'temporality', 'prose poetry', 'women poets', 'wire', 'donna haraway', 'shroud'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'creative nonfiction', 'colonial australia', 'servants', '1870s', 'reuters', 'british press', 'international communication', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['press releases', 'public relations', 'conflict of interest', 'search engines', 'broadband networks', 'public space', 'expert', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586802d7b0c43ebd75528c', 'weight': -0.15014125460492544, 'name': 'Tracy Ireland', 'email': 'mailto:Tracy.Ireland@canberra.edu.au', 'university': 'Canberra', 'tag': ['heritage', 'archaeological heritage management', 'orhan pamuk', 'cultural heritage', 'hotels', 'acrylic paint', 'professional training', 'in situ', 'historical archaeology', 'settler colonialism'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:31:12,226    INFO:     ::1:38548 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 19:38:39,808    INFO:     ::1:39016 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 19:38:53,591    INFO:     ::1:39092 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_Ryanyang@anu.com', 'weight': -1.5, 'name': 'Ryan Test', 'email': 'Ryanyang@anu.com', 'university': 'University of Canberra', 'tag': ['human'], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['translating', 'art', 'twentieth century', 'invisible', 'chemist', 'finnegans wake', 'storytelling', 'hannah', 'poetics', 'selinum'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['linguistics', 'east-timor', 'mother-tongue education', 'social relations', 'book review', 'agricultural development', 'cultural factors', 'deficit', 'language'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'massacre', 'creative writing', 'selected poems', 'poem', 'oil', 'creative work', 'leicester', 'torres strait', 'memento mori'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'international communication', 'creative nonfiction', 'colonial australia', 'servants', 'reuters', 'british press', '1870s', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['journalist', 'press releases', 'conflict of interest', 'switzerland', 'search engines', 'broadband networks', 'lenses', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:38:56,190    INFO:     ::1:39102 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 19:38:59,423    INFO:     ::1:39118 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 19:39:06,969    INFO:     ::1:39140 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']}
+[{'id': 'Reg_test2@anu.com', 'weight': -0.30194517463197945, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'Reg_test3@anu.com', 'weight': -0.30194517463197945, 'name': 'Test Robot', 'email': 'test3@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['PHILOSOPHY AND RELIGIOUS STUDIES', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586d07d7b0c43ebd7552c8', 'weight': -0.2568307273389175, 'name': 'Paul Magee', 'email': 'mailto:Paul.Magee@canberra.edu.au', 'university': 'Canberra', 'tag': ['art', 'avant-garde', 'twentieth century', 'invisible', 'crack', 'vladimir mayakovsky', 'self-love', 'chemist', 'storytelling', 'hannah'], 'division': ['EARTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585d79d7b0c43ebd755209', 'weight': -0.2336000963664726, 'name': 'Josephine Caffery', 'email': 'mailto:Jo.Caffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['east-timor', 'book review', 'agricultural development', 'bilingual education', 'cultural factors', 'classroom', 'deficit', 'dialect', 'language'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61585eb8d7b0c43ebd755221', 'weight': -0.2298080491621543, 'name': 'Jennifer Crawford', 'email': 'mailto:Jennifer.Crawford@canberra.edu.au', 'university': 'Canberra', 'tag': ['archipelago', 'mantle', 'poem', 'leicester', 'temporality', 'prose poetry', 'women poets', 'wire', 'donna haraway', 'shroud'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'STUDIES IN CREATIVE ARTS AND WRITING', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': -0.17277894646562136, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['mud brick', 'creative nonfiction', 'servants', '1870s', 'media system', 'reuters', 'british press', 'international communication', 'communication policy'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': -0.17013649762156421, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['convention', 'printmaking', 'web design', 'visualization', 'information seeking', 'data-driven', 'national gallery of australia', 'museum', 'information system'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61587477d7b0c43ebd75530b', 'weight': -0.16853053406841248, 'name': 'Catherine Page Jeffery', 'email': 'mailto:Catherine.PageJeffery@canberra.edu.au', 'university': 'Canberra', 'tag': ['panic', 'technical development', 'air quality', 'digitalization', 'digital storage', 'sexy', 'moral panic', 'vip', 'video cameras'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': -0.1514759768360159, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['press releases', 'public relations', 'conflict of interest', 'search engines', 'broadband networks', 'public space', 'expert', 'press secretary', 'news', 'journalists'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'UC_61586802d7b0c43ebd75528c', 'weight': -0.15014125460492544, 'name': 'Tracy Ireland', 'email': 'mailto:Tracy.Ireland@canberra.edu.au', 'university': 'Canberra', 'tag': ['heritage', 'archaeological heritage management', 'orhan pamuk', 'cultural heritage', 'slavery', 'hotels', 'acrylic paint', 'professional training', 'aviation', 'settler colonialism'], 'division': ['STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-04-28 19:39:09,718    INFO:     ::1:39146 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-28 19:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:40:32 ------ end update researchers pool
+2022-04-28 19:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 19:50:31 ------ end update researchers pool
+2022-04-28 20:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:00:32 ------ end update researchers pool
+2022-04-28 20:08:58,475    INFO:     ::1:40982 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 20:09:43,014    INFO:     ::1:41046 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 20:09:45,324    INFO:     ::1:41064 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+['GO4502', 'GO3193', 'GO3543', 'GO4619', 'GO4564', 'GO3426', 'GO3380', 'GO1869', 'GO2162', 'GO4575', 'GO973', 'GO5151', 'GO4641', 'GO3877', 'GO5550', 'GO4736', 'GO4752', 'GO4478', 'GO347', 'GO120', 'GO3278', 'GO4534', 'GO5268', 'GO2093', 'GO1872', 'GO118', 'GO5501', 'GO5360', 'GO5216', 'GO4552', 'GO5403', 'GO4900', 'GO2245', 'GO945', 'GO5056', 'GO112', 'GO3074', 'GO4383', 'GO2792', 'GO5432', 'GO4582', 'GO4570', 'GO2800', 'GO5091', 'GO4917', 'GO4573', 'GO3324', 'GO1740', 'GO5343', 'GO4353', 'GO3022', 'GO4756', 'GO2793', 'GO109', 'GO1516', 'GO330', 'GO1001', 'GO4465', 'GO3053', 'GO5085', 'GO2426', 'GO4464']
+2022-04-28 20:09:48,876    INFO:     ::1:41078 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 20:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:10:32 ------ end update researchers pool
+2022-04-28 20:14:07,783    INFO:     ::1:41370 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 20:14:17,262    INFO:     ::1:41392 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO453', 'GO3209', 'GO4508', 'GO3250', 'GO1392', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5027', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3069', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO358', 'GO5113', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO356', 'GO3425', 'GO4891', 'GO1505', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO5566', 'GO224', 'GO545', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO401', 'GO4672', 'GO4194', 'GO1735', 'GO2966', 'GO4674', 'GO1224', 'GO3814', 'GO4151', 'GO4970', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO1539', 'GO3034']
+2022-04-28 20:14:20,393    INFO:     ::1:41398 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO453', 'GO3209', 'GO4508', 'GO3250', 'GO1392', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5027', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3069', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO358', 'GO5113', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO356', 'GO3425', 'GO4891', 'GO1505', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO5566', 'GO224', 'GO545', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO401', 'GO4672', 'GO4194', 'GO1735', 'GO2966', 'GO4674', 'GO1224', 'GO3814', 'GO4151', 'GO4970', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO1539', 'GO3034']
+2022-04-28 20:15:22,935    INFO:     ::1:41476 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 20:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:20:31 ------ end update researchers pool
+2022-04-28 20:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:30:32 ------ end update researchers pool
+2022-04-28 20:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:40:31 ------ end update researchers pool
+2022-04-28 20:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 20:50:32 ------ end update researchers pool
+2022-04-28 21:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 21:00:31 ------ end update researchers pool
+2022-04-28 21:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 21:10:32 ------ end update researchers pool
+2022-04-28 21:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-28 21:20:32 ------ end update researchers pool
+2022-04-28 21:22:51,501    INFO:     ::1:45594 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 21:23:41,695    INFO:     ::1:45664 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'a@a.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': ['Health']}
+['GO453', 'GO3209', 'GO4508', 'GO3250', 'GO1392', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5027', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3069', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO358', 'GO5113', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO356', 'GO3425', 'GO4891', 'GO1505', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO5566', 'GO224', 'GO545', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO401', 'GO4672', 'GO4194', 'GO1735', 'GO2966', 'GO4674', 'GO1224', 'GO3814', 'GO4151', 'GO4970', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO1539', 'GO3034']
+2022-04-28 21:23:58,891    INFO:     ::1:45690 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-28 21:24:03,497    INFO:     ::1:45708 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 21:24:06,836    INFO:     ::1:45728 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 21:24:09,059    INFO:     ::1:45746 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 21:29:27,655    INFO:     ::1:46078 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-28 21:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 21:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 21:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 22:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-28 23:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 00:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 01:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 02:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 03:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 04:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 04:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 04:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 04:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 04:40:29 ------ start update tenders pool
+<start updating tenders files>
+-- start getting opened tenders info
+---- contains 134 duplicated grants
+-- end getting opened tender info
+-- start updating all grants info
+-- end updating all grants info
+<end updating tenders files>
+2022-04-29 04:43:44 ------ end update tenders pool
+2022-04-29 04:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 05:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 06:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 07:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:40:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:50:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 08:54:45,614    INFO:     ::1:59076 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 08:55:08,466    INFO:     ::1:59126 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 08:55:30,255    INFO:     ::1:59182 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@anu.com', 'divisions': ['d_02', 'd_01'], 'tags': ['Health']}
+['GO453', 'GO3209', 'GO4508', 'GO3250', 'GO1392', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5027', 'GO5485', 'GO3069', 'GO4736', 'GO358', 'GO1943', 'GO5113', 'GO1008', 'GO5244', 'GO188', 'GO1246', 'GO3814', 'GO4687', 'GO356', 'GO3425', 'GO3337', 'GO2332', 'GO4891', 'GO3346', 'GO2450', 'GO1505', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO4195', 'GO1056', 'GO5246', 'GO4534', 'GO3278', 'GO4192', 'GO4310', 'GO4709', 'GO5307', 'GO1604', 'GO1854', 'GO2884', 'GO3199', 'GO2329', 'GO5566', 'GO224', 'GO545', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO401', 'GO4672', 'GO4194', 'GO1735', 'GO2966', 'GO4674', 'GO1224', 'GO4151', 'GO4970', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO1539', 'GO3034']
+2022-04-29 08:56:06,629    INFO:     ::1:59248 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@anu.com', 'divisions': ['d_02', 'd_01'], 'tags': ['Health']}
+[{'id': 'Reg_a@a.com', 'weight': -1.027900318192899, 'name': 'Robot av', 'email': 'a@a.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['ENVIRONMENTAL', 'BIOLOGICAL', 'EARTH']}, {'id': 'UC_61588353d7b0c43ebd7553a0', 'weight': -0.08235117032090782, 'name': 'Li Zhou', 'email': '', 'university': 'Canberra', 'tag': ['image enhancement', 'aluminum', 'mammography', 'radiation', 'noise', 'figure of merit', 'radial basis function networks', 'x-rays', 'grids'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.07761622728380835, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'health', 'political elite', 'expertise', 'integrity', 'advisers', 'minister', 'election'], 'division': ['ENVIRONMENTAL', 'STUDIES IN HUMAN SOCIETY', 'EARTH']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.008195466604785928, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['legal usage', 'legal professionals', 'health', 'psychologist', 'resilience', 'health practitioners', 'lawyer', 'alternative dispute resolution'], 'division': ['PHYSICAL', 'MEDICAL AND HEALTH', 'LAW AND LEGAL STUDIES']}, {'id': 'Reg_anu@anu.com', 'weight': 0.07634912065967171, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_b@anu.com', 'weight': 0.07634912065967171, 'name': 'Robot Yang', 'email': 'b@anu.com', 'university': 'Charles Sturt University', 'tag': [], 'division': ['PHYSICAL', 'LAW AND LEGAL STUDIES', 'CHEMICAL']}, {'id': 'Reg_carl.carla@hotmail.com', 'weight': 0.07634912065967171, 'name': 'Steve Jobs', 'email': 'carl.carla@hotmail.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MATHEMATICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': 0.12752239743477012, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['hospital costs', 'students', 'health', 'residential environment', 'geographic information systems', 'public transport', 'city planning', 'chronic disease hospitals', 'social capital', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}, {'id': 'UC_61587a14d7b0c43ebd75533e', 'weight': 0.14528403934900058, 'name': 'Indira Samarawickrema', 'email': '', 'university': 'Canberra', 'tag': ['asian americans', 'child welfare', 'gender equity', 'knee osteoarthritis', 'impetigo', 'solar system', 'leader', 'visceral leishmaniasis', 'venous thromboembolism'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'EDUCATION']}, {'id': 'UC_61585ec8d7b0c43ebd755222', 'weight': 0.14554992876703254, 'name': 'Dudley Creagh', 'email': 'mailto:Dudley.Creagh@canberra.edu.au', 'university': 'Canberra', 'tag': ['synchrotron radiation', 'infrared radiation', 'cultural heritage', 'airports', 'laser excitation', 'rhodonite', 'motion pictures', 'pigments', 'ink', 'artifacts'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'PHYSICAL', 'MEDICAL AND HEALTH']}]
+2022-04-29 08:56:19,075    INFO:     ::1:59270 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 08:56:24,806    INFO:     ::1:59292 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 08:57:24,596    INFO:     ::1:59360 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 08:59:14,192    INFO:     ::1:59478 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 08:59:44,134    INFO:     ::1:59546 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 09:00:29,113    INFO:     ::1:59632 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 09:00:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 09:01:01,686    INFO:     ::1:59688 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_05', 'd_04'], 'tags': ['Health']}
+['GO453', 'GO3209', 'GO4508', 'GO3250', 'GO1392', 'GO5199', 'GO3689', 'GO3955', 'GO3690', 'GO4642', 'GO4946', 'GO5282', 'GO5027', 'GO5244', 'GO1943', 'GO5485', 'GO188', 'GO1246', 'GO1008', 'GO3069', 'GO3346', 'GO4936', 'GO3726', 'GO5364', 'GO2906', 'GO1056', 'GO4736', 'GO4310', 'GO358', 'GO5113', 'GO4195', 'GO4534', 'GO3278', 'GO4192', 'GO4709', 'GO5307', 'GO1604', 'GO4687', 'GO356', 'GO3425', 'GO4891', 'GO1505', 'GO5246', 'GO1854', 'GO2884', 'GO3199', 'GO5566', 'GO224', 'GO545', 'GO1749', 'GO5066', 'GO4692', 'GO4667', 'GO401', 'GO4672', 'GO4194', 'GO1735', 'GO2966', 'GO4674', 'GO1224', 'GO3814', 'GO4151', 'GO4970', 'GO3337', 'GO2332', 'GO2450', 'GO2329', 'GO5137', 'GO4309', 'GO1929', 'GO5118', 'GO802', 'GO5437', 'GO2427', 'GO3789', 'GO4995', 'GO5124', 'GO5527', 'GO1539', 'GO3034']
+2022-04-29 09:01:33,539    INFO:     ::1:59734 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_05', 'd_04'], 'tags': ['Health']}
+[{'id': 'Reg_a@a.com', 'weight': -1.5, 'name': 'Robot av', 'email': 'a@a.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['ENVIRONMENTAL', 'BIOLOGICAL', 'EARTH']}, {'id': 'UC_61586529d7b0c43ebd755269', 'weight': -0.31153274677334386, 'name': 'Michelle Grattan', 'email': 'mailto:Michelle.Grattan@canberra.edu.au', 'university': 'Canberra', 'tag': ['citizen', 'health', 'political elite', 'expertise', 'integrity', 'advisers', 'minister', 'election'], 'division': ['ENVIRONMENTAL', 'STUDIES IN HUMAN SOCIETY', 'EARTH']}, {'id': 'UC_61585cb3d7b0c43ebd7551fc', 'weight': -0.1377797014563873, 'name': 'Doris Bozin', 'email': '', 'university': 'Canberra', 'tag': ['legal usage', 'legal professionals', 'health', 'psychologist', 'resilience', 'health practitioners', 'lawyer', 'alternative dispute resolution'], 'division': ['PHYSICAL', 'MEDICAL AND HEALTH', 'LAW AND LEGAL STUDIES']}, {'id': 'UC_61586e49d7b0c43ebd7552d8', 'weight': -0.10763751362886886, 'name': 'Ro Mcfarlane', 'email': '', 'university': 'Canberra', 'tag': ['serodiagnosis', 'tutelage', 'hendra virus', 'emerging communicable diseases', 'australasian region', 'antarctic regions', 'emerging diseases', 'seals', 'lagorchestes hirsutus', 'antarctic treaty'], 'division': ['ENVIRONMENTAL', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_a@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot ABC', 'email': 'a@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['ENVIRONMENTAL', 'EARTH', 'PSYCHOLOGY AND COGNITIVE SCIENCES']}, {'id': 'Reg_anu@anu.com', 'weight': -0.09031754600699499, 'name': 'Test Test', 'email': 'anu@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['MATHEMATICAL', 'EARTH', 'CHEMICAL']}, {'id': 'Reg_carl.carla@hotmail.com', 'weight': -0.09031754600699499, 'name': 'Steve Jobs', 'email': 'carl.carla@hotmail.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MATHEMATICAL', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test2@anu.com', 'weight': -0.09031754600699499, 'name': 'Robot Test', 'email': 'test2@anu.com', 'university': 'Australian National University', 'tag': [], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'PHILOSOPHY AND RELIGIOUS STUDIES', 'EARTH']}, {'id': 'UC_61586facd7b0c43ebd7552e4', 'weight': -0.061738707007054, 'name': 'Brad Moggridge', 'email': '', 'university': 'Canberra', 'tag': ['oceania', 'indigenous peoples', 'water management', 'water policy', 'water planning', 'water', 'environmental quality', 'threatened species', 'water resource'], 'division': ['ENVIRONMENTAL', 'BIOLOGICAL', 'EARTH']}, {'id': 'UC_61586af5d7b0c43ebd7552b1', 'weight': -0.04915749364686284, 'name': 'Vincent Learnihan', 'email': '', 'university': 'Canberra', 'tag': ['hospital costs', 'health', 'traffic', 'urban design', 'geographic information systems', 'city planning', 'public transport', 'chronic disease hospitals', 'social capital', 'walking'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN HUMAN SOCIETY', 'BUILT ENVIRONMENT AND DESIGN']}]
+2022-04-29 09:01:42,112    INFO:     ::1:59750 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 09:10:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 09:10:48,266    INFO:     ::1:60288 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 09:20:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 09:30:29 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+2022-04-29 09:34:15,691    INFO:     ::1:33454 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 09:34:19,760    INFO:     ::1:33482 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 09:35:55,741    INFO:     ::1:33596 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09', 'd_10', 'd_08'], 'tags': []}
+['GO4502', 'GO3193', 'GO3543', 'GO4619', 'GO4564', 'GO3426', 'GO3380', 'GO1869', 'GO2162', 'GO4575', 'GO973', 'GO5151', 'GO4641', 'GO3877', 'GO5550', 'GO4736', 'GO4752', 'GO4478', 'GO347', 'GO120', 'GO3278', 'GO4534', 'GO5268', 'GO2093', 'GO1872', 'GO118', 'GO5501', 'GO5360', 'GO5216', 'GO4552', 'GO5403', 'GO4900', 'GO2245', 'GO945', 'GO5056', 'GO112', 'GO3074', 'GO4383', 'GO2792', 'GO5432', 'GO4582', 'GO4570', 'GO2800', 'GO5091', 'GO4917', 'GO4573', 'GO3324', 'GO1740', 'GO5343', 'GO4353', 'GO3022', 'GO4756', 'GO2793', 'GO109', 'GO1516', 'GO330', 'GO1001', 'GO4465', 'GO3053', 'GO5085', 'GO2426', 'GO4464']
+2022-04-29 09:35:58,353    INFO:     ::1:33608 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09', 'd_10', 'd_08'], 'tags': []}
+[{'id': 'Reg_carl.carla@hotmail.com', 'weight': 1e-06, 'name': 'Steve Jobs', 'email': 'carl.carla@hotmail.com', 'university': 'Australian National University', 'tag': [], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MATHEMATICAL', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'University of Newcastle', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@1.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@1.com', 'university': 'University of Newcastle', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_v@v.com', 'weight': 1e-06, 'name': 'Asds Asd', 'email': 'v@v.com', 'university': 'University of Canberra', 'tag': [], 'division': ['BIOLOGICAL', 'BUILT ENVIRONMENT AND DESIGN', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['career', 'foot orthoses', 'shoes', 'hardness', 'meta-analysis', 'orthotic devices', 'knee osteoarthritis', 'heel', 'systematic reviews'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11431702754837803, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['health care', 'art', 'computer integrated manufacturing', 'speech intelligibility', 'religious behavior', 'grippers', 'government agencies', 'embodiment', 'motion planning', 'discrete event systems'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['paint', 'highway accidents', 'biopsy', 'electroencephalography', 'wine', 'robots', 'deep learning', 'velocity distribution', 'segmentation', 'interpolation'], 'division': ['MEDICAL AND HEALTH', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['bitcoin', 'blockchain', 'smart city', 'time measurement', 'frog', 'traffic', 'opacity', 'software defined networking', 'intrusion detection', 'cyber physical system'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13375860090660557, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['health', 'students', 'deep neural networks', 'emotions', 'benchmarking', 'gait analysis', 'performance model', 'rotation invariance', 'segmentation', 'lower extremity'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['crowdsourcing', 'hinges', 'problem-based learning', 'sensors', 'video conferencing', 'anomaly detection', 'watches', 'cameras', 'classifiers', 'eye tracking'], 'division': ['MEDICAL AND HEALTH', 'ENGINEERING', 'INFORMATION AND COMPUTING']}]
+2022-04-29 09:36:20,015    INFO:     ::1:33636 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09', 'd_10', 'd_08'], 'tags': []}
+['GO4502', 'GO3193', 'GO3543', 'GO4619', 'GO4564', 'GO3426', 'GO3380', 'GO1869', 'GO2162', 'GO4575', 'GO973', 'GO5151', 'GO4641', 'GO3877', 'GO5550', 'GO4736', 'GO4752', 'GO4478', 'GO347', 'GO120', 'GO3278', 'GO4534', 'GO5268', 'GO2093', 'GO1872', 'GO118', 'GO5501', 'GO5360', 'GO5216', 'GO4552', 'GO5403', 'GO4900', 'GO2245', 'GO945', 'GO5056', 'GO112', 'GO3074', 'GO4383', 'GO2792', 'GO5432', 'GO4582', 'GO4570', 'GO2800', 'GO5091', 'GO4917', 'GO4573', 'GO3324', 'GO1740', 'GO5343', 'GO4353', 'GO3022', 'GO4756', 'GO2793', 'GO109', 'GO1516', 'GO330', 'GO1001', 'GO4465', 'GO3053', 'GO5085', 'GO2426', 'GO4464']
+2022-04-29 09:36:29,114    INFO:     ::1:33652 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Updating 0ff7d58..9ef42b6
+Fast-forward
+ backend/app/api_test/t_api_signup_login.py         | 84 ++++++++++++++++++++++
+ backend/app/config.py                              |  2 +-
+ backend/app/test/test_auth.py                      | 15 ----
+ backend/app/test/test_fetch_tenders.py             |  0
+ backend/app/test/test_get_user_action_api.py       |  8 ---
+ backend/app/test/test_get_user_info_api.py         |  8 ---
+ backend/app/utils/auth.py                          |  6 ++
+ backend/app/{test => utils_test}/__init__.py       |  0
+ backend/app/utils_test/test_auth.py                | 50 +++++++++++++
+ backend/readme.md                                  | 18 +++++
+ matcher/researcher/matching/researcher_relation.py |  2 +-
+ matcher/scheduler/__init__.py                      |  2 +-
+ 12 files changed, 161 insertions(+), 34 deletions(-)
+ create mode 100644 backend/app/api_test/t_api_signup_login.py
+ delete mode 100644 backend/app/test/test_auth.py
+ delete mode 100644 backend/app/test/test_fetch_tenders.py
+ delete mode 100644 backend/app/test/test_get_user_action_api.py
+ delete mode 100644 backend/app/test/test_get_user_info_api.py
+ rename backend/app/{test => utils_test}/__init__.py (100%)
+ create mode 100644 backend/app/utils_test/test_auth.py
