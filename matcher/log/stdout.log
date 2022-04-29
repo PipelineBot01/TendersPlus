@@ -13690,3 +13690,14 @@ Already up-to-date.
 run matcher
 git pulling
 Already up-to-date.
+[master 4a0b287] update model
+ 2 files changed, 33 insertions(+)
+run matcher
+git pulling
+git pulling
+Updating 4a0b287..515d855
+Fast-forward
+ matcher/matching.py                           |  10 +-
+ matcher/researcher/assets/researcher_info.csv | 453 ++++++++++++++++++++++++++
+ 2 files changed, 458 insertions(+), 5 deletions(-)
+ create mode 100644 matcher/researcher/assets/researcher_info.csv
