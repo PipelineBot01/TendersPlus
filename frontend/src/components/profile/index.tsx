@@ -50,7 +50,8 @@ export default function Profile():JSX.Element{
       message.success('Updated!', 3)
       dispatch(setUserProfile(values))
     }, error=>{
-      message.error(error.msg, 3)
+      console.log('error:', error)
+      message.error(error?.msg, 3)
     }).finally(()=>{
       setIsSubmitting(false)
     })

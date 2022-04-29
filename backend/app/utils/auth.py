@@ -6,12 +6,18 @@ from config import settings
 
 
 def encode_password(pwd: str) -> str:
+    if pwd == '' or pwd is None:
+        return pwd
+
     base64_pwd = base64.b64encode(pwd.encode('utf-8'))
     encode_pwd = hashlib.md5(base64_pwd).hexdigest()
     return encode_pwd
 
 
 def generate_token(payload: dict) -> str:
+    if payload is None:
+        return payload
+
     return jwt.encode(payload, key=settings.OAUTH_SECRET_KEY, algorithm="HS256")
 
 

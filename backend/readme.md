@@ -24,3 +24,21 @@ python3 app/main.py
 pipreqs . --encoding=utf8 --force
 ```
 <br/>
+
+### 3. execute the pytest
+```shell
+cd ~/backend/app
+
+pytest
+```
+<br>
+
+Inorder to test the api, we have to use locust
+```shell
+pip install locust
+```
+Then we have to run the test_api_*.py via following
+```shell
+
+```
+<br/>

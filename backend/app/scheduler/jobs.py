@@ -28,20 +28,21 @@ async def get_all_user_info():
     if len(settings.USER_INFO) == 0 or datetime.now().hour < 3:
         with session() as db:
             df_all_user = pd.DataFrame.from_records(sql_get_all_users(db))
-            df_all_user_research_field = pd.DataFrame.from_records(sql_get_all_user_research_field(db)).groupby('email',
-                                                                                                                as_index=False).agg(
-                {'field_id': lambda x: list(x)})
-            df_all_user_research_field.rename(columns={'field_id': 'divisions'}, inplace=True)
+            if df_all_user.shape[0] !=0:
+                df_all_user_research_field = pd.DataFrame.from_records(sql_get_all_user_research_field(db)).groupby('email',
+                                                                                                                    as_index=False).agg(
+                    {'field_id': lambda x: list(x)})
+                df_all_user_research_field.rename(columns={'field_id': 'divisions'}, inplace=True)
 
-            df_all_user_tag = pd.DataFrame.from_records(sql_get_all_user_tag(db)).groupby('email', as_index=False).agg(
-                {'name': lambda x: list(x)})
-            df_all_user_tag.rename(columns={'name':'tags'},inplace=True)
+                df_all_user_tag = pd.DataFrame.from_records(sql_get_all_user_tag(db)).groupby('email', as_index=False).agg(
+                    {'name': lambda x: list(x)})
+                df_all_user_tag.rename(columns={'name':'tags'},inplace=True)
 
-            data = pd.merge(df_all_user_research_field, df_all_user_tag, how='left', on='email')
-            data = pd.merge(df_all_user, data, how='inner', on='email')
-            data.fillna('',inplace=True)
+                data = pd.merge(df_all_user_research_field, df_all_user_tag, how='left', on='email')
+                data = pd.merge(df_all_user, data, how='inner', on='email')
+                data.fillna('',inplace=True)
 
-            settings.USER_INFO = data.to_dict('records')
+                settings.USER_INFO = data.to_dict('records')
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)

@@ -230,3 +230,75 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-28 12:52:20,162    INFO:     Shutting down
 From github.com:PipelineBot01/TendersPlus
    a9fe9bc..91fb609  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   91fb609..06cd521  master -> master
+2022-04-28 12:53:10,703    INFO:     Started server process [3962]
+2022-04-28 12:53:10,703    INFO:     Waiting for application startup.
+2022-04-28 12:53:13,428    INFO:     Application startup complete.
+2022-04-28 12:53:13,429    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+Killed by signal 15.
+From github.com:PipelineBot01/TendersPlus
+   06cd521..563ec13  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2022-04-28 14:44:04,775    INFO:     Started server process [31254]
+2022-04-28 14:44:04,776    INFO:     Waiting for application startup.
+2022-04-28 14:44:07,533    INFO:     Application startup complete.
+2022-04-28 14:44:07,534    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-28 14:50:05,173    INFO:     Shutting down
+From github.com:PipelineBot01/TendersPlus
+   563ec13..677ec87  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2022-04-28 14:50:57,914    INFO:     Started server process [537]
+2022-04-28 14:50:57,914    INFO:     Waiting for application startup.
+2022-04-28 14:51:00,645    INFO:     Application startup complete.
+2022-04-28 14:51:00,646    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2022-04-28 14:55:51,852    INFO:     Started server process [1778]
+2022-04-28 14:55:51,853    INFO:     Waiting for application startup.
+2022-04-28 14:55:54,583    INFO:     Application startup complete.
+2022-04-28 14:55:54,584    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2022-04-28 15:03:04,812    INFO:     Started server process [3726]
+2022-04-28 15:03:04,812    INFO:     Waiting for application startup.
+2022-04-28 15:03:07,552    INFO:     Application startup complete.
+2022-04-28 15:03:07,553    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
