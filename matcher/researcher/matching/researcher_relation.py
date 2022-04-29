@@ -254,7 +254,7 @@ class ResearcherMatcher:
         List, info of similar researchers
         '''
 
-        id = profile_dict['id']
+        id = profile_dict['id'].lower()
         divisions = profile_dict['divisions']
         tags = profile_dict['tags']
         assert len(divisions) != 0, 'At least the division should not be empty.'
