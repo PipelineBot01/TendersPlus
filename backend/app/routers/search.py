@@ -53,7 +53,7 @@ async def get_hot_opportunities(n: int = 0):
     if response.status_code == 200:
         content = json.loads(response.content)
         go_id = content['data']
-        print(go_id)
+        print('go_id',go_id)
         if n != 0:
             go_id = go_id[:n]
         docs = await curd.db_get_tenders_from_history_by_ids(go_id)
