@@ -2828,3 +2828,12 @@ To git@github.com:PipelineBot01/TendersPlus.git
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 2022-04-29 10:35:18,876    ERROR:    Application startup failed. Exiting.
+To git@github.com:PipelineBot01/TendersPlus.git
+   404325c..ccf3d22  master -> master
+2022-04-29 10:48:20,650    INFO:     Started server process [10588]
+2022-04-29 10:48:20,650    INFO:     Waiting for application startup.
+2022-04-29 10:48:23,282    INFO:     Application startup complete.
+2022-04-29 10:48:23,283    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+Run time of job "update_researchers_pool (trigger: interval[0:02:00], next run at: 2022-04-29 11:14:20 CST)" was missed by 0:00:02.687088
+From github.com:PipelineBot01/TendersPlus
+   5720466..7233b53  master     -> origin/master
