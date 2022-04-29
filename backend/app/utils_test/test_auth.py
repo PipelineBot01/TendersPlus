@@ -36,6 +36,7 @@ def test_token():
     generate_token encode the payload and return a token
     parse_token decode the token and return a payload
     """
+    print(parse_token())
     # special case
     payload = {}
     assert parse_token(generate_token(payload)) == payload
