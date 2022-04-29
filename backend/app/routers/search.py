@@ -1,5 +1,7 @@
 import base64
+import json
 
+import requests
 
 from fastapi import APIRouter, HTTPException
 
@@ -18,7 +20,6 @@ async def get_open_opportunities(query: str = None):
         # print('keywords:', keywords)
         docs = await curd.db_get_tenders_by_keywords(keywords)
         # print(docs)
-
         return {'code': 200, 'data': docs}
     except Exception as e:
         print(str(e))
@@ -43,6 +44,15 @@ async def get_expiring_opportunities(n: int = 0):
 
 
 @router.get('/hot')
-async def get_expiring_opportunities(n: int = 0):
-    docs = await curd.db_get_expiring_tenders(n)
+async def get_hot_opportunities(n: int = 0):
+    response = requests.get('http://localhost:20222/get_hot_tenders')
+    docs = []
+    if response.status_code == 200:
+        content = json.loads(response.content)
+        go_id = content['data']
+        print(go_id)
+        if n != 0:
+            go_id = go_id[:n]
+        docs = await curd.db_get_tenders_from_history_by_ids(go_id)
+    # docs = await curd.db_get_expiring_tenders(n)
     return {'code': 200, 'data': docs}
