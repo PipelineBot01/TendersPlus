@@ -8,4 +8,4 @@ def get_data(data_name='user') -> pd.DataFrame:
     assert data_name in ['user', 'action'], 'dataset not find'
     url = JSON_URL_USER if data_name == 'user' else JSON_URL_ACT
     response = requests.get(url, headers={'X-TOKEN': '%Ef0-b2jv[3;]]`1`*124cvBsp[lAsc;'})
-    return pd.DataFrame(json.loads(response.content)['data'])
+    return pd.DataFrame(json.loads(response.content)['data']) if response.status_code == 200 else pd.DataFrame()
