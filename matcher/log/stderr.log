@@ -2845,3 +2845,80 @@ To git@github.com:PipelineBot01/TendersPlus.git
 2022-04-29 11:15:16,176    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
 From github.com:PipelineBot01/TendersPlus
    b0f5d5f..2a620cd  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   2a620cd..1198857  master -> master
+2022-04-29 11:39:20,459    INFO:     Started server process [23668]
+2022-04-29 11:39:20,459    INFO:     Waiting for application startup.
+2022-04-29 11:39:23,128    INFO:     Application startup complete.
+2022-04-29 11:39:23,129    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+From github.com:PipelineBot01/TendersPlus
+   dfa0587..1766d43  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   1766d43..c7e2a52  master -> master
+2022-04-29 13:49:57,408    INFO:     Started server process [23630]
+2022-04-29 13:49:57,408    INFO:     Waiting for application startup.
+2022-04-29 13:49:59,787    ERROR:    Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 598, in startup
+    await handler()
+  File "main.py", line 57, in init
+    await job_2.func()
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 27, in update_researchers_pool
+    reco_filter.update()
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 68, in update
+    self.__act_df = pd.read_csv(self.__act_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 540, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+2022-04-29 13:49:59,787    ERROR:    Application startup failed. Exiting.
+From github.com:PipelineBot01/TendersPlus
+   c7e2a52..2ac37ee  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/reg_researcher_info.csv
+	matcher/researcher/assets/researcher_action.csv
+	matcher/researcher/assets/researcher_division.csv
+	matcher/researcher/assets/researcher_info.csv
+	matcher/researcher/assets/tag_division_map.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
+To git@github.com:PipelineBot01/TendersPlus.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:PipelineBot01/TendersPlus.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+    from scheduler import scheduler
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 7, in <module>
+    from auto_reco import reco_filter, reco_process
+  File "/home/TendersPlus/matcher/auto_reco/__init__.py", line 3, in <module>
+    reco_filter = Filter()
+  File "/home/TendersPlus/matcher/auto_reco/clb_filter.py", line 27, in __init__
+    self.__act_df = pd.read_csv(act_path)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 540, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

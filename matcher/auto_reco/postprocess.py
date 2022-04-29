@@ -18,9 +18,9 @@ class PostProcess:
 
         self.__action_df = pd.read_csv(action_path)
         self.__info_df = pd.read_csv(info_path)[['id', 'go_id']]
-        self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
-        self.__action_df = self.__reformat_user_action()
-
+        if not self.__action_df.empty:
+            self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+            self.__action_df = self.__reformat_user_action()
 
     def __diff_month(self, date):
         return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
@@ -28,8 +28,9 @@ class PostProcess:
     def update(self):
         self.__action_df = pd.read_csv(self.__action_path)
         self.__info_df = pd.read_csv(self.__info_path)
-        self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
-        self.__action_df = self.__reformat_user_action()
+        if not self.__action_df.empty:
+            self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
+            self.__action_df = self.__reformat_user_action()
 
     def __reformat_user_action(self):
         tmp_df = self.__action_df.copy()
@@ -54,7 +55,6 @@ class PostProcess:
         return input_df
 
     def __reformat_fav(self, user_id, input_df):
-        print(input_df.columns)
         fav_df = self.__action_df[(self.__action_df['r_id'] == user_id) & (self.__action_df['type'] == 2)].copy()
         if not fav_df.empty:
             input_df = fav_df.append(input_df[~input_df['go_id'].isin(fav_df['go_id'].unique())])
@@ -79,7 +79,6 @@ class PostProcess:
     
     def get_hot_tenders(self):
         tmp_df = self.__action_df.copy()
-        tmp_df.to_csv('ff.csv', index=0)
         tmp_df['date'] = tmp_df['action_date'].dt.normalize()
         tmp_df = tmp_df.drop_duplicates(['r_id', 'type', 'go_id', 'date'])
 

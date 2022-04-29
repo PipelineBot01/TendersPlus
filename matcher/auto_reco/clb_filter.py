@@ -88,7 +88,6 @@ class Filter:
             profile_dict['id'] = 'Reg_' + profile_dict['id']
         sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
-
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             # TODO: only for testing -Ray 2022/4/20

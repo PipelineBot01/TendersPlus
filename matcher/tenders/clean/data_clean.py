@@ -33,8 +33,7 @@ def convert_dtype(input_df: pd.DataFrame):
 
 # 'GO ID', 'Internal Reference ID', 'URL',
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
-    input_df['_id'] = input_df['_id'].astype(str).copy()
-    input_df['id'] = 'Grants' + input_df['_id']
+    input_df['id'] = 'Grants' + input_df['GO ID']
     input_df = input_df[['id',
                          'Agency',
                          'Publish Date',

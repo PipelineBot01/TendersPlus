@@ -14299,3 +14299,763 @@ Fast-forward
  matcher/auto_reco/clb_filter.py  |  2 +-
  matcher/auto_reco/postprocess.py | 15 ++++++++-------
  2 files changed, 9 insertions(+), 8 deletions(-)
+[master 1198857] update model
+ 8 files changed, 372 insertions(+), 143 deletions(-)
+run matcher
+initial update task
+2022-04-29 11:39:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 11:39:23 ------ end update researchers pool
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:40:33,707    INFO:     ::1:45600 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_test@2.com', 'weight': 1e-06, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['systematic reviews', 'knee osteoarthritis', 'foot orthoses', 'meta-analysis', 'hardness', 'shoes', 'heel', 'career', 'orthotic devices'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11487258967158405, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'robot', 'government agencies', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['intrusion detection', 'frog', 'energy saving', 'autonomous underwater vehicles', 'fiber optic networks', 'routing protocols', 'long term evolution (lte)', 'cyber physical system', 'radio', 'traffic'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13503821262884502, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['supervised learning', 'lower extremity', 'deep neural networks', 'quinine', 'center of pressure', 'students', 'performance model', 'segmentation', 'benchmarking', 'rotation invariance'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'problem-based learning', 'emotions', 'crowdsourcing', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16060017417099398, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['action plan', 'digital divide', 'human computer interaction', 'mental health service', 'indigenous communities', 'information technology', 'learning', 'social media', 'technology adoption'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['emperor', 'design education', 'magic', 'discourse', 'clothes'], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'HISTORY AND ARCHAEOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.16351496797201054, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['moral obligations', 'banking', 'usefulness', 'india', 'workload', 'networking', 'overtime', 'conflict (psychology)'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:40:35,515    INFO:     ::1:45608 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:40:36,983    INFO:     ::1:45614 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:40:39,181    INFO:     ::1:45626 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:33,567    INFO:     ::1:45702 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:33,592    INFO:     ::1:45704 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:41:35,292    INFO:     ::1:45708 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:36,897    INFO:     ::1:45722 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:36,921    INFO:     ::1:45724 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:41:37,796    INFO:     ::1:45746 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:37,821    INFO:     ::1:45750 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:41:38,519    INFO:     ::1:45774 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:41:38,549    INFO:     ::1:45776 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:42:44,950    INFO:     ::1:45858 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:42:44,969    INFO:     ::1:45860 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:43:40,220    INFO:     ::1:45940 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_test@2.com', 'weight': 1e-06, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['systematic reviews', 'knee osteoarthritis', 'foot orthoses', 'meta-analysis', 'hardness', 'shoes', 'heel', 'career', 'orthotic devices'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11487258967158405, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['motion planning', 'simultaneous localization and mapping', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['software defined networking', 'intrusion detection', 'frog', 'smart grid', 'fiber optic networks', 'long term evolution (lte)', 'radio', 'traffic', 'bitcoin', 'blockchain'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13503821262884502, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['recognition (psychology)', 'glossaries', 'quinine', 'memory term', 'datasets', 'grippers', 'fusion reactions', 'video cameras', 'social sciences', 'rotation invariance'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'benchmarking', 'multi-task learning', 'classifiers', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16060017417099398, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['action plan', 'digital divide', 'human computer interaction', 'mental health service', 'communication', 'information technology', 'learning', 'social media', 'technology adoption'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['emperor', 'design education', 'magic', 'discourse', 'clothes'], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'HISTORY AND ARCHAEOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.16351496797201054, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['moral obligations', 'banking', 'usefulness', 'india', 'workload', 'networking', 'overtime', 'conflict (psychology)'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:43:42,105    INFO:     ::1:45948 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:43:50,213    INFO:     ::1:45958 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:43:51,547    INFO:     ::1:45968 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_test@2.com', 'weight': 1e-06, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['systematic reviews', 'knee osteoarthritis', 'foot orthoses', 'meta-analysis', 'hardness', 'shoes', 'heel', 'career', 'orthotic devices'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11487258967158405, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'government agencies', 'speech intelligibility', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['intrusion detection', 'frog', 'energy saving', 'autonomous underwater vehicles', 'fiber optic networks', 'routing protocols', 'long term evolution (lte)', 'cyber physical system', 'radio', 'traffic'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13503821262884502, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['supervised learning', 'lower extremity', 'deep neural networks', 'quinine', 'center of pressure', 'students', 'performance model', 'segmentation', 'benchmarking', 'rotation invariance'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'problem-based learning', 'emotions', 'human computer interaction', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16060017417099398, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['digital divide', 'human computer interaction', 'mental health service', 'indigenous communities', 'communication', 'information technology', 'learning', 'social media', 'technology adoption'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['emperor', 'design education', 'magic', 'discourse', 'clothes'], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'HISTORY AND ARCHAEOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.16351496797201054, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['moral obligations', 'banking', 'usefulness', 'india', 'workload', 'networking', 'overtime', 'conflict (psychology)'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:43:56,931    INFO:     ::1:45976 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:43:58,392    INFO:     ::1:45988 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:43:58,414    INFO:     ::1:45990 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:44:03,617    INFO:     ::1:46010 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:03,643    INFO:     ::1:46012 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:44:06,421    INFO:     ::1:46018 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:08,944    INFO:     ::1:46044 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:08,969    INFO:     ::1:46046 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:44:40,460    INFO:     ::1:46272 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:40,494    INFO:     ::1:46274 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['motion planning', 'religious behavior', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'patient rehabilitation', 'students', 'nanotubes', 'minimally invasive surgery', 'composite beams', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'classifiers', 'video conferencing', 'cameras', 'social interaction', 'benchmarking', 'learning algorithms', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:44:43,450    INFO:     ::1:46300 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:44:46,048    INFO:     ::1:46312 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'computer integrated manufacturing', 'robotic art', 'grippers', 'health care', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'teaching', 'clutches', 'microsystems', 'dynamic stability', 'imperfect', 'elastic media', 'minimally invasive surgery', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['problem-based learning', 'emotions', 'human computer interaction', 'crowdsourcing', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:44:49,277    INFO:     ::1:46320 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:44:54,071    INFO:     ::1:46336 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:54,096    INFO:     ::1:46338 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:44:57,270    INFO:     ::1:46362 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:57,295    INFO:     ::1:46364 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:44:59,264    INFO:     ::1:46390 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:44:59,291    INFO:     ::1:46394 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:45:01,611    INFO:     ::1:46402 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_test@2.com', 'weight': 1e-06, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['systematic reviews', 'knee osteoarthritis', 'foot orthoses', 'meta-analysis', 'hardness', 'shoes', 'heel', 'career', 'orthotic devices'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11487258967158405, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['religious behavior', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'robot', 'speech intelligibility', 'motion planning'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['software defined networking', 'fiber optic networks', 'cloud computing', 'long term evolution (lte)', 'time measurement', 'radio', 'resource allocation', 'smart city', 'bitcoin', 'blockchain'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13503821262884502, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['recognition (psychology)', 'quinine', 'memory term', 'datasets', 'grippers', 'fusion reactions', 'video cameras', 'social sciences', 'rotation invariance', 'emotional speech'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'benchmarking', 'classifiers', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16060017417099398, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['action plan', 'digital divide', 'human computer interaction', 'mental health service', 'communication', 'information technology', 'learning', 'social media', 'technology adoption'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['emperor', 'design education', 'magic', 'discourse', 'clothes'], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'HISTORY AND ARCHAEOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.16351496797201054, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['moral obligations', 'banking', 'usefulness', 'india', 'workload', 'networking', 'overtime', 'conflict (psychology)'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:45:05,965    INFO:     ::1:46406 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:45:09,897    INFO:     ::1:46426 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:45:09,922    INFO:     ::1:46428 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:45:14,838    INFO:     ::1:46442 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:45:14,863    INFO:     ::1:46444 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:45:17,038    INFO:     ::1:46452 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:45:32,152    INFO:     ::1:46490 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:46:39,702    INFO:     ::1:46592 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:46:39,726    INFO:     ::1:46596 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+[{'id': 'Reg_t@t.com', 'weight': 1e-06, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ca8d7b0c43ebd7551fb', 'weight': 0.08662402599549826, 'name': 'Jaquelin Bousie', 'email': '', 'university': 'Canberra', 'tag': ['systematic reviews', 'knee osteoarthritis', 'foot orthoses', 'meta-analysis', 'hardness', 'shoes', 'heel', 'career', 'orthotic devices'], 'division': ['BIOLOGICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.11487258967158405, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'computer integrated manufacturing', 'robotic art', 'discrete event systems', 'grippers', 'health care', 'government agencies', 'speech intelligibility'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.12078255928124916, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.12335066443914683, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['intrusion detection', 'frog', 'energy saving', 'autonomous underwater vehicles', 'fiber optic networks', 'routing protocols', 'long term evolution (lte)', 'cyber physical system', 'radio', 'traffic'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_615864c1d7b0c43ebd755263', 'weight': 0.13503821262884502, 'name': 'Roland Goecke', 'email': 'mailto:roland.goecke@canberra.edu.au', 'university': 'Canberra', 'tag': ['supervised learning', 'lower extremity', 'deep neural networks', 'quinine', 'center of pressure', 'students', 'performance model', 'segmentation', 'benchmarking', 'rotation invariance'], 'division': ['MEDICAL AND HEALTH', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.13666296824513957, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'emotions', 'human computer interaction', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587720d7b0c43ebd755324', 'weight': 0.16060017417099398, 'name': 'Peter Radoll', 'email': 'mailto:Peter.Radoll@canberra.edu.au', 'university': 'Canberra', 'tag': ['action plan', 'digital divide', 'human computer interaction', 'mental health service', 'indigenous communities', 'information technology', 'learning', 'social media', 'technology adoption'], 'division': ['LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585dcdd7b0c43ebd75520f', 'weight': 0.1607662588999763, 'name': 'Mehves Cetinkaya Sendas', 'email': '', 'university': 'Canberra', 'tag': ['emperor', 'design education', 'magic', 'discourse', 'clothes'], 'division': ['BUILT ENVIRONMENT AND DESIGN', 'HISTORY AND ARCHAEOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.16351496797201054, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['moral obligations', 'banking', 'usefulness', 'india', 'workload', 'networking', 'overtime', 'conflict (psychology)'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:46:41,255    INFO:     ::1:46602 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:46:45,470    INFO:     ::1:46616 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:46:45,493    INFO:     ::1:46618 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:46:49,311    INFO:     ::1:46636 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:46:49,340    INFO:     ::1:46638 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:46:53,445    INFO:     ::1:46646 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:47:09,637    INFO:     ::1:46672 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['religious behavior', 'discrete event systems', 'computer integrated manufacturing', 'art', 'robots', 'government agencies', 'robot', 'speech intelligibility', 'motion planning', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'dynamic stability', 'patient rehabilitation', 'students', 'minimally invasive surgery', 'robotic arms', 'histories'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'multi-task learning', 'classifiers', 'hinges', 'benchmarking'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:47:14,805    INFO:     ::1:46684 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:47:15,364    INFO:     ::1:46688 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:47:21,175    INFO:     ::1:46712 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:49:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 11:49:23 ------ end update researchers pool
+2022-04-29 11:51:13,737    INFO:     ::1:46966 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'robot', 'government agencies', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'arches', 'microsystems', 'dynamic stability', 'clutches', 'imperfect', 'elastic media', 'robotic arms', 'histories'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'problem-based learning', 'emotions', 'crowdsourcing', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:56:31,158    INFO:     ::1:47304 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:56:36,259    INFO:     ::1:47310 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['motion planning', 'simultaneous localization and mapping', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'patient rehabilitation', 'students', 'nanotubes', 'minimally invasive surgery', 'composite beams', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'benchmarking', 'multi-task learning', 'classifiers', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:56:41,229    INFO:     ::1:47328 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:56:44,013    INFO:     ::1:47332 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'government agencies', 'speech intelligibility', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'teaching', 'clutches', 'microsystems', 'dynamic stability', 'imperfect', 'elastic media', 'minimally invasive surgery', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'problem-based learning', 'emotions', 'human computer interaction', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:56:46,059    INFO:     ::1:47338 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['motion planning', 'religious behavior', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'patient rehabilitation', 'students', 'nanotubes', 'minimally invasive surgery', 'composite beams', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'classifiers', 'video conferencing', 'cameras', 'social interaction', 'benchmarking', 'learning algorithms', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:56:52,488    INFO:     ::1:47354 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:56:56,779    INFO:     ::1:47362 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'computer integrated manufacturing', 'robotic art', 'grippers', 'health care', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'teaching', 'clutches', 'microsystems', 'dynamic stability', 'imperfect', 'elastic media', 'minimally invasive surgery', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['problem-based learning', 'emotions', 'human computer interaction', 'crowdsourcing', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:56:57,172    INFO:     ::1:47366 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:57:14,630    INFO:     ::1:47384 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['religious behavior', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'robot', 'speech intelligibility', 'motion planning'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'patient rehabilitation', 'students', 'nanotubes', 'minimally invasive surgery', 'composite beams', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['human computer interaction', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'benchmarking', 'classifiers', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:57:14,974    INFO:     ::1:47388 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-04-29 11:57:17,635    INFO:     ::1:47402 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:57:17,663    INFO:     ::1:47404 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 11:57:24,934    INFO:     ::1:47438 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 11:57:24,961    INFO:     ::1:47442 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:57:27,202    INFO:     ::1:47448 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'computer integrated manufacturing', 'robotic art', 'discrete event systems', 'grippers', 'health care', 'government agencies', 'speech intelligibility'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'arches', 'microsystems', 'dynamic stability', 'clutches', 'imperfect', 'elastic media', 'minimally invasive surgery', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'emotions', 'human computer interaction', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:57:29,257    INFO:     ::1:47456 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_04', 'd_05'], 'tags': ['Health']}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4749', 'GO4215', 'GO4117', 'GO4555', 'GO4528', 'GO4020', 'GO207', 'GO366', 'GO3702', 'GO4845', 'GO4502', 'GO3193', 'GO5032', 'GO4882', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO4287', 'GO3904', 'GO4536', 'GO1510', 'GO4564', 'GO4844', 'GO3426', 'GO1726', 'GO5028', 'GO3876', 'GO1108', 'GO3957', 'GO4740', 'GO2868', 'GO3292', 'GO5009', 'GO3699', 'GO4990', 'GO4739', 'GO5147', 'GO3818', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3324', 'GO738', 'GO4565', 'GO2835', 'GO4686', 'GO4928', 'GO3844', 'GO5076', 'GO5078', 'GO3278', 'GO4534', 'GO5268', 'GO2204', 'GO2093', 'GO167', 'GO5414', 'GO4068', 'GO3689', 'GO3955', 'GO4204', 'GO1224', 'GO3690', 'GO3408', 'GO4554', 'GO4480', 'GO1943', 'GO5334', 'GO4747', 'GO4963', 'GO2941', 'GO4746', 'GO5113', 'GO4406', 'GO966', 'GO4758', 'GO5223', 'GO4642', 'GO34', 'GO4558', 'GO5118', 'GO4709', 'GO1539', 'GO1824', 'GO2986', 'GO1604', 'GO967', 'GO5097', 'GO5056', 'GO3074', 'GO4383', 'GO2407', 'GO3789', 'GO2203', 'GO5458', 'GO660', 'GO4575', 'GO4696', 'GO2332', 'GO2450', 'GO5499', 'GO1683', 'GO4900', 'GO5438', 'GO5221', 'GO4679', 'GO5393', 'GO5461', 'GO2815', 'GO2427', 'GO4096', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO1740', 'GO5244', 'GO5447', 'GO4752', 'GO5027', 'GO1532', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO4389', 'GO4879', 'GO1684', 'GO5165', 'GO1246', 'GO2575', 'GO484', 'GO1854', 'GO1008', 'GO4944', 'GO4504', 'GO5472', 'GO5008', 'GO5248', 'GO5525', 'GO4265', 'GO2498', 'GO275', 'GO4587', 'GO3425', 'GO4054', 'GO2860', 'GO5258', 'GO2884', 'GO4808', 'GO3337', 'GO5137', 'GO5424', 'GO3726', 'GO1772', 'GO272', 'GO4883', 'GO5364', 'GO2906', 'GO4465', 'GO3053', 'GO1219', 'GO5085', 'GO4279', 'GO3069', 'GO3199', 'GO1056', 'GO4310', 'GO358', 'GO1605', 'GO521', 'GO356', 'GO1505', 'GO5566', 'GO224', 'GO4936', 'GO4684']
+2022-04-29 11:57:52,698    INFO:     ::1:47488 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:58:01,732    INFO:     ::1:47508 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['religious behavior', 'discrete event systems', 'computer integrated manufacturing', 'art', 'robots', 'government agencies', 'robot', 'speech intelligibility', 'motion planning', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'dynamic stability', 'patient rehabilitation', 'students', 'minimally invasive surgery', 'robotic arms', 'histories'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'electroencephalography', 'video conferencing', 'learning algorithms', 'cameras', 'social interaction', 'multi-task learning', 'classifiers', 'hinges', 'benchmarking'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:58:08,194    INFO:     ::1:47518 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_04', 'd_05'], 'tags': ['Health']}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4749', 'GO4215', 'GO4117', 'GO4555', 'GO4528', 'GO4020', 'GO207', 'GO366', 'GO3702', 'GO4845', 'GO4502', 'GO3193', 'GO5032', 'GO4882', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO4287', 'GO3904', 'GO4536', 'GO1510', 'GO4564', 'GO4844', 'GO3426', 'GO1726', 'GO5028', 'GO3876', 'GO1108', 'GO3957', 'GO4740', 'GO2868', 'GO3292', 'GO5009', 'GO3699', 'GO4990', 'GO4739', 'GO5147', 'GO3818', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3324', 'GO738', 'GO4565', 'GO2835', 'GO4686', 'GO4928', 'GO3844', 'GO5076', 'GO5078', 'GO3278', 'GO4534', 'GO5268', 'GO2204', 'GO2093', 'GO167', 'GO5414', 'GO4068', 'GO3689', 'GO3955', 'GO4204', 'GO1224', 'GO3690', 'GO3408', 'GO4554', 'GO4480', 'GO1943', 'GO5334', 'GO4747', 'GO4963', 'GO2941', 'GO4746', 'GO5113', 'GO4406', 'GO966', 'GO4758', 'GO5223', 'GO4642', 'GO34', 'GO4558', 'GO5118', 'GO4709', 'GO1539', 'GO1824', 'GO2986', 'GO1604', 'GO967', 'GO5097', 'GO5056', 'GO3074', 'GO4383', 'GO2407', 'GO3789', 'GO2203', 'GO5458', 'GO660', 'GO4575', 'GO4696', 'GO2332', 'GO2450', 'GO5499', 'GO1683', 'GO4900', 'GO5438', 'GO5221', 'GO4679', 'GO5393', 'GO5461', 'GO2815', 'GO2427', 'GO4096', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO1740', 'GO5244', 'GO5447', 'GO4752', 'GO5027', 'GO1532', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO4389', 'GO4879', 'GO1684', 'GO5165', 'GO1246', 'GO2575', 'GO484', 'GO1854', 'GO1008', 'GO4944', 'GO4504', 'GO5472', 'GO5008', 'GO5248', 'GO5525', 'GO4265', 'GO2498', 'GO275', 'GO4587', 'GO3425', 'GO4054', 'GO2860', 'GO5258', 'GO2884', 'GO4808', 'GO3337', 'GO5137', 'GO5424', 'GO3726', 'GO1772', 'GO272', 'GO4883', 'GO5364', 'GO2906', 'GO4465', 'GO3053', 'GO1219', 'GO5085', 'GO4279', 'GO3069', 'GO3199', 'GO1056', 'GO4310', 'GO358', 'GO1605', 'GO521', 'GO356', 'GO1505', 'GO5566', 'GO224', 'GO4936', 'GO4684']
+2022-04-29 11:58:25,994    INFO:     ::1:47604 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'motion planning', 'religious behavior', 'art', 'computer integrated manufacturing', 'discrete event systems', 'grippers', 'health care', 'government agencies', 'speech intelligibility'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'arches', 'microsystems', 'dynamic stability', 'clutches', 'imperfect', 'elastic media', 'minimally invasive surgery', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'emotions', 'human computer interaction', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges', 'semantic web'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 11:58:29,776    INFO:     ::1:47638 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 11:58:30,743    INFO:     ::1:47650 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_04', 'd_05'], 'tags': ['Health']}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4749', 'GO4215', 'GO4117', 'GO4555', 'GO4528', 'GO4020', 'GO207', 'GO366', 'GO3702', 'GO4845', 'GO4502', 'GO3193', 'GO5032', 'GO4882', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO4287', 'GO3904', 'GO4536', 'GO1510', 'GO4564', 'GO4844', 'GO3426', 'GO1726', 'GO5028', 'GO3876', 'GO1108', 'GO3957', 'GO4740', 'GO2868', 'GO3292', 'GO5009', 'GO3699', 'GO4990', 'GO4739', 'GO5147', 'GO3818', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3324', 'GO738', 'GO4565', 'GO2835', 'GO4686', 'GO4928', 'GO3844', 'GO5076', 'GO5078', 'GO3278', 'GO4534', 'GO5268', 'GO2204', 'GO2093', 'GO167', 'GO5414', 'GO4068', 'GO3689', 'GO3955', 'GO4204', 'GO1224', 'GO3690', 'GO3408', 'GO4554', 'GO4480', 'GO1943', 'GO5334', 'GO4747', 'GO4963', 'GO2941', 'GO4746', 'GO5113', 'GO4406', 'GO966', 'GO4758', 'GO5223', 'GO4642', 'GO34', 'GO4558', 'GO5118', 'GO4709', 'GO1539', 'GO1824', 'GO2986', 'GO1604', 'GO967', 'GO5097', 'GO5056', 'GO3074', 'GO4383', 'GO2407', 'GO3789', 'GO2203', 'GO5458', 'GO660', 'GO4575', 'GO4696', 'GO2332', 'GO2450', 'GO5499', 'GO1683', 'GO4900', 'GO5438', 'GO5221', 'GO4679', 'GO5393', 'GO5461', 'GO2815', 'GO2427', 'GO4096', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO1740', 'GO5244', 'GO5447', 'GO4752', 'GO5027', 'GO1532', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO4389', 'GO4879', 'GO1684', 'GO5165', 'GO1246', 'GO2575', 'GO484', 'GO1854', 'GO1008', 'GO4944', 'GO4504', 'GO5472', 'GO5008', 'GO5248', 'GO5525', 'GO4265', 'GO2498', 'GO275', 'GO4587', 'GO3425', 'GO4054', 'GO2860', 'GO5258', 'GO2884', 'GO4808', 'GO3337', 'GO5137', 'GO5424', 'GO3726', 'GO1772', 'GO272', 'GO4883', 'GO5364', 'GO2906', 'GO4465', 'GO3053', 'GO1219', 'GO5085', 'GO4279', 'GO3069', 'GO3199', 'GO1056', 'GO4310', 'GO358', 'GO1605', 'GO521', 'GO356', 'GO1505', 'GO5566', 'GO224', 'GO4936', 'GO4684']
+2022-04-29 11:59:03,866    INFO:     ::1:47690 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 11:59:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 11:59:23 ------ end update researchers pool
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'robot', 'government agencies', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'arches', 'microsystems', 'dynamic stability', 'clutches', 'imperfect', 'elastic media', 'robotic arms', 'histories'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61587d1ad7b0c43ebd75535f', 'weight': 0.8281935970848788, 'name': 'Ramanathan Subramanian', 'email': '', 'university': 'Canberra', 'tag': ['personnel', 'problem-based learning', 'emotions', 'crowdsourcing', 'eye tracking', 'anomaly detection', 'watches', 'sensors', 'learning algorithms', 'hinges'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 12:00:24,524    INFO:     ::1:47812 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:00:25,440    INFO:     ::1:47818 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:36,117    INFO:     ::1:47848 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:36,142    INFO:     ::1:47850 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:00:39,526    INFO:     ::1:47872 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:39,554    INFO:     ::1:47874 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:00:46,158    INFO:     ::1:47886 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'test@2.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:00:49,661    INFO:     ::1:47896 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:52,787    INFO:     ::1:47912 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:52,812    INFO:     ::1:47914 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:00:56,746    INFO:     ::1:47932 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:00:56,770    INFO:     ::1:47934 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:03:28,380    INFO:     ::1:48136 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:03:28,405    INFO:     ::1:48138 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:05:14,026    INFO:     ::1:48252 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:05:33,513    INFO:     ::1:48296 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:05:33,530    INFO:     ::1:48300 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_04', 'd_05'], 'tags': ['Health']}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4749', 'GO4215', 'GO4117', 'GO4555', 'GO4528', 'GO4020', 'GO207', 'GO366', 'GO3702', 'GO4845', 'GO4502', 'GO3193', 'GO5032', 'GO4882', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO4287', 'GO3904', 'GO4536', 'GO1510', 'GO4564', 'GO4844', 'GO3426', 'GO1726', 'GO5028', 'GO3876', 'GO1108', 'GO3957', 'GO4740', 'GO2868', 'GO3292', 'GO5009', 'GO3699', 'GO4990', 'GO4739', 'GO5147', 'GO3818', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3324', 'GO738', 'GO4565', 'GO2835', 'GO4686', 'GO4928', 'GO3844', 'GO5076', 'GO5078', 'GO3278', 'GO4534', 'GO5268', 'GO2204', 'GO2093', 'GO167', 'GO5414', 'GO4068', 'GO3689', 'GO3955', 'GO4204', 'GO1224', 'GO3690', 'GO3408', 'GO4554', 'GO4480', 'GO1943', 'GO5334', 'GO4747', 'GO4963', 'GO2941', 'GO4746', 'GO5113', 'GO4406', 'GO966', 'GO4758', 'GO5223', 'GO4642', 'GO34', 'GO4558', 'GO5118', 'GO4709', 'GO1539', 'GO1824', 'GO2986', 'GO1604', 'GO967', 'GO5097', 'GO5056', 'GO3074', 'GO4383', 'GO2407', 'GO3789', 'GO2203', 'GO5458', 'GO660', 'GO4575', 'GO4696', 'GO2332', 'GO2450', 'GO5499', 'GO1683', 'GO4900', 'GO5438', 'GO5221', 'GO4679', 'GO5393', 'GO5461', 'GO2815', 'GO2427', 'GO4096', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO1740', 'GO5244', 'GO5447', 'GO4752', 'GO5027', 'GO1532', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO4389', 'GO4879', 'GO1684', 'GO5165', 'GO1246', 'GO2575', 'GO484', 'GO1854', 'GO1008', 'GO4944', 'GO4504', 'GO5472', 'GO5008', 'GO5248', 'GO5525', 'GO4265', 'GO2498', 'GO275', 'GO4587', 'GO3425', 'GO4054', 'GO2860', 'GO5258', 'GO2884', 'GO4808', 'GO3337', 'GO5137', 'GO5424', 'GO3726', 'GO1772', 'GO272', 'GO4883', 'GO5364', 'GO2906', 'GO4465', 'GO3053', 'GO1219', 'GO5085', 'GO4279', 'GO3069', 'GO3199', 'GO1056', 'GO4310', 'GO358', 'GO1605', 'GO521', 'GO356', 'GO1505', 'GO5566', 'GO224', 'GO4936', 'GO4684']
+2022-04-29 12:05:45,468    INFO:     ::1:48312 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:06:48,753    INFO:     ::1:48386 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:07:17,729    INFO:     ::1:48454 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:09:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:09:23 ------ end update researchers pool
+2022-04-29 12:19:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:19:23 ------ end update researchers pool
+2022-04-29 12:26:04,717    INFO:     ::1:49668 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:26:04,740    INFO:     ::1:49670 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:26:58,974    INFO:     ::1:49746 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:26:58,999    INFO:     ::1:49748 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:27:01,526    INFO:     ::1:49756 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:29:03,009    INFO:     ::1:49884 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:29:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:29:23 ------ end update researchers pool
+{'id': 'charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:29:56,263    INFO:     ::1:49964 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:30:04,915    INFO:     ::1:49980 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:30:18,176    INFO:     ::1:50002 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:30:18,203    INFO:     ::1:50004 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:30:30,492    INFO:     ::1:50040 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:30:30,522    INFO:     ::1:50042 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:32:24,024    INFO:     ::1:50170 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:32:24,057    INFO:     ::1:50172 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:32:28,223    INFO:     ::1:50182 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:32:37,848    INFO:     ::1:50194 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:34:58,224    INFO:     ::1:50344 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:39:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:39:23 ------ end update researchers pool
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:42:02,324    INFO:     ::1:50800 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:48:41,833    INFO:     ::1:51222 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:48:44,538    INFO:     ::1:51232 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:49:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:49:23 ------ end update researchers pool
+2022-04-29 12:50:31,547    INFO:     ::1:51370 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:50:31,574    INFO:     ::1:51372 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:50:34,566    INFO:     ::1:51388 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:50:34,593    INFO:     ::1:51390 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:50:43,727    INFO:     ::1:51414 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:50:43,750    INFO:     ::1:51416 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:50:50,753    INFO:     ::1:51428 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:52:03,583    INFO:     ::1:51512 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:04,981    INFO:     ::1:51524 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:05,007    INFO:     ::1:51526 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:52:09,136    INFO:     ::1:51544 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:09,166    INFO:     ::1:51546 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'test@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:52:12,053    INFO:     ::1:51554 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:16,575    INFO:     ::1:51568 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:16,600    INFO:     ::1:51570 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:52:20,869    INFO:     ::1:51598 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:52:20,894    INFO:     ::1:51600 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:52:24,795    INFO:     ::1:51608 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:53:58,351    INFO:     ::1:51718 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 't@t.com', 'divisions': ['d_08', 'd_09', 'd_10'], 'tags': []}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4526', 'GO4869', 'GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:54:27,571    INFO:     ::1:51752 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:54:44,549    INFO:     ::1:51780 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:54:44,571    INFO:     ::1:51782 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 12:54:48,917    INFO:     ::1:51800 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:54:48,941    INFO:     ::1:51802 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:54:55,473    INFO:     ::1:51812 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:55:48,020    INFO:     ::1:51872 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:55:52,010    INFO:     ::1:51890 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 12:55:52,037    INFO:     ::1:51892 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:56:34,639    INFO:     ::1:51966 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'genotype', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['embodiment', 'religious behavior', 'art', 'robotic art', 'stereo vision', 'grippers', 'health care', 'robot', 'government agencies', 'simultaneous localization and mapping'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'intellectual property', 'science', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['nonlinear equations', 'energy transfer', 'arches', 'microsystems', 'dynamic stability', 'clutches', 'imperfect', 'elastic media', 'robotic arms', 'histories'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 12:56:38,081    INFO:     ::1:51976 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:56:38,485    INFO:     ::1:51980 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+[{'id': 'Reg_test@0.com', 'weight': 1e-06, 'name': 'Test Test', 'email': 'test@0.com', 'university': 'Macquarie University', 'tag': [], 'division': ['ENGINEERING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586dbad7b0c43ebd7552d1', 'weight': 0.6274866179066096, 'name': 'Max Maxwell', 'email': '', 'university': 'Canberra', 'tag': ['pavilion', 'feedback', 'casting', 'timber', 'robotics', 'pathway', 'concrete construction', 'liquid', 'fabrication', 'facades'], 'division': ['ENVIRONMENTAL', 'ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586d86d7b0c43ebd7552cf', 'weight': 0.665683904869704, 'name': 'Elisa Martinez-Marroquin', 'email': '', 'university': 'Canberra', 'tag': ['singular value decomposition', 'deep learning', 'collision', 'electroencephalography', 'robots', 'engineering', 'speech synthesis', 'face recognition', 'camera'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_t@t.com', 'weight': 0.6666666666666667, 'name': 'Test Robot', 'email': 't@t.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_test@2.com', 'weight': 0.6666666666666667, 'name': 'Ttt Ttt', 'email': 'test@2.com', 'university': 'Southern Cross University', 'tag': [], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158663ed7b0c43ebd755277', 'weight': 0.6675246992865795, 'name': 'Damith Herath', 'email': '', 'university': 'Canberra', 'tag': ['motion planning', 'simultaneous localization and mapping', 'computer integrated manufacturing', 'discrete event systems', 'robotic art', 'art', 'robots', 'government agencies', 'speech intelligibility', 'stereo vision'], 'division': ['ENGINEERING', 'TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586ef6d7b0c43ebd7552df', 'weight': 0.7606541845225161, 'name': 'Alison Mclennan', 'email': '', 'university': 'Canberra', 'tag': ['synthetic biology', 'science', 'intellectual property', 'biology', 'legal ramification', 'patent', 'emerging technologies', 'engineering'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LAW AND LEGAL STUDIES', 'ENGINEERING']}, {'id': 'UC_61587735d7b0c43ebd755325', 'weight': 0.8047469922891755, 'name': 'Ibrahim Radwan', 'email': '', 'university': 'Canberra', 'tag': ['long short-term memory', 'deep neural networks', 'kinematics', 'gait analysis', 'fusion reactions', 'gene expression', 'video cameras', 'computer vision', 'trajectories', 'risk analysis'], 'division': ['TECHNOLOGY', 'ENGINEERING', 'MEDICAL AND HEALTH']}, {'id': 'UC_615867c5d7b0c43ebd755289', 'weight': 0.8053852971162255, 'name': 'Shahid Hussain', 'email': '', 'university': 'Canberra', 'tag': ['energy transfer', 'teaching', 'arches', 'clutches', 'patient rehabilitation', 'students', 'nanotubes', 'minimally invasive surgery', 'composite beams', 'robotic arms'], 'division': ['ENGINEERING', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-04-29 12:56:38,963    INFO:     ::1:51986 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 12:56:39,509    INFO:     ::1:51990 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 12:59:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 12:59:23 ------ end update researchers pool
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:01:14,403    INFO:     ::1:52312 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'tester@anu.com', 'divisions': ['d_01', 'd_04', 'd_05'], 'tags': ['Health']}
+Index(['id', 'go_id'], dtype='object')
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4749', 'GO4215', 'GO4117', 'GO4555', 'GO4528', 'GO4020', 'GO207', 'GO366', 'GO3702', 'GO4845', 'GO4502', 'GO3193', 'GO5032', 'GO4882', 'GO5326', 'GO4552', 'GO2701', 'GO1296', 'GO1431', 'GO802', 'GO5405', 'GO4287', 'GO3904', 'GO4536', 'GO1510', 'GO4564', 'GO4844', 'GO3426', 'GO1726', 'GO5028', 'GO3876', 'GO1108', 'GO3957', 'GO4740', 'GO2868', 'GO3292', 'GO5009', 'GO3699', 'GO4990', 'GO4739', 'GO5147', 'GO3818', 'GO3250', 'GO1392', 'GO5201', 'GO5199', 'GO3324', 'GO738', 'GO4565', 'GO2835', 'GO4686', 'GO4928', 'GO3844', 'GO5076', 'GO5078', 'GO3278', 'GO4534', 'GO5268', 'GO2204', 'GO2093', 'GO167', 'GO5414', 'GO4068', 'GO3689', 'GO3955', 'GO4204', 'GO1224', 'GO3690', 'GO3408', 'GO4554', 'GO4480', 'GO1943', 'GO5334', 'GO4747', 'GO4963', 'GO2941', 'GO4746', 'GO5113', 'GO4406', 'GO966', 'GO4758', 'GO5223', 'GO4642', 'GO34', 'GO4558', 'GO5118', 'GO4709', 'GO1539', 'GO1824', 'GO2986', 'GO1604', 'GO967', 'GO5097', 'GO5056', 'GO3074', 'GO4383', 'GO2407', 'GO3789', 'GO2203', 'GO5458', 'GO660', 'GO4575', 'GO4696', 'GO2332', 'GO2450', 'GO5499', 'GO1683', 'GO4900', 'GO5438', 'GO5221', 'GO4679', 'GO5393', 'GO5461', 'GO2815', 'GO2427', 'GO4096', 'GO5415', 'GO2798', 'GO5314', 'GO4562', 'GO4031', 'GO1740', 'GO5244', 'GO5447', 'GO4752', 'GO5027', 'GO1532', 'GO4030', 'GO188', 'GO5468', 'GO2814', 'GO4389', 'GO4879', 'GO1684', 'GO5165', 'GO1246', 'GO2575', 'GO484', 'GO1854', 'GO1008', 'GO4944', 'GO4504', 'GO5472', 'GO5008', 'GO5248', 'GO5525', 'GO4265', 'GO2498', 'GO275', 'GO4587', 'GO3425', 'GO4054', 'GO2860', 'GO5258', 'GO2884', 'GO4808', 'GO3337', 'GO5137', 'GO5424', 'GO3726', 'GO1772', 'GO272', 'GO4883', 'GO5364', 'GO2906', 'GO4465', 'GO3053', 'GO1219', 'GO5085', 'GO4279', 'GO3069', 'GO3199', 'GO1056', 'GO4310', 'GO358', 'GO1605', 'GO521', 'GO356', 'GO1505', 'GO5566', 'GO224', 'GO4936', 'GO4684']
+2022-04-29 13:01:16,953    INFO:     ::1:52340 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:21,680    INFO:     ::1:52366 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:21,704    INFO:     ::1:52368 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:01:29,987    INFO:     ::1:52398 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:30,013    INFO:     ::1:52400 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:01:33,752    INFO:     ::1:52404 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:01:38,019    INFO:     ::1:52412 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:46,397    INFO:     ::1:52438 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:46,422    INFO:     ::1:52440 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:01:52,448    INFO:     ::1:52470 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:01:52,478    INFO:     ::1:52472 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:02:05,648    INFO:     ::1:52488 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:03:41,569    INFO:     ::1:52614 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_09'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:03:45,639    INFO:     ::1:52620 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 13:09:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 13:09:23 ------ end update researchers pool
+2022-04-29 13:19:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 13:19:23 ------ end update researchers pool
+2022-04-29 13:25:09,977    INFO:     ::1:53990 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:25:09,998    INFO:     ::1:53992 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:25:12,814    INFO:     ::1:54010 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:25:12,832    INFO:     ::1:54012 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:25:15,420    INFO:     ::1:54016 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:25:36,914    INFO:     ::1:54074 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:36,784    INFO:     ::1:54214 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:36,812    INFO:     ::1:54216 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:27:41,374    INFO:     ::1:54242 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:41,401    INFO:     ::1:54244 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:27:46,408    INFO:     ::1:54268 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:46,437    INFO:     ::1:54270 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:27:50,540    INFO:     ::1:54290 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:50,564    INFO:     ::1:54292 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:27:53,276    INFO:     ::1:54306 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:53,302    INFO:     ::1:54308 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:27:55,990    INFO:     ::1:54326 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:27:56,021    INFO:     ::1:54328 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:29:11,298    INFO:     ::1:54414 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:29:11,315    INFO:     ::1:54416 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:29:14,555    INFO:     ::1:54430 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-04-29 13:29:14,583    INFO:     ::1:54432 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-04-29 13:29:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 13:29:23 ------ end update researchers pool
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:38:02,871    INFO:     ::1:55022 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-04-29 13:39:20 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-04-29 13:39:23 ------ end update researchers pool
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:41:40,918    INFO:     ::1:55292 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Charles@0.com', 'divisions': ['d_08', 'd_10'], 'tags': []}
+['GO544', 'GO4995', 'GO4572', 'GO5324', 'GO4587', 'GO3022', 'GO4353', 'GO5170', 'GO542', 'GO4557', 'GO4810', 'GO3021', 'GO4483', 'GO3421', 'GO2444', 'GO1056', 'GO4780', 'GO86', 'GO4882', 'GO2900', 'GO4688']
+2022-04-29 13:41:48,184    INFO:     ::1:55320 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
+Updating dfa0587..1766d43
+Fast-forward
+ matcher/auto_reco/postprocess.py                |    2 -
+ matcher/ff.csv                                  | 1009 -----------------------
+ matcher/researcher/update/researcher_updater.py |    2 +
+ 3 files changed, 2 insertions(+), 1011 deletions(-)
+ delete mode 100644 matcher/ff.csv
+[master c7e2a52] update model
+ 3 files changed, 728 insertions(+), 6 deletions(-)
+run matcher
+initial update task
+2022-04-29 13:49:57 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+git pulling
+Updating c7e2a52..2ac37ee
+[master 650f27c] update model
+ 7 files changed, 73 insertions(+), 64 deletions(-)
+ rewrite matcher/researcher/assets/researcher_action.csv (100%)
+run matcher
+git pulling
+Auto-merging matcher/researcher/assets/tag_division_map.csv
+Auto-merging matcher/researcher/assets/researcher_division.csv
+Auto-merging matcher/researcher/assets/researcher_action.csv
+Merge made by the 'recursive' strategy.
+ matcher/auto_reco/clb_filter.py                   |     1 -
+ matcher/auto_reco/postprocess.py                  |    11 +-
+ matcher/matching.py                               |     8 +-
+ matcher/researcher/assets/researcher_action.csv   |     2 +-
+ matcher/researcher/assets/researcher_division.csv |  2754 +-
+ matcher/researcher/assets/tag_division_map.csv    |    20 +-
+ matcher/researcher/update/researcher_updater.py   |     2 +-
+ matcher/tenders/assets/clean_trains_info.csv      |  3606 +-
+ matcher/tenders/assets/matching_result_by_lda.csv |  8890 +-
+ matcher/tenders/assets/tenders_keyword.csv        |  4366 +-
+ matcher/tenders/assets/tenders_relation_map.csv   | 86578 ++++++++++----------
+ matcher/tenders/assets/tenders_tag.csv            | 56024 ++++++-------
+ matcher/tenders/assets/tenders_topic.csv          | 44635 +++++-----
+ matcher/tenders/clean/data_clean.py               |     3 +-
+ matcher/tenders/update/tenders_updater.py         |     8 +-
+ 15 files changed, 105444 insertions(+), 101464 deletions(-)
