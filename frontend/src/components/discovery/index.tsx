@@ -19,9 +19,9 @@ export default function Discovery():JSX.Element{
   const [hotTenders, setHotTenders] = useState(new Array<QueryTender>())
   useEffect(()=>{
     Promise.all([queryTendersCountAPI(),
-      queryTendersAPI('latest', 3),
-      queryTendersAPI('expiring', 3),
-      queryTendersAPI('hot', 3)]).then(responses=>{
+      queryTendersAPI('latest', '', 3, 0),
+      queryTendersAPI('expiring', '', 3, 0),
+      queryTendersAPI('hot', '', 3, 0)]).then(responses=>{
       const [res1, res2, res3, res4] = responses
       if(res1.data) setTotalNumberTenders(res1.data)
       if(res2.data) setLatestTenders(res2.data)

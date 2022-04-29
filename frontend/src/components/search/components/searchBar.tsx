@@ -75,7 +75,9 @@ export default function SearchBar(props:SearchBarProp):JSX.Element{
   return (
     <>
       <div className="search-bar">	
-        <Search  maxLength={100} 
+        <Search
+          size="large"
+          maxLength={100} 
           addonAfter={renderDropdownMenu()}
           value={searchContent}
           onSearch={onSearch}

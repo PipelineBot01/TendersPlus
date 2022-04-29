@@ -39,22 +39,26 @@ export const matchTenderAPI = (data:MatcherParams):Promise<CustomAPIResponse<Que
   return request.post('/matcher/tenders', data)
 }
 
-export const queryTendersAPI = (type:QueryType, query:string|number):Promise<CustomAPIResponse<QueryTender[]>>=>{
+export const queryTendersAPI = (type:QueryType, query?:string, limit = 0, skip = 0):Promise<CustomAPIResponse<QueryTender[]>>=>{
   switch (type){
   case 'latest':
-    return query ? request.get('/search/latest', {params:{
-      n:query
-    }}) : request.get('/search/latest')
+    return  request.get('/search/latest', {params:{
+      limit,
+      skip
+    }})
   case 'expiring':
-    return query ? request.get('/search/expiring', {params:{
-      n:query
-    }}) : request.get('/search/expiring')
+    return  request.get('/search/expiring', {params:{
+      limit,
+      skip
+    }})
   case 'hot':
-    return query ? request.get('/search/hot', {params:{
-      n:query
-    }}) : request.get('/search/hot')
+    return  request.get('/search/hot', {params:{
+      limit,
+      skip
+    }})
   default:
-    return request.get('/search', {params:{query}})
+    return request.get('/search', {params:{query, limit,
+      skip}})
   }
 }
 

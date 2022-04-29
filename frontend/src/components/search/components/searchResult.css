@@ -31,7 +31,7 @@ div.search-result-filter{
         width: 50%;
 }
 div.search-result-content{
-
+    margin-top: 1rem;
     min-height: 100vh;
     /* overflow-y: auto; */
     width: 50%;
@@ -139,5 +139,7 @@ div.search-result-content .ant-pagination-item-link:hover{
     font-weight: 700;
 
 }
-
+div.search-result-content .load-more-btn:hover{
+cursor: pointer;
+}
 /* ant-pagination-simple-pager */

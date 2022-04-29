@@ -39,4 +39,11 @@ async def init_db() -> None:
     mongo['tenders_client_docs_count'] = {}
     mongo['tenders_client_docs_count']['clean_grants_all'] = await mongo[
         'tenders_client'].get_default_database().get_collection('clean_grants_all').count_documents({})
+
+    # get the collection
+    mongo['collection_clean_grants_all'] = mongo['tenders_client'].get_default_database().get_collection(
+        'clean_grants_all')
+
+    mongo['collection_grants_opened'] = mongo['tenders_client'].get_default_database().get_collection(
+        'clean_grants_opened')
     print('opened tenders:', mongo['tenders_client_docs_count']['clean_grants_all'])
