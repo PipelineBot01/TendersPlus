@@ -42,7 +42,7 @@ async def db_get_expiring_tenders(n: int) -> List:
     db = client.get_default_database()
     collection = db['clean_grants_all']
     date_range = datetime.now() + settings.EXPIRING_DATE_THRESHOLD
-    cursor = collection.find({"close_date": {"$lt": date_range}},
+    cursor = collection.find({"close_date": {'$gt': datetime.now(), "$lt": date_range}},
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
     if n != 0:

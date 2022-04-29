@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     MYSQL_DATABASE: str
 
     # use to filter out tenders
-    EXPIRING_DATE_THRESHOLD = timedelta(weeks=10)
+    EXPIRING_DATE_THRESHOLD = timedelta(weeks=8)
     LATEST_DATE_THRESHOLD = timedelta(weeks=8)
 
     # app server

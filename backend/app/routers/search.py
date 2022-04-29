@@ -11,7 +11,7 @@ router = APIRouter()
 
 
 @router.get('')
-async def get_open_opportunities(query: str = None):
+async def get_opportunities(query: str = None):
     try:
 
         keywords = None
