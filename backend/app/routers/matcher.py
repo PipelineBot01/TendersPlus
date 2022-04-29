@@ -45,7 +45,7 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
 
     """
     try:
-        print('data:', data.__dict__)
+
         docs = []
         response = requests.post('http://localhost:20222/get_reco_tenders',
                                  json={'id': email, 'divisions': data.research_fields,
@@ -53,7 +53,7 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
         if response.status_code == 200:
             content = json.loads(response.content)
             GO_ID = content['data']
-            print('go id:', GO_ID)
+
             docs = []
             for i in GO_ID:
                 doc = await curd.db_get_tenders_from_history_by_id(i)
