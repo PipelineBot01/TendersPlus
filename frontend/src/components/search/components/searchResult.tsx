@@ -42,9 +42,9 @@ export default function SearchResult():JSX.Element{
     queryTendersAPI(type, encodeQuery, limit, skip).then((response)=>{
       if (response.data?.length === 0){
         setIsEnd(true)
+        setData([])
       }else{
         isNew ? setData(response.data as Array<QueryTender>) : setData(data.concat([...response.data as Array<QueryTender>])) 
-   
         useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
       }
     
@@ -58,6 +58,7 @@ export default function SearchResult():JSX.Element{
   useEffect(()=>{	
     setIsLoading(true)
     fetchData(5, 0)
+    setIsEnd(false)
   }, [searchParams.get('query')])
 
   // fetch favorite info
@@ -131,8 +132,6 @@ export default function SearchResult():JSX.Element{
                 onClick={onClickLoadMoreBtn}>
              Load more
               </div>
-   
-      
             </div>
           }
           itemLayout='vertical'

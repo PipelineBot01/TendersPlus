@@ -6,7 +6,10 @@ import Footer from '../components/footer'
 export default function BasicLayout():JSX.Element{
   return<>
     	<Header/>
+    
     <Outlet/>
+  
+   
     <Footer/>
   </>
 }

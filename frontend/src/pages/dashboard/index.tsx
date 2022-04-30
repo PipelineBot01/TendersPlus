@@ -28,7 +28,7 @@ export default function Dashboard():JSX.Element{
       getUserInfoAPI().then((response)=>{
         if(response.data){
           const user:UserState = {
-            access_token:response.data.access_token,
+            access_token:tokenFromCookie,
             rememberme:userInfo.rememberme,
             first_name:response.data.first_name,
             last_name:response.data.last_name,

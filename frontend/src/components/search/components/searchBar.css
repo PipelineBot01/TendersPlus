@@ -1,9 +1,13 @@
 
 .search-bar{
     min-width:30%;
-    max-width: 50%;
+    max-width: 60%;
     margin-top: 0.8rem;
     display: flex;
+}
+
+.search-result .search-bar{
+    width:60% !important;
 }
 
 
