@@ -19,7 +19,7 @@ async def update_tenders_pool():
         print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ end update tenders pool')
 
 
-@scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(minutes=10))
+@scheduler.scheduled_job(id='update_researchers_pool', trigger=IntervalTrigger(minutes=15))
 async def update_researchers_pool():
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ------ start update researchers pool')
     ru.update()

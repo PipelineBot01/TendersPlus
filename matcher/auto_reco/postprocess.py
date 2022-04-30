@@ -78,6 +78,8 @@ class PostProcess:
         return input_df.sort_values('weight')
     
     def get_hot_tenders(self):
+        if self.__action_df.empty:
+            return []
         tmp_df = self.__action_df.copy()
         tmp_df['date'] = tmp_df['action_date'].dt.normalize()
         tmp_df = tmp_df.drop_duplicates(['r_id', 'type', 'go_id', 'date'])
