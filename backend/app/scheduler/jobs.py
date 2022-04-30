@@ -24,7 +24,7 @@ def job(id: str, trigger: BaseTrigger, delay: bool = False):
 
 
 # @job(id='get_all_user_info', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
-@job(id='get_all_user_info', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
+@job(id='get_all_user_info', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_info():
     # if len(settings.USER_INFO) == 0 or datetime.now().hour < 3:
     if True:
@@ -47,8 +47,8 @@ async def get_all_user_info():
                 settings.USER_INFO = data.to_dict('records')
 
 
-# @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
-@job(id='get_all_user_action', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
+@job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
+# @job(id='get_all_user_action', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_action():
     # if len(settings.USER_ACTION) == 0 or datetime.now().hour < 3:
     if True:

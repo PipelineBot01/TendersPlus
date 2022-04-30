@@ -15013,3 +15013,49 @@ Fast-forward
  matcher/researcher/update/researcher_updater.py |    2 +
  3 files changed, 2 insertions(+), 1011 deletions(-)
  delete mode 100644 matcher/ff.csv
+[master c7e2a52] update model
+ 3 files changed, 728 insertions(+), 6 deletions(-)
+run matcher
+initial update task
+2022-04-29 13:49:57 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+git pulling
+Updating c7e2a52..2ac37ee
+[master 650f27c] update model
+ 7 files changed, 73 insertions(+), 64 deletions(-)
+ rewrite matcher/researcher/assets/researcher_action.csv (100%)
+run matcher
+git pulling
+Auto-merging matcher/researcher/assets/tag_division_map.csv
+Auto-merging matcher/researcher/assets/researcher_division.csv
+Auto-merging matcher/researcher/assets/researcher_action.csv
+Merge made by the 'recursive' strategy.
+ matcher/auto_reco/clb_filter.py                   |     1 -
+ matcher/auto_reco/postprocess.py                  |    11 +-
+ matcher/matching.py                               |     8 +-
+ matcher/researcher/assets/researcher_action.csv   |     2 +-
+ matcher/researcher/assets/researcher_division.csv |  2754 +-
+ matcher/researcher/assets/tag_division_map.csv    |    20 +-
+ matcher/researcher/update/researcher_updater.py   |     2 +-
+ matcher/tenders/assets/clean_trains_info.csv      |  3606 +-
+ matcher/tenders/assets/matching_result_by_lda.csv |  8890 +-
+ matcher/tenders/assets/tenders_keyword.csv        |  4366 +-
+ matcher/tenders/assets/tenders_relation_map.csv   | 86578 ++++++++++----------
+ matcher/tenders/assets/tenders_tag.csv            | 56024 ++++++-------
+ matcher/tenders/assets/tenders_topic.csv          | 44635 +++++-----
+ matcher/tenders/clean/data_clean.py               |     3 +-
+ matcher/tenders/update/tenders_updater.py         |     8 +-
+ 15 files changed, 105444 insertions(+), 101464 deletions(-)

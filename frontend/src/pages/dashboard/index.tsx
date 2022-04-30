@@ -18,18 +18,17 @@ export default function Dashboard():JSX.Element{
   const location = useLocation()
   const dispatch = useAppDispatch()
   const userInfo = useAppSelector((state)=>state.user)
-  const tokenFromStore = userInfo.access_token
-	
   useEffect(()=>{
     console.log('fetch user info')
-    
-    const tokenFromCookie  = Cookies.get('access_token')
-    if (tokenFromCookie && (!tokenFromStore || tokenFromCookie !== tokenFromStore)){
+    const tokenFromCookie = Cookies.get('access_token')
+    if (!tokenFromCookie){
+      navigate('/')
+    }else if (userInfo.access_token !== tokenFromCookie){
       // fetch latest user info
       getUserInfoAPI().then((response)=>{
         if(response.data){
           const user:UserState = {
-            access_token:tokenFromCookie,
+            access_token:response.data.access_token,
             rememberme:userInfo.rememberme,
             first_name:response.data.first_name,
             last_name:response.data.last_name,
@@ -53,11 +52,8 @@ export default function Dashboard():JSX.Element{
         Cookies.remove('access_token')
         navigate('/')
       })
-    }else if (!tokenFromCookie){
-      navigate('/')
     }
   }, [])
-
 
   const [isCollapsed, setIscollapsed] = useState(false)
   const handleCollapse = ()=>{
