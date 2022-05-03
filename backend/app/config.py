@@ -8,7 +8,7 @@ parser.add_argument('--env_path', type=str, action='store')
 env_path = parser.parse_args().env_path
 
 if env_path is None:
-    env_path = '../.env'
+    env_path = './.env'
 
 
 class Settings(BaseSettings):

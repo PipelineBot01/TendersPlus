@@ -16,5 +16,4 @@ def sql_add_user_research_field(email: str, field_id: str, session: Session) -> 
 
 
 def sql_get_all_user_research_field(session: Session):
-
     return [i.__dict__ for i in session.query(SQLUserResearchField).all()]

@@ -15,7 +15,7 @@ from config import settings
 faker = Faker()
 
 research_field_keys = [k for k, v in settings.RESEARCH_FIELDS.items()]
-
+go_id = 'GO4344'
 
 class SimulateClient(HttpUser):
     wait_time = between(1, 2)
@@ -33,6 +33,7 @@ class SimulateClient(HttpUser):
         confirmed_password: str
         research_fields: List[str]
         """
+
         for i in range(10):
 
             # generate a fake user
@@ -66,9 +67,24 @@ class SimulateClient(HttpUser):
                                                 'password': user['password']},
                                           catch_response=True) as login_response:
                         if login_response.status_code == 200:
-                            login_response.success()
+                            with self.client.post(url='/favourite/add',
+                                                  json={'id':go_id},
+                                                  headers={'X-TOKEN':res['access_token']},
+                                                  catch_response=True)  as add_response:
+                                if add_response.status_code==200:
+                                    with self.client.post(url='/favourite/remove',
+                                                          json={'id': go_id},
+                                                          headers={'X-TOKEN': res['access_token']},
+                                                          catch_response=True) as remove_response:
+                                        if remove_response.status_code == 200:
+                                            remove_response.success()
+                                        else:
+                                            remove_response.failure(add_response.content)
+                                else:
+                                    add_response.failure(add_response.content)
+
                         else:
-                            login_response.failure('Failed ')
+                            login_response.failure(login_response.content)
                 else:
                     print(content)
                     if 'msg' in content:
