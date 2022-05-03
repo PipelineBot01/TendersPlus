@@ -35,7 +35,8 @@ export default function Header():JSX.Element{
           tags:data.tags,
           research_fields:data.research_fields,
           access_token:data.access_token,
-          favourite:data.favourite
+          favourite:data.favourite,
+          subscribe_status:data.subscribe_status,
         }
         user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
         dispatch(setUserInfo(user))

@@ -3,11 +3,11 @@
  */
 import React, {useEffect, useState} from 'react'
 import type {ReactElement} from 'react'
-import { Form, Input, Select, Button, Spin, Row, Col, message } from 'antd'
+import { Form, Input, Select, Button, Spin, Row, Col, message, Switch  } from 'antd'
 import {LoadingOutlined} from '@ant-design/icons'
 
-import { setUserProfile } from '../../store/features/user'
-import { setUserInfoAPI } from '../../api'
+import { setUserProfile, setSubscribeStatus } from '../../store/features/user'
+import { setUserInfoAPI, subscribeAPI } from '../../api'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { researchFields } from '../../utils/data/researchFields'
 import { universities } from '../../utils/data/universities'
@@ -18,27 +18,29 @@ import './index.css'
 
 const { Option, OptGroup } = Select
 export default function Profile():JSX.Element{
-  const userInfo = useAppSelector((state)=>state.user)
+ 
   const dispatch = useAppDispatch()
   const [form] = Form.useForm()
   const [isSubmitting, setIsSubmitting] = useState(false)
-	
+  const [subscribeChecked, setSubscribeChecked] = useState(false)
+  const user = useAppSelector((state)=>state.user)
 
   useEffect(()=>{
-    const research_fields_data = userInfo.research_fields.map(e=>{ 
+    const research_fields_data = user.research_fields.map(e=>{ 
       if(typeof e === 'object'){
         return e.field
       }else{
         return e
       }})
     form.setFieldsValue({
-      'first_name':userInfo.first_name, 
-      'last_name':userInfo.last_name,
-      'university':userInfo.university,
+      'first_name':user.first_name, 
+      'last_name':user.last_name,
+      'university':user.university,
       'research_fields':research_fields_data,
-      'tags':userInfo.tags}
+      'tags':user.tags}
     )
-  }, [userInfo])
+    setSubscribeChecked(Boolean(user.subscribe_status))
+  }, [user])
 	
   const handleTriggerSubmitForm = ()=>{
     setIsSubmitting(true)
@@ -60,6 +62,16 @@ export default function Profile():JSX.Element{
   const handleSubmitFormFailed = ()=>{
     console.log('handleSubmitFormFailed')
     setIsSubmitting(false)
+  }
+  const handleSubcribeChange = (checked:boolean)=>{
+    const status = checked ? 1 : 0
+    subscribeAPI(status).then(()=>{
+      message.success('Updated!', 3)
+    }, error=>{
+      message.error(error?.msg, 3)
+    })
+    setSubscribeChecked(checked)
+    setSubscribeStatus(status)
   }
   const renderResearchFieldsOptions = ()=>{
     const arr = new Array<ReactElement>()
@@ -167,23 +179,6 @@ export default function Profile():JSX.Element{
               {renderResearchFieldsOptions()}	
             </Select>
           </Form.Item>
-          {/* <Form.Item label='Subfields' name='research_sub_fields' shouldUpdate extra='More specific researching fields can help us to find more suitable opportunities for you!' >
-						<Select mode='multiple' showArrow >
-							{
-								selectedResearchFields.map((e:string)=>{						 
-									return (<OptGroup key={e} label={researchFields[e].field}>{
-										researchFields[e].sub_fields.map((c:string, i:number)=>{
-											return (<Option key={c + i} value={c}>
-												{c}
-											</Option>)	
-										})
-									}
-									</OptGroup>)
-									
-								})
-							}
-						</Select>			
-					</Form.Item> */}
           <Form.Item label='Tags' name='tags' shouldUpdate extra='You can use custom tags to indicate what area of ​​research you are good at! (≤10 tags)'
             validateTrigger='onChange'
             rules={[({ getFieldValue }) => ({
@@ -194,23 +189,22 @@ export default function Profile():JSX.Element{
                 return Promise.resolve()
               },
             })]}>
-            <Select mode='tags' open={false} tokenSeparators={[',', ';']}>
-              {/* {
-								selectedResearchFields.map((e:string)=>{						 
-									return (<OptGroup key={e} label={researchFields[e].field}>{
-										researchFields[e].sub_fields.map((c:string, i:number)=>{
-											return (<Option key={c + i} value={c}>
-												{c}
-											</Option>)	
-										})
-									}
-									</OptGroup>)
-									
-								})
-							} */}
-            </Select>			
+            <Select mode='tags' open={false} tokenSeparators={[',', ';']}/>
           </Form.Item>
-				
+				    <Row style={{alignItems:'center'}}>
+            <Col span={5} style={{textAlign:'right', padding:'0 0.5rem', fontWeight:'500', fontSize:'0.9rem'}}  >
+                Subscribe
+            </Col>
+            <Col span={18} style={{marginLeft:'0.2rem'}}>
+              <Switch checked={subscribeChecked} onChange={handleSubcribeChange} />
+            </Col>
+            <Col 
+              offset={5} 
+              span={19} 
+              style={{padding:'0.2rem 0', color:'rgba(0, 0, 0, 0.45)'}}>
+              Send me emails once it has recommendation
+            </Col>
+          </Row>
           <Row justify='center' >
             <Col span={6}>
               <Button  className='btn-submit' disabled={isSubmitting} onClick={handleTriggerSubmitForm}>
@@ -219,10 +213,8 @@ export default function Profile():JSX.Element{
                 }
               </Button>
             </Col>
-						
           </Row>
-					
-					
+      
         </Form>
       </div>
 

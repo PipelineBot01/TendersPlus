@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import Cookies from "js-cookie"
 import type {UserInfo, ResearchFieldsItem, ProfileForm} from '../../utils/types'
 export  interface UserState extends UserInfo {
     rememberme:boolean
@@ -16,6 +15,7 @@ const initialState:UserState = {
   rememberme: localStorage.getItem('rememberme') === 'true',
   access_token:'',
   favourite:localStorage.getItem('favourite')?.split('/').slice(1) || [],
+  subscribe_status:parseInt(localStorage.getItem('subscribe_status') || '0')
 }
 
 const userSlice = createSlice({
@@ -52,7 +52,7 @@ const userSlice = createSlice({
       localStorage.setItem('university', action.payload.university)
       localStorage.setItem('rememberme', action.payload.rememberme + '')
       localStorage.setItem('tags', action.payload?.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
-
+      localStorage.setItem('subscribe_status', action.payload.subscribe_status + '')
       let research_field = ''
       action.payload?.research_fields.forEach(e=>{
         typeof e === 'object' ? research_field += `/${e.field}` : research_field += `/${e}`
@@ -80,6 +80,11 @@ const userSlice = createSlice({
       localStorage.setItem('last_name', action.payload.last_name)
       localStorage.setItem('tags', action.payload.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
       Object.assign(state, action.payload)
+    },
+    setSubscribeStatus(state, action:PayloadAction<number>){
+      state.subscribe_status = action.payload
+      localStorage.setItem('subscribe_status', action.payload + '')
+
     }
   }
 })
@@ -92,5 +97,6 @@ export const {setFirstName,
   setUserInfo, 
   setAccessToken,
   setFavourite,
-  setUserProfile } = userSlice.actions
+  setUserProfile,
+  setSubscribeStatus } = userSlice.actions
 export default userSlice.reducer

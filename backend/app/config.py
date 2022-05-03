@@ -8,7 +8,7 @@ parser.add_argument('--env_path', type=str, action='store')
 env_path = parser.parse_args().env_path
 
 if env_path is None:
-    env_path = './.env'
+    env_path = '../.env'
 
 
 class Settings(BaseSettings):
@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     MYSQL_PASSWORD: str
     MYSQL_URL: str
     MYSQL_DATABASE: str
+
+    # smtp server
+    MAIL_USERNAME:str
+    MAIL_PASSWORD:str
 
     # use to filter out tenders
     EXPIRING_DATE_THRESHOLD = timedelta(weeks=8)

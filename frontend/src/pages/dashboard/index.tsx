@@ -33,6 +33,7 @@ export default function Dashboard():JSX.Element{
             first_name:response.data.first_name,
             last_name:response.data.last_name,
             university:response.data.university,
+            subscribe_status:response.data.subscribe_status,
             research_fields:response.data.research_fields.map(e=>{ 
               if(typeof e === 'object'){
                 return e.field

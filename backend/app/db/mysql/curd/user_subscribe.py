@@ -4,7 +4,6 @@ from sqlalchemy.orm import Session
 from ..schema.user_subscribe import SQLUserSubscribe
 
 
-
 def sql_get_user_subscribe(email: str, session: Session) -> Union[None, SQLUserSubscribe]:
     return session.query(SQLUserSubscribe).filter(SQLUserSubscribe.email == email).one_or_none()
 

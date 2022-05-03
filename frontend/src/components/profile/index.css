@@ -52,3 +52,8 @@
     font-weight: 600;
     animation:none !important;
 }
+
+.profile-form .ant-switch-checked{
+    background-color: #42ad84;
+ 
+}
