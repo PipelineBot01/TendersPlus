@@ -60,7 +60,7 @@ def create_html_message(docs: list, recipients: list):
     return MessageSchema(
         subject="Seize your chance! - see what's the Grant opportunities recommendation ",
         recipients=recipients,
-        body=body,
+        html=body,
         subtype='html'
     )
 
