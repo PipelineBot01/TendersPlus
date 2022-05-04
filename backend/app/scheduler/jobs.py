@@ -60,7 +60,7 @@ async def get_all_user_action():
 # @job(id='get_all_subscriber',trigger=IntervalTrigger(hours=1.5,timezone='Asia/Hong_Kong'),delay=False)
 # async def get_all_subscriber
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=True)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
 async def send_recommendation():
     data = settings.USER_INFO_DF
     user = data[data['email'] == 'ryan@anu.com']
@@ -76,5 +76,5 @@ async def send_recommendation():
             if doc:
                 docs.append(doc)
         sender = create_sender()
-        message = create_html_message(docs, ['ryan@anu.com'])
+        message = create_html_message(docs, ['gongsakura@yahoo.com'])
         await sender(message)

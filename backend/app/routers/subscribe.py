@@ -3,14 +3,14 @@ subscribe api allows user to subscribe the recommandation result or not
 """
 
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi_mail import MessageSchema
+
 
 from sqlalchemy.orm import Session
 
 from models.user import SubscribeModel
 from dependencies import check_access_token, get_db
 from db.mysql.curd.user_subscribe import sql_update_user_subscribe, sql_get_user_subscribe, sql_add_user_subscribe
-from utils.auto_email import create_sender
+from utils.auto_email import create_sender,create_html_message
 
 router = APIRouter()
 
@@ -36,11 +36,7 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
 async def send_email():
     f = create_sender()
 
-    message = MessageSchema(
-        subject="Seize your chance! - see what's the Grant opportunities recommendation ",
-        recipients=['gongsakura@yahoo.com'],  # List of recipients, as many as you can pass
-        body='This is an test email',
-        subtype="plain"
-    )
+    message = create_html_message([],['gongsakura@yahoo.com'
+                                      ])
 
     await f.send_message(message)
