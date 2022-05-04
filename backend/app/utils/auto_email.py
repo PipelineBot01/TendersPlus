@@ -56,7 +56,7 @@ def create_html_message(docs: list, recipients: list):
     {' '.join([create_html_doc(doc) for doc in docs])}
     </body>
     """
-
+ 
     return MessageSchema(
         subject="Seize your chance! - see what's the Grant opportunities recommendation ",
         recipients=recipients,

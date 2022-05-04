@@ -57,7 +57,7 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(seconds=10, timezone='Asia/Hong_Kong'), delay=True)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=True)
 async def send_recommendation():
     data = settings.USER_INFO_DF
     print('send_recommendation start')
@@ -76,7 +76,7 @@ async def send_recommendation():
                     docs.append(doc)
             sender = create_sender()
             message = create_html_message(docs[:3], ['gongsakura@yahoo.com'])
-            await sender(message)
+            await sender.send_message(message)
     else:
         print(data)
         print('skip send_recommendation')
