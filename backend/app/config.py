@@ -1,6 +1,6 @@
 from datetime import timedelta
 from pydantic import BaseSettings
-
+import pandas as pd
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -47,7 +47,7 @@ class Settings(BaseSettings):
     # RECORD ALL USER
     USER_INFO = []
     USER_ACTION = []
-    USER_INFO_DF = None
+    USER_INFO_DF: pd.DataFrame = None
     ADMIN_USER_TOKEN: str
 
     UNIVERSITIES = ['Australian National University', 'University of Canberra', 'Australian Catholic University',
