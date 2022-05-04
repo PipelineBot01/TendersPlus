@@ -28,7 +28,12 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
             tags = [i.name for i in sql_get_user_tag(email=user.email, n=user.n_tag, session=db)]
             research_fields = [{'field': i.field_id, 'sub_field': []} for i in
                                sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)]
+
             user_subscribe = sql_get_user_subscribe(email=data.email, session=db)
+            if user_subscribe is None:
+                user_subscribe = sql_add_user_subscribe(email=data.email,session=db)
+                db.commit()
+
             favourite_tenders = sql_get_user_favourite(email=data.email, session=db)
             return {'code': 200, 'data': {'access_token': access_token,
                                           'first_name': user.first_name,
