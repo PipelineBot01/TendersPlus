@@ -20,7 +20,7 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
     update = {'status': data.status}
     try:
         user_subscribe = sql_get_user_subscribe(email=email, session=db)
-        sql_update_user_subscribe(user_subscribe, update, db)
+        sql_update_user_subscribe(user_subscribe, update)
         db.commit()
         return {'code': 200, 'data': ''}
     except Exception as e:
