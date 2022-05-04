@@ -47,7 +47,7 @@ class Settings(BaseSettings):
     # RECORD ALL USER
     USER_INFO = []
     USER_ACTION = []
-    USER_INFO_DF: pd.DataFrame = None
+    USER_INFO_DF: dict = None
     ADMIN_USER_TOKEN: str
 
     UNIVERSITIES = ['Australian National University', 'University of Canberra', 'Australian Catholic University',
