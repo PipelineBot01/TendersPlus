@@ -49,7 +49,6 @@ async def get_all_user_info():
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
-                    print('settings.USER_INFO_DF', settings.USER_INFO_DF)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
