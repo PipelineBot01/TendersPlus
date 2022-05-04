@@ -2922,3 +2922,1885 @@ Traceback (most recent call last):
     self._reader = parsers.TextReader(src, **kwds)
   File "pandas/_libs/parsers.pyx", line 540, in pandas._libs.parsers.TextReader.__cinit__
 pandas.errors.EmptyDataError: No columns to parse from file
+To git@github.com:PipelineBot01/TendersPlus.git
+   2ac37ee..0d5c19a  master -> master
+2022-04-29 15:39:30,057    INFO:     Started server process [18421]
+2022-04-29 15:39:30,059    INFO:     Waiting for application startup.
+2022-04-29 15:39:32,653    INFO:     Application startup complete.
+2022-04-29 15:39:32,654    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+2022-04-29 15:55:56,034    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 18:16:52,679    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 18:16:55,498    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:08:44,877    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:09:35,318    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:09:52,178    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:27:18,850    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:28:58,398    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:29:19,341    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:35:36,975    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:46:01,707    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 21:46:11,995    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:03:36,114    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:04:07,416    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:05:02,186    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:05:29,257    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:08:26,267    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:08:34,637    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:09:42,994    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:38:16,961    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:38:23,945    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:39:41,450    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 22:40:11,359    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 23:40:43,876    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-29 23:41:48,779    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-30 00:05:11,619    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-30 00:05:26,688    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-30 00:05:51,120    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-04-30 00:07:28,948    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-04-30 00:19:29 CST)" was missed by 0:00:19.886709
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-04-30 00:29:29 CST)" was missed by 0:00:06.093499
+2022-04-30 00:28:41,871    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-04-30 05:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-04-30 07:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-01 05:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-01 07:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+2022-05-01 19:51:33,368    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    return []
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-05-01 19:51:34,144    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    return []
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-05-01 19:51:38,927    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    return []
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-05-01 19:56:54,078    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    return []
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+2022-05-01 19:57:06,070    ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/protocols/http/h11_impl.py", line 373, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 228, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.6/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "main.py", line 45, in get_hot_tenders
+    return {'code': 200, 'data': reco_process.get_hot_tenders()}
+  File "/home/TendersPlus/matcher/auto_reco/postprocess.py", line 82, in get_hot_tenders
+    return []
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/generic.py", line 5137, in __getattr__
+    return object.__getattribute__(self, name)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/accessor.py", line 187, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/accessors.py", line 480, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-02 05:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-02 07:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-03 05:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-05-03 03:49:29 CST)" was missed by 0:00:02.625641
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-03 07:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-05-03 05:49:29 CST)" was missed by 0:00:02.685537
+Job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-05-03 21:19:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib64/python3.6/http/client.py", line 1346, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.6/http/client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.6/http/client.py", line 276, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 786, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/usr/local/lib/python3.6/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.6/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib64/python3.6/http/client.py", line 1346, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.6/http/client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.6/http/client.py", line 276, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 25, in update_researchers_pool
+    ru.update()
+  File "/home/TendersPlus/matcher/researcher/update/researcher_updater.py", line 87, in update
+    self.__new_reg_info = get_data()
+  File "/home/TendersPlus/matcher/db/loadjson.py", line 10, in get_data
+    response = requests.get(url, headers={'X-TOKEN': '%Ef0-b2jv[3;]]`1`*124cvBsp[lAsc;'})
+  File "/usr/local/lib/python3.6/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.6/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-04 05:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-05-04 03:49:29 CST)" was missed by 0:00:02.733003
+/home/TendersPlus/matcher/tenders/clean/data_clean.py:36: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  input_df['id'] = 'Grants' + input_df['GO ID']
+Job "update_tenders_pool (trigger: interval[2:00:00], next run at: 2022-05-04 07:39:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/home/TendersPlus/matcher/scheduler/__init__.py", line 17, in update_tenders_pool
+    tu.update()
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 227, in update
+    new_info_df = self.update_info(raw_remain_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/update/tenders_updater.py", line 63, in update_info
+    new_info_df = data_clean(new_data_df, overwrite)
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in data_clean
+    lambda x: extract_time(x))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 3983, in map
+    new_values = super()._map_values(arg, na_action=na_action)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/base.py", line 1160, in _map_values
+    new_values = map_f(values, mapper)
+  File "pandas/_libs/lib.pyx", line 2403, in pandas._libs.lib.map_infer
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 62, in <lambda>
+    lambda x: extract_time(x))
+  File "/home/TendersPlus/matcher/tenders/clean/data_clean.py", line 22, in extract_time
+    result = re.findall('(\d+-[a-zA-Z]+-\d+)', row)
+  File "/usr/lib64/python3.6/re.py", line 222, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+Run time of job "update_researchers_pool (trigger: interval[0:10:00], next run at: 2022-05-04 05:49:29 CST)" was missed by 0:00:02.596527

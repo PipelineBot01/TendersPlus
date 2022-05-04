@@ -663,3 +663,759 @@ insert 0 records
 2022-04-27 00:30:35.316356 -- done update
 *********** start update raw_grant_opened **********
 2022-04-27 01:29:28.882751 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-27 01:29:57.452347 -- done update
+*********** start update raw_grant_all **********
+2022-04-27 01:29:57.452370 -- start update
+update 138 records
+insert 0 records
+2022-04-27 01:30:06.079932 -- done update
+*********** start update raw_grant_opened **********
+2022-04-27 02:29:28.882743 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-27 02:29:45.861102 -- done update
+*********** start update raw_grant_all **********
+2022-04-27 02:29:45.861124 -- start update
+update 138 records
+insert 0 records
+2022-04-27 02:29:55.027344 -- done update
+*********** start update raw_grant_opened **********
+2022-04-28 00:29:28.887613 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5615
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-28 00:30:00.203500 -- done update
+*********** start update raw_grant_all **********
+2022-04-28 00:30:00.203526 -- start update
+update 136 records
+insert 1 records
+2022-04-28 00:30:09.489613 -- done update
+*********** start update raw_grant_opened **********
+2022-04-28 01:29:28.885800 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-28 01:29:48.661595 -- done update
+*********** start update raw_grant_all **********
+2022-04-28 01:29:48.661616 -- start update
+update 137 records
+insert 0 records
+2022-04-28 01:29:58.094786 -- done update
+*********** start update raw_grant_opened **********
+2022-04-28 02:29:28.884815 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-28 02:29:51.594920 -- done update
+*********** start update raw_grant_all **********
+2022-04-28 02:29:51.594941 -- start update
+update 137 records
+insert 0 records
+2022-04-28 02:30:00.508131 -- done update
+*********** start update raw_grant_opened **********
+2022-04-29 00:29:28.889935 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-29 00:29:52.728808 -- done update
+*********** start update raw_grant_all **********
+2022-04-29 00:29:52.730557 -- start update
+update 134 records
+insert 0 records
+2022-04-29 00:30:01.369082 -- done update
+*********** start update raw_grant_opened **********
+2022-04-29 01:29:28.885301 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-29 01:29:48.395878 -- done update
+*********** start update raw_grant_all **********
+2022-04-29 01:29:48.395901 -- start update
+update 134 records
+insert 0 records
+2022-04-29 01:29:57.594322 -- done update
+*********** start update raw_grant_opened **********
+2022-04-29 02:29:28.882932 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-29 02:29:44.012646 -- done update
+*********** start update raw_grant_all **********
+2022-04-29 02:29:44.012669 -- start update
+update 134 records
+insert 0 records
+2022-04-29 02:29:52.621588 -- done update
+*********** start update raw_grant_opened **********
+2022-04-30 00:29:28.883946 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Generate go info GO5178
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-04-30 00:29:38.796357 -- done update
+*********** start update raw_grant_all **********
+2022-04-30 00:29:38.796381 -- start update
+update 14 records
+insert 1 records
+2022-04-30 00:29:41.472348 -- done update
+*********** start update raw_grant_opened **********
+2022-04-30 01:29:28.886352 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-30 01:29:34.090469 -- done update
+*********** start update raw_grant_all **********
+2022-04-30 01:29:34.090491 -- start update
+update 15 records
+insert 0 records
+2022-04-30 01:29:36.436851 -- done update
+*********** start update raw_grant_opened **********
+2022-04-30 02:29:28.886124 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-04-30 02:29:33.798893 -- done update
+*********** start update raw_grant_all **********
+2022-04-30 02:29:33.798915 -- start update
+update 15 records
+insert 0 records
+2022-04-30 02:29:36.690237 -- done update
+*********** start update raw_grant_opened **********
+2022-05-01 00:29:28.920194 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Generate go info GO3880
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-05-01 00:29:37.444749 -- done update
+*********** start update raw_grant_all **********
+2022-05-01 00:29:37.444770 -- start update
+update 15 records
+insert 0 records
+2022-05-01 00:29:39.827066 -- done update
+*********** start update raw_grant_opened **********
+2022-05-01 01:29:28.887954 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-01 01:29:33.765511 -- done update
+*********** start update raw_grant_all **********
+2022-05-01 01:29:33.765535 -- start update
+update 15 records
+insert 0 records
+2022-05-01 01:29:36.175100 -- done update
+*********** start update raw_grant_opened **********
+2022-05-01 02:29:28.887985 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-01 02:29:33.097941 -- done update
+*********** start update raw_grant_all **********
+2022-05-01 02:29:33.097959 -- start update
+update 15 records
+insert 0 records
+2022-05-01 02:29:35.692124 -- done update
+*********** start update raw_grant_opened **********
+2022-05-02 00:29:28.882698 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-02 00:29:34.050091 -- done update
+*********** start update raw_grant_all **********
+2022-05-02 00:29:34.050114 -- start update
+update 15 records
+insert 0 records
+2022-05-02 00:29:36.409697 -- done update
+*********** start update raw_grant_opened **********
+2022-05-02 01:29:28.882770 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-02 01:29:35.946534 -- done update
+*********** start update raw_grant_all **********
+2022-05-02 01:29:35.946554 -- start update
+update 15 records
+insert 0 records
+2022-05-02 01:29:37.701029 -- done update
+*********** start update raw_grant_opened **********
+2022-05-02 02:29:28.882783 -- start update
+collecting urls
+page 1 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-02 02:29:33.265507 -- done update
+*********** start update raw_grant_all **********
+2022-05-02 02:29:33.265531 -- start update
+update 15 records
+insert 0 records
+2022-05-02 02:29:35.721232 -- done update
+*********** start update raw_grant_opened **********
+2022-05-03 00:29:28.882691 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Generate go info GO5601
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5378
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5598
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4279
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5414
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5528
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5602
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5619
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5084
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5454
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4749
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5577
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5465
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4218
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5459
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5443
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5579
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5448
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5603
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5563
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5590
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5502
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5613
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5615
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5527
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5370
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5359
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4215
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4863
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4265
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO3877
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4630
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4865
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4491
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5116
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4778
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5294
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5344
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4899
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5353
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5336
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5337
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5339
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5338
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5485
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5324
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4785
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5552
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5570
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5562
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5322
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5481
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5553
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5550
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5568
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5567
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5600
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5611
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5375
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5543
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5578
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5569
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5422
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5512
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5050
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4104
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5420
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5496
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5027
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO1337
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5326
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5230
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO3427
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5484
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5201
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5254
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4966
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO3069
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5054
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4984
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4985
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4558
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5067
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5304
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5214
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5320
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO3141
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4180
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4149
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4992
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5113
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4344
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO356
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO358
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4928
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4733
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5102
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO90
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4836
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5267
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO275
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO247
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4147
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO108
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO276
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4916
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO110
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO111
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4192
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4193
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4195
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO2444
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO113
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO1837
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO1814
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO224
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5152
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO4877
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info GO5499
+*******  insert tender info database *********
+*******  finish tender info database *********
+Saving complete
+Saving errorStuff complete
+2022-05-03 00:35:56.582610 -- done update
+*********** start update raw_grant_all **********
+2022-05-03 00:35:56.582631 -- start update
+update 133 records
+insert 1 records
+2022-05-03 00:36:05.400862 -- done update
+*********** start update raw_grant_opened **********
+2022-05-03 01:29:28.882727 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-03 01:29:51.489724 -- done update
+*********** start update raw_grant_all **********
+2022-05-03 01:29:51.489743 -- start update
+update 134 records
+insert 0 records
+2022-05-03 01:29:59.800676 -- done update
+*********** start update raw_grant_opened **********
+2022-05-03 02:29:28.882738 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+save gos Link finished
+Parsing links
+Saving complete
+Saving errorStuff complete
+2022-05-03 02:29:46.425643 -- done update
+*********** start update raw_grant_all **********
+2022-05-03 02:29:46.425666 -- start update
+update 134 records
+insert 0 records
+2022-05-03 02:29:55.347407 -- done update
+*********** start update raw_grant_opened **********
+2022-05-04 00:29:28.882744 -- start update
+collecting urls
+page 1 finished
+page 2 finished
+page 3 finished
+page 4 finished
+page 5 finished
+page 6 finished
+page 7 finished
+page 8 finished
+page 9 finished
+page 10 finished
+save gos Link finished
+Parsing links
+Generate go info GO5614
+*******  insert tender info database *********
+*******  finish tender info database *********
+Generate go info
