@@ -6,6 +6,7 @@ from db.mysql.curd.user import sql_get_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field, sql_add_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag, sql_add_user_tag
 from db.mysql.curd.user_favourite import sql_get_user_favourite
+from db.mysql.curd.user_subscribe import sql_get_user_subscribe
 
 from models.user import ProfileModel
 from config import settings
@@ -33,6 +34,7 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
 
             user_favourite_tenders = sql_get_user_favourite(email=user.email, session=db)
             data['favourite'] = [i.id for i in user_favourite_tenders]
+            data['subscribe_status'] = sql_get_user_subscribe(email=user.email, session=db) or 0
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
@@ -47,7 +49,6 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
         if user:
             # remove duplicate
             payload.research_fields = list(set(payload.research_fields))
-
 
             # update research fields
             research_fields = sql_get_user_research_field(email=email, n=user.n_research_field, session=db)

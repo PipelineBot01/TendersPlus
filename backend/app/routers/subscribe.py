@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from models.user import SubscribeModel
 from dependencies import check_access_token, get_db
-from db.mysql.curd.user_subscribe import sql_update_user_subscribe, sql_get_user_subscribe
+from db.mysql.curd.user_subscribe import sql_update_user_subscribe, sql_get_user_subscribe, sql_add_user_subscribe
 from utils.auto_email import sender
 
 router = APIRouter()
@@ -20,6 +20,9 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
     update = {'status': data.status}
     try:
         user_subscribe = sql_get_user_subscribe(email=email, session=db)
+        if user_subscribe is None:
+            user_subscribe = sql_add_user_subscribe(email=email, session=db)
+
         sql_update_user_subscribe(user_subscribe, update)
         db.commit()
         return {'code': 200, 'data': ''}
