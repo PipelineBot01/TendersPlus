@@ -2,6 +2,22 @@ from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from config import settings
 
 
+def create_html_division(divisions: str):
+    return ' '.join([
+        f'''
+        <span style="
+        color:#999; 
+        padding:4px 8px; 
+        font-weight:600; 
+        color:#d4380d;
+        background:#fff2e8;
+        border-radius: 2px;
+        border: 1px solid #ffbb96;">
+        {d.capitalize()}
+        </span>
+        '''
+        for d in divisions.split('/') if d])
+
 
 def create_html_doc(doc: dict):
     return f"""
@@ -9,23 +25,23 @@ def create_html_doc(doc: dict):
 
     <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:800px">
     <tbody>
-        <tr>
+        <tr  style=" height:48px">
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Close Date &amp; Time:&nbsp;</strong></span></td>
             <td style="width:450px"><span style="color:#999999">{doc['Close Date & Time']}</span></td>
         </tr>
-        <tr>
+        <tr style=" height:48px">
             <td style="width:141px">
             <p style="text-align:right"><span style="color:#999999"><strong>Location:&nbsp;</strong></span></p>
             </td>
             <td style="width:450px"><span style="color:#999999">{doc['Location']}</span></td>
         </tr>
-        <tr>
+        <tr style=" height:48px">
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Divisions:&nbsp;</strong></span></td>
-            <td style="width:450px"><span style="color:#999999">{doc['division']}</span></td>
+            <td style="width:450px">{create_html_division(doc['division'])}</td>
         </tr>
-        <tr>
+        <tr style=" height:48px">
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Keywords:&nbsp;</strong></span></td>
-            <td style="width:450px"><span style="color:#999999">{' '.join(doc['tags'].split(' ')[:5])}</span></td>
+            <td style="width:450px"><span style="color:#999999">{', '.join([t.capitalize() for t in doc['tags'].split(' ')[:5] if t])}</span></td>
         </tr>
     </tbody>
     </table>
@@ -66,6 +82,7 @@ conf = ConnectionConfig(
     MAIL_SSL=False,
     USE_CREDENTIALS=True
 )
+
 
 def create_sender():
     global conf
