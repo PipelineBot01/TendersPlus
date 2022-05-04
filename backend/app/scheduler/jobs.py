@@ -77,7 +77,11 @@ async def send_recommendation():
                 if doc:
                     docs.append(doc)
             sender = create_sender()
-            message = create_html_message(docs[:3], ['u7201445@anu.edu.au', 'u7078049@anu.edu.au','u7004563@anu.edu.au','u7190388@anu.edu.au'])
+            message = create_html_message(docs[:3],
+                                          ['u7201445@anu.edu.au',
+                                           'u7078049@anu.edu.au',
+                                           'u7004563@anu.edu.au',
+                                           'u7190388@anu.edu.au'])
             await sender.send_message(message)
     else:
         print('skip send_recommendation')
