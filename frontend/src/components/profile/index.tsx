@@ -18,12 +18,12 @@ import './index.css'
 
 const { Option, OptGroup } = Select
 export default function Profile():JSX.Element{
- 
+  const user = useAppSelector((state)=>state.user)
   const dispatch = useAppDispatch()
   const [form] = Form.useForm()
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [subscribeChecked, setSubscribeChecked] = useState(false)
-  const user = useAppSelector((state)=>state.user)
+  const [subscribeChecked, setSubscribeChecked] = useState(Boolean(user.subscribe_status))
+ 
 
   useEffect(()=>{
     const research_fields_data = user.research_fields.map(e=>{ 
@@ -65,13 +65,16 @@ export default function Profile():JSX.Element{
   }
   const handleSubcribeChange = (checked:boolean)=>{
     const status = checked ? 1 : 0
+    console.log(status)
+    
     subscribeAPI(status).then(()=>{
       message.success('Updated!', 3)
+      setSubscribeChecked(checked)
+      setSubscribeStatus(status)
     }, error=>{
       message.error(error?.msg, 3)
     })
-    setSubscribeChecked(checked)
-    setSubscribeStatus(status)
+
   }
   const renderResearchFieldsOptions = ()=>{
     const arr = new Array<ReactElement>()

@@ -9,8 +9,9 @@ header{
     z-index: 999;
 }
 .dashboard-header{
-width:auto;
-position: relative !important;
+    width:auto;
+    position: relative !important;
+    z-index: 0 !important;
 }
 nav{
     height: 100%; 

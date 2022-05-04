@@ -122,10 +122,10 @@ export default function SearchResult():JSX.Element{
                 className='load-more-btn'
                 style={{
                   fontSize:'0.8rem',
-                  fontWeight:'bold',
-                  borderRadius:'2rem',
+                  fontWeight:'500',
+        
                   margin:'0.8rem 0',
-                  border:'3px solid #9e9c9c',
+                  border:'2px solid #9e9c9c',
                   color:'#838181', 
                   padding: '0.24rem 1rem'
                 }}

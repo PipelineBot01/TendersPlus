@@ -4,7 +4,7 @@ export default function Footer():JSX.Element{
   return(
     <>
       <footer>
-        THIS IS THE FOOTER
+        TendersPlus 2022
       </footer>
     </>
   ) 
