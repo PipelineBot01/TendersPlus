@@ -24,12 +24,13 @@ class Settings(BaseSettings):
     MYSQL_DATABASE: str
 
     # smtp server
-    MAIL_USERNAME:str
-    MAIL_PASSWORD:str
+    MAIL_USERNAME: str
+    MAIL_PASSWORD: str
 
     # use to filter out tenders
     EXPIRING_DATE_THRESHOLD = timedelta(weeks=8)
     LATEST_DATE_THRESHOLD = timedelta(weeks=8)
+    SEND_EMAIL_DATE_THRESHOLD = timedelta(weeks=1)
 
     # app server
     APP_HOST: str = 'localhost'
@@ -37,7 +38,6 @@ class Settings(BaseSettings):
     APP_PORT: int = 20220
 
     DATETIME_FORMAT = '%Y-%m-%d'
-
 
     LATEST_OPPORTUNITIES: dict = None
     HOT_OPPORTUNITIES: dict = None
