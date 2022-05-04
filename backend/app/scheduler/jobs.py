@@ -76,7 +76,7 @@ async def send_recommendation():
                 if doc:
                     docs.append(doc)
             sender = create_sender()
-            message = create_html_message(docs, ['gongsakura@yahoo.com'])
+            message = create_html_message(docs[:3], ['gongsakura@yahoo.com'])
             await sender(message)
     else:
         print('skip send_recommendation')
