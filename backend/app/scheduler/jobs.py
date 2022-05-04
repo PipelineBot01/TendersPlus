@@ -48,7 +48,6 @@ async def get_all_user_info():
                     data = pd.merge(df_all_user, data, how='inner', on='email')
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
-
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
 
 
@@ -58,7 +57,7 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=False)
 async def send_recommendation():
     data = settings.USER_INFO_DF
     if data:
