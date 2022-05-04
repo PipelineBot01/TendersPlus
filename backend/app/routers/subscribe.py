@@ -26,7 +26,7 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
     except Exception as e:
         print(e)
         db.rollback()
-        raise HTTPException(500, e)
+        raise HTTPException(500, str(e))
 
 
 @router.post('/send')
