@@ -1,17 +1,6 @@
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from config import settings
 
-conf = ConnectionConfig(
-    MAIL_USERNAME=settings.MAIL_USERNAME,
-    MAIL_PASSWORD=settings.MAIL_PASSWORD,
-    MAIL_FROM=settings.MAIL_USERNAME,
-    MAIL_PORT=587,
-    MAIL_SERVER="smtp.gmail.com",
-    MAIL_FROM_NAME="TendersPlus",
-    MAIL_TLS=True,
-    MAIL_SSL=False,
-    USE_CREDENTIALS=True
-)
 
 
 def create_html_doc(doc: dict):
@@ -45,25 +34,38 @@ def create_html_doc(doc: dict):
 
 
 def create_html_message(docs: list, recipients: list):
+    html_docs = ' '.join([create_html_doc(doc) for doc in docs])
+    print('html docs',html_docs)
     body = f"""
-    <body>
+ 
     <p style="text-align:center"><a href="http://110.40.137.110/tendersplus/" target="_blank">view more on tendersplus</a></p>
 
     <h1 style="text-align:center"><span style="color:#1abc9c"><strong><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:28px">Find your opportunities &amp; Seize your chance !</span></span></strong></span></h1>
 
     <p style="text-align:center">&nbsp;</p>
+    {html_docs}
 
-    {' '.join([create_html_doc(doc) for doc in docs])}
-    </body>
     """
- 
+
     return MessageSchema(
         subject="Seize your chance! - see what's the Grant opportunities recommendation ",
         recipients=recipients,
-        html=body,
+        body=body,
         subtype='html'
     )
 
+
+conf = ConnectionConfig(
+    MAIL_USERNAME=settings.MAIL_USERNAME,
+    MAIL_PASSWORD=settings.MAIL_PASSWORD,
+    MAIL_FROM=settings.MAIL_USERNAME,
+    MAIL_PORT=587,
+    MAIL_SERVER="smtp.gmail.com",
+    MAIL_FROM_NAME="TendersPlus",
+    MAIL_TLS=True,
+    MAIL_SSL=False,
+    USE_CREDENTIALS=True
+)
 
 def create_sender():
     global conf
