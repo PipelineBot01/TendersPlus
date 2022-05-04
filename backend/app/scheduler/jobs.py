@@ -63,18 +63,19 @@ async def get_all_user_action():
 @job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=False)
 async def send_recommendation():
     data = settings.USER_INFO_DF
-    user = data[data['email'] == 'ryan@anu.com']
-    response = requests.post('http://localhost:20222/get_reco_tenders',
-                             json={'id': 'ryan@anu.com', 'divisions': user['divisions'],
-                                   'tags': user['tags']})
-    if response.status_code == 200:
-        content = json.loads(response.content)
-        GO_ID = content['data']
-        docs = []
-        for i in GO_ID:
-            doc = await db_get_tenders_from_history_by_id(i)
-            if doc:
-                docs.append(doc)
-        sender = create_sender()
-        message = create_html_message(docs, ['gongsakura@yahoo.com'])
-        await sender(message)
+    if data:
+        user = data[data['email'] == 'ryan@anu.com']
+        response = requests.post('http://localhost:20222/get_reco_tenders',
+                                 json={'id': 'ryan@anu.com', 'divisions': user['divisions'],
+                                       'tags': user['tags']})
+        if response.status_code == 200:
+            content = json.loads(response.content)
+            GO_ID = content['data']
+            docs = []
+            for i in GO_ID:
+                doc = await db_get_tenders_from_history_by_id(i)
+                if doc:
+                    docs.append(doc)
+            sender = create_sender()
+            message = create_html_message(docs, ['gongsakura@yahoo.com'])
+            await sender(message)
