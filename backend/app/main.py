@@ -57,7 +57,7 @@ async def startup():
         if j['delay'] is False:
             await j['func']()
 
-    # async_scheduler.start()
+    async_scheduler.start()
 
 
 # setup shutdown event
