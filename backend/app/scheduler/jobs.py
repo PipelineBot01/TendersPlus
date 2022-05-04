@@ -49,6 +49,7 @@ async def get_all_user_info():
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
+                    print(settings.USER_INFO_DF)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
@@ -60,6 +61,7 @@ async def get_all_user_action():
 @job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=False)
 async def send_recommendation():
     data = settings.USER_INFO_DF
+
     if data:
         user = data['ryan@anu.com']
         response = requests.post('http://localhost:20222/get_reco_tenders',
@@ -76,3 +78,5 @@ async def send_recommendation():
             sender = create_sender()
             message = create_html_message(docs, ['gongsakura@yahoo.com'])
             await sender(message)
+    else:
+        print('skip send_recommendation')
