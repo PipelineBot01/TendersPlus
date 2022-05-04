@@ -57,15 +57,17 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=True)
+@job(id='send_recommendation', trigger=IntervalTrigger(seconds=10, timezone='Asia/Hong_Kong'), delay=True)
 async def send_recommendation():
     data = settings.USER_INFO_DF
     print('send_recommendation start')
     if data:
         user = data['ryan@anu.com']
+        print(user['divisions'],user['tags'])
         response = requests.post('http://localhost:20222/get_reco_tenders',
                                  json={'id': 'ryan@anu.com', 'divisions': user['divisions'],
                                        'tags': user['tags']})
+
         if response.status_code == 200:
             content = json.loads(response.content)
             GO_ID = content['data']
