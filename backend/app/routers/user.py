@@ -34,7 +34,12 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
 
             user_favourite_tenders = sql_get_user_favourite(email=user.email, session=db)
             data['favourite'] = [i.id for i in user_favourite_tenders]
-            data['subscribe_status'] = sql_get_user_subscribe(email=user.email, session=db) or 0
+
+            user_subscribe = sql_get_user_subscribe(email=user.email, session=db) or 0
+            if user_subscribe:
+                user_subscribe = user_subscribe.status
+
+            data['subscribe_status'] = user_subscribe
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
