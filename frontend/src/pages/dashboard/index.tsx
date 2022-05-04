@@ -107,7 +107,7 @@ export default function Dashboard():JSX.Element{
           </Menu.Item>
           <Divider type='horizontal' style={{margin:'1rem 0'}}/>
           <Menu.Item key="analysis" onClick={()=>navigate('/dashboard/analysis')} icon={<FontAwesomeIcon icon={faCircleNodes} />}>
-						AI analysis
+						Auto Match
           </Menu.Item>
           <Menu.Item key="chatty" onClick={()=>navigate('/dashboard/chatty')} icon={<FontAwesomeIcon icon={faComment} />}>
 						Chatty

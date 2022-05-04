@@ -108,11 +108,13 @@
         opacity: 1; 
     }
 }
-
-.dashboard-sider .sider-menu{
-    font-weight: 600;
+.dashboard-sider .sider-menu.ant-menu{
+    margin-top: 2.5rem !important;
 }
+
 .dashboard-sider .sider-menu .ant-menu-item{
+    font-weight: 600;
+
     width: 101%;
     padding-left: 2rem !important;
 }
