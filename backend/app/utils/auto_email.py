@@ -5,27 +5,27 @@ from config import settings
 
 def create_html_doc(doc: dict):
     return f"""
-    <h4 style="text-align:center"><strong><a href="{doc['URL']}">{doc['Title']}</a></strong></h4>
+    <h4 style="text-align:center"><strong><a href="{doc['URL']}">{doc['GO ID']} - {doc['Title']}</a></strong></h4>
 
-    <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:600px">
+    <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:800px">
     <tbody>
         <tr>
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Close Date &amp; Time:&nbsp;</strong></span></td>
-            <td style="width:346px"><span style="color:#999999">{doc['Close Date & Time']}</span></td>
+            <td style="width:450px"><span style="color:#999999">{doc['Close Date & Time']}</span></td>
         </tr>
         <tr>
             <td style="width:141px">
             <p style="text-align:right"><span style="color:#999999"><strong>Location:&nbsp;</strong></span></p>
             </td>
-            <td style="width:346px"><span style="color:#999999">{doc['Location']}</span></td>
+            <td style="width:450px"><span style="color:#999999">{doc['Location']}</span></td>
         </tr>
         <tr>
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Divisions:&nbsp;</strong></span></td>
-            <td style="width:346px"><span style="color:#999999">{doc['division']}</span></td>
+            <td style="width:450px"><span style="color:#999999">{doc['division']}</span></td>
         </tr>
         <tr>
             <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Keywords:&nbsp;</strong></span></td>
-            <td style="width:346px"><span style="color:#999999">{' '.join(doc['tags'].split(' ')[:5])}</span></td>
+            <td style="width:450px"><span style="color:#999999">{' '.join(doc['tags'].split(' ')[:5])}</span></td>
         </tr>
     </tbody>
     </table>
@@ -50,7 +50,7 @@ def create_html_message(docs: list, recipients: list):
     return MessageSchema(
         subject="Seize your chance! - see what's the Grant opportunities recommendation ",
         recipients=recipients,
-        body=body,
+        html=body,
         subtype='html'
     )
 
