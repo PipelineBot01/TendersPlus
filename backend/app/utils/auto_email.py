@@ -35,7 +35,7 @@ def create_html_doc(doc: dict):
 
 def create_html_message(docs: list, recipients: list):
     html_docs = ' '.join([create_html_doc(doc) for doc in docs])
-    print('html docs',html_docs)
+
     body = f"""
  
     <p style="text-align:center"><a href="http://110.40.137.110/tendersplus/" target="_blank">view more on tendersplus</a></p>

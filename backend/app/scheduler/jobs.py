@@ -49,7 +49,8 @@ async def get_all_user_info():
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
-                    print('settings.USER_INFO_DF',settings.USER_INFO_DF)
+                    print('settings.USER_INFO_DF', settings.USER_INFO_DF)
+
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
 async def get_all_user_action():
@@ -63,10 +64,10 @@ async def send_recommendation():
     print('send_recommendation start')
     if data:
         user = data['ryan@anu.com']
-        print(user['divisions'],user['tags'])
+
         response = requests.post('http://localhost:20222/get_reco_tenders',
                                  json={'id': 'ryan@anu.com', 'divisions': user['divisions'],
-                                       'tags': user['tags']})
+                                       'tags': (user['tags'] or [])})
 
         if response.status_code == 200:
             content = json.loads(response.content)
@@ -77,8 +78,7 @@ async def send_recommendation():
                 if doc:
                     docs.append(doc)
             sender = create_sender()
-            message = create_html_message(docs[:3], ['gongsakura@yahoo.com','u7078049@anu.edu.au'])
+            message = create_html_message(docs[:3], ['gongsakura@yahoo.com', 'u7078049@anu.edu.au'])
             await sender.send_message(message)
     else:
-        print(data)
         print('skip send_recommendation')
