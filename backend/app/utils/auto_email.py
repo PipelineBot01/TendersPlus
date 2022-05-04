@@ -46,6 +46,7 @@ def create_html_doc(doc: dict):
 
 def create_html_message(docs: list, recipients: list):
     body = f"""
+    <body>
     <p style="text-align:center"><a href="http://110.40.137.110/tendersplus/" target="_blank">view more on tendersplus</a></p>
 
     <h1 style="text-align:center"><span style="color:#1abc9c"><strong><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:28px">Find your opportunities &amp; Seize your chance !</span></span></strong></span></h1>
@@ -53,13 +54,14 @@ def create_html_message(docs: list, recipients: list):
     <p style="text-align:center">&nbsp;</p>
 
     {' '.join([create_html_doc(doc) for doc in docs])}
+    </body>
     """
 
     return MessageSchema(
         subject="Seize your chance! - see what's the Grant opportunities recommendation ",
         recipients=recipients,
+        body=body,
         subtype='html'
-        , body=body
     )
 
 
