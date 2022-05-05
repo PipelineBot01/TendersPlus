@@ -31070,3 +31070,565 @@ Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
 2022-05-05 18:00:29,736    INFO:     ::1:45244 - "POST /get_reco_tenders HTTP/1.1" 200 OK
 git pulling
 Updating 7e77d2a..437dafa
+[master 28cb16b] update model
+ 4 files changed, 1067 insertions(+), 277 deletions(-)
+run matcher
+initial update task
+2022-05-05 18:06:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 18:06:45 ------ end update researchers pool
+{'id': 'jennytestone@test.com', 'divisions': ['d_14', 'd_15'], 'tags': ['accounting', 'bank', 'cash', 'contingency', 'design', 'economic success', 'endorsements', 'financial performance', 'gold standard', 'income tax']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4504', 'GO1684', 'GO4505', 'GO3393', 'GO4835', 'GO2383', 'GO363', 'GO361', 'GO1687', 'GO4716', 'GO3201', 'GO704', 'GO1418', 'GO1433', 'GO389', 'GO709', 'GO366', 'GO208', 'GO365', 'GO390', 'GO387', 'GO1590', 'GO1420', 'GO873', 'GO364', 'GO103', 'GO112', 'GO4574', 'GO3792', 'GO870', 'GO2093', 'GO5256', 'GO3237', 'GO1105', 'GO4692', 'GO4666', 'GO5038', 'GO3277', 'GO4689', 'GO204', 'GO1655', 'GO1424', 'GO2902', 'GO2122', 'GO432', 'GO4556', 'GO4978', 'GO4972', 'GO2991', 'GO362', 'GO203', 'GO3635', 'GO3550', 'GO4591', 'GO3173', 'GO993', 'GO986', 'GO4931', 'GO1429', 'GO5037', 'GO4592', 'GO3522', 'GO3093', 'GO5465', 'GO214', 'GO3528', 'GO4453', 'GO49', 'GO1430', 'GO4558', 'GO4286', 'GO5056', 'GO2906', 'GO5374', 'GO279', 'GO1219', 'GO4562', 'GO5453', 'GO4384', 'GO1908', 'GO4564', 'GO4686', 'GO3421', 'GO1426', 'GO5228', 'GO2645', 'GO5361', 'GO2850', 'GO1592', 'GO4188', 'GO4977', 'GO4983', 'GO2385', 'GO1422', 'GO4622', 'GO4195', 'GO545', 'GO1551', 'GO2099', 'GO4068', 'GO4696', 'GO4536', 'GO5076', 'GO2835', 'GO5097', 'GO4500', 'GO2259', 'GO4908', 'GO5499', 'GO4117', 'GO4801', 'GO5254', 'GO4555', 'GO484', 'GO4190', 'GO2156', 'GO5486', 'GO4540', 'GO5242', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO3410', 'GO4990', 'GO2899', 'GO2868', 'GO5147', 'GO5417', 'GO1334', 'GO4575', 'GO4596', 'GO4739', 'GO4846', 'GO692', 'GO641', 'GO3907', 'GO660', 'GO4804', 'GO4642', 'GO5230', 'GO2828', 'GO4266', 'GO2900', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957']
+2022-05-05 18:08:19,902    INFO:     ::1:45822 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 18:21:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 18:21:45 ------ end update researchers pool
+{'id': 'Robert.A@anu.com', 'divisions': ['d_16', 'd_19', 'd_20'], 'tags': ['acculturation', 'community participation', 'community research', 'cultural geography', 'cultural relations', 'digital divide', 'global', 'intercultural learning', 'social identification', 'social networking']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4865', 'GO3720', 'GO3392', 'GO1103', 'GO4677', 'GO5425', 'GO1943', 'GO5307', 'GO4682', 'GO5613', 'GO1281', 'GO5619', 'GO5161', 'GO750', 'GO4582', 'GO3429', 'GO1701', 'GO418', 'GO3550', 'GO4477', 'GO4854', 'GO2383', 'GO2421', 'GO4465', 'GO3053', 'GO5085', 'GO4502', 'GO5528', 'GO5316', 'GO5323', 'GO5268', 'GO4534', 'GO3278', 'GO4651', 'GO4476', 'GO883', 'GO4031', 'GO545', 'GO1147', 'GO2868', 'GO4383', 'GO5056', 'GO3074', 'GO2434', 'GO2093', 'GO3426', 'GO4564', 'GO4166', 'GO3055', 'GO4347', 'GO505', 'GO887', 'GO1337', 'GO234', 'GO4397', 'GO4508', 'GO1392', 'GO3250', 'GO5199', 'GO5201', 'GO1688', 'GO32', 'GO5535', 'GO4794', 'GO2307', 'GO4257', 'GO2162', 'GO546', 'GO4353', 'GO4352', 'GO3021', 'GO3022', 'GO544', 'GO1604', 'GO2731']
+2022-05-05 18:32:14,736    INFO:     ::1:47290 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Robert.A@anu.com', 'divisions': ['d_16', 'd_19', 'd_20'], 'tags': ['acculturation', 'community participation', 'community research', 'cultural geography', 'cultural relations', 'digital divide', 'global', 'intercultural learning', 'social identification', 'social networking']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4865', 'GO3720', 'GO3392', 'GO1103', 'GO4677', 'GO5425', 'GO1943', 'GO5307', 'GO4682', 'GO5613', 'GO1281', 'GO5619', 'GO5161', 'GO750', 'GO4582', 'GO3429', 'GO1701', 'GO418', 'GO3550', 'GO4477', 'GO4854', 'GO2383', 'GO2421', 'GO4465', 'GO3053', 'GO5085', 'GO4502', 'GO5528', 'GO5316', 'GO5323', 'GO5268', 'GO4534', 'GO3278', 'GO4651', 'GO4476', 'GO883', 'GO4031', 'GO545', 'GO1147', 'GO2868', 'GO4383', 'GO5056', 'GO3074', 'GO2434', 'GO2093', 'GO3426', 'GO4564', 'GO4166', 'GO3055', 'GO4347', 'GO505', 'GO887', 'GO1337', 'GO234', 'GO4397', 'GO4508', 'GO1392', 'GO3250', 'GO5199', 'GO5201', 'GO1688', 'GO32', 'GO5535', 'GO4794', 'GO2307', 'GO4257', 'GO2162', 'GO546', 'GO4353', 'GO4352', 'GO3021', 'GO3022', 'GO544', 'GO1604', 'GO2731']
+2022-05-05 18:32:42,614    INFO:     ::1:47328 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'Robert.A@anu.com', 'divisions': ['d_16', 'd_19', 'd_20'], 'tags': ['acculturation', 'community participation', 'community research', 'cultural geography', 'cultural relations', 'digital divide', 'global', 'intercultural learning', 'social identification', 'social networking']}
+[{'id': 'Reg_robert.c@aun.com', 'weight': -0.14192949907235622, 'name': 'Robert C', 'email': 'robert.c@aun.com', 'university': 'Australian National University', 'tag': ['cultural diversity', 'acculturation', 'internal migration', 'community research', 'cultural heritage', 'community participation', 'policy attitude'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'Reg_robert.f@anu.com', 'weight': -0.06388642413487133, 'name': 'Robert F', 'email': 'robert.f@anu.com', 'university': 'Australian National University', 'tag': ['campaign', 'discramination', 'emigration and immigration', 'community participation', 'migration', 'immigrant', 'internal immigration'], 'division': ['LAW AND LEGAL STUDIES', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'Reg_robert.b@anu.com', 'weight': -0.010799938483187521, 'name': 'Robert B', 'email': 'robert.b@anu.com', 'university': 'Australian National University', 'tag': [' "acculturation"', ' "community paticipation"', ' "cultural geography"', ' "cultural relations"', ' "social identification"', '"community research"', ' "social networking"'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'Reg_robert.d@anu.com', 'weight': -0.010799938483187521, 'name': 'Robert D', 'email': 'robert.d@anu.com', 'university': 'Australian National University', 'tag': [' "acculturation"', ' "community paticipation"', ' "cultural geography"', ' "cultural relations"', '"corruption"', '"community research"', '"discrimination"'], 'division': ['LAW AND LEGAL STUDIES', 'STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE']}, {'id': 'Reg_robert.e@anu.com', 'weight': -0.010799938483187521, 'name': 'Robert E', 'email': 'robert.e@anu.com', 'university': 'Australian National University', 'tag': ['"immigrant"', ' "social identification"', '  "global"', '"campaign"', ' "social networking"', ' "intercultural learning"', ' "digital divide"'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'UC_61585ddbd7b0c43ebd755211', 'weight': 0.03477225561083145, 'name': 'Sarvjeet Kaur Chatrath', 'email': '', 'university': 'Canberra', 'tag': ['overtime', 'networking', 'usefulness', 'india', 'workload', 'moral obligations', 'conflict (psychology)', 'banking'], 'division': ['STUDIES IN HUMAN SOCIETY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158612dd7b0c43ebd75523e', 'weight': 0.051857543039223165, 'name': 'Tony Eaton', 'email': 'mailto:Tony.Eaton@canberra.edu.au', 'university': 'Canberra', 'tag': ['garden', 'creative life', 'primary school', 'haiku', 'typewriter', 'cross-cultural understanding', 'skyfall', 'adulthood', 'timeline'], 'division': ['INFORMATION AND COMPUTING', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'UC_6158623fd7b0c43ebd75524c', 'weight': 0.09165207326780388, 'name': 'Caroline Fisher', 'email': '', 'university': 'Canberra', 'tag': ['search engines', 'press releases', 'journalist', 'broadband networks', 'conflict of interest', 'journalists', 'switzerland', 'press secretary', 'news', 'lenses'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'UC_6158825ed7b0c43ebd75538d', 'weight': 0.09509891130324263, 'name': 'Jen Webb', 'email': 'mailto:Jen.Webb@canberra.edu.au', 'university': 'Canberra', 'tag': ['gold', 'prose poetry', 'pandemics', 'language', 'hemisphere', 'detective fiction', 'connectedness', 'poetry', 'ekphrasis', 'leonard cohen'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'UC_61586728d7b0c43ebd755282', 'weight': 0.09753428310664568, 'name': 'Cathy Hope', 'email': 'mailto:Cathy.Hope@canberra.edu.au', 'university': 'Canberra', 'tag': ['film festivals', 'methodology', 'suburban areas', 'radio', 'festival', 'social responsibility', 'playground', 'film censorship', 'resettlement', 'refugee'], 'division': ['STUDIES IN HUMAN SOCIETY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}]
+2022-05-05 18:33:00,985    INFO:     ::1:47354 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-05-05 18:33:26,222    INFO:     ::1:47392 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 18:33:26,253    INFO:     ::1:47396 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 18:36:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 18:36:45 ------ end update researchers pool
+2022-05-05 18:51:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 18:51:45 ------ end update researchers pool
+2022-05-05 19:04:50,151    INFO:     ::1:49334 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:04:50,304    INFO:     ::1:49338 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 19:06:06,008    INFO:     ::1:49428 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:06:06,488    INFO:     ::1:49432 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'jennytestone@test.com', 'divisions': ['d_14', 'd_15'], 'tags': ['accounting', 'bank', 'cash', 'contingency', 'design', 'economic success', 'endorsements', 'financial performance', 'gold standard', 'income tax']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4504', 'GO1684', 'GO4505', 'GO3393', 'GO4835', 'GO2383', 'GO363', 'GO361', 'GO1687', 'GO4716', 'GO3201', 'GO704', 'GO1418', 'GO1433', 'GO389', 'GO709', 'GO366', 'GO208', 'GO365', 'GO390', 'GO387', 'GO1590', 'GO1420', 'GO873', 'GO364', 'GO103', 'GO112', 'GO4574', 'GO3792', 'GO870', 'GO2093', 'GO5256', 'GO3237', 'GO1105', 'GO4692', 'GO4666', 'GO5038', 'GO3277', 'GO4689', 'GO204', 'GO1655', 'GO1424', 'GO2902', 'GO2122', 'GO432', 'GO4556', 'GO4978', 'GO4972', 'GO2991', 'GO362', 'GO203', 'GO3635', 'GO3550', 'GO4591', 'GO3173', 'GO993', 'GO986', 'GO4931', 'GO1429', 'GO5037', 'GO4592', 'GO3522', 'GO3093', 'GO5465', 'GO214', 'GO3528', 'GO4453', 'GO49', 'GO1430', 'GO4558', 'GO4286', 'GO5056', 'GO2906', 'GO5374', 'GO279', 'GO1219', 'GO4562', 'GO5453', 'GO4384', 'GO1908', 'GO4564', 'GO4686', 'GO3421', 'GO1426', 'GO5228', 'GO2645', 'GO5361', 'GO2850', 'GO1592', 'GO4188', 'GO4977', 'GO4983', 'GO2385', 'GO1422', 'GO4622', 'GO4195', 'GO545', 'GO1551', 'GO2099', 'GO4068', 'GO4696', 'GO4536', 'GO5076', 'GO2835', 'GO5097', 'GO4500', 'GO2259', 'GO4908', 'GO5499', 'GO4117', 'GO4801', 'GO5254', 'GO4555', 'GO484', 'GO4190', 'GO2156', 'GO5486', 'GO4540', 'GO5242', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO3410', 'GO4990', 'GO2899', 'GO2868', 'GO5147', 'GO5417', 'GO1334', 'GO4575', 'GO4596', 'GO4739', 'GO4846', 'GO692', 'GO641', 'GO3907', 'GO660', 'GO4804', 'GO4642', 'GO5230', 'GO2828', 'GO4266', 'GO2900', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957']
+2022-05-05 19:06:17,079    INFO:     ::1:49458 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 19:06:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 19:06:45 ------ end update researchers pool
+{'id': 'jennytestone@test.com', 'divisions': ['d_14', 'd_15'], 'tags': ['accounting', 'bank', 'cash', 'contingency', 'design', 'economic success', 'endorsements', 'financial performance', 'gold standard', 'income tax']}
+['GO5156', 'GO5157', 'GO873', 'GO363', 'GO361', 'GO4505', 'GO112', 'GO4574', 'GO3792', 'GO870', 'GO389', 'GO2093', 'GO3173', 'GO704', 'GO366', 'GO709', 'GO208', 'GO365', 'GO3202', 'GO3237', 'GO390', 'GO4692', 'GO4666', 'GO3277', 'GO4689', 'GO204', 'GO1655', 'GO4562', 'GO2902', 'GO2122', 'GO432', 'GO4556', 'GO4978', 'GO4972', 'GO2991', 'GO362', 'GO1687', 'GO4068', 'GO4908', 'GO4801', 'GO3421', 'GO3093', 'GO3201', 'GO1219', 'GO2099', 'GO5097', 'GO4500', 'GO2259', 'GO5499', 'GO3410', 'GO4990', 'GO4558', 'GO2899', 'GO4195', 'GO4977', 'GO4983', 'GO1551', 'GO4622', 'GO4696', 'GO4536', 'GO5076', 'GO2835', 'GO4117', 'GO203', 'GO4540', 'GO5254', 'GO4555', 'GO484', 'GO4190', 'GO2156', 'GO5486', 'GO5242', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO4846', 'GO5147', 'GO5417', 'GO1334', 'GO4575', 'GO4596', 'GO4739', 'GO4804', 'GO692', 'GO641', 'GO3907', 'GO660', 'GO4642', 'GO5230', 'GO2828', 'GO4266', 'GO2900', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO2385']
+2022-05-05 19:12:07,451    INFO:     ::1:49820 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytestone@test.com', 'divisions': ['d_14', 'd_15'], 'tags': ['accounting', 'bank', 'cash', 'contingency', 'design', 'economic success', 'endorsements', 'financial performance', 'gold standard', 'income tax']}
+['GO5156', 'GO5157', 'GO873', 'GO363', 'GO361', 'GO4505', 'GO112', 'GO4574', 'GO3792', 'GO870', 'GO389', 'GO2093', 'GO3173', 'GO704', 'GO366', 'GO709', 'GO208', 'GO365', 'GO3202', 'GO3237', 'GO390', 'GO4692', 'GO4666', 'GO3277', 'GO4689', 'GO204', 'GO1655', 'GO4562', 'GO2902', 'GO2122', 'GO432', 'GO4556', 'GO4978', 'GO4972', 'GO2991', 'GO362', 'GO1687', 'GO4068', 'GO4908', 'GO4801', 'GO3421', 'GO3093', 'GO3201', 'GO1219', 'GO2099', 'GO5097', 'GO4500', 'GO2259', 'GO5499', 'GO3410', 'GO4990', 'GO4558', 'GO2899', 'GO4195', 'GO4977', 'GO4983', 'GO1551', 'GO4622', 'GO4696', 'GO4536', 'GO5076', 'GO2835', 'GO4117', 'GO203', 'GO4540', 'GO5254', 'GO4555', 'GO484', 'GO4190', 'GO2156', 'GO5486', 'GO5242', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO4846', 'GO5147', 'GO5417', 'GO1334', 'GO4575', 'GO4596', 'GO4739', 'GO4804', 'GO692', 'GO641', 'GO3907', 'GO660', 'GO4642', 'GO5230', 'GO2828', 'GO4266', 'GO2900', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO2385']
+2022-05-05 19:18:46,835    INFO:     ::1:50218 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 19:21:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 19:21:45 ------ end update researchers pool
+2022-05-05 19:24:19,861    INFO:     ::1:50564 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:24:19,891    INFO:     ::1:50568 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 19:24:30,467    INFO:     ::1:50598 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:24:30,491    INFO:     ::1:50600 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'jennytesttwo@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO4556', 'GO2122', 'GO4978', 'GO4972', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO1551', 'GO5076', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4540', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO5097', 'GO4500', 'GO4266', 'GO2259', 'GO2900', 'GO1212', 'GO3799', 'GO4562', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:25:12,703    INFO:     ::1:50640 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytesttwo@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO4556', 'GO2122', 'GO4978', 'GO4972', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO1551', 'GO5076', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4540', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO5097', 'GO4500', 'GO4266', 'GO2259', 'GO2900', 'GO1212', 'GO3799', 'GO4562', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:26:04,772    INFO:     ::1:50710 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytesttwo@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO4556', 'GO2122', 'GO4978', 'GO4972', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO1551', 'GO5076', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4540', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO5097', 'GO4500', 'GO4266', 'GO2259', 'GO2900', 'GO1212', 'GO3799', 'GO4562', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:27:02,698    INFO:     ::1:50782 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytesttwo@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO4556', 'GO2122', 'GO4978', 'GO4972', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO1551', 'GO5076', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4540', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO5097', 'GO4500', 'GO4266', 'GO2259', 'GO2900', 'GO1212', 'GO3799', 'GO4562', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:31:34,485    INFO:     ::1:51054 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytesttwo@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO4556', 'GO2122', 'GO4978', 'GO4972', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO1551', 'GO5076', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4540', 'GO4875', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO5097', 'GO4500', 'GO4266', 'GO2259', 'GO2900', 'GO1212', 'GO3799', 'GO4562', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:35:04,954    INFO:     ::1:51280 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 19:36:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 19:36:45 ------ end update researchers pool
+2022-05-05 19:43:14,156    INFO:     ::1:51798 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:43:14,183    INFO:     ::1:51800 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 19:43:35,256    INFO:     ::1:51840 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 19:43:35,284    INFO:     ::1:51846 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'jennytestthree@test.com', 'divisions': ['d_15'], 'tags': ['contigency', 'design', 'ecotourism', 'financial market', 'goods', 'import', 'marketing', 'retail', 'supply chains', 'travel']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4740', 'GO4562', 'GO5547', 'GO5009', 'GO5389', 'GO3669', 'GO4148', 'GO4636', 'GO4521', 'GO2307', 'GO4490', 'GO5234', 'GO75', 'GO363', 'GO361', 'GO5116', 'GO5168', 'GO4439', 'GO4665', 'GO5157', 'GO4397', 'GO389', 'GO3673', 'GO4016', 'GO366', 'GO208', 'GO365', 'GO3202', 'GO4669', 'GO390', 'GO5135', 'GO5172', 'GO3957', 'GO5181', 'GO5289', 'GO3904', 'GO4944', 'GO839', 'GO5006', 'GO4747', 'GO4383', 'GO5056', 'GO3074', 'GO4587', 'GO5156', 'GO4974', 'GO4691', 'GO4692', 'GO4690', 'GO461', 'GO4990', 'GO5529', 'GO3193', 'GO4502', 'GO5528', 'GO4689', 'GO5236', 'GO4621', 'GO2279', 'GO4666', 'GO4673', 'GO873', 'GO149', 'GO4505', 'GO2882', 'GO704', 'GO1687', 'GO112', 'GO4574', 'GO2311', 'GO1436', 'GO3792', 'GO870', 'GO5096', 'GO2093', 'GO709', 'GO4579', 'GO4516', 'GO3237', 'GO3201', 'GO3277', 'GO204', 'GO3687', 'GO432', 'GO4556', 'GO4978', 'GO2122', 'GO4810', 'GO4204', 'GO4804', 'GO4742', 'GO362', 'GO1655', 'GO2902', 'GO3876', 'GO3955', 'GO3689', 'GO2991', 'GO401', 'GO3173', 'GO3907', 'GO999', 'GO118', 'GO4558', 'GO4723', 'GO5588', 'GO3435', 'GO4464', 'GO5165', 'GO1605', 'GO5225', 'GO4526', 'GO4768', 'GO5077', 'GO3358', 'GO4846', 'GO5319', 'GO4195', 'GO116', 'GO1551', 'GO1219', 'GO4977', 'GO4983', 'GO4622', 'GO3421', 'GO4696', 'GO4536', 'GO5076', 'GO2835', 'GO203', 'GO4117', 'GO2099', 'GO5097', 'GO4500', 'GO2259', 'GO4540', 'GO5499', 'GO5254', 'GO4555', 'GO484', 'GO4190', 'GO2156', 'GO5486', 'GO4068', 'GO5242', 'GO4875', 'GO4908', 'GO5342', 'GO379', 'GO2537', 'GO3093', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO5417', 'GO1334', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO3410', 'GO2899', 'GO660', 'GO4642', 'GO5230', 'GO2828', 'GO4266', 'GO2900', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO2385']
+2022-05-05 19:44:01,116    INFO:     ::1:51880 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'jennytestthree@test.com', 'divisions': ['d_14'], 'tags': ['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO4740', 'GO5157', 'GO363', 'GO361', 'GO3292', 'GO4574', 'GO3792', 'GO4961', 'GO389', 'GO4188', 'GO331', 'GO2093', 'GO704', 'GO4879', 'GO366', 'GO709', 'GO208', 'GO365', 'GO5156', 'GO3202', 'GO390', 'GO29', 'GO3277', 'GO4689', 'GO4622', 'GO270', 'GO5417', 'GO98', 'GO432', 'GO517', 'GO362', 'GO4767', 'GO873', 'GO4505', 'GO1687', 'GO112', 'GO870', 'GO3237', 'GO4692', 'GO4666', 'GO3201', 'GO204', 'GO1655', 'GO2902', 'GO2122', 'GO4556', 'GO4978', 'GO2991', 'GO1108', 'GO272', 'GO3330', 'GO4944', 'GO839', 'GO5165', 'GO2162', 'GO1605', 'GO5294', 'GO4768', 'GO3551', 'GO5008', 'GO5438', 'GO2907', 'GO4558', 'GO1219', 'GO4977', 'GO4983', 'GO4195', 'GO4696', 'GO4536', 'GO5076', 'GO1551', 'GO2835', 'GO4117', 'GO3173', 'GO5254', 'GO4555', 'GO484', 'GO203', 'GO4190', 'GO3421', 'GO2156', 'GO5486', 'GO5242', 'GO4875', 'GO4540', 'GO5342', 'GO379', 'GO2537', 'GO1147', 'GO3773', 'GO2868', 'GO5147', 'GO4575', 'GO4596', 'GO4739', 'GO692', 'GO641', 'GO4846', 'GO3907', 'GO660', 'GO4642', 'GO2099', 'GO5230', 'GO4804', 'GO2828', 'GO4266', 'GO5097', 'GO2900', 'GO4500', 'GO1212', 'GO3799', 'GO4194', 'GO1008', 'GO1980', 'GO1824', 'GO2259', 'GO4562', 'GO3957', 'GO5499', 'GO2385']
+2022-05-05 19:48:02,078    INFO:     ::1:52126 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 19:51:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 19:51:45 ------ end update researchers pool
+2022-05-05 20:01:01,689    INFO:     ::1:52934 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:01:01,735    INFO:     ::1:52938 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:06:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 20:06:45 ------ end update researchers pool
+2022-05-05 20:07:47,043    INFO:     ::1:53394 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:07:47,066    INFO:     ::1:53396 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': '123@123.com', 'divisions': ['d_03'], 'tags': []}
+{'id': 'Reg_123@123.com', 'divisions': ['d_03'], 'tags': []} with no similar data
+[]
+2022-05-05 20:07:57,989    INFO:     ::1:53430 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:09:22,694    INFO:     ::1:53524 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:09:23,150    INFO:     ::1:53530 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:11:49,315    INFO:     ::1:53684 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:11:49,337    INFO:     ::1:53686 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:12:43,183    INFO:     ::1:53758 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:12:43,211    INFO:     ::1:53760 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'biological@123.com', 'divisions': ['d_06'], 'tags': []}
+{'id': 'Reg_biological@123.com', 'divisions': ['d_06'], 'tags': []} with no similar data
+[]
+2022-05-05 20:12:48,133    INFO:     ::1:53770 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:14:50,474    INFO:     ::1:53906 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:14:50,497    INFO:     ::1:53908 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:15:27,840    INFO:     ::1:53958 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:15:27,866    INFO:     ::1:53960 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'information@123.com', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_information@123.com', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 20:15:30,690    INFO:     ::1:53972 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:21:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 20:21:45 ------ end update researchers pool
+2022-05-05 20:22:17,443    INFO:     ::1:54384 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:22:17,444    INFO:     ::1:54386 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:22:44,642    INFO:     ::1:54432 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:22:44,669    INFO:     ::1:54434 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'philosophy@123.com', 'divisions': ['d_22'], 'tags': []}
+{'id': 'Reg_philosophy@123.com', 'divisions': ['d_22'], 'tags': []} with no similar data
+[]
+2022-05-05 20:22:48,967    INFO:     ::1:54442 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:26:17,636    INFO:     ::1:54656 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:26:17,638    INFO:     ::1:54658 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:27:00,107    INFO:     ::1:54718 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:27:00,129    INFO:     ::1:54720 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'history@123.com', 'divisions': ['d_21'], 'tags': []}
+['GO4865', 'GO3720', 'GO3392', 'GO1103', 'GO4677', 'GO5425', 'GO4477', 'GO1943', 'GO5307', 'GO5445', 'GO5613', 'GO5619', 'GO4476', 'GO883', 'GO4031', 'GO5161', 'GO750', 'GO4582', 'GO3429', 'GO1701', 'GO418', 'GO3550', 'GO2868', 'GO2383', 'GO2421', 'GO4682', 'GO3055', 'GO4347', 'GO5316', 'GO1281', 'GO4651', 'GO4854', 'GO5323', 'GO1688', 'GO2434', 'GO545', 'GO505', 'GO887', 'GO4944', 'GO1337', 'GO546', 'GO4353', 'GO4352', 'GO4993', 'GO3021', 'GO3022', 'GO1740', 'GO544', 'GO4465', 'GO3053', 'GO5085', 'GO3074', 'GO234']
+2022-05-05 20:27:02,532    INFO:     ::1:54728 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:36:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 20:36:45 ------ end update researchers pool
+2022-05-05 20:38:33,697    INFO:     ::1:55438 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:38:33,726    INFO:     ::1:55442 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:38:43,760    INFO:     ::1:55470 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:38:43,784    INFO:     ::1:55472 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+[{'id': 'Reg_stageonehigha@anu.edu.au', 'weight': 1e-06, 'name': 'StageOneHighA Medic', 'email': 'stageonehigha@anu.edu.au', 'university': 'Australian National University', 'tag': ['mental disorders', 'triage', 'home care services', 'drug-related side effects and adverse reactions', 'physical activity', 'ankle', 'endophenotypes', 'communicable diseases', 'exercise test', 'health personnel'], 'division': ['MEDICAL AND HEALTH', 'PSYCHOLOGY AND COGNITIVE SCIENCES', 'BIOLOGICAL']}, {'id': 'Reg_stageonemidb@anu.edu.au', 'weight': 1e-06, 'name': 'StageOneMidB Medic', 'email': 'stageonemidb@anu.edu.au', 'university': 'Australian National University', 'tag': ['drug-related side effects and adverse reactions', 'artificial intelligence', 'physical activity', 'proliferation', 'interferons', 'lung', 'recovery', 'coronavirus'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'BIOLOGICAL']}, {'id': 'Reg_stageonemidc@anu.edu.au', 'weight': 1e-06, 'name': 'StageOneMidC Medic', 'email': 'stageonemidc@anu.edu.au', 'university': 'Australian National University', 'tag': ['blood', 'triage', 'weight loss', 'aspirin', 'drug-related side effects and adverse reactions', 'physical activity', 'infection'], 'division': ['MEDICAL AND HEALTH', 'CHEMICAL', 'BIOLOGICAL']}, {'id': 'Reg_stagezero@anu.edu.au', 'weight': 1e-06, 'name': 'StageZero Medic', 'email': 'stagezero@anu.edu.au', 'university': 'Australian National University', 'tag': ['triage', 'weight loss', 'parkinson disease', 'home care services', 'drug-related side effects and adverse reactions', 'physical activity', 'health care professionals', 'ankle', 'proliferation', 'health personnel'], 'division': ['MEDICAL AND HEALTH', 'PSYCHOLOGY AND COGNITIVE SCIENCES', 'BIOLOGICAL']}, {'id': 'Reg_stagezerotesta@anu.edu.au', 'weight': 1e-06, 'name': 'StageZeroTestA Medic', 'email': 'stagezerotesta@anu.edu.au', 'university': 'Australian National University', 'tag': ['parkinson', 'health care', 'triage', 'weight loss', 'home care services', 'drug', 'physical activity', 'ankle', 'proliferation', 'health personnel'], 'division': ['MEDICAL AND HEALTH', 'PSYCHOLOGY AND COGNITIVE SCIENCES', 'BIOLOGICAL']}, {'id': 'Reg_tester@anu.com', 'weight': 1e-06, 'name': 'David James', 'email': 'tester@anu.com', 'university': 'Australian National University', 'tag': ['health'], 'division': ['MATHEMATICAL', 'EARTH', 'ENVIRONMENTAL']}, {'id': 'UC_61587ef7d7b0c43ebd75536c', 'weight': 0.08251560485868548, 'name': 'Ross Thompson', 'email': 'mailto:Ross.Thompson@canberra.edu.au', 'university': 'Canberra', 'tag': ['trout', 'chemical compound', 'aquatic habitat', 'constructed wetlands', 'ephemeroptera', 'advection', 'food chain', 'anthropocene', 'divergent evolution', 'network theory'], 'division': ['EARTH', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'UC_61587211d7b0c43ebd7552f9', 'weight': 0.08622752627253316, 'name': 'Sue Nichols', 'email': '', 'university': 'Canberra', 'tag': ['adaptive management', 'environmental assessment', 'aquatic ecosystems', 'allocation', 'knowledge transfer', 'biological assessment', 'eutrophication', 'water management', 'river management', 'data quality'], 'division': ['EARTH', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'UC_61586117d7b0c43ebd75523c', 'weight': 0.09170393107961854, 'name': 'Fiona Dyer', 'email': 'mailto:Fiona.Dyer@canberra.edu.au', 'university': 'Canberra', 'tag': ['maccullochella macquariensis', 'science', 'plant community', 'hydrogeology', 'bayesian networks', 'salinization', 'dissolved oxygen', 'society', 'fish', 'borehole'], 'division': ['EARTH', 'ENVIRONMENTAL', 'BIOLOGICAL']}, {'id': 'UC_61586facd7b0c43ebd7552e4', 'weight': 0.09755438235618275, 'name': 'Brad Moggridge', 'email': '', 'university': 'Canberra', 'tag': ['indigenous peoples', 'environmental quality', 'water resource', 'oceania', 'water policy', 'threatened species', 'water planning', 'water management', 'water'], 'division': ['BIOLOGICAL', 'EARTH', 'ENVIRONMENTAL']}]
+2022-05-05 20:38:48,501    INFO:     ::1:55486 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:38:50,511    INFO:     ::1:55498 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:38:53,990    INFO:     ::1:55512 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:41:54,499    INFO:     ::1:55714 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:42:03,278    INFO:     ::1:55750 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:50:45,729    INFO:     ::1:56284 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:51:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 20:51:45 ------ end update researchers pool
+2022-05-05 20:52:56,722    INFO:     ::1:56454 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:52:56,746    INFO:     ::1:56456 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'ryan@anu.com', 'divisions': ['d_04', 'd_05', 'd_06'], 'tags': []}
+Index(['r_id', 'type', 'action_date', 'go_id', 'save', 'like', 'id', 'agency',
+       'open_date', 'close_date', 'title', 'desc', 'elig', 'category',
+       'sub_category', 'award', 'loc', 'sp', 'is_on', 'text'],
+      dtype='object')
+['GO5028', 'GO5174', 'GO4495', 'GO5296', 'GO2884', 'GO3199', 'GO5274', 'GO4721', 'GO207', 'GO4600', 'GO5420', 'GO4736', 'GO3241', 'GO3774', 'GO2259', 'GO4883', 'GO5008', 'GO5452', 'GO5472', 'GO4406', 'GO3237', 'GO4688', 'GO5223', 'GO2815', 'GO1882', 'GO2144', 'GO2806', 'GO2794', 'GO5304', 'GO2036', 'GO4882', 'GO5532', 'GO3101', 'GO5326', 'GO5590', 'GO5510', 'GO5216', 'GO5541', 'GO4552', 'GO4724', 'GO4300', 'GO5513', 'GO2922', 'GO2944', 'GO2918', 'GO3957', 'GO3286', 'GO4575', 'GO1921', 'GO2386', 'GO5432', 'GO767', 'GO2811', 'GO3705', 'GO1922', 'GO2245', 'GO1619', 'GO2812', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO5181', 'GO5437', 'GO4265', 'GO3292', 'GO4384', 'GO3814', 'GO5361', 'GO4754', 'GO4696', 'GO4881', 'GO4031', 'GO2807', 'GO1626', 'GO5232', 'GO4230', 'GO3714', 'GO2800', 'GO4522', 'GO2869', 'GO2226', 'GO2814', 'GO4391', 'GO5570', 'GO5228', 'GO4295', 'GO4957', 'GO3141', 'GO4456', 'GO2648', 'GO5105', 'GO4951', 'GO3687', 'GO3330', 'GO2793', 'GO5539', 'GO932', 'GO208', 'GO1387', 'GO5385', 'GO3331', 'GO4542', 'GO128', 'GO5302', 'GO704', 'GO3240', 'GO2427', 'GO3529', 'GO4579', 'GO5019', 'GO5447', 'GO4121', 'GO4710', 'GO5504', 'GO4996', 'GO3818', 'GO366', 'GO5294', 'GO4582', 'GO365', 'GO4255', 'GO3123', 'GO2863', 'GO5455', 'GO3810', 'GO4480', 'GO1240', 'GO4638', 'GO5508', 'GO5102', 'GO5231', 'GO5474', 'GO1797', 'GO4524', 'GO2328', 'GO236', 'GO1207', 'GO5407', 'GO4641', 'GO5511', 'GO5337', 'GO5427', 'GO5351', 'GO5561', 'GO4559', 'GO1532', 'GO5568', 'GO5328', 'GO2945', 'GO5465', 'GO3676', 'GO4453', 'GO5067', 'GO5089', 'GO3726', 'GO5512', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4576', 'GO5399', 'GO3766', 'GO4802', 'GO5350', 'GO4560', 'GO3462', 'GO5540', 'GO5555', 'GO2935', 'GO5327', 'GO4584', 'GO438', 'GO4504', 'GO404', 'GO740', 'GO4214', 'GO4819', 'GO3825', 'GO3729', 'GO1925', 'GO2893', 'GO93', 'GO2184', 'GO2156', 'GO4529', 'GO1784', 'GO5471', 'GO5059', 'GO3011', 'GO1790', 'GO1764', 'GO3799', 'GO5393', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO1783', 'GO1228', 'GO3348', 'GO4671', 'GO2877', 'GO4824', 'GO4878', 'GO5258', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO5070', 'GO5525', 'GO4080', 'GO4900', 'GO5217', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5145', 'GO3328', 'GO2742']
+2022-05-05 20:53:03,142    INFO:     ::1:56476 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'history@123.com', 'divisions': ['d_21'], 'tags': []}
+['GO4865', 'GO3720', 'GO3392', 'GO1103', 'GO4677', 'GO5425', 'GO4477', 'GO1943', 'GO5307', 'GO5445', 'GO5613', 'GO5619', 'GO4476', 'GO883', 'GO4031', 'GO5161', 'GO750', 'GO4582', 'GO3429', 'GO1701', 'GO418', 'GO3550', 'GO2868', 'GO2383', 'GO2421', 'GO4682', 'GO3055', 'GO4347', 'GO5316', 'GO1281', 'GO4651', 'GO4854', 'GO5323', 'GO1688', 'GO2434', 'GO545', 'GO505', 'GO887', 'GO4944', 'GO1337', 'GO546', 'GO4353', 'GO4352', 'GO4993', 'GO3021', 'GO3022', 'GO1740', 'GO544', 'GO4465', 'GO3053', 'GO5085', 'GO3074', 'GO234']
+2022-05-05 20:53:33,079    INFO:     ::1:56530 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'history@123.com', 'divisions': ['d_21'], 'tags': []}
+[{'id': 'Reg_robert.c@aun.com', 'weight': 0.6666666666666667, 'name': 'Robert C', 'email': 'robert.c@aun.com', 'university': 'Australian National University', 'tag': ['cultural diversity', 'acculturation', 'internal migration', 'community research', 'cultural heritage', 'community participation', 'policy attitude'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'Reg_robert.e@anu.com', 'weight': 0.6666666666666667, 'name': 'Robert E', 'email': 'robert.e@anu.com', 'university': 'Australian National University', 'tag': ['"immigrant"', ' "social identification"', '  "global"', '"campaign"', ' "social networking"', ' "intercultural learning"', ' "digital divide"'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'Reg_robert.f@anu.com', 'weight': 0.6666666666666667, 'name': 'Robert F', 'email': 'robert.f@anu.com', 'university': 'Australian National University', 'tag': ['campaign', 'discramination', 'emigration and immigration', 'community participation', 'migration', 'immigrant', 'internal immigration'], 'division': ['LAW AND LEGAL STUDIES', 'STUDIES IN HUMAN SOCIETY', 'HISTORY AND ARCHAEOLOGY']}, {'id': 'UC_61586802d7b0c43ebd75528c', 'weight': 0.6699452294782962, 'name': 'Tracy Ireland', 'email': 'mailto:Tracy.Ireland@canberra.edu.au', 'university': 'Canberra', 'tag': ['in situ', 'historical archaeology', 'experiment', 'archaeological heritage management', 'aviation', 'slavery', 'object biography', 'archaeology', 'monument', 'professional training'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_615876b8d7b0c43ebd755320', 'weight': 0.7048901853858227, 'name': 'Peter Putnis', 'email': 'mailto:Peter.Putnis@canberra.edu.au', 'university': 'Canberra', 'tag': ['british press', 'colonial australia', 'communication policy', 'international communication', '1870s', 'eighteenth century', 'creative nonfiction', 'media system', 'reuters'], 'division': ['STUDIES IN CREATIVE ARTS AND WRITING', 'HISTORY AND ARCHAEOLOGY', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61586a42d7b0c43ebd7552a7', 'weight': 0.7446269511713508, 'name': 'Ernest Koh', 'email': '', 'university': 'Canberra', 'tag': ['language classes', 'national narrative', 'foresight', 'history from below', 'student', 'south-east asia', 'diasporas', 'historiography', 'chinese diaspora', 'pacific war'], 'division': ['EDUCATION', 'HISTORY AND ARCHAEOLOGY', 'ECONOMICS']}, {'id': 'UC_615881ced7b0c43ebd755385', 'weight': 0.7610600126486881, 'name': 'Alison Wain', 'email': 'mailto:Alison.Wain@canberra.edu.au', 'university': 'Canberra', 'tag': ['ultrafast lasers', 'aviation', 'preventive conservation', 'leather', 'intangible heritage', 'critical reflection', 'laser', 'telescopes', 'metals', 'physical evidence'], 'division': ['EDUCATION', 'HISTORY AND ARCHAEOLOGY', 'STUDIES IN CREATIVE ARTS AND WRITING']}, {'id': 'UC_61586c2cd7b0c43ebd7552bd', 'weight': 0.7672390943633527, 'name': 'Mirani Litster', 'email': '', 'university': 'Canberra', 'tag': ['maritime culture', 'wetland', 'indian ocean', 'anthropogenic impact', 'portable art', 'mariana islands', 'east timor', 'shell beads', 'archaeological record', 'initiation rituals'], 'division': ['HISTORY AND ARCHAEOLOGY', 'EARTH', 'BUILT ENVIRONMENT AND DESIGN']}, {'id': 'UC_61586182d7b0c43ebd755245', 'weight': 0.8053961399991287, 'name': 'Ben Ennis Butler', 'email': '', 'university': 'Canberra', 'tag': ['national gallery of australia', 'museum', 'data-driven', 'web design', 'convention', 'printmaking', 'information seeking', 'information system', 'visualization'], 'division': ['HISTORY AND ARCHAEOLOGY', 'LANGUAGE, COMMUNICATION AND CULTURE', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61587f84d7b0c43ebd755371', 'weight': 0.8214381625248562, 'name': 'Dr. John Ting, PhD', 'email': '', 'university': 'Canberra', 'tag': ['comprehensive compilations', 'history of architecture', 'cultural change', 'sarawak', 'quotation', 'annual conference', 'canberra', 'prefabrication'], 'division': ['HISTORY AND ARCHAEOLOGY', 'BUILT ENVIRONMENT AND DESIGN', 'LANGUAGE, COMMUNICATION AND CULTURE']}]
+2022-05-05 20:55:16,909    INFO:     ::1:56672 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'history@123.com', 'divisions': ['d_21'], 'tags': []}
+['GO4865', 'GO3720', 'GO3392', 'GO1103', 'GO4677', 'GO5425', 'GO4477', 'GO1943', 'GO5307', 'GO5445', 'GO5613', 'GO5619', 'GO4476', 'GO883', 'GO4031', 'GO5161', 'GO750', 'GO4582', 'GO3429', 'GO1701', 'GO418', 'GO3550', 'GO2868', 'GO2383', 'GO2421', 'GO4682', 'GO3055', 'GO4347', 'GO5316', 'GO1281', 'GO4651', 'GO4854', 'GO5323', 'GO1688', 'GO2434', 'GO545', 'GO505', 'GO887', 'GO4944', 'GO1337', 'GO546', 'GO4353', 'GO4352', 'GO4993', 'GO3021', 'GO3022', 'GO1740', 'GO544', 'GO4465', 'GO3053', 'GO5085', 'GO3074', 'GO234']
+2022-05-05 20:55:40,417    INFO:     ::1:56708 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-05 20:56:18,407    INFO:     ::1:56750 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:56:18,432    INFO:     ::1:56752 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 20:56:59,194    INFO:     ::1:56814 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 20:56:59,218    INFO:     ::1:56816 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 20:57:03,761    INFO:     ::1:56828 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 20:59:43,572    INFO:     ::1:57020 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 21:00:39,820    INFO:     ::1:57104 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 21:00:51,125    INFO:     ::1:57122 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 21:01:01,350    INFO:     ::1:57144 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+{'id': 'Reg_u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []} with no similar data
+['GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417']
+2022-05-05 21:01:07,170    INFO:     ::1:57158 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+[{'id': 'UC_6158615cd7b0c43ebd755242', 'weight': 0.47347358701205045, 'name': 'Ibrahim Elgendi', 'email': 'mailto:Ibrahim.Elgendi@canberra.edu.au', 'university': 'Canberra', 'tag': ['cyber physical system', 'bitcoin', 'networking', 'blockchain', 'predictive analytics', 'cellular networks', 'femtocell', 'wi-fi', 'smart city', 'software defined networking'], 'division': ['TECHNOLOGY', 'INFORMATION AND COMPUTING', 'ENGINEERING']}, {'id': 'Reg_charles@0.com', 'weight': 0.5, 'name': 'Ttt Ttt', 'email': 'charles@0.com', 'university': 'Australian National University', 'tag': [], 'division': ['TECHNOLOGY', 'INFORMATION AND COMPUTING']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['INFORMATION AND COMPUTING', 'ENGINEERING']}, {'id': 'UC_61586fdfd7b0c43ebd7552e5', 'weight': 0.5526109021057555, 'name': 'Masoud Mohammadian', 'email': '', 'university': 'Canberra', 'tag': ['decision theory', 'fuzzy cognitive maps', 'customer satisfaction', 'risk-risk analysis', 'fuzzy logic', 'machine ethics', 'blockchain', 'wireless technology', 'radio frequency identification (rfid)', 'natural resources management'], 'division': ['TECHNOLOGY', 'INFORMATION AND COMPUTING', 'ENGINEERING']}, {'id': 'UC_61585f1ed7b0c43ebd755227', 'weight': 0.5658239034478211, 'name': 'Sharma D', 'email': 'mailto:Dharmendra.Sharma@canberra.edu.au', 'university': 'Canberra', 'tag': ['data storage equipment', 'biometrics', 'gaming', 'digital forensics', 'artificial intelligence', 'planning', 'quantum cryptography', 'femtocell', 'medical problems', 'convolution'], 'division': ['TECHNOLOGY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61585b8ed7b0c43ebd7551ee', 'weight': 0.5808466275719038, 'name': 'Abu Barkat Ullah', 'email': '', 'university': 'Canberra', 'tag': ['software engineering', 'health care', 'evolutionary optimization', 'smart power grids', 'train', 'summarization', 'mathematical transformations', 'internet', 'memetic algorithm'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'BIOLOGICAL']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.6001740461945566, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['cyber physical system', 'autonomous underwater vehicles', 'radio', 'energy saving', 'intrusion detection', 'routing protocols', 'frog', 'long term evolution (lte)', 'fiber optic networks', 'resource allocation'], 'division': ['TECHNOLOGY', 'INFORMATION AND COMPUTING', 'ENGINEERING']}, {'id': 'UC_61587b08d7b0c43ebd755346', 'weight': 0.6294280814044393, 'name': 'Girija Chetty', 'email': '', 'university': 'Canberra', 'tag': ['watches', 'cardiovascular models', 'marketing', 'object detection', 'achilles tendon', 'image watermarking', 'extreme learning machine', 'sensor networks', 'colonoscopy', 'face recognition'], 'division': ['TECHNOLOGY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158801cd7b0c43ebd755375', 'weight': 0.6326080775115474, 'name': 'Dat Tran', 'email': 'mailto:Dat.Tran@canberra.edu.au', 'university': 'Canberra', 'tag': ['biometrics', 'random number generator', 'digital forensics', 'anomaly detection', 'geometry', 'near-infrared spectroscopy', 'electroencephalography', 'population distribution', 'watermarking', 'decision tree'], 'division': ['TECHNOLOGY', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586cf4d7b0c43ebd7552c7', 'weight': 0.6420478225891286, 'name': 'Wanli Ma', 'email': '', 'university': 'Canberra', 'tag': ['biometrics', 'random number generator', 'digital forensics', 'viruses', 'geometry', 'pattern recognition systems', 'electroencephalography', 'population distribution', 'watermarking', 'decision tree'], 'division': ['MATHEMATICAL', 'MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING']}]
+2022-05-05 21:02:15,355    INFO:     ::1:57234 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-05-05 21:06:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 21:06:45 ------ end update researchers pool
+2022-05-05 21:21:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 21:21:45 ------ end update researchers pool
+2022-05-05 21:36:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 21:36:45 ------ end update researchers pool
+2022-05-05 21:51:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 21:52:00 ------ end update researchers pool
+2022-05-05 22:06:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 22:06:45 ------ end update researchers pool
+2022-05-05 22:21:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 22:21:45 ------ end update researchers pool
+2022-05-05 22:36:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 22:36:45 ------ end update researchers pool
+2022-05-05 22:44:05,215    INFO:     ::1:35162 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 22:51:42 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-05 22:51:45 ------ end update researchers pool
+2022-05-05 22:53:28,320    INFO:     ::1:35766 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 22:53:28,349    INFO:     ::1:35770 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-05 22:53:32,246    INFO:     ::1:35804 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-05 22:53:32,269    INFO:     ::1:35806 - "GET /get_university_strength HTTP/1.1" 200 OK
+git pulling
