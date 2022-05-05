@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email Template</title>
+    </head>
+    <body>
+        <h4 style="text-align:center"><strong><a href="{doc['URL']}">{doc['GO ID']} - {doc['Title']}</a></strong></h4>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:800px">
+            <tbody>
+                <tr style=" height:48px">
+                    <td style="text-align:right; width:141px"><span style="color:#999999"><strong>Close Date &amp;
+                                Time:&nbsp;</strong></span></td>
+                    <td style="width:450px;"><span style="color:#999999">{doc['Close Date & Time']}</span>
+                    </td>
+                </tr>
+                <tr style=" height:48px">
+                    <td style="width:141px">
+                        <p style="text-align:right"><span style="color:#999999"><strong>Location:&nbsp;</strong></span>
+                        </p>
+                    </td>
+                    <td style="width:450px"><span style="color:#999999">{doc['Location']}</span></td>
+                </tr>
+                <tr style=" height:48px">
+                    <td style="text-align:right; width:141px"><span
+                            style="color:#999999"><strong>Divisions:&nbsp;</strong></span></td>
+                    <td style="width:450px"><span
+                            style="color:#999999; padding:4px 8px; font-weight:600; color:#d4380d;background:#fff2e8;border-radius: 2px;border: 1px solid #ffbb96">{doc['division']}</span>
+                    </td>
+                </tr>
+                <tr style="height:48px">
+                    <td style="text-align:right; width:141px"><span
+                            style="color:#999999"><strong>Keywords:&nbsp;</strong></span></td>
+                    <td style="width:450px"><span style="color:#999999"> <span>{' '.join(doc['tags'].split('
+                                ')[:5])}</span></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 style="text-align:center">&nbsp;</h4>
+        """
+
+    </body>
+</html>

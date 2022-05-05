@@ -9,7 +9,6 @@ from sqlalchemy.orm import Session
 from models.user import SubscribeModel
 from dependencies import check_access_token, get_db
 from db.mysql.curd.user_subscribe import sql_update_user_subscribe, sql_get_user_subscribe, sql_add_user_subscribe
-from utils.auto_email import create_sender, create_html_message
 
 router = APIRouter()
 
@@ -21,7 +20,6 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
         user_subscribe = sql_get_user_subscribe(email=email, session=db)
         if user_subscribe is None:
             user_subscribe = sql_add_user_subscribe(email=email, session=db)
-
         sql_update_user_subscribe(user_subscribe, update)
         db.commit()
         return {'code': 200, 'data': ''}
@@ -29,13 +27,3 @@ async def subscribe(data: SubscribeModel, email: str = Depends(check_access_toke
         print(e)
         db.rollback()
         raise HTTPException(500, str(e))
-
-
-@router.post('/send')
-async def send_email(background_task: BackgroundTasks):
-    fm = create_sender()
-
-    message = create_html_message([], ['gongsakura@yahoo.com'
-                                       ])
-
-    background_task.add_task(fm.send_message, message)

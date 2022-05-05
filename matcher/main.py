@@ -35,6 +35,13 @@ async def get_reco_tenders(data: Profile):
     return {'code': 200, 'data': output}
 
 
+@app.post('/get_reco_recipient')
+async def get_recipient():
+    # todo:
+    data = [{'email': 'xxxx', 'go_id': []},{'email': 'xxxx', 'go_id': []}]
+    return {'code': 200, 'data': data}
+
+
 @app.get('/get_university_strength')
 async def get_university_strength():
     return {'code': 200, 'data': get_research_strength()}
