@@ -3,7 +3,6 @@ import re
 
 import numpy as np
 import pandas as pd
-
 from conf.file_path import TENDERS_RELEVANT_PATH
 
 
