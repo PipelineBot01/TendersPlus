@@ -85,6 +85,7 @@ class PostProcess:
 
     def run(self, user_id, input_df):
         try:
+            user_id = 'Reg_'+user_id
             if user_id in self.__action_df['r_id'].unique():
                 # remove dislike tenders
                 input_df = self.__remove_dislike(user_id, input_df)
