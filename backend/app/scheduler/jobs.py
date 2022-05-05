@@ -68,6 +68,7 @@ async def send_recommendation():
             sender = create_sender()
             with session() as db:
                 for k, v in data.items:
+                    print('recipient:', k, 'go_id:', v)
                     recipient = sql_get_user_subscribe(email=k, session=db)
                     if recipient and recipient.status == 1:
                         go_id = v
