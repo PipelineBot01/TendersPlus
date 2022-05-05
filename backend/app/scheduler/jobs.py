@@ -11,6 +11,7 @@ from db.mysql.curd.user import sql_get_all_users, sql_get_user
 from db.mysql.curd.user_action import sql_get_all_user_action
 from db.mysql.curd.user_research_field import sql_get_all_user_research_field
 from db.mysql.curd.user_tag import sql_get_all_user_tag
+from db.mysql.curd.user_subscribe import sql_get_user_subscribe
 from db.mongo.curd import db_get_tenders_from_history_by_ids
 from utils.auto_email import create_sender, create_html_message
 
@@ -65,11 +66,14 @@ async def send_recommendation():
             content = json.loads(response.content)
             data = content['data']
             sender = create_sender()
-            for k,v in data.items:
-                recipient = k
-                go_id = v 
-                docs = await db_get_tenders_from_history_by_ids(go_id)
-                if docs:
-                    await sender.send_message(create_html_message(docs, [recipient]))
+            with session() as db:
+                for k, v in data.items:
+                    recipient = sql_get_user_subscribe(email=k, session=db)
+                    if recipient and recipient.status == 1:
+                        go_id = v
+                        if go_id:
+                            docs = await db_get_tenders_from_history_by_ids(go_id)
+                            if docs:
+                                await sender.send_message(create_html_message(docs, [recipient]))
         else:
             print(f'{datetime.now()}    request error: {response.status_code} {response.content}')
