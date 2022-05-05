@@ -96,8 +96,6 @@ async def db_get_tenders_from_opened_by_ids(ids: list) -> list:
     """
     if len(ids) == 0:
         return []
-
-
     cursor = mongo['collection_clean_grants_all'].find({'GO ID': {'$in': ids}},
                              {'_id': 0, 'Title': 1, 'URL': 1, 'GO ID': 1, 'Agency': 1, 'Close Date & Time': 1,
                               'Publish Date': 1, 'Location': 1, 'tags': 1, 'division': 1})
