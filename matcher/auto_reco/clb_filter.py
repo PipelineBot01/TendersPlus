@@ -62,6 +62,22 @@ class Filter:
         merge_df = merge_df[merge_df['go_id'].notna()]
         return merge_df
 
+    def get_hot_tenders(self):
+        if self.__action_df.empty:
+            return []
+        tmp_df = self.__action_df.copy()
+        tmp_df['date'] = tmp_df['action_date'].dt.normalize()
+        tmp_df = tmp_df.drop_duplicates(['r_id', 'type', 'go_id', 'date'])
+
+        tmp_df['1_month'] = tmp_df['action_date'].map(lambda x: self.__diff_month(x))
+        tmp_df.loc[tmp_df['1_month'] < 2, '1_month'] = 1
+        tmp_df['1_month'] = tmp_df['1_month'].fillna(0)
+
+        hot_df = tmp_df[(tmp_df['type'].isin(SELF_ACT_LIST)) & (tmp_df['1_month'])
+                        ].groupby('go_id')['r_id'].count().reset_index().rename(columns={'r_id': 'cnt'}).sort_values(
+            'cnt', ascending=False).reset_index(drop=True).reset_index()
+        return hot_df['go_id'].tolist()
+
     def update(self):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()

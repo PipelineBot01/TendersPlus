@@ -31,9 +31,9 @@ def convert_dtype(input_df: pd.DataFrame):
     return input_df
 
 
-# 'GO ID', 'Internal Reference ID', 'URL',
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
-    input_df['id'] = 'Grants' + input_df['GO ID']
+    input_df = input_df[(input_df['GO ID'].notna()) & (input_df['GO ID'] != 'None')]
+    input_df.loc[:, 'id'] = 'Grants' + input_df['GO ID']
     input_df = input_df[['id',
                          'Agency',
                          'Publish Date',

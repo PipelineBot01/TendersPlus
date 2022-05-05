@@ -122,7 +122,7 @@ class TendersUpdater:
         cate_df = cate_df.groupby(self.pk)['division'].apply(lambda x: '/'.join(i for i in x)).reset_index()
         info_df = info_df.merge(cate_df)
         info_df = convert_dtype(info_df)
-        info_df = info_df.merge(all_df, on=self.pk)
+        info_df = info_df.merge(all_df, left_on='go_id', right_on='GO ID')
         info_df.fillna('', inplace=True)
         info_df = KeyExtractor.remove_stopword(info_df, 'desc')
         self.mgx.write_df(info_df, 'clean_grants_all', True)
@@ -204,9 +204,9 @@ class TendersUpdater:
 
         '''
         print('<start updating tenders files>')
-        
+
         self.__get_opened()
-        
+
         if os.path.exists(self.info_path):
             info_df = pd.read_csv(self.info_path)
             raw_remain_data_df = self.raw_data_df[~self.raw_data_df[self.pk].isin(info_df[self.pk])]
