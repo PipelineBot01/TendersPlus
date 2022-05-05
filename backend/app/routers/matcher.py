@@ -59,7 +59,6 @@ async def match_tenders(data: MatcherModel, email: str = Depends(check_access_to
                 doc = await curd.db_get_tenders_from_history_by_id(i)
                 if doc:
                     docs.append(doc)
-
         return {'code': 200, 'data': docs}
     except Exception as e:
         print(e)

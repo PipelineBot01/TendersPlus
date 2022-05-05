@@ -37,7 +37,8 @@ export default function Header():JSX.Element{
           tags:[],
           email:response.data.email,
           access_token:response.data.access_token,
-          favourite:[]
+          favourite:[],
+          subscribe_status:response.data.subscribe_status
         }
         setIsSucceeded(true)
         dispatch(setUserInfo(user))

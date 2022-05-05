@@ -22,7 +22,7 @@ class SimulateClient(HttpUser):
     host = 'http://localhost:20220'
 
     @task
-    def api_test(self):
+    def signup_login(self):
         """
         Use "faker" to generate many users, with different email, first name, last name, university and research fields
         email: EmailStr
@@ -40,12 +40,12 @@ class SimulateClient(HttpUser):
                     'first_name': faker.first_name(),
                     'last_name': faker.last_name(),
                     'university': random.choice(settings.UNIVERSITIES),
-                    'research_fields': set(),
+                    'research_fields': [],
                     'password': faker.password()}
             user['confirmed_password'] = user['password']
             for j in range(random.randint(1, 3)):
-                user['research_fields'].add(random.choice(research_field_keys))
-            user['research_fields'] = list(user['research_fields'])
+                user['research_fields'].append(random.choice(research_field_keys))
+
             # simulate 'signup' action
             with self.client.post(url='/account/signup',
                                   json=user,
@@ -60,15 +60,36 @@ class SimulateClient(HttpUser):
                 if code == 200:
                     res = content['data']
                     user['access_token'] = res['access_token']
+                    user['subscribe_status'] = res['subscribe_status']
 
                     with self.client.post(url='/account/login',
                                           json={'email': user['email'],
                                                 'password': user['password']},
                                           catch_response=True) as login_response:
                         if login_response.status_code == 200:
-                            login_response.success()
+                            user['research_fields'] = []
+                            for j in range(random.randint(1, 3)):
+                                user['research_fields'].append(random.choice(research_field_keys))
+
+                            tags = [faker.word() for i in range(random.randint(1, 10))]
+
+                            with self.client.post(url='/user',
+                                                  json={
+                                                      'first_name': user['first_name'],
+                                                      'last_name': user['last_name'],
+                                                      'university': random.choice(settings.UNIVERSITIES),
+                                                      'research_fields': user['research_fields'],
+                                                      'tags': tags,
+                                                      'subscribe_status': random.randint(0, 1)
+                                                  },
+                                                  headers={'X-TOKEN': res['access_token']},
+                                                  catch_response=True) as update_response:
+                                if update_response.status_code == 200:
+                                    update_response.success()
+                                else:
+                                    update_response.failure(update_response.content)
                         else:
-                            login_response.failure('Failed ')
+                            login_response.failure(login_response.content)
                 else:
                     print(content)
                     if 'msg' in content:

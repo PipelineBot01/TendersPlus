@@ -31,6 +31,7 @@ export interface UserInfo{
     tags:Array<string>
     access_token:string
     favourite:Array<string>
+    subscribe_status:number
 }
 
 export interface ResearchFieldsItem{

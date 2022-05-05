@@ -1,6 +1,6 @@
 from datetime import timedelta
 from pydantic import BaseSettings
-
+import pandas as pd
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -23,9 +23,14 @@ class Settings(BaseSettings):
     MYSQL_URL: str
     MYSQL_DATABASE: str
 
+    # smtp server
+    MAIL_USERNAME: str
+    MAIL_PASSWORD: str
+
     # use to filter out tenders
     EXPIRING_DATE_THRESHOLD = timedelta(weeks=8)
     LATEST_DATE_THRESHOLD = timedelta(weeks=8)
+    SEND_EMAIL_DATE_THRESHOLD = timedelta(weeks=1)
 
     # app server
     APP_HOST: str = 'localhost'
@@ -33,7 +38,6 @@ class Settings(BaseSettings):
     APP_PORT: int = 20220
 
     DATETIME_FORMAT = '%Y-%m-%d'
-
 
     LATEST_OPPORTUNITIES: dict = None
     HOT_OPPORTUNITIES: dict = None
@@ -43,6 +47,7 @@ class Settings(BaseSettings):
     # RECORD ALL USER
     USER_INFO = []
     USER_ACTION = []
+    USER_INFO_DF: dict = {}
     ADMIN_USER_TOKEN: str
 
     UNIVERSITIES = ['Australian National University', 'University of Canberra', 'Australian Catholic University',

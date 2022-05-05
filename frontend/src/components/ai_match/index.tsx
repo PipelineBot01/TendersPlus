@@ -12,7 +12,7 @@ import { DonutChart } from '../charts'
 import { useAppSelector, useAppDispatch } from '../../store'
 import {setFavourite} from '../../store/features/user'
 
-import { matchTenderAPI, removeUserFavouriteAPI, addUserFavouriteAPI} from '../../api'
+import { matchTenderAPI, removeUserFavouriteAPI, addUserFavouriteAPI, getUserFavouriteIdAPI} from '../../api'
 
 import { useCollector } from '../../utils/customHook'
 import capitalize from '../../utils/capitalize'
@@ -40,11 +40,21 @@ export default function AIMatch():JSX.Element{
     })
   }, [])
 
+  // fetch favorite info
+  useEffect(()=>{
+    if(user.access_token){
+      getUserFavouriteIdAPI().then(response=>{
+        if(response.data){
+          dispatch(setFavourite(response.data))
+        }
+      })
+    }
+  }, [])
+
   const handleClickRatingBtn = (target:HTMLElement, type:number, id:string)=>{
     console.log(target)
     setRatedTenders([id, ...ratedTenders])
     target.classList.add('active')
-
 
     switch(type){
     case 0:
@@ -56,6 +66,7 @@ export default function AIMatch():JSX.Element{
         
     message.info('Thanks for your feedback!', 2)
   }
+
   const handleClickFavouriteBtn = (type:string, id:string)=>{
     const newUserFavourite = user.favourite.slice()
     if (type === 'to-remove'){
@@ -74,14 +85,12 @@ export default function AIMatch():JSX.Element{
     }
     dispatch(setFavourite(newUserFavourite))
   }
-
   const renderFavouriteBtn = (id:string)=>{
     if(user.access_token){
       const className = user.favourite.includes(id) ? 'to-remove' : ''
       return	<FontAwesomeIcon className={className} onClick={()=>{handleClickFavouriteBtn(className, id)}}  icon={faStar}/>
     }
   }
-
 
   return (<div className='match-result'>
     {

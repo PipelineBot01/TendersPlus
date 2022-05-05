@@ -28,11 +28,12 @@ export default function Dashboard():JSX.Element{
       getUserInfoAPI().then((response)=>{
         if(response.data){
           const user:UserState = {
-            access_token:response.data.access_token,
+            access_token:tokenFromCookie,
             rememberme:userInfo.rememberme,
             first_name:response.data.first_name,
             last_name:response.data.last_name,
             university:response.data.university,
+            subscribe_status:response.data.subscribe_status,
             research_fields:response.data.research_fields.map(e=>{ 
               if(typeof e === 'object'){
                 return e.field
@@ -106,7 +107,7 @@ export default function Dashboard():JSX.Element{
           </Menu.Item>
           <Divider type='horizontal' style={{margin:'1rem 0'}}/>
           <Menu.Item key="analysis" onClick={()=>navigate('/dashboard/analysis')} icon={<FontAwesomeIcon icon={faCircleNodes} />}>
-						AI analysis
+						Auto Match
           </Menu.Item>
           <Menu.Item key="chatty" onClick={()=>navigate('/dashboard/chatty')} icon={<FontAwesomeIcon icon={faComment} />}>
 						Chatty

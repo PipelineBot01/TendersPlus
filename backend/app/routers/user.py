@@ -6,6 +6,7 @@ from db.mysql.curd.user import sql_get_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field, sql_add_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag, sql_add_user_tag
 from db.mysql.curd.user_favourite import sql_get_user_favourite
+from db.mysql.curd.user_subscribe import sql_get_user_subscribe
 
 from models.user import ProfileModel
 from config import settings
@@ -33,6 +34,12 @@ def get_user(email: str = Depends(check_access_token), db: Session = Depends(get
 
             user_favourite_tenders = sql_get_user_favourite(email=user.email, session=db)
             data['favourite'] = [i.id for i in user_favourite_tenders]
+
+            user_subscribe = sql_get_user_subscribe(email=user.email, session=db) or 0
+            if user_subscribe:
+                user_subscribe = user_subscribe.status
+
+            data['subscribe_status'] = user_subscribe
             return {'code': 0, 'data': data}
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
@@ -45,6 +52,9 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
     try:
         user = sql_get_user(email, db)
         if user:
+            # remove duplicate
+            payload.research_fields = list(set(payload.research_fields))
+
             # update research fields
             research_fields = sql_get_user_research_field(email=email, n=user.n_research_field, session=db)
             user.n_research_field = len(payload.research_fields)
@@ -54,10 +64,13 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
                     db.delete(i)
                 else:
                     payload.research_fields.remove(i.field_id)
+
             for i in payload.research_fields:
                 sql_add_user_research_field(email=email, field_id=i, session=db)
 
             # update tags
+            # remove duplicate
+            payload.tags = list(set(payload.tags))
             tags = sql_get_user_tag(email=email, n=user.n_tag, session=db)
             user.n_tag = len(payload.tags)
             for i in tags:
@@ -78,7 +91,7 @@ def set_user(payload: ProfileModel, email: str = Depends(check_access_token), db
         raise HTTPException(404, 'USER NOT FOUND')
     except Exception as e:
         print(str(e))
-        raise HTTPException(500, 'INTERNAL SERVER ERROR')
+        raise HTTPException(500, str(e))
 
 
 # ====== admin api ======

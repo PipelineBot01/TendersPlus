@@ -86,3 +86,6 @@ export const removeUserFavouriteAPI = (id:string):Promise<CustomAPIResponse<stri
   return request.post('/favourite/remove', {id})
 }
 
+export const subscribeAPI = (status:number):Promise<CustomAPIResponse<string>>=>{
+  return request.post('/subscribe', {status})
+}

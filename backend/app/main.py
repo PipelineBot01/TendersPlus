@@ -12,6 +12,7 @@ from routers import strength_router
 from routers import search_router
 from routers import action_router
 from routers import favourite_router
+from routers import subscribe_router
 
 from config import settings
 from scheduler import async_scheduler
@@ -42,6 +43,7 @@ server.include_router(strength_router, prefix='/strength_overview', tags=['Stren
 server.include_router(search_router, prefix='/search', tags=['Search'])
 server.include_router(action_router, prefix='/action', tags=['UserAction'])
 server.include_router(favourite_router, prefix='/favourite', tags=['Favourite'])
+server.include_router(subscribe_router, prefix='/subscribe', tags=['Subscribe'])
 
 
 # setup startup event
@@ -55,7 +57,7 @@ async def startup():
         if j['delay'] is False:
             await j['func']()
 
-    # async_scheduler.start()
+    async_scheduler.start()
 
 
 # setup shutdown event

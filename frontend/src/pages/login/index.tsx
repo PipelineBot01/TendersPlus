@@ -22,31 +22,32 @@ export default function Header():JSX.Element{
 
   const handleSubmitForm = (values:Login)=>{
     message.loading({content:'Logging in', key:'login', duration:2})
-    loginAPI(values).then((response)=>{
-      message.destroy('login')
-      if(response.data){
-        const data = response.data
-        const user : UserState = {
-          email:data.email,
-          rememberme:values.rememberme || false,
-          first_name:data.first_name,
-          last_name:data.last_name,
-          university:data.university,
-          tags:data.tags,
-          research_fields:data.research_fields,
-          access_token:data.access_token,
-          favourite:data.favourite
+    loginAPI(values).then(
+      response=>{
+        message.destroy('login')
+        if(response.data){
+          const data = response.data
+          const user : UserState = {
+            email:data.email,
+            rememberme:values.rememberme || false,
+            first_name:data.first_name,
+            last_name:data.last_name,
+            university:data.university,
+            tags:data.tags,
+            research_fields:data.research_fields,
+            access_token:data.access_token,
+            favourite:data.favourite,
+            subscribe_status:data.subscribe_status,
+          }
+          user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
+          dispatch(setUserInfo(user))
+          navigate('/')
+          message.success('Welcome back, ' + user.first_name, 3)
         }
-        user.rememberme ? Cookies.set('access_token', user.access_token, {expires:7}) : Cookies.set('access_token', user.access_token)
-        dispatch(setUserInfo(user))
-        navigate('/')
-        message.success('Welcome back, ' + user.first_name, 3)
-
-      }
-    }).catch((error)=>{
-      message.destroy('login')
-      message.error({content:error.msg, duration:2})
-    }).finally(()=>{
+      }, error=>{
+        message.destroy('login')
+        message.error({content:error.msg, duration:2})
+      }).finally(()=>{
       setIsSubmitting(false)
     })
   }

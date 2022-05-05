@@ -1,10 +1,17 @@
 header{
-    width: auto;
+    width: 100rem;
     height: 4.4rem;
     max-height:4.4rem;
     filter: drop-shadow(0px 4px 4px rgba(54, 54, 54, 0.151));
     user-select: none;
     background: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 999;
+}
+.dashboard-header{
+    width:auto;
+    position: relative !important;
+    z-index: 0 !important;
 }
 nav{
     height: 100%; 

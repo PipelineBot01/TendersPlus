@@ -8,6 +8,8 @@ from db.mysql.curd.user import sql_get_user, sql_add_user
 from db.mysql.curd.user_research_field import sql_get_user_research_field
 from db.mysql.curd.user_tag import sql_get_user_tag
 from db.mysql.curd.user_favourite import sql_get_user_favourite
+from db.mysql.curd.user_subscribe import sql_add_user_subscribe, sql_get_user_subscribe
+
 from utils.auth import encode_password, generate_token
 from config import settings
 
@@ -16,6 +18,7 @@ router = APIRouter()
 
 @router.post('/login')
 def login(data: LoginModel, db: Session = Depends(get_db)):
+    data.email = data.email.lower()
     user = sql_get_user(email=data.email, session=db)
     if user:
         if user.password == encode_password(data.password):
@@ -26,6 +29,11 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
             research_fields = [{'field': i.field_id, 'sub_field': []} for i in
                                sql_get_user_research_field(email=user.email, n=user.n_research_field, session=db)]
 
+            user_subscribe = sql_get_user_subscribe(email=data.email, session=db)
+            if user_subscribe is None:
+                user_subscribe = sql_add_user_subscribe(email=data.email,session=db)
+                db.commit()
+
             favourite_tenders = sql_get_user_favourite(email=data.email, session=db)
             return {'code': 200, 'data': {'access_token': access_token,
                                           'first_name': user.first_name,
@@ -33,7 +41,8 @@ def login(data: LoginModel, db: Session = Depends(get_db)):
                                           'university': user.university,
                                           'tags': tags,
                                           'research_fields': research_fields,
-                                          'favourite': [i.id for i in favourite_tenders]
+                                          'favourite': [i.id for i in favourite_tenders],
+                                          'subscribe_status': user_subscribe.status
                                           }}
         raise HTTPException(401, 'INVALID PASSWORD')
     raise HTTPException(404, 'USER NOT FOUND')
@@ -55,6 +64,9 @@ def signup(data: SignupModel, db: Session = Depends(get_db)):
         # clean email
         data.email = data.email.lower()
 
+        # remove duplicate
+        data.research_fields = list(set(data.research_fields))
+
         user = sql_get_user(email=data.email, session=db)
         if user:
             raise HTTPException(403, 'EMAIL EXISTED')
@@ -62,13 +74,17 @@ def signup(data: SignupModel, db: Session = Depends(get_db)):
                             last_name=data.last_name,
                             n_research_field=len(data.research_fields),
                             university=data.university, research_field=data.research_fields, session=db)
+        user_subscribe = sql_add_user_subscribe(data.email, db)
         db.commit()
         access_token = generate_token(
             {'email': data.email, 'expire_date': (datetime.now() + timedelta(days=7)).timestamp()})
         return {'code': 200, 'data': {'email': user.email, 'first_name': user.first_name, 'last_name': user.last_name,
                                       'university': user.university,
                                       'research_fields': [{'field': i, 'sub_field': []} for i in data.research_fields],
-                                      'access_token': access_token}}
+                                      'access_token': access_token,
+                                      'subscribe_status': user_subscribe.status
+                                      },
+                }
     except HTTPException as e:
         raise e
     except Exception as e:

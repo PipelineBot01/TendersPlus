@@ -26,7 +26,7 @@ export default function SearchResult():JSX.Element{
   const user = useAppSelector(state=>state.user)
   const dispatch = useAppDispatch()
 
-  const fetchData = (limit = 0, skip = 0)=>{
+  const fetchData = (limit = 0, skip = 0, isNew = true)=>{
     let encodeQuery = searchParams.get('query') || ''
     const decodeQuery = window.atob(encodeQuery)
     setQueryKeywords(decodeQuery || 'All')
@@ -42,8 +42,9 @@ export default function SearchResult():JSX.Element{
     queryTendersAPI(type, encodeQuery, limit, skip).then((response)=>{
       if (response.data?.length === 0){
         setIsEnd(true)
+        setData([])
       }else{
-        setData(data.concat([...response.data as Array<QueryTender>]))
+        isNew ? setData(response.data as Array<QueryTender>) : setData(data.concat([...response.data as Array<QueryTender>])) 
         useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
       }
     
@@ -57,6 +58,7 @@ export default function SearchResult():JSX.Element{
   useEffect(()=>{	
     setIsLoading(true)
     fetchData(5, 0)
+    setIsEnd(false)
   }, [searchParams.get('query')])
 
   // fetch favorite info
@@ -99,9 +101,8 @@ export default function SearchResult():JSX.Element{
 
   const onClickLoadMoreBtn = ()=>{
     setIsLoading(true)
-    fetchData(5, skip + 5)
+    fetchData(5, skip + 5, false)
     setSkip(skip + 5)
-    
   }
 
 	
@@ -121,18 +122,16 @@ export default function SearchResult():JSX.Element{
                 className='load-more-btn'
                 style={{
                   fontSize:'0.8rem',
-                  fontWeight:'bold',
-                  borderRadius:'2rem',
+                  fontWeight:'500',
+        
                   margin:'0.8rem 0',
-                  border:'3px solid #9e9c9c',
+                  border:'2px solid #9e9c9c',
                   color:'#838181', 
                   padding: '0.24rem 1rem'
                 }}
                 onClick={onClickLoadMoreBtn}>
              Load more
               </div>
-   
-      
             </div>
           }
           itemLayout='vertical'

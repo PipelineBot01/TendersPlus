@@ -2,12 +2,15 @@ div.search-result{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1.5rem;
     /* height: 100%; */
     width: 100%;
-    padding: 2rem  0;
-  
+    padding: 6.4rem  0 2rem 0;
 }
+.dashboard-content div.search-result{
+    padding: 2rem 0;
+}
+
+
 div.search-result-info{
     margin: 1rem 0rem 0.2rem 0.5rem;
     text-align: left;
@@ -27,14 +30,18 @@ div.search-result-filter{
 
 .search-result div.search-bar{
     /* border-left: 2px solid rgb(224, 224, 224); */
-        box-shadow: 0px 4px 6px rgba(59, 103, 88, 0.151); 
-        width: 50%;
+    box-shadow: 0px 4px 6px rgba(59, 103, 88, 0.151); 
+    width: 50%;
+        
 }
+
 div.search-result-content{
     margin-top: 1rem;
-    min-height: 100vh;
-    /* overflow-y: auto; */
-    width: 50%;
+
+    overflow-y: auto;
+    width: 60%;
+     /* scrollbar-width: none;
+     -ms-overflow-style: none; */
     /* border: 1px rgb(221, 221, 221) solid; */
     border-radius: 2rem;
     box-shadow: 0px 4px 6px rgba(59, 103, 88, 0.151);

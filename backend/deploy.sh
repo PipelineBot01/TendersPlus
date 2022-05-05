@@ -7,7 +7,7 @@ echo "git pulling"
 
 cd /home/TendersPlus/backend
 # install the requirements
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --user
 
 echo "install requirements"
 
