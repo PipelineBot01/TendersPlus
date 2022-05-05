@@ -65,9 +65,9 @@ async def send_recommendation():
             content = json.loads(response.content)
             data = content['data']
             sender = create_sender()
-            for i in data:
-                recipient = i['email']
-                go_id = i['go_id']
+            for k,v in data.items:
+                recipient = k
+                go_id = v 
                 docs = await db_get_tenders_from_history_by_ids(go_id)
                 if docs:
                     await sender.send_message(create_html_message(docs, [recipient]))
