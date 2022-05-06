@@ -11,7 +11,8 @@ from db.mysql.curd.user import sql_get_all_users, sql_get_user
 from db.mysql.curd.user_action import sql_get_all_user_action
 from db.mysql.curd.user_research_field import sql_get_all_user_research_field
 from db.mysql.curd.user_tag import sql_get_all_user_tag
-from db.mongo.curd import db_get_tenders_from_history_by_id
+from db.mysql.curd.user_subscribe import sql_get_user_subscribe
+from db.mongo.curd import db_get_tenders_from_history_by_ids
 from utils.auto_email import create_sender, create_html_message
 
 jobs = []
@@ -57,31 +58,23 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-# @job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=True)
-# async def send_recommendation():
-#     data = settings.USER_INFO_DF
-#     print('send_recommendation start')
-#     if data:
-#         user = data['ryan@anu.com']
-#
-#         response = requests.post('http://localhost:20222/get_reco_tenders',
-#                                  json={'id': 'ryan@anu.com', 'divisions': user['divisions'],
-#                                        'tags': (user['tags'] or [])})
-#
-#         if response.status_code == 200:
-#             content = json.loads(response.content)
-#             GO_ID = content['data']
-#             docs = []
-#             for i in GO_ID:
-#                 doc = await db_get_tenders_from_history_by_id(i)
-#                 if doc:
-#                     docs.append(doc)
-#             sender = create_sender()
-#             message = create_html_message(docs[:3],
-#                                           ['u7201445@anu.edu.au',
-#                                            'u7078049@anu.edu.au',
-#                                            'u7004563@anu.edu.au',
-#                                            'u7190388@anu.edu.au'])
-#             await sender.send_message(message)
-#     else:
-#         print('skip send_recommendation')
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=30, timezone='Asia/Hong_Kong'), delay=True)
+async def send_recommendation():
+    if 0 < datetime.now().hour < 6:
+        response = requests.post('http://localhost:20222/get_reco_recipient')
+        if response.status_code == 200:
+            content = json.loads(response.content)
+            data = content['data']
+            sender = create_sender()
+            with session() as db:
+                for k, v in data.items:
+                    print('recipient:', k, 'go_id:', v)
+                    recipient = sql_get_user_subscribe(email=k, session=db)
+                    if recipient and recipient.status == 1:
+                        go_id = v
+                        if go_id:
+                            docs = await db_get_tenders_from_history_by_ids(go_id)
+                            if docs:
+                                await sender.send_message(create_html_message(docs, [recipient]))
+        else:
+            print(f'{datetime.now()}    request error: {response.status_code} {response.content}')

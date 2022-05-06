@@ -3,7 +3,6 @@ import re
 
 import numpy as np
 import pandas as pd
-
 from conf.file_path import TENDERS_RELEVANT_PATH
 
 
@@ -32,7 +31,7 @@ def convert_dtype(input_df: pd.DataFrame):
 
 
 def data_clean(input_df: pd.DataFrame, overwrite=False) -> pd.DataFrame:
-    input_df = input_df[(input_df['GO ID'].notna()) & (input_df['GO ID'] != 'None')]
+    input_df = input_df[(input_df['GO ID'].notna()) & (input_df['GO ID'] != '') & (input_df['GO ID'] != 'None')]
     input_df.loc[:, 'id'] = 'Grants' + input_df['GO ID']
     input_df = input_df[['id',
                          'Agency',

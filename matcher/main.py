@@ -3,7 +3,7 @@ from typing import Optional, List
 from fastapi import FastAPI
 
 from scheduler import scheduler
-from auto_reco import reco_filter, reco_process
+from auto_reco import reco_filter, reco_process, get_email_content
 from researcher.matching import researcher_matcher
 from utils.tool_utils import get_research_strength
 
@@ -33,6 +33,11 @@ async def get_reco_tenders(data: Profile):
     output = reco_process.run(data.__dict__['id'], tmp_output)
     print(output)
     return {'code': 200, 'data': output}
+
+
+@app.post('/get_reco_recipient')
+async def get_recipient():
+    return {'code': 200, 'data': get_email_content()}
 
 
 @app.get('/get_university_strength')

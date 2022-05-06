@@ -152,10 +152,10 @@ class tenderScraper(webScarper):
         return go
 
     def save2Mongo(self, tender):
-        print('*******  insert tender info database *********')
+        print('*******  insert tender info into database *********')
         mongodb = self.db
         result = mongodb.insert(tender)
-        print('*******  finish tender info database *********')
+        print('*******  finish tender info into database *********')
 
 
 class goScraper(webScarper):
@@ -205,18 +205,20 @@ class goScraper(webScarper):
         data = open(file_path, 'rb')
         linkDic = json.load(data)
         old_urls = pd.DataFrame(self.db.find_col("URL"))
-        skip_list = list(old_urls['URL'])
+        update_list = list(old_urls['URL'])
         gos_links = []
         for gid, link in linkDic.items():
             gos_links.append(link)
-            if link in skip_list:
-                continue
+
             print('Generate go info', gid)
             try:
                 go = self.parser(link)
                 self.gos.append(go)
                 if self.save_mongo:
-                    self.save2Mongo(go)
+                    if link in update_list:
+                        self.updateMongo(go)
+                    else:
+                        self.save2Mongo(go)
             except Exception as e:
                 print(e)
                 print('-----> failed to scrap', gid)
@@ -224,7 +226,7 @@ class goScraper(webScarper):
                 continue
             time.sleep(self.interval)
         df = pd.DataFrame(self.gos)
-        for url in skip_list:
+        for url in update_list:
             if url not in gos_links:
                 self.db.delete(URL=url)
         print('Saving complete')
@@ -280,7 +282,14 @@ class goScraper(webScarper):
         return gosPage
 
     def save2Mongo(self, go):
-        print('*******  insert tender info database *********')
+        print('*******  insert tender info into database *********')
         mongodb = self.db
         result = mongodb.insert(go)
-        print('*******  finish tender info database *********')
+        print('*******  finish tender info into database *********')
+
+    def updateMongo(self, go):
+        print('*******  update tender info into database *********')
+        mongodb = self.db
+        q = {'URL': go['URL']}
+        v = {'$set': go}
+        result = mongodb.update_one(q, v)

@@ -11,16 +11,28 @@ def get_reco_tenders(profile):
     return fl.match(profile)
 
 if __name__ == '__main__':
-    profile = {"id": "jennytestone@test.com", "divisions": ["d_14", "d_15"], "tags": ['accounting',
-                                                                                      'bank',
-                                                                                      'cash',
-                                                                                      'contingency',
-                                                                                      'design',
-                                                                                      'economic success',
-                                                                                      'endorsements',
-                                                                                      'financial performance',
-                                                                                      'gold standard',
-                                                                                      'income tax']}
+    profile = {"id": "jennytestone@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",
+                                                                                      "bank",
+                                                                                      "cash",
+                                                                                      "contingency",
+                                                                                      "design",
+                                                                                      "economic success",
+                                                                                      "endorsements",
+                                                                                      "financial performance",
+                                                                                      "gold standard",
+                                                                                      "income tax"]}
+
     tmp_df = get_reco_tenders(profile)
-    print(tmp_df)
+    print(reco_process.run("jennytestone@test.com", tmp_df))
     # print(get_sim_researchers({"id": "Ryanyang@anu.com", "divisions": ["d_20", "d_21", "d_22"], "tags": ["Human"]}))
+    #
+    # {"id": "jennytestsix@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",
+    #                                                                         "bitcoin",
+    #                                                                         "commodity",
+    #                                                                         "credit",
+    #                                                                         "development project",
+    #                                                                         "ecotourism",
+    #                                                                         "empowerment",
+    #                                                                         "food supply",
+    #                                                                         "gross domestic product",
+    #                                                                         "small business"]}

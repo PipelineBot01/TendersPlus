@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from conf.clean import REMAIN_COLS
 from conf.file_path import TENDERS_INFO_PATH, TENDERS_TAG_PATH, \
-    TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH, TENDERS_RELATION_MAP_PATH
+    TENDERS_TOPIC_PATH, TENDERS_CATE_DIV_MAP_PATH, TENDERS_RELATION_MAP_PATH, TENDERS_EMAIL_PATH
 from db.mongodb import MongoConx
 from tenders.clean.data_clean import data_clean, convert_dtype
 from tenders.features.lda_model import LDAModel
@@ -17,13 +17,14 @@ class TendersUpdater:
                  tag_path=TENDERS_TAG_PATH,
                  topic_path=TENDERS_TOPIC_PATH,
                  cate_div_map=TENDERS_CATE_DIV_MAP_PATH,
+                 tenders_email_path=TENDERS_EMAIL_PATH,
                  pk: str = 'id'):
         self.pk = pk
         self.info_path = info_path
         self.tag_path = tag_path
         self.topic_path = topic_path
         self.cate_div_map = cate_div_map
-
+        self.tenders_email_path = tenders_email_path
         self.mgx = MongoConx('tenders')
         self.raw_data_df = None
 
@@ -219,8 +220,18 @@ class TendersUpdater:
             del old_raw_data_df
             overwrite = True
 
+        if not os.path.exists(self.tenders_email_path):
+            pd.DataFrame({'go_id': []}).to_csv(self.tenders_email_path, index=0)
+
         if not raw_remain_data_df.empty:
             print(f'-- {len(raw_remain_data_df)} new Grants {raw_remain_data_df[self.pk].unique().tolist()}')
+
+            # update new email tenders
+            print('-- start updating email tenders')
+            tmp_new_df = pd.read_csv(self.tenders_email_path)
+            tmp_new_df.append(raw_remain_data_df[['GO ID']].rename(columns={'GO ID': 'go_id'}
+                                                                   )).to_csv(self.tenders_email_path, index=0)
+            print('-- end updating email tenders')
 
             # update info
             print('-- start updating tender info')
