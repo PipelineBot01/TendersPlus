@@ -29,6 +29,7 @@ def get_email_content() -> Dict:
     tm = TendersMatcher()
     save_dict = {}
     for t_id in merge_df['id']:
+        go_id = merge_df[merge_df['id'] == t_id]['go_id'].values[0]
         tmp_df = tm.match(t_id, 20).rename(columns={'id': 't_id'})
         result_df = tmp_df.merge(remain_df, on='t_id')[['id']]
 
@@ -36,7 +37,6 @@ def get_email_content() -> Dict:
         tmp_df = tmp_df[tmp_df['id'].str.startswith('Reg_')]
         final_df = result_df.append(tmp_df).drop_duplicates(['id'])
         for r_id in final_df['id']:
-            save_dict[r_id] = [t_id] if r_id not in save_dict.keys() else save_dict[r_id].append(t_id)
-
+            save_dict[r_id] = [go_id] if r_id not in save_dict.keys() else save_dict[r_id].append(go_id)
     pd.DataFrame({'go_id': []}).to_csv(TENDERS_EMAIL_PATH, index=0)
     return save_dict

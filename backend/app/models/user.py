@@ -8,7 +8,6 @@ class ProfileModel(BaseModel):
     university: str
     research_fields: List[str]
     tags: List[str]
-    subscribe_status: int
 
     @validator('research_fields')
     def validate_research_fields(cls, value):

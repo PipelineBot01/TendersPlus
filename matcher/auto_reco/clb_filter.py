@@ -57,10 +57,25 @@ class Filter:
 
         return merge_df[['id', 'weight']]
 
-    def __reformat_result(self, input_df):
+    def __add_division_penalty(self, input_df, division):
+        melt_df = input_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
+        melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
+        melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
+        on_div_df = melt_df[melt_df['division'].isin(division)]
+        out_div_df = melt_df[~melt_df['go_id'].isin(on_div_df['go_id'])]
+        return on_div_df, out_div_df
+
+    def __reformat_result(self, input_df, cold_start_df, division):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
         merge_df = merge_df[merge_df['go_id'].notna()]
-        return merge_df
+        on_div_df, out_div_df = self.__add_division_penalty(merge_df, division)
+        out_df = merge_df[merge_df['go_id'].isin(out_div_df['go_id'])][['go_id', 'weight']]
+        on_df = merge_df[merge_df['go_id'].isin(on_div_df['go_id'])][['go_id', 'weight']]
+        out_df['weight'] = out_df['weight']*5
+        if on_df.empty:
+            on_df = cold_start_df
+            on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
+        return on_df[['go_id', 'weight']].append(out_df).sort_values('weight')
 
     def get_hot_tenders(self):
         if self.__action_df.empty:
@@ -104,21 +119,23 @@ class Filter:
             profile_dict['id'] = 'Reg_' + profile_dict['id']
         sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
+
+        # TODO: only for testing -Ray 2022/4/20
+        filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
+        melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
+        melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
+        melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
+        div_dict = get_div_id_dict()
+        melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
+        melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
+        cold_start_df = melt_df.groupby('go_id'
+                                        )['division'].count().reset_index().rename(columns={'division': 'cnt'}
+                                                                                   ).sort_values('cnt', ascending=False)
+        del sim_re_df
+
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
-            # TODO: only for testing -Ray 2022/4/20
-            filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
-            melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
-            melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
-            melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
-            div_dict = get_div_id_dict()
-            melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
-            melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
-            cnt_df = melt_df.groupby('go_id'
-                                     )['division'].count().reset_index().rename(columns={'division': 'cnt'}
-                                                                                ).sort_values('cnt', ascending=False)
-            return cnt_df
-        del sim_re_df
+            return cold_start_df
 
         remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
         remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
@@ -144,5 +161,5 @@ class Filter:
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)
 
-        return self.__reformat_result(result_df.sort_values('weight'))[['id', 'go_id']]
+        return self.__reformat_result(result_df.sort_values('weight'), cold_start_df, profile_dict['divisions'])
 
