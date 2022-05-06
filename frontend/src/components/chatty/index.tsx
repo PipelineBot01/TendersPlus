@@ -52,10 +52,13 @@ export default function Chatty():JSX.Element{
               />
             </Card>
           </Col>
-        }) :	<>
-          <Spin style={{width:'100%'}} ></Spin>
-          <div style={{fontWeight:600, fontSize:'0.8rem', color:'gray', margin:'0.3rem'}}>Analyzing...</div>
-        </>
+        }) :	
+        
+          <div style={{padding:'15rem 0', textAlign:'center', height:'80vh'}}>
+            <Spin size='default' />
+            <div style={{color:'gray', fontSize:'0.8rem', fontWeight:600, marginTop:'0.3rem'}}>Matching...</div>
+          </div> 
+
       }
     </Row>
   </>
