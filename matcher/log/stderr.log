@@ -7426,3 +7426,17 @@ Traceback (most recent call last):
     return {'code': 200, 'data': reco_process.get_hot_tenders()}
 AttributeError: 'PostProcess' object has no attribute 'get_hot_tenders'
 2022-05-06 11:04:34,236    INFO:     Shutting down
+To git@github.com:PipelineBot01/TendersPlus.git
+   a5e3351..62e5084  master -> master
+2022-05-06 11:05:23,357    INFO:     Started server process [2968]
+2022-05-06 11:05:23,357    INFO:     Waiting for application startup.
+2022-05-06 11:05:26,170    INFO:     Application startup complete.
+2022-05-06 11:05:26,171    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
+From github.com:PipelineBot01/TendersPlus
+   62e5084..1d4e3e1  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+	matcher/researcher/assets/reg_researcher_info.csv
+	matcher/researcher/assets/researcher_division.csv
+	matcher/researcher/assets/researcher_tag.csv
+Please, commit your changes or stash them before you can merge.
+Aborting
