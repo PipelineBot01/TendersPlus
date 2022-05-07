@@ -1,4 +1,5 @@
 import os
+import datetime
 from typing import Dict
 import numpy as np
 import pandas as pd
@@ -12,6 +13,7 @@ from utils.match_utils import get_div_id_dict
 
 WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
 SELF_ACT_LIST = [0, 1, 2]
+
 
 class Filter:
     def __init__(self, act_path=RESEARCHER_ACTION_PATH,
@@ -77,19 +79,22 @@ class Filter:
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
         return on_df[['go_id', 'weight']].append(out_df).sort_values('weight')
 
-    def get_hot_tenders(self):
-        if self.__action_df.empty:
-            return []
-        tmp_df = self.__action_df.copy()
-        tmp_df['date'] = tmp_df['action_date'].dt.normalize()
-        tmp_df = tmp_df.drop_duplicates(['r_id', 'type', 'go_id', 'date'])
+    def __diff_month(self, date, cur_date):
+        return (cur_date.year - date.year) * 12 + cur_date.month - date.month
 
-        tmp_df['1_month'] = tmp_df['action_date'].map(lambda x: self.__diff_month(x))
+    def get_hot_tenders(self):
+        if self.__act_df.empty:
+            return []
+        tmp_df = self.__act_df.copy()
+        tmp_df['date'] = pd.to_datetime(tmp_df['action_date'])
+        tmp_df = tmp_df.drop_duplicates(['id', 'type', 'go_id', 'date'])
+        cur_date = datetime.datetime.now()
+        tmp_df['1_month'] = tmp_df['date'].map(lambda x: self.__diff_month(x, cur_date))
         tmp_df.loc[tmp_df['1_month'] < 2, '1_month'] = 1
         tmp_df['1_month'] = tmp_df['1_month'].fillna(0)
 
         hot_df = tmp_df[(tmp_df['type'].isin(SELF_ACT_LIST)) & (tmp_df['1_month'])
-                        ].groupby('go_id')['r_id'].count().reset_index().rename(columns={'r_id': 'cnt'}).sort_values(
+                        ].groupby('go_id')['id'].count().reset_index().rename(columns={'id': 'cnt'}).sort_values(
             'cnt', ascending=False).reset_index(drop=True).reset_index()
         return hot_df['go_id'].tolist()
 
