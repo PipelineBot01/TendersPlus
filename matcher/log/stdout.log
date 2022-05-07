@@ -35696,3 +35696,29 @@ initial update task
 2022-05-07 23:05:28,409    INFO:     ::1:48316 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
 2022-05-07 23:05:28,438    INFO:     ::1:48320 - "GET /get_university_strength HTTP/1.1" 200 OK
 git pulling
+[master faf83c0] update model
+ 10 files changed, 11580 insertions(+), 737 deletions(-)
+ rewrite scraper/assets/gosLink.json (98%)
+run matcher
+initial update task
+2022-05-07 23:07:35 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-07 23:07:38 ------ end update researchers pool
+2022-05-07 23:07:53,456    INFO:     ::1:48612 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:07:53,495    INFO:     ::1:48616 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:09:41,936    INFO:     ::1:48750 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:09:41,963    INFO:     ::1:48752 - "GET /get_university_strength HTTP/1.1" 200 OK
+git pulling
