@@ -11,7 +11,7 @@ from utils.match_utils import normalize
 from utils.match_utils import get_div_id_dict
 
 WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
-
+SELF_ACT_LIST = [0, 1, 2]
 
 class Filter:
     def __init__(self, act_path=RESEARCHER_ACTION_PATH,

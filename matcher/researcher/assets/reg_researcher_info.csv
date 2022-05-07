@@ -1,7 +1,7 @@
 email,university,name,divisions,tags,id
 123@123.com,Australian National University,Test Chemical,['d_03'],,Reg_123@123.com
 biological@123.com,Australian National University,Test Biological,['d_06'],,Reg_biological@123.com
-charles@0.com,Australian National University,Ttt Ttt,"['d_08', 'd_10']",,Reg_charles@0.com
+charles@0.com,Australian National University,charles test,"['d_08', 'd_10']",,Reg_charles@0.com
 history@123.com,Australian National University,Test History,['d_21'],,Reg_history@123.com
 huerta@test.com,Australian National University,Terri Huerta,"['d_04', 'd_05']",['Ocean'],Reg_huerta@test.com
 information@123.com,Australian National University,Test Information,['d_08'],,Reg_information@123.com
@@ -25,12 +25,12 @@ jennytestthree@test.com,University of Newcastle,Jenny Testthree,['d_15'],"['cont
 jennytesttwelve@test.com,University of Newcastle,Jenny Testtwelve,"['d_07', 'd_14', 'd_15']",,Reg_jennytesttwelve@test.com
 jennytesttwo@test.com,University of Newcastle,Jenny Testtwo,['d_14'],"['accounting', 'bank', 'budget', 'conservation management', 'customer', 'economic impact', 'employability', 'financial management', 'globalization', 'income distribution']",Reg_jennytesttwo@test.com
 philosophy@123.com,Australian National University,Test Philosophy,['d_22'],,Reg_philosophy@123.com
-robert.b@anu.com,Australian National University,Robert B,"['d_16', 'd_19', 'd_20']","[' ""acculturation""', ' ""community paticipation""', ' ""cultural geography""', ' ""cultural relations""', ' ""social identification""', ' ""social networking""', '""community research""']",Reg_robert.b@anu.com
-robert.c@aun.com,Australian National University,Robert C,"['d_16', 'd_20', 'd_21']","['acculturation', 'community participation', 'community research', 'cultural diversity', 'cultural heritage', 'internal migration', 'policy attitude']",Reg_robert.c@aun.com
-robert.d@anu.com,Australian National University,Robert D,"['d_16', 'd_18', 'd_20']","[' ""acculturation""', ' ""community paticipation""', ' ""cultural geography""', ' ""cultural relations""', '""community research""', '""corruption""', '""discrimination""']",Reg_robert.d@anu.com
-robert.e@anu.com,Australian National University,Robert E,"['d_19', 'd_20', 'd_21']","['  ""global""', ' ""digital divide""', ' ""intercultural learning""', ' ""social identification""', ' ""social networking""', '""campaign""', '""immigrant""']",Reg_robert.e@anu.com
-robert.f@anu.com,Australian National University,Robert F,"['d_16', 'd_18', 'd_21']","['campaign', 'community participation', 'discramination', 'emigration and immigration', 'immigrant', 'internal immigration', 'migration']",Reg_robert.f@anu.com
-ryan@anu.com,Australian National University,Ryan Yang,"['d_04', 'd_05', 'd_06']",['Wood'],Reg_ryan@anu.com
+robert.b@anu.com,Australian National University,Robert B,"['d_16', 'd_19', 'd_20']","['acculturation', 'community participation', 'community research', 'cultural geography', 'cultural relations', 'digital divide', 'intercultural learning', 'intercultural skills', 'media consumption', 'virtual community']",Reg_robert.b@anu.com
+robert.c@aun.com,Australian National University,Robert C,"['d_16', 'd_20', 'd_21']","['acculturation', 'campaign', 'community participation', 'community research', 'cultural diversity', 'cultural heritage', 'culture factors', 'culture studies', 'internal migration', 'policy attitude']",Reg_robert.c@aun.com
+robert.d@anu.com,Australian National University,Robert D,"['d_16', 'd_18', 'd_20']","['acculturation', 'community participation', 'community research', 'cultural factors', 'cultural geography', 'cultural relations', 'discrimination', 'discrimination law', 'fairness', 'government policy']",Reg_robert.d@anu.com
+robert.e@anu.com,Australian National University,Robert E,"['d_19', 'd_20', 'd_21']","['artefact', 'artwork', 'community research', 'creative work', 'cultural geography', 'cultural heritage', 'cultural relations', 'historic', 'history', 'indigenous']",Reg_robert.e@anu.com
+robert.f@anu.com,Australian National University,Robert F,"['d_16', 'd_18', 'd_21']","['campaign', 'community participation', 'community research', 'discrimination', 'discrimination law', 'emigration and immigration', 'immigrant', 'indigenous people', 'internal immigration', 'migration']",Reg_robert.f@anu.com
+ryan@anu.com,Australian National University,Ryan Yang,"['d_04', 'd_05']",['Wood'],Reg_ryan@anu.com
 stageonehigha@anu.edu.au,Australian National University,StageOneHighA Medic,"['d_06', 'd_11', 'd_17']","['ankle', 'communicable diseases', 'drug-related side effects and adverse reactions', 'endophenotypes', 'exercise test', 'health personnel', 'home care services', 'mental disorders', 'physical activity', 'triage']",Reg_stageonehigha@anu.edu.au
 stageonelowa@anu.edu.au,Australian National University,StageOneLowA Medic,"['d_13', 'd_17']",,Reg_stageonelowa@anu.edu.au
 stageonemida@anu.edu.au,Australian National University,StageOneMidA Medic,"['d_11', 'd_17']","['body composition', 'communicable diseases', 'drug-related side effects and adverse reactions', 'health personnel', 'interferons', 'mental disorders', 'nutrients', 'proliferation', 'wrist']",Reg_stageonemida@anu.edu.au

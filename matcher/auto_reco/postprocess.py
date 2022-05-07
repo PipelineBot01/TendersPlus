@@ -6,7 +6,6 @@ from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from tenders.matching.tenders_relation import TendersMatcher
 
 NOW_DATE = datetime.datetime.now()
-SELF_ACT_LIST = [0, 1, 2]
 DISLIKE_TYPE = 3
 
 
