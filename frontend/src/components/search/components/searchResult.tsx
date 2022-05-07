@@ -56,8 +56,7 @@ export default function SearchResult():JSX.Element{
 
   // fetch data
   useEffect(()=>{	
-    setIsLoading(true)
-    fetchData(5, 0)
+    fetchData(5, skip)
     setIsEnd(false)
   }, [searchParams.get('query')])
 
@@ -98,7 +97,6 @@ export default function SearchResult():JSX.Element{
     }
   }
 
-
   const onClickLoadMoreBtn = ()=>{
     setIsLoading(true)
     fetchData(5, skip + 5, false)
@@ -106,130 +104,141 @@ export default function SearchResult():JSX.Element{
   }
 
 	
-  return <>
+  return  <>
     <div className='search-result'>
-      <SearchBar placeholder={`Searched: ${queryKeywords}`}/>
+      {
+        isLoading ?  
+          <div style={{padding:'15rem 0', textAlign:'center', height:'80vh'}}>
+            <Spin size='default' />
+            <div style={{color:'gray', fontSize:'0.8rem', fontWeight:600, marginTop:'0.3rem'}}>Searching...</div>
+          </div> : <>
+            <SearchBar placeholder={`Searched: ${queryKeywords}`}/>
 
-      <div className='search-result-content'>
-        <List
-          loadMore={isLoading || isEnd ? null : 
-            <div 
-              style={{
-                display:'flex',
-                justifyContent:'center'
-              }}> 
-              <div
-                className='load-more-btn'
-                style={{
-                  fontSize:'0.8rem',
-                  fontWeight:'500',
+            <div className='search-result-content'>
+              <List
+                loadMore={isLoading || isEnd ? null : 
+                  <div 
+                    style={{
+                      display:'flex',
+                      justifyContent:'center'
+                    }}> 
+                    <div
+                      className='load-more-btn'
+                      style={{
+                        fontSize:'0.8rem',
+                        fontWeight:'500',
         
-                  margin:'0.8rem 0',
-                  border:'2px solid #9e9c9c',
-                  color:'#838181', 
-                  padding: '0.24rem 1rem'
-                }}
-                onClick={onClickLoadMoreBtn}>
+                        margin:'0.8rem 0',
+                        border:'2px solid #9e9c9c',
+                        color:'#838181', 
+                        padding: '0.24rem 1rem'
+                      }}
+                      onClick={onClickLoadMoreBtn}>
              Load more
-              </div>
-            </div>
-          }
-          itemLayout='vertical'
-          loading={isLoading}
-          size='large'
-          dataSource={data}
-          locale={
-            {emptyText:'Cannot find any data'}
-          }
-          renderItem={item=>{
-            const tags:string[] = item.tags?.split(' ')
-            const divisions:string[]  = item.division?.split('/')
-            return <List.Item key={item['GO ID']}>
-              <List.Item.Meta 
-                title={
-                  <a href={item['URL']} className='link' 
-                    onClick={()=>{
-                      useCollector({type:1, payload:item['GO ID']})
-                    }}
-                  >{item['GO ID'] + ' - ' + item['Title']}</a>        
-                } 
-                description={
-                  <>
-                    <Row className='close-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Close Date & Time:</Col>
-                      <Col span={18}>{item['Close Date & Time']}</Col>
-                    </Row>
-                    <Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Publish Date:</Col>
-                      <Col span={18}>{item['Publish Date']}</Col>
-                    </Row>
-                    <Row className='agency' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Agency:</Col>
-                      <Col span={18}>{item['Agency']}</Col>
-                    </Row>
-                    <Row className='location' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Location:</Col>
-                      <Col span={18}>{item['Location']}</Col>
-                    </Row>
-                    <Row className='division' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Divisions: </Col>
-                      <Col span={18}>
-                        {divisions.map((e, i)=>(
-																   <Tag color="volcano" key={i}>{capitalize(e)}</Tag>
-                        ))}
-								
-                      </Col>
-                    </Row>
-                    <Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
-                      <Col style={{textAlign:'right'}} span={5}>Keywords: </Col>
-                      <Col span={18}>
-                        {tags.map((e, i)=>(<span key={i} className='item'>
-                          <DonutChart 
-                            width={12} 
-                            height={12}
-                            backgroundColor='#EDEEEE' 
-                            chartColor='#FFC736'
-                            percentage={(18 - i) / 15}
-                            strokeWidth={2}
-                          />
-                          {e}
-                        </span>))}
-								
-                      </Col>
-                    </Row>
-
-                    <Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
-													
-                      <Col  className='favourite-btn' >
-                        {
-                          renderFavouriteBtn(item['GO ID'])
-                        }
-                      </Col>
-													
-			
-                      <Col span={5}>
-                        <a  className='url' 
-                          href={item['URL']}
+                    </div>
+                  </div>
+                }
+                itemLayout='vertical'
+                size='large'
+                dataSource={data}
+                locale={
+                  {emptyText:'Cannot find any data'}
+                }
+                renderItem={item=>{
+                  const tags:string[] = item.tags?.split(' ')
+                  const divisions:string[]  = item.division?.split('/')
+                  return <List.Item key={item['GO ID']}>
+                    <List.Item.Meta 
+                      title={
+                        <a href={item['URL']} className='link' 
                           onClick={()=>{
                             useCollector({type:1, payload:item['GO ID']})
                           }}
-                        >
-															Read more
-                          <FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
-                        </a>
-                      </Col>
+                        >{item['GO ID'] + ' - ' + item['Title']}</a>        
+                      } 
+                      description={
+                        <>
+                          <Row className='close-date' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Close Date & Time:</Col>
+                            <Col span={18}>{item['Close Date & Time']}</Col>
+                          </Row>
+                          <Row className='open-date' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Publish Date:</Col>
+                            <Col span={18}>{item['Publish Date']}</Col>
+                          </Row>
+                          <Row className='agency' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Agency:</Col>
+                            <Col span={18}>{item['Agency']}</Col>
+                          </Row>
+                          <Row className='location' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Location:</Col>
+                            <Col span={18}>{item['Location']}</Col>
+                          </Row>
+                          <Row className='division' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Divisions: </Col>
+                            <Col span={18}>
+                              {divisions.map((e, i)=>(
+																   <Tag color="volcano" key={i}>{capitalize(e)}</Tag>
+                              ))}
+								
+                            </Col>
+                          </Row>
+                          <Row className='tags' style={{marginTop:'0.5rem'}}  gutter={6}>
+                            <Col style={{textAlign:'right'}} span={5}>Keywords: </Col>
+                            <Col span={18}>
+                              {tags.map((e, i)=>(<span key={i} className='item'>
+                                <DonutChart 
+                                  width={12} 
+                                  height={12}
+                                  backgroundColor='#EDEEEE' 
+                                  chartColor='#FFC736'
+                                  percentage={(18 - i) / 15}
+                                  strokeWidth={2}
+                                />
+                                {e}
+                              </span>))}
+								
+                            </Col>
+                          </Row>
+
+                          <Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
 													
-                    </Row>
-                  </>
+                            <Col  className='favourite-btn' >
+                              {
+                                renderFavouriteBtn(item['GO ID'])
+                              }
+                            </Col>
+													
+			
+                            <Col span={5}>
+                              <a  className='url' 
+                                href={item['URL']}
+                                onClick={()=>{
+                                  useCollector({type:1, payload:item['GO ID']})
+                                }}
+                              >
+															Read more
+                                <FontAwesomeIcon style={{marginLeft:'0.5rem'}} icon={faAnglesRight}/>
+                              </a>
+                            </Col>
+													
+                          </Row>
+                        </>
 									
+                      }
+                    />
+                  </List.Item>
+                }
                 }
               />
-            </List.Item>
-          }
-          }
-        />
-      </div>
+            </div>
+
+          </>
+      }
+      
+      
 
     </div>
   </>
+   
 }

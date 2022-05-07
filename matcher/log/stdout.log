@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 initial update task
 {'id': 'Reg_Ryanyang@anu.com', 'divisions': ['d_20', 'd_21', 'd_22'], 'tags': ['Human']} with no similar data
 Empty DataFrame
@@ -32522,3 +32524,4 @@ initial update task
 2022-05-06 11:04:25,312    INFO:     ::1:52964 - "POST /get_sim_researchers HTTP/1.1" 200 OK
 git pulling
 Already up-to-date.
+>>>>>>> 1d4e3e16c97f1e84b8519dac968db07fe02d84dd
