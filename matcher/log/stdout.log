@@ -35768,3 +35768,38 @@ initial update task
 2022-05-07 23:29:41,557    INFO:     ::1:50162 - "GET /get_university_strength HTTP/1.1" 200 OK
 2022-05-07 23:29:43,162    INFO:     ::1:50170 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
 git pulling
+[master 3557818] update model
+ 3 files changed, 632 insertions(+), 322 deletions(-)
+run matcher
+initial update task
+2022-05-07 23:34:49 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-07 23:34:51 ------ end update researchers pool
+2022-05-07 23:35:09,864    INFO:     ::1:50616 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:35:09,892    INFO:     ::1:50620 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:35:11,973    INFO:     ::1:50644 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:35:11,998    INFO:     ::1:50646 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:38:03,235    INFO:     ::1:50828 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:38:03,262    INFO:     ::1:50834 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:38:23,543    INFO:     ::1:50876 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:38:23,568    INFO:     ::1:50878 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:38:24,402    INFO:     ::1:50902 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:38:24,425    INFO:     ::1:50904 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:38:25,833    INFO:     ::1:50936 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:38:25,861    INFO:     ::1:50938 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:38:42,754    INFO:     ::1:50980 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:38:42,782    INFO:     ::1:50982 - "GET /get_university_strength HTTP/1.1" 200 OK
+git pulling
