@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
 
     tmp_df = get_reco_tenders(profile)
-    print(fl.get_hot_tenders())
-    # print(reco_process.run("StageZero@anu.edu.au", tmp_df))
+    # print(fl.get_hot_tenders())
+    print(reco_process.run("StageZero@anu.edu.au", tmp_df))
     # print(get_sim_researchers({"id": "Ryanyang@anu.com", "divisions": ["d_20", "d_21", "d_22"], "tags": ["Human"]}))
     #
     # {"id": "jennytestsix@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",

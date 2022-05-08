@@ -43,7 +43,7 @@ class Filter:
         -------
 
         '''
-        save_df = save_df[~save_df['id'].isin(save_df['orig_id'])]
+        save_df = save_df[save_df['id'].isin(save_df['orig_id'])]
         re_weight_df = save_df.groupby(['id', 'orig_id']).agg({'weight': 'min'}).reset_index()
         merge_df = re_weight_df.merge(act_tenders_df, left_on='orig_id', right_on='t_id')
         del act_tenders_df, save_df
@@ -125,7 +125,6 @@ class Filter:
         sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
 
-        # TODO: only for testing -Ray 2022/4/20
         filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
         melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
         melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
