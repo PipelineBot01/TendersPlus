@@ -33,24 +33,29 @@ async def get_all_user_info():
         if record_1:
             record_2 = sql_get_all_user_research_field(db)
             if record_2:
+
+                df_all_user = pd.DataFrame.from_records(record_1)
+                df_all_user_research_field = pd.DataFrame.from_records(record_2).groupby('email',
+                                                                                         as_index=False).agg(
+                    {'field_id': lambda x: list(x)})
+
+                df_all_user_research_field.rename(columns={'field_id': 'divisions'}, inplace=True)
+
                 record_3 = sql_get_all_user_tag(db)
-                if record_3:
-                    df_all_user = pd.DataFrame.from_records(record_1)
-                    df_all_user_research_field = pd.DataFrame.from_records(record_2).groupby('email',
-                                                                                             as_index=False).agg(
-                        {'field_id': lambda x: list(x)})
+                df_all_user_tag = record_3 and pd.DataFrame.from_records(record_3).groupby('email', as_index=False).agg(
+                    {'name': lambda x: list(x)})
 
-                    df_all_user_research_field.rename(columns={'field_id': 'divisions'}, inplace=True)
-                    df_all_user_tag = pd.DataFrame.from_records(record_3).groupby('email', as_index=False).agg(
-                        {'name': lambda x: list(x)})
-
+                if df_all_user_tag.shape[0] != 0:
                     df_all_user_tag.rename(columns={'name': 'tags'}, inplace=True)
                     data = pd.merge(df_all_user_research_field, df_all_user_tag, how='left', on='email')
-                    data = pd.merge(df_all_user, data, how='inner', on='email')
-                    data.fillna('', inplace=True)
-                    settings.USER_INFO = data.to_dict('records')
-                    settings.USER_INFO_DF = data.set_index('email').to_dict('index')
-                    # print('user_info_df:', settings.USER_INFO_DF)
+                    data['tags'] = data['tags'].apply(lambda d: d if isinstance(d, list) else [])
+                else:
+                    data = df_all_user_research_field
+                    data['tags'] = [[] for i in range(data.shape[0])]
+                data = pd.merge(df_all_user, data, how='inner', on='email')
+                settings.USER_INFO = data.to_dict('records')
+                settings.USER_INFO_DF = data.set_index('email').to_dict('index')
+                # print('user_info_df:', settings.USER_INFO_DF)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
@@ -59,7 +64,7 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=False)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=True)
 async def send_recommendation():
     if 0 < datetime.now().hour < 24:
         print('start send_recommendation ')
@@ -70,14 +75,16 @@ async def send_recommendation():
                 sender = create_sender()
                 for r in recipients:
                     user_df = (r.email in settings.USER_INFO_DF) and (settings.USER_INFO_DF[r.email])
+
                     if user_df:
                         try:
                             response = requests.post('http://localhost:20222/get_reco_tenders',
                                                      json={'id': r.email, 'divisions': user_df['divisions'],
-                                                           'tags': (user_df['tags'] or [])})
+                                                           'tags': user_df['tags']})
                             if response.status_code == 200:
                                 go_id = json.loads(response.content)['data'][:3]
-                                docs = db_get_tenders_from_history_by_ids(go_id)
+                                docs = await db_get_tenders_from_history_by_ids(go_id)
+
                                 if docs:
                                     await sender.send_message(create_html_message(docs, [r.email]))
                                     r.last_date = datetime.now()
