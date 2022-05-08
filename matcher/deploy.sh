@@ -1,15 +1,11 @@
 cd /home/TendersPlus
 
-git add .
-git commit -m"update log"
+
+git reset --hard origin/master:
 
 echo "git pulling"
 
 git pull -X theirs
-
-git add .
-git commit -a
-git push origin master
 
 cd /home/TendersPlus/matcher
 
