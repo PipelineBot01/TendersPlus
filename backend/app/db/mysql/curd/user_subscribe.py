@@ -1,6 +1,6 @@
 from typing import Union, List
 from sqlalchemy.orm import Session
-from sqlalchemy import and_, or_
+from sqlalchemy import and_, or_, null
 from datetime import datetime
 
 from ..schema.user_subscribe import SQLUserSubscribe
@@ -23,7 +23,7 @@ def sql_get_all_subscribed_users(session: Session) -> List[SQLUserSubscribe]:
 def sql_get_all_users_needed_send_email(session: Session, date: datetime) -> List[SQLUserSubscribe]:
     return session.query(SQLUserSubscribe).filter(
         and_(SQLUserSubscribe.status == 1,
-             or_(SQLUserSubscribe.last_date <= date, SQLUserSubscribe.last_date is None))).limit(5).all()
+             or_(SQLUserSubscribe.last_date == None, SQLUserSubscribe.last_date < date))).limit(5).all()
 
 
 def sql_update_user_subscribe(user_subscribe: SQLUserSubscribe, update: dict) -> None:

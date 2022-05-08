@@ -488,6 +488,16 @@ _id,colleges,email,name,profile,projecttags,title,university,stafftags,otheremai
 ,,stageonemida@anu.edu.au,StageOneMidA Medic,,,,Australian National University,,,Reg_stageonemida@anu.edu.au
 ,,stageonemidb@anu.edu.au,StageOneMidB Medic,,,,Australian National University,,,Reg_stageonemidb@anu.edu.au
 ,,stageonemidc@anu.edu.au,StageOneMidC Medic,,,,Australian National University,,,Reg_stageonemidc@anu.edu.au
+,,stagetwohigha@anu.edu.au,StageTwoHighA Medic,,,,Australian National University,,,Reg_stagetwohigha@anu.edu.au
+,,stagetwohighb@anu.edu.au,StageTwoHighB Medic,,,,Australian National University,,,Reg_stagetwohighb@anu.edu.au
+,,stagetwolowa@anu.edu.au,StageTwoLowA Medic,,,,Australian National University,,,Reg_stagetwolowa@anu.edu.au
+,,stagetwolowb@anu.edu.au,StageTwoLowB Medic,,,,Australian National University,,,Reg_stagetwolowb@anu.edu.au
+,,stagetwomida@anu.edu.au,StageTwoMidA Medic,,,,Australian National University,,,Reg_stagetwomida@anu.edu.au
+,,stagetwomidb@anu.edu.au,StageTwoMidB Medic,,,,Australian National University,,,Reg_stagetwomidb@anu.edu.au
+,,stagetwomidc@anu.edu.au,StageTwoMidC Medic,,,,Australian National University,,,Reg_stagetwomidc@anu.edu.au
+,,stagetwomidd@anu.edu.au,StageTwoMidD Medic,,,,Australian National University,,,Reg_stagetwomidd@anu.edu.au
+,,stagetwomide@anu.edu.au,StageTwoMidE Medic,,,,Australian National University,,,Reg_stagetwomide@anu.edu.au
+,,stagetwomidf@anu.edu.au,StageTwoMidF Medic,,,,Australian National University,,,Reg_stagetwomidf@anu.edu.au
 ,,stagezero@anu.edu.au,StageZero Medic,,,,Australian National University,,,Reg_stagezero@anu.edu.au
 ,,stagezerotesta@anu.edu.au,StageZeroTestA Medic,,,,Australian National University,,,Reg_stagezerotesta@anu.edu.au
 ,,t@0.com,Test Test,,,,Australian National University,,,Reg_t@0.com
@@ -499,4 +509,5 @@ _id,colleges,email,name,profile,projecttags,title,university,stafftags,otheremai
 ,,testtesttwenty@test.com,Jenny Testtwenty,,,,University of Newcastle,,,Reg_testtesttwenty@test.com
 ,,testtwentyone@test.com,Jenny Testtwentyone,,,,University of Newcastle,,,Reg_testtwentyone@test.com
 ,,u6872840@anu.edu.au,Zixian Huang,,,,Australian National University,,,Reg_u6872840@anu.edu.au
+,,u7078049@anu.edu.au,Ryan Yang,,,,Australian National University,,,Reg_u7078049@anu.edu.au
 ,,u7190388@anu.edu.au,Linnie Gu,,,,Australian National University,,,Reg_u7190388@anu.edu.au

@@ -72,19 +72,19 @@ class SimulateClient(HttpUser):
                                 user['research_fields'].append(random.choice(research_field_keys))
 
                             tags = [faker.word() for i in range(random.randint(1, 10))]
-                            print('tags: ',tags)
-                            print('divisions: ',user['research_fields'])
-                            with self.client.post(url='http://localhost:20222/get_reco_tenders',
+                            print('tags: ', tags)
+                            print('divisions: ', user['research_fields'])
+                            with self.client.post(url='http://localhost:20222/get_sim_researchers',
                                                   json={
                                                       'id': user['email'], 'divisions': user['research_fields'],
                                                       'tags': tags
                                                   },
                                                   headers={'X-TOKEN': res['access_token']},
-                                                  catch_response=True) as reco_tenders_response:
-                                if reco_tenders_response.status_code == 200:
-                                    reco_tenders_response.success()
+                                                  catch_response=True) as sim_researchers_response:
+                                if sim_researchers_response.status_code == 200:
+                                    sim_researchers_response.success()
                                 else:
-                                    reco_tenders_response.failure(reco_tenders_response.content)
+                                    sim_researchers_response.failure(sim_researchers_response.content)
                         else:
                             login_response.failure(login_response.content)
                 else:
