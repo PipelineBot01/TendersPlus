@@ -78,7 +78,7 @@ class Filter:
         if on_df.empty:
             on_df = cold_start_df
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
-        return on_df[['go_id', 'weight']].append(out_df).sort_values('weight')
+        return on_df[['go_id', 'weight']].append(out_df).sort_values('weight').drop_duplicates('go_id', keep='first')
 
     def __diff_month(self, date, cur_date):
         return (cur_date.year - date.year) * 12 + cur_date.month - date.month
