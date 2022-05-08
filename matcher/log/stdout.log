@@ -35803,3 +35803,677 @@ initial update task
 2022-05-07 23:38:42,754    INFO:     ::1:50980 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
 2022-05-07 23:38:42,782    INFO:     ::1:50982 - "GET /get_university_strength HTTP/1.1" 200 OK
 git pulling
+[master ac793a2] update model
+ 4 files changed, 625 insertions(+), 327 deletions(-)
+run matcher
+initial update task
+2022-05-07 23:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-07 23:39:58 ------ end update researchers pool
+2022-05-07 23:43:43,416    INFO:     ::1:51392 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:43:43,446    INFO:     ::1:51396 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-07 23:45:27,303    INFO:     ::1:51522 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-07 23:45:27,326    INFO:     ::1:51526 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO4480', 'GO5231', 'GO5474', 'GO1797', 'GO2328', 'GO5361', 'GO4421', 'GO236', 'GO1207', 'GO5407', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO5327', 'GO4296', 'GO3522', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO5223', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO2421', 'GO4166', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO5510', 'GO2156', 'GO1300', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO4990', 'GO1784', 'GO2800', 'GO4188', 'GO1592', 'GO5156', 'GO5059', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO5216', 'GO5367', 'GO5482', 'GO3348', 'GO4900', 'GO4671', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO4878', 'GO4384', 'GO5258', 'GO331', 'GO4872', 'GO3246', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO4654', 'GO5070', 'GO4786', 'GO4080', 'GO5296', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-07 23:45:35,294    INFO:     ::1:51548 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-07 23:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-07 23:54:58 ------ end update researchers pool
+2022-05-08 00:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 00:09:58 ------ end update researchers pool
+2022-05-08 00:22:35,281    INFO:     ::1:53778 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 00:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 00:24:58 ------ end update researchers pool
+2022-05-08 00:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 00:39:58 ------ end update researchers pool
+2022-05-08 00:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 00:54:58 ------ end update researchers pool
+2022-05-08 01:07:38,733    INFO:     ::1:56544 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 01:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 01:09:58 ------ end update researchers pool
+2022-05-08 01:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 01:24:58 ------ end update researchers pool
+2022-05-08 01:37:38,796    INFO:     ::1:58362 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 01:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 01:39:58 ------ end update researchers pool
+2022-05-08 01:48:59,446    INFO:     ::1:59056 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 01:48:59,474    INFO:     ::1:59060 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 01:49:18,026    INFO:     ::1:59094 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 01:49:18,048    INFO:     ::1:59096 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO4480', 'GO5231', 'GO5474', 'GO1797', 'GO2328', 'GO5361', 'GO4421', 'GO236', 'GO1207', 'GO5407', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO5327', 'GO4296', 'GO3522', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO5223', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO2421', 'GO4166', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO5510', 'GO2156', 'GO1300', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO4990', 'GO1784', 'GO2800', 'GO4188', 'GO1592', 'GO5156', 'GO5059', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO5216', 'GO5367', 'GO5482', 'GO3348', 'GO4900', 'GO4671', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO4878', 'GO4384', 'GO5258', 'GO331', 'GO4872', 'GO3246', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO4654', 'GO5070', 'GO4786', 'GO4080', 'GO5296', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 01:49:22,275    INFO:     ::1:59116 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-08 01:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 01:54:58 ------ end update researchers pool
+2022-05-08 02:07:38,722    INFO:     ::1:60256 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 02:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 02:09:58 ------ end update researchers pool
+2022-05-08 02:12:49,541    INFO:     ::1:60584 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 02:12:49,564    INFO:     ::1:60586 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 02:12:52,577    INFO:     ::1:60606 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 02:12:52,579    INFO:     ::1:60612 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 02:24:22,733    INFO:     ::1:33076 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 02:24:22,752    INFO:     ::1:33078 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO4480', 'GO5231', 'GO5474', 'GO1797', 'GO2328', 'GO5361', 'GO4421', 'GO236', 'GO1207', 'GO5407', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO5327', 'GO4296', 'GO3522', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO5223', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO2421', 'GO4166', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO5510', 'GO2156', 'GO1300', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO4990', 'GO1784', 'GO2800', 'GO4188', 'GO1592', 'GO5156', 'GO5059', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO5216', 'GO5367', 'GO5482', 'GO3348', 'GO4900', 'GO4671', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO4878', 'GO4384', 'GO5258', 'GO331', 'GO4872', 'GO3246', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO4654', 'GO5070', 'GO4786', 'GO4080', 'GO5296', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO5106', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 02:24:27,428    INFO:     ::1:33096 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-08 02:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 02:24:58 ------ end update researchers pool
+2022-05-08 02:37:38,806    INFO:     ::1:33920 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 02:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 02:39:58 ------ end update researchers pool
+2022-05-08 02:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 02:54:58 ------ end update researchers pool
+2022-05-08 03:07:38,724    INFO:     ::1:35760 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 03:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 03:09:58 ------ end update researchers pool
+2022-05-08 03:16:13,646    INFO:     ::1:36272 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 03:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 03:24:58 ------ end update researchers pool
+2022-05-08 03:37:38,847    INFO:     ::1:37548 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 03:39:55 ------ start update tenders pool
+<start updating tenders files>
+-- start getting opened tenders info
+---- contains 132 duplicated grants
+-- end getting opened tender info
+-- start updating all grants info
+-- end updating all grants info
+<end updating tenders files>
+2022-05-08 03:43:22 ------ end update tenders pool
+2022-05-08 03:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 03:54:58 ------ end update researchers pool
+2022-05-08 04:07:38,717    INFO:     ::1:39372 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 04:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 04:09:58 ------ end update researchers pool
+2022-05-08 04:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 04:24:58 ------ end update researchers pool
+2022-05-08 04:37:38,763    INFO:     ::1:41156 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 04:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 04:39:58 ------ end update researchers pool
+2022-05-08 04:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 04:54:58 ------ end update researchers pool
+2022-05-08 05:07:38,714    INFO:     ::1:42990 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 05:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 05:09:58 ------ end update researchers pool
+2022-05-08 05:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 05:24:58 ------ end update researchers pool
+2022-05-08 05:37:38,823    INFO:     ::1:44776 - "POST /get_reco_recipient HTTP/1.1" 200 OK
+2022-05-08 05:39:55 ------ start update tenders pool
+<start updating tenders files>
+-- start getting opened tenders info
+---- contains 132 duplicated grants
+-- end getting opened tender info
+-- start updating all grants info
+-- end updating all grants info
+<end updating tenders files>
+2022-05-08 05:42:02 ------ end update tenders pool
+2022-05-08 05:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 05:54:58 ------ end update researchers pool
+2022-05-08 06:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 06:09:58 ------ end update researchers pool
+2022-05-08 06:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 06:24:58 ------ end update researchers pool
+2022-05-08 06:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 06:39:58 ------ end update researchers pool
+2022-05-08 06:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 06:54:58 ------ end update researchers pool
+2022-05-08 07:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 07:09:58 ------ end update researchers pool
+2022-05-08 07:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 07:24:58 ------ end update researchers pool
+2022-05-08 07:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 07:39:58 ------ end update researchers pool
+2022-05-08 07:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 07:54:58 ------ end update researchers pool
+2022-05-08 08:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 08:09:58 ------ end update researchers pool
+2022-05-08 08:24:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 08:24:58 ------ end update researchers pool
+2022-05-08 08:39:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 08:39:58 ------ end update researchers pool
+2022-05-08 08:54:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 08:54:58 ------ end update researchers pool
+2022-05-08 09:01:34,019    INFO:     ::1:57058 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 09:01:34,044    INFO:     ::1:57060 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 09:01:36,980    INFO:     ::1:57084 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 09:01:37,006    INFO:     ::1:57086 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO331', 'GO4961', 'GO5122', 'GO4421', 'GO236', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2941', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5223', 'GO1592', 'GO2850', 'GO4188', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO4166', 'GO5327', 'GO4296', 'GO3522', 'GO2799', 'GO5470', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO5510', 'GO5020', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO5236', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO4872', 'GO2421', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO2156', 'GO1300', 'GO3194', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO642', 'GO4990', 'GO5453', 'GO1784', 'GO2800', 'GO5156', 'GO5059', 'GO4837', 'GO5523', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO335', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO4056', 'GO5216', 'GO5367', 'GO5482', 'GO5157', 'GO3348', 'GO275', 'GO4900', 'GO5070', 'GO4671', 'GO704', 'GO279', 'GO1684', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO5579', 'GO4878', 'GO4587', 'GO5329', 'GO5071', 'GO4384', 'GO4818', 'GO5228', 'GO5258', 'GO34', 'GO3246', 'GO802', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO2427', 'GO4654', 'GO4786', 'GO4080', 'GO5296', 'GO2645', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO5106', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 09:01:40,095    INFO:     ::1:57102 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+[{'id': 'Reg_stageonehigha@anu.edu.au', 'weight': -0.120857142857143, 'name': 'StageOneHighA Medic', 'email': 'stageonehigha@anu.edu.au', 'university': 'Australian National University', 'tag': ['physical activity', 'mental disorders', 'triage', 'endophenotypes', 'ankle', 'health personnel', 'drug-related side effects and adverse reactions', 'communicable diseases', 'home care services', 'exercise test'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stagezerotesta@anu.edu.au', 'weight': -0.08486842105263141, 'name': 'StageZeroTestA Medic', 'email': 'stagezerotesta@anu.edu.au', 'university': 'Australian National University', 'tag': ['weight loss', 'proliferation', 'physical activity', 'triage', 'ankle', 'health personnel', 'drug', 'parkinson', 'health care', 'home care services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'UC_61585cc1d7b0c43ebd7551fe', 'weight': -0.0038015560502417736, 'name': 'Jeannine Bradow', 'email': '', 'university': 'Canberra', 'tag': ['midwifery', 'workforce', 'systematic reviews', 'safety', 'women s health services'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61588353d7b0c43ebd7553a0', 'weight': 0.02371149273494296, 'name': 'Li Zhou', 'email': '', 'university': 'Canberra', 'tag': ['aluminum', 'mammography', 'x-rays', 'noise', 'grids', 'image enhancement', 'radial basis function networks', 'radiation', 'figure of merit'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586de2d7b0c43ebd7552d4', 'weight': 0.03160646281921369, 'name': 'Kelly Mazzer', 'email': '', 'university': 'Canberra', 'tag': ['youth worker', 'mentoring', 'sleep', 'students', 'mental health', 'sports', 'text messaging', 'development model', 'telephone', 'mental health services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}, {'id': 'Reg_stageonemidc@anu.edu.au', 'weight': 0.06305555555555559, 'name': 'StageOneMidC Medic', 'email': 'stageonemidc@anu.edu.au', 'university': 'Australian National University', 'tag': ['infection', 'weight loss', 'blood', 'physical activity', 'triage', 'aspirin', 'drug-related side effects and adverse reactions'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stageonemidb@anu.edu.au', 'weight': 0.06989247311827956, 'name': 'StageOneMidB Medic', 'email': 'stageonemidb@anu.edu.au', 'university': 'Australian National University', 'tag': ['coronavirus', 'lung', 'proliferation', 'physical activity', 'recovery', 'virus', 'interferons', 'drug-related side effects and adverse reactions'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stageonemida@anu.edu.au', 'weight': 0.07278735632183922, 'name': 'StageOneMidA Medic', 'email': 'stageonemida@anu.edu.au', 'university': 'Australian National University', 'tag': ['wrist', 'communicable diseases', 'proliferation', 'mental disorders', 'health personnel', 'drug-related side effects and adverse reactions', 'interferons', 'nutrients', 'body composition'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH']}, {'id': 'UC_6158823cd7b0c43ebd75538c', 'weight': 0.0804641382147227, 'name': 'Clare Watsford', 'email': 'mailto:Clare.Watsford@canberra.edu.au', 'university': 'Canberra', 'tag': ['motherhood', 'curriculum', 'mental health care', 'motivation', 'borderline personality disorder', 'psychology', 'compassion fatigue', 'intention', 'mental health services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}, {'id': 'UC_615871a6d7b0c43ebd7552f5', 'weight': 0.09536459834259217, 'name': 'James Neill', 'email': '', 'university': 'Canberra', 'tag': ['streaming', 'cross-cultural adjustment', 'intercultural learning', 'psychological resilience', 'psychology', 'life skills', 'environmental education', 'body image', 'gaming', 'problem behavior'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}]
+2022-05-08 09:02:04,412    INFO:     ::1:57132 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+2022-05-08 09:09:55 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 09:09:58 ------ end update researchers pool
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO331', 'GO4961', 'GO5122', 'GO4421', 'GO236', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2941', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5223', 'GO1592', 'GO2850', 'GO4188', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO4166', 'GO5327', 'GO4296', 'GO3522', 'GO2799', 'GO5470', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO5510', 'GO5020', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO5236', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO4872', 'GO2421', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO2156', 'GO1300', 'GO3194', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO642', 'GO4990', 'GO5453', 'GO1784', 'GO2800', 'GO5156', 'GO5059', 'GO4837', 'GO5523', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO335', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO4056', 'GO5216', 'GO5367', 'GO5482', 'GO5157', 'GO3348', 'GO275', 'GO4900', 'GO5070', 'GO4671', 'GO704', 'GO279', 'GO1684', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO5579', 'GO4878', 'GO4587', 'GO5329', 'GO5071', 'GO4384', 'GO4818', 'GO5228', 'GO5258', 'GO34', 'GO3246', 'GO802', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO2427', 'GO4654', 'GO4786', 'GO4080', 'GO5296', 'GO2645', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO5106', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 09:15:20,715    INFO:     ::1:57950 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+2022-05-08 09:15:35,434    INFO:     ::1:57984 - "GET /get_hot_tenders HTTP/1.1" 500 Internal Server Error
+2022-05-08 09:15:35,460    INFO:     ::1:57986 - "GET /get_university_strength HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO331', 'GO4961', 'GO5122', 'GO4421', 'GO236', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2941', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5223', 'GO1592', 'GO2850', 'GO4188', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO4166', 'GO5327', 'GO4296', 'GO3522', 'GO2799', 'GO5470', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO5510', 'GO5020', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO5236', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO4872', 'GO2421', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO2156', 'GO1300', 'GO3194', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO642', 'GO4990', 'GO5453', 'GO1784', 'GO2800', 'GO5156', 'GO5059', 'GO4837', 'GO5523', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO335', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO4056', 'GO5216', 'GO5367', 'GO5482', 'GO5157', 'GO3348', 'GO275', 'GO4900', 'GO5070', 'GO4671', 'GO704', 'GO279', 'GO1684', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO5579', 'GO4878', 'GO4587', 'GO5329', 'GO5071', 'GO4384', 'GO4818', 'GO5228', 'GO5258', 'GO34', 'GO3246', 'GO802', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO2427', 'GO4654', 'GO4786', 'GO4080', 'GO5296', 'GO2645', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO5106', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 09:15:44,542    INFO:     ::1:58000 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+[{'id': 'Reg_stageonehigha@anu.edu.au', 'weight': -0.120857142857143, 'name': 'StageOneHighA Medic', 'email': 'stageonehigha@anu.edu.au', 'university': 'Australian National University', 'tag': ['physical activity', 'mental disorders', 'triage', 'endophenotypes', 'ankle', 'health personnel', 'drug-related side effects and adverse reactions', 'communicable diseases', 'home care services', 'exercise test'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stagezerotesta@anu.edu.au', 'weight': -0.08486842105263141, 'name': 'StageZeroTestA Medic', 'email': 'stagezerotesta@anu.edu.au', 'university': 'Australian National University', 'tag': ['weight loss', 'proliferation', 'physical activity', 'triage', 'ankle', 'health personnel', 'drug', 'parkinson', 'health care', 'home care services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'UC_61585cc1d7b0c43ebd7551fe', 'weight': -0.0038015560502417736, 'name': 'Jeannine Bradow', 'email': '', 'university': 'Canberra', 'tag': ['midwifery', 'workforce', 'systematic reviews', 'safety', 'women s health services'], 'division': ['MEDICAL AND HEALTH', 'STUDIES IN CREATIVE ARTS AND WRITING', 'STUDIES IN HUMAN SOCIETY']}, {'id': 'UC_61588353d7b0c43ebd7553a0', 'weight': 0.02371149273494296, 'name': 'Li Zhou', 'email': '', 'university': 'Canberra', 'tag': ['aluminum', 'mammography', 'x-rays', 'noise', 'grids', 'image enhancement', 'radial basis function networks', 'radiation', 'figure of merit'], 'division': ['MEDICAL AND HEALTH', 'PHYSICAL', 'INFORMATION AND COMPUTING']}, {'id': 'UC_61586de2d7b0c43ebd7552d4', 'weight': 0.03160646281921369, 'name': 'Kelly Mazzer', 'email': '', 'university': 'Canberra', 'tag': ['youth worker', 'mentoring', 'sleep', 'students', 'mental health', 'sports', 'text messaging', 'development model', 'telephone', 'mental health services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}, {'id': 'Reg_stageonemidc@anu.edu.au', 'weight': 0.06305555555555559, 'name': 'StageOneMidC Medic', 'email': 'stageonemidc@anu.edu.au', 'university': 'Australian National University', 'tag': ['infection', 'weight loss', 'blood', 'physical activity', 'triage', 'aspirin', 'drug-related side effects and adverse reactions'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stageonemidb@anu.edu.au', 'weight': 0.06989247311827956, 'name': 'StageOneMidB Medic', 'email': 'stageonemidb@anu.edu.au', 'university': 'Australian National University', 'tag': ['coronavirus', 'lung', 'proliferation', 'physical activity', 'recovery', 'virus', 'interferons', 'drug-related side effects and adverse reactions'], 'division': ['MEDICAL AND HEALTH', 'BIOLOGICAL']}, {'id': 'Reg_stageonemida@anu.edu.au', 'weight': 0.07278735632183922, 'name': 'StageOneMidA Medic', 'email': 'stageonemida@anu.edu.au', 'university': 'Australian National University', 'tag': ['wrist', 'communicable diseases', 'proliferation', 'mental disorders', 'health personnel', 'drug-related side effects and adverse reactions', 'interferons', 'nutrients', 'body composition'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH']}, {'id': 'UC_6158823cd7b0c43ebd75538c', 'weight': 0.0804641382147227, 'name': 'Clare Watsford', 'email': 'mailto:Clare.Watsford@canberra.edu.au', 'university': 'Canberra', 'tag': ['motherhood', 'curriculum', 'mental health care', 'motivation', 'borderline personality disorder', 'psychology', 'compassion fatigue', 'intention', 'mental health services'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}, {'id': 'UC_615871a6d7b0c43ebd7552f5', 'weight': 0.09536459834259217, 'name': 'James Neill', 'email': '', 'university': 'Canberra', 'tag': ['streaming', 'cross-cultural adjustment', 'intercultural learning', 'psychological resilience', 'psychology', 'life skills', 'environmental education', 'body image', 'gaming', 'problem behavior'], 'division': ['PSYCHOLOGY AND COGNITIVE SCIENCES', 'MEDICAL AND HEALTH', 'EDUCATION']}]
+2022-05-08 09:15:55,129    INFO:     ::1:58012 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'stagezero@anu.edu.au', 'divisions': ['d_06', 'd_11', 'd_17'], 'tags': ['ankle', 'drug-related side effects and adverse reactions', 'health care professionals', 'health personnel', 'home care services', 'parkinson disease', 'physical activity', 'proliferation', 'triage', 'weight loss']}
+['GO331', 'GO4961', 'GO5122', 'GO4421', 'GO236', 'GO5032', 'GO1239', 'GO4686', 'GO1501', 'GO5541', 'GO4300', 'GO2944', 'GO2922', 'GO5511', 'GO5427', 'GO5351', 'GO1532', 'GO1729', 'GO2918', 'GO2945', 'GO5037', 'GO5465', 'GO1922', 'GO1619', 'GO3676', 'GO4651', 'GO5067', 'GO5512', 'GO5596', 'GO4576', 'GO5399', 'GO2806', 'GO2794', 'GO5304', 'GO2941', 'GO2815', 'GO2036', 'GO3766', 'GO4802', 'GO5471', 'GO3101', 'GO2812', 'GO5590', 'GO5350', 'GO3462', 'GO5540', 'GO5223', 'GO1592', 'GO2850', 'GO4188', 'GO5555', 'GO5504', 'GO4175', 'GO2935', 'GO4166', 'GO5327', 'GO4296', 'GO3522', 'GO2799', 'GO5470', 'GO887', 'GO4584', 'GO438', 'GO5513', 'GO4504', 'GO505', 'GO5038', 'GO404', 'GO4591', 'GO5510', 'GO5020', 'GO740', 'GO4214', 'GO4819', 'GO3286', 'GO4575', 'GO4736', 'GO5236', 'GO1921', 'GO2386', 'GO3550', 'GO5432', 'GO234', 'GO767', 'GO103', 'GO2143', 'GO2811', 'GO3705', 'GO3825', 'GO2245', 'GO4883', 'GO3729', 'GO4688', 'GO5424', 'GO2810', 'GO3074', 'GO5056', 'GO4383', 'GO2337', 'GO4754', 'GO5404', 'GO4872', 'GO2421', 'GO4898', 'GO2507', 'GO3237', 'GO1925', 'GO2884', 'GO3199', 'GO2259', 'GO2893', 'GO93', 'GO2184', 'GO3799', 'GO2156', 'GO1300', 'GO3194', 'GO2793', 'GO5373', 'GO2807', 'GO1626', 'GO4529', 'GO945', 'GO4367', 'GO642', 'GO4990', 'GO5453', 'GO1784', 'GO2800', 'GO5156', 'GO5059', 'GO4837', 'GO5523', 'GO3632', 'GO3011', 'GO1790', 'GO4897', 'GO1764', 'GO4522', 'GO5326', 'GO335', 'GO4825', 'GO4758', 'GO5031', 'GO4264', 'GO5261', 'GO5159', 'GO4724', 'GO1783', 'GO1228', 'GO1604', 'GO4056', 'GO5216', 'GO5367', 'GO5482', 'GO5157', 'GO3348', 'GO275', 'GO4900', 'GO5070', 'GO4671', 'GO704', 'GO279', 'GO1684', 'GO2536', 'GO2877', 'GO2814', 'GO4824', 'GO5579', 'GO4878', 'GO4587', 'GO5329', 'GO5071', 'GO4384', 'GO4818', 'GO5228', 'GO5258', 'GO34', 'GO3246', 'GO802', 'GO49', 'GO5403', 'GO2463', 'GO4840', 'GO4906', 'GO4647', 'GO2427', 'GO4654', 'GO4786', 'GO4080', 'GO5296', 'GO2645', 'GO5583', 'GO4641', 'GO5393', 'GO5217', 'GO4803', 'GO5106', 'GO4456', 'GO2648', 'GO5105', 'GO5337', 'GO5561', 'GO4559', 'GO5568', 'GO5328', 'GO4453', 'GO5089', 'GO3726', 'GO3113', 'GO5353', 'GO2805', 'GO2809', 'GO4560', 'GO4265', 'GO5525', 'GO5324', 'GO2797', 'GO5103', 'GO1246', 'GO1964', 'GO5519', 'GO5143', 'GO3420', 'GO1995', 'GO1794', 'GO4571', 'GO5176', 'GO4833', 'GO1944', 'GO4891', 'GO5539', 'GO5145', 'GO3328', 'GO2742']
+2022-05-08 09:15:57,405    INFO:     ::1:58026 - "POST /get_reco_tenders HTTP/1.1" 200 OK
+git pulling
