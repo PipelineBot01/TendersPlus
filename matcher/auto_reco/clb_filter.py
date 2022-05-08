@@ -65,15 +65,16 @@ class Filter:
         melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
         on_div_df = melt_df[melt_df['division'].isin(division)]
         out_div_df = melt_df[~melt_df['go_id'].isin(on_div_df['go_id'])]
-        return on_div_df, out_div_df
+
+        out_df = input_df[input_df['go_id'].isin(out_div_df['go_id'])][['go_id', 'weight']]
+        on_df = input_df[input_df['go_id'].isin(on_div_df['go_id'])][['go_id', 'weight']]
+        out_df['weight'] = out_df['weight'] * 5
+        return on_df, out_df
 
     def __reformat_result(self, input_df, cold_start_df, division):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
         merge_df = merge_df[merge_df['go_id'].notna()]
-        on_div_df, out_div_df = self.__add_division_penalty(merge_df, division)
-        out_df = merge_df[merge_df['go_id'].isin(out_div_df['go_id'])][['go_id', 'weight']]
-        on_df = merge_df[merge_df['go_id'].isin(on_div_df['go_id'])][['go_id', 'weight']]
-        out_df['weight'] = out_df['weight']*5
+        on_df, out_df = self.__add_division_penalty(merge_df, division)
         if on_df.empty:
             on_df = cold_start_df
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
