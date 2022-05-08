@@ -3,4 +3,4 @@ __pycache__
 config.py
 go_conf.py
 db/test_cfg.py
-
+log
