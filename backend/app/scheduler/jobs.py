@@ -64,7 +64,7 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=False)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=5, timezone='Asia/Hong_Kong'), delay=True)
 async def send_recommendation():
     if 0 < datetime.now().hour < 24:
         print('start send_recommendation ')
