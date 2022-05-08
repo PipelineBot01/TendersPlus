@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     SEND_EMAIL_DATE_THRESHOLD = timedelta(weeks=1)
 
     # app server
-    APP_HOST: str = 'localhost'
+    APP_HOST: str = '127.0.0.1'
 
     APP_PORT: int = 20220
 

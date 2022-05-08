@@ -1,12 +1,7 @@
-import datetime
-
 import pandas as pd
-
 from conf.file_path import RESEARCHER_ACTION_PATH, TENDERS_INFO_PATH
 from tenders.matching.tenders_relation import TendersMatcher
 
-NOW_DATE = datetime.datetime.now()
-SELF_ACT_LIST = [0, 1, 2]
 DISLIKE_TYPE = 3
 
 
@@ -21,9 +16,6 @@ class PostProcess:
         if not self.__action_df.empty:
             self.__action_df['action_date'] = pd.to_datetime(self.__action_df['action_date'])
             self.__action_df = self.__reformat_user_action()
-
-    def __diff_month(self, date):
-        return (NOW_DATE.year - date.year) * 12 + NOW_DATE.month - date.month
 
     def update(self):
         self.__action_df = pd.read_csv(self.__action_path)

@@ -11,19 +11,22 @@ def get_reco_tenders(profile):
     return fl.match(profile)
 
 if __name__ == '__main__':
-    profile = {"id": "jennytestone@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",
-                                                                                      "bank",
-                                                                                      "cash",
-                                                                                      "contingency",
-                                                                                      "design",
-                                                                                      "economic success",
-                                                                                      "endorsements",
-                                                                                      "financial performance",
-                                                                                      "gold standard",
-                                                                                      "income tax"]}
+    profile = {"id": "StageZero@anu.edu.au",
+               "divisions": ["d_06", "d_11", "d_17"],
+               "tags": ["parkinson disease",
+                        "drug-related side effects and adverse reactions",
+                        "proliferation",
+                        "health personnel",
+                        "weight loss",
+                        "physical activity",
+                        "triage",
+                        "ankle",
+                        "home care services",
+                        "health care professionals"]}
 
     tmp_df = get_reco_tenders(profile)
-    print(reco_process.run("jennytestone@test.com", tmp_df))
+    # print(fl.get_hot_tenders())
+    print(reco_process.run("StageZero@anu.edu.au", tmp_df))
     # print(get_sim_researchers({"id": "Ryanyang@anu.com", "divisions": ["d_20", "d_21", "d_22"], "tags": ["Human"]}))
     #
     # {"id": "jennytestsix@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",
@@ -36,3 +39,14 @@ if __name__ == '__main__':
     #                                                                         "food supply",
     #                                                                         "gross domestic product",
     #                                                                         "small business"]}
+
+    # {"id": "jennytestone@test.com", "divisions": ["d_14", "d_15"], "tags": ["accounting",
+    #                                                                               "bank",
+    #                                                                               "cash",
+    #                                                                               "contingency",
+    #                                                                               "design",
+    #                                                                               "economic success",
+    #                                                                               "endorsements",
+    #                                                                               "financial performance",
+    #                                                                               "gold standard",
+    #                                                                               "income tax"]}
