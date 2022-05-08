@@ -93,7 +93,9 @@ export default function SearchResult():JSX.Element{
   const renderFavouriteBtn = (id:string)=>{
     if(user.access_token){
       const className = user.favourite.includes(id) ? 'to-remove' : ''
-      return	<FontAwesomeIcon className={className} onClick={()=>{onClickFavouriteBtn(className, id)}}  icon={faStar}/>
+      return
+      <Col  className='favourite-btn' >      <FontAwesomeIcon className={className} onClick={()=>{onClickFavouriteBtn(className, id)}}  icon={faStar}/></Col>
+
     }
   }
 
@@ -203,11 +205,11 @@ export default function SearchResult():JSX.Element{
 
                           <Row style={{marginTop:'1rem'}} align='middle' justify='end' gutter={6}>
 													
-                            <Col  className='favourite-btn' >
-                              {
-                                renderFavouriteBtn(item['GO ID'])
-                              }
-                            </Col>
+                           
+                            {
+                              renderFavouriteBtn(item['GO ID'])
+                            }
+                           
 													
 			
                             <Col span={5}>

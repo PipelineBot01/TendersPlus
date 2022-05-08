@@ -68,9 +68,8 @@ export default function Profile():JSX.Element{
     console.log(status)
     
     subscribeAPI(status).then(()=>{
+      dispatch(setSubscribeStatus(status))
       message.success('Updated!', 3)
-      setSubscribeChecked(checked)
-      setSubscribeStatus(status)
     }, error=>{
       message.error(error?.msg, 3)
     })
@@ -99,6 +98,21 @@ export default function Profile():JSX.Element{
   return <>
     <div className='profile-page'>
       <div className='profile-container'>
+        <Row style={{alignItems:'center'}}>
+          <Col span={21} style={{textAlign:'right', padding:'0 0.5rem', fontWeight:'500', fontSize:'0.9rem'}}  >
+                Subscribe
+          </Col>
+          <Col span={2} style={{marginLeft:'0.2rem'}}>
+            <Switch checked={subscribeChecked} onChange={handleSubcribeChange} />
+          </Col>
+          <Col 
+            offset={5} 
+            span={19} 
+            
+            style={{padding:'0.2rem 0', color:'rgba(0, 0, 0, 0.45)', textAlign:'right'}}>
+              Send me emails once it has recommendation
+          </Col>
+        </Row>
         <Form  
           requiredMark={false}
           autoComplete = "off"
@@ -194,20 +208,7 @@ export default function Profile():JSX.Element{
             })]}>
             <Select mode='tags' open={false} tokenSeparators={[',', ';']}/>
           </Form.Item>
-				    <Row style={{alignItems:'center'}}>
-            <Col span={5} style={{textAlign:'right', padding:'0 0.5rem', fontWeight:'500', fontSize:'0.9rem'}}  >
-                Subscribe
-            </Col>
-            <Col span={18} style={{marginLeft:'0.2rem'}}>
-              <Switch checked={subscribeChecked} onChange={handleSubcribeChange} />
-            </Col>
-            <Col 
-              offset={5} 
-              span={19} 
-              style={{padding:'0.2rem 0', color:'rgba(0, 0, 0, 0.45)'}}>
-              Send me emails once it has recommendation
-            </Col>
-          </Row>
+			
           <Row justify='center' >
             <Col span={6}>
               <Button  className='btn-submit' disabled={isSubmitting} onClick={handleTriggerSubmitForm}>
