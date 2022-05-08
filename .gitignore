@@ -1,12 +1,13 @@
 __pycache__
 .vscode
 .idea
-backend/log/*
-frontend/log/*
-matcher/log/*
+backend/log
+frontend/log
+matcher/log
 backend/supervisord.conf
 backend/app/.env
 backend/__pycache__
+mathcer/__pycache__
 */.vscode
 ./.idea
 */__pycache__

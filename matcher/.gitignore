@@ -1,4 +1,4 @@
 db_conf.py
 __pycache__
 .idea
-log/*
+log
