@@ -30,7 +30,7 @@ async def get_sim_researchers(data: Profile):
 async def get_reco_tenders(data: Profile):
     print(data.__dict__)
     tmp_output = reco_filter.match(data.__dict__)
-    output = reco_process.run(data.__dict__['id'], tmp_output)
+    output = reco_process.run(data.__dict__['id'], tmp_output)[:30]
     print(output)
     return {'code': 200, 'data': output}
 
