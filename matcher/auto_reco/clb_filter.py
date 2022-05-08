@@ -137,7 +137,7 @@ class Filter:
                                         )['division'].count().reset_index().rename(columns={'division': 'cnt'}
                                                                                    ).sort_values('cnt', ascending=False)
         del sim_re_df
-
+        return cold_start_df
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             return cold_start_df
