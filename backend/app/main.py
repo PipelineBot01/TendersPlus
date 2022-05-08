@@ -54,7 +54,9 @@ async def startup():
     # ====== init scheduler ======
     # run jobs
     for j in async_scheduler.jobs:
+
         if j['delay'] is False:
+            print(f'execute: {j["func"]}')
             await j['func']()
 
     async_scheduler.start()

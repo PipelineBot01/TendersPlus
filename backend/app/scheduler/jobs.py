@@ -4,14 +4,14 @@ import json
 from apscheduler.triggers.base import BaseTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from config import settings
 from db.mysql import session
 from db.mysql.curd.user import sql_get_all_users, sql_get_user
 from db.mysql.curd.user_action import sql_get_all_user_action
 from db.mysql.curd.user_research_field import sql_get_all_user_research_field
 from db.mysql.curd.user_tag import sql_get_all_user_tag
-from db.mysql.curd.user_subscribe import sql_get_user_subscribe
+from db.mysql.curd.user_subscribe import sql_get_all_users_needed_send_email
 from db.mongo.curd import db_get_tenders_from_history_by_ids
 from utils.auto_email import create_sender, create_html_message
 
@@ -50,6 +50,7 @@ async def get_all_user_info():
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
+                    # print('user_info_df:', settings.USER_INFO_DF)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
@@ -58,23 +59,51 @@ async def get_all_user_action():
         settings.USER_ACTION = sql_get_all_user_action(db)
 
 
-@job(id='send_recommendation', trigger=IntervalTrigger(minutes=30, timezone='Asia/Hong_Kong'), delay=True)
+@job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=False)
 async def send_recommendation():
-    if 0 < datetime.now().hour < 6:
-        response = requests.post('http://localhost:20222/get_reco_recipient')
-        if response.status_code == 200:
-            content = json.loads(response.content)
-            data = content['data']
-            sender = create_sender()
+    if 0 < datetime.now().hour < 24:
+        print('start send_recommendation ')
+        try:
             with session() as db:
-                for k, v in data.items:
-                    print('recipient:', k, 'go_id:', v)
-                    recipient = sql_get_user_subscribe(email=k, session=db)
-                    if recipient and recipient.status == 1:
-                        go_id = v
-                        if go_id:
-                            docs = await db_get_tenders_from_history_by_ids(go_id)
-                            if docs:
-                                await sender.send_message(create_html_message(docs, [recipient]))
-        else:
-            print(f'{datetime.now()}    request error: {response.status_code} {response.content}')
+                recipients = sql_get_all_users_needed_send_email(db, datetime.now() - timedelta(days=1))
+                print('recipients:', recipients)
+                sender = create_sender()
+                for r in recipients:
+                    user_df = (r.email in settings.USER_INFO_DF) and (settings.USER_INFO_DF[r.email])
+                    if user_df:
+                        try:
+                            response = requests.post('http://localhost:20222/get_reco_tenders',
+                                                     json={'id': r.email, 'divisions': user_df['divisions'],
+                                                           'tags': (user_df['tags'] or [])})
+                            if response.status_code == 200:
+                                go_id = json.loads(response.content)['data'][:3]
+                                docs = db_get_tenders_from_history_by_ids(go_id)
+                                if docs:
+                                    await sender.send_message(create_html_message(docs, [r.email]))
+                                    r.last_date = datetime.now()
+                                    db.commit()
+                            else:
+                                print(f'Send recommendation error: user:{r.email}, exception:{response.content}')
+                        except Exception as e:
+                            print(f'Send recommendation error: user:{r.email}, exception:{str(e)}')
+        except Exception as e:
+            print(f'Send recommendation error: exception:{str(e)}')
+
+        # ========================== original version =================================
+        # response = requests.post('http://localhost:20222/get_reco_recipient')
+        # if response.status_code == 200:
+        #     content = json.loads(response.content)
+        #     data = content['data']
+        #     sender = create_sender()
+        #     with session() as db:
+        #         for k, v in data.items:
+        #             print('recipient:', k, 'go_id:', v)
+        #             recipient = sql_get_user_subscribe(email=k, session=db)
+        #             if recipient and recipient.status == 1:
+        #                 go_id = v
+        #                 if go_id:
+        #                     docs = await db_get_tenders_from_history_by_ids(go_id)
+        #                     if docs:
+        #                         await sender.send_message(create_html_message(docs, [recipient]))
+        # else:
+        #     print(f'{datetime.now()}    request error: {response.status_code} {response.content}')
