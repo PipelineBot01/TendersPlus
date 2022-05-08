@@ -36626,3 +36626,37 @@ git pulling
 Merge made by the 'recursive' strategy.
  matcher/deploy.sh | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
+[master b589d3b] update model
+ 2 files changed, 11 insertions(+)
+run matcher
+initial update task
+2022-05-08 10:48:15 ------ start update researchers pool
+<start updating researcher files>
+-- start getting new register user
+-- finish getting new register user
+-- start updating researcher info
+-- end updating researcher info
+-- start updating researcher tag map
+-- end updating researcher tag map
+-- start updating researcher div map
+-- start updating researcher div map
+-- start updating tag div map
+-- start updating tag div map
+-- start updating researcher action info
+-- end updating researcher action info
+<end updating researcher files>
+2022-05-08 10:48:17 ------ end update researchers pool
+2022-05-08 10:50:40,209    INFO:     ::1:36360 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-05-08 10:50:40,236    INFO:     ::1:36364 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 10:52:15,185    INFO:     ::1:36468 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-05-08 10:52:15,210    INFO:     ::1:36470 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 10:54:52,762    INFO:     ::1:36662 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+2022-05-08 10:54:52,799    INFO:     ::1:36666 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 10:55:34,037    INFO:     ::1:36732 - "GET /get_university_strength HTTP/1.1" 200 OK
+2022-05-08 10:55:34,051    INFO:     ::1:36734 - "GET /get_hot_tenders HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+[{'id': 'Reg_information@123.com', 'weight': 1e-06, 'name': 'Test Information', 'email': 'information@123.com', 'university': 'Australian National University', 'tag': [], 'division': ['INFORMATION AND COMPUTING']}, {'id': 'Reg_charles@0.com', 'weight': 0.5, 'name': 'charles test', 'email': 'charles@0.com', 'university': 'Australian National University', 'tag': [], 'division': ['INFORMATION AND COMPUTING', 'TECHNOLOGY']}, {'id': 'Reg_u7190388@anu.edu.au', 'weight': 0.5, 'name': 'Linnie Gu', 'email': 'u7190388@anu.edu.au', 'university': 'Australian National University', 'tag': [], 'division': ['ENGINEERING', 'INFORMATION AND COMPUTING']}, {'id': 'UC_6158615cd7b0c43ebd755242', 'weight': 0.5164042351450474, 'name': 'Ibrahim Elgendi', 'email': 'mailto:Ibrahim.Elgendi@canberra.edu.au', 'university': 'Canberra', 'tag': ['wi-fi', 'blockchain', 'software defined networking', 'bitcoin', 'networking', 'cellular networks', 'cyber physical system', 'smart city', 'femtocell', 'predictive analytics'], 'division': ['INFORMATION AND COMPUTING', 'TECHNOLOGY', 'COMMERCE, MANAGEMENT, TOURISM AND SERVICES']}, {'id': 'UC_61586fdfd7b0c43ebd7552e5', 'weight': 0.5676392861888305, 'name': 'Masoud Mohammadian', 'email': '', 'university': 'Canberra', 'tag': ['fuzzy cognitive maps', 'blockchain', 'machine learning', 'natural language processing', 'risk-risk analysis', 'prognosis', 'lower extremity', 'predictive analytics', 'medical diagnosis', 'equivalence classes'], 'division': ['INFORMATION AND COMPUTING', 'ENGINEERING', 'TECHNOLOGY']}, {'id': 'UC_61585f1ed7b0c43ebd755227', 'weight': 0.5750769314452051, 'name': 'Sharma D', 'email': 'mailto:Dharmendra.Sharma@canberra.edu.au', 'university': 'Canberra', 'tag': ['electroencephalogram (eeg)', 'knowledge based systems', 'radio access networks', 'quantum cryptography', 'planning', 'convolution', 'networking', 'data storage equipment', 'artificial intelligence', 'program processors'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'TECHNOLOGY']}, {'id': 'UC_61587073d7b0c43ebd7552ec', 'weight': 0.6073692265854885, 'name': 'Assoc Professor Kumudu Munasinghe', 'email': '', 'university': 'Canberra', 'tag': ['wi-fi', 'remotely operated vehicles', 'smart grid', 'opacity', 'networking', 'cost functions', 'green computing', 'cloud computing', 'traffic dynamics', 'optical communication'], 'division': ['INFORMATION AND COMPUTING', 'ENGINEERING', 'TECHNOLOGY']}, {'id': 'UC_61587b08d7b0c43ebd755346', 'weight': 0.6340486272366361, 'name': 'Girija Chetty', 'email': '', 'university': 'Canberra', 'tag': ['ehealth', 'rna', 'face recognition', 'fusion reactions', 'digital libraries', 'collaborative filtering', 'virtual reality', 'segmentation', 'traveling salesman problem', 'extreme learning machine'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'TECHNOLOGY']}, {'id': 'UC_6158801cd7b0c43ebd755375', 'weight': 0.6350228006979415, 'name': 'Dat Tran', 'email': 'mailto:Dat.Tran@canberra.edu.au', 'university': 'Canberra', 'tag': ['pattern recognition systems', 'genotype', 'deep learning', 'population distribution', 'labeling', 'mathematics teaching', 'support vector machines', 'watermarking', 'electroencephalography', 'wavelets'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'TECHNOLOGY']}, {'id': 'UC_61585b8ed7b0c43ebd7551ee', 'weight': 0.6380168018569969, 'name': 'Abu Barkat Ullah', 'email': '', 'university': 'Canberra', 'tag': ['software engineering', 'summarization', 'internet', 'health care', 'agent systems', 'evolutionary optimization', 'mathematical transformations', 'memetic algorithm', 'train'], 'division': ['MEDICAL AND HEALTH', 'INFORMATION AND COMPUTING', 'BIOLOGICAL']}]
+2022-05-08 10:56:18,326    INFO:     ::1:36798 - "POST /get_sim_researchers HTTP/1.1" 200 OK
+{'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
+['GO3550', 'GO5038', 'GO1140', 'GO1336', 'GO1841', 'GO4540', 'GO4622', 'GO507', 'GO5417', 'GO2143', 'GO3522']
+2022-05-08 10:56:50,399    INFO:     ::1:36864 - "POST /get_reco_tenders HTTP/1.1" 200 OK

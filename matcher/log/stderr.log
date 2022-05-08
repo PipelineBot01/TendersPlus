@@ -16551,3 +16551,9 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 >>>>>>> eadcd608941a7faecc0dc84ff01bf0d9143bc495
 From github.com:PipelineBot01/TendersPlus
    eadcd60..d4150f1  master     -> origin/master
+To git@github.com:PipelineBot01/TendersPlus.git
+   d4150f1..b589d3b  master -> master
+2022-05-08 10:48:15,039    INFO:     Started server process [602]
+2022-05-08 10:48:15,039    INFO:     Waiting for application startup.
+2022-05-08 10:48:17,850    INFO:     Application startup complete.
+2022-05-08 10:48:17,851    INFO:     Uvicorn running on http://localhost:20222 (Press CTRL+C to quit)
