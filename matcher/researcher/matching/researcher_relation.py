@@ -89,8 +89,8 @@ class ResearcherMatcher:
         pd.DataFrame, the matching result dataframe ordered by weight.
         '''
 
-        tar_df = tar_df[tar_df['division'] != 'OTHERS(IRRELEVANT)'][[self.__pk, 'tag', 'weight']]
-        ref_df = ref_df[ref_df['division'] != 'OTHERS(IRRELEVANT)'][[self.__pk, 'tag', 'weight']]
+        tar_df = tar_df[[self.__pk, 'tag', 'weight']]
+        ref_df = ref_df[[self.__pk, 'tag', 'weight']]
 
         tar_df = tar_df.groupby(self.__pk).apply(lambda x: normalize(x, 'weight'))
         ref_df = ref_df.groupby(self.__pk).apply(lambda x: normalize(x, 'weight'))
@@ -189,6 +189,8 @@ class ResearcherMatcher:
             ref_tag_df = self.__re_tag_df
             tar_tag_df = tar_tag_df.merge(self.__MAP_DF, on='tag')
             ref_tag_df = ref_tag_df.merge(self.__MAP_DF, on='tag')
+            tar_tag_df = tar_tag_df[tar_tag_df['division'] != 'OTHERS(IRRELEVANT)'][[self.__pk, 'tag', 'weight']]
+            ref_tag_df = ref_tag_df[ref_tag_df['division'] != 'OTHERS(IRRELEVANT)'][[self.__pk, 'tag', 'weight']]
         return [tar_div_df, self.__re_div_df], [tar_tag_df, ref_tag_df]
 
     def __reformat_output(self, sim_df: pd.DataFrame, tar_col: List[str], div_num=3, tag_num=10) -> pd.DataFrame:
