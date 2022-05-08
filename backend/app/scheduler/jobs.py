@@ -45,7 +45,7 @@ async def get_all_user_info():
                 df_all_user_tag = record_3 and pd.DataFrame.from_records(record_3).groupby('email', as_index=False).agg(
                     {'name': lambda x: list(x)})
 
-                if df_all_user_tag:
+                if df_all_user_tag.shape[0] != 0:
                     df_all_user_tag.rename(columns={'name': 'tags'}, inplace=True)
                     data = pd.merge(df_all_user_research_field, df_all_user_tag, how='left', on='email')
                     data['tags'] = data['tags'].apply(lambda d: d if isinstance(d, list) else [])
