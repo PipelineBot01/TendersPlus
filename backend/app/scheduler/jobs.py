@@ -50,7 +50,7 @@ async def get_all_user_info():
                     data.fillna('', inplace=True)
                     settings.USER_INFO = data.to_dict('records')
                     settings.USER_INFO_DF = data.set_index('email').to_dict('index')
-                    print('user_info_df:', settings.USER_INFO_DF)
+                    # print('user_info_df:', settings.USER_INFO_DF)
 
 
 @job(id='get_all_user_action', trigger=IntervalTrigger(hours=1, timezone='Asia/Hong_Kong'), delay=False)
@@ -69,7 +69,7 @@ async def send_recommendation():
                 print('recipients:', recipients)
                 sender = create_sender()
                 for r in recipients:
-                    user_df = settings.USER_INFO_DF[r.email]
+                    user_df = (r.email in settings.USER_INFO_DF) and (settings.USER_INFO_DF[r.email])
                     if user_df:
                         try:
                             response = requests.post('http://localhost:20222/get_reco_tenders',
