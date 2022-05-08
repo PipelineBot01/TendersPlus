@@ -61,9 +61,11 @@ async def get_all_user_action():
 @job(id='send_recommendation', trigger=IntervalTrigger(minutes=1, timezone='Asia/Hong_Kong'), delay=True)
 async def send_recommendation():
     if 0 < datetime.now().hour < 24:
+        print('start send_recommendation ')
         try:
             with session() as db:
                 recipients = sql_get_all_users_needed_send_email(db, datetime.now() - timedelta(days=1))
+                print('recipients:',recipients)
                 sender = create_sender()
                 for r in recipients:
                     user_df = settings.USER_INFO_DF[settings.USER_INFO_DF['email'] == r.email]
