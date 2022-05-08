@@ -81,7 +81,7 @@ const userSlice = createSlice({
       localStorage.setItem('tags', action.payload.tags.reduce((prev:string, cur:string)=>prev + '/' + cur, ''))
       Object.assign(state, action.payload)
     },
-    setSubscribeStatus(state, action:PayloadAction<number>){
+    setSubscribeStatus(state, action:PayloadAction<number>){  
       state.subscribe_status = action.payload
       localStorage.setItem('subscribe_status', action.payload + '')
 
