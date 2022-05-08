@@ -45,7 +45,9 @@ export default function SearchResult():JSX.Element{
         setData([])
       }else{
         isNew ? setData(response.data as Array<QueryTender>) : setData(data.concat([...response.data as Array<QueryTender>])) 
-        useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
+        if (encodeQuery !== ''){
+          useCollector({type:0, payload:	(encodeQuery ? `keywords=${encodeQuery}&` : '') + 'go_id=' + response.data?.reduce((prev, cur)=>cur['GO ID'] + '/' + prev, '')})
+        }
       }
     
     }).finally(()=>{
@@ -93,8 +95,7 @@ export default function SearchResult():JSX.Element{
   const renderFavouriteBtn = (id:string)=>{
     if(user.access_token){
       const className = user.favourite.includes(id) ? 'to-remove' : ''
-      return
-      <Col  className='favourite-btn' >      <FontAwesomeIcon className={className} onClick={()=>{onClickFavouriteBtn(className, id)}}  icon={faStar}/></Col>
+      return <Col  className='favourite-btn' >      <FontAwesomeIcon className={className} onClick={()=>{onClickFavouriteBtn(className, id)}}  icon={faStar}/></Col>
 
     }
   }
