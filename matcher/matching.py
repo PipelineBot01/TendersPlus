@@ -12,14 +12,17 @@ def get_reco_tenders(profile):
 
 if __name__ == '__main__':
     profile = {"id": "StageZero@anu.edu.au",
-               "divisions": ["d_11", "d_17", "d_06"],
+               "divisions": ["d_06", "d_11", "d_17"],
                "tags": ["parkinson disease",
                         "drug-related side effects and adverse reactions",
                         "proliferation",
                         "health personnel",
                         "weight loss",
-                        "physical"]}
-
+                        "physical activity",
+                        "triage",
+                        "ankle",
+                        "home care services",
+                        "health care professionals"]}
 
     tmp_df = get_reco_tenders(profile)
     # print(fl.get_hot_tenders())
