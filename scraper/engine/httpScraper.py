@@ -259,12 +259,13 @@ class goScraper(webScarper):
 
         file_path = "./assets/gosLink.json"
         try:
-            data = open(file_path, 'rb')
+            gurlsFile = open(file_path, 'rb')
+            linkDic = json.load(gurlsFile)
+            gurlsFile.close()
         except Exception as e:
             print(e)
             # print('no such file: ./assets/gosLink11.json ')
             return
-        linkDic = json.load(data)
         if self.db.count() == 0:
             update_list = []
         else:

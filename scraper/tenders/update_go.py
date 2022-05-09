@@ -16,7 +16,7 @@ def update_go():
     # At most 5 attempts to scrape data
     try_limits = 5
     while True:
-        print("remaining attempt s: {}".format(try_limits))
+        print("remaining attempts: {}, start time {}".format(try_limits,datetime.now()))
         try_limits = try_limits - 1
         go_update.run()
         if go_update.get_scrape_complete():
