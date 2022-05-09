@@ -201,7 +201,7 @@ class goScraper(webScarper):
         self.IS_SCRAPED_COMPLETED = True
 
     def get_urls(self):
-        pages = [self.url_head]
+        pages = [self.seed_url]
         nextUrl = self.seed_url
         while True:
             status, text = self.downloader(nextUrl)
@@ -216,10 +216,6 @@ class goScraper(webScarper):
                 pages.append(self.url_head + next_page)
             else:
                 break
-
-        # for path in pageLink:
-        #     print(path)
-        # pages.append(self.url_head + pageLink[i - 1])
 
         gos = {}
         for i in range(len(pages)):
