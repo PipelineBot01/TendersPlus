@@ -378,13 +378,13 @@ class goScraper(webScarper):
         return 500, Exception
 
     def save2Mongo(self, go):
-        print('*******  insert tender info into database *********')
+        print('*******  insert grant info into database *********')
         mongodb = self.db
         result = mongodb.insert(go)
-        print('*******  finish tender info into database *********')
+        print('*******  finish grant info into database *********')
 
     def updateMongo(self, go):
-        print('*******  update tender info into database *********')
+        print('*******  update grant info into database *********')
         mongodb = self.db
         q = {'URL': go['URL']}
         v = {'$set': go}
