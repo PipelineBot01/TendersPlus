@@ -16,7 +16,7 @@ def update_go():
     # At most 5 attempts to scrape data
     try_limits = 5
     while True:
-        print("remaining attempts: {}, start time {}".format(try_limits,datetime.now()))
+        print("remaining attempts: {}, start time {}".format(try_limits, datetime.now()))
         try_limits = try_limits - 1
         go_update.run()
         if go_update.get_scrape_complete():
@@ -27,7 +27,7 @@ def update_go():
             print("run out of attempts")
             break
         # sleep 2 min then reattempt to scrape
-
+        print("reattempt after 120s")
         time.sleep(120)
 
     if UPDATE:

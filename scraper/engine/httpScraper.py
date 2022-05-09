@@ -1,4 +1,6 @@
+import datetime
 import json
+import os
 import time
 from urllib import request
 
@@ -262,6 +264,7 @@ class goScraper(webScarper):
             gurlsFile = open(file_path, 'rb')
             linkDic = json.load(gurlsFile)
             gurlsFile.close()
+            os.rename(file_path, "./assets/gosLink_{}.json".format(datetime.datetime.now().timestamp()))
         except Exception as e:
             print(e)
             # print('no such file: ./assets/gosLink11.json ')
