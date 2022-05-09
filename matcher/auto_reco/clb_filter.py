@@ -125,7 +125,6 @@ class Filter:
             profile_dict['id'] = 'Reg_' + profile_dict['id']
         sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
-
         filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
         melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
         melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
@@ -147,7 +146,6 @@ class Filter:
         remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
         remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
         remain_movement.rename(columns={'id': 't_id'}, inplace=True)
-
         tmp_df = remain_movement[remain_movement['weight'].notna()]
 
         if not tmp_df.empty:
@@ -165,6 +163,5 @@ class Filter:
             tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)
-
         return self.__reformat_result(result_df.sort_values('weight'), cold_start_df, profile_dict['divisions'])
 
