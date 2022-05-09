@@ -20,9 +20,9 @@ def get_div_id_dict():
     return div_id_dict
 
 
-def get_proportion(row):
+def get_proportion(row, target_col):
     if row.notna().all():
-        row['tmp'] = min(abs(row['weight']), abs(row['tmp'])) / max(abs(row['weight']), abs(row['tmp']))
+        row['tmp'] = min(abs(row[target_col]), abs(row['tmp'])) / max(abs(row[target_col]), abs(row['tmp']))
     return row
 
 
@@ -53,12 +53,14 @@ def normalize(input_df, target_col, method='proportion', bounds=[0, 1]):
             return input_df
         input_df = input_df.sort_values(target_col).reset_index(drop=True)
         input_df['tmp'] = input_df[target_col].shift(-1)
-        input_df = input_df.apply(lambda x: get_proportion(x), axis=1)
+        input_df = input_df.apply(lambda x: get_proportion(x, target_col), axis=1)
         input_df[target_col] = (input_df[target_col] - input_df[target_col].min()
                                 ) / (input_df[target_col].max() - input_df[target_col].min())
 
         input_df.loc[0, target_col] = input_df.iloc[1][target_col] * input_df.iloc[0]['tmp']
-        input_df.loc[len(input_df) - 1, target_col] = input_df.iloc[-2][target_col] / input_df.iloc[-2]['tmp']
+        input_df.loc[len(input_df) - 1, target_col] = input_df.iloc[-2][target_col
+                                                                        ]*input_df.iloc[-3]['tmp'
+                                                                                            ] / input_df.iloc[-2]['tmp']
 
         input_df = input_df.drop('tmp', axis=1)
 

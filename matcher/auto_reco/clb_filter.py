@@ -43,42 +43,43 @@ class Filter:
         -------
 
         '''
-        save_df = save_df[save_df['id'].isin(save_df['orig_id'])]
+        # save_df = save_df[save_df['id'].isin(save_df['orig_id'])]
         re_weight_df = save_df.groupby(['id', 'orig_id']).agg({'weight': 'min'}).reset_index()
         merge_df = re_weight_df.merge(act_tenders_df, left_on='orig_id', right_on='t_id')
         del act_tenders_df, save_df
-
-        merge_df['weight'] = (merge_df['weight_x'] + 1.2 * merge_df['weight_y']) * (1 - merge_df['type'])
+        sort_values = sorted(merge_df['weight_y'].unique())
+        if len(sort_values) > 1:
+            merge_df.loc[merge_df['weight_y'] == 0, 'weight_y'] = sort_values[1]/10
+        merge_df['type'] = 1 - merge_df['type']
+        merge_df = normalize(merge_df, 'type', 'scaled_max_min')
+        merge_df['weight'] = merge_df['weight_x'] + 1.2*merge_df['type'] * merge_df['weight_y']
         re_weight_df = merge_df.groupby(['id']).agg({'weight': 'min'}).reset_index()
         re_cnt_df = merge_df.groupby('id')['orig_id'].count().reset_index().rename(columns={'orig_id': 'cnt'})
         merge_df = re_weight_df.merge(re_cnt_df, on='id')
         del re_cnt_df, re_weight_df
 
-        # merge_df = normalize(merge_df, 'cnt', 'max_min')
-        # merge_df['weight'] = merge_df['weight'] * (1 - np.tanh(merge_df['cnt']))
+        merge_df = normalize(merge_df, 'cnt', 'max_min')
+        merge_df['weight'] = merge_df['weight'] * (1 - np.tanh(merge_df['cnt']))
 
         return merge_df[['id', 'weight']]
 
-    def __add_division_penalty(self, input_df, division):
-        melt_df = input_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
-        melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
-        melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
-        on_div_df = melt_df[melt_df['division'].isin(division)]
-        out_div_df = melt_df[~melt_df['go_id'].isin(on_div_df['go_id'])]
-
-        out_df = input_df[input_df['go_id'].isin(out_div_df['go_id'])][['go_id', 'weight']]
-        on_df = input_df[input_df['go_id'].isin(on_div_df['go_id'])][['go_id', 'weight']]
+    def __add_division_penalty(self, input_df, cold_start_df):
+        out_df = input_df[~input_df['go_id'].isin(cold_start_df['go_id'])][['go_id', 'weight']]
+        on_df = input_df[input_df['go_id'].isin(cold_start_df['go_id'])][['go_id', 'weight']]
         out_df['weight'] = out_df['weight'] * 5
         return on_df, out_df
 
-    def __reformat_result(self, input_df, cold_start_df, division):
+    def __reformat_result(self, input_df, cold_start_df):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
         merge_df = merge_df[merge_df['go_id'].notna()]
-        on_df, out_df = self.__add_division_penalty(merge_df, division)
+        on_df, out_df = self.__add_division_penalty(merge_df, cold_start_df)
+        out_df = out_df.append(cold_start_df)
         if on_df.empty:
             on_df = cold_start_df
-            # on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
-        return on_df[['go_id', 'weight']].append(out_df).sort_values('weight').drop_duplicates('go_id', keep='first')
+            on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
+        on_df = on_df[['go_id', 'weight']]
+        return on_df[['go_id', 'weight']].sort_values('weight').append(out_df.sort_values('weight')
+                                                                       ).drop_duplicates('go_id', keep='first')
 
     def __diff_month(self, date, cur_date):
         return (cur_date.year - date.year) * 12 + cur_date.month - date.month
@@ -98,6 +99,19 @@ class Filter:
                         ].groupby('go_id')['id'].count().reset_index().rename(columns={'id': 'cnt'}).sort_values(
             'cnt', ascending=False).reset_index(drop=True).reset_index()
         return hot_df['go_id'].tolist()
+
+    def __get_cold_start(self, profile_dict):
+        filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
+        melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
+        melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
+        melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
+        div_dict = get_div_id_dict()
+        melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
+        melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
+        cold_start_df = melt_df.groupby('go_id'
+                                        )['division'].count().reset_index().rename(columns={'division': 'cnt'}
+                                                                                   ).sort_values('cnt', ascending=False)
+        return cold_start_df
 
     def update(self):
         self.__rm = ResearcherMatcher()
@@ -123,19 +137,13 @@ class Filter:
 
         if profile_dict['id'] != '':
             profile_dict['id'] = 'Reg_' + profile_dict['id']
-        sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False)
+        sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False, match_num=20)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
-        filter_info_df = self.__tenders_info_df[self.__tenders_info_df['go_id'].notna()]
-        melt_df = filter_info_df[['go_id', 'category', 'sub_category']].melt(id_vars='go_id')[['go_id', 'value']]
-        melt_df = melt_df.merge(self.__cate_div_map_df, left_on='value', right_on='category')
-        melt_df.drop_duplicates(['go_id', 'division'], inplace=True)
-        div_dict = get_div_id_dict()
-        melt_df['division'] = melt_df['division'].map(lambda x: div_dict[x])
-        melt_df = melt_df[melt_df['division'].isin(profile_dict['divisions'])]
-        cold_start_df = melt_df.groupby('go_id'
-                                        )['division'].count().reset_index().rename(columns={'division': 'cnt'}
-                                                                                   ).sort_values('cnt', ascending=False)
-        cold_start_df['weight'] = 0.65*np.mean(sim_re_df['weight'])
+
+        cold_start_df = self.__get_cold_start(profile_dict)
+        sim_re_df = normalize(sim_re_df, 'weight', 'scaled_max_min')
+        cold_start_df['weight'] = 0.55*np.mean(sim_re_df['weight'])
+
         del sim_re_df
 
         if remain_movement.empty:
@@ -147,15 +155,17 @@ class Filter:
         remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
         remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
         remain_movement.rename(columns={'id': 't_id'}, inplace=True)
-        tmp_df = remain_movement[remain_movement['weight'].notna()]
 
-        if not tmp_df.empty:
+        if not remain_movement[remain_movement['weight'].notna()].empty:
             remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
                 remain_movement[remain_movement['weight'].notna()]['weight'])
         else:
             remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / len(remain_movement)
-        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'min'}).reset_index()
+        remain_movement['type'] = remain_movement['type']**2
+        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'mean', 'weight': 'mean'}).reset_index()
+
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
+
         del remain_movement
 
         sim_tenders_df = pd.DataFrame()
@@ -164,5 +174,6 @@ class Filter:
             tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)
-        return self.__reformat_result(result_df.sort_values('weight'), cold_start_df, profile_dict['divisions'])
+
+        return self.__reformat_result(result_df.sort_values('weight'), cold_start_df)
 
