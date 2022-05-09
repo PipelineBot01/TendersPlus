@@ -1,5 +1,7 @@
 cd /home/TendersPlus
 
+git reset --hard
+
 # fetch the latest files
 git pull -X theirs
 
