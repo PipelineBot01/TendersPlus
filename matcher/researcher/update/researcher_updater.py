@@ -70,7 +70,7 @@ class ResearcherUpdater:
 
     def __update_researcher_action(self, action_df):
         if not action_df.empty:
-            action_df[self.pk] = 'Reg_' + action_df['email']
+            action_df[self.pk] = 'Reg_' + action_df['email'].str.lower()
             action_df['go_id'] = action_df['payload'].map(self.__extract_goid)
             action_df['action_date'] = pd.to_datetime(action_df['action_date'])
             action_df = action_df.apply(lambda x: self.__filter_size(x), axis=1)
