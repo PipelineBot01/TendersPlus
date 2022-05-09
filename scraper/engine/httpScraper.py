@@ -261,7 +261,7 @@ class goScraper(webScarper):
         errorStuff = {}
         print("Parsing links")
 
-        file_path = "./assets/gosLink11.json"
+        file_path = "./assets/gosLink.json"
         try:
             data = open(file_path, 'rb')
         except Exception as e:
