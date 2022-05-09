@@ -1,4 +1,6 @@
+import datetime
 import json
+import os
 import time
 from urllib import request
 
@@ -201,7 +203,7 @@ class goScraper(webScarper):
         self.IS_SCRAPED_COMPLETED = True
 
     def get_urls(self):
-        pages = [self.url_head]
+        pages = [self.seed_url]
         nextUrl = self.seed_url
         while True:
             status, text = self.downloader(nextUrl)
@@ -216,10 +218,6 @@ class goScraper(webScarper):
                 pages.append(self.url_head + next_page)
             else:
                 break
-
-        # for path in pageLink:
-        #     print(path)
-        # pages.append(self.url_head + pageLink[i - 1])
 
         gos = {}
         for i in range(len(pages)):
@@ -261,14 +259,16 @@ class goScraper(webScarper):
         errorStuff = {}
         print("Parsing links")
 
-        file_path = "./assets/gosLink11.json"
+        file_path = "./assets/gosLink.json"
         try:
-            data = open(file_path, 'rb')
+            gurlsFile = open(file_path, 'rb')
+            linkDic = json.load(gurlsFile)
+            gurlsFile.close()
+            os.rename(file_path, "./assets/gosLink_{}.json".format(datetime.datetime.now().timestamp()))
         except Exception as e:
             print(e)
             # print('no such file: ./assets/gosLink11.json ')
             return
-        linkDic = json.load(data)
         if self.db.count() == 0:
             update_list = []
         else:
@@ -378,13 +378,13 @@ class goScraper(webScarper):
         return 500, Exception
 
     def save2Mongo(self, go):
-        print('*******  insert tender info into database *********')
+        print('*******  insert grant info into database *********')
         mongodb = self.db
         result = mongodb.insert(go)
-        print('*******  finish tender info into database *********')
+        print('*******  finish grant info into database *********')
 
     def updateMongo(self, go):
-        print('*******  update tender info into database *********')
+        print('*******  update grant info into database *********')
         mongodb = self.db
         q = {'URL': go['URL']}
         v = {'$set': go}
