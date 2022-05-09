@@ -1,5 +1,7 @@
 import json
 import time
+from urllib import request
+
 import pandas as pd
 import requests
 from lxml import etree
@@ -18,6 +20,11 @@ class webScarper:
         self.url_collector = {}
         host, port, user, pwd, db, collection = self.config
         self.db = mongo(host, port, user, pwd, db, collection)
+        try:
+            print(mongo)
+        except Exception as e:
+            print("Unable to connect to Mongo: {}:{}".format(host, port))
+
         self.save_mongo = save_mongo
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -25,7 +32,10 @@ class webScarper:
         }
         pass
 
-    def get_urls(self) -> None:
+    def check_url(self, url) -> bool:
+        pass
+
+    def get_urls(self):
         pass
 
     def run(self):
@@ -78,10 +88,28 @@ class tenderScraper(webScarper):
             print(e)
         time.sleep(self.interval)
 
-    def downloader(self, url) -> str:
-        response = requests.get(url, self.headers)
-        tendersPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
-        return etree.HTML(tendersPage)
+    def check_url(self, url) -> bool:
+        try:
+            request.urlopen(url, timeout=5000)
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
+    def downloader(self, url) -> dict:
+        count = 5
+        while count > 0:
+
+            if self.check_url(url):
+                try:
+                    response = requests.get(url, self.headers, timeout=5000)
+                    tendersPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
+                    return {'code': 200, 'html': etree.HTML(tendersPage)}
+                except Exception as e:
+                    print(e)
+            time.sleep(1)
+            count = count - 1
+        return {'code': 404, 'html': []}
 
     def run(self, save_mongo=False):
         print('collecting urls')
@@ -164,23 +192,47 @@ class goScraper(webScarper):
         super().__init__(config, seed_url, url_head, parser_config, interval, save_mongo, saveInfo)
         self.gos = []
         self.go_head = go_head
+        self.IS_SCRAPED_COMPLETED = False
 
-    def get_urls(self) -> None:
+    def get_scrape_complete(self):
+        return self.IS_SCRAPED_COMPLETED
+
+    def scrape_completed(self):
+        self.IS_SCRAPED_COMPLETED = True
+
+    def get_urls(self):
         pages = [self.url_head]
-        seed_html = etree.HTML(self.downloader(self.seed_url))
-        pageLink = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/@href')
-        pageId = seed_html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li/a/text()')
-        for i in range(1, len(pageId) - 1):
-            pages.append(self.url_head + pageLink[i - 1])
+        nextUrl = self.seed_url
+        while True:
+            status, text = self.downloader(nextUrl)
+            if status == 500:
+                return 'error', text
+            html = etree.HTML(text)
+            next_url = html.xpath('//*[@id="mainContent"]/div/div[3]/ul/li[@class="next"]/a/@href')
+
+            if next_url:
+                next_page = next_url[0]
+                nextUrl = self.url_head + next_page
+                pages.append(self.url_head + next_page)
+            else:
+                break
+
+        # for path in pageLink:
+        #     print(path)
+        # pages.append(self.url_head + pageLink[i - 1])
 
         gos = {}
         for i in range(len(pages)):
             link = pages[i]
-            html = etree.HTML(self.downloader(link))
-            links = html.xpath('//div[@class="list-desc-inner"]/a/@href')
-            ids = html.xpath('//div[@class="list-desc-inner"]/a/text()')
+            status, context = self.downloader(link)
+            if status == 500:
+                return 'error', context
+            link_html = etree.HTML(context)
+            links = link_html.xpath('//div[@class="list-desc-inner"]/a/@href')
+            ids = link_html.xpath('//div[@class="list-desc-inner"]/a/text()')
             for j in range(0, len(ids), 2):
                 gos[ids[j]] = self.go_head + links[j]
+                # print(self.go_head + links[j])
             print("page " + str(i + 1) + " finished")
 
         try:
@@ -195,24 +247,42 @@ class goScraper(webScarper):
             print(e)
         time.sleep(self.interval)
 
+        return 'success', ''
+
     def run(self):
         print('collecting urls')
-        self.get_urls()
+        try:
+            status, msg = self.get_urls()
+            if status == 'error':
+                raise msg
+        except Exception as e:
+            print(e)
+
         errorStuff = {}
         print("Parsing links")
 
-        file_path = "./assets/gosLink.json"
-        data = open(file_path, 'rb')
+        file_path = "./assets/gosLink11.json"
+        try:
+            data = open(file_path, 'rb')
+        except Exception as e:
+            print(e)
+            # print('no such file: ./assets/gosLink11.json ')
+            return
         linkDic = json.load(data)
-        old_urls = pd.DataFrame(self.db.find_col("URL"))
-        update_list = list(old_urls['URL'])
+        if self.db.count() == 0:
+            update_list = []
+        else:
+            old_urls = pd.DataFrame(self.db.find_col("URL"))
+            update_list = list(old_urls['URL'])
         gos_links = []
         for gid, link in linkDic.items():
             gos_links.append(link)
 
             print('Generate go info', gid)
             try:
-                go = self.parser(link)
+                status, go = self.parser(link)
+                if status == 'error':
+                    raise go
                 self.gos.append(go)
                 if self.save_mongo:
                     if link in update_list:
@@ -225,7 +295,6 @@ class goScraper(webScarper):
                 errorStuff.update({gid: link})
                 continue
             time.sleep(self.interval)
-        df = pd.DataFrame(self.gos)
         for url in update_list:
             if url not in gos_links:
                 self.db.delete(URL=url)
@@ -240,10 +309,15 @@ class goScraper(webScarper):
         except Exception as e:
             print(e)
             print('Saving errorStuff failed')
+        self.scrape_completed()
 
     def parser(self, url):
         config = self.parser_config
-        html = self.downloader(url)
+
+        code, html = self.downloader(url)
+        if code == 500:
+            return "error", Exception
+
         html = html.replace('<strong>', '')
         html = html.replace('</strong>', '')
         html = html.replace('\r\n', '')
@@ -274,12 +348,34 @@ class goScraper(webScarper):
             ll = label.replace(":", "")
             attributes[ll] = info
         go = attributes
-        return go
+        return 'success', go
 
-    def downloader(self, url) -> str:
-        response = requests.get(url, self.headers)
-        gosPage = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
-        return gosPage
+    @staticmethod
+    def check_url(url) -> bool:
+        try:
+            request.urlopen(url, timeout=5000)
+            # print('valid URL')
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
+    def downloader(self, url) -> tuple:
+        count = 3
+        while count > 0:
+            if self.check_url(url):
+                try:
+                    response = requests.get(url, timeout=3000)
+                    # response = requests.get(url, self.headers, timeout=3000)
+                    text = response.text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
+                    return response.status_code, text
+                except Exception as e:
+                    print(e)
+                    if count == 1:
+                        return 500, e
+            count = count - 1
+            time.sleep(1)
+        return 500, Exception
 
     def save2Mongo(self, go):
         print('*******  insert tender info into database *********')
@@ -293,3 +389,4 @@ class goScraper(webScarper):
         q = {'URL': go['URL']}
         v = {'$set': go}
         result = mongodb.update_one(q, v)
+

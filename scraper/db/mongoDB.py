@@ -22,20 +22,27 @@ class mongo:
         if auth:
             passwd = parse.quote(pwd)
             uri = 'mongodb://' + user + ':' + passwd + '@' + host + ':' + port + '/' + db
-            client = MongoClient(uri)
+            client = MongoClient(uri, serverSelectionTimeoutMS=5000)
         else:
-            client = MongoClient(host=host, port=port)
+            client = MongoClient(host=host, port=port, serverSelectionTimeoutMS=5000)
 
-        self.db = client[db]  # database
-        self.collection = self.db[collection]  # table
+        try:
+            print(client.server_info())
+        except Exception as e:
+            print(e)
+            print("Unable to connect to the server.")
 
         if db not in client.list_database_names():
             print("no such database!")
+        self.db = client[db]  # database
+
         if collection not in self.db.list_collection_names():
             print("no such collection！")
 
+        self.collection = self.db[collection]  # table
+
     def __str__(self):
-        """database ifo"""
+        """database info"""
         db = self.db.name
         collection = self.collection.name
         num = self.collection.find().count()
