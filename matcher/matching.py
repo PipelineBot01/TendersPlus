@@ -24,12 +24,12 @@ if __name__ == '__main__':
                         "home care services",
                         "health care professionals"]}
 
-    # profile = {'id': 'eric65@example.net', 'divisions': ['d_04', 'd_01'], 'tags': ['leader']}
+    profile = {'id': 'u6872840@anu.edu.au', 'divisions': ['d_08'], 'tags': []}
 
     tmp_df = get_reco_tenders(profile)
     # print(tmp_df['go_id'].tolist())
     # print(fl.get_hot_tenders())
-    print(reco_process.run("StageZero@anu.edu.au", tmp_df))
+    print(reco_process.run("u6872840@anu.edu.au", tmp_df))
     # print(get_sim_researchers({"id": "Ryanyang@anu.com", "divisions": ["d_20", "d_21", "d_22"], "tags": ["Human"]}))
     #
 

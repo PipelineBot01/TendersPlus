@@ -11,7 +11,7 @@ from typing import List
 from utils.match_utils import normalize
 from utils.match_utils import get_div_id_dict
 
-WEIGHT_MAP = {0: 0.1, 1: 0.25, 2: 0.45, 4: 0.75}
+WEIGHT_MAP = {0: 0.08, 1: 0.25, 2: 0.45, 4: 0.75}
 SELF_ACT_LIST = [0, 1, 2]
 
 
@@ -77,7 +77,7 @@ class Filter:
         on_df, out_df = self.__add_division_penalty(merge_df, division)
         if on_df.empty:
             on_df = cold_start_df
-            on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
+            # on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
         return on_df[['go_id', 'weight']].append(out_df).sort_values('weight').drop_duplicates('go_id', keep='first')
 
     def __diff_month(self, date, cur_date):
@@ -135,6 +135,7 @@ class Filter:
         cold_start_df = melt_df.groupby('go_id'
                                         )['division'].count().reset_index().rename(columns={'division': 'cnt'}
                                                                                    ).sort_values('cnt', ascending=False)
+        cold_start_df['weight'] = 0.65*np.mean(sim_re_df['weight'])
         del sim_re_df
 
         if remain_movement.empty:
