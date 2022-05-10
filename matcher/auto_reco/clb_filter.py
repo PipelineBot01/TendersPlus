@@ -161,8 +161,8 @@ class Filter:
                 remain_movement[remain_movement['weight'].notna()]['weight'])
         else:
             remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / len(remain_movement)
-        remain_movement['type'] = remain_movement['type']**2
-        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'mean', 'weight': 'mean'}).reset_index()
+
+        act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'mean'}).reset_index()
 
         act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
 
