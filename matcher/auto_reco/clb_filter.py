@@ -47,12 +47,11 @@ class Filter:
         re_weight_df = save_df.groupby(['id', 'orig_id']).agg({'weight': 'min'}).reset_index()
         merge_df = re_weight_df.merge(act_tenders_df, left_on='orig_id', right_on='t_id')
         del act_tenders_df, save_df
+
         sort_values = sorted(merge_df['weight_y'].unique())
         if len(sort_values) > 1:
-            merge_df.loc[merge_df['weight_y'] == 0, 'weight_y'] = sort_values[1]/10
-        merge_df['type'] = 1 - merge_df['type']
-        merge_df = normalize(merge_df, 'type', 'scaled_max_min')
-        merge_df['weight'] = merge_df['weight_x'] + 1.2*merge_df['type'] * merge_df['weight_y']
+            merge_df.loc[merge_df['weight_y'] == 0, 'weight_y'] = sort_values[1]/2
+        merge_df['weight'] = merge_df['weight_x'] + 1.2*(1 - merge_df['type']) + merge_df['weight_y']
         re_weight_df = merge_df.groupby(['id']).agg({'weight': 'min'}).reset_index()
         re_cnt_df = merge_df.groupby('id')['orig_id'].count().reset_index().rename(columns={'orig_id': 'cnt'})
         merge_df = re_weight_df.merge(re_cnt_df, on='id')
@@ -69,16 +68,17 @@ class Filter:
         out_df['weight'] = out_df['weight']*8
         return on_df, out_df
 
-    def __reformat_result(self, input_df, cold_start_df):
+    def __reformat_result(self, input_df, cold_start_df, fav_df):
         merge_df = input_df.merge(self.__tenders_info_df, on='id')
         merge_df = merge_df[merge_df['go_id'].notna()]
         on_df, out_df = self.__add_division_penalty(merge_df, cold_start_df)
         out_df = out_df.append(cold_start_df)
-        print(out_df)
         if on_df.empty:
             on_df = cold_start_df
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
         on_df = on_df[['go_id', 'weight']]
+        on_df = on_df.append(fav_df)
+        print(on_df)
         return on_df[['go_id', 'weight']].sort_values('weight').append(out_df.sort_values('weight')
                                                                        ).drop_duplicates('go_id', keep='first')
 
@@ -114,6 +114,41 @@ class Filter:
                                                                                    ).sort_values('cnt', ascending=False)
         return cold_start_df
 
+    def __process_movement(self, remain_movement, profile_dict):
+        remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())].copy()
+        remain_movement.loc[:, 'type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x]).copy()
+        remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
+        remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
+        remain_movement.rename(columns={'id': 't_id'}, inplace=True)
+
+        if not remain_movement[remain_movement['weight'].notna()].empty:
+            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
+                remain_movement[remain_movement['weight'].notna()]['weight']).copy()
+        else:
+            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'
+                                ] = 1 / len(remain_movement).copy()
+
+        remain_movement = normalize(remain_movement, 'weight', 'scaled_max_min')
+        remain_movement.loc[:, 'weight'] = remain_movement['weight']*(1-remain_movement['type']).copy()
+
+        fav_df = remain_movement[remain_movement['type'] == WEIGHT_MAP[4]]
+        if not fav_df.empty:
+            fav_df = fav_df.sort_values('weight')[['go_id', 'weight']]
+            cnt_df = fav_df.groupby('go_id')['weight'].count().reset_index().rename(columns={'weight': 'cnt'})
+            fav_df = fav_df.groupby('go_id')['weight'].mean().reset_index().rename(columns={'weight': 'mean'}).merge(cnt_df)
+            fav_df = normalize(fav_df, 'cnt', 'scaled_max_min')
+            fav_df.loc[:, 'weight'] = fav_df['mean'] * (1 - np.tanh(fav_df['cnt']))
+
+        return remain_movement, fav_df
+
+    def __get_similar_tenders(self, act_tenders_df):
+        sim_tenders_df = pd.DataFrame()
+        for tmp_id in act_tenders_df['t_id'].unique():
+            tmp_df = self.__tenders_relation_df[self.__tenders_relation_df['orig_id'] == tmp_id]
+            tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
+            sim_tenders_df = sim_tenders_df.append(tmp_df)
+        return sim_tenders_df
+
     def update(self):
         self.__rm = ResearcherMatcher()
         self.__tm = TendersMatcher()
@@ -144,39 +179,18 @@ class Filter:
         cold_start_df = self.__get_cold_start(profile_dict)
         sim_re_df = normalize(sim_re_df, 'weight', 'scaled_max_min')
         cold_start_df['weight'] = 0.55*np.mean(sim_re_df['weight'])
-
         del sim_re_df
 
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             return cold_start_df
 
-        remain_movement = remain_movement[remain_movement['type'].isin(WEIGHT_MAP.keys())]
-        remain_movement['type'] = remain_movement['type'].map(lambda x: WEIGHT_MAP[x])
-        remain_movement.rename(columns={'id': 'r_id'}, inplace=True)
-        remain_movement = remain_movement.merge(self.__tenders_info_df[['id', 'go_id']], on='go_id')
-        remain_movement.rename(columns={'id': 't_id'}, inplace=True)
-
-        if not remain_movement[remain_movement['weight'].notna()].empty:
-            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = np.mean(
-                remain_movement[remain_movement['weight'].notna()]['weight'])
-        else:
-            remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / len(remain_movement)
-
-        remain_movement = normalize(remain_movement, 'weight', 'scaled_max_min')
-        remain_movement['weight'] = remain_movement['weight']*(1-remain_movement['type'])
+        remain_movement, fav_df = self.__process_movement(remain_movement, profile_dict)
         act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'mean'}).reset_index()
-
-        # act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
-
         del remain_movement
 
-        sim_tenders_df = pd.DataFrame()
-        for tmp_id in act_tenders_df['t_id'].unique():
-            tmp_df = self.__tenders_relation_df[self.__tenders_relation_df['orig_id'] == tmp_id]
-            tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
-            sim_tenders_df = sim_tenders_df.append(tmp_df)
+        sim_tenders_df = self.__get_similar_tenders(act_tenders_df)
+
         result_df = func(self, sim_tenders_df, act_tenders_df)
-        print(result_df.sort_values('weight'))
-        return self.__reformat_result(result_df.sort_values('weight'), cold_start_df)
+        return self.__reformat_result(result_df.sort_values('weight'), cold_start_df, fav_df)
 
