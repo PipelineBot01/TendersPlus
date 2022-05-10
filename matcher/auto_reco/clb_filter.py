@@ -66,7 +66,7 @@ class Filter:
     def __add_division_penalty(self, input_df, cold_start_df):
         out_df = input_df[~input_df['go_id'].isin(cold_start_df['go_id'])][['go_id', 'weight']]
         on_df = input_df[input_df['go_id'].isin(cold_start_df['go_id'])][['go_id', 'weight']]
-        out_df['weight'] = out_df['weight'] * 5
+        out_df['weight'] = out_df['weight']*8
         return on_df, out_df
 
     def __reformat_result(self, input_df, cold_start_df):
@@ -74,6 +74,7 @@ class Filter:
         merge_df = merge_df[merge_df['go_id'].notna()]
         on_df, out_df = self.__add_division_penalty(merge_df, cold_start_df)
         out_df = out_df.append(cold_start_df)
+        print(out_df)
         if on_df.empty:
             on_df = cold_start_df
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
@@ -162,9 +163,11 @@ class Filter:
         else:
             remain_movement.loc[remain_movement['r_id'] == profile_dict['id'], 'weight'] = 1 / len(remain_movement)
 
+        remain_movement = normalize(remain_movement, 'weight', 'scaled_max_min')
+        remain_movement['weight'] = remain_movement['weight']*(1-remain_movement['type'])
         act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'mean'}).reset_index()
 
-        act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
+        # act_tenders_df = normalize(act_tenders_df, 'weight', 'scaled_max_min')
 
         del remain_movement
 
@@ -174,6 +177,6 @@ class Filter:
             tmp_df = normalize(tmp_df, 'weight', 'scaled_max_min')
             sim_tenders_df = sim_tenders_df.append(tmp_df)
         result_df = func(self, sim_tenders_df, act_tenders_df)
-
+        print(result_df.sort_values('weight'))
         return self.__reformat_result(result_df.sort_values('weight'), cold_start_df)
 

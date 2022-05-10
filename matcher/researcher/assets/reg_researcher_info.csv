@@ -1,5 +1,6 @@
 email,university,name,divisions,tags,id
 123@123.com,Australian National University,Test Chemical,['d_03'],[],Reg_123@123.com
+1@1.com,Southern Cross University,Abc Abc,['d_08'],[],Reg_1@1.com
 biological@123.com,Australian National University,Test Biological,['d_06'],[],Reg_biological@123.com
 charles@0.com,Australian National University,charles test,"['d_08', 'd_10']",[],Reg_charles@0.com
 history@123.com,Australian National University,Test History,['d_21'],[],Reg_history@123.com
