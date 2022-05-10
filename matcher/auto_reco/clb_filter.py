@@ -167,29 +167,34 @@ class Filter:
         -------
 
         '''
-        if 'id' not in profile_dict.keys():
-            profile_dict['id'] = ''
+        profile_dict['id'] = '' if 'id' not in profile_dict.keys() else profile_dict['id']
+        profile_dict['id'] = 'Reg_' + profile_dict['id'] if profile_dict['id'] != '' else profile_dict['id']
 
-        if profile_dict['id'] != '':
-            profile_dict['id'] = 'Reg_' + profile_dict['id']
+        # get sim users
         sim_re_df = self.__rm.match_by_profile(profile_dict, get_dict=False, remove_cur_id=False, match_num=20)
         remain_movement = self.__act_df.merge(sim_re_df, on='id')
 
+        # get cold start result
         cold_start_df = self.__get_cold_start(profile_dict)
         sim_re_df = normalize(sim_re_df, 'weight', 'scaled_max_min')
         cold_start_df['weight'] = 0.55*np.mean(sim_re_df['weight'])
         del sim_re_df
 
+        # simply return the cold start result if no sim user actions
         if remain_movement.empty:
             print(f'{profile_dict} with no similar data')
             return cold_start_df
 
+        # process sim user actions
         remain_movement, fav_df = self.__process_movement(remain_movement, profile_dict)
         act_tenders_df = remain_movement.groupby('t_id').agg({'type': 'max', 'weight': 'mean'}).reset_index()
         del remain_movement
 
+        # get sim tenders
         sim_tenders_df = self.__get_similar_tenders(act_tenders_df)
 
+        # compute weight
         result_df = func(self, sim_tenders_df, act_tenders_df)
+
         return self.__reformat_result(result_df.sort_values('weight'), cold_start_df, fav_df)
 
