@@ -78,7 +78,6 @@ class Filter:
             on_df['weight'] = np.mean(out_df[:8]['weight'])/on_df['cnt']
         on_df = on_df[['go_id', 'weight']]
         on_df = on_df.append(fav_df)
-        print(on_df)
         return on_df[['go_id', 'weight']].sort_values('weight').append(out_df.sort_values('weight')
                                                                        ).drop_duplicates('go_id', keep='first')
 
