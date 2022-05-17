@@ -18,6 +18,7 @@ frontend/build
 scraper/tenders/assets/*
 scraper/tenders/go_conf.py
 scraper/db/cfg.py
+scraper/go_conf.py
 /scraper/tenders/go_update.ipynb
 /scraper/db/db_test.ipynb
 /scraper/tenders/assets/
