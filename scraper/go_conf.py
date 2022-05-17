@@ -1,8 +1,8 @@
 
-mongo_host = '110.40.137.110'
+mongo_host = ''
 mongo_port = '27017'
-username = 'tenderplus'
-passwd = 'tenderPlus@2021'
+username = ''
+passwd = ''
 database_name = 'tenders'
 
 go_config = (mongo_host, mongo_port, username, passwd, database_name, 'raw_grants_opened')
